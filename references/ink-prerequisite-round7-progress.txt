@@ -1,0 +1,9 @@
+{"index": 1, "command": "udws \"ustd.sizeof /ram/codex_ink_cache_r7.bin;\"", "bytes": 87, "prompt": true, "validated": true, "preview": "\r\n-> udws \"ustd.sizeof /ram/codex_ink_cache_r7.bin;\"\r\n -1;udws() returns 0 (0x0)\r\n-> "}
+{"index": 2, "command": "udws \"ram.creat /ram/codex_ink_cache_r7.bin;\"", "bytes": 86, "prompt": true, "validated": true, "preview": "\r\n-> udws \"ram.creat /ram/codex_ink_cache_r7.bin;\"\r\n 239;udws() returns 0 (0x0)\r\n-> "}
+{"index": 3, "command": "udws \"ram.write 239 0x20cfb4a0 12;\"", "bytes": 75, "prompt": true, "validated": true, "preview": "\r\n-> udws \"ram.write 239 0x20cfb4a0 12;\"\r\n 12;udws() returns 0 (0x0)\r\n-> "}
+{"index": 4, "command": "udws \"ram.close 239;\"", "bytes": 60, "prompt": true, "validated": true, "preview": "\r\n-> udws \"ram.close 239;\"\r\n 0;udws() returns 0 (0x0)\r\n-> "}
+{"index": 5, "command": "udws \"ustd.open_file /ram/codex_ink_cache_r7.bin;\"", "bytes": 89, "prompt": true, "validated": true, "preview": "\r\n-> udws \"ustd.open_file /ram/codex_ink_cache_r7.bin;\"\r\n12;udws() returns 0 (0x0)\r\n-> "}
+{"index": 6, "command": "udws \"ustd.read_file 0 12;\"", "bytes": 88, "prompt": true, "validated": true, "preview": "\r\n-> udws \"ustd.read_file 0 12;\"\r\n000000020000000000000000;udws() returns 0 (0x0)\r\n-> "}
+{"index": 7, "command": "udws \"ustd.close_file;\"", "bytes": 59, "prompt": true, "validated": true, "preview": "\r\n-> udws \"ustd.close_file;\"\r\nudws() returns 0 (0x0)\r\n-> "}
+{"index": 8, "command": "udws \"ram.unlink /ram/codex_ink_cache_r7.bin;\"", "bytes": 85, "prompt": true, "validated": true, "preview": "\r\n-> udws \"ram.unlink /ram/codex_ink_cache_r7.bin;\"\r\n 0;udws() returns 0 (0x0)\r\n-> "}
+{"index": 9, "command": "udws \"ustd.sizeof /ram/codex_ink_cache_r7.bin;\"", "bytes": 87, "prompt": true, "validated": true, "preview": "\r\n-> udws \"ustd.sizeof /ram/codex_ink_cache_r7.bin;\"\r\n -1;udws() returns 0 (0x0)\r\n-> "}

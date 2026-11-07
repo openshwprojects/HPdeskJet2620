@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-10-29T22:05:31.128516+00:00",
+  "provenance": {
+    "serial_access_by_reviewer": "none",
+    "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+    "baseline": "references/round7-baseline.json",
+    "baseline_count": 703,
+    "source_session": {
+      "path": "references/physical-77-scanner-origins/session.json",
+      "sha256": "12cdd84aa68c36a870e7f8e4c6c72ce6d04e03b9a500ee949fcf2e0078803679"
+    }
+  },
+  "summary": {
+    "physical_commands": 2,
+    "validated_responses": 2,
+    "new_unique_names": 2,
+    "new_unique_handlers": 2,
+    "origin_locations": {
+      "cover": 3534,
+      "park": 2264,
+      "white": 2709,
+      "black": 2709
+    },
+    "motor_position": 2264,
+    "park_matches_subsequent_position": true
+  },
+  "response_revalidations": [
+    {
+      "response_file": "references/physical-77-scanner-origins/0001-udws_scan_orig_locget.bin",
+      "response_sha256": "7ea19ce078a10a0fb7241bb0b649c682bc977a37d5f9133f05cf508613055dc8",
+      "assessment": "complete-scanner-origin-locations",
+      "note": "All four labelled signed locations are present. Cover matches the preflight origin plus compiled offset. The reviewed park fallback can read the current position register; white and black are cached reference locations. No homing or scanning occurred.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-77-scanner-origins/0002-udws_scan_mtr_getpos.bin",
+      "response_sha256": "39208d7fc32e4260dfda661535a128f4174671ad768452ba6739f9f2e986bfdb",
+      "assessment": "complete-read-only-scanner-position",
+      "note": "One complete signed position value was returned through the physically resolved flatbed interface. The helper reads BD302010 and refreshes only volatile cache208593AC; it does not command movement or establish calibration accuracy.",
+      "valid": true,
+      "complete": true
+    }
+  ],
+  "data_quality": [
+    {
+      "response_file": "references/physical-77-scanner-origins/0001-udws_scan_orig_locget.bin",
+      "response_sha256": "7ea19ce078a10a0fb7241bb0b649c682bc977a37d5f9133f05cf508613055dc8",
+      "assessment": "complete-scanner-origin-locations",
+      "note": "All four labelled signed locations are present. Cover matches the preflight origin plus compiled offset. The reviewed park fallback can read the current position register; white and black are cached reference locations. No homing or scanning occurred.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-77-scanner-origins/0002-udws_scan_mtr_getpos.bin",
+      "response_sha256": "39208d7fc32e4260dfda661535a128f4174671ad768452ba6739f9f2e986bfdb",
+      "assessment": "complete-read-only-scanner-position",
+      "note": "One complete signed position value was returned through the physically resolved flatbed interface. The helper reads BD302010 and refreshes only volatile cache208593AC; it does not command movement or establish calibration accuracy.",
+      "complete": true
+    }
+  ],
+  "results": [
+    {
+      "name": "scan orig locget",
+      "command": "udws \"scan orig locget;\"",
+      "handler": "0xa03aeae9",
+      "response_file": "references/physical-77-scanner-origins/0001-udws_scan_orig_locget.bin",
+      "response_sha256": "7ea19ce078a10a0fb7241bb0b649c682bc977a37d5f9133f05cf508613055dc8",
+      "response_bytes": 149,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "complete": true,
+      "valid": true,
+      "hardware_access": "Read-only position register BD302010, with volatile cache refresh only.",
+      "physical_distance_unit": "unassigned; retained as firmware location units",
+      "fields": {
+        "cover": 3534,
+        "park": 2264,
+        "white": 2709,
+        "black": 2709
+      },
+      "field_count": 4,
+      "matches_preflight_cover": true,
+      "origin_source": {
+        "label": "scanner_origin_offsets_and_overrides",
+        "address": "0x208582d0",
+        "count": 52,
+        "hex": "00000000000008d80000000000000000000000000000000000000000000000000000000000000000cfc700000000000000000000",
+        "words_be": [
+          "0x0",
+          "0x8d8",
+          "0x0",
+          "0x0",
+          "0x0",
+          "0x0",
+          "0x0",
+          "0x0",
+          "0x0",
+          "0x0",
+          "0xcfc70000",
+          "0x0",
+          "0x0"
+        ],
+        "response_file": "references/physical-75-query-prerequisites/0052-udws_ustd_read_file_0_52.bin",
+        "response_sha256": "acc4b91a67cb8342e257b46029cf762f91295a4e0d0edc75bef5654ced357fbc",
+        "artifact": "references/physical-75-query-prerequisites/provider-pointers.json"
+      },
+      "assessment": "complete-scanner-origin-locations",
+      "note": "All four labelled signed locations are present. Cover matches the preflight origin plus compiled offset. The reviewed park fallback can read the current position register; white and black are cached reference locations. No homing or scanning occurred.",
+      "park_matches_subsequent_position": true
+    },
+    {
+      "name": "scan mtr getpos",
+      "command": "udws \"scan mtr getpos;\"",
+      "handler": "0xa03adf37",
+      "response_file": "references/physical-77-scanner-origins/0002-udws_scan_mtr_getpos.bin",
+      "response_sha256": "39208d7fc32e4260dfda661535a128f4174671ad768452ba6739f9f2e986bfdb",
+      "response_bytes": 82,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "complete": true,
+      "valid": true,
+      "hardware_access": "Read-only position register BD302010, with volatile cache refresh only.",
+      "physical_distance_unit": "unassigned; retained as firmware location units",
+      "value": 2264,
+      "field_count": 1,
+      "assessment": "complete-read-only-scanner-position",
+      "note": "One complete signed position value was returned through the physically resolved flatbed interface. The helper reads BD302010 and refreshes only volatile cache208593AC; it does not command movement or establish calibration accuracy."
+    }
+  ],
+  "limitations": [
+    "The reads are sequential snapshots; matching values do not establish physical position accuracy.",
+    "Raw firmware location units have not been converted to distance.",
+    "The two handlers share a position-reading helper but return different data; this is two command names, not two hardware devices."
+  ]
+}

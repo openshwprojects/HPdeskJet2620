@@ -1,0 +1,10 @@
+[
+  {
+    "name": "fm.carriage_home",
+    "command": "udws \"fm.carriage_home;\"",
+    "argument_syntax": "",
+    "classification": "user-requested print-carriage homing (round 8)",
+    "purpose": "Home the print carriage. Handler 0xa00e084a posts callback 0xa00e2454 (mech request 0x21) to the fm task and waits without timeout.",
+    "timeout": 30
+  }
+]

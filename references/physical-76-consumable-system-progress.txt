@@ -1,0 +1,1 @@
+{"index": 1, "command": "udws \"constat.get_system_info;\"", "bytes": 175, "prompt": true, "validated": null, "preview": "\r\n-> udws \"constat.get_system_info;\"\r\nOK, 2, 2, 2, 4, 1, 1, 0, 4, 0, 53, 0, 2,CMY IPH,BLACK IPH, 4,CYAN,MAGENTA,YELLOW,BLACK, 1,BLACK, 0, 0, 0, 0;udws() returns 0 (0x0)\r\n-> "}

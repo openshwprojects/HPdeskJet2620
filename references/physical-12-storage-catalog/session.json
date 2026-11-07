@@ -1,0 +1,37 @@
+{
+  "started_utc": "2026-10-29T18:55:27.193281+00:00",
+  "port": "COM16",
+  "baud": 115200,
+  "data_bits": 8,
+  "parity": "N",
+  "stop_bits": 1,
+  "line_ending": "CRLF",
+  "source": "physical UART",
+  "rts": false,
+  "dtr": false,
+  "tx_character_delay_seconds": 0.003,
+  "initial_prompt_seen": true,
+  "stop_reason": "command-did-not-return-prompt",
+  "ended_utc": "2026-10-29T18:58:28.005911+00:00",
+  "commands": [
+    {
+      "command": "udws \"nvm2.nvm_read_all;\"",
+      "handler": "0xa02f3b69",
+      "purpose": "Print physical NVM size, then all bytes. Handler obtains size from A0261BD8 and loops A0261BE2 one byte at a time; no arguments and no writes.",
+      "hardware_access": true,
+      "timeout": 180,
+      "confidence": "reviewed_information_query",
+      "caveat": "May take significantly longer than ordinary queries because each byte is a separate NVM read. Keep exact output locally; it may include device configuration.",
+      "classification": "reviewed-information-query",
+      "index": 1,
+      "started_utc": "2026-10-29T18:55:27.835842+00:00",
+      "response_file": "0001-udws_nvm2_nvm_read_all.bin",
+      "status": "timeout-no-prompt",
+      "ended_utc": "2026-10-29T18:58:28.003143+00:00",
+      "elapsed_seconds": 180.167,
+      "response_bytes": 244527,
+      "response_sha256": "92d0024ac124e0549a8ac5fc51c36d04a886a68b015491285cbbe4c0714b28e3",
+      "prompt_returned": false
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+
+-> 
+-> ludw "shm.msecs;"
+msecs = 67762
+;ludw() returns 0 (0x0)
+-> 
+-> udw_tags on
+udw_tags() returns 0 (0x0)
+-> 
+-> ludw "bio.rev_str; shm.msecs;"
+<udw>TJP1FN1809AR;</udw><udw>msecs = 68696
+</udw><udw>;</udw>ludw() returns 0 (0x0)
+-> 
+-> udw_tags off
+udw_tags() returns 0 (0x0)
+-> 
+-> 

@@ -1,0 +1,1 @@
+{"index": 1, "command": "udws \"crypto_svc.get_rand_num 16\"", "bytes": 102, "prompt": true, "validated": null, "preview": "\r\n-> udws \"crypto_svc.get_rand_num 16\"\r\nec53fee074e7725e1d5f9fca175e1cdd;udws() returns 0 (0x0)\r\n-> "}

@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-10-29T19:10:48.392671+00:00",
+  "scope": "Offline analysis only; no serial activity, physical commands, firmware writes, or reconstructed NVM output.",
+  "firmware_image": {
+    "path": "artifacts/ghs/dram.bin",
+    "sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+    "identity": "Reconstructed 2018 DDR image; addresses are Thumb unless stated otherwise."
+  },
+  "conclusion": "Both bulk responses contain interior missing/corrupted ASCII bytes and are invalid NVM dumps. Changing udws to ludw does not change the interpreter implementation or output path. The reproducible corruption and timing favor sender/driver output loss; the exact loss mechanism is not proven.",
+  "captures": [
+    {
+      "capture_directory": "references/physical-12-storage-catalog",
+      "response_file": "references/physical-12-storage-catalog/0001-udws_nvm2_nvm_read_all.bin",
+      "response_bytes": 244527,
+      "response_sha256": "92d0024ac124e0549a8ac5fc51c36d04a886a68b015491285cbbe4c0714b28e3",
+      "rx_file_bytes": 244539,
+      "data_header": "65536,",
+      "data_body_including_final_semicolon_bytes": 244486,
+      "expected_data_body_bytes": 262144,
+      "missing_data_body_bytes": 17658,
+      "comma_separated_fields": 58060,
+      "invalid_fields": 7476,
+      "first_invalid_field": {
+        "field_index_zero_based": 45814,
+        "payload_offset": 183256,
+        "token": "25255"
+      },
+      "suffix_after_final_semicolon": "ud",
+      "command_tx_utc": "2026-10-29T18:55:27.836397+00:00",
+      "last_rx_utc": "2026-10-29T18:55:49.165244+00:00",
+      "command_tx_to_last_rx_seconds": 21.32884660000127,
+      "valid_65536_byte_dump": false,
+      "prompt_returned": false,
+      "capture_status": "timeout-no-prompt"
+    },
+    {
+      "capture_directory": "references/physical-13-storage-retry",
+      "response_file": "references/physical-13-storage-retry/0001-udws_nvm2_nvm_read_all.bin",
+      "response_bytes": 244512,
+      "response_sha256": "91a1a72fd90d7065ea5258ef54265474c130535a22d043b08b06a5df3f6f0780",
+      "rx_file_bytes": 244524,
+      "data_header": "65536,",
+      "data_body_including_final_semicolon_bytes": 244471,
+      "expected_data_body_bytes": 262144,
+      "missing_data_body_bytes": 17673,
+      "comma_separated_fields": 58053,
+      "invalid_fields": 7483,
+      "first_invalid_field": {
+        "field_index_zero_based": 45794,
+        "payload_offset": 183176,
+        "token": "25255"
+      },
+      "suffix_after_final_semicolon": "ud",
+      "command_tx_utc": "2026-10-29T18:59:37.710103+00:00",
+      "last_rx_utc": "2026-10-29T18:59:59.085262+00:00",
+      "command_tx_to_last_rx_seconds": 21.375167899997905,
+      "valid_65536_byte_dump": false,
+      "prompt_returned": false,
+      "capture_status": "timeout-no-prompt"
+    }
+  ],
+  "format_proof": {
+    "descriptor": "0xa05c9200",
+    "handler": "0xa02f3b69",
+    "handler_code_range": "0xa02f3b68..0xa02f3bd4",
+    "size_function": "0xa0261bd8 returns 1<<16 (65536)",
+    "header_format": "0xa02f3d18: %5d%c, initial separator comma",
+    "byte_format": "0xa02f3d20: %3d%c; byte loaded by LDRB, separator comma except final semicolon",
+    "formatter": "0xa04f0b50 called at 0xa02f3b7e and 0xa02f3bba with a 20-byte stack buffer",
+    "output": "65537 separate calls through output object virtual method +0x24; byte-loop call at 0xa02f3bca; returned output count is ignored",
+    "expected_body_including_semicolon": 262144,
+    "expected_header_plus_body": 262150,
+    "interpretation": "Values such as25255 and2255 cannot be byte values. Missing commas and digits occur inside the response; increasing timeout cannot repair them. No output byte repair or inferred255 fill is valid."
+  },
+  "udws_ludw_equivalence": {
+    "registration": "0xa03d02ec registers udws at0xa03d02b1 and ludw at0xa03d02cf",
+    "udws_executor": "0xa02c2d1e: push {lr}; bl0xa02c2fb2; pop {pc}",
+    "ludw_executor": "0xa02c2d26: push {lr}; bl0xa02c2fb2; pop {pc}",
+    "shared_wrapper": "0xa03d0260 constructs the same UDW context and selects the callback table0xa0607590",
+    "callback_table": [
+      "0xa03d0225 input",
+      "0xa03d023d character output",
+      "0xa03d0253 bulk output"
+    ],
+    "bulk_callback": "0xa03d0252..0xa03d025e saves requested length, calls0xa03cea70, then returns original requested length regardless of downstream result",
+    "conclusion": "For identical command text both wrappers execute identical interpreter code and share the same output transport; ludw is not a separate reliable streaming route."
+  },
+  "output_path_review": {
+    "shell_dispatch": "0xa03cea70 dispatches to an open descriptor via0xa046bb9c, or shell context output callback at+4 with userdata at+8.",
+    "physical_shell_callback_evidence": "references/physical-02-information/0049-udws_rev_get_aasic.txt records tShell context at0x20f2c6b8: input0xa042bc3b, output0xa042bc63, userdata0, descriptors-1. This is a previous physical session, not a runtime memory read during captures12/13.",
+    "uart_device": "0xa042bc92 opens literal /dev/uart at0xa042bd3c.",
+    "shell_uart_write": "0xa042bc62 calls0xa046bb9c; handles positive partial writes and retries up to60 times with sleep5 between. It can abandon a remainder after the bound; there is no positive evidence this bound was reached here.",
+    "device_write_table": "0xa061f2c0 table+0x14=0xa043165d; /dev/uart registration0xa043171c..0xa0431720 uses0xa0431774.",
+    "device_write": "0xa043165c forwards through0xa02bc9f0 (or character-escaping wrapper0xa0431602).",
+    "uart_blocking_wrapper": "0xa02bc9f0 repeatedly calls0xa01780f2 until requested count, sleeping1 between short writes in normal task context; exceptional mode/interrupt-context branches can report the requested count without completing it.",
+    "uart_ring_write": "0xa01780f2 writes bytes into TX ring until count atobject+0x48 reaches capacity at+0x4c, returns actual queued count. Buffer base+0x3c, writeptr+0x44, readptr+0x40; object base loaded from literal0xa017830c=0x2097167c, stride0x58.",
+    "uart_fifo_drain": "0xa0177d76 drains up to5 software-ring bytes into UART data register+6 per call; queue count decreases for each data-register write. It does not poll hardware capacity between those writes. This is a candidate point to examine, not proof of FIFO overflow.",
+    "limits": "No live queue counters, UART status, logic analyzer trace, or verified interrupt-mode state were obtained. Therefore do not claim a proven overflow site or that the Python host is categorically innocent."
+  },
+  "timing_evidence": {
+    "serial_assumption": "115200 baud,8N1,10bits per byte as used for physical capture.",
+    "minimum_seconds_for_header_plus_body": 22.75607638888889,
+    "observation": "The final data semicolon arrived about21.33/21.38s after command transmission was logged, less than22.756s required to serialize the expected262150bytes at1152008N1. Captured data size closely fills the available line time.",
+    "inference": "Subject to the configured baud/framing and monotonic timestamps being accurate, the printer did not serialize the full expected text before its final semicolon. This strengthens sender-side loss or shortening over host-read-buffer loss alone; precise mechanism remains unresolved."
+  },
+  "nvm_read_path": {
+    "chain": [
+      "0xa0261be2 count-zero guard",
+      "0xa0261dfa bounds/index and device pointer",
+      "0xa0254b48 device read with sticky failure flag atobject+0x2c",
+      "0xa016e7f4 acquires/releases mutex",
+      "0xa016e6ca controller transaction"
+    ],
+    "hardware_evidence": [
+      "0xa016e6f2 polls a controller halfword status",
+      "0xa016e6f8..0xa016e706 writes controller+0xa and control register",
+      "0xa016e712..0xa016e71e writes low/high requested offset into controller+6/+4",
+      "0xa016e720..0xa016e724 records requested count and destination pointer",
+      "0xa016e74e..0xa016e75a writes controller+2 and starts/waits for transfer"
+    ],
+    "result": "The read-byte path accesses the hardware controller each time. No complete64KiB RAM mirror or safe mirror address is established by this analysis. Do not substitute a guessed RAM dump.",
+    "read_error_caveat": "The nvm_read_all handler ignores A0261BE2 return status as well as output return status; a complete syntactic response would still benefit from repeated/chunked comparison."
+  },
+  "validation_requirements": [
+    "Exactly65536 byte fields, each in0..255 and formatted width3, with comma separators and one final semicolon.",
+    "Successful command return/prompt separately recorded.",
+    "Repeat or independently compare bounded address reads; live NVM may change between captures.",
+    "Preserve malformed captures and their checksums; do not emit a purported64KiB binary recovered from these streams."
+  ],
+  "recommended_next_step": "Use already-reviewed bounded nvm_read_byte batches for selected ranges and retain address/count verification; no automatic full65536-query sweep is proposed. A future alternative transport requires separate review and is not supplied by the ludw alias."
+}

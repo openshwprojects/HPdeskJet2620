@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-10-29T22:04:03.572363+00:00",
+  "provenance": {
+    "serial_access_by_reviewer": "none",
+    "source_session": "references/physical-76-consumable-system/session.json",
+    "source_session_sha256": "6bd9a478580a0e6ed00370788ffb448b4800e093b55b54dd590d0da19b136933",
+    "rx_file": "references/physical-76-consumable-system/rx.bin",
+    "rx_sha256": "8e19eef60d57d7dea6cfe790296b00aa6684d434c9c548d5bad54abec9ad425c",
+    "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+    "review_source": "references/round7_product_review.json",
+    "review_sha256": "01694cc1d20db2cc6ac92c529a72d6d56b79b31e64462c40305821d73aa7c75f"
+  },
+  "summary": {
+    "physical_commands": 1,
+    "validated_responses": 1,
+    "unique_names": 1,
+    "configured_consumables": [
+      "CMY IPH",
+      "BLACK IPH"
+    ],
+    "supported_channels": [
+      "CYAN",
+      "MAGENTA",
+      "YELLOW",
+      "BLACK"
+    ],
+    "usable_channels": [
+      "BLACK"
+    ]
+  },
+  "response_revalidations": [
+    {
+      "response_file": "references/physical-76-consumable-system/0001-udws_constat_get_system_info.bin",
+      "response_sha256": "b47e623afc9d426017e188f8bc8d53f1a163dfa4899a1a24457ef3da89e26fdf",
+      "assessment": "complete-cached-consumable-system-info",
+      "note": "Physical OK status and wrapper0; all11 leading scalars,3 count-prefixed lists and4 trailing scalars are present. Configured cartridges and supported channels agree with the reviewed ROM implementation. The usable-channel list and readiness-related scalars describe cached state; they do not measure ink volume or test mechanics. Names are retained by output-structure offset for scalars whose exact public meaning is unestablished.",
+      "valid": true,
+      "complete": true
+    }
+  ],
+  "data_quality": [
+    {
+      "response_file": "references/physical-76-consumable-system/0001-udws_constat_get_system_info.bin",
+      "response_sha256": "b47e623afc9d426017e188f8bc8d53f1a163dfa4899a1a24457ef3da89e26fdf",
+      "assessment": "complete-cached-consumable-system-info",
+      "note": "Physical OK status and wrapper0; all11 leading scalars,3 count-prefixed lists and4 trailing scalars are present. Configured cartridges and supported channels agree with the reviewed ROM implementation. The usable-channel list and readiness-related scalars describe cached state; they do not measure ink volume or test mechanics. Names are retained by output-structure offset for scalars whose exact public meaning is unestablished.",
+      "complete": true
+    }
+  ],
+  "results": [
+    {
+      "name": "constat.get_system_info",
+      "command": "udws \"constat.get_system_info;\"",
+      "index": 1,
+      "response_file": "references/physical-76-consumable-system/0001-udws_constat_get_system_info.bin",
+      "response_sha256": "b47e623afc9d426017e188f8bc8d53f1a163dfa4899a1a24457ef3da89e26fdf",
+      "response_bytes": 175,
+      "rx_offset": 12,
+      "rx_end_exclusive": 187,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "status_label": "OK",
+      "payload": "OK, 2, 2, 2, 4, 1, 1, 0, 4, 0, 53, 0, 2,CMY IPH,BLACK IPH, 4,CYAN,MAGENTA,YELLOW,BLACK, 1,BLACK, 0, 0, 0, 0",
+      "leading_scalars_by_structure_offset": {
+        "0xc": 2,
+        "0x14": 2,
+        "0x10": 2,
+        "0x40": 4,
+        "0x8c": 1,
+        "0x90": 1,
+        "0x98": 0,
+        "0x9c": 4,
+        "0xa0": 0,
+        "0xa4": 53,
+        "0x94": 0
+      },
+      "lists": {
+        "configured_consumables": {
+          "count": 2,
+          "values": [
+            "CMY IPH",
+            "BLACK IPH"
+          ]
+        },
+        "supported_channels": {
+          "count": 4,
+          "values": [
+            "CYAN",
+            "MAGENTA",
+            "YELLOW",
+            "BLACK"
+          ]
+        },
+        "usable_channels": {
+          "count": 1,
+          "values": [
+            "BLACK"
+          ]
+        }
+      },
+      "trailing_scalars_by_structure_offset": {
+        "0xb0": 0,
+        "0xa8": 0,
+        "0xb8": 0,
+        "0xc0": 0
+      },
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-cached-consumable-system-info",
+      "note": "Physical OK status and wrapper0; all11 leading scalars,3 count-prefixed lists and4 trailing scalars are present. Configured cartridges and supported channels agree with the reviewed ROM implementation. The usable-channel list and readiness-related scalars describe cached state; they do not measure ink volume or test mechanics. Names are retained by output-structure offset for scalars whose exact public meaning is unestablished."
+    }
+  ],
+  "limitations": [
+    "The reviewed simple ink-cache path relies on the guard observed in physical79 before this query.",
+    "No direct ink quantity, cartridge electrical or mechanical test was performed.",
+    "Original capture files and records remain unchanged."
+  ]
+}

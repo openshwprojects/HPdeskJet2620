@@ -1,0 +1,58 @@
+[
+  {
+    "command": "udws \"imf.get_last_colormap_version;\"",
+    "name": "imf.get_last_colormap_version",
+    "purpose": "Alias of reviewed im.get_last_colormap_version using the same handler.",
+    "handler": "0xa018029b",
+    "classification": "reviewed-information-query",
+    "confidence": "Same handler as reviewed getter; distinct runtime name must be confirmed."
+  },
+  {
+    "command": "udws \"imf.get_last_colormap_signature;\"",
+    "name": "imf.get_last_colormap_signature",
+    "purpose": "Alias of reviewed im.get_last_colormap_signature using the same handler.",
+    "handler": "0xa0180389",
+    "classification": "reviewed-information-query",
+    "confidence": "Same handler as reviewed getter; distinct runtime name must be confirmed."
+  },
+  {
+    "command": "udws \"imf.get_vip_colormap_src;\"",
+    "name": "imf.get_vip_colormap_src",
+    "purpose": "Alias of reviewed im.get_vip_colormap_src using the same handler.",
+    "handler": "0xa0180375",
+    "classification": "reviewed-information-query",
+    "confidence": "Same handler as reviewed getter; distinct runtime name must be confirmed."
+  },
+  {
+    "command": "udws \"imf.get_file_set_format_version;\"",
+    "name": "imf.get_file_set_format_version",
+    "purpose": "Alias of reviewed im.get_file_set_format_version using the same handler.",
+    "handler": "0xa0180053",
+    "classification": "reviewed-information-query",
+    "confidence": "Same handler as reviewed getter; distinct runtime name must be confirmed."
+  },
+  {
+    "command": "udws \"imf.get_mem_size;\"",
+    "name": "imf.get_mem_size",
+    "purpose": "Alias of reviewed im.get_mem_size using the same handler.",
+    "handler": "0xa01804f3",
+    "classification": "reviewed-information-query",
+    "confidence": "Same handler as reviewed getter; distinct runtime name must be confirmed."
+  },
+  {
+    "command": "udws \"imf.get_black_fill_limit;\"",
+    "name": "imf.get_black_fill_limit",
+    "purpose": "Alias of reviewed im.get_black_fill_limit using the same handler.",
+    "handler": "0xa01803ad",
+    "classification": "reviewed-information-query",
+    "confidence": "Same handler as reviewed getter; distinct runtime name must be confirmed."
+  },
+  {
+    "command": "udws \"imf.get_max_rgb_fill_limit;\"",
+    "name": "imf.get_max_rgb_fill_limit",
+    "purpose": "Alias of reviewed im.get_max_rgb_fill_limit using the same handler.",
+    "handler": "0xa01803c1",
+    "classification": "reviewed-information-query",
+    "confidence": "Same handler as reviewed getter; distinct runtime name must be confirmed."
+  }
+]

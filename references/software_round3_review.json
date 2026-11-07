@@ -1,0 +1,1010 @@
+{
+  "schema_version": 1,
+  "firmware": {
+    "path": "artifacts/ghs/dram.bin",
+    "sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+    "architecture": "ARM/Thumb big-endian",
+    "address_mapping": "address & 0x03ffffff"
+  },
+  "scope": "Bounded additional software commands; no serial access by reviewer. Excludes earlier pending batches and root filesystem work.",
+  "plan": "references/37-software-commands.json",
+  "invocation_count": 50,
+  "ready_unique_command_count": 25,
+  "reviews": [
+    {
+      "name": "cloud_reg.get_hw_addr",
+      "handler": "0xa0030c45",
+      "descriptor_address": "0xa050ac88",
+      "status": "ready",
+      "argument_cases": [
+        ""
+      ],
+      "purpose": "Read stored hardware-address text.",
+      "proof": "A003045C zeroes six bytes, reads DSID 0x10B28 record 0 with exact length 6 into the caller buffer, renders each byte as two hex digits, and terminates. No network-interface operation or MAC update. Handler buffer is pre-zeroed 17 bytes.",
+      "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa0030c44",
+          "length": 46,
+          "sha256": "f60bf255334e7a0f29ca31961ff2ccb93470ccd4fd68f13bb9b2506eceb4bbd4"
+        },
+        {
+          "address": "0xa003045c",
+          "length": 94,
+          "sha256": "c2b670de4f0184c39b44d4a8689937797cfe54f5fa365c0af58f28247efa5bb0"
+        }
+      ]
+    },
+    {
+      "name": "gcp_comm.get_reg_info",
+      "handler": "0xa00ea355",
+      "descriptor_address": "0xa0534048",
+      "status": "ready",
+      "argument_cases": [
+        ""
+      ],
+      "purpose": "Read cached Google Cloud Print registration state.",
+      "proof": "A00EA354 supplies refresh flag 0 to A00E9FDC. That path skips A00EBD7C, locks with A00E9BEC, copies exactly 1920 bytes from cached struct 20938848 into the allocated stack buffer, unlocks A00E9BFC, then formats enum/metadata fields. No registration, refresh, fetch or network request.",
+      "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa00ea354",
+          "length": 228,
+          "sha256": "410dd80aae9b9c54cfa065b69a81d48760e659ef7d60cec8533aa9aeec8f7bc4"
+        },
+        {
+          "address": "0xa00ea640",
+          "length": 264,
+          "sha256": "f6b5ee09f67a3aca3f69eb4da4c5bd43b3a76f0ef7a0aaff7c15fdef97609afc"
+        },
+        {
+          "address": "0xa00e9fdc",
+          "length": 44,
+          "sha256": "e0240040a5ce1ef60c1371430bcf5e8dbe9e541568363cc643cd153a62830eb5"
+        },
+        {
+          "address": "0xa00e9bec",
+          "length": 28,
+          "sha256": "157dc7f8787c48ef9a0dca21dc45def97a126aaeda8d29d8792bd98ebe6b9403"
+        }
+      ],
+      "data_sensitivity": "May include locally stored cloud registration metadata; keep within the local reference capture."
+    },
+    {
+      "name": "udw.get_stack_space",
+      "handler": "0xa03ff64d",
+      "descriptor_address": "0xa0619134",
+      "status": "ready",
+      "argument_cases": [
+        ""
+      ],
+      "purpose": "Read task and exception-stack free-space estimates.",
+      "proof": "Iterates the existing task-list ring via A02F6C9C. A03FF49C scans only the known stack extent for 0xEFEFEFEF fill words, and A03FF4C2 formats each result plus four exception stacks. No stack writes, suspension or scheduling change. The command stops when the indexed getter returns false.",
+      "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa03ff64c",
+          "length": 44,
+          "sha256": "1171d4b281786fac1696548c7b115672f5e96d9d936bbca2994cb4d57fc2238b"
+        },
+        {
+          "address": "0xa03ff49c",
+          "length": 38,
+          "sha256": "27194bececd86b81887f55e3e600f91f97646b8d4ae0db2b16c05572dcf108a4"
+        },
+        {
+          "address": "0xa03ff4c2",
+          "length": 192,
+          "sha256": "9095a58eb3f7060673383c5058afff0e06f526de0abdb05045a1f0af8bea8895"
+        }
+      ],
+      "output_completeness": "Task count is runtime-dependent; preserve raw response and final prompt. Fields are free/total stack bytes and name, not proof of stack corruption."
+    },
+    {
+      "name": "posix_timer.clock_gettime_test",
+      "handler": "0xa042f9cf",
+      "descriptor_address": "0xa061eac8",
+      "status": "ready",
+      "argument_cases": [
+        "1"
+      ],
+      "purpose": "Exercise a bounded local clock-read timing test.",
+      "proof": "Handler parses one decimal clock ID. A04303EC supports 1 and 3; choose 1, which compares two current-clock reads around a 200000-nanosecond request via A042F34E. At most 8 rounds with bounded retry count <=4. A042F34E only converts to a delay and calls A042EE2C; no clock-set or timer creation.",
+      "side_effects_assessment": "Brief command-thread delays and local clock reads. Result may fail due scheduler precision; failure is diagnostic, not a persistent setting change.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa042f9ce",
+          "length": 46,
+          "sha256": "98eb821c0bd765fe2a4ed3c042f5b6c9c3d29d5628142e02dd8b2b0a89a68ed3"
+        },
+        {
+          "address": "0xa04303ec",
+          "length": 214,
+          "sha256": "5502a43559a2eaba47f5bb2288a919fa60e52df8a75e625ca2bab722c4a6a5f6"
+        },
+        {
+          "address": "0xa042f34e",
+          "length": 62,
+          "sha256": "054d79fed82ad563ece354ba8382883322a276c1a4bfd16f5760e5dac66bdf58"
+        }
+      ]
+    },
+    {
+      "name": "pcl.query_performance",
+      "handler": "0xa02fe353",
+      "descriptor_address": "0xa05cb800",
+      "status": "ready",
+      "argument_cases": [
+        "0 0",
+        "2 0",
+        "4 0",
+        "5 0",
+        "6 0",
+        "7 0",
+        "9 0"
+      ],
+      "purpose": "Read parser performance counters without clearing them.",
+      "proof": "Two integer arguments are required: selector and clear flag. Exact admitted selectors dispatch to RAM counters 20848508,2084850C,20BDFB3C,20BDFB40,20CE2DE4,20CE2DE8,20CE2DEC. Clear flag 0 takes the branch around the store-zero at A02FE3AA; returned word is written through UDW +0x18.",
+      "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa02fe352",
+          "length": 104,
+          "sha256": "d5af176723d70dfee01c3520b56dd01872baf5b1bc010a5fd768f66994169d66"
+        }
+      ],
+      "selector_semantics": "Storage locations are proven; human-readable units/names for the seven counters are not yet resolved."
+    },
+    {
+      "name": "ipp.check_mem_alloc",
+      "handler": "0xa01d937d",
+      "descriptor_address": "0xa054ce08",
+      "status": "ready",
+      "argument_cases": [
+        "",
+        ""
+      ],
+      "purpose": "Compare current IPP allocation total with the previous sampled total.",
+      "proof": "A02CE30C searches the existing allocation registry under a mutex and sums linked allocation sizes. The handler compares current total with the prior value and saves current total at 20A1D92C. Two consecutive calls exercise the baseline and comparison behavior.",
+      "side_effects_assessment": "Updates a volatile diagnostic baseline at 20A1D92C; does not free memory or reconfigure IPP.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa01d937c",
+          "length": 66,
+          "sha256": "6d7657fa1bddffdfcf915b9622da7ef728455d4fb50e848490081cec7107fc00"
+        },
+        {
+          "address": "0xa02ce30c",
+          "length": 50,
+          "sha256": "6b53101a0a7e769cdcf358185dfd91fc54ebe96e36ef2f4468b0c1f44321e877"
+        },
+        {
+          "address": "0xa02cde44",
+          "length": 26,
+          "sha256": "d50f0917434b561386396e074a3810d87316d4bf5eec6ca7631e79336d77f241"
+        }
+      ],
+      "repeated_query_reason": "Second sample is intentional; 1 means first baseline or unchanged allocation total, 0 means the sampled total changed."
+    },
+    {
+      "name": "udw.cache_query",
+      "handler": "0xa0250855",
+      "descriptor_address": "0xa056817c",
+      "status": "ready",
+      "argument_cases": [
+        "536870912",
+        "1610612736"
+      ],
+      "purpose": "Classify two known memory address ranges.",
+      "proof": "Despite its name, A0250570 selects memory/cache type from address ranges, not a CPU cache state register. 0x20000000 follows the range branch to type 0; 0x60000000 follows the explicit range branch to type 1; A0250724 returns the selected type. No addressed memory read and no CP15/cache modification.",
+      "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa0250854",
+          "length": 34,
+          "sha256": "6a4e42124deb3c6ef957bdc0e284f953e16ca863f631f392afb321dedfc712ff"
+        },
+        {
+          "address": "0xa0250570",
+          "length": 272,
+          "sha256": "d11ced2ee1a73bc42af78d5ecf5d4b80790040b32502a39e7582f001eb1cd9df"
+        },
+        {
+          "address": "0xa0250724",
+          "length": 8,
+          "sha256": "1fd0f90759289d619cc6b6c383481a4a6a829e34acbfa3440c813c07072fdace"
+        }
+      ]
+    },
+    {
+      "name": "mem.rom_checksum",
+      "handler": "0xa02613dd",
+      "descriptor_address": "0xa05856e4",
+      "status": "ready",
+      "argument_cases": [
+        "0 8256 8271",
+        "1 8256 8270",
+        "2 8256 8268"
+      ],
+      "purpose": "Compute byte, halfword and word sums over the known base-version ROM area.",
+      "proof": "Exact parser is %d %d %d: element-width code, start address, inclusive final start address. Width codes 0/1/2 read byte/halfword/word; the chosen aligned intervals each cover exactly sixteen bytes beginning 0x2040, the same base-version address already read by physical rev/udw identity commands. Start is nonzero so the alternate whole-ROM descriptor traversal is bypassed. No writes.",
+      "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa02613dc",
+          "length": 204,
+          "sha256": "af92a0f8f529b3e9df719e2635e430b3798f92efbc2e81bdcc8f4d2b773bf29b"
+        }
+      ],
+      "read_region": {
+        "start": "0x00002040",
+        "length": 16
+      },
+      "output_completeness": "Each result is a 32-bit additive sum; it is not a cryptographic digest."
+    },
+    {
+      "name": "udw.rom_checksum",
+      "handler": "0xa02613dd",
+      "descriptor_address": "0xa05856fc",
+      "status": "ready",
+      "argument_cases": [
+        "0 8256 8271",
+        "1 8256 8270",
+        "2 8256 8268"
+      ],
+      "purpose": "Compute byte, halfword and word sums over the known base-version ROM area.",
+      "proof": "Exact parser is %d %d %d: element-width code, start address, inclusive final start address. Width codes 0/1/2 read byte/halfword/word; the chosen aligned intervals each cover exactly sixteen bytes beginning 0x2040, the same base-version address already read by physical rev/udw identity commands. Start is nonzero so the alternate whole-ROM descriptor traversal is bypassed. No writes.",
+      "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa02613dc",
+          "length": 204,
+          "sha256": "af92a0f8f529b3e9df719e2635e430b3798f92efbc2e81bdcc8f4d2b773bf29b"
+        }
+      ],
+      "read_region": {
+        "start": "0x00002040",
+        "length": 16
+      },
+      "output_completeness": "Each result is a 32-bit additive sum; it is not a cryptographic digest."
+    },
+    {
+      "name": "udw.dm",
+      "handler": "0xa02c403f",
+      "descriptor_address": "0xa05bc748",
+      "status": "ready",
+      "argument_cases": [
+        "2040 1 16"
+      ],
+      "purpose": "Read the same sixteen known base-version bytes through the native memory display handler.",
+      "proof": "Parser is %x %d %d: address, width bytes, item count. Width 1, count 16 and nonzero ROM address 0x2040 lead only to bounded byte reads and formatting. A00089DE enforces the firmware debug gate before any reads; if closed, the handler returns without payload. No gate changes are proposed.",
+      "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa02c403e",
+          "length": 160,
+          "sha256": "a1bb62cbd6c79d593628d171c18516452a1fbfa091a6ac0b24507f8c33ee4cfd"
+        },
+        {
+          "address": "0xa02c41c4",
+          "length": 26,
+          "sha256": "6ed3b69460c9acf5cb12083ac32a42243b1cbca755df2ceb35e471d007a12c63"
+        },
+        {
+          "address": "0xa00089de",
+          "length": 20,
+          "sha256": "7bf84dcf3c87ae4a869c5f3692beb71ae9edf3dcc1995ab3ee95e6c706b0d2e9"
+        }
+      ],
+      "read_region": {
+        "start": "0x00002040",
+        "length": 16
+      },
+      "possible_result": "Empty payload if the firmware debug gate is closed; that does not prove a read occurred."
+    },
+    {
+      "name": "patch.get_config_flex",
+      "handler": "0xa02fba89",
+      "descriptor_address": "0xa05cb594",
+      "status": "ready",
+      "argument_cases": [
+        ""
+      ],
+      "purpose": "Read compiled patch-slot count and record size.",
+      "proof": "Handler formats only literal count 14 and size 1900 using %7d%c. No backend or patch operation.",
+      "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa02fba88",
+          "length": 68,
+          "sha256": "79869d36389a025befb8974929f0884682f8e42790efc081a1612d68b2e3a4cf"
+        }
+      ],
+      "expected_payload_semantics": "Two comma-terminated numbers: 14 and 1900. The compiled handler does not append a semicolon."
+    },
+    {
+      "name": "patch.get_flex",
+      "handler": "0xa02fb2ed",
+      "descriptor_address": "0xa05cb51c",
+      "status": "ready",
+      "argument_cases": [
+        ""
+      ],
+      "purpose": "Read the fourteen patch text prefixes in the alternate formatter.",
+      "proof": "Fixed loop 0..13 calls the already-proven read helper A02FB04E, loading DSID 0x105E2 into its dedicated 1900-byte firmware-owned buffer. Physical-30b patch.get proves all fourteen textual prefixes currently empty. Formatter uses a 260-byte output buffer. No apply or setter.",
+      "side_effects_assessment": "Refreshes the existing patch-read RAM buffer; no persistent mutation.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa02fb2ec",
+          "length": 88,
+          "sha256": "98d0e3103497832d245c222705e1dc682026cd7e304321225c58c63fdf7bad50"
+        },
+        {
+          "address": "0xa02fb04e",
+          "length": 32,
+          "sha256": "594716f6d21cbbb494f7e4e6f025db85192009c352372c2e6c714c2c13d9f4c6"
+        }
+      ],
+      "output_completeness": "Fourteen padded textual prefixes, not a binary patch dump. Expected empty-current-data output is about 3.6 KiB."
+    },
+    {
+      "name": "patch.get_bin",
+      "handler": "0xa02fb64b",
+      "descriptor_address": "0xa05cb564",
+      "status": "ready",
+      "argument_cases": [
+        "0 0 16"
+      ],
+      "purpose": "Read a small real binary patch prefix with its ASCII view.",
+      "proof": "Arguments are block index, byte offset, byte count. The admitted 0,0,16 is within physically verified 14 records x 1900 bytes. Each read calls A02FB04E, indexes bytes 0..15 and formats hex then printable ASCII. No write path is shared.",
+      "side_effects_assessment": "Refreshes the existing patch-read RAM buffer; no persistent mutation.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa02fb64a",
+          "length": 236,
+          "sha256": "eeffadde38ec11f0e1c5cf509189968627dc960affd85320901f93cee0d69ef3"
+        },
+        {
+          "address": "0xa02fb04e",
+          "length": 32,
+          "sha256": "594716f6d21cbbb494f7e4e6f025db85192009c352372c2e6c714c2c13d9f4c6"
+        }
+      ]
+    },
+    {
+      "name": "job_tracker.get_print_log",
+      "handler": "0xa0242d65",
+      "descriptor_address": "0xa056363c",
+      "status": "ready",
+      "argument_cases": [
+        "0"
+      ],
+      "purpose": "Read the 32 completed-print-log slots with full numeric columns.",
+      "proof": "One mode argument is consumed; mode 0 includes the completion field. Fixed loop 0..31 calls A02406D8, which locks the completed-log mutex, copies only existing metadata/string fields from 20A57184 and unlocks. Destination strings start NUL-initialized. No job creation, printing, completion update or log clear.",
+      "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa0242d64",
+          "length": 218,
+          "sha256": "6f262edae1e610ed15fd7d137f70ec984887d15c4e022a331004564f95014474"
+        },
+        {
+          "address": "0xa0242e94",
+          "length": 24,
+          "sha256": "b3bc123439fca0dff4b055eb5aee136ad2498df5d2ff514c18a2e25a79a1b26c"
+        },
+        {
+          "address": "0xa02406d8",
+          "length": 122,
+          "sha256": "7ab8bc771b00785e11e27595cece2545042c7a884e56d094f5a53ba823a78081"
+        }
+      ],
+      "output_completeness": "Exactly 32 slots, some empty; strings can make output larger. Check row cardinality before claiming complete metadata."
+    },
+    {
+      "name": "job_tracker.get_active_job_tracker",
+      "handler": "0xa0242ead",
+      "descriptor_address": "0xa0563648",
+      "status": "ready",
+      "argument_cases": [
+        ""
+      ],
+      "purpose": "Read the 50 existing active-job tracker slots.",
+      "proof": "Fixed loop 0..49 calls A024066A. It checks index <50, locks the tracker mutex, copies existing fields from the 1524-byte-per-slot table rooted at 20A447D8 and unlocks. No allocation, job scheduling or mutation.",
+      "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa0242eac",
+          "length": 218,
+          "sha256": "ef5eba10d49e425570f24878ecb9da51e8503ba55967f284aa1ff46c2dcc2bda"
+        },
+        {
+          "address": "0xa0242f48",
+          "length": 64,
+          "sha256": "caf07449058f6b7f53fde2ace83eb0ba02ba22327cbe85ef5adbbd9b2663edd1"
+        },
+        {
+          "address": "0xa024066a",
+          "length": 110,
+          "sha256": "1a57a3f833d3b13363ef3da0ede98e863f9ed97ea19b5451e151fae89595d2f6"
+        }
+      ],
+      "output_completeness": "Exactly 50 slots, including empty slots; preserve row count and any long text fields."
+    },
+    {
+      "name": "job_tracker.get_color_usage_log",
+      "handler": "0xa0242c5d",
+      "descriptor_address": "0xa0563654",
+      "status": "ready",
+      "argument_cases": [
+        ""
+      ],
+      "purpose": "Read the bounded serialized color-usage log.",
+      "proof": "A0240632 calls A0241D7A with a 1024-byte output capacity. The builder initializes count to zero, walks existing completed-log data under its mutex, checks remaining space before each serialized entry, writes the count byte on all exits and returns. Handler emits exactly that count of structured entries without state updates.",
+      "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa0242c5c",
+          "length": 264,
+          "sha256": "29222ddf18112cb200eabc1f4e1b7d9c9576add970b8ffaaa5a372a96a416cd7"
+        },
+        {
+          "address": "0xa0241d7a",
+          "length": 162,
+          "sha256": "af1ba264faa32c22010afbc69d6758227562774c727f2d8680635bbfde2a0ffc"
+        },
+        {
+          "address": "0xa0241f16",
+          "length": 22,
+          "sha256": "967b62d65012500dedab90bc48a28e34400fc4a6c74fa422f969eeb7c7fd4119"
+        }
+      ],
+      "output_completeness": "The serialization capacity is 1024 bytes. The API may return only the entries that fit, even when transport capture is complete."
+    },
+    {
+      "name": "strings.get_string",
+      "handler": "0xa03ff9d3",
+      "descriptor_address": "0xa061933c",
+      "status": "ready",
+      "argument_cases": [
+        "80 13"
+      ],
+      "purpose": "Read a concrete localized string from library zero.",
+      "proof": "Consumes string ID, language ID and calls A02BF146 with library 0, output capacity 200, charset 0x22A2. Both ID and language are proven in ROM tables and physical DSID70222. A02BF08C initializes destination; A02BF146 bounds/copies and terminates output, loading/decompressing only registered ROM string resources.",
+      "side_effects_assessment": "May lazily allocate the normal string cache/mutex and decompress a ROM language resource into its allocated RAM cache. No persistent setting change.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa03ff9d2",
+          "length": 66,
+          "sha256": "5e49ecc84ce11c475168c633c2ca2054c5135d6b478d4cd7827eb353fa0504ff"
+        },
+        {
+          "address": "0xa02bf146",
+          "length": 190,
+          "sha256": "044d3070a80c4a831251a86bf0bcd3568c438b7c464506ff32e7cab5352e7cfc"
+        },
+        {
+          "address": "0xa02bf278",
+          "length": 78,
+          "sha256": "6b434458c49d4018ce67c064dbdce1ec3fb95f699a9d1356fafd7450da8c039c"
+        },
+        {
+          "address": "0xa02bf314",
+          "length": 260,
+          "sha256": "1ace0dd2f2c5c5b6facb2cb80424097019748a7f6e3dcd3f8773b26c8aa820ea"
+        }
+      ],
+      "argument_provenance": {
+        "language_id": 13,
+        "source": {
+          "response_file": "references/physical-19b-storage-values/0006-udws_nvm2_get_contents_30_4_nvm2_get_contents_31_0_nvm2_get_conte.bin",
+          "response_sha256": "386112cc19abf23d5826b00028bd1f70985382368bd9bf35bb62568d3b5301a4",
+          "started_utc": "2026-10-29T19:28:54.234873+00:00",
+          "plan_index": 31
+        },
+        "library_0_string_80": "Present in uint16 table A05B74B4 (222 entries), max ID 1061.",
+        "library_1_string_3110": "Present in uint16 table A05B7670 (2017 entries), max ID 6718.",
+        "status_65536": "ROM entry at A0522D9C maps ordinary type 0 status 65536 to string 3110."
+      }
+    },
+    {
+      "name": "strings.get_library_string",
+      "handler": "0xa03ffa15",
+      "descriptor_address": "0xa0619348",
+      "status": "ready",
+      "argument_cases": [
+        "80 13 0",
+        "3110 13 1"
+      ],
+      "purpose": "Read concrete string IDs from explicit libraries.",
+      "proof": "Argument order is string ID, language ID, library ID. Handler forwards library 0/1 and fixed 200-byte capacity to the same reviewed string reader; invalid library IDs are deliberately excluded.",
+      "side_effects_assessment": "May load/decompress the normal ROM language cache in RAM. No persistent setting change.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa03ffa14",
+          "length": 74,
+          "sha256": "1e04e900e282ac108b56fcf43816127b173692f962e2633d7f46444f41dbeca9"
+        },
+        {
+          "address": "0xa02bf146",
+          "length": 190,
+          "sha256": "044d3070a80c4a831251a86bf0bcd3568c438b7c464506ff32e7cab5352e7cfc"
+        },
+        {
+          "address": "0xa02bf314",
+          "length": 260,
+          "sha256": "1ace0dd2f2c5c5b6facb2cb80424097019748a7f6e3dcd3f8773b26c8aa820ea"
+        }
+      ],
+      "argument_provenance": {
+        "language_id": 13,
+        "source": {
+          "response_file": "references/physical-19b-storage-values/0006-udws_nvm2_get_contents_30_4_nvm2_get_contents_31_0_nvm2_get_conte.bin",
+          "response_sha256": "386112cc19abf23d5826b00028bd1f70985382368bd9bf35bb62568d3b5301a4",
+          "started_utc": "2026-10-29T19:28:54.234873+00:00",
+          "plan_index": 31
+        },
+        "library_0_string_80": "Present in uint16 table A05B74B4 (222 entries), max ID 1061.",
+        "library_1_string_3110": "Present in uint16 table A05B7670 (2017 entries), max ID 6718.",
+        "status_65536": "ROM entry at A0522D9C maps ordinary type 0 status 65536 to string 3110."
+      }
+    },
+    {
+      "name": "l10n.get_string",
+      "handler": "0xa02cc567",
+      "descriptor_address": "0xa05bd608",
+      "status": "ready",
+      "argument_cases": [
+        "80 13"
+      ],
+      "purpose": "Read the same valid string through localization service.",
+      "proof": "Consumes string and language IDs, then static interface A05BCFF8 +0xA0 -> A02CAD54 -> A02CAFDC routes to the string service with output capacity 128, charset 0x22A2. Valid string 80/language13 are established by ROM/physical metadata.",
+      "side_effects_assessment": "Normal RAM localization/string cache activity; no country/language setter.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa02cc566",
+          "length": 72,
+          "sha256": "ffc7d8743343d88a7860e2e9b4fb7e90029ed74c36d7453dd0375d09a54db04b"
+        },
+        {
+          "address": "0xa02cad54",
+          "length": 24,
+          "sha256": "ad0cf59dec175922d50a732cd8d508addf35798c31e738e984247b81ea0d7923"
+        },
+        {
+          "address": "0xa02cafdc",
+          "length": 32,
+          "sha256": "b978403ad37801beae45103ed185cf8f423949a91af1bae57575ef4ebd10eb73"
+        }
+      ],
+      "argument_provenance": {
+        "language_id": 13,
+        "source": {
+          "response_file": "references/physical-19b-storage-values/0006-udws_nvm2_get_contents_30_4_nvm2_get_contents_31_0_nvm2_get_conte.bin",
+          "response_sha256": "386112cc19abf23d5826b00028bd1f70985382368bd9bf35bb62568d3b5301a4",
+          "started_utc": "2026-10-29T19:28:54.234873+00:00",
+          "plan_index": 31
+        },
+        "library_0_string_80": "Present in uint16 table A05B74B4 (222 entries), max ID 1061.",
+        "library_1_string_3110": "Present in uint16 table A05B7670 (2017 entries), max ID 6718.",
+        "status_65536": "ROM entry at A0522D9C maps ordinary type 0 status 65536 to string 3110."
+      }
+    },
+    {
+      "name": "ews_strings.get_ledm_status_id_str",
+      "handler": "0xa00c43c1",
+      "descriptor_address": "0xa052380c",
+      "status": "ready",
+      "argument_cases": [
+        "65536 13"
+      ],
+      "purpose": "Format a known LEDM status in the current language.",
+      "proof": "ROM A0522D9C contains type0/status65536/string3110. A00C42C0 performs bounded descriptor lookup, and A00C4156 requests the localized string with library selector1 and capacity512. The selected status is neither special printf-argument status 0x100C0 nor 0x100C1; it follows the bounded copy path. Caller initializes output to empty.",
+      "side_effects_assessment": "Normal RAM string cache activity and UART output; no device-status change.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa00c43c0",
+          "length": 74,
+          "sha256": "9eb7038451a4228dc255e91a5033b6c94d2bf2ce71b66c88447cb935aeb53b00"
+        },
+        {
+          "address": "0xa00c42c0",
+          "length": 98,
+          "sha256": "832da4fa3350ecf637d0f7543a7867d0bec986ab7b8630e662c29e7164acd9c3"
+        },
+        {
+          "address": "0xa00c4156",
+          "length": 110,
+          "sha256": "428360e7afdf3ffc07dc32761922374ca7fdab015f09293047ffd4ad1b6d0be3"
+        }
+      ],
+      "argument_provenance": {
+        "language_id": 13,
+        "source": {
+          "response_file": "references/physical-19b-storage-values/0006-udws_nvm2_get_contents_30_4_nvm2_get_contents_31_0_nvm2_get_conte.bin",
+          "response_sha256": "386112cc19abf23d5826b00028bd1f70985382368bd9bf35bb62568d3b5301a4",
+          "started_utc": "2026-10-29T19:28:54.234873+00:00",
+          "plan_index": 31
+        },
+        "library_0_string_80": "Present in uint16 table A05B74B4 (222 entries), max ID 1061.",
+        "library_1_string_3110": "Present in uint16 table A05B7670 (2017 entries), max ID 6718.",
+        "status_65536": "ROM entry at A0522D9C maps ordinary type 0 status 65536 to string 3110."
+      }
+    },
+    {
+      "name": "strings.get_tmp_str",
+      "handler": "0xa03ffb5b",
+      "descriptor_address": "0xa0619384",
+      "status": "ready",
+      "argument_cases": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "purpose": "Inspect the five existing temporary string override slots.",
+      "proof": "Argument is slot 0..4, not string ID. A02BFA86 validates slot<5, initializes the 500-byte destination, reads only the 264-byte RAM slot at 20B324A0+slot*264, copies at most249 text bytes, formats library/language/string IDs, and explicitly terminates.",
+      "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa03ffb5a",
+          "length": 48,
+          "sha256": "1ace086b2b6e06e4104a026c3e250e23499c4e4797522642a8ff39a9c577b6e2"
+        },
+        {
+          "address": "0xa02bfa86",
+          "length": 128,
+          "sha256": "a9ea913fd990af22c1a1e5150c4cab42b6a8202f6f85c4ce9c5ceaadc1f31961"
+        }
+      ]
+    },
+    {
+      "name": "firm.get_simple",
+      "handler": "0xa00d4ae3",
+      "descriptor_address": "0xa052b478",
+      "status": "ready",
+      "argument_cases": [
+        "2437 0",
+        "2437 4",
+        "2430 0",
+        "2408 0"
+      ],
+      "purpose": "Read selected actual firmware values in bounded single-item requests.",
+      "proof": "Consumes separate uint16 SUID and index, invokes validated getter A00D486E, and formats at most30bytes. Packed ID in firm.query_name is SUID<<8 | index; get_simple arguments are separate and its printed combined ID uses SUID<<16 | index. No setters called.",
+      "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa00d4ae2",
+          "length": 100,
+          "sha256": "60cb2e14a6a6a6328c4784bfc8af5fa9ca8f5c022a71282019fe439b1ea3b134"
+        },
+        {
+          "address": "0xa00d486e",
+          "length": 104,
+          "sha256": "838a1db7c9bd1ccbdb535ab79ac3d418654a1eee39048a276c5cb44bceae14c4"
+        }
+      ],
+      "argument_provenance": {
+        "source": "references/physical-30-software-queries/0008-udws_firm_query_name.bin",
+        "sha256": "de7e519c5bb424d83f90c26ab339b670fbbb860fc64fe70d41f8d1d07127015b",
+        "reported_rows": 577,
+        "validated_unique_rows": 577,
+        "selected_rows": [
+          {
+            "packed_id": "0x98500",
+            "name": "FIRM_DEB.FIRM_DEBUG_COMP_PARAM1",
+            "suid": 2437,
+            "index": 0
+          },
+          {
+            "packed_id": "0x98504",
+            "name": "FIRM_DEB.FIRM_DEBUG_COMP_PARAM5",
+            "suid": 2437,
+            "index": 4
+          },
+          {
+            "packed_id": "0x97E00",
+            "name": "L10N.LOCALIZATION_FIRM_0",
+            "suid": 2430,
+            "index": 0
+          },
+          {
+            "packed_id": "0x96800",
+            "name": "DEV_INFO.ENABLE_ECP_REVERSE",
+            "suid": 2408,
+            "index": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "firm.get_by_name",
+      "handler": "0xa00d4c2d",
+      "descriptor_address": "0xa052b43c",
+      "status": "ready",
+      "argument_cases": [
+        "0 FIRM_DEB.FIRM_DEBUG_COMP_PARAM1",
+        "0 FIRM_DEB.FIRM_DEBUG_COMP_PARAM5",
+        "0 L10N.LOCALIZATION_FIRM_0",
+        "0 DEV_INFO.ENABLE_ECP_REVERSE"
+      ],
+      "purpose": "Read the same actual firmware values by their registered names.",
+      "proof": "Handler consumes an ignored leading integer and then an <=80-byte string. All selected names appear intact in the physical table. A00D47D0 resolves the name and reads current/default values; the name parser is not asked to resolve unknown or truncated strings.",
+      "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa00d4c2c",
+          "length": 90,
+          "sha256": "d83fbb3c06bc58f7f4b28736a35c981ad83aecbe0d0ad2685521cf663855ac4d"
+        },
+        {
+          "address": "0xa00d47d0",
+          "length": 158,
+          "sha256": "cc402b34d26bf0273a2dc9381cfc3e7568a480a4f3c3b1df3097afba436d29c8"
+        }
+      ],
+      "argument_provenance": {
+        "source": "references/physical-30-software-queries/0008-udws_firm_query_name.bin",
+        "sha256": "de7e519c5bb424d83f90c26ab339b670fbbb860fc64fe70d41f8d1d07127015b",
+        "reported_rows": 577,
+        "validated_unique_rows": 577,
+        "selected_rows": [
+          {
+            "packed_id": "0x98500",
+            "name": "FIRM_DEB.FIRM_DEBUG_COMP_PARAM1",
+            "suid": 2437,
+            "index": 0
+          },
+          {
+            "packed_id": "0x98504",
+            "name": "FIRM_DEB.FIRM_DEBUG_COMP_PARAM5",
+            "suid": 2437,
+            "index": 4
+          },
+          {
+            "packed_id": "0x97E00",
+            "name": "L10N.LOCALIZATION_FIRM_0",
+            "suid": 2430,
+            "index": 0
+          },
+          {
+            "packed_id": "0x96800",
+            "name": "DEV_INFO.ENABLE_ECP_REVERSE",
+            "suid": 2408,
+            "index": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "firm.query_value_suid",
+      "handler": "0xa00d4f8b",
+      "descriptor_address": "0xa052b4b4",
+      "status": "ready",
+      "argument_cases": [
+        "2437",
+        "2430",
+        "2408"
+      ],
+      "purpose": "Read three small firmware groups with identifiers, names and values.",
+      "proof": "Consumes a SUID masked to13bits, checks lookup success, and traverses only that existing group. Selected SUIDs 0x985,0x97E,0x968 have respectively6,6,2 physical name rows, including END. Avoids the large global table dump and the large SCAN/PEN groups.",
+      "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa00d4f8a",
+          "length": 316,
+          "sha256": "16d8323eb7c4c6437dc558378d00c7ceb5c80f721f4c62b40e4f75c9fe886b22"
+        }
+      ],
+      "argument_provenance": {
+        "source": "references/physical-30-software-queries/0008-udws_firm_query_name.bin",
+        "sha256": "de7e519c5bb424d83f90c26ab339b670fbbb860fc64fe70d41f8d1d07127015b",
+        "reported_rows": 577,
+        "validated_unique_rows": 577,
+        "selected_rows": [
+          {
+            "packed_id": "0x98500",
+            "name": "FIRM_DEB.FIRM_DEBUG_COMP_PARAM1",
+            "suid": 2437,
+            "index": 0
+          },
+          {
+            "packed_id": "0x98504",
+            "name": "FIRM_DEB.FIRM_DEBUG_COMP_PARAM5",
+            "suid": 2437,
+            "index": 4
+          },
+          {
+            "packed_id": "0x97E00",
+            "name": "L10N.LOCALIZATION_FIRM_0",
+            "suid": 2430,
+            "index": 0
+          },
+          {
+            "packed_id": "0x96800",
+            "name": "DEV_INFO.ENABLE_ECP_REVERSE",
+            "suid": 2408,
+            "index": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "udw.get_nvm_events",
+      "handler": "0xa00c3ef5",
+      "descriptor_address": "0xa0522b7c",
+      "status": "ready",
+      "argument_cases": [
+        ""
+      ],
+      "purpose": "Capture the existing ten-word NVM event view and document its count bug.",
+      "proof": "A00C355E reads at most10 simple-array entries of DSID0x10C7E, stopping at the first zero and writing a count byte. Handler A00C3EF4 ignores that count and prints all ten stack words. No writes to NVM. Any trailing words beyond the first zero are uninitialized stack contents, not valid event IDs.",
+      "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa00c3ef4",
+          "length": 56,
+          "sha256": "f1a81c856870ad19c1c84aaf0f853c8d05a08034955b21e4eaf61cd7ff5c8073"
+        },
+        {
+          "address": "0xa00c355e",
+          "length": 50,
+          "sha256": "88c559656527f65c251e9f76e1dffc063e9e521b16411342ce7e266895639232"
+        }
+      ],
+      "data_quality": "Only the prefix through the first zero can be interpreted as the requested NVM event values; later printed words are indeterminate and must not enter the event catalog."
+    },
+    {
+      "name": "firm.get_str",
+      "handler": "0xa00d544f",
+      "status": "held-for-further-review",
+      "reason": "Physical-30b firm.str_query_value returned no registered strings. A valid registered packed string ID has not been established; do not invent one."
+    },
+    {
+      "name": "gcp_comm.get_settings",
+      "handler": "0xa00eaae5",
+      "status": "held-for-further-review",
+      "reason": "A00EB15E may write DSID0x13445 through the DS record setter after populating an empty hostname cache from DSID0x10B3B. Not read-only even with refresh flag0."
+    },
+    {
+      "name": "errlog.get_assert_entry",
+      "handler": "0xa00c2dd9",
+      "status": "held-for-further-review",
+      "reason": "A00073F6 checks pending flag [20004158+4]; if set, A00073C6 resets counters and iterates A00074B0, which writes cleared records to persistent storage. Safe historical index alone does not avoid this path."
+    },
+    {
+      "name": "cloud_data.get_current_config",
+      "handler": "0xa002b223",
+      "status": "held-for-further-review",
+      "reason": "Reviewed implementations read/cache into local buffers but return no useful UDW payload. Not added merely to increase substantive name count."
+    },
+    {
+      "name": "cloud_data.get_reg_id",
+      "handler": "0xa002b239",
+      "status": "held-for-further-review",
+      "reason": "Reviewed implementations read/cache into local buffers but return no useful UDW payload. Not added merely to increase substantive name count."
+    },
+    {
+      "name": "gcp_privet.get_email_addr",
+      "handler": "0xa00f0531",
+      "status": "held-for-further-review",
+      "reason": "Reviewed implementations read/cache into local buffers but return no useful UDW payload. Not added merely to increase substantive name count."
+    },
+    {
+      "name": "patch.get_bin_flex",
+      "handler": "0xa02fbacd",
+      "status": "held-for-further-review",
+      "reason": "Compiled handler consumes three numeric arguments and immediately returns without reading or output. Not added as substantive binary coverage."
+    },
+    {
+      "name": "job_tracker.get_job_log",
+      "handler": "0xa0242f89",
+      "status": "held-for-further-review",
+      "reason": "Underlying A0241C60/A0241C64 are compiled zero-return stubs. Handler can print its header but provides no actual job log."
+    },
+    {
+      "name": "job_tracker.get_active_job_info",
+      "handler": "0xa02431e3",
+      "status": "held-for-further-review",
+      "reason": "Need an actual active/log job handle and supported info kind; no fictitious job will be created solely to exercise these paths."
+    },
+    {
+      "name": "job_tracker.get_job_log_info",
+      "handler": "0xa024346f",
+      "status": "held-for-further-review",
+      "reason": "Need an actual active/log job handle and supported info kind; no fictitious job will be created solely to exercise these paths."
+    },
+    {
+      "name": "sm_settings.get",
+      "handler": "0xa03d84db",
+      "status": "held-for-further-review",
+      "reason": "Callbacks are selected from a runtime settings registry. A concrete registered setting ID and its callback side effects remain unresolved; a GET-like name alone is insufficient."
+    },
+    {
+      "name": "sm_settings.get_int",
+      "handler": "0xa03d8327",
+      "status": "held-for-further-review",
+      "reason": "Callbacks are selected from a runtime settings registry. A concrete registered setting ID and its callback side effects remain unresolved; a GET-like name alone is insufficient."
+    },
+    {
+      "name": "sm_settings.get_string",
+      "handler": "0xa03d83ed",
+      "status": "held-for-further-review",
+      "reason": "Callbacks are selected from a runtime settings registry. A concrete registered setting ID and its callback side effects remain unresolved; a GET-like name alone is insufficient."
+    },
+    {
+      "name": "mhdlg.get_mhdlgdyn",
+      "handler": "0xa0063405",
+      "status": "held-for-further-review",
+      "reason": "Wrapper bounds are understood, but the underlying runtime media capability interface methods have not been resolved to their concrete getters. No hardware dispatch assumed safe."
+    },
+    {
+      "name": "mhdlg.get_mhdlgcap_supported_trays",
+      "handler": "0xa006345f",
+      "status": "held-for-further-review",
+      "reason": "Wrapper bounds are understood, but the underlying runtime media capability interface methods have not been resolved to their concrete getters. No hardware dispatch assumed safe."
+    },
+    {
+      "name": "mhdlg.get_mhdlgcap_supported_bins",
+      "handler": "0xa0063563",
+      "status": "held-for-further-review",
+      "reason": "Wrapper bounds are understood, but the underlying runtime media capability interface methods have not been resolved to their concrete getters. No hardware dispatch assumed safe."
+    },
+    {
+      "name": "mhdlg.get_mhdlgcap_media_type_size_list",
+      "handler": "0xa0063629",
+      "status": "held-for-further-review",
+      "reason": "Wrapper bounds are understood, but the underlying runtime media capability interface methods have not been resolved to their concrete getters. No hardware dispatch assumed safe."
+    },
+    {
+      "name": "mhdlg.get_supported_df_groups",
+      "handler": "0xa0063897",
+      "status": "held-for-further-review",
+      "reason": "Wrapper bounds are understood, but the underlying runtime media capability interface methods have not been resolved to their concrete getters. No hardware dispatch assumed safe."
+    },
+    {
+      "name": "mhdlg.get_supported_types_by_group",
+      "handler": "0xa006390d",
+      "status": "held-for-further-review",
+      "reason": "Wrapper bounds are understood, but the underlying runtime media capability interface methods have not been resolved to their concrete getters. No hardware dispatch assumed safe."
+    },
+    {
+      "name": "nca.get_wired_state",
+      "handler": "0xa02df88f",
+      "status": "held-for-further-review",
+      "reason": "Valid adapter selection still needs exact cached helper proof; unsupported adapter branches can leave output stack fields unset."
+    },
+    {
+      "name": "cloud_reg.show_summary",
+      "handler": "0xa003102f",
+      "status": "held-for-further-review",
+      "reason": "Several service-dependent metadata calls remain unbound. It also prints Printer Key and cloud identifiers. Local sensitive output is authorized, but service side effects still need proof."
+    },
+    {
+      "name": "rest_ink_sub.get_info",
+      "handler": "0xa0382f7f",
+      "status": "held-for-further-review",
+      "reason": "Incomplete transitive service-cache getter proof; retained for focused follow-up."
+    },
+    {
+      "name": "constat.is_fake_mode",
+      "handler": "0xa0040de1",
+      "status": "held-for-further-review",
+      "reason": "Before reading the flag this calls A00449BC and may invoke an assertion at A0007124. Do not infer a harmless flag read from the name."
+    },
+    {
+      "name": "strings.extend_percent",
+      "handler": "0xa03ffbbd",
+      "status": "held-for-further-review",
+      "reason": "Setter accepts0..100 and changes a global output-extension percentage. No registered getter of the original value was found; restoration cannot yet be guaranteed."
+    }
+  ],
+  "limits": [
+    "Only exact reviewed arguments are admitted.",
+    "ROM reads are restricted to the 16-byte known base-version region used by existing identity getters.",
+    "Some diagnostics update RAM caches or baselines as explicitly recorded; no persistent setters admitted.",
+    "No broad firmware table dumps or live RAM writes.",
+    "Expected empty/gated results are labeled and not claimed to expose data."
+  ]
+}

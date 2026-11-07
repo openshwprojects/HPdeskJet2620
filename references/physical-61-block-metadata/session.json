@@ -1,0 +1,53 @@
+{
+  "started_utc": "2026-10-29T21:32:55.808877+00:00",
+  "port": "COM16",
+  "baud": 115200,
+  "data_bits": 8,
+  "parity": "N",
+  "stop_bits": 1,
+  "line_ending": "CRLF",
+  "source": "physical UART",
+  "rts": false,
+  "dtr": false,
+  "tx_character_delay_seconds": 0.003,
+  "capture_program_sha256": "685d8b07cd5afafeba32f37eb5722416458a08dafe09290576957e50b31bdb03",
+  "requested_rx_buffer_bytes": 1048576,
+  "requested_tx_buffer_bytes": 65536,
+  "initial_prompt_seen": true,
+  "stop_reason": "batch-complete",
+  "ended_utc": "2026-10-29T21:32:57.010257+00:00",
+  "commands": [
+    {
+      "name": "ram.block_info",
+      "command": "udws \"ram.block_info 1 1 0;\"",
+      "handler": "0xa0356983",
+      "argument_syntax": "type=1 DIR, inode=1, block=0 from captured header key0100000000000001",
+      "classification": "reviewed-existing-block-metadata-query",
+      "purpose": "Read metadata of real root-directory block and cross-check known live header fields.",
+      "control_flow_proof": "A0356982..6A02 parses type,inode,block. A03559E6 builds12-byte key in locals: key+4=(type<<24)|block, key+8=inode. A0355DD8 uses physically resolved providerA053BB48+1C=A0161055; takes/releases heap mutex throughA0160E84/ED4, callsA015FB5A. A015F884/A015FCF4 use existing hash chain and8-byte name compare; A0160D1A resolves existing name descriptor, thenA0160004 selectors2,1,6,5 read priority,purgeable,use_count,size. Only caller-local output fields and lock accounting modified.",
+      "side_effects_assessment": "UART output and volatile mutex accounting. Does not write the target block, allocate, free or change a file.",
+      "timeout": 20,
+      "hardware_access": false,
+      "prior_invocation_status": "not-invoked",
+      "expected": {
+        "kind": "DIR",
+        "inode": 1,
+        "block": 0,
+        "priority": 0,
+        "size": 16928,
+        "purgeable": false,
+        "use_count_at_header_capture": 1
+      },
+      "review_source": "references/round5_system_extra_review.json",
+      "index": 1,
+      "started_utc": "2026-10-29T21:32:56.500460+00:00",
+      "response_file": "0001-udws_ram_block_info_1_1_0.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T21:32:57.008052+00:00",
+      "elapsed_seconds": 0.506,
+      "response_bytes": 150,
+      "response_sha256": "7cb799cc9d5be8eab40de3fd48e600a6a2fc8395fbb8fe1bd56a8a2665515a76",
+      "prompt_returned": true
+    }
+  ]
+}

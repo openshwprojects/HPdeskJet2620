@@ -1,0 +1,6 @@
+{"index": 1, "command": "udws \"smgr_pe.get_current_setting 1;\"", "bytes": 75, "prompt": true, "validated": null, "preview": "\r\n-> udws \"smgr_pe.get_current_setting 1;\"\r\n1;udws() returns 0 (0x0)\r\n-> "}
+{"index": 2, "command": "udws \"smgr_pe.get_current_setting 3;\"", "bytes": 75, "prompt": true, "validated": null, "preview": "\r\n-> udws \"smgr_pe.get_current_setting 3;\"\r\n2;udws() returns 0 (0x0)\r\n-> "}
+{"index": 3, "command": "udws \"smgr_pe.get_current_setting 4;\"", "bytes": 75, "prompt": true, "validated": null, "preview": "\r\n-> udws \"smgr_pe.get_current_setting 4;\"\r\n1;udws() returns 0 (0x0)\r\n-> "}
+{"index": 4, "command": "udws \"pe.cover_open_query;\"", "bytes": 65, "prompt": true, "validated": null, "preview": "\r\n-> udws \"pe.cover_open_query;\"\r\n0;udws() returns 0 (0x0)\r\n-> "}
+{"index": 5, "command": "udws \"smgr_pe.cover_open_query;\"", "bytes": 70, "prompt": true, "validated": null, "preview": "\r\n-> udws \"smgr_pe.cover_open_query;\"\r\n0;udws() returns 0 (0x0)\r\n-> "}
+{"index": 6, "command": "udws \"smgr_pe.user_power_on_query;\"", "bytes": 73, "prompt": true, "validated": null, "preview": "\r\n-> udws \"smgr_pe.user_power_on_query;\"\r\n1;udws() returns 0 (0x0)\r\n-> "}

@@ -1,0 +1,299 @@
+{
+  "observations": [
+    {
+      "label": "ui_interface_0",
+      "address": "0x20daf87c",
+      "count": 4,
+      "hex": "a061f594",
+      "words_be": [
+        "0xa061f594"
+      ],
+      "response_file": "0006-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "d9e28605ecd6861603e7359a1da2d3aee99880cd5406d4a73019025d6f78e8ff"
+    },
+    {
+      "label": "ui_interface_0_object_vtable",
+      "address": "0xa061f594",
+      "count": 4,
+      "hex": "a061f598",
+      "words_be": [
+        "0xa061f598"
+      ],
+      "response_file": "0015-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "1610aac7933c5e6dfa5b788ed48a78909c40dae19b1b7fe6ca81ff390447e5fc"
+    },
+    {
+      "label": "ui_interface_0_vtable_methods",
+      "address": "0xa061f598",
+      "count": 64,
+      "hex": "a0431a31a0431a41a0431a4da0431979a0431979a04319d1a04319e9a043199da0431a01a0431a59a04319a9a0431991a0431a65a061f5d0a0431aa1a0431aa3",
+      "words_be": [
+        "0xa0431a31",
+        "0xa0431a41",
+        "0xa0431a4d",
+        "0xa0431979",
+        "0xa0431979",
+        "0xa04319d1",
+        "0xa04319e9",
+        "0xa043199d",
+        "0xa0431a01",
+        "0xa0431a59",
+        "0xa04319a9",
+        "0xa0431991",
+        "0xa0431a65",
+        "0xa061f5d0",
+        "0xa0431aa1",
+        "0xa0431aa3"
+      ],
+      "response_file": "0024-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "b48b10f1e703c87a6e605a003b0b7fe52d5dda87a017db21769ee5d08a4d9faa"
+    },
+    {
+      "label": "ui_interface_1",
+      "address": "0x20daf880",
+      "count": 4,
+      "hex": "2084a0b4",
+      "words_be": [
+        "0x2084a0b4"
+      ],
+      "response_file": "0033-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "a376916e776d68fc265b1aa72d2ff50b149f9fb91505cede76164bfb92bf3787"
+    },
+    {
+      "label": "ui_interface_1_object_vtable",
+      "address": "0x2084a0b4",
+      "count": 4,
+      "hex": "a06073ec",
+      "words_be": [
+        "0xa06073ec"
+      ],
+      "response_file": "0042-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "e432bc68206bfce1979d5538a661356988c85dbcab7bf2e1c562ed98fc871303"
+    },
+    {
+      "label": "ui_interface_1_vtable_methods",
+      "address": "0xa06073ec",
+      "count": 64,
+      "hex": "a03ce8c9a03ce8d5a03ce8e1a03ce8f9a03ce911a03ce93fa03ce96da060740ca03ce97fa03ce981a03ce99da03ce9a5a03ce989a03ce9930000000000000000",
+      "words_be": [
+        "0xa03ce8c9",
+        "0xa03ce8d5",
+        "0xa03ce8e1",
+        "0xa03ce8f9",
+        "0xa03ce911",
+        "0xa03ce93f",
+        "0xa03ce96d",
+        "0xa060740c",
+        "0xa03ce97f",
+        "0xa03ce981",
+        "0xa03ce99d",
+        "0xa03ce9a5",
+        "0xa03ce989",
+        "0xa03ce993",
+        "0x0",
+        "0x0"
+      ],
+      "response_file": "0051-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "f31d164a4d297877fe10addfd3d291965f220ec5da46c4b9a41ed3c7759033f3"
+    },
+    {
+      "label": "ui_interface_2",
+      "address": "0x20daf884",
+      "count": 4,
+      "hex": "a05e9e48",
+      "words_be": [
+        "0xa05e9e48"
+      ],
+      "response_file": "0060-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "64d5edb28e76aa12da4e4ab010f6a4bdc031609f7487452d3302c6cb350c66e4"
+    },
+    {
+      "label": "ui_interface_2_object_vtable",
+      "address": "0xa05e9e48",
+      "count": 4,
+      "hex": "a05e9e4c",
+      "words_be": [
+        "0xa05e9e4c"
+      ],
+      "response_file": "0069-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "f5e66807bc1daff6b3b4b026016502ca04d8f196c59179bfb0ad3318a08589e8"
+    },
+    {
+      "label": "ui_interface_2_vtable_methods",
+      "address": "0xa05e9e4c",
+      "count": 64,
+      "hex": "a0364aeda0364b35a0364b51a0364ba1a0364bd9a0364be1a0364c0da0364c2d04d20000a05e9eb400000001a05e9ec400000001a05e9edc00000003a0364d9b",
+      "words_be": [
+        "0xa0364aed",
+        "0xa0364b35",
+        "0xa0364b51",
+        "0xa0364ba1",
+        "0xa0364bd9",
+        "0xa0364be1",
+        "0xa0364c0d",
+        "0xa0364c2d",
+        "0x4d20000",
+        "0xa05e9eb4",
+        "0x1",
+        "0xa05e9ec4",
+        "0x1",
+        "0xa05e9edc",
+        "0x3",
+        "0xa0364d9b"
+      ],
+      "response_file": "0078-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "d84d2b3efb9689c3dbca027398aaeb79020c622a23c9eebb0fb739f250433cf8"
+    },
+    {
+      "label": "ui_interface_3",
+      "address": "0x20daf888",
+      "count": 4,
+      "hex": "a0517544",
+      "words_be": [
+        "0xa0517544"
+      ],
+      "response_file": "0087-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "673fac89ba341afb16238aa450af37252d6f5cf5e971fef4a93964fe4fc8b4f0"
+    },
+    {
+      "label": "ui_interface_3_object_vtable",
+      "address": "0xa0517544",
+      "count": 4,
+      "hex": "a0517548",
+      "words_be": [
+        "0xa0517548"
+      ],
+      "response_file": "0096-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "95818bf79cdc5ce18d720f2a8486e3b39b8379f95a83c58d930491639ead5d16"
+    },
+    {
+      "label": "ui_interface_3_vtable_methods",
+      "address": "0xa0517548",
+      "count": 64,
+      "hex": "a005b379a005b3d9a005c38da005c46ba005c475a005be5da005be9fa005bf59a005b8fba005b92ba005b913a005b945a005b439a005b44fa005c373a005be43",
+      "words_be": [
+        "0xa005b379",
+        "0xa005b3d9",
+        "0xa005c38d",
+        "0xa005c46b",
+        "0xa005c475",
+        "0xa005be5d",
+        "0xa005be9f",
+        "0xa005bf59",
+        "0xa005b8fb",
+        "0xa005b92b",
+        "0xa005b913",
+        "0xa005b945",
+        "0xa005b439",
+        "0xa005b44f",
+        "0xa005c373",
+        "0xa005be43"
+      ],
+      "response_file": "0105-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "bd6855f97b58aea9e90f3e7146b89d9f4fbc6bcc41ca62244c00d20e2fbbc09b"
+    },
+    {
+      "label": "cover_interface",
+      "address": "0x20daf228",
+      "count": 4,
+      "hex": "a05cc04c",
+      "words_be": [
+        "0xa05cc04c"
+      ],
+      "response_file": "0114-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "428cce826e97bfa6a25193847812684d07b44ec3e01a107faf331c2d738ad4ab"
+    },
+    {
+      "label": "cover_interface_object_vtable",
+      "address": "0xa05cc04c",
+      "count": 4,
+      "hex": "20848770",
+      "words_be": [
+        "0x20848770"
+      ],
+      "response_file": "0123-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "72e98e6bcdb0fad8714410b2101be6738c5084ac621a1da1fb757ab780418356"
+    },
+    {
+      "label": "cover_interface_vtable_methods",
+      "address": "0x20848770",
+      "count": 64,
+      "hex": "a0303e4da0303e55a0303e9da0303eaba0303ebba0303ec9a0303ef1a0303f0ba0303f15a0303f1fa0303f4fa0303f5fa0303f6da0303f7ba0303f89a0303f97",
+      "words_be": [
+        "0xa0303e4d",
+        "0xa0303e55",
+        "0xa0303e9d",
+        "0xa0303eab",
+        "0xa0303ebb",
+        "0xa0303ec9",
+        "0xa0303ef1",
+        "0xa0303f0b",
+        "0xa0303f15",
+        "0xa0303f1f",
+        "0xa0303f4f",
+        "0xa0303f5f",
+        "0xa0303f6d",
+        "0xa0303f7b",
+        "0xa0303f89",
+        "0xa0303f97"
+      ],
+      "response_file": "0132-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "41e1245595cef817f98e601b2690021b07640c87f4a496a2046a309adf6e45bf"
+    },
+    {
+      "label": "current_matrix_count",
+      "address": "0x2083e244",
+      "count": 4,
+      "hex": "00000002",
+      "words_be": [
+        "0x2"
+      ],
+      "response_file": "0141-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "26a885e8a36daaeb1cca175ed56b4842b627098c6ddc37200c00a15e2ea2e94b"
+    },
+    {
+      "label": "named_heap_block_header",
+      "address": "0x21376ac0",
+      "count": 32,
+      "hex": "0100000000000001000042200000000000000000ffffffff01002801000000bc",
+      "words_be": [
+        "0x1000000",
+        "0x1",
+        "0x4220",
+        "0x0",
+        "0x0",
+        "0xffffffff",
+        "0x1002801",
+        "0xbc"
+      ],
+      "response_file": "0150-udws_ustd_read_file_0_32.bin",
+      "response_sha256": "b116b4bc362319f352c881b9c54d23b099699a3a0ec3d5a2378d444390ec5e87"
+    },
+    {
+      "label": "companion_revision_cache",
+      "address": "0x20969c00",
+      "count": 4,
+      "hex": "00000000",
+      "words_be": [
+        "0x0"
+      ],
+      "response_file": "0159-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "2efa0a73245bb096624260e30ce2ab7da8fbbe34187dc3e1149412323afc9a17"
+    },
+    {
+      "label": "security_status_cache",
+      "address": "0x20004894",
+      "count": 8,
+      "hex": "0000000000000001",
+      "words_be": [
+        "0x0",
+        "0x1"
+      ],
+      "response_file": "0168-udws_ustd_read_file_0_8.bin",
+      "response_sha256": "6af7e0cf61719d3fab00640fa2c89a8920cb303620bd4b8e687d1973c50cdc16"
+    }
+  ],
+  "cleanup_complete": true,
+  "source_memory_written": false,
+  "scope": "Named UI interfaces/vtables, current matrix count, existing heap header, companion revision and security caches only."
+}

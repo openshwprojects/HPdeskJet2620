@@ -1,0 +1,20 @@
+{
+  "started_utc": "2026-10-29T22:26:09.930047+00:00",
+  "port": "COM16",
+  "baud": 115200,
+  "data_bits": 8,
+  "parity": "N",
+  "stop_bits": 1,
+  "line_ending": "CRLF",
+  "source": "physical UART",
+  "rts": false,
+  "dtr": false,
+  "tx_character_delay_seconds": 0.003,
+  "capture_program_sha256": "685d8b07cd5afafeba32f37eb5722416458a08dafe09290576957e50b31bdb03",
+  "mode": "passive-only; no transmitted bytes",
+  "requested_rx_buffer_bytes": 1048576,
+  "requested_tx_buffer_bytes": 65536,
+  "commands": [],
+  "stop_reason": "listener-stopped-by-host-after-boot-prompt",
+  "stop_note": "Added afterwards: the passive listener was stopped externally (background task stop) once the post-reboot prompt had been received, so close() did not write ended_utc. No bytes were transmitted. The last RX event was at 2026-10-29T22:29:05.194857+00:00."
+}

@@ -1,0 +1,252 @@
+{
+  "observations": [
+    {
+      "label": "manufacturing_storage_provider",
+      "address": "0x20ba3b2c",
+      "count": 4,
+      "hex": "a0517544",
+      "words_be": [
+        "0xa0517544"
+      ],
+      "response_file": "0007-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "673fac89ba341afb16238aa450af37252d6f5cf5e971fef4a93964fe4fc8b4f0"
+    },
+    {
+      "label": "image_processing_cli_provider",
+      "address": "0x209e3e6c",
+      "count": 4,
+      "hex": "a061f594",
+      "words_be": [
+        "0xa061f594"
+      ],
+      "response_file": "0016-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "d9e28605ecd6861603e7359a1da2d3aee99880cd5406d4a73019025d6f78e8ff"
+    },
+    {
+      "label": "job_memory_cli_provider",
+      "address": "0x20a3133c",
+      "count": 4,
+      "hex": "a061f594",
+      "words_be": [
+        "0xa061f594"
+      ],
+      "response_file": "0025-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "d9e28605ecd6861603e7359a1da2d3aee99880cd5406d4a73019025d6f78e8ff"
+    },
+    {
+      "label": "image_processing_override_values",
+      "address": "0x209e4860",
+      "count": 388,
+      "hex": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "words_be": [
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0"
+      ],
+      "response_file": "0034-udws_ustd_read_file_0_388.bin",
+      "response_sha256": "46b458c18bcf116a203c79af055b202a1dd46b4438e395fd00361a979d7ac1c6"
+    },
+    {
+      "label": "scanner_cable_error_metadata",
+      "address": "0x20858448",
+      "count": 8,
+      "hex": "00000000ffffffff",
+      "words_be": [
+        "0x0",
+        "0xffffffff"
+      ],
+      "response_file": "0043-udws_ustd_read_file_0_8.bin",
+      "response_sha256": "6a2638697ceb7569138f4533e208b23c92165436afa4b704f216249abfbc8ab9"
+    },
+    {
+      "label": "scanner_origin_offsets_and_overrides",
+      "address": "0x208582d0",
+      "count": 52,
+      "hex": "00000000000008d80000000000000000000000000000000000000000000000000000000000000000cfc700000000000000000000",
+      "words_be": [
+        "0x0",
+        "0x8d8",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0xcfc70000",
+        "0x0",
+        "0x0"
+      ],
+      "response_file": "0052-udws_ustd_read_file_0_52.bin",
+      "response_sha256": "acc4b91a67cb8342e257b46029cf762f91295a4e0d0edc75bef5654ced357fbc"
+    },
+    {
+      "label": "scanner_home_flags",
+      "address": "0x20d9cd44",
+      "count": 4,
+      "hex": "00000000",
+      "words_be": [
+        "0x0"
+      ],
+      "response_file": "0061-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "2efa0a73245bb096624260e30ce2ab7da8fbbe34187dc3e1149412323afc9a17"
+    },
+    {
+      "label": "scanner_storage_provider",
+      "address": "0x20da0af8",
+      "count": 4,
+      "hex": "a0517544",
+      "words_be": [
+        "0xa0517544"
+      ],
+      "response_file": "0070-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "673fac89ba341afb16238aa450af37252d6f5cf5e971fef4a93964fe4fc8b4f0"
+    },
+    {
+      "label": "scanner_motor_provider",
+      "address": "0x20da0aec",
+      "count": 4,
+      "hex": "a060bf74",
+      "words_be": [
+        "0xa060bf74"
+      ],
+      "response_file": "0079-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "39238bec3e60456fa2393909e1685579ca0103dd77a97489e118cd1999d3e2ab"
+    },
+    {
+      "label": "scanner_motor_object_vtable",
+      "address": "0xa060bf74",
+      "count": 4,
+      "hex": "a060bf7c",
+      "words_be": [
+        "0xa060bf7c"
+      ],
+      "response_file": "0088-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "950059ea9f658caf09acf618b23ec498b4e75c5f17e2783404ee9881c7678270"
+    },
+    {
+      "label": "scanner_motor_vtable_methods",
+      "address": "0xa060bf7c",
+      "count": 64,
+      "hex": "a03e39e9a03e3a33a03e3abda03e3b37a03e3b6da03e3b6fa03e3b87a03e3b89a03e3b97a03e3bbda03e3bf1a03e3c21a03e3c45a03e39c1a03e3c15a03e3c17",
+      "words_be": [
+        "0xa03e39e9",
+        "0xa03e3a33",
+        "0xa03e3abd",
+        "0xa03e3b37",
+        "0xa03e3b6d",
+        "0xa03e3b6f",
+        "0xa03e3b87",
+        "0xa03e3b89",
+        "0xa03e3b97",
+        "0xa03e3bbd",
+        "0xa03e3bf1",
+        "0xa03e3c21",
+        "0xa03e3c45",
+        "0xa03e39c1",
+        "0xa03e3c15",
+        "0xa03e3c17"
+      ],
+      "response_file": "0097-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "1c3522400090f953b7c392a9db507d7adfba7fb96ff266fdd4c88a4be0122945"
+    }
+  ],
+  "cleanup_complete": true,
+  "source_memory_written": false,
+  "scope": "Round-seven manufacturing, IP, job, and scanner metadata plus two cached pen-status scalar IDs."
+}

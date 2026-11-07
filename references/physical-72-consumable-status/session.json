@@ -1,0 +1,331 @@
+{
+  "started_utc": "2026-10-29T21:53:51.768639+00:00",
+  "port": "COM16",
+  "baud": 115200,
+  "data_bits": 8,
+  "parity": "N",
+  "stop_bits": 1,
+  "line_ending": "CRLF",
+  "source": "physical UART",
+  "rts": false,
+  "dtr": false,
+  "tx_character_delay_seconds": 0.003,
+  "capture_program_sha256": "685d8b07cd5afafeba32f37eb5722416458a08dafe09290576957e50b31bdb03",
+  "requested_rx_buffer_bytes": 1048576,
+  "requested_tx_buffer_bytes": 65536,
+  "initial_prompt_seen": true,
+  "stop_reason": "batch-complete",
+  "ended_utc": "2026-10-29T21:53:53.610744+00:00",
+  "commands": [
+    {
+      "name": "constat.get_consumable_info",
+      "command": "udws \"constat.get_consumable_info BLACK;\"",
+      "handler": "0xa0040919",
+      "descriptor_address": "0xa050f278",
+      "arguments": [
+        "BLACK"
+      ],
+      "purpose": "Read cached BLACK consumable presence, chute mapping and channel metadata.",
+      "classification": "reviewed-bounded-cached-consumable-query",
+      "review_source": "references/round6_product_review.json",
+      "review_evidence": [
+        "A0040918 reads one string into a 20-byte caller buffer. A003B90A searches the 14-entry table A050CCA4; BLACK maps to ID108 and CMY to109. Only these two valid IDs are selected.",
+        "A050C790 vtable method+4 is A003AB82. Its selector A003DEFE uses normal object20896E10 when secondary selector2089939C isNULL. Physical69 proves exactly this branch, normal vtableA050FE84, initialized flag+0C=1, DS2A0517544 and PEN objectA05DE248.",
+        "Normal vtable+14C is A003E2CC. A003A2BC initializes the full64-byte caller output through template20866274 and fills five channel slots with-1. A003DF9C/A003DFB6 accept exactly IDs108/109 and map BLACK to chute1, CMY to chute0.",
+        "A003E2CC stores constants1 at output+10/+14, calls presence predicateA003DFD8 for output+0C and stores chute at+18. A003DFD8 calls PEN vtable method0 and computes 1-((status>>1)&1). This is cached firmware presence status, not a new electrical cartridge probe.",
+        "PEN interface SUID11422 maps to provider slot68. A03193DA resolves slot68 through A05D3568 to objectA05DE248, vtableA05DE24C; method0 isA0321B2E. The live connection20896DF0 matches this object.",
+        "A0321B2E acquires/releases paired PEN locks and reads A03204AC(chute,0x14). That helper reads the fixed DSID table A05D7084 at4*(2*0x14+chute), then A03211B4 retrieves the cache value or DS2 vtable+8. A03211B4 has no setter call; the separate setter startsA03211F0. Cache population bounds its record count to400 atA0321220..A0321236.",
+        "Lock wrappers A0322AA4/A0322AC4 -> A0314846/A0314864 update volatile owner/depth bookkeeping around A0308208/A0308218. Those acquire/release semaphore20CE7F7C through A02F5FA2/A02F5F56. No writeback, calibration, transport or mechanical routine occurs on this reviewed path.",
+        "A003B64C writes channel count1 and BLACK channel0 for ID108; count3 and channels1/2/3 for ID109, with a-1 terminator. Handler loops only this constructed count, prints status label, consumable label, four scalars, count and channel labels. A003B576/A003B5CC/A003B60A bound the label copies to15/20/15 bytes."
+      ],
+      "side_effects_assessment": "Caller output and paired volatile lock bookkeeping only on the reviewed valid-ID path. No persistent setting, hardware actuation or external service request.",
+      "result_limitations": "Reports firmware cached presence and configured channel mapping. Does not measure ink volume or test electrical/mechanical cartridge operation. Generic UART, OS and DS2 getter internals are not a formal transitive proof.",
+      "timeout": 30,
+      "prior_invocation_status": "not-invoked",
+      "code_evidence": [
+        {
+          "start": "0xa0040918",
+          "end_exclusive": "0xa0040a5e",
+          "sha256": "a4168a86fff170332f8a561d55078b384d8ef032cff95f41c33909241f17a909"
+        },
+        {
+          "start": "0xa003ab82",
+          "end_exclusive": "0xa003aba8",
+          "sha256": "562610402c38b87d74bfedc4bd4df6bd9429943680fe542188110fe5d0d8f559"
+        },
+        {
+          "start": "0xa003defe",
+          "end_exclusive": "0xa003df22",
+          "sha256": "0cc525a5387c3cb84f227c8c551fb26a3090e1d68317db0c427daccdfe6a413c"
+        },
+        {
+          "start": "0xa003a2bc",
+          "end_exclusive": "0xa003a302",
+          "sha256": "2e47c61b879de7079fcfcbe0c20906dc069bda74f9dbf8646bfe48d7dc80f24e"
+        },
+        {
+          "start": "0xa003e2cc",
+          "end_exclusive": "0xa003e352",
+          "sha256": "6fec95df4e36d86a021c348bf1e32de5961653cf8de328c54338e275e8306e18"
+        },
+        {
+          "start": "0xa003df9c",
+          "end_exclusive": "0xa003e00e",
+          "sha256": "2d5eee48cb162f09d6ff1b1c13da879eacc51bcc4ea607c69757725c95a0815e"
+        },
+        {
+          "start": "0xa003b576",
+          "end_exclusive": "0xa003b6b6",
+          "sha256": "2dfbce8ed74a533630069090405bb19ea617fa2a5019519f447b11ba25eaa460"
+        },
+        {
+          "start": "0xa003b90a",
+          "end_exclusive": "0xa003b96c",
+          "sha256": "b5a96ca098578e5c2ac1fdcdbfbfc005fed619f1b39f3edf2b2a4124c697a642"
+        },
+        {
+          "start": "0xa0321b2e",
+          "end_exclusive": "0xa0321bae",
+          "sha256": "47194ff3806888c2605cb7eda719e62d9e50cb3efea97b0d5b09de960ea1df48"
+        },
+        {
+          "start": "0xa03204ac",
+          "end_exclusive": "0xa03204c2",
+          "sha256": "aa2bcd9da3336150a91a306dd405711f34da7fbfb489520d3a4de8c162eca558"
+        },
+        {
+          "start": "0xa03211b4",
+          "end_exclusive": "0xa03211f0",
+          "sha256": "50072ffdcb9a0c92385a8c16611a428388b956cfff78949ae20939988db23f43"
+        },
+        {
+          "start": "0xa0322aa4",
+          "end_exclusive": "0xa0322ae8",
+          "sha256": "3969d18cebd0bce5ff15c18120c5683dd3aa22f11255679104e11f1bb49ff407"
+        },
+        {
+          "start": "0xa0314846",
+          "end_exclusive": "0xa0314898",
+          "sha256": "544a6e44f234a8e0f1ffa44c50b4932538ca74087e93224c566f5d536eda83d0"
+        },
+        {
+          "start": "0xa0308208",
+          "end_exclusive": "0xa0308228",
+          "sha256": "a3cf0861a33607ecfc7b395eb2bf378e00a4c971e4e56633fca300c71f17c597"
+        },
+        {
+          "start": "0xa050fe84",
+          "end_exclusive": "0xa0510130",
+          "sha256": "75307ef6befe018f43fc476a821a6744482a193f22bbcd8e095fb94cf2605572"
+        },
+        {
+          "start": "0xa05de248",
+          "end_exclusive": "0xa05de260",
+          "sha256": "2f309dbd867da7479f4c922c4c2a77fe43046caca43bdb436205f1c000cb96c4"
+        }
+      ],
+      "prerequisites": [
+        {
+          "label": "constat_provider_selectors",
+          "address": "0x20899390",
+          "count": 64,
+          "response_file": "references/physical-69-provider-prerequisites/0015-udws_ustd_read_file_0_64.bin",
+          "response_sha256": "04aaf4798b52fda1eb5824900b1a9c96a554938a62eee20ec81c4e59414f6ccf",
+          "response_bytes": 192,
+          "payload_hex": "000000010000000120896e100000000000000000000000000000000000000000000000000000000000000000a061f594a050c79000000000a061f594a06053c0"
+        },
+        {
+          "label": "constat_normal_provider",
+          "address": "0x20896de4",
+          "count": 64,
+          "response_file": "references/physical-69-provider-prerequisites/0024-udws_ustd_read_file_0_64.bin",
+          "response_sha256": "ae07455fd53bcdefdb6e9f48383d61ea069afb83497d00092da14083095ebe13",
+          "response_bytes": 192,
+          "payload_hex": "00000000a061f594a0517544a05de24800000000a05c5154434e38364f353934433930364d44000000000000a050fe84a051011ca05102140100000000000000"
+        },
+        {
+          "label": "constat_fake_provider",
+          "address": "0x20896e40",
+          "count": 64,
+          "response_file": "references/physical-69-provider-prerequisites/0033-udws_ustd_read_file_0_64.bin",
+          "response_sha256": "c4eff5c590f707654abacf663352a5f66e9042c1c7e223a249e15dcde360b21c",
+          "response_bytes": 192,
+          "payload_hex": "a050fa54a050fd6ca050fe64000000000000000020ef4e7820ef500000000002000020000000000120896e400000000000000000000000000000000000000000"
+        }
+      ],
+      "expected_chute": 1,
+      "expected_channels": [
+        "BLACK"
+      ],
+      "expected_constant_fields": {
+        "output+0x10": 1,
+        "output+0x14": 1
+      },
+      "index": 1,
+      "started_utc": "2026-10-29T21:53:52.464162+00:00",
+      "response_file": "0001-udws_constat_get_consumable_info_BLACK.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T21:53:53.033689+00:00",
+      "elapsed_seconds": 0.568,
+      "response_bytes": 111,
+      "response_sha256": "26692374436584caf515b745be67fa0e502ffba0dbc332b545500b3133e7bb8a",
+      "prompt_returned": true
+    },
+    {
+      "name": "constat.get_consumable_info",
+      "command": "udws \"constat.get_consumable_info CMY;\"",
+      "handler": "0xa0040919",
+      "descriptor_address": "0xa050f278",
+      "arguments": [
+        "CMY"
+      ],
+      "purpose": "Read cached CMY consumable presence, chute mapping and channel metadata.",
+      "classification": "reviewed-bounded-cached-consumable-query",
+      "review_source": "references/round6_product_review.json",
+      "review_evidence": [
+        "A0040918 reads one string into a 20-byte caller buffer. A003B90A searches the 14-entry table A050CCA4; BLACK maps to ID108 and CMY to109. Only these two valid IDs are selected.",
+        "A050C790 vtable method+4 is A003AB82. Its selector A003DEFE uses normal object20896E10 when secondary selector2089939C isNULL. Physical69 proves exactly this branch, normal vtableA050FE84, initialized flag+0C=1, DS2A0517544 and PEN objectA05DE248.",
+        "Normal vtable+14C is A003E2CC. A003A2BC initializes the full64-byte caller output through template20866274 and fills five channel slots with-1. A003DF9C/A003DFB6 accept exactly IDs108/109 and map BLACK to chute1, CMY to chute0.",
+        "A003E2CC stores constants1 at output+10/+14, calls presence predicateA003DFD8 for output+0C and stores chute at+18. A003DFD8 calls PEN vtable method0 and computes 1-((status>>1)&1). This is cached firmware presence status, not a new electrical cartridge probe.",
+        "PEN interface SUID11422 maps to provider slot68. A03193DA resolves slot68 through A05D3568 to objectA05DE248, vtableA05DE24C; method0 isA0321B2E. The live connection20896DF0 matches this object.",
+        "A0321B2E acquires/releases paired PEN locks and reads A03204AC(chute,0x14). That helper reads the fixed DSID table A05D7084 at4*(2*0x14+chute), then A03211B4 retrieves the cache value or DS2 vtable+8. A03211B4 has no setter call; the separate setter startsA03211F0. Cache population bounds its record count to400 atA0321220..A0321236.",
+        "Lock wrappers A0322AA4/A0322AC4 -> A0314846/A0314864 update volatile owner/depth bookkeeping around A0308208/A0308218. Those acquire/release semaphore20CE7F7C through A02F5FA2/A02F5F56. No writeback, calibration, transport or mechanical routine occurs on this reviewed path.",
+        "A003B64C writes channel count1 and BLACK channel0 for ID108; count3 and channels1/2/3 for ID109, with a-1 terminator. Handler loops only this constructed count, prints status label, consumable label, four scalars, count and channel labels. A003B576/A003B5CC/A003B60A bound the label copies to15/20/15 bytes."
+      ],
+      "side_effects_assessment": "Caller output and paired volatile lock bookkeeping only on the reviewed valid-ID path. No persistent setting, hardware actuation or external service request.",
+      "result_limitations": "Reports firmware cached presence and configured channel mapping. Does not measure ink volume or test electrical/mechanical cartridge operation. Generic UART, OS and DS2 getter internals are not a formal transitive proof.",
+      "timeout": 30,
+      "prior_invocation_status": "not-invoked",
+      "code_evidence": [
+        {
+          "start": "0xa0040918",
+          "end_exclusive": "0xa0040a5e",
+          "sha256": "a4168a86fff170332f8a561d55078b384d8ef032cff95f41c33909241f17a909"
+        },
+        {
+          "start": "0xa003ab82",
+          "end_exclusive": "0xa003aba8",
+          "sha256": "562610402c38b87d74bfedc4bd4df6bd9429943680fe542188110fe5d0d8f559"
+        },
+        {
+          "start": "0xa003defe",
+          "end_exclusive": "0xa003df22",
+          "sha256": "0cc525a5387c3cb84f227c8c551fb26a3090e1d68317db0c427daccdfe6a413c"
+        },
+        {
+          "start": "0xa003a2bc",
+          "end_exclusive": "0xa003a302",
+          "sha256": "2e47c61b879de7079fcfcbe0c20906dc069bda74f9dbf8646bfe48d7dc80f24e"
+        },
+        {
+          "start": "0xa003e2cc",
+          "end_exclusive": "0xa003e352",
+          "sha256": "6fec95df4e36d86a021c348bf1e32de5961653cf8de328c54338e275e8306e18"
+        },
+        {
+          "start": "0xa003df9c",
+          "end_exclusive": "0xa003e00e",
+          "sha256": "2d5eee48cb162f09d6ff1b1c13da879eacc51bcc4ea607c69757725c95a0815e"
+        },
+        {
+          "start": "0xa003b576",
+          "end_exclusive": "0xa003b6b6",
+          "sha256": "2dfbce8ed74a533630069090405bb19ea617fa2a5019519f447b11ba25eaa460"
+        },
+        {
+          "start": "0xa003b90a",
+          "end_exclusive": "0xa003b96c",
+          "sha256": "b5a96ca098578e5c2ac1fdcdbfbfc005fed619f1b39f3edf2b2a4124c697a642"
+        },
+        {
+          "start": "0xa0321b2e",
+          "end_exclusive": "0xa0321bae",
+          "sha256": "47194ff3806888c2605cb7eda719e62d9e50cb3efea97b0d5b09de960ea1df48"
+        },
+        {
+          "start": "0xa03204ac",
+          "end_exclusive": "0xa03204c2",
+          "sha256": "aa2bcd9da3336150a91a306dd405711f34da7fbfb489520d3a4de8c162eca558"
+        },
+        {
+          "start": "0xa03211b4",
+          "end_exclusive": "0xa03211f0",
+          "sha256": "50072ffdcb9a0c92385a8c16611a428388b956cfff78949ae20939988db23f43"
+        },
+        {
+          "start": "0xa0322aa4",
+          "end_exclusive": "0xa0322ae8",
+          "sha256": "3969d18cebd0bce5ff15c18120c5683dd3aa22f11255679104e11f1bb49ff407"
+        },
+        {
+          "start": "0xa0314846",
+          "end_exclusive": "0xa0314898",
+          "sha256": "544a6e44f234a8e0f1ffa44c50b4932538ca74087e93224c566f5d536eda83d0"
+        },
+        {
+          "start": "0xa0308208",
+          "end_exclusive": "0xa0308228",
+          "sha256": "a3cf0861a33607ecfc7b395eb2bf378e00a4c971e4e56633fca300c71f17c597"
+        },
+        {
+          "start": "0xa050fe84",
+          "end_exclusive": "0xa0510130",
+          "sha256": "75307ef6befe018f43fc476a821a6744482a193f22bbcd8e095fb94cf2605572"
+        },
+        {
+          "start": "0xa05de248",
+          "end_exclusive": "0xa05de260",
+          "sha256": "2f309dbd867da7479f4c922c4c2a77fe43046caca43bdb436205f1c000cb96c4"
+        }
+      ],
+      "prerequisites": [
+        {
+          "label": "constat_provider_selectors",
+          "address": "0x20899390",
+          "count": 64,
+          "response_file": "references/physical-69-provider-prerequisites/0015-udws_ustd_read_file_0_64.bin",
+          "response_sha256": "04aaf4798b52fda1eb5824900b1a9c96a554938a62eee20ec81c4e59414f6ccf",
+          "response_bytes": 192,
+          "payload_hex": "000000010000000120896e100000000000000000000000000000000000000000000000000000000000000000a061f594a050c79000000000a061f594a06053c0"
+        },
+        {
+          "label": "constat_normal_provider",
+          "address": "0x20896de4",
+          "count": 64,
+          "response_file": "references/physical-69-provider-prerequisites/0024-udws_ustd_read_file_0_64.bin",
+          "response_sha256": "ae07455fd53bcdefdb6e9f48383d61ea069afb83497d00092da14083095ebe13",
+          "response_bytes": 192,
+          "payload_hex": "00000000a061f594a0517544a05de24800000000a05c5154434e38364f353934433930364d44000000000000a050fe84a051011ca05102140100000000000000"
+        },
+        {
+          "label": "constat_fake_provider",
+          "address": "0x20896e40",
+          "count": 64,
+          "response_file": "references/physical-69-provider-prerequisites/0033-udws_ustd_read_file_0_64.bin",
+          "response_sha256": "c4eff5c590f707654abacf663352a5f66e9042c1c7e223a249e15dcde360b21c",
+          "response_bytes": 192,
+          "payload_hex": "a050fa54a050fd6ca050fe64000000000000000020ef4e7820ef500000000002000020000000000120896e400000000000000000000000000000000000000000"
+        }
+      ],
+      "expected_chute": 0,
+      "expected_channels": [
+        "CYAN",
+        "MAGENTA",
+        "YELLOW"
+      ],
+      "expected_constant_fields": {
+        "output+0x10": 1,
+        "output+0x14": 1
+      },
+      "index": 2,
+      "started_utc": "2026-10-29T21:53:53.035920+00:00",
+      "response_file": "0002-udws_constat_get_consumable_info_CMY.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T21:53:53.606523+00:00",
+      "elapsed_seconds": 0.569,
+      "response_bytes": 121,
+      "response_sha256": "d1cde653c0318cab796a315eb1634501e37d964c0464796c1543079e5f665578",
+      "prompt_returned": true
+    }
+  ]
+}

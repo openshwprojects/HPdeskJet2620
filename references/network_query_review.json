@@ -1,0 +1,495 @@
+{
+  "schema_version": 1,
+  "provenance": {
+    "kind": "offline_manual_command_review_not_physical_output",
+    "image": "artifacts/ghs/dram.bin",
+    "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+    "basis": "2018 descriptor lookup, manual handler disassembly, enum tables, and supporting getter/helper inspection; serial port never accessed."
+  },
+  "enum_evidence": {
+    "adapter_table": "0xa05c7a94",
+    "adapter_entries": {
+      "ETH0": 0,
+      "ETH1": 5,
+      "WIFI0": 1,
+      "WIFI1": 6,
+      "EOUSB0": 3,
+      "EOFIREWIRE0": 4,
+      "MPIO0": 10,
+      "MPIO1": 11,
+      "DUMMY": 10
+    },
+    "protocol_table": "0xa05c7c90",
+    "protocol_entries": {
+      "PROT_IPV4": 0,
+      "PROT_IPV6": 1
+    }
+  },
+  "queries": [
+    {
+      "command": "udws \"nca.get_nw_test_service_state;\"",
+      "name": "nca.get_nw_test_service_state",
+      "arguments": [],
+      "handler": "0xa02e1c1f",
+      "descriptor_address": "0xa05c7038",
+      "argument_syntax": "No arguments consumed in the reviewed handler.",
+      "review_evidence": "Read network-test service state via getter0xa02d5efc and emit enabled/disabled/error. No argument parse; no setter call. Getter uses configuration-interface vtable+8.",
+      "hardware_access": false,
+      "hardware_access_detail": "configuration_backend",
+      "purpose": "Read existing network/configuration state or record an implemented empty-output stub.",
+      "confidence": "reviewed_information_query",
+      "review_scope": "Handler and named helpers inspected. Indirect backend calls and output framework are not a formal transitive side-effect proof.",
+      "physically_tested_by_this_review": false
+    },
+    {
+      "command": "udws \"nca.get_policy_mamm;\"",
+      "name": "nca.get_policy_mamm",
+      "arguments": [],
+      "handler": "0xa02dfa89",
+      "descriptor_address": "0xa05c7188",
+      "argument_syntax": "No arguments consumed in the reviewed handler.",
+      "review_evidence": "Helper0xa02de358 returns the existing policy block pointer; wrapper loads its first word and formats oneHotOneMac/oneHotNMac/NHotNMac. No command arguments consumed.",
+      "hardware_access": false,
+      "hardware_access_detail": "cached_configuration",
+      "purpose": "Read existing network/configuration state or record an implemented empty-output stub.",
+      "confidence": "reviewed_information_query",
+      "review_scope": "Handler and named helpers inspected. Indirect backend calls and output framework are not a formal transitive side-effect proof.",
+      "physically_tested_by_this_review": false
+    },
+    {
+      "command": "udws \"nca.get_ssid;\"",
+      "name": "nca.get_ssid",
+      "arguments": [],
+      "handler": "0xa02dfc09",
+      "descriptor_address": "0xa05c71b8",
+      "argument_syntax": "No arguments consumed in the reviewed handler.",
+      "review_evidence": "Hardcodes adapter type1; resolves existing handle0xa02d7f06 then copies current configuration via0xa02d6e26/0xa02daea4. Prints SSID bytes at+0x14 using length+0x34. No start/connect/scan call.",
+      "hardware_access": false,
+      "hardware_access_detail": "cached_adapter_configuration",
+      "purpose": "Read existing network/configuration state or record an implemented empty-output stub.",
+      "confidence": "reviewed_information_query",
+      "review_scope": "Handler and named helpers inspected. Indirect backend calls and output framework are not a formal transitive side-effect proof.",
+      "physically_tested_by_this_review": false
+    },
+    {
+      "command": "udws \"nca.get_wireless_mode;\"",
+      "name": "nca.get_wireless_mode",
+      "arguments": [],
+      "handler": "0xa02dfdb1",
+      "descriptor_address": "0xa05c71dc",
+      "argument_syntax": "No arguments consumed in the reviewed handler.",
+      "review_evidence": "Hardcodes adapter type1 and reads configuration via0xa02d4ed4/0xa02daea4; formats the mode at+0xc. No command args or radio-setting operation.",
+      "hardware_access": false,
+      "hardware_access_detail": "cached_adapter_configuration",
+      "purpose": "Read existing network/configuration state or record an implemented empty-output stub.",
+      "confidence": "reviewed_information_query",
+      "review_scope": "Handler and named helpers inspected. Indirect backend calls and output framework are not a formal transitive side-effect proof.",
+      "physically_tested_by_this_review": false
+    },
+    {
+      "command": "udws \"nca.get_wireless_state;\"",
+      "name": "nca.get_wireless_state",
+      "arguments": [],
+      "handler": "0xa02dfe47",
+      "descriptor_address": "0xa05c71f4",
+      "argument_syntax": "No arguments consumed in the reviewed handler.",
+      "review_evidence": "Hardcodes adapter type1 and calls state getter0xa02d4eb4. It locks state, assembles a status snapshot via0xa02dad4a, including network driver query0xa0091c3c; prints unknown/off/inactive/connected and rate. No explicit radio-control operation.",
+      "hardware_access": true,
+      "hardware_access_detail": "status_snapshot_may_query_driver",
+      "purpose": "Read existing network/configuration state or record an implemented empty-output stub.",
+      "confidence": "reviewed_information_query",
+      "review_scope": "Handler and named helpers inspected. Indirect backend calls and output framework are not a formal transitive side-effect proof.",
+      "physically_tested_by_this_review": false
+    },
+    {
+      "command": "udws \"nca.get_wireless_locale;\"",
+      "name": "nca.get_wireless_locale",
+      "arguments": [],
+      "handler": "0xa02dffad",
+      "descriptor_address": "0xa05c720c",
+      "argument_syntax": "No arguments consumed in the reviewed handler.",
+      "review_evidence": "Hardcodes adapter type1; reads current config via0xa02d6e26 and formats enum at+0xa0. No command arguments or setter.",
+      "hardware_access": false,
+      "hardware_access_detail": "cached_adapter_configuration",
+      "purpose": "Read existing network/configuration state or record an implemented empty-output stub.",
+      "confidence": "reviewed_information_query",
+      "review_scope": "Handler and named helpers inspected. Indirect backend calls and output framework are not a formal transitive side-effect proof.",
+      "physically_tested_by_this_review": false
+    },
+    {
+      "command": "udws \"nca.get_v4_fqdn_mode;\"",
+      "name": "nca.get_v4_fqdn_mode",
+      "arguments": [],
+      "handler": "0xa02e180d",
+      "descriptor_address": "0xa05c7314",
+      "argument_syntax": "No arguments consumed in the reviewed handler.",
+      "review_evidence": "No command arguments. Getter0xa02d9288 calls0xa02d514c to copy existing protocol config and reads+0x38, then emits enabled/disabled.",
+      "hardware_access": false,
+      "hardware_access_detail": "cached_protocol_configuration",
+      "purpose": "Read existing network/configuration state or record an implemented empty-output stub.",
+      "confidence": "reviewed_information_query",
+      "review_scope": "Handler and named helpers inspected. Indirect backend calls and output framework are not a formal transitive side-effect proof.",
+      "physically_tested_by_this_review": false
+    },
+    {
+      "command": "udws \"nca.get_dhcpv6_state;\"",
+      "name": "nca.get_dhcpv6_state",
+      "arguments": [],
+      "handler": "0xa02e184d",
+      "descriptor_address": "0xa05c7344",
+      "argument_syntax": "No arguments consumed in the reviewed handler.",
+      "review_evidence": "No command arguments. Helper0xa02d696e->0xa02d5b9c reads the cached DHCPv6 word under a lock; wrapper emits enabled/disabled.",
+      "hardware_access": false,
+      "hardware_access_detail": "cached_protocol_configuration",
+      "purpose": "Read existing network/configuration state or record an implemented empty-output stub.",
+      "confidence": "reviewed_information_query",
+      "review_scope": "Handler and named helpers inspected. Indirect backend calls and output framework are not a formal transitive side-effect proof.",
+      "physically_tested_by_this_review": false
+    },
+    {
+      "command": "udws \"nca.get_admin_wifi_radio_state;\"",
+      "name": "nca.get_admin_wifi_radio_state",
+      "arguments": [],
+      "handler": "0xa02e1e0d",
+      "descriptor_address": "0xa05c738c",
+      "argument_syntax": "No arguments consumed in the reviewed handler.",
+      "review_evidence": "Handler is exactly BX LR at0xa02e1e0c; consumes no arguments and produces no payload in this image.",
+      "hardware_access": false,
+      "hardware_access_detail": "no_op_stub",
+      "purpose": "Read existing network/configuration state or record an implemented empty-output stub.",
+      "confidence": "reviewed_information_query",
+      "review_scope": "Handler and named helpers inspected. Indirect backend calls and output framework are not a formal transitive side-effect proof.",
+      "physically_tested_by_this_review": false
+    },
+    {
+      "command": "udws \"snmp.read_get_community_name;\"",
+      "name": "snmp.read_get_community_name",
+      "arguments": [],
+      "handler": "0xa03fa015",
+      "descriptor_address": "0xa0618444",
+      "argument_syntax": "No arguments consumed in the reviewed handler.",
+      "review_evidence": "No arguments consumed. Read getter0xa03f98fe obtains existing SNMP GET community through configuration provider vtable+0x20 and wrapper emits returned string/length. No write path.",
+      "hardware_access": true,
+      "hardware_access_detail": "configuration_provider_read",
+      "purpose": "Read existing network/configuration state or record an implemented empty-output stub.",
+      "confidence": "reviewed_information_query",
+      "review_scope": "Handler and named helpers inspected. Indirect backend calls and output framework are not a formal transitive side-effect proof.",
+      "physically_tested_by_this_review": false
+    },
+    {
+      "command": "udws \"snmp.read_set_community_name;\"",
+      "name": "snmp.read_set_community_name",
+      "arguments": [],
+      "handler": "0xa03fa039",
+      "descriptor_address": "0xa0618450",
+      "argument_syntax": "No arguments consumed in the reviewed handler.",
+      "review_evidence": "Despite SET in its name this is the READ of the stored SET-community string. Getter0xa03f97de reads configuration provider, wrapper emits string/length. No command arguments or write path.",
+      "hardware_access": true,
+      "hardware_access_detail": "configuration_provider_read",
+      "purpose": "Read existing network/configuration state or record an implemented empty-output stub.",
+      "confidence": "reviewed_information_query",
+      "review_scope": "Handler and named helpers inspected. Indirect backend calls and output framework are not a formal transitive side-effect proof.",
+      "physically_tested_by_this_review": false
+    },
+    {
+      "command": "udws \"snmp.get_snmp_version_access;\"",
+      "name": "snmp.get_snmp_version_access",
+      "arguments": [],
+      "handler": "0xa03fa0b5",
+      "descriptor_address": "0xa0618474",
+      "argument_syntax": "No arguments consumed in the reviewed handler.",
+      "review_evidence": "No command arguments. Helper0xa03f9ce0 is LDR pointer/LDR word/BX LR; wrapper emits that cached version-access integer.",
+      "hardware_access": false,
+      "hardware_access_detail": "cached_configuration",
+      "purpose": "Read existing network/configuration state or record an implemented empty-output stub.",
+      "confidence": "reviewed_information_query",
+      "review_scope": "Handler and named helpers inspected. Indirect backend calls and output framework are not a formal transitive side-effect proof.",
+      "physically_tested_by_this_review": false
+    },
+    {
+      "command": "udws \"snmp.get_default;\"",
+      "name": "snmp.get_default",
+      "arguments": [],
+      "handler": "0xa03fa0e3",
+      "descriptor_address": "0xa061848c",
+      "argument_syntax": "No arguments consumed in the reviewed handler.",
+      "review_evidence": "Handler is exactly BX LR at0xa03fa0e2; no arguments and no payload.",
+      "hardware_access": false,
+      "hardware_access_detail": "no_op_stub",
+      "purpose": "Read existing network/configuration state or record an implemented empty-output stub.",
+      "confidence": "reviewed_information_query",
+      "review_scope": "Handler and named helpers inspected. Indirect backend calls and output framework are not a formal transitive side-effect proof.",
+      "physically_tested_by_this_review": false
+    },
+    {
+      "command": "udws \"snmp.get_free_heap_space;\"",
+      "name": "snmp.get_free_heap_space",
+      "arguments": [],
+      "handler": "0xa03fa141",
+      "descriptor_address": "0xa06184b0",
+      "argument_syntax": "No arguments consumed in the reviewed handler.",
+      "review_evidence": "Loads existing heap handle, calls0xa02ce30c, then formats returned count via output vtable+0x14. No argument parser or heap-allocation request in the wrapper.",
+      "hardware_access": false,
+      "hardware_access_detail": "heap_metadata",
+      "purpose": "Read existing network/configuration state or record an implemented empty-output stub.",
+      "confidence": "reviewed_information_query",
+      "review_scope": "Handler and named helpers inspected. Indirect backend calls and output framework are not a formal transitive side-effect proof.",
+      "physically_tested_by_this_review": false
+    },
+    {
+      "command": "udws \"wifi_conman.print_client_list;\"",
+      "name": "wifi_conman.print_client_list",
+      "arguments": [],
+      "handler": "0xa047d34d",
+      "descriptor_address": "0xa0635808",
+      "argument_syntax": "No arguments consumed in the reviewed handler.",
+      "review_evidence": "Wrapper calls0xa047c4e4. Helper locks existing client list, traverses next pointers, unlocks, returns. No output call remains in this build, so empty payload is expected. No radio discovery/start request.",
+      "hardware_access": false,
+      "hardware_access_detail": "existing_client_list",
+      "purpose": "Read existing network/configuration state or record an implemented empty-output stub.",
+      "confidence": "reviewed_information_query",
+      "review_scope": "Handler and named helpers inspected. Indirect backend calls and output framework are not a formal transitive side-effect proof.",
+      "physically_tested_by_this_review": false
+    },
+    {
+      "command": "udws \"nca.get_eth_speed_config;\"",
+      "name": "nca.get_eth_speed_config",
+      "arguments": [],
+      "handler": "0xa02df243",
+      "descriptor_address": "0xa05c70e0",
+      "argument_syntax": "No arguments consumed in the reviewed handler.",
+      "review_evidence": "Hardcodes ETH0 type0 and returns immediately if no existing handle; otherwise reads cached adapter config and formats speed enum. No command args or setting call.",
+      "hardware_access": false,
+      "hardware_access_detail": "cached_adapter_configuration",
+      "purpose": "Read existing network/configuration state or record an implemented empty-output stub.",
+      "confidence": "reviewed_information_query",
+      "review_scope": "Handler and named helpers inspected. Indirect backend calls and output framework are not a formal transitive side-effect proof.",
+      "physically_tested_by_this_review": false
+    },
+    {
+      "command": "udws \"nca.get_eth_autocross_config;\"",
+      "name": "nca.get_eth_autocross_config",
+      "arguments": [],
+      "handler": "0xa02df333",
+      "descriptor_address": "0xa05c70ec",
+      "argument_syntax": "No arguments consumed in the reviewed handler.",
+      "review_evidence": "Hardcodes ETH0 type0 and exits on missing handle; otherwise reads cached config+0xc and prints cross-over flag. No command args or setting call.",
+      "hardware_access": false,
+      "hardware_access_detail": "cached_adapter_configuration",
+      "purpose": "Read existing network/configuration state or record an implemented empty-output stub.",
+      "confidence": "reviewed_information_query",
+      "review_scope": "Handler and named helpers inspected. Indirect backend calls and output framework are not a formal transitive side-effect proof.",
+      "physically_tested_by_this_review": false
+    },
+    {
+      "command": "udws \"nca.get_mfg_mac_addr WIFI0;\"",
+      "name": "nca.get_mfg_mac_addr",
+      "arguments": [
+        "WIFI0"
+      ],
+      "handler": "0xa02df531",
+      "descriptor_address": "0xa05c7140",
+      "argument_syntax": "Adapter enum WIFI0 maps to1; protocol enum PROT_IPV4=0 or PROT_IPV6=1 as supplied.",
+      "review_evidence": "Consumes one adapter enum using output-interface vtable+0x2c with table0xa05c7a94. Calls manufacturer-data loader0xa02dda8a then getter0xa02de76c and formats six bytes. Requires explicit adapter; no-arg stack slot is unchecked.",
+      "hardware_access": true,
+      "hardware_access_detail": "manufacturer_configuration_read",
+      "purpose": "Read existing network/configuration state or record an implemented empty-output stub.",
+      "confidence": "reviewed_information_query",
+      "review_scope": "Handler and named helpers inspected. Indirect backend calls and output framework are not a formal transitive side-effect proof.",
+      "physically_tested_by_this_review": false
+    },
+    {
+      "command": "udws \"nca.get_mac_addr WIFI0;\"",
+      "name": "nca.get_mac_addr",
+      "arguments": [
+        "WIFI0"
+      ],
+      "handler": "0xa02df5bb",
+      "descriptor_address": "0xa05c714c",
+      "argument_syntax": "Adapter enum WIFI0 maps to1; protocol enum PROT_IPV4=0 or PROT_IPV6=1 as supplied.",
+      "review_evidence": "Consumes one adapter enum using table0xa05c7a94. Helper0xa02de80c searches two existing adapter records and copies their six-byte MAC, then wrapper formats bytes. No adapter reset/start/set call.",
+      "hardware_access": false,
+      "hardware_access_detail": "cached_adapter_identity",
+      "purpose": "Read existing network/configuration state or record an implemented empty-output stub.",
+      "confidence": "reviewed_information_query",
+      "review_scope": "Handler and named helpers inspected. Indirect backend calls and output framework are not a formal transitive side-effect proof.",
+      "physically_tested_by_this_review": false
+    },
+    {
+      "command": "udws \"nca.get_bssid WIFI0;\"",
+      "name": "nca.get_bssid",
+      "arguments": [
+        "WIFI0"
+      ],
+      "handler": "0xa02df69b",
+      "descriptor_address": "0xa05c7158",
+      "argument_syntax": "Adapter enum WIFI0 maps to1; protocol enum PROT_IPV4=0 or PROT_IPV6=1 as supplied.",
+      "review_evidence": "Consumes one adapter enum via table0xa05c7a94.0xa02d65aa->0xa02d4eb4 obtains current status snapshot, with possible network driver query; wrapper prints BSSID when status fields match or error string. No scan operation.",
+      "hardware_access": true,
+      "hardware_access_detail": "status_snapshot_may_query_driver",
+      "purpose": "Read existing network/configuration state or record an implemented empty-output stub.",
+      "confidence": "reviewed_information_query",
+      "review_scope": "Handler and named helpers inspected. Indirect backend calls and output framework are not a formal transitive side-effect proof.",
+      "physically_tested_by_this_review": false
+    },
+    {
+      "command": "udws \"nca.get_ip_addr WIFI0;\"",
+      "name": "nca.get_ip_addr",
+      "arguments": [
+        "WIFI0"
+      ],
+      "handler": "0xa02df743",
+      "descriptor_address": "0xa05c7164",
+      "argument_syntax": "Adapter enum WIFI0 maps to1; protocol enum PROT_IPV4=0 or PROT_IPV6=1 as supplied.",
+      "review_evidence": "Consumes one adapter enum via table0xa05c7a94. WIFI0 follows0xa02de83a, which selects existing handle and reads its network status/address; formats returned IPv4 value or0.0.0.0. No IP-set call.",
+      "hardware_access": true,
+      "hardware_access_detail": "network_status_read",
+      "purpose": "Read existing network/configuration state or record an implemented empty-output stub.",
+      "confidence": "reviewed_information_query",
+      "review_scope": "Handler and named helpers inspected. Indirect backend calls and output framework are not a formal transitive side-effect proof.",
+      "physically_tested_by_this_review": false
+    },
+    {
+      "command": "udws \"nca.get_domain_names WIFI0 PROT_IPV4;\"",
+      "name": "nca.get_domain_names",
+      "arguments": [
+        "WIFI0",
+        "PROT_IPV4"
+      ],
+      "handler": "0xa02df801",
+      "descriptor_address": "0xa05c729c",
+      "argument_syntax": "Adapter enum WIFI0 maps to1; protocol enum PROT_IPV4=0 or PROT_IPV6=1 as supplied.",
+      "review_evidence": "Consumes adapter enum at0xa05c7a94 then protocol enum at0xa05c7c90.0xa02d8c88 validates buffers/handle and copies existing domain-name cache for selected protocol; IPv4 selector0.",
+      "hardware_access": false,
+      "hardware_access_detail": "cached_protocol_configuration",
+      "purpose": "Read existing network/configuration state or record an implemented empty-output stub.",
+      "confidence": "reviewed_information_query",
+      "review_scope": "Handler and named helpers inspected. Indirect backend calls and output framework are not a formal transitive side-effect proof.",
+      "physically_tested_by_this_review": false
+    },
+    {
+      "command": "udws \"nca.get_domain_names WIFI0 PROT_IPV6;\"",
+      "name": "nca.get_domain_names",
+      "arguments": [
+        "WIFI0",
+        "PROT_IPV6"
+      ],
+      "handler": "0xa02df801",
+      "descriptor_address": "0xa05c729c",
+      "argument_syntax": "Adapter enum WIFI0 maps to1; protocol enum PROT_IPV4=0 or PROT_IPV6=1 as supplied.",
+      "review_evidence": "Same reviewed two-enum path; PROT_IPV6 is selector1 at0xa05c7c98 and reads the IPv6 domain-name cache.",
+      "hardware_access": false,
+      "hardware_access_detail": "cached_protocol_configuration",
+      "purpose": "Read existing network/configuration state or record an implemented empty-output stub.",
+      "confidence": "reviewed_information_query",
+      "review_scope": "Handler and named helpers inspected. Indirect backend calls and output framework are not a formal transitive side-effect proof.",
+      "physically_tested_by_this_review": false
+    },
+    {
+      "command": "udws \"nca.get_active_adaptors;\"",
+      "name": "nca.get_active_adaptors",
+      "arguments": [],
+      "handler": "0xa02dfb41",
+      "descriptor_address": "0xa05c71a0",
+      "argument_syntax": "No arguments consumed in the reviewed handler.",
+      "review_evidence": "No arguments. Iterates existing adapter-type enum, verifies handles/presence using0xa02d7f06/0xa02d7ea6, reads cached config, and prints a bit/status string. Does not create or start adapters.",
+      "hardware_access": false,
+      "hardware_access_detail": "cached_adapter_state",
+      "purpose": "Read existing network/configuration state or record an implemented empty-output stub.",
+      "confidence": "reviewed_information_query",
+      "review_scope": "Handler and named helpers inspected. Indirect backend calls and output framework are not a formal transitive side-effect proof.",
+      "physically_tested_by_this_review": false
+    },
+    {
+      "command": "udws \"nca.get_proxy_info;\"",
+      "name": "nca.get_proxy_info",
+      "arguments": [],
+      "handler": "0xa02e1487",
+      "descriptor_address": "0xa05c72c0",
+      "argument_syntax": "No arguments consumed in the reviewed handler.",
+      "review_evidence": "No arguments. Getter0xa02d93b4 obtains existing proxy configuration via0xa02de348, fills caller buffers, and wrapper outputs enabled/address/port. Setter is a separate handler.",
+      "hardware_access": false,
+      "hardware_access_detail": "cached_proxy_configuration",
+      "purpose": "Read existing network/configuration state or record an implemented empty-output stub.",
+      "confidence": "reviewed_information_query",
+      "review_scope": "Handler and named helpers inspected. Indirect backend calls and output framework are not a formal transitive side-effect proof.",
+      "physically_tested_by_this_review": false
+    },
+    {
+      "command": "udws \"nca.get_sipsserver_info;\"",
+      "name": "nca.get_sipsserver_info",
+      "arguments": [],
+      "handler": "0xa02e165d",
+      "descriptor_address": "0xa05c72d8",
+      "argument_syntax": "No arguments consumed in the reviewed handler.",
+      "review_evidence": "No arguments. Getter0xa02d92e0 clears the caller buffer and calls0xa02de1d4, which is also a clear-buffer stub. Expected payload is an empty server string followed by delimiter. No network request.",
+      "hardware_access": false,
+      "hardware_access_detail": "empty_configuration_stub",
+      "purpose": "Read existing network/configuration state or record an implemented empty-output stub.",
+      "confidence": "reviewed_information_query",
+      "review_scope": "Handler and named helpers inspected. Indirect backend calls and output framework are not a formal transitive side-effect proof.",
+      "physically_tested_by_this_review": false
+    },
+    {
+      "command": "udws \"nca.get_wireless_config;\"",
+      "name": "nca.get_wireless_config",
+      "arguments": [],
+      "handler": "0xa02e086f",
+      "descriptor_address": "0xa05c726c",
+      "argument_syntax": "No arguments consumed in the reviewed handler.",
+      "review_evidence": "Handler is exactly BX LR at0xa02e086e. The adjacent long routine at0xa02e0870 is a different function, not the handler body. No arguments or payload.",
+      "hardware_access": false,
+      "hardware_access_detail": "no_op_stub",
+      "purpose": "Read existing network/configuration state or record an implemented empty-output stub.",
+      "confidence": "reviewed_information_query",
+      "review_scope": "Handler and named helpers inspected. Indirect backend calls and output framework are not a formal transitive side-effect proof.",
+      "physically_tested_by_this_review": false
+    }
+  ],
+  "excluded_from_this_query_batch": [
+    {
+      "names": [
+        "nca.get_wireless_scan",
+        "nca.get_directed_wireless_scan",
+        "nca.get_num_aps_max_rssi"
+      ],
+      "reason": "Scan-related behavior not accepted as passive metadata; do not invoke in this query batch."
+    },
+    {
+      "names": [
+        "nca.get_wireless_5ghz_config",
+        "nca.get_mfg_wireless_5ghz_config"
+      ],
+      "reason": "Formatting path can reach output with r4 uninitialized for unexpected/default config enum, so defer until live config value is known."
+    },
+    {
+      "names": [
+        "nca.get_preferred_address",
+        "nca.get_preferred_fqdn",
+        "nca.get_addr_info"
+      ],
+      "reason": "Argument and possible name-resolution semantics not sufficiently reviewed."
+    },
+    {
+      "names": [
+        "wifi_conman.config",
+        "wifi_conman.start",
+        "wifi_conman.stop",
+        "wifi_conman.find",
+        "wifi_conman.listen_state",
+        "wifi_conman.search",
+        "wifi_conman.scan",
+        "wifi_conman.service_status",
+        "wifi_conman.auto_accept",
+        "wifi_conman.user_accept",
+        "wifi_conman.start_pbc"
+      ],
+      "reason": "Control/configuration, discovery or connection behavior; outside metadata-only batch."
+    }
+  ],
+  "limitations": [
+    "A returned0 alone is not proof of nonempty data or a successful underlying read.",
+    "UART transcripts remain the record of actual testing.",
+    "Hardware-access true means a configuration-provider or driver read may occur; no physical radio start/scan/config command is proposed."
+  ]
+}

@@ -1,0 +1,416 @@
+[
+  {
+    "command": "udws \"udw.iter_reset;\"",
+    "purpose": "Registry iterator",
+    "classification": "command-discovery",
+    "provenance": "2018 handler review"
+  },
+  {
+    "command": "udws \"udw.iter_get_next;\"",
+    "purpose": "Registry iterator",
+    "classification": "command-discovery",
+    "provenance": "2018 handler review"
+  },
+  {
+    "command": "udws \"udw.iter_get_next;\"",
+    "purpose": "Registry iterator",
+    "classification": "command-discovery",
+    "provenance": "2018 handler review"
+  },
+  {
+    "command": "udws \"ldn.long_name;\"",
+    "purpose": "Capture reported ldn.long_name",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"ldn.short_name;\"",
+    "purpose": "Capture reported ldn.short_name",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"bio.pkg_fw_rev;\"",
+    "purpose": "Capture reported bio.pkg_fw_rev",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"bio.pkg_name;\"",
+    "purpose": "Capture reported bio.pkg_name",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"bio.pkg_phase;\"",
+    "purpose": "Capture reported bio.pkg_phase",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"bio.bld_time;\"",
+    "purpose": "Capture reported bio.bld_time",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"bio.target;\"",
+    "purpose": "Capture reported bio.target",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"bio.project;\"",
+    "purpose": "Capture reported bio.project",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"bio.machine;\"",
+    "purpose": "Capture reported bio.machine",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"bio.userid;\"",
+    "purpose": "Capture reported bio.userid",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"bio.tgtname;\"",
+    "purpose": "Capture reported bio.tgtname",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"bio.scm_key;\"",
+    "purpose": "Capture reported bio.scm_key",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"bio.scm_url;\"",
+    "purpose": "Capture reported bio.scm_url",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"cache.query;\"",
+    "purpose": "Capture reported cache.query",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"mem.dram_size;\"",
+    "purpose": "Capture reported mem.dram_size",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"ui_lite.get_state;\"",
+    "purpose": "Capture reported ui_lite.get_state",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"sm.on_off_status;\"",
+    "purpose": "Capture reported sm.on_off_status",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"sm.get_pwrup_mode;\"",
+    "purpose": "Capture reported sm.get_pwrup_mode",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"device_info.get_device_status;\"",
+    "purpose": "Capture reported device_info.get_device_status",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"ews.show_mem_usage;\"",
+    "purpose": "Capture reported ews.show_mem_usage",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"ews.show_session_tbl;\"",
+    "purpose": "Capture reported ews.show_session_tbl",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"roobe.supp_oobe_stages;\"",
+    "purpose": "Capture reported roobe.supp_oobe_stages",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"l10n.get_media_sizes;\"",
+    "purpose": "Capture reported l10n.get_media_sizes",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"l10n.get_media_types;\"",
+    "purpose": "Capture reported l10n.get_media_types",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"prdsts.get_active_alerts;\"",
+    "purpose": "Capture reported prdsts.get_active_alerts",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"wifi_conman.help;\"",
+    "purpose": "Capture reported wifi_conman.help",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"nca.get_radio_fw_version;\"",
+    "purpose": "Capture reported nca.get_radio_fw_version",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"nca.get_permanent_radio_mac 1;\"",
+    "purpose": "Capture reported nca.get_permanent_radio_mac 1",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"nca.get_dot11ap_config;\"",
+    "purpose": "Capture reported nca.get_dot11ap_config",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"hw.get_clk_rate;\"",
+    "purpose": "Capture reported hw.get_clk_rate",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"hw_mcasic.get_supply_voltage;\"",
+    "purpose": "Capture reported hw_mcasic.get_supply_voltage",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"lib_digital_sensor.list;\"",
+    "purpose": "Capture reported lib_digital_sensor.list",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"lib_coordination.info;\"",
+    "purpose": "Capture reported lib_coordination.info",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"mem.help;\"",
+    "purpose": "Capture reported mem.help",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"mem.list_pools;\"",
+    "purpose": "Capture reported mem.list_pools",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"mem.show_summary;\"",
+    "purpose": "Capture reported mem.show_summary",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"timer.get_factory_time;\"",
+    "purpose": "Capture reported timer.get_factory_time",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"timer.get_rtc_status;\"",
+    "purpose": "Capture reported timer.get_rtc_status",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"hw.get_kernel_exec_wait;\"",
+    "purpose": "Capture reported hw.get_kernel_exec_wait",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"lib_pwr.get_active_clients;\"",
+    "purpose": "Capture reported lib_pwr.get_active_clients",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"pe_events.list;\"",
+    "purpose": "Capture reported pe_events.list",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"rev.get_fw;\"",
+    "purpose": "Capture reported rev.get_fw",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"rev.get_base_fw;\"",
+    "purpose": "Capture reported rev.get_base_fw",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"rev.get_verbose_fw;\"",
+    "purpose": "Capture reported rev.get_verbose_fw",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"rev.get_raw_asic;\"",
+    "purpose": "Capture reported rev.get_raw_asic",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"rev.get_aasic;\"",
+    "purpose": "Capture reported rev.get_aasic",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"rev.get_dasic;\"",
+    "purpose": "Capture reported rev.get_dasic",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"cnc_common_util.get_udn;\"",
+    "purpose": "Capture reported cnc_common_util.get_udn",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"webfwupdate.get_status;\"",
+    "purpose": "Capture reported webfwupdate.get_status",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"webfwupdate.get_nvm_state;\"",
+    "purpose": "Capture reported webfwupdate.get_nvm_state",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"webfwupdate.get_mode;\"",
+    "purpose": "Capture reported webfwupdate.get_mode",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"webfwupdate.get_error;\"",
+    "purpose": "Capture reported webfwupdate.get_error",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"js.jobs_status;\"",
+    "purpose": "Capture reported js.jobs_status",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"js.job_list;\"",
+    "purpose": "Capture reported js.job_list",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"jm_reports.supp_report;\"",
+    "purpose": "Capture reported jm_reports.supp_report",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"pe_seq.show_seq_tree;\"",
+    "purpose": "Capture reported pe_seq.show_seq_tree",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "udws \"ram.statfs /ram;\"",
+    "purpose": "Capture reported ram.statfs /ram",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py reviewed information-query syntax"
+  },
+  {
+    "command": "ls /",
+    "purpose": "Read filesystem or network state",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py"
+  },
+  {
+    "command": "ls /ram",
+    "purpose": "Read filesystem or network state",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py"
+  },
+  {
+    "command": "ll /tmp",
+    "purpose": "Read filesystem or network state",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py"
+  },
+  {
+    "command": "netstat soc",
+    "purpose": "Read filesystem or network state",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py"
+  },
+  {
+    "command": "netstat tcp",
+    "purpose": "Read filesystem or network state",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py"
+  },
+  {
+    "command": "netstat udp",
+    "purpose": "Read filesystem or network state",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py"
+  },
+  {
+    "command": "netstat arp",
+    "purpose": "Read filesystem or network state",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py"
+  },
+  {
+    "command": "netstat rte",
+    "purpose": "Read filesystem or network state",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py"
+  },
+  {
+    "command": "netstat dev",
+    "purpose": "Read filesystem or network state",
+    "classification": "information-query",
+    "provenance": "analysis/uart_selftest.py"
+  }
+]

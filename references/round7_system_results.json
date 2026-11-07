@@ -1,0 +1,1074 @@
+{
+  "source": "physical-78-ip-job-memory",
+  "serial_access": "none",
+  "review_source": "round7_system_review.json",
+  "review_sha256": "5f35be16f514f30c35fb6b9c06245f1a80340171bcc8c5feb067b14bbd5fc546",
+  "summary": {
+    "new_registered_names": 2,
+    "validated_responses": 39,
+    "ip_override_fields": 38,
+    "all_available_prerequisite_values_matched": true
+  },
+  "ip_override_values": [
+    {
+      "field_id": 1,
+      "field_name": "DataType",
+      "printed_value": 0,
+      "matches_prerequisite_snapshot": true
+    },
+    {
+      "field_id": 2,
+      "field_name": "DataType_in",
+      "printed_value": 0,
+      "matches_prerequisite_snapshot": true
+    },
+    {
+      "field_id": 3,
+      "field_name": "Transform",
+      "printed_value": 0,
+      "matches_prerequisite_snapshot": true
+    },
+    {
+      "field_id": 4,
+      "field_name": "ip_mode",
+      "printed_value": 0,
+      "matches_prerequisite_snapshot": true
+    },
+    {
+      "field_id": 5,
+      "field_name": "media_alg",
+      "printed_value": 0,
+      "matches_prerequisite_snapshot": true
+    },
+    {
+      "field_id": 6,
+      "field_name": "color_config",
+      "printed_value": 0,
+      "matches_prerequisite_snapshot": true
+    },
+    {
+      "field_id": 7,
+      "field_name": "varsharp",
+      "printed_value": 0,
+      "matches_prerequisite_snapshot": true
+    },
+    {
+      "field_id": 8,
+      "field_name": "in_x_res",
+      "printed_value": 0,
+      "matches_prerequisite_snapshot": true
+    },
+    {
+      "field_id": 9,
+      "field_name": "in_y_res",
+      "printed_value": 0,
+      "matches_prerequisite_snapshot": true
+    },
+    {
+      "field_id": 10,
+      "field_name": "out_x_res",
+      "printed_value": 0,
+      "matches_prerequisite_snapshot": true
+    },
+    {
+      "field_id": 11,
+      "field_name": "out_y_res",
+      "printed_value": 0,
+      "matches_prerequisite_snapshot": true
+    },
+    {
+      "field_id": 12,
+      "field_name": "page_x_res",
+      "printed_value": 0,
+      "matches_prerequisite_snapshot": true
+    },
+    {
+      "field_id": 13,
+      "field_name": "page_y_res",
+      "printed_value": 0,
+      "matches_prerequisite_snapshot": true
+    },
+    {
+      "field_id": 14,
+      "field_name": "x_origin",
+      "printed_value": 0,
+      "matches_prerequisite_snapshot": true
+    },
+    {
+      "field_id": 15,
+      "field_name": "y_origin",
+      "printed_value": 0,
+      "matches_prerequisite_snapshot": true
+    },
+    {
+      "field_id": 16,
+      "field_name": "x_extent",
+      "printed_value": 0,
+      "matches_prerequisite_snapshot": true
+    },
+    {
+      "field_id": 17,
+      "field_name": "y_extent",
+      "printed_value": 0,
+      "matches_prerequisite_snapshot": true
+    },
+    {
+      "field_id": 19,
+      "field_name": "x_alloc",
+      "printed_value": 0,
+      "matches_prerequisite_snapshot": true
+    },
+    {
+      "field_id": 20,
+      "field_name": "shift_right",
+      "printed_value": 0,
+      "matches_prerequisite_snapshot": true
+    },
+    {
+      "field_id": 21,
+      "field_name": "top_pad",
+      "printed_value": 0,
+      "matches_prerequisite_snapshot": true
+    },
+    {
+      "field_id": 22,
+      "field_name": "mergein",
+      "printed_value": 0,
+      "matches_prerequisite_snapshot": true
+    },
+    {
+      "field_id": 23,
+      "field_name": "cds_settings",
+      "printed_value": 0,
+      "matches_prerequisite_snapshot": true
+    },
+    {
+      "field_id": 24,
+      "field_name": "im_config",
+      "printed_value": 0,
+      "matches_prerequisite_snapshot": true
+    },
+    {
+      "field_id": 25,
+      "field_name": "query_jpeg_tee_x_extent",
+      "printed_value": 0,
+      "matches_prerequisite_snapshot": true
+    },
+    {
+      "field_id": 26,
+      "field_name": "jpeg_tee_dx",
+      "printed_value": 0,
+      "matches_prerequisite_snapshot": true
+    },
+    {
+      "field_id": 27,
+      "field_name": "suppress_end_prod",
+      "printed_value": 0,
+      "matches_prerequisite_snapshot": true
+    },
+    {
+      "field_id": 28,
+      "field_name": "diagnostic_bars",
+      "printed_value": 0,
+      "matches_prerequisite_snapshot": true
+    },
+    {
+      "field_id": 29,
+      "field_name": "force_2row_mode",
+      "printed_value": 0,
+      "matches_prerequisite_snapshot": true
+    },
+    {
+      "field_id": 30,
+      "field_name": "suppress_erasure",
+      "printed_value": 0,
+      "matches_prerequisite_snapshot": true
+    },
+    {
+      "field_id": 31,
+      "field_name": "prnu_settings",
+      "printed_value": 0,
+      "matches_prerequisite_snapshot": true
+    },
+    {
+      "field_id": 32,
+      "field_name": "send_rec_func",
+      "printed_value": 0,
+      "matches_prerequisite_snapshot": true
+    },
+    {
+      "field_id": 33,
+      "field_name": "static_mem_p",
+      "printed_value": 0,
+      "matches_prerequisite_snapshot": true
+    },
+    {
+      "field_id": 34,
+      "field_name": "static_mem_sz",
+      "printed_value": 0,
+      "matches_prerequisite_snapshot": true
+    },
+    {
+      "field_id": 35,
+      "field_name": "fade_exp",
+      "printed_value": 0,
+      "matches_prerequisite_snapshot": true
+    },
+    {
+      "field_id": 36,
+      "field_name": "bitpack_burst_level",
+      "printed_value": 0,
+      "matches_prerequisite_snapshot": true
+    },
+    {
+      "field_id": 37,
+      "field_name": "bkg_removal",
+      "printed_value": 0,
+      "matches_prerequisite_snapshot": true
+    },
+    {
+      "field_id": 38,
+      "field_name": "blueprint",
+      "printed_value": 0,
+      "matches_prerequisite_snapshot": true
+    },
+    {
+      "field_id": 39,
+      "field_name": "translucent",
+      "printed_value": 0,
+      "matches_prerequisite_snapshot": true
+    }
+  ],
+  "basic_job_memory_requirement": {
+    "ordinal": 1,
+    "profile": "basic",
+    "minimum_bytes": 1048576,
+    "maximum_bytes": 1048576,
+    "bimodal": 0
+  },
+  "responses": [
+    {
+      "response_file": "physical-78-ip-job-memory/0001-udws_ip_get_1_0.bin",
+      "response_sha256": "6cf35dcb5ee02797e02e3e2f897fc1ac9d5d1b795ba1d8ebdcb65512c0e4b9e6",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "fields": {
+          "field_id": 1,
+          "field_name": "DataType",
+          "printed_value": 0,
+          "matches_prerequisite_snapshot": true
+        }
+      }
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0002-udws_ip_get_2_0.bin",
+      "response_sha256": "f157dad384671942423a0fa1ef8641ea025d7184ef643ce174858d1bbaf8cd9d",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "fields": {
+          "field_id": 2,
+          "field_name": "DataType_in",
+          "printed_value": 0,
+          "matches_prerequisite_snapshot": true
+        }
+      }
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0003-udws_ip_get_3_0.bin",
+      "response_sha256": "f8ba70d73873fe0170a4b70f0f7adb0992db9b15b52af0a435aef8a70869d858",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "fields": {
+          "field_id": 3,
+          "field_name": "Transform",
+          "printed_value": 0,
+          "matches_prerequisite_snapshot": true
+        }
+      }
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0004-udws_ip_get_4_0.bin",
+      "response_sha256": "c808a2c45963ea0c3a287de68891e6ecbc0db8b9410903ac9bd3c894193e6cd3",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "fields": {
+          "field_id": 4,
+          "field_name": "ip_mode",
+          "printed_value": 0,
+          "matches_prerequisite_snapshot": true
+        }
+      }
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0005-udws_ip_get_5_0.bin",
+      "response_sha256": "d2674cfa31cf7a03965858652fb8a9d6a81217be991e3b031df4abda3207e7c2",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "fields": {
+          "field_id": 5,
+          "field_name": "media_alg",
+          "printed_value": 0,
+          "matches_prerequisite_snapshot": true
+        }
+      }
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0006-udws_ip_get_6_0.bin",
+      "response_sha256": "256dd5cbfd6675f01299f7b66d4f6027eaed05ac6175b4cc2b047f3507387ba6",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "fields": {
+          "field_id": 6,
+          "field_name": "color_config",
+          "printed_value": 0,
+          "matches_prerequisite_snapshot": true
+        }
+      }
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0007-udws_ip_get_7_0.bin",
+      "response_sha256": "341222a80c0b447a8d42aae0e90692444378f1efab7a5803259ff74dcd508f75",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "fields": {
+          "field_id": 7,
+          "field_name": "varsharp",
+          "printed_value": 0,
+          "matches_prerequisite_snapshot": true
+        }
+      }
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0008-udws_ip_get_8_0.bin",
+      "response_sha256": "3ccfcccb3a62ebae6683860ce64be6ce4c1aa04061a133f48073c1abc45e4033",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "fields": {
+          "field_id": 8,
+          "field_name": "in_x_res",
+          "printed_value": 0,
+          "matches_prerequisite_snapshot": true
+        }
+      }
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0009-udws_ip_get_9_0.bin",
+      "response_sha256": "a7488d33f177eb8de6d5ef7c5c73c14b0550da6ed041ed72228313cd96eb4288",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "fields": {
+          "field_id": 9,
+          "field_name": "in_y_res",
+          "printed_value": 0,
+          "matches_prerequisite_snapshot": true
+        }
+      }
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0010-udws_ip_get_10_0.bin",
+      "response_sha256": "c1e45d247eb346b962539a16378ac701c1252317bac7e9fd565d2a34384d744f",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "fields": {
+          "field_id": 10,
+          "field_name": "out_x_res",
+          "printed_value": 0,
+          "matches_prerequisite_snapshot": true
+        }
+      }
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0011-udws_ip_get_11_0.bin",
+      "response_sha256": "6624a28b55488cc432c56065885de47032d307bbacf320f0806be98a2955e352",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "fields": {
+          "field_id": 11,
+          "field_name": "out_y_res",
+          "printed_value": 0,
+          "matches_prerequisite_snapshot": true
+        }
+      }
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0012-udws_ip_get_12_0.bin",
+      "response_sha256": "0dd4f5dd30ab33cddb415162434441f2badce26def0376daf95acc5a90d16010",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "fields": {
+          "field_id": 12,
+          "field_name": "page_x_res",
+          "printed_value": 0,
+          "matches_prerequisite_snapshot": true
+        }
+      }
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0013-udws_ip_get_13_0.bin",
+      "response_sha256": "191cd404d48cb504f0ba91bb3813e111b46707dc2ce8cd472d4430d38e1b8438",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "fields": {
+          "field_id": 13,
+          "field_name": "page_y_res",
+          "printed_value": 0,
+          "matches_prerequisite_snapshot": true
+        }
+      }
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0014-udws_ip_get_14_0.bin",
+      "response_sha256": "b8f9c5735ada8f1b2c56c80b5ad4daf46bb63e444792a0107b96c199670e66a1",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "fields": {
+          "field_id": 14,
+          "field_name": "x_origin",
+          "printed_value": 0,
+          "matches_prerequisite_snapshot": true
+        }
+      }
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0015-udws_ip_get_15_0.bin",
+      "response_sha256": "707376cab48ffeeefd0bc11b2c803decc6516fd892b0b3b12c771e058d5dbd93",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "fields": {
+          "field_id": 15,
+          "field_name": "y_origin",
+          "printed_value": 0,
+          "matches_prerequisite_snapshot": true
+        }
+      }
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0016-udws_ip_get_16_0.bin",
+      "response_sha256": "ff015b95e956dc435a25ea193e14804356e52624345ca36da94e293af9ad6800",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "fields": {
+          "field_id": 16,
+          "field_name": "x_extent",
+          "printed_value": 0,
+          "matches_prerequisite_snapshot": true
+        }
+      }
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0017-udws_ip_get_17_0.bin",
+      "response_sha256": "bf66fd33792be4175d9b20a8dbd2b43491835cfc697d60fb5a691d544f8e83ac",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "fields": {
+          "field_id": 17,
+          "field_name": "y_extent",
+          "printed_value": 0,
+          "matches_prerequisite_snapshot": true
+        }
+      }
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0018-udws_ip_get_19_0.bin",
+      "response_sha256": "952dceca6aa61731ceb83a359ba9bb747959de89c4ff178888a2ba5d67275fc7",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "fields": {
+          "field_id": 19,
+          "field_name": "x_alloc",
+          "printed_value": 0,
+          "matches_prerequisite_snapshot": true
+        }
+      }
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0019-udws_ip_get_20_0.bin",
+      "response_sha256": "1b93b4b65e3c209c9133efe8366534dc62a607de2b8db83a673c84e9907617f4",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "fields": {
+          "field_id": 20,
+          "field_name": "shift_right",
+          "printed_value": 0,
+          "matches_prerequisite_snapshot": true
+        }
+      }
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0020-udws_ip_get_21_0.bin",
+      "response_sha256": "a84bdc17f8de52ded086a4958928d8a33c1d65128e001ebdf57094e9509ac4aa",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "fields": {
+          "field_id": 21,
+          "field_name": "top_pad",
+          "printed_value": 0,
+          "matches_prerequisite_snapshot": true
+        }
+      }
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0021-udws_ip_get_22_0.bin",
+      "response_sha256": "411549a19afbbba9e378342063b096347bf58ad6447482cfbf0cef5e22889be7",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "fields": {
+          "field_id": 22,
+          "field_name": "mergein",
+          "printed_value": 0,
+          "matches_prerequisite_snapshot": true
+        }
+      }
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0022-udws_ip_get_23_0.bin",
+      "response_sha256": "f956c2394b97564f799ca5839d4a9befa79bcb95051e77cd46b0d2dd99079d8f",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "fields": {
+          "field_id": 23,
+          "field_name": "cds_settings",
+          "printed_value": 0,
+          "matches_prerequisite_snapshot": true
+        }
+      }
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0023-udws_ip_get_24_0.bin",
+      "response_sha256": "d210bc97b4e7a28ceebd4c3a95dd292f27bd637db4edf8beb7d5ec57af2fed34",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "fields": {
+          "field_id": 24,
+          "field_name": "im_config",
+          "printed_value": 0,
+          "matches_prerequisite_snapshot": true
+        }
+      }
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0024-udws_ip_get_25_0.bin",
+      "response_sha256": "c0aa26c578f2d456b3f927dfb9343d3abcde68bbdecf56615437701bb7e8f041",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "fields": {
+          "field_id": 25,
+          "field_name": "query_jpeg_tee_x_extent",
+          "printed_value": 0,
+          "matches_prerequisite_snapshot": true
+        }
+      }
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0025-udws_ip_get_26_0.bin",
+      "response_sha256": "e0e4da7d05a484fd72753017ee268d9d7c37fecb151f75732599127eb00ec966",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "fields": {
+          "field_id": 26,
+          "field_name": "jpeg_tee_dx",
+          "printed_value": 0,
+          "matches_prerequisite_snapshot": true
+        }
+      }
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0026-udws_ip_get_27_0.bin",
+      "response_sha256": "53e6136fe0c894061eb8f464fc3cee2ceaaea7fbd3cb215d6254ec608287eaa5",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "fields": {
+          "field_id": 27,
+          "field_name": "suppress_end_prod",
+          "printed_value": 0,
+          "matches_prerequisite_snapshot": true
+        }
+      }
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0027-udws_ip_get_28_0.bin",
+      "response_sha256": "db280e531fa23924444e1dbd00e012e82fea9fed5b69b47bb82ae5d41eefd07c",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "fields": {
+          "field_id": 28,
+          "field_name": "diagnostic_bars",
+          "printed_value": 0,
+          "matches_prerequisite_snapshot": true
+        }
+      }
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0028-udws_ip_get_29_0.bin",
+      "response_sha256": "88450bfea0ff72536844d6a2200b1d7833291bfdde150a9d161a211a547acb96",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "fields": {
+          "field_id": 29,
+          "field_name": "force_2row_mode",
+          "printed_value": 0,
+          "matches_prerequisite_snapshot": true
+        }
+      }
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0029-udws_ip_get_30_0.bin",
+      "response_sha256": "17400b90a65686cb79615171dcfef23cb7a78aa61af96028ce81c9d9d569e255",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "fields": {
+          "field_id": 30,
+          "field_name": "suppress_erasure",
+          "printed_value": 0,
+          "matches_prerequisite_snapshot": true
+        }
+      }
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0030-udws_ip_get_31_0.bin",
+      "response_sha256": "eac11a584e503a2be387d51abdda76e9e0fc162097c1de39ff17e03e55af28bc",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "fields": {
+          "field_id": 31,
+          "field_name": "prnu_settings",
+          "printed_value": 0,
+          "matches_prerequisite_snapshot": true
+        }
+      }
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0031-udws_ip_get_32_0.bin",
+      "response_sha256": "ff8cef34379de60eb08b1ec964ab41f314378bff2d508934f6ca51f04a568ff4",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "fields": {
+          "field_id": 32,
+          "field_name": "send_rec_func",
+          "printed_value": 0,
+          "matches_prerequisite_snapshot": true
+        }
+      }
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0032-udws_ip_get_33_0.bin",
+      "response_sha256": "e473fcc63242054769b257c40d91af0acf30f803ff077876f3916cfbb49d3713",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "fields": {
+          "field_id": 33,
+          "field_name": "static_mem_p",
+          "printed_value": 0,
+          "matches_prerequisite_snapshot": true
+        }
+      }
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0033-udws_ip_get_34_0.bin",
+      "response_sha256": "5ee3050d20b443ff70f89cc49f761598c23405b0c0588370ab67d190f4474723",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "fields": {
+          "field_id": 34,
+          "field_name": "static_mem_sz",
+          "printed_value": 0,
+          "matches_prerequisite_snapshot": true
+        }
+      }
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0034-udws_ip_get_35_0.bin",
+      "response_sha256": "2ea45d7bfe8f0cce42801bae2d82056799351732878f988d877b6467fa7577d0",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "fields": {
+          "field_id": 35,
+          "field_name": "fade_exp",
+          "printed_value": 0,
+          "matches_prerequisite_snapshot": true
+        }
+      }
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0035-udws_ip_get_36_0.bin",
+      "response_sha256": "daceb6f942913cbbae0ce71ff9dedf14412972f8e2dfac4802e32ef04dd981d0",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "fields": {
+          "field_id": 36,
+          "field_name": "bitpack_burst_level",
+          "printed_value": 0,
+          "matches_prerequisite_snapshot": true
+        }
+      }
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0036-udws_ip_get_37_0.bin",
+      "response_sha256": "96b261b0070c353711fdd52073fefd50b5cb1536e411cb83081bd4d3eed73134",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "fields": {
+          "field_id": 37,
+          "field_name": "bkg_removal",
+          "printed_value": 0,
+          "matches_prerequisite_snapshot": true
+        }
+      }
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0037-udws_ip_get_38_0.bin",
+      "response_sha256": "3c4b9040a337ed92fe59020806bb616ca965fbb0dfb1e13626fb12e83368bef7",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "fields": {
+          "field_id": 38,
+          "field_name": "blueprint",
+          "printed_value": 0,
+          "matches_prerequisite_snapshot": true
+        }
+      }
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0038-udws_ip_get_39_0.bin",
+      "response_sha256": "ca7443a02493f6fad05b0083722af9928005ec6406284c0feabea76aae43baf6",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "fields": {
+          "field_id": 39,
+          "field_name": "translucent",
+          "printed_value": 0,
+          "matches_prerequisite_snapshot": true
+        }
+      }
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0039-udws_jmis_mem_show.bin",
+      "response_sha256": "809750bae3a50cdded62d508721b236bcf52b703deccf267fe8a146a8b3f65d3",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "fields": {
+          "ordinal": 1,
+          "profile": "basic",
+          "minimum_bytes": 1048576,
+          "maximum_bytes": 1048576,
+          "bimodal": 0
+        }
+      }
+    }
+  ],
+  "response_revalidations": [
+    {
+      "response_file": "physical-78-ip-job-memory/0001-udws_ip_get_1_0.bin",
+      "response_sha256": "6cf35dcb5ee02797e02e3e2f897fc1ac9d5d1b795ba1d8ebdcb65512c0e4b9e6",
+      "valid": true,
+      "assessment": "validated-ip-override-value",
+      "note": "Exact valid descriptor ID and complete labeled integer payload. This is stored override data; enablement is not established by ip.get. Value exactly matches independent prerequisite RAM snapshot."
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0002-udws_ip_get_2_0.bin",
+      "response_sha256": "f157dad384671942423a0fa1ef8641ea025d7184ef643ce174858d1bbaf8cd9d",
+      "valid": true,
+      "assessment": "validated-ip-override-value",
+      "note": "Exact valid descriptor ID and complete labeled integer payload. This is stored override data; enablement is not established by ip.get. Value exactly matches independent prerequisite RAM snapshot."
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0003-udws_ip_get_3_0.bin",
+      "response_sha256": "f8ba70d73873fe0170a4b70f0f7adb0992db9b15b52af0a435aef8a70869d858",
+      "valid": true,
+      "assessment": "validated-ip-override-value",
+      "note": "Exact valid descriptor ID and complete labeled integer payload. This is stored override data; enablement is not established by ip.get. Value exactly matches independent prerequisite RAM snapshot."
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0004-udws_ip_get_4_0.bin",
+      "response_sha256": "c808a2c45963ea0c3a287de68891e6ecbc0db8b9410903ac9bd3c894193e6cd3",
+      "valid": true,
+      "assessment": "validated-ip-override-value",
+      "note": "Exact valid descriptor ID and complete labeled integer payload. This is stored override data; enablement is not established by ip.get. Value exactly matches independent prerequisite RAM snapshot."
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0005-udws_ip_get_5_0.bin",
+      "response_sha256": "d2674cfa31cf7a03965858652fb8a9d6a81217be991e3b031df4abda3207e7c2",
+      "valid": true,
+      "assessment": "validated-ip-override-value",
+      "note": "Exact valid descriptor ID and complete labeled integer payload. This is stored override data; enablement is not established by ip.get. Value exactly matches independent prerequisite RAM snapshot."
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0006-udws_ip_get_6_0.bin",
+      "response_sha256": "256dd5cbfd6675f01299f7b66d4f6027eaed05ac6175b4cc2b047f3507387ba6",
+      "valid": true,
+      "assessment": "validated-ip-override-value",
+      "note": "Exact valid descriptor ID and complete labeled integer payload. This is stored override data; enablement is not established by ip.get. Value exactly matches independent prerequisite RAM snapshot."
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0007-udws_ip_get_7_0.bin",
+      "response_sha256": "341222a80c0b447a8d42aae0e90692444378f1efab7a5803259ff74dcd508f75",
+      "valid": true,
+      "assessment": "validated-ip-override-value",
+      "note": "Exact valid descriptor ID and complete labeled integer payload. This is stored override data; enablement is not established by ip.get. Value exactly matches independent prerequisite RAM snapshot."
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0008-udws_ip_get_8_0.bin",
+      "response_sha256": "3ccfcccb3a62ebae6683860ce64be6ce4c1aa04061a133f48073c1abc45e4033",
+      "valid": true,
+      "assessment": "validated-ip-override-value",
+      "note": "Exact valid descriptor ID and complete labeled integer payload. This is stored override data; enablement is not established by ip.get. Value exactly matches independent prerequisite RAM snapshot."
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0009-udws_ip_get_9_0.bin",
+      "response_sha256": "a7488d33f177eb8de6d5ef7c5c73c14b0550da6ed041ed72228313cd96eb4288",
+      "valid": true,
+      "assessment": "validated-ip-override-value",
+      "note": "Exact valid descriptor ID and complete labeled integer payload. This is stored override data; enablement is not established by ip.get. Value exactly matches independent prerequisite RAM snapshot."
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0010-udws_ip_get_10_0.bin",
+      "response_sha256": "c1e45d247eb346b962539a16378ac701c1252317bac7e9fd565d2a34384d744f",
+      "valid": true,
+      "assessment": "validated-ip-override-value",
+      "note": "Exact valid descriptor ID and complete labeled integer payload. This is stored override data; enablement is not established by ip.get. Value exactly matches independent prerequisite RAM snapshot."
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0011-udws_ip_get_11_0.bin",
+      "response_sha256": "6624a28b55488cc432c56065885de47032d307bbacf320f0806be98a2955e352",
+      "valid": true,
+      "assessment": "validated-ip-override-value",
+      "note": "Exact valid descriptor ID and complete labeled integer payload. This is stored override data; enablement is not established by ip.get. Value exactly matches independent prerequisite RAM snapshot."
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0012-udws_ip_get_12_0.bin",
+      "response_sha256": "0dd4f5dd30ab33cddb415162434441f2badce26def0376daf95acc5a90d16010",
+      "valid": true,
+      "assessment": "validated-ip-override-value",
+      "note": "Exact valid descriptor ID and complete labeled integer payload. This is stored override data; enablement is not established by ip.get. Value exactly matches independent prerequisite RAM snapshot."
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0013-udws_ip_get_13_0.bin",
+      "response_sha256": "191cd404d48cb504f0ba91bb3813e111b46707dc2ce8cd472d4430d38e1b8438",
+      "valid": true,
+      "assessment": "validated-ip-override-value",
+      "note": "Exact valid descriptor ID and complete labeled integer payload. This is stored override data; enablement is not established by ip.get. Value exactly matches independent prerequisite RAM snapshot."
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0014-udws_ip_get_14_0.bin",
+      "response_sha256": "b8f9c5735ada8f1b2c56c80b5ad4daf46bb63e444792a0107b96c199670e66a1",
+      "valid": true,
+      "assessment": "validated-ip-override-value",
+      "note": "Exact valid descriptor ID and complete labeled integer payload. This is stored override data; enablement is not established by ip.get. Value exactly matches independent prerequisite RAM snapshot."
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0015-udws_ip_get_15_0.bin",
+      "response_sha256": "707376cab48ffeeefd0bc11b2c803decc6516fd892b0b3b12c771e058d5dbd93",
+      "valid": true,
+      "assessment": "validated-ip-override-value",
+      "note": "Exact valid descriptor ID and complete labeled integer payload. This is stored override data; enablement is not established by ip.get. Value exactly matches independent prerequisite RAM snapshot."
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0016-udws_ip_get_16_0.bin",
+      "response_sha256": "ff015b95e956dc435a25ea193e14804356e52624345ca36da94e293af9ad6800",
+      "valid": true,
+      "assessment": "validated-ip-override-value",
+      "note": "Exact valid descriptor ID and complete labeled integer payload. This is stored override data; enablement is not established by ip.get. Value exactly matches independent prerequisite RAM snapshot."
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0017-udws_ip_get_17_0.bin",
+      "response_sha256": "bf66fd33792be4175d9b20a8dbd2b43491835cfc697d60fb5a691d544f8e83ac",
+      "valid": true,
+      "assessment": "validated-ip-override-value",
+      "note": "Exact valid descriptor ID and complete labeled integer payload. This is stored override data; enablement is not established by ip.get. Value exactly matches independent prerequisite RAM snapshot."
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0018-udws_ip_get_19_0.bin",
+      "response_sha256": "952dceca6aa61731ceb83a359ba9bb747959de89c4ff178888a2ba5d67275fc7",
+      "valid": true,
+      "assessment": "validated-ip-override-value",
+      "note": "Exact valid descriptor ID and complete labeled integer payload. This is stored override data; enablement is not established by ip.get. Value exactly matches independent prerequisite RAM snapshot."
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0019-udws_ip_get_20_0.bin",
+      "response_sha256": "1b93b4b65e3c209c9133efe8366534dc62a607de2b8db83a673c84e9907617f4",
+      "valid": true,
+      "assessment": "validated-ip-override-value",
+      "note": "Exact valid descriptor ID and complete labeled integer payload. This is stored override data; enablement is not established by ip.get. Value exactly matches independent prerequisite RAM snapshot."
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0020-udws_ip_get_21_0.bin",
+      "response_sha256": "a84bdc17f8de52ded086a4958928d8a33c1d65128e001ebdf57094e9509ac4aa",
+      "valid": true,
+      "assessment": "validated-ip-override-value",
+      "note": "Exact valid descriptor ID and complete labeled integer payload. This is stored override data; enablement is not established by ip.get. Value exactly matches independent prerequisite RAM snapshot."
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0021-udws_ip_get_22_0.bin",
+      "response_sha256": "411549a19afbbba9e378342063b096347bf58ad6447482cfbf0cef5e22889be7",
+      "valid": true,
+      "assessment": "validated-ip-override-value",
+      "note": "Exact valid descriptor ID and complete labeled integer payload. This is stored override data; enablement is not established by ip.get. Value exactly matches independent prerequisite RAM snapshot."
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0022-udws_ip_get_23_0.bin",
+      "response_sha256": "f956c2394b97564f799ca5839d4a9befa79bcb95051e77cd46b0d2dd99079d8f",
+      "valid": true,
+      "assessment": "validated-ip-override-value",
+      "note": "Exact valid descriptor ID and complete labeled integer payload. This is stored override data; enablement is not established by ip.get. Value exactly matches independent prerequisite RAM snapshot."
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0023-udws_ip_get_24_0.bin",
+      "response_sha256": "d210bc97b4e7a28ceebd4c3a95dd292f27bd637db4edf8beb7d5ec57af2fed34",
+      "valid": true,
+      "assessment": "validated-ip-override-value",
+      "note": "Exact valid descriptor ID and complete labeled integer payload. This is stored override data; enablement is not established by ip.get. Value exactly matches independent prerequisite RAM snapshot."
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0024-udws_ip_get_25_0.bin",
+      "response_sha256": "c0aa26c578f2d456b3f927dfb9343d3abcde68bbdecf56615437701bb7e8f041",
+      "valid": true,
+      "assessment": "validated-ip-override-value",
+      "note": "Exact valid descriptor ID and complete labeled integer payload. This is stored override data; enablement is not established by ip.get. Value exactly matches independent prerequisite RAM snapshot."
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0025-udws_ip_get_26_0.bin",
+      "response_sha256": "e0e4da7d05a484fd72753017ee268d9d7c37fecb151f75732599127eb00ec966",
+      "valid": true,
+      "assessment": "validated-ip-override-value",
+      "note": "Exact valid descriptor ID and complete labeled integer payload. This is stored override data; enablement is not established by ip.get. Value exactly matches independent prerequisite RAM snapshot."
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0026-udws_ip_get_27_0.bin",
+      "response_sha256": "53e6136fe0c894061eb8f464fc3cee2ceaaea7fbd3cb215d6254ec608287eaa5",
+      "valid": true,
+      "assessment": "validated-ip-override-value",
+      "note": "Exact valid descriptor ID and complete labeled integer payload. This is stored override data; enablement is not established by ip.get. Value exactly matches independent prerequisite RAM snapshot."
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0027-udws_ip_get_28_0.bin",
+      "response_sha256": "db280e531fa23924444e1dbd00e012e82fea9fed5b69b47bb82ae5d41eefd07c",
+      "valid": true,
+      "assessment": "validated-ip-override-value",
+      "note": "Exact valid descriptor ID and complete labeled integer payload. This is stored override data; enablement is not established by ip.get. Value exactly matches independent prerequisite RAM snapshot."
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0028-udws_ip_get_29_0.bin",
+      "response_sha256": "88450bfea0ff72536844d6a2200b1d7833291bfdde150a9d161a211a547acb96",
+      "valid": true,
+      "assessment": "validated-ip-override-value",
+      "note": "Exact valid descriptor ID and complete labeled integer payload. This is stored override data; enablement is not established by ip.get. Value exactly matches independent prerequisite RAM snapshot."
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0029-udws_ip_get_30_0.bin",
+      "response_sha256": "17400b90a65686cb79615171dcfef23cb7a78aa61af96028ce81c9d9d569e255",
+      "valid": true,
+      "assessment": "validated-ip-override-value",
+      "note": "Exact valid descriptor ID and complete labeled integer payload. This is stored override data; enablement is not established by ip.get. Value exactly matches independent prerequisite RAM snapshot."
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0030-udws_ip_get_31_0.bin",
+      "response_sha256": "eac11a584e503a2be387d51abdda76e9e0fc162097c1de39ff17e03e55af28bc",
+      "valid": true,
+      "assessment": "validated-ip-override-value",
+      "note": "Exact valid descriptor ID and complete labeled integer payload. This is stored override data; enablement is not established by ip.get. Value exactly matches independent prerequisite RAM snapshot."
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0031-udws_ip_get_32_0.bin",
+      "response_sha256": "ff8cef34379de60eb08b1ec964ab41f314378bff2d508934f6ca51f04a568ff4",
+      "valid": true,
+      "assessment": "validated-ip-override-value",
+      "note": "Exact valid descriptor ID and complete labeled integer payload. This is stored override data; enablement is not established by ip.get. Value exactly matches independent prerequisite RAM snapshot."
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0032-udws_ip_get_33_0.bin",
+      "response_sha256": "e473fcc63242054769b257c40d91af0acf30f803ff077876f3916cfbb49d3713",
+      "valid": true,
+      "assessment": "validated-ip-override-value",
+      "note": "Exact valid descriptor ID and complete labeled integer payload. This is stored override data; enablement is not established by ip.get. Value exactly matches independent prerequisite RAM snapshot."
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0033-udws_ip_get_34_0.bin",
+      "response_sha256": "5ee3050d20b443ff70f89cc49f761598c23405b0c0588370ab67d190f4474723",
+      "valid": true,
+      "assessment": "validated-ip-override-value",
+      "note": "Exact valid descriptor ID and complete labeled integer payload. This is stored override data; enablement is not established by ip.get. Value exactly matches independent prerequisite RAM snapshot."
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0034-udws_ip_get_35_0.bin",
+      "response_sha256": "2ea45d7bfe8f0cce42801bae2d82056799351732878f988d877b6467fa7577d0",
+      "valid": true,
+      "assessment": "validated-ip-override-value",
+      "note": "Exact valid descriptor ID and complete labeled integer payload. This is stored override data; enablement is not established by ip.get. Value exactly matches independent prerequisite RAM snapshot."
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0035-udws_ip_get_36_0.bin",
+      "response_sha256": "daceb6f942913cbbae0ce71ff9dedf14412972f8e2dfac4802e32ef04dd981d0",
+      "valid": true,
+      "assessment": "validated-ip-override-value",
+      "note": "Exact valid descriptor ID and complete labeled integer payload. This is stored override data; enablement is not established by ip.get. Value exactly matches independent prerequisite RAM snapshot."
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0036-udws_ip_get_37_0.bin",
+      "response_sha256": "96b261b0070c353711fdd52073fefd50b5cb1536e411cb83081bd4d3eed73134",
+      "valid": true,
+      "assessment": "validated-ip-override-value",
+      "note": "Exact valid descriptor ID and complete labeled integer payload. This is stored override data; enablement is not established by ip.get. Value exactly matches independent prerequisite RAM snapshot."
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0037-udws_ip_get_38_0.bin",
+      "response_sha256": "3c4b9040a337ed92fe59020806bb616ca965fbb0dfb1e13626fb12e83368bef7",
+      "valid": true,
+      "assessment": "validated-ip-override-value",
+      "note": "Exact valid descriptor ID and complete labeled integer payload. This is stored override data; enablement is not established by ip.get. Value exactly matches independent prerequisite RAM snapshot."
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0038-udws_ip_get_39_0.bin",
+      "response_sha256": "ca7443a02493f6fad05b0083722af9928005ec6406284c0feabea76aae43baf6",
+      "valid": true,
+      "assessment": "validated-ip-override-value",
+      "note": "Exact valid descriptor ID and complete labeled integer payload. This is stored override data; enablement is not established by ip.get. Value exactly matches independent prerequisite RAM snapshot."
+    },
+    {
+      "response_file": "physical-78-ip-job-memory/0039-udws_jmis_mem_show.bin",
+      "response_sha256": "809750bae3a50cdded62d508721b236bcf52b703deccf267fe8a146a8b3f65d3",
+      "valid": true,
+      "assessment": "validated-basic-job-memory-requirement",
+      "note": "Complete one-row resource table matches independently decoded constant descriptor: basic, minimum and maximum1MiB, bimodal0. Declared requirements, not current allocation."
+    }
+  ],
+  "data_quality": []
+}

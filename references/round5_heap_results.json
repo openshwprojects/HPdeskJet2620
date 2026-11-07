@@ -1,0 +1,270 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-10-29T21:29:07.368274+00:00",
+  "source": "physical-58-heap-diagnostics",
+  "summary": {
+    "responses": 9,
+    "all_prompts_returned": true,
+    "registered_names_invoked": 9,
+    "client_mappings": 2,
+    "hash_buckets": 211,
+    "named_blocks": 8,
+    "free_block_bytes": 46414880,
+    "relocation_tree_empty": true,
+    "root_partition_block_size": 16384
+  },
+  "session_sha256": "0f0b9107797fc48b5460e720d2e4f1f792c8b68994845f5a70ab506788e6b484",
+  "clients": [
+    {
+      "client_id": 1,
+      "major_number": 0
+    },
+    {
+      "client_id": 2,
+      "major_number": 1
+    },
+    {
+      "client_id": 0,
+      "major_number": 0
+    }
+  ],
+  "hash_buckets": [
+    {
+      "bucket": 6,
+      "system_indices": [
+        6
+      ]
+    },
+    {
+      "bucket": 29,
+      "system_indices": [
+        4
+      ]
+    },
+    {
+      "bucket": 33,
+      "system_indices": [
+        7
+      ]
+    },
+    {
+      "bucket": 37,
+      "system_indices": [
+        3
+      ]
+    },
+    {
+      "bucket": 48,
+      "system_indices": [
+        5
+      ]
+    },
+    {
+      "bucket": 118,
+      "system_indices": [
+        1
+      ]
+    },
+    {
+      "bucket": 152,
+      "system_indices": [
+        11
+      ]
+    },
+    {
+      "bucket": 203,
+      "system_indices": [
+        2
+      ]
+    }
+  ],
+  "named_blocks": [
+    {
+      "index": 1,
+      "count": 1,
+      "header": "0x21376ac0"
+    },
+    {
+      "index": 2,
+      "count": 1,
+      "header": "0x2137ad00"
+    },
+    {
+      "index": 3,
+      "count": 1,
+      "header": "0x2137ef40"
+    },
+    {
+      "index": 4,
+      "count": 1,
+      "header": "0x21383180"
+    },
+    {
+      "index": 5,
+      "count": 1,
+      "header": "0x21383540"
+    },
+    {
+      "index": 6,
+      "count": 1,
+      "header": "0x21384380"
+    },
+    {
+      "index": 7,
+      "count": 2,
+      "header": "0x2138c600"
+    },
+    {
+      "index": 11,
+      "count": 17,
+      "header": "0x213885c0"
+    }
+  ],
+  "free_block": {
+    "start": "0x21390840",
+    "size_hex": "0x2c43c20",
+    "size_bytes": 46414880,
+    "end": "0x23fd4460"
+  },
+  "partition": {
+    "index": 0,
+    "name": "/",
+    "type": "heap",
+    "block_size": 16384,
+    "current_size_raw": 105404,
+    "available_memory_bytes": 46556576,
+    "return_code": 0
+  },
+  "responses": [
+    {
+      "name": "heapmgr client prt",
+      "response_file": "physical-58-heap-diagnostics/0001-udws_heapmgr_client_prt.bin",
+      "response_sha256": "6b9fed0672b080ca7ef1cf5983e97b96bbec99a592f5b3c351b5a8c95c195eba",
+      "response_bytes": 153,
+      "prompt_returned": true
+    },
+    {
+      "name": "heapmgr free prt",
+      "response_file": "physical-58-heap-diagnostics/0002-udws_heapmgr_free_prt.bin",
+      "response_sha256": "a0de9bbed643b3541e4518e784248f09cd693bf3d6889bf55f4683d666596001",
+      "response_bytes": 229,
+      "prompt_returned": true
+    },
+    {
+      "name": "heapmgr hash load",
+      "response_file": "physical-58-heap-diagnostics/0003-udws_heapmgr_hash_load.bin",
+      "response_sha256": "673b866130b92090c44ff246c2f591e0df3b32062344d1b3ee7b95fe370dd9d5",
+      "response_bytes": 106,
+      "prompt_returned": true
+    },
+    {
+      "name": "heapmgr hash prt",
+      "response_file": "physical-58-heap-diagnostics/0004-udws_heapmgr_hash_prt.bin",
+      "response_sha256": "0450514d8ca66b2a8b78443d4c264edc9293a075d4f77ee7ca1bbf8f2a6fc6a7",
+      "response_bytes": 135,
+      "prompt_returned": true
+    },
+    {
+      "name": "heapmgr name prt",
+      "response_file": "physical-58-heap-diagnostics/0005-udws_heapmgr_name_prt.bin",
+      "response_sha256": "134b9c8ace4ea69c28c9a05043978cd9f07a806873762efcee58c13007c25cd4",
+      "response_bytes": 212,
+      "prompt_returned": true
+    },
+    {
+      "name": "heapmgr heap prt",
+      "response_file": "physical-58-heap-diagnostics/0006-udws_heapmgr_heap_prt.bin",
+      "response_sha256": "32ecaf178bcba941d31b4a2bf23e979c798d0ff9cc6cf7ed65d771dea64b2d59",
+      "response_bytes": 81,
+      "prompt_returned": true
+    },
+    {
+      "name": "heapmgr heap ls",
+      "response_file": "physical-58-heap-diagnostics/0007-udws_heapmgr_heap_ls.bin",
+      "response_sha256": "c6ab93072844ec9a7bd9b0db57516a4c0fe5c3ffe5c6b6b3bd5264688a72f2fd",
+      "response_bytes": 80,
+      "prompt_returned": true
+    },
+    {
+      "name": "heapmgr heap mem",
+      "response_file": "physical-58-heap-diagnostics/0008-udws_heapmgr_heap_mem_100.bin",
+      "response_sha256": "0e2e5f46df9a39616e324c886c10216b2a4052b97c313cdaa6c84aabffb0c67b",
+      "response_bytes": 104,
+      "prompt_returned": true
+    },
+    {
+      "name": "ram.part_info",
+      "response_file": "physical-58-heap-diagnostics/0009-udws_ram_part_info_0.bin",
+      "response_sha256": "89c0fea96f8176305fe816d9a7ac1aac6c47d97de03caee5836e95c99352563a",
+      "response_bytes": 183,
+      "prompt_returned": true
+    }
+  ],
+  "response_revalidations": [
+    {
+      "response_file": "physical-58-heap-diagnostics/0001-udws_heapmgr_client_prt.bin",
+      "response_sha256": "6b9fed0672b080ca7ef1cf5983e97b96bbec99a592f5b3c351b5a8c95c195eba",
+      "valid": true,
+      "assessment": "validated-heap-or-partition-diagnostic",
+      "note": "Two client-to-major-number mappings plus one zero sentinel were returned. This command prints major_number, not compaction priority; prior purpose wording is corrected here."
+    },
+    {
+      "response_file": "physical-58-heap-diagnostics/0002-udws_heapmgr_free_prt.bin",
+      "response_sha256": "a0de9bbed643b3541e4518e784248f09cd693bf3d6889bf55f4683d666596001",
+      "valid": true,
+      "assessment": "validated-heap-or-partition-diagnostic",
+      "note": "Single reported free block; hexadecimal and decimal sizes match, and start+size=end exactly. Other pool/free counters are distinct in scope and sampled at different times."
+    },
+    {
+      "response_file": "physical-58-heap-diagnostics/0003-udws_heapmgr_hash_load.bin",
+      "response_sha256": "673b866130b92090c44ff246c2f591e0df3b32062344d1b3ee7b95fe370dd9d5",
+      "valid": true,
+      "assessment": "validated-heap-or-partition-diagnostic",
+      "note": "211 buckets and8entries; count independently agrees with hash prt and name prt."
+    },
+    {
+      "response_file": "physical-58-heap-diagnostics/0004-udws_heapmgr_hash_prt.bin",
+      "response_sha256": "0450514d8ca66b2a8b78443d4c264edc9293a075d4f77ee7ca1bbf8f2a6fc6a7",
+      "valid": true,
+      "assessment": "validated-heap-or-partition-diagnostic",
+      "note": "Eight unique indices in eight nonempty valid buckets; same eight indices appear in name prt."
+    },
+    {
+      "response_file": "physical-58-heap-diagnostics/0005-udws_heapmgr_name_prt.bin",
+      "response_sha256": "134b9c8ace4ea69c28c9a05043978cd9f07a806873762efcee58c13007c25cd4",
+      "valid": true,
+      "assessment": "validated-heap-or-partition-diagnostic",
+      "note": "Eight named block entries with reference counts and header addresses; matches hash-table enumeration."
+    },
+    {
+      "response_file": "physical-58-heap-diagnostics/0006-udws_heapmgr_heap_prt.bin",
+      "response_sha256": "32ecaf178bcba941d31b4a2bf23e979c798d0ff9cc6cf7ed65d771dea64b2d59",
+      "valid": true,
+      "assessment": "validated-heap-or-partition-diagnostic",
+      "note": "Relocation-tree root is empty. Existing named blocks/free memory are reported separately; this does not mean the global allocator has no allocations."
+    },
+    {
+      "response_file": "physical-58-heap-diagnostics/0007-udws_heapmgr_heap_ls.bin",
+      "response_sha256": "c6ab93072844ec9a7bd9b0db57516a4c0fe5c3ffe5c6b6b3bd5264688a72f2fd",
+      "valid": true,
+      "assessment": "validated-heap-or-partition-diagnostic",
+      "note": "Relocation-tree root is empty. This exercises a valid empty query state; block-row formatting is unexercised."
+    },
+    {
+      "response_file": "physical-58-heap-diagnostics/0008-udws_heapmgr_heap_mem_100.bin",
+      "response_sha256": "0e2e5f46df9a39616e324c886c10216b2a4052b97c313cdaa6c84aabffb0c67b",
+      "valid": true,
+      "assessment": "validated-heap-or-partition-diagnostic",
+      "note": "Priority-filtered sum0 agrees with empty relocation-tree state; does not measure total installed or used RAM."
+    },
+    {
+      "response_file": "physical-58-heap-diagnostics/0009-udws_ram_part_info_0.bin",
+      "response_sha256": "89c0fea96f8176305fe816d9a7ac1aac6c47d97de03caee5836e95c99352563a",
+      "valid": true,
+      "assessment": "validated-heap-or-partition-diagnostic",
+      "note": "Partition0 root /,heap type,16KiBblocksize,current_size105404,available_memory46556576; successful0return. current_size retains firmware-native units until independently established."
+    }
+  ],
+  "data_quality": [],
+  "serial_access": "none"
+}

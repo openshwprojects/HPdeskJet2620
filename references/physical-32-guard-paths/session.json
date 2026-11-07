@@ -1,0 +1,4623 @@
+{
+  "started_utc": "2026-10-29T19:59:58.403873+00:00",
+  "port": "COM16",
+  "baud": 115200,
+  "data_bits": 8,
+  "parity": "N",
+  "stop_bits": 1,
+  "line_ending": "CRLF",
+  "source": "physical UART",
+  "rts": false,
+  "dtr": false,
+  "tx_character_delay_seconds": 0.003,
+  "capture_program_sha256": "685d8b07cd5afafeba32f37eb5722416458a08dafe09290576957e50b31bdb03",
+  "requested_rx_buffer_bytes": 1048576,
+  "requested_tx_buffer_bytes": 65536,
+  "initial_prompt_seen": true,
+  "stop_reason": "batch-complete",
+  "ended_utc": "2026-10-29T20:00:18.149030+00:00",
+  "commands": [
+    {
+      "name": "clocksys.axon_clock_restore",
+      "command": "udws \"clocksys.axon_clock_restore;\"",
+      "handler": "0xa016e2a3",
+      "descriptor_address": "0xa053ce70",
+      "classification": "reviewed-software-only-empty-path",
+      "purpose": "Capture the proved empty-argument path only; no operational argument coverage claimed.",
+      "side_effects_assessment": "Only stack-local computation, parser/output bookkeeping, and known-argument output. No global/peripheral reads or writes, unknown calls, or unknown-state branch decisions were admitted.",
+      "evidence": {
+        "checker": "references/check_guard_round2.py",
+        "paths": [
+          {
+            "parser_return": 0,
+            "instructions": [
+              "0xa016e2a2: push {lr}",
+              "0xa016e2a4: bl #0xa016e512",
+              "0xa016e512: bx lr",
+              "0xa016e2a8: pop {pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa016e2a4",
+                "target": "0xa016e512",
+                "method": "execute helper instructions with conservative tracking"
+              }
+            ],
+            "outputs": [],
+            "parser_count": 0,
+            "parser_formats": [],
+            "returned": true,
+            "failure": null
+          },
+          {
+            "parser_return": -1,
+            "instructions": [
+              "0xa016e2a2: push {lr}",
+              "0xa016e2a4: bl #0xa016e512",
+              "0xa016e512: bx lr",
+              "0xa016e2a8: pop {pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa016e2a4",
+                "target": "0xa016e512",
+                "method": "execute helper instructions with conservative tracking"
+              }
+            ],
+            "outputs": [],
+            "parser_count": 0,
+            "parser_formats": [],
+            "returned": true,
+            "failure": null
+          }
+        ]
+      },
+      "timeout": 20,
+      "hardware_access": false,
+      "physically_tested_by_this_review": false,
+      "index": 1,
+      "started_utc": "2026-10-29T19:59:59.105188+00:00",
+      "response_file": "0001-udws_clocksys_axon_clock_restore.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:59:59.639680+00:00",
+      "elapsed_seconds": 0.533,
+      "response_bytes": 71,
+      "response_sha256": "055373def6c4b2b051e7fb5971225e552ad139317893bd6b541422ad53a69326",
+      "prompt_returned": true
+    },
+    {
+      "name": "clocksys.axon_clock_slowdown",
+      "command": "udws \"clocksys.axon_clock_slowdown;\"",
+      "handler": "0xa016e285",
+      "descriptor_address": "0xa053ce64",
+      "classification": "reviewed-empty-argument-path",
+      "purpose": "Capture the proved empty-argument path only; no operational argument coverage claimed.",
+      "side_effects_assessment": "Only stack-local computation, parser/output bookkeeping, and known-argument output. No global/peripheral reads or writes, unknown calls, or unknown-state branch decisions were admitted.",
+      "evidence": {
+        "checker": "references/check_guard_round2.py",
+        "paths": [
+          {
+            "parser_return": 0,
+            "instructions": [
+              "0xa016e284: push {lr}",
+              "0xa016e286: sub sp, #4",
+              "0xa016e288: movs r3, #0",
+              "0xa016e28a: str r3, [sp]",
+              "0xa016e28c: mov r2, sp",
+              "0xa016e28e: adr r1, #0x2c",
+              "0xa016e290: mvns r0, r3",
+              "0xa016e292: bl #0xa02c3de2",
+              "0xa016e296: mov r1, sp",
+              "0xa016e298: ldrh r0, [r1, #2]",
+              "0xa016e29a: bl #0xa016e514",
+              "0xa016e514: bx lr",
+              "0xa016e29e: add sp, #4",
+              "0xa016e2a0: pop {pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa016e292",
+                "target": "0xa02c3de2"
+              },
+              {
+                "at": "0xa016e29a",
+                "target": "0xa016e514",
+                "method": "execute helper instructions with conservative tracking"
+              }
+            ],
+            "outputs": [],
+            "parser_count": 1,
+            "parser_formats": [
+              "%d"
+            ],
+            "returned": true,
+            "failure": null,
+            "parser_destinations": [
+              {
+                "address": "0x7100fef8",
+                "format": "%d",
+                "maximum_extent": 4
+              }
+            ]
+          },
+          {
+            "parser_return": -1,
+            "instructions": [
+              "0xa016e284: push {lr}",
+              "0xa016e286: sub sp, #4",
+              "0xa016e288: movs r3, #0",
+              "0xa016e28a: str r3, [sp]",
+              "0xa016e28c: mov r2, sp",
+              "0xa016e28e: adr r1, #0x2c",
+              "0xa016e290: mvns r0, r3",
+              "0xa016e292: bl #0xa02c3de2",
+              "0xa016e296: mov r1, sp",
+              "0xa016e298: ldrh r0, [r1, #2]",
+              "0xa016e29a: bl #0xa016e514",
+              "0xa016e514: bx lr",
+              "0xa016e29e: add sp, #4",
+              "0xa016e2a0: pop {pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa016e292",
+                "target": "0xa02c3de2"
+              },
+              {
+                "at": "0xa016e29a",
+                "target": "0xa016e514",
+                "method": "execute helper instructions with conservative tracking"
+              }
+            ],
+            "outputs": [],
+            "parser_count": 1,
+            "parser_formats": [
+              "%d"
+            ],
+            "returned": true,
+            "failure": null,
+            "parser_destinations": [
+              {
+                "address": "0x7100fef8",
+                "format": "%d",
+                "maximum_extent": 4
+              }
+            ]
+          }
+        ]
+      },
+      "timeout": 20,
+      "hardware_access": false,
+      "physically_tested_by_this_review": false,
+      "index": 2,
+      "started_utc": "2026-10-29T19:59:59.643049+00:00",
+      "response_file": "0002-udws_clocksys_axon_clock_slowdown.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:00:00.173820+00:00",
+      "elapsed_seconds": 0.529,
+      "response_bytes": 72,
+      "response_sha256": "774da77cc74768e0286e8ff47b7a6f77ecf26e541f34b48ec4805fca8f9fb4b3",
+      "prompt_returned": true
+    },
+    {
+      "name": "fm.get_mini_trace_on_serial",
+      "command": "udws \"fm.get_mini_trace_on_serial;\"",
+      "handler": "0xa00e1a49",
+      "descriptor_address": "0xa0531ab8",
+      "classification": "reviewed-software-only-empty-path",
+      "purpose": "Capture the proved empty-argument path only; no operational argument coverage claimed.",
+      "side_effects_assessment": "Only stack-local computation, parser/output bookkeeping, and known-argument output. No global/peripheral reads or writes, unknown calls, or unknown-state branch decisions were admitted.",
+      "evidence": {
+        "checker": "references/check_guard_round2.py",
+        "paths": [
+          {
+            "parser_return": 0,
+            "instructions": [
+              "0xa00e1a48: push {lr}",
+              "0xa00e1a4a: adr r1, #0x17c",
+              "0xa00e1a4c: movs r2, #0",
+              "0xa00e1a4e: mvns r0, r2",
+              "0xa00e1a50: bl #0xa02c37be",
+              "0xa00e1a54: adr r1, #0x1b8",
+              "0xa00e1a56: movs r2, #0",
+              "0xa00e1a58: mvns r0, r2",
+              "0xa00e1a5a: bl #0xa02c37be",
+              "0xa00e1a5e: adr r1, #0x1f8",
+              "0xa00e1a60: movs r2, #0",
+              "0xa00e1a62: mvns r0, r2",
+              "0xa00e1a64: bl #0xa02c37be",
+              "0xa00e1a68: adr r1, #0x234",
+              "0xa00e1a6a: movs r2, #0",
+              "0xa00e1a6c: mvns r0, r2",
+              "0xa00e1a6e: bl #0xa02c37be",
+              "0xa00e1a72: pop {pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa00e1a50",
+                "target": "0xa02c37be"
+              },
+              {
+                "at": "0xa00e1a5a",
+                "target": "0xa02c37be"
+              },
+              {
+                "at": "0xa00e1a64",
+                "target": "0xa02c37be"
+              },
+              {
+                "at": "0xa00e1a6e",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa00e1a50",
+                "format_address": "0xa00e1bc8",
+                "text": "\n***************** THIS UDW COMMAND IS DEPRECATED ******************\n"
+              },
+              {
+                "at": "0xa00e1a5a",
+                "format_address": "0xa00e1c10",
+                "text": "**** For 15 tap data collection, use the following UDW command ****\n"
+              },
+              {
+                "at": "0xa00e1a64",
+                "format_address": "0xa00e1c58",
+                "text": "************* udws \"reports_mgr.virtual_tap_report 15\" ************\n"
+              },
+              {
+                "at": "0xa00e1a6e",
+                "format_address": "0xa00e1ca0",
+                "text": "*******************************************************************\n\n"
+              }
+            ],
+            "parser_count": 0,
+            "parser_formats": [],
+            "returned": true,
+            "failure": null
+          },
+          {
+            "parser_return": -1,
+            "instructions": [
+              "0xa00e1a48: push {lr}",
+              "0xa00e1a4a: adr r1, #0x17c",
+              "0xa00e1a4c: movs r2, #0",
+              "0xa00e1a4e: mvns r0, r2",
+              "0xa00e1a50: bl #0xa02c37be",
+              "0xa00e1a54: adr r1, #0x1b8",
+              "0xa00e1a56: movs r2, #0",
+              "0xa00e1a58: mvns r0, r2",
+              "0xa00e1a5a: bl #0xa02c37be",
+              "0xa00e1a5e: adr r1, #0x1f8",
+              "0xa00e1a60: movs r2, #0",
+              "0xa00e1a62: mvns r0, r2",
+              "0xa00e1a64: bl #0xa02c37be",
+              "0xa00e1a68: adr r1, #0x234",
+              "0xa00e1a6a: movs r2, #0",
+              "0xa00e1a6c: mvns r0, r2",
+              "0xa00e1a6e: bl #0xa02c37be",
+              "0xa00e1a72: pop {pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa00e1a50",
+                "target": "0xa02c37be"
+              },
+              {
+                "at": "0xa00e1a5a",
+                "target": "0xa02c37be"
+              },
+              {
+                "at": "0xa00e1a64",
+                "target": "0xa02c37be"
+              },
+              {
+                "at": "0xa00e1a6e",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa00e1a50",
+                "format_address": "0xa00e1bc8",
+                "text": "\n***************** THIS UDW COMMAND IS DEPRECATED ******************\n"
+              },
+              {
+                "at": "0xa00e1a5a",
+                "format_address": "0xa00e1c10",
+                "text": "**** For 15 tap data collection, use the following UDW command ****\n"
+              },
+              {
+                "at": "0xa00e1a64",
+                "format_address": "0xa00e1c58",
+                "text": "************* udws \"reports_mgr.virtual_tap_report 15\" ************\n"
+              },
+              {
+                "at": "0xa00e1a6e",
+                "format_address": "0xa00e1ca0",
+                "text": "*******************************************************************\n\n"
+              }
+            ],
+            "parser_count": 0,
+            "parser_formats": [],
+            "returned": true,
+            "failure": null
+          }
+        ]
+      },
+      "timeout": 20,
+      "hardware_access": false,
+      "physically_tested_by_this_review": false,
+      "index": 3,
+      "started_utc": "2026-10-29T20:00:00.176238+00:00",
+      "response_file": "0003-udws_fm_get_mini_trace_on_serial.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:00:00.722704+00:00",
+      "elapsed_seconds": 0.545,
+      "response_bytes": 352,
+      "response_sha256": "98bca1494b79acfd2eacfb8c4beb00655a8cc549b9fb3c6d1d7d3f290dcd0722",
+      "prompt_returned": true
+    },
+    {
+      "name": "ip.idma.regs",
+      "command": "udws \"ip.idma.regs;\"",
+      "handler": "0xa01d3071",
+      "descriptor_address": "0xa054bbe8",
+      "classification": "reviewed-software-only-empty-path",
+      "purpose": "Capture the proved empty-argument path only; no operational argument coverage claimed.",
+      "side_effects_assessment": "Only stack-local computation, parser/output bookkeeping, and known-argument output. No global/peripheral reads or writes, unknown calls, or unknown-state branch decisions were admitted.",
+      "evidence": {
+        "checker": "references/check_guard_round2.py",
+        "paths": [
+          {
+            "parser_return": 0,
+            "instructions": [
+              "0xa01d3070: push {lr}",
+              "0xa01d3072: bl #0xa01cb6f2",
+              "0xa01cb6f2: bx lr",
+              "0xa01d3076: pop {pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa01d3072",
+                "target": "0xa01cb6f2",
+                "method": "execute helper instructions with conservative tracking"
+              }
+            ],
+            "outputs": [],
+            "parser_count": 0,
+            "parser_formats": [],
+            "returned": true,
+            "failure": null
+          },
+          {
+            "parser_return": -1,
+            "instructions": [
+              "0xa01d3070: push {lr}",
+              "0xa01d3072: bl #0xa01cb6f2",
+              "0xa01cb6f2: bx lr",
+              "0xa01d3076: pop {pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa01d3072",
+                "target": "0xa01cb6f2",
+                "method": "execute helper instructions with conservative tracking"
+              }
+            ],
+            "outputs": [],
+            "parser_count": 0,
+            "parser_formats": [],
+            "returned": true,
+            "failure": null
+          }
+        ]
+      },
+      "timeout": 20,
+      "hardware_access": false,
+      "physically_tested_by_this_review": false,
+      "index": 4,
+      "started_utc": "2026-10-29T20:00:00.724992+00:00",
+      "response_file": "0004-udws_ip_idma_regs.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:00:01.194463+00:00",
+      "elapsed_seconds": 0.468,
+      "response_bytes": 56,
+      "response_sha256": "9b1c9395b0b9515f26426ee7ab9f70152ba099cf0892ac4331704c7ad314b8d4",
+      "prompt_returned": true
+    },
+    {
+      "name": "jm_copy.scan_eject_and_proceed",
+      "command": "udws \"jm_copy.scan_eject_and_proceed;\"",
+      "handler": "0xa020a31b",
+      "descriptor_address": "0xa0559db4",
+      "classification": "reviewed-software-only-empty-path",
+      "purpose": "Capture the proved empty-argument path only; no operational argument coverage claimed.",
+      "side_effects_assessment": "Only stack-local computation, parser/output bookkeeping, and known-argument output. No global/peripheral reads or writes, unknown calls, or unknown-state branch decisions were admitted.",
+      "evidence": {
+        "checker": "references/check_guard_round2.py",
+        "paths": [
+          {
+            "parser_return": 0,
+            "instructions": [
+              "0xa020a31a: push {lr}",
+              "0xa020a31c: bl #0xa0203eda",
+              "0xa0203eda: push {lr}",
+              "0xa0203edc: movs r0, #0",
+              "0xa0203ede: bl #0xa0203ee4",
+              "0xa0203ee4: bx lr",
+              "0xa0203ee2: pop {pc}",
+              "0xa020a320: pop {pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa020a31c",
+                "target": "0xa0203eda",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa0203ede",
+                "target": "0xa0203ee4",
+                "method": "execute helper instructions with conservative tracking"
+              }
+            ],
+            "outputs": [],
+            "parser_count": 0,
+            "parser_formats": [],
+            "returned": true,
+            "failure": null
+          },
+          {
+            "parser_return": -1,
+            "instructions": [
+              "0xa020a31a: push {lr}",
+              "0xa020a31c: bl #0xa0203eda",
+              "0xa0203eda: push {lr}",
+              "0xa0203edc: movs r0, #0",
+              "0xa0203ede: bl #0xa0203ee4",
+              "0xa0203ee4: bx lr",
+              "0xa0203ee2: pop {pc}",
+              "0xa020a320: pop {pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa020a31c",
+                "target": "0xa0203eda",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa0203ede",
+                "target": "0xa0203ee4",
+                "method": "execute helper instructions with conservative tracking"
+              }
+            ],
+            "outputs": [],
+            "parser_count": 0,
+            "parser_formats": [],
+            "returned": true,
+            "failure": null
+          }
+        ]
+      },
+      "timeout": 20,
+      "hardware_access": false,
+      "physically_tested_by_this_review": false,
+      "index": 5,
+      "started_utc": "2026-10-29T20:00:01.197103+00:00",
+      "response_file": "0005-udws_jm_copy_scan_eject_and_proceed.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:00:01.727807+00:00",
+      "elapsed_seconds": 0.529,
+      "response_bytes": 74,
+      "response_sha256": "d2e67bdba77c6cf57e4c50254d4ef43db684ebf2e090f325084b3dceeebe324f",
+      "prompt_returned": true
+    },
+    {
+      "name": "lib_coordination.init_check",
+      "command": "udws \"lib_coordination.init_check;\"",
+      "handler": "0xa0250e3d",
+      "descriptor_address": "0xa056ab3c",
+      "classification": "reviewed-software-only-empty-path",
+      "purpose": "Capture the proved empty-argument path only; no operational argument coverage claimed.",
+      "side_effects_assessment": "Only stack-local computation, parser/output bookkeeping, and known-argument output. No global/peripheral reads or writes, unknown calls, or unknown-state branch decisions were admitted.",
+      "evidence": {
+        "checker": "references/check_guard_round2.py",
+        "paths": [
+          {
+            "parser_return": 0,
+            "instructions": [
+              "0xa0250e3c: push {r4, lr}",
+              "0xa0250e3e: sub sp, #4",
+              "0xa0250e40: movs r0, #0",
+              "0xa0250e42: str r0, [sp]",
+              "0xa0250e44: movs r4, #1",
+              "0xa0250e46: mov r1, sp",
+              "0xa0250e48: bl #0xa0250fd0",
+              "0xa0250fd0: movs r1, #0",
+              "0xa0250fd2: mvns r0, r1",
+              "0xa0250fd4: bx lr",
+              "0xa0250e4c: adds r0, #1",
+              "0xa0250e4e: bne #0xa0250e52",
+              "0xa0250e50: movs r4, #0",
+              "0xa0250e52: adds r2, r4, #0",
+              "0xa0250e54: adr r1, #0xa0",
+              "0xa0250e56: movs r3, #0",
+              "0xa0250e58: mvns r0, r3",
+              "0xa0250e5a: bl #0xa02c37be",
+              "0xa0250e5e: add sp, #4",
+              "0xa0250e60: pop {r4, pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa0250e48",
+                "target": "0xa0250fd0",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa0250e5a",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa0250e5a",
+                "format_address": "0xa0250ef8",
+                "text": "Lib Coordination Init:-%d"
+              }
+            ],
+            "parser_count": 0,
+            "parser_formats": [],
+            "returned": true,
+            "failure": null
+          },
+          {
+            "parser_return": -1,
+            "instructions": [
+              "0xa0250e3c: push {r4, lr}",
+              "0xa0250e3e: sub sp, #4",
+              "0xa0250e40: movs r0, #0",
+              "0xa0250e42: str r0, [sp]",
+              "0xa0250e44: movs r4, #1",
+              "0xa0250e46: mov r1, sp",
+              "0xa0250e48: bl #0xa0250fd0",
+              "0xa0250fd0: movs r1, #0",
+              "0xa0250fd2: mvns r0, r1",
+              "0xa0250fd4: bx lr",
+              "0xa0250e4c: adds r0, #1",
+              "0xa0250e4e: bne #0xa0250e52",
+              "0xa0250e50: movs r4, #0",
+              "0xa0250e52: adds r2, r4, #0",
+              "0xa0250e54: adr r1, #0xa0",
+              "0xa0250e56: movs r3, #0",
+              "0xa0250e58: mvns r0, r3",
+              "0xa0250e5a: bl #0xa02c37be",
+              "0xa0250e5e: add sp, #4",
+              "0xa0250e60: pop {r4, pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa0250e48",
+                "target": "0xa0250fd0",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa0250e5a",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa0250e5a",
+                "format_address": "0xa0250ef8",
+                "text": "Lib Coordination Init:-%d"
+              }
+            ],
+            "parser_count": 0,
+            "parser_formats": [],
+            "returned": true,
+            "failure": null
+          }
+        ]
+      },
+      "timeout": 20,
+      "hardware_access": false,
+      "physically_tested_by_this_review": false,
+      "index": 6,
+      "started_utc": "2026-10-29T20:00:01.730543+00:00",
+      "response_file": "0006-udws_lib_coordination_init_check.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:00:02.276487+00:00",
+      "elapsed_seconds": 0.544,
+      "response_bytes": 96,
+      "response_sha256": "9f7a3263ef714702a6b81d8dfca860a25d6924049d66f8e44cdba16baf600e48",
+      "prompt_returned": true
+    },
+    {
+      "name": "lib_digital_sensor.disable",
+      "command": "udws \"lib_digital_sensor.disable;\"",
+      "handler": "0xa0252011",
+      "descriptor_address": "0xa056e934",
+      "classification": "reviewed-empty-argument-path",
+      "purpose": "Capture the proved empty-argument path only; no operational argument coverage claimed.",
+      "side_effects_assessment": "Only stack-local computation, parser/output bookkeeping, and known-argument output. No global/peripheral reads or writes, unknown calls, or unknown-state branch decisions were admitted.",
+      "evidence": {
+        "checker": "references/check_guard_round2.py",
+        "paths": [
+          {
+            "parser_return": 0,
+            "instructions": [
+              "0xa0252010: push {lr}",
+              "0xa0252012: bl #0xa0251e5e",
+              "0xa0251e5e: push {r4, lr}",
+              "0xa0251e60: sub sp, #0x2c",
+              "0xa0251e62: movs r3, #0",
+              "0xa0251e64: mvns r4, r3",
+              "0xa0251e66: str r4, [sp]",
+              "0xa0251e68: mov r2, sp",
+              "0xa0251e6a: adr r1, #0x58",
+              "0xa0251e6c: adds r0, r4, #0",
+              "0xa0251e6e: bl #0xa02c3de2",
+              "0xa0251e72: cmp r0, #1",
+              "0xa0251e74: beq #0xa0251e92",
+              "0xa0251e76: add r2, sp, #4",
+              "0xa0251e78: adr r1, #0x4c",
+              "0xa0251e7a: movs r3, #0",
+              "0xa0251e7c: mvns r0, r3",
+              "0xa0251e7e: bl #0xa02c3de2",
+              "0xa0251e82: cmp r0, #1",
+              "0xa0251e84: bne #0xa0251ed0",
+              "0xa0251ed0: adds r0, r4, #0",
+              "0xa0251ed2: add sp, #0x2c",
+              "0xa0251ed4: pop {r4, pc}",
+              "0xa0252016: adds r1, r0, #1",
+              "0xa0252018: beq #0xa0252020",
+              "0xa0252020: pop {pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa0252012",
+                "target": "0xa0251e5e",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa0251e6e",
+                "target": "0xa02c3de2"
+              },
+              {
+                "at": "0xa0251e7e",
+                "target": "0xa02c3de2"
+              }
+            ],
+            "outputs": [],
+            "parser_count": 2,
+            "parser_formats": [
+              "%d",
+              "%39S"
+            ],
+            "returned": true,
+            "failure": null,
+            "parser_destinations": [
+              {
+                "address": "0x7100fecc",
+                "format": "%39S",
+                "maximum_extent": 40
+              }
+            ]
+          },
+          {
+            "parser_return": -1,
+            "instructions": [
+              "0xa0252010: push {lr}",
+              "0xa0252012: bl #0xa0251e5e",
+              "0xa0251e5e: push {r4, lr}",
+              "0xa0251e60: sub sp, #0x2c",
+              "0xa0251e62: movs r3, #0",
+              "0xa0251e64: mvns r4, r3",
+              "0xa0251e66: str r4, [sp]",
+              "0xa0251e68: mov r2, sp",
+              "0xa0251e6a: adr r1, #0x58",
+              "0xa0251e6c: adds r0, r4, #0",
+              "0xa0251e6e: bl #0xa02c3de2",
+              "0xa0251e72: cmp r0, #1",
+              "0xa0251e74: beq #0xa0251e92",
+              "0xa0251e76: add r2, sp, #4",
+              "0xa0251e78: adr r1, #0x4c",
+              "0xa0251e7a: movs r3, #0",
+              "0xa0251e7c: mvns r0, r3",
+              "0xa0251e7e: bl #0xa02c3de2",
+              "0xa0251e82: cmp r0, #1",
+              "0xa0251e84: bne #0xa0251ed0",
+              "0xa0251ed0: adds r0, r4, #0",
+              "0xa0251ed2: add sp, #0x2c",
+              "0xa0251ed4: pop {r4, pc}",
+              "0xa0252016: adds r1, r0, #1",
+              "0xa0252018: beq #0xa0252020",
+              "0xa0252020: pop {pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa0252012",
+                "target": "0xa0251e5e",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa0251e6e",
+                "target": "0xa02c3de2"
+              },
+              {
+                "at": "0xa0251e7e",
+                "target": "0xa02c3de2"
+              }
+            ],
+            "outputs": [],
+            "parser_count": 2,
+            "parser_formats": [
+              "%d",
+              "%39S"
+            ],
+            "returned": true,
+            "failure": null,
+            "parser_destinations": [
+              {
+                "address": "0x7100fecc",
+                "format": "%39S",
+                "maximum_extent": 40
+              }
+            ]
+          }
+        ]
+      },
+      "timeout": 20,
+      "hardware_access": false,
+      "physically_tested_by_this_review": false,
+      "index": 7,
+      "started_utc": "2026-10-29T20:00:02.279145+00:00",
+      "response_file": "0007-udws_lib_digital_sensor_disable.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:00:02.806397+00:00",
+      "elapsed_seconds": 0.526,
+      "response_bytes": 70,
+      "response_sha256": "e2fb7d54ae22c558aa7415abce9368931c1b6c79ea30fa9209df83c3224b10cc",
+      "prompt_returned": true
+    },
+    {
+      "name": "lib_digital_sensor.enable",
+      "command": "udws \"lib_digital_sensor.enable;\"",
+      "handler": "0xa0251fff",
+      "descriptor_address": "0xa056e928",
+      "classification": "reviewed-empty-argument-path",
+      "purpose": "Capture the proved empty-argument path only; no operational argument coverage claimed.",
+      "side_effects_assessment": "Only stack-local computation, parser/output bookkeeping, and known-argument output. No global/peripheral reads or writes, unknown calls, or unknown-state branch decisions were admitted.",
+      "evidence": {
+        "checker": "references/check_guard_round2.py",
+        "paths": [
+          {
+            "parser_return": 0,
+            "instructions": [
+              "0xa0251ffe: push {lr}",
+              "0xa0252000: bl #0xa0251e5e",
+              "0xa0251e5e: push {r4, lr}",
+              "0xa0251e60: sub sp, #0x2c",
+              "0xa0251e62: movs r3, #0",
+              "0xa0251e64: mvns r4, r3",
+              "0xa0251e66: str r4, [sp]",
+              "0xa0251e68: mov r2, sp",
+              "0xa0251e6a: adr r1, #0x58",
+              "0xa0251e6c: adds r0, r4, #0",
+              "0xa0251e6e: bl #0xa02c3de2",
+              "0xa0251e72: cmp r0, #1",
+              "0xa0251e74: beq #0xa0251e92",
+              "0xa0251e76: add r2, sp, #4",
+              "0xa0251e78: adr r1, #0x4c",
+              "0xa0251e7a: movs r3, #0",
+              "0xa0251e7c: mvns r0, r3",
+              "0xa0251e7e: bl #0xa02c3de2",
+              "0xa0251e82: cmp r0, #1",
+              "0xa0251e84: bne #0xa0251ed0",
+              "0xa0251ed0: adds r0, r4, #0",
+              "0xa0251ed2: add sp, #0x2c",
+              "0xa0251ed4: pop {r4, pc}",
+              "0xa0252004: adds r1, r0, #1",
+              "0xa0252006: beq #0xa025200e",
+              "0xa025200e: pop {pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa0252000",
+                "target": "0xa0251e5e",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa0251e6e",
+                "target": "0xa02c3de2"
+              },
+              {
+                "at": "0xa0251e7e",
+                "target": "0xa02c3de2"
+              }
+            ],
+            "outputs": [],
+            "parser_count": 2,
+            "parser_formats": [
+              "%d",
+              "%39S"
+            ],
+            "returned": true,
+            "failure": null,
+            "parser_destinations": [
+              {
+                "address": "0x7100fecc",
+                "format": "%39S",
+                "maximum_extent": 40
+              }
+            ]
+          },
+          {
+            "parser_return": -1,
+            "instructions": [
+              "0xa0251ffe: push {lr}",
+              "0xa0252000: bl #0xa0251e5e",
+              "0xa0251e5e: push {r4, lr}",
+              "0xa0251e60: sub sp, #0x2c",
+              "0xa0251e62: movs r3, #0",
+              "0xa0251e64: mvns r4, r3",
+              "0xa0251e66: str r4, [sp]",
+              "0xa0251e68: mov r2, sp",
+              "0xa0251e6a: adr r1, #0x58",
+              "0xa0251e6c: adds r0, r4, #0",
+              "0xa0251e6e: bl #0xa02c3de2",
+              "0xa0251e72: cmp r0, #1",
+              "0xa0251e74: beq #0xa0251e92",
+              "0xa0251e76: add r2, sp, #4",
+              "0xa0251e78: adr r1, #0x4c",
+              "0xa0251e7a: movs r3, #0",
+              "0xa0251e7c: mvns r0, r3",
+              "0xa0251e7e: bl #0xa02c3de2",
+              "0xa0251e82: cmp r0, #1",
+              "0xa0251e84: bne #0xa0251ed0",
+              "0xa0251ed0: adds r0, r4, #0",
+              "0xa0251ed2: add sp, #0x2c",
+              "0xa0251ed4: pop {r4, pc}",
+              "0xa0252004: adds r1, r0, #1",
+              "0xa0252006: beq #0xa025200e",
+              "0xa025200e: pop {pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa0252000",
+                "target": "0xa0251e5e",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa0251e6e",
+                "target": "0xa02c3de2"
+              },
+              {
+                "at": "0xa0251e7e",
+                "target": "0xa02c3de2"
+              }
+            ],
+            "outputs": [],
+            "parser_count": 2,
+            "parser_formats": [
+              "%d",
+              "%39S"
+            ],
+            "returned": true,
+            "failure": null,
+            "parser_destinations": [
+              {
+                "address": "0x7100fecc",
+                "format": "%39S",
+                "maximum_extent": 40
+              }
+            ]
+          }
+        ]
+      },
+      "timeout": 20,
+      "hardware_access": false,
+      "physically_tested_by_this_review": false,
+      "index": 8,
+      "started_utc": "2026-10-29T20:00:02.808968+00:00",
+      "response_file": "0008-udws_lib_digital_sensor_enable.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:00:03.336466+00:00",
+      "elapsed_seconds": 0.525,
+      "response_bytes": 69,
+      "response_sha256": "976c463003395ef93d479993cfd00d8b2725b4fb775d9d93e5a5fe93d16e8444",
+      "prompt_returned": true
+    },
+    {
+      "name": "lib_digital_sensor.get",
+      "command": "udws \"lib_digital_sensor.get;\"",
+      "handler": "0xa0251f0d",
+      "descriptor_address": "0xa056e904",
+      "classification": "reviewed-empty-argument-path",
+      "purpose": "Capture the proved empty-argument path only; no operational argument coverage claimed.",
+      "side_effects_assessment": "Only stack-local computation, parser/output bookkeeping, and known-argument output. No global/peripheral reads or writes, unknown calls, or unknown-state branch decisions were admitted.",
+      "evidence": {
+        "checker": "references/check_guard_round2.py",
+        "paths": [
+          {
+            "parser_return": 0,
+            "instructions": [
+              "0xa0251f0c: push {r4, r5, r6, lr}",
+              "0xa0251f0e: ldr r6, [pc, #0x140]",
+              "0xa0251f10: bl #0xa0251e5e",
+              "0xa0251e5e: push {r4, lr}",
+              "0xa0251e60: sub sp, #0x2c",
+              "0xa0251e62: movs r3, #0",
+              "0xa0251e64: mvns r4, r3",
+              "0xa0251e66: str r4, [sp]",
+              "0xa0251e68: mov r2, sp",
+              "0xa0251e6a: adr r1, #0x58",
+              "0xa0251e6c: adds r0, r4, #0",
+              "0xa0251e6e: bl #0xa02c3de2",
+              "0xa0251e72: cmp r0, #1",
+              "0xa0251e74: beq #0xa0251e92",
+              "0xa0251e76: add r2, sp, #4",
+              "0xa0251e78: adr r1, #0x4c",
+              "0xa0251e7a: movs r3, #0",
+              "0xa0251e7c: mvns r0, r3",
+              "0xa0251e7e: bl #0xa02c3de2",
+              "0xa0251e82: cmp r0, #1",
+              "0xa0251e84: bne #0xa0251ed0",
+              "0xa0251ed0: adds r0, r4, #0",
+              "0xa0251ed2: add sp, #0x2c",
+              "0xa0251ed4: pop {r4, pc}",
+              "0xa0251f14: adds r5, r0, #0",
+              "0xa0251f16: adds r0, r5, #1",
+              "0xa0251f18: beq #0xa0251f94",
+              "0xa0251f94: pop {r4, r5, r6, pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa0251f10",
+                "target": "0xa0251e5e",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa0251e6e",
+                "target": "0xa02c3de2"
+              },
+              {
+                "at": "0xa0251e7e",
+                "target": "0xa02c3de2"
+              }
+            ],
+            "outputs": [],
+            "parser_count": 2,
+            "parser_formats": [
+              "%d",
+              "%39S"
+            ],
+            "returned": true,
+            "failure": null,
+            "parser_destinations": [
+              {
+                "address": "0x7100fec0",
+                "format": "%39S",
+                "maximum_extent": 40
+              }
+            ]
+          },
+          {
+            "parser_return": -1,
+            "instructions": [
+              "0xa0251f0c: push {r4, r5, r6, lr}",
+              "0xa0251f0e: ldr r6, [pc, #0x140]",
+              "0xa0251f10: bl #0xa0251e5e",
+              "0xa0251e5e: push {r4, lr}",
+              "0xa0251e60: sub sp, #0x2c",
+              "0xa0251e62: movs r3, #0",
+              "0xa0251e64: mvns r4, r3",
+              "0xa0251e66: str r4, [sp]",
+              "0xa0251e68: mov r2, sp",
+              "0xa0251e6a: adr r1, #0x58",
+              "0xa0251e6c: adds r0, r4, #0",
+              "0xa0251e6e: bl #0xa02c3de2",
+              "0xa0251e72: cmp r0, #1",
+              "0xa0251e74: beq #0xa0251e92",
+              "0xa0251e76: add r2, sp, #4",
+              "0xa0251e78: adr r1, #0x4c",
+              "0xa0251e7a: movs r3, #0",
+              "0xa0251e7c: mvns r0, r3",
+              "0xa0251e7e: bl #0xa02c3de2",
+              "0xa0251e82: cmp r0, #1",
+              "0xa0251e84: bne #0xa0251ed0",
+              "0xa0251ed0: adds r0, r4, #0",
+              "0xa0251ed2: add sp, #0x2c",
+              "0xa0251ed4: pop {r4, pc}",
+              "0xa0251f14: adds r5, r0, #0",
+              "0xa0251f16: adds r0, r5, #1",
+              "0xa0251f18: beq #0xa0251f94",
+              "0xa0251f94: pop {r4, r5, r6, pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa0251f10",
+                "target": "0xa0251e5e",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa0251e6e",
+                "target": "0xa02c3de2"
+              },
+              {
+                "at": "0xa0251e7e",
+                "target": "0xa02c3de2"
+              }
+            ],
+            "outputs": [],
+            "parser_count": 2,
+            "parser_formats": [
+              "%d",
+              "%39S"
+            ],
+            "returned": true,
+            "failure": null,
+            "parser_destinations": [
+              {
+                "address": "0x7100fec0",
+                "format": "%39S",
+                "maximum_extent": 40
+              }
+            ]
+          }
+        ]
+      },
+      "timeout": 20,
+      "hardware_access": false,
+      "physically_tested_by_this_review": false,
+      "index": 9,
+      "started_utc": "2026-10-29T20:00:03.339333+00:00",
+      "response_file": "0009-udws_lib_digital_sensor_get.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:00:03.839021+00:00",
+      "elapsed_seconds": 0.498,
+      "response_bytes": 66,
+      "response_sha256": "67b79d4fb61706518535395ffe3654c693251e658c03881c96e918074fa03ac5",
+      "prompt_returned": true
+    },
+    {
+      "name": "lib_servo.sensor_clr",
+      "command": "udws \"lib_servo.sensor_clr;\"",
+      "handler": "0xa02be43d",
+      "descriptor_address": "0xa05b6970",
+      "classification": "reviewed-empty-argument-path",
+      "purpose": "Capture the proved empty-argument path only; no operational argument coverage claimed.",
+      "side_effects_assessment": "Only stack-local computation, parser/output bookkeeping, and known-argument output. No global/peripheral reads or writes, unknown calls, or unknown-state branch decisions were admitted.",
+      "evidence": {
+        "checker": "references/check_guard_round2.py",
+        "paths": [
+          {
+            "parser_return": 0,
+            "instructions": [
+              "0xa02be43c: push {lr}",
+              "0xa02be43e: bl #0xa02be32a",
+              "0xa02be32a: push {r4, lr}",
+              "0xa02be32c: sub sp, #0x2c",
+              "0xa02be32e: movs r3, #0",
+              "0xa02be330: mvns r4, r3",
+              "0xa02be332: str r4, [sp]",
+              "0xa02be334: mov r2, sp",
+              "0xa02be336: adr r1, #0x98",
+              "0xa02be338: adds r0, r4, #0",
+              "0xa02be33a: bl #0xa02c3de2",
+              "0xa02be33e: cmp r0, #1",
+              "0xa02be340: beq #0xa02be35e",
+              "0xa02be342: add r2, sp, #4",
+              "0xa02be344: adr r1, #0xb0",
+              "0xa02be346: movs r3, #0",
+              "0xa02be348: mvns r0, r3",
+              "0xa02be34a: bl #0xa02c3de2",
+              "0xa02be34e: cmp r0, #1",
+              "0xa02be350: bne #0xa02be364",
+              "0xa02be364: adds r0, r4, #0",
+              "0xa02be366: add sp, #0x2c",
+              "0xa02be368: pop {r4, pc}",
+              "0xa02be442: adds r1, r0, #1",
+              "0xa02be444: beq #0xa02be44c",
+              "0xa02be44c: ldr r1, [pc, #0x1c]",
+              "0xa02be44e: movs r2, #0",
+              "0xa02be450: mvns r0, r2",
+              "0xa02be452: bl #0xa02c37be",
+              "0xa02be456: pop {pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa02be43e",
+                "target": "0xa02be32a",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa02be33a",
+                "target": "0xa02c3de2"
+              },
+              {
+                "at": "0xa02be34a",
+                "target": "0xa02c3de2"
+              },
+              {
+                "at": "0xa02be452",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa02be452",
+                "format_address": "0xa02be404",
+                "text": "Warning!, This is not a valid sensor ID / Name"
+              }
+            ],
+            "parser_count": 2,
+            "parser_formats": [
+              "%d",
+              "%39S"
+            ],
+            "returned": true,
+            "failure": null,
+            "parser_destinations": [
+              {
+                "address": "0x7100fecc",
+                "format": "%39S",
+                "maximum_extent": 40
+              }
+            ]
+          },
+          {
+            "parser_return": -1,
+            "instructions": [
+              "0xa02be43c: push {lr}",
+              "0xa02be43e: bl #0xa02be32a",
+              "0xa02be32a: push {r4, lr}",
+              "0xa02be32c: sub sp, #0x2c",
+              "0xa02be32e: movs r3, #0",
+              "0xa02be330: mvns r4, r3",
+              "0xa02be332: str r4, [sp]",
+              "0xa02be334: mov r2, sp",
+              "0xa02be336: adr r1, #0x98",
+              "0xa02be338: adds r0, r4, #0",
+              "0xa02be33a: bl #0xa02c3de2",
+              "0xa02be33e: cmp r0, #1",
+              "0xa02be340: beq #0xa02be35e",
+              "0xa02be342: add r2, sp, #4",
+              "0xa02be344: adr r1, #0xb0",
+              "0xa02be346: movs r3, #0",
+              "0xa02be348: mvns r0, r3",
+              "0xa02be34a: bl #0xa02c3de2",
+              "0xa02be34e: cmp r0, #1",
+              "0xa02be350: bne #0xa02be364",
+              "0xa02be364: adds r0, r4, #0",
+              "0xa02be366: add sp, #0x2c",
+              "0xa02be368: pop {r4, pc}",
+              "0xa02be442: adds r1, r0, #1",
+              "0xa02be444: beq #0xa02be44c",
+              "0xa02be44c: ldr r1, [pc, #0x1c]",
+              "0xa02be44e: movs r2, #0",
+              "0xa02be450: mvns r0, r2",
+              "0xa02be452: bl #0xa02c37be",
+              "0xa02be456: pop {pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa02be43e",
+                "target": "0xa02be32a",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa02be33a",
+                "target": "0xa02c3de2"
+              },
+              {
+                "at": "0xa02be34a",
+                "target": "0xa02c3de2"
+              },
+              {
+                "at": "0xa02be452",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa02be452",
+                "format_address": "0xa02be404",
+                "text": "Warning!, This is not a valid sensor ID / Name"
+              }
+            ],
+            "parser_count": 2,
+            "parser_formats": [
+              "%d",
+              "%39S"
+            ],
+            "returned": true,
+            "failure": null,
+            "parser_destinations": [
+              {
+                "address": "0x7100fecc",
+                "format": "%39S",
+                "maximum_extent": 40
+              }
+            ]
+          }
+        ]
+      },
+      "timeout": 20,
+      "hardware_access": false,
+      "physically_tested_by_this_review": false,
+      "index": 10,
+      "started_utc": "2026-10-29T20:00:03.841801+00:00",
+      "response_file": "0010-udws_lib_servo_sensor_clr.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:00:04.342716+00:00",
+      "elapsed_seconds": 0.499,
+      "response_bytes": 111,
+      "response_sha256": "49ba98345a48c709aa8620cbb20205be53bee1ca04c30ebbfe01960576f9c9e2",
+      "prompt_returned": true
+    },
+    {
+      "name": "lib_servo.sensor_get",
+      "command": "udws \"lib_servo.sensor_get;\"",
+      "handler": "0xa02be36b",
+      "descriptor_address": "0xa05b6958",
+      "classification": "reviewed-empty-argument-path",
+      "purpose": "Capture the proved empty-argument path only; no operational argument coverage claimed.",
+      "side_effects_assessment": "Only stack-local computation, parser/output bookkeeping, and known-argument output. No global/peripheral reads or writes, unknown calls, or unknown-state branch decisions were admitted.",
+      "evidence": {
+        "checker": "references/check_guard_round2.py",
+        "paths": [
+          {
+            "parser_return": 0,
+            "instructions": [
+              "0xa02be36a: push {lr}",
+              "0xa02be36c: bl #0xa02be32a",
+              "0xa02be32a: push {r4, lr}",
+              "0xa02be32c: sub sp, #0x2c",
+              "0xa02be32e: movs r3, #0",
+              "0xa02be330: mvns r4, r3",
+              "0xa02be332: str r4, [sp]",
+              "0xa02be334: mov r2, sp",
+              "0xa02be336: adr r1, #0x98",
+              "0xa02be338: adds r0, r4, #0",
+              "0xa02be33a: bl #0xa02c3de2",
+              "0xa02be33e: cmp r0, #1",
+              "0xa02be340: beq #0xa02be35e",
+              "0xa02be342: add r2, sp, #4",
+              "0xa02be344: adr r1, #0xb0",
+              "0xa02be346: movs r3, #0",
+              "0xa02be348: mvns r0, r3",
+              "0xa02be34a: bl #0xa02c3de2",
+              "0xa02be34e: cmp r0, #1",
+              "0xa02be350: bne #0xa02be364",
+              "0xa02be364: adds r0, r4, #0",
+              "0xa02be366: add sp, #0x2c",
+              "0xa02be368: pop {r4, pc}",
+              "0xa02be370: adds r1, r0, #1",
+              "0xa02be372: beq #0xa02be382",
+              "0xa02be382: adr r1, #0x80",
+              "0xa02be384: movs r2, #0",
+              "0xa02be386: mvns r0, r2",
+              "0xa02be388: bl #0xa02c37be",
+              "0xa02be38c: pop {pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa02be36c",
+                "target": "0xa02be32a",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa02be33a",
+                "target": "0xa02c3de2"
+              },
+              {
+                "at": "0xa02be34a",
+                "target": "0xa02c3de2"
+              },
+              {
+                "at": "0xa02be388",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa02be388",
+                "format_address": "0xa02be404",
+                "text": "Warning!, This is not a valid sensor ID / Name"
+              }
+            ],
+            "parser_count": 2,
+            "parser_formats": [
+              "%d",
+              "%39S"
+            ],
+            "returned": true,
+            "failure": null,
+            "parser_destinations": [
+              {
+                "address": "0x7100fecc",
+                "format": "%39S",
+                "maximum_extent": 40
+              }
+            ]
+          },
+          {
+            "parser_return": -1,
+            "instructions": [
+              "0xa02be36a: push {lr}",
+              "0xa02be36c: bl #0xa02be32a",
+              "0xa02be32a: push {r4, lr}",
+              "0xa02be32c: sub sp, #0x2c",
+              "0xa02be32e: movs r3, #0",
+              "0xa02be330: mvns r4, r3",
+              "0xa02be332: str r4, [sp]",
+              "0xa02be334: mov r2, sp",
+              "0xa02be336: adr r1, #0x98",
+              "0xa02be338: adds r0, r4, #0",
+              "0xa02be33a: bl #0xa02c3de2",
+              "0xa02be33e: cmp r0, #1",
+              "0xa02be340: beq #0xa02be35e",
+              "0xa02be342: add r2, sp, #4",
+              "0xa02be344: adr r1, #0xb0",
+              "0xa02be346: movs r3, #0",
+              "0xa02be348: mvns r0, r3",
+              "0xa02be34a: bl #0xa02c3de2",
+              "0xa02be34e: cmp r0, #1",
+              "0xa02be350: bne #0xa02be364",
+              "0xa02be364: adds r0, r4, #0",
+              "0xa02be366: add sp, #0x2c",
+              "0xa02be368: pop {r4, pc}",
+              "0xa02be370: adds r1, r0, #1",
+              "0xa02be372: beq #0xa02be382",
+              "0xa02be382: adr r1, #0x80",
+              "0xa02be384: movs r2, #0",
+              "0xa02be386: mvns r0, r2",
+              "0xa02be388: bl #0xa02c37be",
+              "0xa02be38c: pop {pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa02be36c",
+                "target": "0xa02be32a",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa02be33a",
+                "target": "0xa02c3de2"
+              },
+              {
+                "at": "0xa02be34a",
+                "target": "0xa02c3de2"
+              },
+              {
+                "at": "0xa02be388",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa02be388",
+                "format_address": "0xa02be404",
+                "text": "Warning!, This is not a valid sensor ID / Name"
+              }
+            ],
+            "parser_count": 2,
+            "parser_formats": [
+              "%d",
+              "%39S"
+            ],
+            "returned": true,
+            "failure": null,
+            "parser_destinations": [
+              {
+                "address": "0x7100fecc",
+                "format": "%39S",
+                "maximum_extent": 40
+              }
+            ]
+          }
+        ]
+      },
+      "timeout": 20,
+      "hardware_access": false,
+      "physically_tested_by_this_review": false,
+      "index": 11,
+      "started_utc": "2026-10-29T20:00:04.345518+00:00",
+      "response_file": "0011-udws_lib_servo_sensor_get.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:00:04.845586+00:00",
+      "elapsed_seconds": 0.498,
+      "response_bytes": 111,
+      "response_sha256": "e488942e6c6fd8539afb98da738955c657487c23fb1e3b6eb14f3fd9af688e8b",
+      "prompt_returned": true
+    },
+    {
+      "name": "lib_servo.sensor_set",
+      "command": "udws \"lib_servo.sensor_set;\"",
+      "handler": "0xa02be38f",
+      "descriptor_address": "0xa05b6964",
+      "classification": "reviewed-empty-argument-path",
+      "purpose": "Capture the proved empty-argument path only; no operational argument coverage claimed.",
+      "side_effects_assessment": "Only stack-local computation, parser/output bookkeeping, and known-argument output. No global/peripheral reads or writes, unknown calls, or unknown-state branch decisions were admitted.",
+      "evidence": {
+        "checker": "references/check_guard_round2.py",
+        "paths": [
+          {
+            "parser_return": 0,
+            "instructions": [
+              "0xa02be38e: push {r4, lr}",
+              "0xa02be390: sub sp, #4",
+              "0xa02be392: bl #0xa02be32a",
+              "0xa02be32a: push {r4, lr}",
+              "0xa02be32c: sub sp, #0x2c",
+              "0xa02be32e: movs r3, #0",
+              "0xa02be330: mvns r4, r3",
+              "0xa02be332: str r4, [sp]",
+              "0xa02be334: mov r2, sp",
+              "0xa02be336: adr r1, #0x98",
+              "0xa02be338: adds r0, r4, #0",
+              "0xa02be33a: bl #0xa02c3de2",
+              "0xa02be33e: cmp r0, #1",
+              "0xa02be340: beq #0xa02be35e",
+              "0xa02be342: add r2, sp, #4",
+              "0xa02be344: adr r1, #0xb0",
+              "0xa02be346: movs r3, #0",
+              "0xa02be348: mvns r0, r3",
+              "0xa02be34a: bl #0xa02c3de2",
+              "0xa02be34e: cmp r0, #1",
+              "0xa02be350: bne #0xa02be364",
+              "0xa02be364: adds r0, r4, #0",
+              "0xa02be366: add sp, #0x2c",
+              "0xa02be368: pop {r4, pc}",
+              "0xa02be396: adds r4, r0, #0",
+              "0xa02be398: adds r0, r4, #1",
+              "0xa02be39a: beq #0xa02be3b6",
+              "0xa02be3b6: adr r1, #0x4c",
+              "0xa02be3b8: movs r2, #0",
+              "0xa02be3ba: mvns r0, r2",
+              "0xa02be3bc: bl #0xa02c37be",
+              "0xa02be3c0: b #0xa02be438",
+              "0xa02be438: add sp, #4",
+              "0xa02be43a: pop {r4, pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa02be392",
+                "target": "0xa02be32a",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa02be33a",
+                "target": "0xa02c3de2"
+              },
+              {
+                "at": "0xa02be34a",
+                "target": "0xa02c3de2"
+              },
+              {
+                "at": "0xa02be3bc",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa02be3bc",
+                "format_address": "0xa02be404",
+                "text": "Warning!, This is not a valid sensor ID / Name"
+              }
+            ],
+            "parser_count": 2,
+            "parser_formats": [
+              "%d",
+              "%39S"
+            ],
+            "returned": true,
+            "failure": null,
+            "parser_destinations": [
+              {
+                "address": "0x7100fec4",
+                "format": "%39S",
+                "maximum_extent": 40
+              }
+            ]
+          },
+          {
+            "parser_return": -1,
+            "instructions": [
+              "0xa02be38e: push {r4, lr}",
+              "0xa02be390: sub sp, #4",
+              "0xa02be392: bl #0xa02be32a",
+              "0xa02be32a: push {r4, lr}",
+              "0xa02be32c: sub sp, #0x2c",
+              "0xa02be32e: movs r3, #0",
+              "0xa02be330: mvns r4, r3",
+              "0xa02be332: str r4, [sp]",
+              "0xa02be334: mov r2, sp",
+              "0xa02be336: adr r1, #0x98",
+              "0xa02be338: adds r0, r4, #0",
+              "0xa02be33a: bl #0xa02c3de2",
+              "0xa02be33e: cmp r0, #1",
+              "0xa02be340: beq #0xa02be35e",
+              "0xa02be342: add r2, sp, #4",
+              "0xa02be344: adr r1, #0xb0",
+              "0xa02be346: movs r3, #0",
+              "0xa02be348: mvns r0, r3",
+              "0xa02be34a: bl #0xa02c3de2",
+              "0xa02be34e: cmp r0, #1",
+              "0xa02be350: bne #0xa02be364",
+              "0xa02be364: adds r0, r4, #0",
+              "0xa02be366: add sp, #0x2c",
+              "0xa02be368: pop {r4, pc}",
+              "0xa02be396: adds r4, r0, #0",
+              "0xa02be398: adds r0, r4, #1",
+              "0xa02be39a: beq #0xa02be3b6",
+              "0xa02be3b6: adr r1, #0x4c",
+              "0xa02be3b8: movs r2, #0",
+              "0xa02be3ba: mvns r0, r2",
+              "0xa02be3bc: bl #0xa02c37be",
+              "0xa02be3c0: b #0xa02be438",
+              "0xa02be438: add sp, #4",
+              "0xa02be43a: pop {r4, pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa02be392",
+                "target": "0xa02be32a",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa02be33a",
+                "target": "0xa02c3de2"
+              },
+              {
+                "at": "0xa02be34a",
+                "target": "0xa02c3de2"
+              },
+              {
+                "at": "0xa02be3bc",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa02be3bc",
+                "format_address": "0xa02be404",
+                "text": "Warning!, This is not a valid sensor ID / Name"
+              }
+            ],
+            "parser_count": 2,
+            "parser_formats": [
+              "%d",
+              "%39S"
+            ],
+            "returned": true,
+            "failure": null,
+            "parser_destinations": [
+              {
+                "address": "0x7100fec4",
+                "format": "%39S",
+                "maximum_extent": 40
+              }
+            ]
+          }
+        ]
+      },
+      "timeout": 20,
+      "hardware_access": false,
+      "physically_tested_by_this_review": false,
+      "index": 12,
+      "started_utc": "2026-10-29T20:00:04.848474+00:00",
+      "response_file": "0012-udws_lib_servo_sensor_set.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:00:05.333147+00:00",
+      "elapsed_seconds": 0.482,
+      "response_bytes": 111,
+      "response_sha256": "86774ed7951b6944d8cb2e11077c194f3d55481e00e94e81128eae984f9d6627",
+      "prompt_returned": true
+    },
+    {
+      "name": "lib_servo.shutdown_servos",
+      "command": "udws \"lib_servo.shutdown_servos;\"",
+      "handler": "0xa02be459",
+      "descriptor_address": "0xa05b697c",
+      "classification": "reviewed-software-only-empty-path",
+      "purpose": "Capture the proved empty-argument path only; no operational argument coverage claimed.",
+      "side_effects_assessment": "Only stack-local computation, parser/output bookkeeping, and known-argument output. No global/peripheral reads or writes, unknown calls, or unknown-state branch decisions were admitted.",
+      "evidence": {
+        "checker": "references/check_guard_round2.py",
+        "paths": [
+          {
+            "parser_return": 0,
+            "instructions": [
+              "0xa02be458: push {lr}",
+              "0xa02be45a: adr r1, #0x14",
+              "0xa02be45c: movs r2, #0",
+              "0xa02be45e: mvns r0, r2",
+              "0xa02be460: bl #0xa02c37be",
+              "0xa02be464: bl #0xa02bdffa",
+              "0xa02bdffa: bx lr",
+              "0xa02be468: pop {pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa02be460",
+                "target": "0xa02c37be"
+              },
+              {
+                "at": "0xa02be464",
+                "target": "0xa02bdffa",
+                "method": "execute helper instructions with conservative tracking"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa02be460",
+                "format_address": "0xa02be470",
+                "text": "FEATURE_MCASIC_MOTOR_RECIRCULATION_FW_FIX is NOT enabled"
+              }
+            ],
+            "parser_count": 0,
+            "parser_formats": [],
+            "returned": true,
+            "failure": null
+          },
+          {
+            "parser_return": -1,
+            "instructions": [
+              "0xa02be458: push {lr}",
+              "0xa02be45a: adr r1, #0x14",
+              "0xa02be45c: movs r2, #0",
+              "0xa02be45e: mvns r0, r2",
+              "0xa02be460: bl #0xa02c37be",
+              "0xa02be464: bl #0xa02bdffa",
+              "0xa02bdffa: bx lr",
+              "0xa02be468: pop {pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa02be460",
+                "target": "0xa02c37be"
+              },
+              {
+                "at": "0xa02be464",
+                "target": "0xa02bdffa",
+                "method": "execute helper instructions with conservative tracking"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa02be460",
+                "format_address": "0xa02be470",
+                "text": "FEATURE_MCASIC_MOTOR_RECIRCULATION_FW_FIX is NOT enabled"
+              }
+            ],
+            "parser_count": 0,
+            "parser_formats": [],
+            "returned": true,
+            "failure": null
+          }
+        ]
+      },
+      "timeout": 20,
+      "hardware_access": false,
+      "physically_tested_by_this_review": false,
+      "index": 13,
+      "started_utc": "2026-10-29T20:00:05.336833+00:00",
+      "response_file": "0013-udws_lib_servo_shutdown_servos.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:00:05.868912+00:00",
+      "elapsed_seconds": 0.53,
+      "response_bytes": 126,
+      "response_sha256": "0e8d346ce23c197b80e696b0036c14ee02b2c0175dc231451e811ea80bff17a9",
+      "prompt_returned": true
+    },
+    {
+      "name": "mem.check_ptr",
+      "command": "udws \"mem.check_ptr;\"",
+      "handler": "0xa02ce983",
+      "descriptor_address": "0xa05c49b4",
+      "classification": "reviewed-empty-argument-path",
+      "purpose": "Capture the proved empty-argument path only; no operational argument coverage claimed.",
+      "side_effects_assessment": "Only stack-local computation, parser/output bookkeeping, and known-argument output. No global/peripheral reads or writes, unknown calls, or unknown-state branch decisions were admitted.",
+      "evidence": {
+        "checker": "references/check_guard_round2.py",
+        "paths": [
+          {
+            "parser_return": 0,
+            "instructions": [
+              "0xa02ce982: push {r4, r5, lr}",
+              "0xa02ce984: sub sp, #4",
+              "0xa02ce986: movs r3, #0",
+              "0xa02ce988: str r3, [sp]",
+              "0xa02ce98a: mov r2, sp",
+              "0xa02ce98c: adr r1, #0xf4",
+              "0xa02ce98e: mvns r0, r3",
+              "0xa02ce990: bl #0xa02c3de2",
+              "0xa02ce994: ldr r4, [sp]",
+              "0xa02ce996: adds r0, r4, #0",
+              "0xa02ce998: bl #0xa02ce492",
+              "0xa02ce492: push {lr}",
+              "0xa02ce494: cmp r0, #0",
+              "0xa02ce496: beq #0xa02ce4a8",
+              "0xa02ce4a8: movs r1, #0",
+              "0xa02ce4aa: mvns r0, r1",
+              "0xa02ce4ac: pop {pc}",
+              "0xa02ce99c: cmp r0, #0",
+              "0xa02ce99e: bne #0xa02ce9b2",
+              "0xa02ce9b2: adds r2, r4, #0",
+              "0xa02ce9b4: adr r1, #0xf8",
+              "0xa02ce9b6: movs r3, #0",
+              "0xa02ce9b8: mvns r0, r3",
+              "0xa02ce9ba: bl #0xa02c37be",
+              "0xa02ce9be: add sp, #4",
+              "0xa02ce9c0: pop {r4, r5, pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa02ce990",
+                "target": "0xa02c3de2"
+              },
+              {
+                "at": "0xa02ce998",
+                "target": "0xa02ce492",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa02ce9ba",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa02ce9ba",
+                "format_address": "0xa02ceab0",
+                "text": "Error: unrecognized ptr 0x%x\n"
+              }
+            ],
+            "parser_count": 1,
+            "parser_formats": [
+              "0x%x"
+            ],
+            "returned": true,
+            "failure": null,
+            "parser_destinations": [
+              {
+                "address": "0x7100fef0",
+                "format": "%x",
+                "maximum_extent": 4
+              }
+            ]
+          },
+          {
+            "parser_return": -1,
+            "instructions": [
+              "0xa02ce982: push {r4, r5, lr}",
+              "0xa02ce984: sub sp, #4",
+              "0xa02ce986: movs r3, #0",
+              "0xa02ce988: str r3, [sp]",
+              "0xa02ce98a: mov r2, sp",
+              "0xa02ce98c: adr r1, #0xf4",
+              "0xa02ce98e: mvns r0, r3",
+              "0xa02ce990: bl #0xa02c3de2",
+              "0xa02ce994: ldr r4, [sp]",
+              "0xa02ce996: adds r0, r4, #0",
+              "0xa02ce998: bl #0xa02ce492",
+              "0xa02ce492: push {lr}",
+              "0xa02ce494: cmp r0, #0",
+              "0xa02ce496: beq #0xa02ce4a8",
+              "0xa02ce4a8: movs r1, #0",
+              "0xa02ce4aa: mvns r0, r1",
+              "0xa02ce4ac: pop {pc}",
+              "0xa02ce99c: cmp r0, #0",
+              "0xa02ce99e: bne #0xa02ce9b2",
+              "0xa02ce9b2: adds r2, r4, #0",
+              "0xa02ce9b4: adr r1, #0xf8",
+              "0xa02ce9b6: movs r3, #0",
+              "0xa02ce9b8: mvns r0, r3",
+              "0xa02ce9ba: bl #0xa02c37be",
+              "0xa02ce9be: add sp, #4",
+              "0xa02ce9c0: pop {r4, r5, pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa02ce990",
+                "target": "0xa02c3de2"
+              },
+              {
+                "at": "0xa02ce998",
+                "target": "0xa02ce492",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa02ce9ba",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa02ce9ba",
+                "format_address": "0xa02ceab0",
+                "text": "Error: unrecognized ptr 0x%x\n"
+              }
+            ],
+            "parser_count": 1,
+            "parser_formats": [
+              "0x%x"
+            ],
+            "returned": true,
+            "failure": null,
+            "parser_destinations": [
+              {
+                "address": "0x7100fef0",
+                "format": "%x",
+                "maximum_extent": 4
+              }
+            ]
+          }
+        ]
+      },
+      "timeout": 20,
+      "hardware_access": false,
+      "physically_tested_by_this_review": false,
+      "index": 14,
+      "started_utc": "2026-10-29T20:00:05.871853+00:00",
+      "response_file": "0014-udws_mem_check_ptr.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:00:06.339914+00:00",
+      "elapsed_seconds": 0.466,
+      "response_bytes": 87,
+      "response_sha256": "83504e0661747cef53ed27d618cfbc55840c5b4e351cd779c2c2362b3bff7588",
+      "prompt_returned": true
+    },
+    {
+      "name": "mem.snapshot_enter",
+      "command": "udws \"mem.snapshot_enter;\"",
+      "handler": "0xa02ce5e1",
+      "descriptor_address": "0xa05c4a20",
+      "classification": "reviewed-software-only-empty-path",
+      "purpose": "Capture the proved empty-argument path only; no operational argument coverage claimed.",
+      "side_effects_assessment": "Only stack-local computation, parser/output bookkeeping, and known-argument output. No global/peripheral reads or writes, unknown calls, or unknown-state branch decisions were admitted.",
+      "evidence": {
+        "checker": "references/check_guard_round2.py",
+        "paths": [
+          {
+            "parser_return": 0,
+            "instructions": [
+              "0xa02ce5e0: push {lr}",
+              "0xa02ce5e2: bl #0xa02ce5a8",
+              "0xa02ce5a8: push {lr}",
+              "0xa02ce5aa: adr r1, #0x208",
+              "0xa02ce5ac: movs r2, #0",
+              "0xa02ce5ae: mvns r0, r2",
+              "0xa02ce5b0: bl #0xa02c37be",
+              "0xa02ce5b4: pop {pc}",
+              "0xa02ce5e6: pop {pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa02ce5e2",
+                "target": "0xa02ce5a8",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa02ce5b0",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa02ce5b0",
+                "format_address": "0xa02ce7b4",
+                "text": "MEM pool debug not enabled!\n"
+              }
+            ],
+            "parser_count": 0,
+            "parser_formats": [],
+            "returned": true,
+            "failure": null
+          },
+          {
+            "parser_return": -1,
+            "instructions": [
+              "0xa02ce5e0: push {lr}",
+              "0xa02ce5e2: bl #0xa02ce5a8",
+              "0xa02ce5a8: push {lr}",
+              "0xa02ce5aa: adr r1, #0x208",
+              "0xa02ce5ac: movs r2, #0",
+              "0xa02ce5ae: mvns r0, r2",
+              "0xa02ce5b0: bl #0xa02c37be",
+              "0xa02ce5b4: pop {pc}",
+              "0xa02ce5e6: pop {pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa02ce5e2",
+                "target": "0xa02ce5a8",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa02ce5b0",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa02ce5b0",
+                "format_address": "0xa02ce7b4",
+                "text": "MEM pool debug not enabled!\n"
+              }
+            ],
+            "parser_count": 0,
+            "parser_formats": [],
+            "returned": true,
+            "failure": null
+          }
+        ]
+      },
+      "timeout": 20,
+      "hardware_access": false,
+      "physically_tested_by_this_review": false,
+      "index": 15,
+      "started_utc": "2026-10-29T20:00:06.343191+00:00",
+      "response_file": "0015-udws_mem_snapshot_enter.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:00:06.845258+00:00",
+      "elapsed_seconds": 0.5,
+      "response_bytes": 92,
+      "response_sha256": "870a123073b67d478799cf9af4f60a389afdd1f12c50a6fb9b27bca3a3ab190c",
+      "prompt_returned": true
+    },
+    {
+      "name": "mem.snapshot_exit",
+      "command": "udws \"mem.snapshot_exit;\"",
+      "handler": "0xa02ce5e9",
+      "descriptor_address": "0xa05c4a2c",
+      "classification": "reviewed-software-only-empty-path",
+      "purpose": "Capture the proved empty-argument path only; no operational argument coverage claimed.",
+      "side_effects_assessment": "Only stack-local computation, parser/output bookkeeping, and known-argument output. No global/peripheral reads or writes, unknown calls, or unknown-state branch decisions were admitted.",
+      "evidence": {
+        "checker": "references/check_guard_round2.py",
+        "paths": [
+          {
+            "parser_return": 0,
+            "instructions": [
+              "0xa02ce5e8: push {lr}",
+              "0xa02ce5ea: bl #0xa02ce5b6",
+              "0xa02ce5b6: push {lr}",
+              "0xa02ce5b8: adr r1, #0x1f8",
+              "0xa02ce5ba: movs r2, #0",
+              "0xa02ce5bc: mvns r0, r2",
+              "0xa02ce5be: bl #0xa02c37be",
+              "0xa02ce5c2: pop {pc}",
+              "0xa02ce5ee: pop {pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa02ce5ea",
+                "target": "0xa02ce5b6",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa02ce5be",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa02ce5be",
+                "format_address": "0xa02ce7b4",
+                "text": "MEM pool debug not enabled!\n"
+              }
+            ],
+            "parser_count": 0,
+            "parser_formats": [],
+            "returned": true,
+            "failure": null
+          },
+          {
+            "parser_return": -1,
+            "instructions": [
+              "0xa02ce5e8: push {lr}",
+              "0xa02ce5ea: bl #0xa02ce5b6",
+              "0xa02ce5b6: push {lr}",
+              "0xa02ce5b8: adr r1, #0x1f8",
+              "0xa02ce5ba: movs r2, #0",
+              "0xa02ce5bc: mvns r0, r2",
+              "0xa02ce5be: bl #0xa02c37be",
+              "0xa02ce5c2: pop {pc}",
+              "0xa02ce5ee: pop {pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa02ce5ea",
+                "target": "0xa02ce5b6",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa02ce5be",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa02ce5be",
+                "format_address": "0xa02ce7b4",
+                "text": "MEM pool debug not enabled!\n"
+              }
+            ],
+            "parser_count": 0,
+            "parser_formats": [],
+            "returned": true,
+            "failure": null
+          }
+        ]
+      },
+      "timeout": 20,
+      "hardware_access": false,
+      "physically_tested_by_this_review": false,
+      "index": 16,
+      "started_utc": "2026-10-29T20:00:06.848037+00:00",
+      "response_file": "0016-udws_mem_snapshot_exit.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:00:07.337803+00:00",
+      "elapsed_seconds": 0.485,
+      "response_bytes": 91,
+      "response_sha256": "7b2680991987c7922308f2f5bc0dfd8f0c09856f43ef32f6fc59d8bee42cba97",
+      "prompt_returned": true
+    },
+    {
+      "name": "pcl.prefix",
+      "command": "udws \"pcl.prefix;\"",
+      "handler": "0xa02fe337",
+      "descriptor_address": "0xa05cb7f4",
+      "classification": "reviewed-software-only-empty-path",
+      "purpose": "Capture the proved empty-argument path only; no operational argument coverage claimed.",
+      "side_effects_assessment": "Only stack-local computation, parser/output bookkeeping, and known-argument output. No global/peripheral reads or writes, unknown calls, or unknown-state branch decisions were admitted.",
+      "evidence": {
+        "checker": "references/check_guard_round2.py",
+        "paths": [
+          {
+            "parser_return": 0,
+            "instructions": [
+              "0xa02fe336: push {lr}",
+              "0xa02fe338: sub sp, #0x20",
+              "0xa02fe33a: movs r1, #0x1e",
+              "0xa02fe33c: mov r0, sp",
+              "0xa02fe33e: bl #0xa02c3284",
+              "0xa02c3284: movs r3, #0",
+              "0xa02c3286: strb r3, [r0]",
+              "0xa02c3288: adds r0, r3, #0",
+              "0xa02c328a: bx lr",
+              "0xa02fe342: mov r2, sp",
+              "0xa02fe344: adr r1, #0x94",
+              "0xa02fe346: movs r3, #0",
+              "0xa02fe348: mvns r0, r3",
+              "0xa02fe34a: bl #0xa02c37be",
+              "0xa02fe34e: add sp, #0x20",
+              "0xa02fe350: pop {pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa02fe33e",
+                "target": "0xa02c3284",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa02fe34a",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa02fe34a",
+                "format_address": "0xa02fe3dc",
+                "text": "%s;"
+              }
+            ],
+            "parser_count": 0,
+            "parser_formats": [],
+            "returned": true,
+            "failure": null
+          },
+          {
+            "parser_return": -1,
+            "instructions": [
+              "0xa02fe336: push {lr}",
+              "0xa02fe338: sub sp, #0x20",
+              "0xa02fe33a: movs r1, #0x1e",
+              "0xa02fe33c: mov r0, sp",
+              "0xa02fe33e: bl #0xa02c3284",
+              "0xa02c3284: movs r3, #0",
+              "0xa02c3286: strb r3, [r0]",
+              "0xa02c3288: adds r0, r3, #0",
+              "0xa02c328a: bx lr",
+              "0xa02fe342: mov r2, sp",
+              "0xa02fe344: adr r1, #0x94",
+              "0xa02fe346: movs r3, #0",
+              "0xa02fe348: mvns r0, r3",
+              "0xa02fe34a: bl #0xa02c37be",
+              "0xa02fe34e: add sp, #0x20",
+              "0xa02fe350: pop {pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa02fe33e",
+                "target": "0xa02c3284",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa02fe34a",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa02fe34a",
+                "format_address": "0xa02fe3dc",
+                "text": "%s;"
+              }
+            ],
+            "parser_count": 0,
+            "parser_formats": [],
+            "returned": true,
+            "failure": null
+          }
+        ]
+      },
+      "timeout": 20,
+      "hardware_access": false,
+      "physically_tested_by_this_review": false,
+      "index": 17,
+      "started_utc": "2026-10-29T20:00:07.340869+00:00",
+      "response_file": "0017-udws_pcl_prefix.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:00:07.801585+00:00",
+      "elapsed_seconds": 0.458,
+      "response_bytes": 55,
+      "response_sha256": "168db23ea539b25ba35be6a4710422492be2419ee2daa5e70ce9dd3e360c80b9",
+      "prompt_returned": true
+    },
+    {
+      "name": "pe_digital_sensor.enable",
+      "command": "udws \"pe_digital_sensor.enable;\"",
+      "handler": "0xa03062f3",
+      "descriptor_address": "0xa05cd9b0",
+      "classification": "reviewed-empty-argument-path",
+      "purpose": "Capture the proved empty-argument path only; no operational argument coverage claimed.",
+      "side_effects_assessment": "Only stack-local computation, parser/output bookkeeping, and known-argument output. No global/peripheral reads or writes, unknown calls, or unknown-state branch decisions were admitted.",
+      "evidence": {
+        "checker": "references/check_guard_round2.py",
+        "paths": [
+          {
+            "parser_return": 0,
+            "instructions": [
+              "0xa03062f2: push {r4, r5, r6, lr}",
+              "0xa03062f4: sub sp, #4",
+              "0xa03062f6: bl #0xa03061f2",
+              "0xa03061f2: push {r4, lr}",
+              "0xa03061f4: sub sp, #0x2c",
+              "0xa03061f6: movs r3, #0",
+              "0xa03061f8: mvns r4, r3",
+              "0xa03061fa: str r4, [sp]",
+              "0xa03061fc: mov r2, sp",
+              "0xa03061fe: adr r1, #0x208",
+              "0xa0306200: adds r0, r4, #0",
+              "0xa0306202: bl #0xa02c3de2",
+              "0xa0306206: cmp r0, #1",
+              "0xa0306208: beq #0xa0306226",
+              "0xa030620a: add r2, sp, #4",
+              "0xa030620c: adr r1, #0x1fc",
+              "0xa030620e: movs r3, #0",
+              "0xa0306210: mvns r0, r3",
+              "0xa0306212: bl #0xa02c3de2",
+              "0xa0306216: cmp r0, #1",
+              "0xa0306218: bne #0xa030622c",
+              "0xa030622c: adds r0, r4, #0",
+              "0xa030622e: add sp, #0x2c",
+              "0xa0306230: pop {r4, pc}",
+              "0xa03062fa: adds r4, r0, #0",
+              "0xa03062fc: movs r3, #0",
+              "0xa03062fe: str r3, [sp]",
+              "0xa0306300: mvns r5, r3",
+              "0xa0306302: mov r2, sp",
+              "0xa0306304: adr r1, #0x100",
+              "0xa0306306: adds r0, r5, #0",
+              "0xa0306308: bl #0xa02c3de2",
+              "0xa030630c: ldr r3, [sp]",
+              "0xa030630e: adds r2, r4, #0",
+              "0xa0306310: adr r1, #0x114",
+              "0xa0306312: movs r6, #0",
+              "0xa0306314: mvns r0, r6",
+              "0xa0306316: bl #0xa02c37be",
+              "0xa030631a: adds r0, r4, #1",
+              "0xa030631c: beq #0xa030632a",
+              "0xa030632a: movs r3, #0x3b",
+              "0xa030632c: adds r2, r5, #0",
+              "0xa030632e: adr r1, #0xf0",
+              "0xa0306330: movs r4, #0",
+              "0xa0306332: mvns r0, r4",
+              "0xa0306334: bl #0xa02c37be",
+              "0xa0306338: add sp, #4",
+              "0xa030633a: pop {r4, r5, r6, pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa03062f6",
+                "target": "0xa03061f2",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa0306202",
+                "target": "0xa02c3de2"
+              },
+              {
+                "at": "0xa0306212",
+                "target": "0xa02c3de2"
+              },
+              {
+                "at": "0xa0306308",
+                "target": "0xa02c3de2"
+              },
+              {
+                "at": "0xa0306316",
+                "target": "0xa02c37be"
+              },
+              {
+                "at": "0xa0306334",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa0306316",
+                "format_address": "0xa0306428",
+                "text": "id=%d, enable=%d"
+              },
+              {
+                "at": "0xa0306334",
+                "format_address": "0xa0306420",
+                "text": "%d%c"
+              }
+            ],
+            "parser_count": 3,
+            "parser_formats": [
+              "%d",
+              "%39S",
+              "%d"
+            ],
+            "returned": true,
+            "failure": null,
+            "parser_destinations": [
+              {
+                "address": "0x7100feec",
+                "format": "%d",
+                "maximum_extent": 4
+              }
+            ]
+          },
+          {
+            "parser_return": -1,
+            "instructions": [
+              "0xa03062f2: push {r4, r5, r6, lr}",
+              "0xa03062f4: sub sp, #4",
+              "0xa03062f6: bl #0xa03061f2",
+              "0xa03061f2: push {r4, lr}",
+              "0xa03061f4: sub sp, #0x2c",
+              "0xa03061f6: movs r3, #0",
+              "0xa03061f8: mvns r4, r3",
+              "0xa03061fa: str r4, [sp]",
+              "0xa03061fc: mov r2, sp",
+              "0xa03061fe: adr r1, #0x208",
+              "0xa0306200: adds r0, r4, #0",
+              "0xa0306202: bl #0xa02c3de2",
+              "0xa0306206: cmp r0, #1",
+              "0xa0306208: beq #0xa0306226",
+              "0xa030620a: add r2, sp, #4",
+              "0xa030620c: adr r1, #0x1fc",
+              "0xa030620e: movs r3, #0",
+              "0xa0306210: mvns r0, r3",
+              "0xa0306212: bl #0xa02c3de2",
+              "0xa0306216: cmp r0, #1",
+              "0xa0306218: bne #0xa030622c",
+              "0xa030622c: adds r0, r4, #0",
+              "0xa030622e: add sp, #0x2c",
+              "0xa0306230: pop {r4, pc}",
+              "0xa03062fa: adds r4, r0, #0",
+              "0xa03062fc: movs r3, #0",
+              "0xa03062fe: str r3, [sp]",
+              "0xa0306300: mvns r5, r3",
+              "0xa0306302: mov r2, sp",
+              "0xa0306304: adr r1, #0x100",
+              "0xa0306306: adds r0, r5, #0",
+              "0xa0306308: bl #0xa02c3de2",
+              "0xa030630c: ldr r3, [sp]",
+              "0xa030630e: adds r2, r4, #0",
+              "0xa0306310: adr r1, #0x114",
+              "0xa0306312: movs r6, #0",
+              "0xa0306314: mvns r0, r6",
+              "0xa0306316: bl #0xa02c37be",
+              "0xa030631a: adds r0, r4, #1",
+              "0xa030631c: beq #0xa030632a",
+              "0xa030632a: movs r3, #0x3b",
+              "0xa030632c: adds r2, r5, #0",
+              "0xa030632e: adr r1, #0xf0",
+              "0xa0306330: movs r4, #0",
+              "0xa0306332: mvns r0, r4",
+              "0xa0306334: bl #0xa02c37be",
+              "0xa0306338: add sp, #4",
+              "0xa030633a: pop {r4, r5, r6, pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa03062f6",
+                "target": "0xa03061f2",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa0306202",
+                "target": "0xa02c3de2"
+              },
+              {
+                "at": "0xa0306212",
+                "target": "0xa02c3de2"
+              },
+              {
+                "at": "0xa0306308",
+                "target": "0xa02c3de2"
+              },
+              {
+                "at": "0xa0306316",
+                "target": "0xa02c37be"
+              },
+              {
+                "at": "0xa0306334",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa0306316",
+                "format_address": "0xa0306428",
+                "text": "id=%d, enable=%d"
+              },
+              {
+                "at": "0xa0306334",
+                "format_address": "0xa0306420",
+                "text": "%d%c"
+              }
+            ],
+            "parser_count": 3,
+            "parser_formats": [
+              "%d",
+              "%39S",
+              "%d"
+            ],
+            "returned": true,
+            "failure": null,
+            "parser_destinations": [
+              {
+                "address": "0x7100feec",
+                "format": "%d",
+                "maximum_extent": 4
+              }
+            ]
+          }
+        ]
+      },
+      "timeout": 20,
+      "hardware_access": false,
+      "physically_tested_by_this_review": false,
+      "index": 18,
+      "started_utc": "2026-10-29T20:00:07.804821+00:00",
+      "response_file": "0018-udws_pe_digital_sensor_enable.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:00:08.345614+00:00",
+      "elapsed_seconds": 0.538,
+      "response_bytes": 86,
+      "response_sha256": "6d12d76e65754e9eeb52c0b750c1cf8c6f2ac89918da68f3b50ef6fe3eeb182a",
+      "prompt_returned": true
+    },
+    {
+      "name": "pixel_gen.clear_sweep_log",
+      "command": "udws \"pixel_gen.clear_sweep_log;\"",
+      "handler": "0xa03511dd",
+      "descriptor_address": "0xa05e8038",
+      "classification": "reviewed-software-only-empty-path",
+      "purpose": "Capture the proved empty-argument path only; no operational argument coverage claimed.",
+      "side_effects_assessment": "Only stack-local computation, parser/output bookkeeping, and known-argument output. No global/peripheral reads or writes, unknown calls, or unknown-state branch decisions were admitted.",
+      "evidence": {
+        "checker": "references/check_guard_round2.py",
+        "paths": [
+          {
+            "parser_return": 0,
+            "instructions": [
+              "0xa03511dc: push {lr}",
+              "0xa03511de: bl #0xa034d0d8",
+              "0xa034d0d8: bx lr",
+              "0xa03511e2: pop {pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa03511de",
+                "target": "0xa034d0d8",
+                "method": "execute helper instructions with conservative tracking"
+              }
+            ],
+            "outputs": [],
+            "parser_count": 0,
+            "parser_formats": [],
+            "returned": true,
+            "failure": null
+          },
+          {
+            "parser_return": -1,
+            "instructions": [
+              "0xa03511dc: push {lr}",
+              "0xa03511de: bl #0xa034d0d8",
+              "0xa034d0d8: bx lr",
+              "0xa03511e2: pop {pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa03511de",
+                "target": "0xa034d0d8",
+                "method": "execute helper instructions with conservative tracking"
+              }
+            ],
+            "outputs": [],
+            "parser_count": 0,
+            "parser_formats": [],
+            "returned": true,
+            "failure": null
+          }
+        ]
+      },
+      "timeout": 20,
+      "hardware_access": false,
+      "physically_tested_by_this_review": false,
+      "index": 19,
+      "started_utc": "2026-10-29T20:00:08.348967+00:00",
+      "response_file": "0019-udws_pixel_gen_clear_sweep_log.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:00:08.873058+00:00",
+      "elapsed_seconds": 0.522,
+      "response_bytes": 69,
+      "response_sha256": "7c6f3d253436476f76a97c86bcd79dcdcb98462ca17c376b1ebfef859aeb48bf",
+      "prompt_returned": true
+    },
+    {
+      "name": "pixel_gen.get_entrain_pattern",
+      "command": "udws \"pixel_gen.get_entrain_pattern;\"",
+      "handler": "0xa0350d87",
+      "descriptor_address": "0xa05e8044",
+      "classification": "reviewed-empty-argument-path",
+      "purpose": "Capture the proved empty-argument path only; no operational argument coverage claimed.",
+      "side_effects_assessment": "Only stack-local computation, parser/output bookkeeping, and known-argument output. No global/peripheral reads or writes, unknown calls, or unknown-state branch decisions were admitted.",
+      "evidence": {
+        "checker": "references/check_guard_round2.py",
+        "paths": [
+          {
+            "parser_return": 0,
+            "instructions": [
+              "0xa0350d86: push {r4, r5, r6, r7, lr}",
+              "0xa0350d88: sub sp, #0x2c",
+              "0xa0350d8a: mov r0, sp",
+              "0xa0350d8c: bl #0xa0351680",
+              "0xa0351680: ldr r3, [pc, #0xb0]",
+              "0xa0351682: str r3, [r0]",
+              "0xa0351684: bx lr",
+              "0xa0350d90: movs r4, #0",
+              "0xa0350d92: mvns r4, r4",
+              "0xa0350d94: str r4, [sp, #4]",
+              "0xa0350d96: add r2, sp, #4",
+              "0xa0350d98: adr r1, #0x238",
+              "0xa0350d9a: movs r4, #0",
+              "0xa0350d9c: mvns r0, r4",
+              "0xa0350d9e: bl #0xa02c3de2",
+              "0xa0350da2: ldr r3, [sp, #4]",
+              "0xa0350da4: cmp r3, #8",
+              "0xa0350da6: bhs #0xa0350e70",
+              "0xa0350e70: add sp, #0x2c",
+              "0xa0350e72: pop {r4, r5, r6, r7, pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa0350d8c",
+                "target": "0xa0351680",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa0350d9e",
+                "target": "0xa02c3de2"
+              }
+            ],
+            "outputs": [],
+            "parser_count": 1,
+            "parser_formats": [
+              "%d"
+            ],
+            "returned": true,
+            "failure": null,
+            "parser_destinations": [
+              {
+                "address": "0x7100fec4",
+                "format": "%d",
+                "maximum_extent": 4
+              }
+            ]
+          },
+          {
+            "parser_return": -1,
+            "instructions": [
+              "0xa0350d86: push {r4, r5, r6, r7, lr}",
+              "0xa0350d88: sub sp, #0x2c",
+              "0xa0350d8a: mov r0, sp",
+              "0xa0350d8c: bl #0xa0351680",
+              "0xa0351680: ldr r3, [pc, #0xb0]",
+              "0xa0351682: str r3, [r0]",
+              "0xa0351684: bx lr",
+              "0xa0350d90: movs r4, #0",
+              "0xa0350d92: mvns r4, r4",
+              "0xa0350d94: str r4, [sp, #4]",
+              "0xa0350d96: add r2, sp, #4",
+              "0xa0350d98: adr r1, #0x238",
+              "0xa0350d9a: movs r4, #0",
+              "0xa0350d9c: mvns r0, r4",
+              "0xa0350d9e: bl #0xa02c3de2",
+              "0xa0350da2: ldr r3, [sp, #4]",
+              "0xa0350da4: cmp r3, #8",
+              "0xa0350da6: bhs #0xa0350e70",
+              "0xa0350e70: add sp, #0x2c",
+              "0xa0350e72: pop {r4, r5, r6, r7, pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa0350d8c",
+                "target": "0xa0351680",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa0350d9e",
+                "target": "0xa02c3de2"
+              }
+            ],
+            "outputs": [],
+            "parser_count": 1,
+            "parser_formats": [
+              "%d"
+            ],
+            "returned": true,
+            "failure": null,
+            "parser_destinations": [
+              {
+                "address": "0x7100fec4",
+                "format": "%d",
+                "maximum_extent": 4
+              }
+            ]
+          }
+        ]
+      },
+      "timeout": 20,
+      "hardware_access": false,
+      "physically_tested_by_this_review": false,
+      "index": 20,
+      "started_utc": "2026-10-29T20:00:08.876496+00:00",
+      "response_file": "0020-udws_pixel_gen_get_entrain_pattern.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:00:09.413632+00:00",
+      "elapsed_seconds": 0.535,
+      "response_bytes": 73,
+      "response_sha256": "06ac0a88f483ffe9701024082c1b0cfb958d83afe1a2c4f2b802e462539a3c27",
+      "prompt_returned": true
+    },
+    {
+      "name": "rest_udw prefix",
+      "command": "udws \"rest_udw prefix;\"",
+      "handler": "0xa039d269",
+      "descriptor_address": "0xa05f67bc",
+      "classification": "reviewed-software-only-empty-path",
+      "purpose": "Capture the proved empty-argument path only; no operational argument coverage claimed.",
+      "side_effects_assessment": "Only stack-local computation, parser/output bookkeeping, and known-argument output. No global/peripheral reads or writes, unknown calls, or unknown-state branch decisions were admitted.",
+      "evidence": {
+        "checker": "references/check_guard_round2.py",
+        "paths": [
+          {
+            "parser_return": 0,
+            "instructions": [
+              "0xa039d268: push {lr}",
+              "0xa039d26a: sub sp, #0x20",
+              "0xa039d26c: movs r1, #0x1e",
+              "0xa039d26e: mov r0, sp",
+              "0xa039d270: bl #0xa02c3284",
+              "0xa02c3284: movs r3, #0",
+              "0xa02c3286: strb r3, [r0]",
+              "0xa02c3288: adds r0, r3, #0",
+              "0xa02c328a: bx lr",
+              "0xa039d274: mov r2, sp",
+              "0xa039d276: adr r1, #0x18",
+              "0xa039d278: movs r3, #0",
+              "0xa039d27a: mvns r0, r3",
+              "0xa039d27c: bl #0xa02c37be",
+              "0xa039d280: add sp, #0x20",
+              "0xa039d282: pop {pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa039d270",
+                "target": "0xa02c3284",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa039d27c",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa039d27c",
+                "format_address": "0xa039d290",
+                "text": "%s;"
+              }
+            ],
+            "parser_count": 0,
+            "parser_formats": [],
+            "returned": true,
+            "failure": null
+          },
+          {
+            "parser_return": -1,
+            "instructions": [
+              "0xa039d268: push {lr}",
+              "0xa039d26a: sub sp, #0x20",
+              "0xa039d26c: movs r1, #0x1e",
+              "0xa039d26e: mov r0, sp",
+              "0xa039d270: bl #0xa02c3284",
+              "0xa02c3284: movs r3, #0",
+              "0xa02c3286: strb r3, [r0]",
+              "0xa02c3288: adds r0, r3, #0",
+              "0xa02c328a: bx lr",
+              "0xa039d274: mov r2, sp",
+              "0xa039d276: adr r1, #0x18",
+              "0xa039d278: movs r3, #0",
+              "0xa039d27a: mvns r0, r3",
+              "0xa039d27c: bl #0xa02c37be",
+              "0xa039d280: add sp, #0x20",
+              "0xa039d282: pop {pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa039d270",
+                "target": "0xa02c3284",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa039d27c",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa039d27c",
+                "format_address": "0xa039d290",
+                "text": "%s;"
+              }
+            ],
+            "parser_count": 0,
+            "parser_formats": [],
+            "returned": true,
+            "failure": null
+          }
+        ]
+      },
+      "timeout": 20,
+      "hardware_access": false,
+      "physically_tested_by_this_review": false,
+      "index": 21,
+      "started_utc": "2026-10-29T20:00:09.417404+00:00",
+      "response_file": "0021-udws_rest_udw_prefix.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:00:09.907589+00:00",
+      "elapsed_seconds": 0.487,
+      "response_bytes": 60,
+      "response_sha256": "96e7e4602832730caa7d2a2506614615653a2bc697e2b79e77ff93444ceb3461",
+      "prompt_returned": true
+    },
+    {
+      "name": "rev.get_dasic",
+      "command": "udws \"rev.get_dasic;\"",
+      "handler": "0xa046e3a9",
+      "descriptor_address": "0xa06319e8",
+      "classification": "reviewed-software-only-empty-path",
+      "purpose": "Capture the proved empty-argument path only; no operational argument coverage claimed.",
+      "side_effects_assessment": "Only stack-local computation, parser/output bookkeeping, and known-argument output. No global/peripheral reads or writes, unknown calls, or unknown-state branch decisions were admitted.",
+      "evidence": {
+        "checker": "references/check_guard_round2.py",
+        "paths": [
+          {
+            "parser_return": 0,
+            "instructions": [
+              "0xa046e3a8: push {lr}",
+              "0xa046e3aa: bl #0xa046e276",
+              "0xa046e276: movs r0, #0",
+              "0xa046e278: bx lr",
+              "0xa046e3ae: adds r2, r0, #0",
+              "0xa046e3b0: adr r1, #0x38",
+              "0xa046e3b2: movs r3, #0",
+              "0xa046e3b4: mvns r0, r3",
+              "0xa046e3b6: bl #0xa02c37be",
+              "0xa046e3ba: pop {pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa046e3aa",
+                "target": "0xa046e276",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa046e3b6",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa046e3b6",
+                "format_address": "0xa046e3ec",
+                "text": "0x%08X;"
+              }
+            ],
+            "parser_count": 0,
+            "parser_formats": [],
+            "returned": true,
+            "failure": null
+          },
+          {
+            "parser_return": -1,
+            "instructions": [
+              "0xa046e3a8: push {lr}",
+              "0xa046e3aa: bl #0xa046e276",
+              "0xa046e276: movs r0, #0",
+              "0xa046e278: bx lr",
+              "0xa046e3ae: adds r2, r0, #0",
+              "0xa046e3b0: adr r1, #0x38",
+              "0xa046e3b2: movs r3, #0",
+              "0xa046e3b4: mvns r0, r3",
+              "0xa046e3b6: bl #0xa02c37be",
+              "0xa046e3ba: pop {pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa046e3aa",
+                "target": "0xa046e276",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa046e3b6",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa046e3b6",
+                "format_address": "0xa046e3ec",
+                "text": "0x%08X;"
+              }
+            ],
+            "parser_count": 0,
+            "parser_formats": [],
+            "returned": true,
+            "failure": null
+          }
+        ]
+      },
+      "timeout": 20,
+      "hardware_access": false,
+      "physically_tested_by_this_review": false,
+      "index": 22,
+      "started_utc": "2026-10-29T20:00:09.911404+00:00",
+      "response_file": "0022-udws_rev_get_dasic.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:00:10.403283+00:00",
+      "elapsed_seconds": 0.489,
+      "response_bytes": 68,
+      "response_sha256": "4461b33237f28f65952895502c5bf7c119746e9a10a36f9ef02824934dc04876",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan bolt tlvds",
+      "command": "udws \"scan bolt tlvds;\"",
+      "handler": "0xa03a2e41",
+      "descriptor_address": "0xa05fc324",
+      "classification": "reviewed-software-only-empty-path",
+      "purpose": "Capture the proved empty-argument path only; no operational argument coverage claimed.",
+      "side_effects_assessment": "Only stack-local computation, parser/output bookkeeping, and known-argument output. No global/peripheral reads or writes, unknown calls, or unknown-state branch decisions were admitted.",
+      "evidence": {
+        "checker": "references/check_guard_round2.py",
+        "paths": [
+          {
+            "parser_return": 0,
+            "instructions": [
+              "0xa03a2e40: push {r4, lr}",
+              "0xa03a2e42: bl #0xa03a247e",
+              "0xa03a247e: movs r0, #1",
+              "0xa03a2480: bx lr",
+              "0xa03a2e46: cmp r0, #1",
+              "0xa03a2e48: beq #0xa03a2e6e",
+              "0xa03a2e6e: pop {r4, pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa03a2e42",
+                "target": "0xa03a247e",
+                "method": "execute helper instructions with conservative tracking"
+              }
+            ],
+            "outputs": [],
+            "parser_count": 0,
+            "parser_formats": [],
+            "returned": true,
+            "failure": null
+          },
+          {
+            "parser_return": -1,
+            "instructions": [
+              "0xa03a2e40: push {r4, lr}",
+              "0xa03a2e42: bl #0xa03a247e",
+              "0xa03a247e: movs r0, #1",
+              "0xa03a2480: bx lr",
+              "0xa03a2e46: cmp r0, #1",
+              "0xa03a2e48: beq #0xa03a2e6e",
+              "0xa03a2e6e: pop {r4, pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa03a2e42",
+                "target": "0xa03a247e",
+                "method": "execute helper instructions with conservative tracking"
+              }
+            ],
+            "outputs": [],
+            "parser_count": 0,
+            "parser_formats": [],
+            "returned": true,
+            "failure": null
+          }
+        ]
+      },
+      "timeout": 20,
+      "hardware_access": false,
+      "physically_tested_by_this_review": false,
+      "index": 23,
+      "started_utc": "2026-10-29T20:00:10.407067+00:00",
+      "response_file": "0023-udws_scan_bolt_tlvds.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:00:10.897947+00:00",
+      "elapsed_seconds": 0.487,
+      "response_bytes": 59,
+      "response_sha256": "55994aa10194d9c64b4fe91525fc7ef509189099174019c0f6780d999aa3f5e7",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan dasher tlvds",
+      "command": "udws \"scan dasher tlvds;\"",
+      "handler": "0xa03a2e41",
+      "descriptor_address": "0xa05fc324",
+      "classification": "reviewed-software-only-empty-path",
+      "purpose": "Capture the proved empty-argument path only; no operational argument coverage claimed.",
+      "side_effects_assessment": "Only stack-local computation, parser/output bookkeeping, and known-argument output. No global/peripheral reads or writes, unknown calls, or unknown-state branch decisions were admitted.",
+      "evidence": {
+        "checker": "references/check_guard_round2.py",
+        "paths": [
+          {
+            "parser_return": 0,
+            "instructions": [
+              "0xa03a2e40: push {r4, lr}",
+              "0xa03a2e42: bl #0xa03a247e",
+              "0xa03a247e: movs r0, #1",
+              "0xa03a2480: bx lr",
+              "0xa03a2e46: cmp r0, #1",
+              "0xa03a2e48: beq #0xa03a2e6e",
+              "0xa03a2e6e: pop {r4, pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa03a2e42",
+                "target": "0xa03a247e",
+                "method": "execute helper instructions with conservative tracking"
+              }
+            ],
+            "outputs": [],
+            "parser_count": 0,
+            "parser_formats": [],
+            "returned": true,
+            "failure": null
+          },
+          {
+            "parser_return": -1,
+            "instructions": [
+              "0xa03a2e40: push {r4, lr}",
+              "0xa03a2e42: bl #0xa03a247e",
+              "0xa03a247e: movs r0, #1",
+              "0xa03a2480: bx lr",
+              "0xa03a2e46: cmp r0, #1",
+              "0xa03a2e48: beq #0xa03a2e6e",
+              "0xa03a2e6e: pop {r4, pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa03a2e42",
+                "target": "0xa03a247e",
+                "method": "execute helper instructions with conservative tracking"
+              }
+            ],
+            "outputs": [],
+            "parser_count": 0,
+            "parser_formats": [],
+            "returned": true,
+            "failure": null
+          }
+        ]
+      },
+      "timeout": 20,
+      "hardware_access": false,
+      "physically_tested_by_this_review": false,
+      "index": 24,
+      "started_utc": "2026-10-29T20:00:10.901549+00:00",
+      "response_file": "0024-udws_scan_dasher_tlvds.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:00:11.353626+00:00",
+      "elapsed_seconds": 0.449,
+      "response_bytes": 61,
+      "response_sha256": "8a95989751e5247c3138d0cc48bc6e96b46468e788994e53d15bc771b335281c",
+      "prompt_returned": true
+    },
+    {
+      "name": "serial_scan dualasic",
+      "command": "udws \"serial_scan dualasic;\"",
+      "handler": "0xa03ce3e9",
+      "descriptor_address": "0xa0607134",
+      "classification": "reviewed-software-only-empty-path",
+      "purpose": "Capture the proved empty-argument path only; no operational argument coverage claimed.",
+      "side_effects_assessment": "Only stack-local computation, parser/output bookkeeping, and known-argument output. No global/peripheral reads or writes, unknown calls, or unknown-state branch decisions were admitted.",
+      "evidence": {
+        "checker": "references/check_guard_round2.py",
+        "paths": [
+          {
+            "parser_return": 0,
+            "instructions": [
+              "0xa03ce3e8: push {lr}",
+              "0xa03ce3ea: adr r1, #0x228",
+              "0xa03ce3ec: movs r2, #0",
+              "0xa03ce3ee: mvns r0, r2",
+              "0xa03ce3f0: bl #0xa02c37be",
+              "0xa03ce3f4: pop {pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa03ce3f0",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa03ce3f0",
+                "format_address": "0xa03ce614",
+                "text": "dual_asic: %d"
+              }
+            ],
+            "parser_count": 0,
+            "parser_formats": [],
+            "returned": true,
+            "failure": null
+          },
+          {
+            "parser_return": -1,
+            "instructions": [
+              "0xa03ce3e8: push {lr}",
+              "0xa03ce3ea: adr r1, #0x228",
+              "0xa03ce3ec: movs r2, #0",
+              "0xa03ce3ee: mvns r0, r2",
+              "0xa03ce3f0: bl #0xa02c37be",
+              "0xa03ce3f4: pop {pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa03ce3f0",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa03ce3f0",
+                "format_address": "0xa03ce614",
+                "text": "dual_asic: %d"
+              }
+            ],
+            "parser_count": 0,
+            "parser_formats": [],
+            "returned": true,
+            "failure": null
+          }
+        ]
+      },
+      "timeout": 20,
+      "hardware_access": false,
+      "physically_tested_by_this_review": false,
+      "index": 25,
+      "started_utc": "2026-10-29T20:00:11.357366+00:00",
+      "response_file": "0025-udws_serial_scan_dualasic.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:00:11.866694+00:00",
+      "elapsed_seconds": 0.506,
+      "response_bytes": 77,
+      "response_sha256": "f94d4b0f6597c6ec731dc5daf6e5e3304ee528af189c4b1b7f37f7ac8ef6bea0",
+      "prompt_returned": true
+    },
+    {
+      "name": "sm_dispatch_job filter disable",
+      "command": "udws \"sm_dispatch_job filter disable;\"",
+      "handler": "0xa03d40b7",
+      "descriptor_address": "0xa0607ac8",
+      "classification": "reviewed-empty-argument-path",
+      "purpose": "Capture the proved empty-argument path only; no operational argument coverage claimed.",
+      "side_effects_assessment": "Only stack-local computation, parser/output bookkeeping, and known-argument output. No global/peripheral reads or writes, unknown calls, or unknown-state branch decisions were admitted.",
+      "evidence": {
+        "checker": "references/check_guard_round2.py",
+        "paths": [
+          {
+            "parser_return": 0,
+            "instructions": [
+              "0xa03d40b6: push {r4, r5, r6, r7, lr}",
+              "0xa03d40b8: ldr r5, [pc, #0x124]",
+              "0xa03d40ba: adds r4, r0, #0",
+              "0xa03d40bc: bl #0xa03d3688",
+              "0xa03d3688: push {lr}",
+              "0xa03d368a: sub sp, #4",
+              "0xa03d368c: movs r3, #0",
+              "0xa03d368e: str r3, [sp]",
+              "0xa03d3690: mov r2, sp",
+              "0xa03d3692: adr r1, #0x134",
+              "0xa03d3694: mvns r0, r3",
+              "0xa03d3696: bl #0xa02c3de2",
+              "0xa03d369a: ldr r0, [sp]",
+              "0xa03d369c: add sp, #4",
+              "0xa03d369e: pop {pc}",
+              "0xa03d40c0: movs r2, #0",
+              "0xa03d40c2: adds r6, r0, #0",
+              "0xa03d40c4: beq #0xa03d411c",
+              "0xa03d411c: adr r1, #0xc4",
+              "0xa03d411e: mvns r0, r2",
+              "0xa03d4120: bl #0xa02c37be",
+              "0xa03d4124: pop {r4, r5, r6, r7, pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa03d40bc",
+                "target": "0xa03d3688",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa03d3696",
+                "target": "0xa02c3de2"
+              },
+              {
+                "at": "0xa03d4120",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa03d4120",
+                "format_address": "0xa03d41e4",
+                "text": "SUID must be specified and must be non-zero!\n"
+              }
+            ],
+            "parser_count": 1,
+            "parser_formats": [
+              " %i"
+            ],
+            "returned": true,
+            "failure": null,
+            "parser_destinations": [
+              {
+                "address": "0x7100fee4",
+                "format": "%i",
+                "maximum_extent": 4
+              }
+            ]
+          },
+          {
+            "parser_return": -1,
+            "instructions": [
+              "0xa03d40b6: push {r4, r5, r6, r7, lr}",
+              "0xa03d40b8: ldr r5, [pc, #0x124]",
+              "0xa03d40ba: adds r4, r0, #0",
+              "0xa03d40bc: bl #0xa03d3688",
+              "0xa03d3688: push {lr}",
+              "0xa03d368a: sub sp, #4",
+              "0xa03d368c: movs r3, #0",
+              "0xa03d368e: str r3, [sp]",
+              "0xa03d3690: mov r2, sp",
+              "0xa03d3692: adr r1, #0x134",
+              "0xa03d3694: mvns r0, r3",
+              "0xa03d3696: bl #0xa02c3de2",
+              "0xa03d369a: ldr r0, [sp]",
+              "0xa03d369c: add sp, #4",
+              "0xa03d369e: pop {pc}",
+              "0xa03d40c0: movs r2, #0",
+              "0xa03d40c2: adds r6, r0, #0",
+              "0xa03d40c4: beq #0xa03d411c",
+              "0xa03d411c: adr r1, #0xc4",
+              "0xa03d411e: mvns r0, r2",
+              "0xa03d4120: bl #0xa02c37be",
+              "0xa03d4124: pop {r4, r5, r6, r7, pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa03d40bc",
+                "target": "0xa03d3688",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa03d3696",
+                "target": "0xa02c3de2"
+              },
+              {
+                "at": "0xa03d4120",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa03d4120",
+                "format_address": "0xa03d41e4",
+                "text": "SUID must be specified and must be non-zero!\n"
+              }
+            ],
+            "parser_count": 1,
+            "parser_formats": [
+              " %i"
+            ],
+            "returned": true,
+            "failure": null,
+            "parser_destinations": [
+              {
+                "address": "0x7100fee4",
+                "format": "%i",
+                "maximum_extent": 4
+              }
+            ]
+          }
+        ]
+      },
+      "timeout": 20,
+      "hardware_access": false,
+      "physically_tested_by_this_review": false,
+      "index": 26,
+      "started_utc": "2026-10-29T20:00:11.870125+00:00",
+      "response_file": "0026-udws_sm_dispatch_job_filter_disable.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:00:12.403335+00:00",
+      "elapsed_seconds": 0.53,
+      "response_bytes": 121,
+      "response_sha256": "1d498f494a3420477e0983981e12e68e4dff8cb768db120aa3ba76455b13231f",
+      "prompt_returned": true
+    },
+    {
+      "name": "sm_dispatch_job filter enable",
+      "command": "udws \"sm_dispatch_job filter enable;\"",
+      "handler": "0xa03d40b7",
+      "descriptor_address": "0xa0607ad8",
+      "classification": "reviewed-empty-argument-path",
+      "purpose": "Capture the proved empty-argument path only; no operational argument coverage claimed.",
+      "side_effects_assessment": "Only stack-local computation, parser/output bookkeeping, and known-argument output. No global/peripheral reads or writes, unknown calls, or unknown-state branch decisions were admitted.",
+      "evidence": {
+        "checker": "references/check_guard_round2.py",
+        "paths": [
+          {
+            "parser_return": 0,
+            "instructions": [
+              "0xa03d40b6: push {r4, r5, r6, r7, lr}",
+              "0xa03d40b8: ldr r5, [pc, #0x124]",
+              "0xa03d40ba: adds r4, r0, #0",
+              "0xa03d40bc: bl #0xa03d3688",
+              "0xa03d3688: push {lr}",
+              "0xa03d368a: sub sp, #4",
+              "0xa03d368c: movs r3, #0",
+              "0xa03d368e: str r3, [sp]",
+              "0xa03d3690: mov r2, sp",
+              "0xa03d3692: adr r1, #0x134",
+              "0xa03d3694: mvns r0, r3",
+              "0xa03d3696: bl #0xa02c3de2",
+              "0xa03d369a: ldr r0, [sp]",
+              "0xa03d369c: add sp, #4",
+              "0xa03d369e: pop {pc}",
+              "0xa03d40c0: movs r2, #0",
+              "0xa03d40c2: adds r6, r0, #0",
+              "0xa03d40c4: beq #0xa03d411c",
+              "0xa03d411c: adr r1, #0xc4",
+              "0xa03d411e: mvns r0, r2",
+              "0xa03d4120: bl #0xa02c37be",
+              "0xa03d4124: pop {r4, r5, r6, r7, pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa03d40bc",
+                "target": "0xa03d3688",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa03d3696",
+                "target": "0xa02c3de2"
+              },
+              {
+                "at": "0xa03d4120",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa03d4120",
+                "format_address": "0xa03d41e4",
+                "text": "SUID must be specified and must be non-zero!\n"
+              }
+            ],
+            "parser_count": 1,
+            "parser_formats": [
+              " %i"
+            ],
+            "returned": true,
+            "failure": null,
+            "parser_destinations": [
+              {
+                "address": "0x7100fee4",
+                "format": "%i",
+                "maximum_extent": 4
+              }
+            ]
+          },
+          {
+            "parser_return": -1,
+            "instructions": [
+              "0xa03d40b6: push {r4, r5, r6, r7, lr}",
+              "0xa03d40b8: ldr r5, [pc, #0x124]",
+              "0xa03d40ba: adds r4, r0, #0",
+              "0xa03d40bc: bl #0xa03d3688",
+              "0xa03d3688: push {lr}",
+              "0xa03d368a: sub sp, #4",
+              "0xa03d368c: movs r3, #0",
+              "0xa03d368e: str r3, [sp]",
+              "0xa03d3690: mov r2, sp",
+              "0xa03d3692: adr r1, #0x134",
+              "0xa03d3694: mvns r0, r3",
+              "0xa03d3696: bl #0xa02c3de2",
+              "0xa03d369a: ldr r0, [sp]",
+              "0xa03d369c: add sp, #4",
+              "0xa03d369e: pop {pc}",
+              "0xa03d40c0: movs r2, #0",
+              "0xa03d40c2: adds r6, r0, #0",
+              "0xa03d40c4: beq #0xa03d411c",
+              "0xa03d411c: adr r1, #0xc4",
+              "0xa03d411e: mvns r0, r2",
+              "0xa03d4120: bl #0xa02c37be",
+              "0xa03d4124: pop {r4, r5, r6, r7, pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa03d40bc",
+                "target": "0xa03d3688",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa03d3696",
+                "target": "0xa02c3de2"
+              },
+              {
+                "at": "0xa03d4120",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa03d4120",
+                "format_address": "0xa03d41e4",
+                "text": "SUID must be specified and must be non-zero!\n"
+              }
+            ],
+            "parser_count": 1,
+            "parser_formats": [
+              " %i"
+            ],
+            "returned": true,
+            "failure": null,
+            "parser_destinations": [
+              {
+                "address": "0x7100fee4",
+                "format": "%i",
+                "maximum_extent": 4
+              }
+            ]
+          }
+        ]
+      },
+      "timeout": 20,
+      "hardware_access": false,
+      "physically_tested_by_this_review": false,
+      "index": 27,
+      "started_utc": "2026-10-29T20:00:12.407596+00:00",
+      "response_file": "0027-udws_sm_dispatch_job_filter_enable.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:00:12.941995+00:00",
+      "elapsed_seconds": 0.531,
+      "response_bytes": 120,
+      "response_sha256": "56a512ca6ea1aee6e91b28f440290d9b9076124143b004a1bf95e6bad8d01cbd",
+      "prompt_returned": true
+    },
+    {
+      "name": "sm_dispatch_job filter except",
+      "command": "udws \"sm_dispatch_job filter except;\"",
+      "handler": "0xa03d40b7",
+      "descriptor_address": "0xa0607ae8",
+      "classification": "reviewed-empty-argument-path",
+      "purpose": "Capture the proved empty-argument path only; no operational argument coverage claimed.",
+      "side_effects_assessment": "Only stack-local computation, parser/output bookkeeping, and known-argument output. No global/peripheral reads or writes, unknown calls, or unknown-state branch decisions were admitted.",
+      "evidence": {
+        "checker": "references/check_guard_round2.py",
+        "paths": [
+          {
+            "parser_return": 0,
+            "instructions": [
+              "0xa03d40b6: push {r4, r5, r6, r7, lr}",
+              "0xa03d40b8: ldr r5, [pc, #0x124]",
+              "0xa03d40ba: adds r4, r0, #0",
+              "0xa03d40bc: bl #0xa03d3688",
+              "0xa03d3688: push {lr}",
+              "0xa03d368a: sub sp, #4",
+              "0xa03d368c: movs r3, #0",
+              "0xa03d368e: str r3, [sp]",
+              "0xa03d3690: mov r2, sp",
+              "0xa03d3692: adr r1, #0x134",
+              "0xa03d3694: mvns r0, r3",
+              "0xa03d3696: bl #0xa02c3de2",
+              "0xa03d369a: ldr r0, [sp]",
+              "0xa03d369c: add sp, #4",
+              "0xa03d369e: pop {pc}",
+              "0xa03d40c0: movs r2, #0",
+              "0xa03d40c2: adds r6, r0, #0",
+              "0xa03d40c4: beq #0xa03d411c",
+              "0xa03d411c: adr r1, #0xc4",
+              "0xa03d411e: mvns r0, r2",
+              "0xa03d4120: bl #0xa02c37be",
+              "0xa03d4124: pop {r4, r5, r6, r7, pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa03d40bc",
+                "target": "0xa03d3688",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa03d3696",
+                "target": "0xa02c3de2"
+              },
+              {
+                "at": "0xa03d4120",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa03d4120",
+                "format_address": "0xa03d41e4",
+                "text": "SUID must be specified and must be non-zero!\n"
+              }
+            ],
+            "parser_count": 1,
+            "parser_formats": [
+              " %i"
+            ],
+            "returned": true,
+            "failure": null,
+            "parser_destinations": [
+              {
+                "address": "0x7100fee4",
+                "format": "%i",
+                "maximum_extent": 4
+              }
+            ]
+          },
+          {
+            "parser_return": -1,
+            "instructions": [
+              "0xa03d40b6: push {r4, r5, r6, r7, lr}",
+              "0xa03d40b8: ldr r5, [pc, #0x124]",
+              "0xa03d40ba: adds r4, r0, #0",
+              "0xa03d40bc: bl #0xa03d3688",
+              "0xa03d3688: push {lr}",
+              "0xa03d368a: sub sp, #4",
+              "0xa03d368c: movs r3, #0",
+              "0xa03d368e: str r3, [sp]",
+              "0xa03d3690: mov r2, sp",
+              "0xa03d3692: adr r1, #0x134",
+              "0xa03d3694: mvns r0, r3",
+              "0xa03d3696: bl #0xa02c3de2",
+              "0xa03d369a: ldr r0, [sp]",
+              "0xa03d369c: add sp, #4",
+              "0xa03d369e: pop {pc}",
+              "0xa03d40c0: movs r2, #0",
+              "0xa03d40c2: adds r6, r0, #0",
+              "0xa03d40c4: beq #0xa03d411c",
+              "0xa03d411c: adr r1, #0xc4",
+              "0xa03d411e: mvns r0, r2",
+              "0xa03d4120: bl #0xa02c37be",
+              "0xa03d4124: pop {r4, r5, r6, r7, pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa03d40bc",
+                "target": "0xa03d3688",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa03d3696",
+                "target": "0xa02c3de2"
+              },
+              {
+                "at": "0xa03d4120",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa03d4120",
+                "format_address": "0xa03d41e4",
+                "text": "SUID must be specified and must be non-zero!\n"
+              }
+            ],
+            "parser_count": 1,
+            "parser_formats": [
+              " %i"
+            ],
+            "returned": true,
+            "failure": null,
+            "parser_destinations": [
+              {
+                "address": "0x7100fee4",
+                "format": "%i",
+                "maximum_extent": 4
+              }
+            ]
+          }
+        ]
+      },
+      "timeout": 20,
+      "hardware_access": false,
+      "physically_tested_by_this_review": false,
+      "index": 28,
+      "started_utc": "2026-10-29T20:00:12.946925+00:00",
+      "response_file": "0028-udws_sm_dispatch_job_filter_except.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:00:13.517963+00:00",
+      "elapsed_seconds": 0.567,
+      "response_bytes": 120,
+      "response_sha256": "ea0b0943dfff6a03cb668cd1763a21a06657975bae3c2ae8ac6a82403047f11f",
+      "prompt_returned": true
+    },
+    {
+      "name": "sm_dispatch_job filter only",
+      "command": "udws \"sm_dispatch_job filter only;\"",
+      "handler": "0xa03d40b7",
+      "descriptor_address": "0xa0607af8",
+      "classification": "reviewed-empty-argument-path",
+      "purpose": "Capture the proved empty-argument path only; no operational argument coverage claimed.",
+      "side_effects_assessment": "Only stack-local computation, parser/output bookkeeping, and known-argument output. No global/peripheral reads or writes, unknown calls, or unknown-state branch decisions were admitted.",
+      "evidence": {
+        "checker": "references/check_guard_round2.py",
+        "paths": [
+          {
+            "parser_return": 0,
+            "instructions": [
+              "0xa03d40b6: push {r4, r5, r6, r7, lr}",
+              "0xa03d40b8: ldr r5, [pc, #0x124]",
+              "0xa03d40ba: adds r4, r0, #0",
+              "0xa03d40bc: bl #0xa03d3688",
+              "0xa03d3688: push {lr}",
+              "0xa03d368a: sub sp, #4",
+              "0xa03d368c: movs r3, #0",
+              "0xa03d368e: str r3, [sp]",
+              "0xa03d3690: mov r2, sp",
+              "0xa03d3692: adr r1, #0x134",
+              "0xa03d3694: mvns r0, r3",
+              "0xa03d3696: bl #0xa02c3de2",
+              "0xa03d369a: ldr r0, [sp]",
+              "0xa03d369c: add sp, #4",
+              "0xa03d369e: pop {pc}",
+              "0xa03d40c0: movs r2, #0",
+              "0xa03d40c2: adds r6, r0, #0",
+              "0xa03d40c4: beq #0xa03d411c",
+              "0xa03d411c: adr r1, #0xc4",
+              "0xa03d411e: mvns r0, r2",
+              "0xa03d4120: bl #0xa02c37be",
+              "0xa03d4124: pop {r4, r5, r6, r7, pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa03d40bc",
+                "target": "0xa03d3688",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa03d3696",
+                "target": "0xa02c3de2"
+              },
+              {
+                "at": "0xa03d4120",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa03d4120",
+                "format_address": "0xa03d41e4",
+                "text": "SUID must be specified and must be non-zero!\n"
+              }
+            ],
+            "parser_count": 1,
+            "parser_formats": [
+              " %i"
+            ],
+            "returned": true,
+            "failure": null,
+            "parser_destinations": [
+              {
+                "address": "0x7100fee4",
+                "format": "%i",
+                "maximum_extent": 4
+              }
+            ]
+          },
+          {
+            "parser_return": -1,
+            "instructions": [
+              "0xa03d40b6: push {r4, r5, r6, r7, lr}",
+              "0xa03d40b8: ldr r5, [pc, #0x124]",
+              "0xa03d40ba: adds r4, r0, #0",
+              "0xa03d40bc: bl #0xa03d3688",
+              "0xa03d3688: push {lr}",
+              "0xa03d368a: sub sp, #4",
+              "0xa03d368c: movs r3, #0",
+              "0xa03d368e: str r3, [sp]",
+              "0xa03d3690: mov r2, sp",
+              "0xa03d3692: adr r1, #0x134",
+              "0xa03d3694: mvns r0, r3",
+              "0xa03d3696: bl #0xa02c3de2",
+              "0xa03d369a: ldr r0, [sp]",
+              "0xa03d369c: add sp, #4",
+              "0xa03d369e: pop {pc}",
+              "0xa03d40c0: movs r2, #0",
+              "0xa03d40c2: adds r6, r0, #0",
+              "0xa03d40c4: beq #0xa03d411c",
+              "0xa03d411c: adr r1, #0xc4",
+              "0xa03d411e: mvns r0, r2",
+              "0xa03d4120: bl #0xa02c37be",
+              "0xa03d4124: pop {r4, r5, r6, r7, pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa03d40bc",
+                "target": "0xa03d3688",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa03d3696",
+                "target": "0xa02c3de2"
+              },
+              {
+                "at": "0xa03d4120",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa03d4120",
+                "format_address": "0xa03d41e4",
+                "text": "SUID must be specified and must be non-zero!\n"
+              }
+            ],
+            "parser_count": 1,
+            "parser_formats": [
+              " %i"
+            ],
+            "returned": true,
+            "failure": null,
+            "parser_destinations": [
+              {
+                "address": "0x7100fee4",
+                "format": "%i",
+                "maximum_extent": 4
+              }
+            ]
+          }
+        ]
+      },
+      "timeout": 20,
+      "hardware_access": false,
+      "physically_tested_by_this_review": false,
+      "index": 29,
+      "started_utc": "2026-10-29T20:00:13.522392+00:00",
+      "response_file": "0029-udws_sm_dispatch_job_filter_only.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:00:14.048736+00:00",
+      "elapsed_seconds": 0.523,
+      "response_bytes": 118,
+      "response_sha256": "78dafcbc4f8861b1d9b6b2b42f729812efb002fb9eb6272d46f7b46ac94541d3",
+      "prompt_returned": true
+    },
+    {
+      "name": "smgr_init.force_recovery",
+      "command": "udws \"smgr_init.force_recovery;\"",
+      "handler": "0xa03da0af",
+      "descriptor_address": "0xa060990c",
+      "classification": "reviewed-software-only-empty-path",
+      "purpose": "Capture the proved empty-argument path only; no operational argument coverage claimed.",
+      "side_effects_assessment": "Only stack-local computation, parser/output bookkeeping, and known-argument output. No global/peripheral reads or writes, unknown calls, or unknown-state branch decisions were admitted.",
+      "evidence": {
+        "checker": "references/check_guard_round2.py",
+        "paths": [
+          {
+            "parser_return": 0,
+            "instructions": [
+              "0xa03da0ae: push {lr}",
+              "0xa03da0b0: adr r1, #0x7c",
+              "0xa03da0b2: movs r2, #0",
+              "0xa03da0b4: mvns r0, r2",
+              "0xa03da0b6: bl #0xa02c37be",
+              "0xa03da0ba: pop {pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa03da0b6",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa03da0b6",
+                "format_address": "0xa03da130",
+                "text": "Commmand not supported\n"
+              }
+            ],
+            "parser_count": 0,
+            "parser_formats": [],
+            "returned": true,
+            "failure": null
+          },
+          {
+            "parser_return": -1,
+            "instructions": [
+              "0xa03da0ae: push {lr}",
+              "0xa03da0b0: adr r1, #0x7c",
+              "0xa03da0b2: movs r2, #0",
+              "0xa03da0b4: mvns r0, r2",
+              "0xa03da0b6: bl #0xa02c37be",
+              "0xa03da0ba: pop {pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa03da0b6",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa03da0b6",
+                "format_address": "0xa03da130",
+                "text": "Commmand not supported\n"
+              }
+            ],
+            "parser_count": 0,
+            "parser_formats": [],
+            "returned": true,
+            "failure": null
+          }
+        ]
+      },
+      "timeout": 20,
+      "hardware_access": false,
+      "physically_tested_by_this_review": false,
+      "index": 30,
+      "started_utc": "2026-10-29T20:00:14.053436+00:00",
+      "response_file": "0030-udws_smgr_init_force_recovery.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:00:14.574266+00:00",
+      "elapsed_seconds": 0.517,
+      "response_bytes": 93,
+      "response_sha256": "83ffb1f09a79893ace29c490e39568e30f3ed98cd24129ee848151ffc7e9d0b6",
+      "prompt_returned": true
+    },
+    {
+      "name": "smgr_init.one_time_recovery",
+      "command": "udws \"smgr_init.one_time_recovery;\"",
+      "handler": "0xa03da0bd",
+      "descriptor_address": "0xa0609924",
+      "classification": "reviewed-software-only-empty-path",
+      "purpose": "Capture the proved empty-argument path only; no operational argument coverage claimed.",
+      "side_effects_assessment": "Only stack-local computation, parser/output bookkeeping, and known-argument output. No global/peripheral reads or writes, unknown calls, or unknown-state branch decisions were admitted.",
+      "evidence": {
+        "checker": "references/check_guard_round2.py",
+        "paths": [
+          {
+            "parser_return": 0,
+            "instructions": [
+              "0xa03da0bc: push {lr}",
+              "0xa03da0be: adr r1, #0x70",
+              "0xa03da0c0: movs r2, #0",
+              "0xa03da0c2: mvns r0, r2",
+              "0xa03da0c4: bl #0xa02c37be",
+              "0xa03da0c8: pop {pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa03da0c4",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa03da0c4",
+                "format_address": "0xa03da130",
+                "text": "Commmand not supported\n"
+              }
+            ],
+            "parser_count": 0,
+            "parser_formats": [],
+            "returned": true,
+            "failure": null
+          },
+          {
+            "parser_return": -1,
+            "instructions": [
+              "0xa03da0bc: push {lr}",
+              "0xa03da0be: adr r1, #0x70",
+              "0xa03da0c0: movs r2, #0",
+              "0xa03da0c2: mvns r0, r2",
+              "0xa03da0c4: bl #0xa02c37be",
+              "0xa03da0c8: pop {pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa03da0c4",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa03da0c4",
+                "format_address": "0xa03da130",
+                "text": "Commmand not supported\n"
+              }
+            ],
+            "parser_count": 0,
+            "parser_formats": [],
+            "returned": true,
+            "failure": null
+          }
+        ]
+      },
+      "timeout": 20,
+      "hardware_access": false,
+      "physically_tested_by_this_review": false,
+      "index": 31,
+      "started_utc": "2026-10-29T20:00:14.577957+00:00",
+      "response_file": "0031-udws_smgr_init_one_time_recovery.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:00:15.113588+00:00",
+      "elapsed_seconds": 0.533,
+      "response_bytes": 96,
+      "response_sha256": "5eac6bf582da537d3c321067703b367e1ef0fe584cb8fba0f30b2a41550341f3",
+      "prompt_returned": true
+    },
+    {
+      "name": "smjob filter disable",
+      "command": "udws \"smjob filter disable;\"",
+      "handler": "0xa03d40b7",
+      "descriptor_address": "0xa0607ac8",
+      "classification": "reviewed-empty-argument-path",
+      "purpose": "Capture the proved empty-argument path only; no operational argument coverage claimed.",
+      "side_effects_assessment": "Only stack-local computation, parser/output bookkeeping, and known-argument output. No global/peripheral reads or writes, unknown calls, or unknown-state branch decisions were admitted.",
+      "evidence": {
+        "checker": "references/check_guard_round2.py",
+        "paths": [
+          {
+            "parser_return": 0,
+            "instructions": [
+              "0xa03d40b6: push {r4, r5, r6, r7, lr}",
+              "0xa03d40b8: ldr r5, [pc, #0x124]",
+              "0xa03d40ba: adds r4, r0, #0",
+              "0xa03d40bc: bl #0xa03d3688",
+              "0xa03d3688: push {lr}",
+              "0xa03d368a: sub sp, #4",
+              "0xa03d368c: movs r3, #0",
+              "0xa03d368e: str r3, [sp]",
+              "0xa03d3690: mov r2, sp",
+              "0xa03d3692: adr r1, #0x134",
+              "0xa03d3694: mvns r0, r3",
+              "0xa03d3696: bl #0xa02c3de2",
+              "0xa03d369a: ldr r0, [sp]",
+              "0xa03d369c: add sp, #4",
+              "0xa03d369e: pop {pc}",
+              "0xa03d40c0: movs r2, #0",
+              "0xa03d40c2: adds r6, r0, #0",
+              "0xa03d40c4: beq #0xa03d411c",
+              "0xa03d411c: adr r1, #0xc4",
+              "0xa03d411e: mvns r0, r2",
+              "0xa03d4120: bl #0xa02c37be",
+              "0xa03d4124: pop {r4, r5, r6, r7, pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa03d40bc",
+                "target": "0xa03d3688",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa03d3696",
+                "target": "0xa02c3de2"
+              },
+              {
+                "at": "0xa03d4120",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa03d4120",
+                "format_address": "0xa03d41e4",
+                "text": "SUID must be specified and must be non-zero!\n"
+              }
+            ],
+            "parser_count": 1,
+            "parser_formats": [
+              " %i"
+            ],
+            "returned": true,
+            "failure": null,
+            "parser_destinations": [
+              {
+                "address": "0x7100fee4",
+                "format": "%i",
+                "maximum_extent": 4
+              }
+            ]
+          },
+          {
+            "parser_return": -1,
+            "instructions": [
+              "0xa03d40b6: push {r4, r5, r6, r7, lr}",
+              "0xa03d40b8: ldr r5, [pc, #0x124]",
+              "0xa03d40ba: adds r4, r0, #0",
+              "0xa03d40bc: bl #0xa03d3688",
+              "0xa03d3688: push {lr}",
+              "0xa03d368a: sub sp, #4",
+              "0xa03d368c: movs r3, #0",
+              "0xa03d368e: str r3, [sp]",
+              "0xa03d3690: mov r2, sp",
+              "0xa03d3692: adr r1, #0x134",
+              "0xa03d3694: mvns r0, r3",
+              "0xa03d3696: bl #0xa02c3de2",
+              "0xa03d369a: ldr r0, [sp]",
+              "0xa03d369c: add sp, #4",
+              "0xa03d369e: pop {pc}",
+              "0xa03d40c0: movs r2, #0",
+              "0xa03d40c2: adds r6, r0, #0",
+              "0xa03d40c4: beq #0xa03d411c",
+              "0xa03d411c: adr r1, #0xc4",
+              "0xa03d411e: mvns r0, r2",
+              "0xa03d4120: bl #0xa02c37be",
+              "0xa03d4124: pop {r4, r5, r6, r7, pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa03d40bc",
+                "target": "0xa03d3688",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa03d3696",
+                "target": "0xa02c3de2"
+              },
+              {
+                "at": "0xa03d4120",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa03d4120",
+                "format_address": "0xa03d41e4",
+                "text": "SUID must be specified and must be non-zero!\n"
+              }
+            ],
+            "parser_count": 1,
+            "parser_formats": [
+              " %i"
+            ],
+            "returned": true,
+            "failure": null,
+            "parser_destinations": [
+              {
+                "address": "0x7100fee4",
+                "format": "%i",
+                "maximum_extent": 4
+              }
+            ]
+          }
+        ]
+      },
+      "timeout": 20,
+      "hardware_access": false,
+      "physically_tested_by_this_review": false,
+      "index": 32,
+      "started_utc": "2026-10-29T20:00:15.118684+00:00",
+      "response_file": "0032-udws_smjob_filter_disable.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:00:15.634180+00:00",
+      "elapsed_seconds": 0.511,
+      "response_bytes": 111,
+      "response_sha256": "4840c2ff58d8267e1ccde5009b4bd27b2ec07ccdc303b3a9d09960e124333b29",
+      "prompt_returned": true
+    },
+    {
+      "name": "smjob filter enable",
+      "command": "udws \"smjob filter enable;\"",
+      "handler": "0xa03d40b7",
+      "descriptor_address": "0xa0607ad8",
+      "classification": "reviewed-empty-argument-path",
+      "purpose": "Capture the proved empty-argument path only; no operational argument coverage claimed.",
+      "side_effects_assessment": "Only stack-local computation, parser/output bookkeeping, and known-argument output. No global/peripheral reads or writes, unknown calls, or unknown-state branch decisions were admitted.",
+      "evidence": {
+        "checker": "references/check_guard_round2.py",
+        "paths": [
+          {
+            "parser_return": 0,
+            "instructions": [
+              "0xa03d40b6: push {r4, r5, r6, r7, lr}",
+              "0xa03d40b8: ldr r5, [pc, #0x124]",
+              "0xa03d40ba: adds r4, r0, #0",
+              "0xa03d40bc: bl #0xa03d3688",
+              "0xa03d3688: push {lr}",
+              "0xa03d368a: sub sp, #4",
+              "0xa03d368c: movs r3, #0",
+              "0xa03d368e: str r3, [sp]",
+              "0xa03d3690: mov r2, sp",
+              "0xa03d3692: adr r1, #0x134",
+              "0xa03d3694: mvns r0, r3",
+              "0xa03d3696: bl #0xa02c3de2",
+              "0xa03d369a: ldr r0, [sp]",
+              "0xa03d369c: add sp, #4",
+              "0xa03d369e: pop {pc}",
+              "0xa03d40c0: movs r2, #0",
+              "0xa03d40c2: adds r6, r0, #0",
+              "0xa03d40c4: beq #0xa03d411c",
+              "0xa03d411c: adr r1, #0xc4",
+              "0xa03d411e: mvns r0, r2",
+              "0xa03d4120: bl #0xa02c37be",
+              "0xa03d4124: pop {r4, r5, r6, r7, pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa03d40bc",
+                "target": "0xa03d3688",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa03d3696",
+                "target": "0xa02c3de2"
+              },
+              {
+                "at": "0xa03d4120",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa03d4120",
+                "format_address": "0xa03d41e4",
+                "text": "SUID must be specified and must be non-zero!\n"
+              }
+            ],
+            "parser_count": 1,
+            "parser_formats": [
+              " %i"
+            ],
+            "returned": true,
+            "failure": null,
+            "parser_destinations": [
+              {
+                "address": "0x7100fee4",
+                "format": "%i",
+                "maximum_extent": 4
+              }
+            ]
+          },
+          {
+            "parser_return": -1,
+            "instructions": [
+              "0xa03d40b6: push {r4, r5, r6, r7, lr}",
+              "0xa03d40b8: ldr r5, [pc, #0x124]",
+              "0xa03d40ba: adds r4, r0, #0",
+              "0xa03d40bc: bl #0xa03d3688",
+              "0xa03d3688: push {lr}",
+              "0xa03d368a: sub sp, #4",
+              "0xa03d368c: movs r3, #0",
+              "0xa03d368e: str r3, [sp]",
+              "0xa03d3690: mov r2, sp",
+              "0xa03d3692: adr r1, #0x134",
+              "0xa03d3694: mvns r0, r3",
+              "0xa03d3696: bl #0xa02c3de2",
+              "0xa03d369a: ldr r0, [sp]",
+              "0xa03d369c: add sp, #4",
+              "0xa03d369e: pop {pc}",
+              "0xa03d40c0: movs r2, #0",
+              "0xa03d40c2: adds r6, r0, #0",
+              "0xa03d40c4: beq #0xa03d411c",
+              "0xa03d411c: adr r1, #0xc4",
+              "0xa03d411e: mvns r0, r2",
+              "0xa03d4120: bl #0xa02c37be",
+              "0xa03d4124: pop {r4, r5, r6, r7, pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa03d40bc",
+                "target": "0xa03d3688",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa03d3696",
+                "target": "0xa02c3de2"
+              },
+              {
+                "at": "0xa03d4120",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa03d4120",
+                "format_address": "0xa03d41e4",
+                "text": "SUID must be specified and must be non-zero!\n"
+              }
+            ],
+            "parser_count": 1,
+            "parser_formats": [
+              " %i"
+            ],
+            "returned": true,
+            "failure": null,
+            "parser_destinations": [
+              {
+                "address": "0x7100fee4",
+                "format": "%i",
+                "maximum_extent": 4
+              }
+            ]
+          }
+        ]
+      },
+      "timeout": 20,
+      "hardware_access": false,
+      "physically_tested_by_this_review": false,
+      "index": 33,
+      "started_utc": "2026-10-29T20:00:15.639202+00:00",
+      "response_file": "0033-udws_smjob_filter_enable.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:00:16.143123+00:00",
+      "elapsed_seconds": 0.5,
+      "response_bytes": 110,
+      "response_sha256": "d1b596db6565d9f548a262af133785e7eee6b24e19be2279a45a596a7c1b946c",
+      "prompt_returned": true
+    },
+    {
+      "name": "smjob filter except",
+      "command": "udws \"smjob filter except;\"",
+      "handler": "0xa03d40b7",
+      "descriptor_address": "0xa0607ae8",
+      "classification": "reviewed-empty-argument-path",
+      "purpose": "Capture the proved empty-argument path only; no operational argument coverage claimed.",
+      "side_effects_assessment": "Only stack-local computation, parser/output bookkeeping, and known-argument output. No global/peripheral reads or writes, unknown calls, or unknown-state branch decisions were admitted.",
+      "evidence": {
+        "checker": "references/check_guard_round2.py",
+        "paths": [
+          {
+            "parser_return": 0,
+            "instructions": [
+              "0xa03d40b6: push {r4, r5, r6, r7, lr}",
+              "0xa03d40b8: ldr r5, [pc, #0x124]",
+              "0xa03d40ba: adds r4, r0, #0",
+              "0xa03d40bc: bl #0xa03d3688",
+              "0xa03d3688: push {lr}",
+              "0xa03d368a: sub sp, #4",
+              "0xa03d368c: movs r3, #0",
+              "0xa03d368e: str r3, [sp]",
+              "0xa03d3690: mov r2, sp",
+              "0xa03d3692: adr r1, #0x134",
+              "0xa03d3694: mvns r0, r3",
+              "0xa03d3696: bl #0xa02c3de2",
+              "0xa03d369a: ldr r0, [sp]",
+              "0xa03d369c: add sp, #4",
+              "0xa03d369e: pop {pc}",
+              "0xa03d40c0: movs r2, #0",
+              "0xa03d40c2: adds r6, r0, #0",
+              "0xa03d40c4: beq #0xa03d411c",
+              "0xa03d411c: adr r1, #0xc4",
+              "0xa03d411e: mvns r0, r2",
+              "0xa03d4120: bl #0xa02c37be",
+              "0xa03d4124: pop {r4, r5, r6, r7, pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa03d40bc",
+                "target": "0xa03d3688",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa03d3696",
+                "target": "0xa02c3de2"
+              },
+              {
+                "at": "0xa03d4120",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa03d4120",
+                "format_address": "0xa03d41e4",
+                "text": "SUID must be specified and must be non-zero!\n"
+              }
+            ],
+            "parser_count": 1,
+            "parser_formats": [
+              " %i"
+            ],
+            "returned": true,
+            "failure": null,
+            "parser_destinations": [
+              {
+                "address": "0x7100fee4",
+                "format": "%i",
+                "maximum_extent": 4
+              }
+            ]
+          },
+          {
+            "parser_return": -1,
+            "instructions": [
+              "0xa03d40b6: push {r4, r5, r6, r7, lr}",
+              "0xa03d40b8: ldr r5, [pc, #0x124]",
+              "0xa03d40ba: adds r4, r0, #0",
+              "0xa03d40bc: bl #0xa03d3688",
+              "0xa03d3688: push {lr}",
+              "0xa03d368a: sub sp, #4",
+              "0xa03d368c: movs r3, #0",
+              "0xa03d368e: str r3, [sp]",
+              "0xa03d3690: mov r2, sp",
+              "0xa03d3692: adr r1, #0x134",
+              "0xa03d3694: mvns r0, r3",
+              "0xa03d3696: bl #0xa02c3de2",
+              "0xa03d369a: ldr r0, [sp]",
+              "0xa03d369c: add sp, #4",
+              "0xa03d369e: pop {pc}",
+              "0xa03d40c0: movs r2, #0",
+              "0xa03d40c2: adds r6, r0, #0",
+              "0xa03d40c4: beq #0xa03d411c",
+              "0xa03d411c: adr r1, #0xc4",
+              "0xa03d411e: mvns r0, r2",
+              "0xa03d4120: bl #0xa02c37be",
+              "0xa03d4124: pop {r4, r5, r6, r7, pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa03d40bc",
+                "target": "0xa03d3688",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa03d3696",
+                "target": "0xa02c3de2"
+              },
+              {
+                "at": "0xa03d4120",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa03d4120",
+                "format_address": "0xa03d41e4",
+                "text": "SUID must be specified and must be non-zero!\n"
+              }
+            ],
+            "parser_count": 1,
+            "parser_formats": [
+              " %i"
+            ],
+            "returned": true,
+            "failure": null,
+            "parser_destinations": [
+              {
+                "address": "0x7100fee4",
+                "format": "%i",
+                "maximum_extent": 4
+              }
+            ]
+          }
+        ]
+      },
+      "timeout": 20,
+      "hardware_access": false,
+      "physically_tested_by_this_review": false,
+      "index": 34,
+      "started_utc": "2026-10-29T20:00:16.148442+00:00",
+      "response_file": "0034-udws_smjob_filter_except.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:00:16.646413+00:00",
+      "elapsed_seconds": 0.494,
+      "response_bytes": 110,
+      "response_sha256": "2c84f657b004315908042ebaf18f8ab7297c2a27449856fa33407522ffba7821",
+      "prompt_returned": true
+    },
+    {
+      "name": "smjob filter only",
+      "command": "udws \"smjob filter only;\"",
+      "handler": "0xa03d40b7",
+      "descriptor_address": "0xa0607af8",
+      "classification": "reviewed-empty-argument-path",
+      "purpose": "Capture the proved empty-argument path only; no operational argument coverage claimed.",
+      "side_effects_assessment": "Only stack-local computation, parser/output bookkeeping, and known-argument output. No global/peripheral reads or writes, unknown calls, or unknown-state branch decisions were admitted.",
+      "evidence": {
+        "checker": "references/check_guard_round2.py",
+        "paths": [
+          {
+            "parser_return": 0,
+            "instructions": [
+              "0xa03d40b6: push {r4, r5, r6, r7, lr}",
+              "0xa03d40b8: ldr r5, [pc, #0x124]",
+              "0xa03d40ba: adds r4, r0, #0",
+              "0xa03d40bc: bl #0xa03d3688",
+              "0xa03d3688: push {lr}",
+              "0xa03d368a: sub sp, #4",
+              "0xa03d368c: movs r3, #0",
+              "0xa03d368e: str r3, [sp]",
+              "0xa03d3690: mov r2, sp",
+              "0xa03d3692: adr r1, #0x134",
+              "0xa03d3694: mvns r0, r3",
+              "0xa03d3696: bl #0xa02c3de2",
+              "0xa03d369a: ldr r0, [sp]",
+              "0xa03d369c: add sp, #4",
+              "0xa03d369e: pop {pc}",
+              "0xa03d40c0: movs r2, #0",
+              "0xa03d40c2: adds r6, r0, #0",
+              "0xa03d40c4: beq #0xa03d411c",
+              "0xa03d411c: adr r1, #0xc4",
+              "0xa03d411e: mvns r0, r2",
+              "0xa03d4120: bl #0xa02c37be",
+              "0xa03d4124: pop {r4, r5, r6, r7, pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa03d40bc",
+                "target": "0xa03d3688",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa03d3696",
+                "target": "0xa02c3de2"
+              },
+              {
+                "at": "0xa03d4120",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa03d4120",
+                "format_address": "0xa03d41e4",
+                "text": "SUID must be specified and must be non-zero!\n"
+              }
+            ],
+            "parser_count": 1,
+            "parser_formats": [
+              " %i"
+            ],
+            "returned": true,
+            "failure": null,
+            "parser_destinations": [
+              {
+                "address": "0x7100fee4",
+                "format": "%i",
+                "maximum_extent": 4
+              }
+            ]
+          },
+          {
+            "parser_return": -1,
+            "instructions": [
+              "0xa03d40b6: push {r4, r5, r6, r7, lr}",
+              "0xa03d40b8: ldr r5, [pc, #0x124]",
+              "0xa03d40ba: adds r4, r0, #0",
+              "0xa03d40bc: bl #0xa03d3688",
+              "0xa03d3688: push {lr}",
+              "0xa03d368a: sub sp, #4",
+              "0xa03d368c: movs r3, #0",
+              "0xa03d368e: str r3, [sp]",
+              "0xa03d3690: mov r2, sp",
+              "0xa03d3692: adr r1, #0x134",
+              "0xa03d3694: mvns r0, r3",
+              "0xa03d3696: bl #0xa02c3de2",
+              "0xa03d369a: ldr r0, [sp]",
+              "0xa03d369c: add sp, #4",
+              "0xa03d369e: pop {pc}",
+              "0xa03d40c0: movs r2, #0",
+              "0xa03d40c2: adds r6, r0, #0",
+              "0xa03d40c4: beq #0xa03d411c",
+              "0xa03d411c: adr r1, #0xc4",
+              "0xa03d411e: mvns r0, r2",
+              "0xa03d4120: bl #0xa02c37be",
+              "0xa03d4124: pop {r4, r5, r6, r7, pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa03d40bc",
+                "target": "0xa03d3688",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa03d3696",
+                "target": "0xa02c3de2"
+              },
+              {
+                "at": "0xa03d4120",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa03d4120",
+                "format_address": "0xa03d41e4",
+                "text": "SUID must be specified and must be non-zero!\n"
+              }
+            ],
+            "parser_count": 1,
+            "parser_formats": [
+              " %i"
+            ],
+            "returned": true,
+            "failure": null,
+            "parser_destinations": [
+              {
+                "address": "0x7100fee4",
+                "format": "%i",
+                "maximum_extent": 4
+              }
+            ]
+          }
+        ]
+      },
+      "timeout": 20,
+      "hardware_access": false,
+      "physically_tested_by_this_review": false,
+      "index": 35,
+      "started_utc": "2026-10-29T20:00:16.651175+00:00",
+      "response_file": "0035-udws_smjob_filter_only.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:00:17.133390+00:00",
+      "elapsed_seconds": 0.478,
+      "response_bytes": 108,
+      "response_sha256": "322f06fef3d9b94bda89b4716f5dafb6aaba497a3febb87fe145727788650215",
+      "prompt_returned": true
+    },
+    {
+      "name": "udw.get_asic_rev",
+      "command": "udws \"udw.get_asic_rev;\"",
+      "handler": "0xa046e3a9",
+      "descriptor_address": "0xa0631a30",
+      "classification": "reviewed-software-only-empty-path",
+      "purpose": "Capture the proved empty-argument path only; no operational argument coverage claimed.",
+      "side_effects_assessment": "Only stack-local computation, parser/output bookkeeping, and known-argument output. No global/peripheral reads or writes, unknown calls, or unknown-state branch decisions were admitted.",
+      "evidence": {
+        "checker": "references/check_guard_round2.py",
+        "paths": [
+          {
+            "parser_return": 0,
+            "instructions": [
+              "0xa046e3a8: push {lr}",
+              "0xa046e3aa: bl #0xa046e276",
+              "0xa046e276: movs r0, #0",
+              "0xa046e278: bx lr",
+              "0xa046e3ae: adds r2, r0, #0",
+              "0xa046e3b0: adr r1, #0x38",
+              "0xa046e3b2: movs r3, #0",
+              "0xa046e3b4: mvns r0, r3",
+              "0xa046e3b6: bl #0xa02c37be",
+              "0xa046e3ba: pop {pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa046e3aa",
+                "target": "0xa046e276",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa046e3b6",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa046e3b6",
+                "format_address": "0xa046e3ec",
+                "text": "0x%08X;"
+              }
+            ],
+            "parser_count": 0,
+            "parser_formats": [],
+            "returned": true,
+            "failure": null
+          },
+          {
+            "parser_return": -1,
+            "instructions": [
+              "0xa046e3a8: push {lr}",
+              "0xa046e3aa: bl #0xa046e276",
+              "0xa046e276: movs r0, #0",
+              "0xa046e278: bx lr",
+              "0xa046e3ae: adds r2, r0, #0",
+              "0xa046e3b0: adr r1, #0x38",
+              "0xa046e3b2: movs r3, #0",
+              "0xa046e3b4: mvns r0, r3",
+              "0xa046e3b6: bl #0xa02c37be",
+              "0xa046e3ba: pop {pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa046e3aa",
+                "target": "0xa046e276",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa046e3b6",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa046e3b6",
+                "format_address": "0xa046e3ec",
+                "text": "0x%08X;"
+              }
+            ],
+            "parser_count": 0,
+            "parser_formats": [],
+            "returned": true,
+            "failure": null
+          }
+        ]
+      },
+      "timeout": 20,
+      "hardware_access": false,
+      "physically_tested_by_this_review": false,
+      "index": 36,
+      "started_utc": "2026-10-29T20:00:17.138827+00:00",
+      "response_file": "0036-udws_udw_get_asic_rev.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:00:17.640430+00:00",
+      "elapsed_seconds": 0.497,
+      "response_bytes": 71,
+      "response_sha256": "34e95afc8f0973ad314c2ee482b0ff26d0d9055c4190fc092085716a405a9b64",
+      "prompt_returned": true
+    },
+    {
+      "name": "udw.get_raw_asic_rev",
+      "command": "udws \"udw.get_raw_asic_rev;\"",
+      "handler": "0xa046e395",
+      "descriptor_address": "0xa0631a24",
+      "classification": "reviewed-software-only-empty-path",
+      "purpose": "Capture the proved empty-argument path only; no operational argument coverage claimed.",
+      "side_effects_assessment": "Only stack-local computation, parser/output bookkeeping, and known-argument output. No global/peripheral reads or writes, unknown calls, or unknown-state branch decisions were admitted.",
+      "evidence": {
+        "checker": "references/check_guard_round2.py",
+        "paths": [
+          {
+            "parser_return": 0,
+            "instructions": [
+              "0xa046e394: push {lr}",
+              "0xa046e396: bl #0xa046e276",
+              "0xa046e276: movs r0, #0",
+              "0xa046e278: bx lr",
+              "0xa046e39a: adds r2, r0, #0",
+              "0xa046e39c: adr r1, #0x4c",
+              "0xa046e39e: movs r3, #0",
+              "0xa046e3a0: mvns r0, r3",
+              "0xa046e3a2: bl #0xa02c37be",
+              "0xa046e3a6: pop {pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa046e396",
+                "target": "0xa046e276",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa046e3a2",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa046e3a2",
+                "format_address": "0xa046e3ec",
+                "text": "0x%08X;"
+              }
+            ],
+            "parser_count": 0,
+            "parser_formats": [],
+            "returned": true,
+            "failure": null
+          },
+          {
+            "parser_return": -1,
+            "instructions": [
+              "0xa046e394: push {lr}",
+              "0xa046e396: bl #0xa046e276",
+              "0xa046e276: movs r0, #0",
+              "0xa046e278: bx lr",
+              "0xa046e39a: adds r2, r0, #0",
+              "0xa046e39c: adr r1, #0x4c",
+              "0xa046e39e: movs r3, #0",
+              "0xa046e3a0: mvns r0, r3",
+              "0xa046e3a2: bl #0xa02c37be",
+              "0xa046e3a6: pop {pc}"
+            ],
+            "calls": [
+              {
+                "at": "0xa046e396",
+                "target": "0xa046e276",
+                "method": "execute helper instructions with conservative tracking"
+              },
+              {
+                "at": "0xa046e3a2",
+                "target": "0xa02c37be"
+              }
+            ],
+            "outputs": [
+              {
+                "at": "0xa046e3a2",
+                "format_address": "0xa046e3ec",
+                "text": "0x%08X;"
+              }
+            ],
+            "parser_count": 0,
+            "parser_formats": [],
+            "returned": true,
+            "failure": null
+          }
+        ]
+      },
+      "timeout": 20,
+      "hardware_access": false,
+      "physically_tested_by_this_review": false,
+      "index": 37,
+      "started_utc": "2026-10-29T20:00:17.645601+00:00",
+      "response_file": "0037-udws_udw_get_raw_asic_rev.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:00:18.143119+00:00",
+      "elapsed_seconds": 0.492,
+      "response_bytes": 75,
+      "response_sha256": "476a3acb2ea347b4b3444f665e08d5dd5f06dac7d88396a936dc2c79ce9a6bc8",
+      "prompt_returned": true
+    }
+  ]
+}

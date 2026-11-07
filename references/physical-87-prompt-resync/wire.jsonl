@@ -1,0 +1,2 @@
+{"utc": "2026-10-29T23:46:11.667513+00:00", "monotonic": 56649.5908028, "direction": "tx", "bytes": 2, "hex": "0d0a"}
+{"utc": "2026-10-29T23:46:11.759467+00:00", "monotonic": 56649.6827779, "direction": "rx", "bytes": 12, "hex": "0d0a0d2d3e200d0a0d2d3e20", "offset": 0}

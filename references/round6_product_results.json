@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-10-29T21:54:56.106575+00:00",
+  "provenance": {
+    "serial_access_by_reviewer": "none",
+    "source_session": "references/physical-72-consumable-status/session.json",
+    "source_session_sha256": "90656f9c83a2a788664bd71d8ccb734ea2a765ca9ee8bdd351b1fd31deceb93c",
+    "rx_file": "references/physical-72-consumable-status/rx.bin",
+    "rx_sha256": "c52993c8a743f853f52bffb812516ce0ed581e8dd8d578c97a8fa124f59c1e38",
+    "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+    "review_source": "references/round6_product_review.json",
+    "review_sha256": "50748069c8a7e264d4c3ac1f3fd306d8d2a483f58a405863bae89217dab53c53"
+  },
+  "summary": {
+    "physical_commands": 2,
+    "validated_responses": 2,
+    "unique_names": 1,
+    "cached_presence": {
+      "BLACK": 1,
+      "CMY": 0
+    },
+    "chute_mapping": {
+      "BLACK": 1,
+      "CMY": 0
+    }
+  },
+  "response_revalidations": [
+    {
+      "response_file": "references/physical-72-consumable-status/0001-udws_constat_get_consumable_info_BLACK.bin",
+      "response_sha256": "26692374436584caf515b745be67fa0e502ffba0dbc332b545500b3133e7bb8a",
+      "assessment": "complete-cached-consumable-info",
+      "note": "Physical statusOK and wrapper0. All declared channels and scalar fields are present; chute, fixed flags and channel labels match the reviewed implementation. The first scalar is cached presence: 1-((prioritized PEN status>>1)&1). It does not establish cartridge health or ink remaining.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-72-consumable-status/0002-udws_constat_get_consumable_info_CMY.bin",
+      "response_sha256": "d1cde653c0318cab796a315eb1634501e37d964c0464796c1543079e5f665578",
+      "assessment": "complete-cached-consumable-info",
+      "note": "Physical statusOK and wrapper0. All declared channels and scalar fields are present; chute, fixed flags and channel labels match the reviewed implementation. The first scalar is cached presence: 1-((prioritized PEN status>>1)&1). It does not establish cartridge health or ink remaining.",
+      "valid": true,
+      "complete": true
+    }
+  ],
+  "data_quality": [
+    {
+      "response_file": "references/physical-72-consumable-status/0001-udws_constat_get_consumable_info_BLACK.bin",
+      "response_sha256": "26692374436584caf515b745be67fa0e502ffba0dbc332b545500b3133e7bb8a",
+      "assessment": "complete-cached-consumable-info",
+      "note": "Physical statusOK and wrapper0. All declared channels and scalar fields are present; chute, fixed flags and channel labels match the reviewed implementation. The first scalar is cached presence: 1-((prioritized PEN status>>1)&1). It does not establish cartridge health or ink remaining.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-72-consumable-status/0002-udws_constat_get_consumable_info_CMY.bin",
+      "response_sha256": "d1cde653c0318cab796a315eb1634501e37d964c0464796c1543079e5f665578",
+      "assessment": "complete-cached-consumable-info",
+      "note": "Physical statusOK and wrapper0. All declared channels and scalar fields are present; chute, fixed flags and channel labels match the reviewed implementation. The first scalar is cached presence: 1-((prioritized PEN status>>1)&1). It does not establish cartridge health or ink remaining.",
+      "complete": true
+    }
+  ],
+  "results": [
+    {
+      "name": "constat.get_consumable_info",
+      "command": "udws \"constat.get_consumable_info BLACK;\"",
+      "index": 1,
+      "response_file": "references/physical-72-consumable-status/0001-udws_constat_get_consumable_info_BLACK.bin",
+      "response_sha256": "26692374436584caf515b745be67fa0e502ffba0dbc332b545500b3133e7bb8a",
+      "response_bytes": 111,
+      "rx_offset": 12,
+      "rx_end_exclusive": 123,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "status_label": "OK",
+      "consumable": "BLACK",
+      "consumable_label": "BLACK IPH",
+      "cached_presence": 1,
+      "constant_fields": {
+        "output+0x10": 1,
+        "output+0x14": 1
+      },
+      "chute": 1,
+      "channel_count": 1,
+      "channels": [
+        "BLACK"
+      ],
+      "cached_pen_status_dsid": 65760,
+      "cached_pen_status_dsid_hex": "0x100e0",
+      "cached_pen_status_source_table": "0xa05d7128",
+      "payload": "OK,BLACK IPH, 1, 1, 1, 1, 1,BLACK",
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-cached-consumable-info",
+      "note": "Physical statusOK and wrapper0. All declared channels and scalar fields are present; chute, fixed flags and channel labels match the reviewed implementation. The first scalar is cached presence: 1-((prioritized PEN status>>1)&1). It does not establish cartridge health or ink remaining."
+    },
+    {
+      "name": "constat.get_consumable_info",
+      "command": "udws \"constat.get_consumable_info CMY;\"",
+      "index": 2,
+      "response_file": "references/physical-72-consumable-status/0002-udws_constat_get_consumable_info_CMY.bin",
+      "response_sha256": "d1cde653c0318cab796a315eb1634501e37d964c0464796c1543079e5f665578",
+      "response_bytes": 121,
+      "rx_offset": 123,
+      "rx_end_exclusive": 244,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "status_label": "OK",
+      "consumable": "CMY",
+      "consumable_label": "CMY IPH",
+      "cached_presence": 0,
+      "constant_fields": {
+        "output+0x10": 1,
+        "output+0x14": 1
+      },
+      "chute": 0,
+      "channel_count": 3,
+      "channels": [
+        "CYAN",
+        "MAGENTA",
+        "YELLOW"
+      ],
+      "cached_pen_status_dsid": 65759,
+      "cached_pen_status_dsid_hex": "0x100df",
+      "cached_pen_status_source_table": "0xa05d7124",
+      "payload": "OK,CMY IPH, 0, 1, 1, 0, 3,CYAN,MAGENTA,YELLOW",
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-cached-consumable-info",
+      "note": "Physical statusOK and wrapper0. All declared channels and scalar fields are present; chute, fixed flags and channel labels match the reviewed implementation. The first scalar is cached presence: 1-((prioritized PEN status>>1)&1). It does not establish cartridge health or ink remaining."
+    }
+  ],
+  "limitations": [
+    "Cached presence is a firmware status predicate, not a cartridge or ink-level test.",
+    "The two valid cartridge selections are one registered command name.",
+    "DSIDs0x100DF/0x100E0 identify the cache sources in ROM; no additional direct DS2 capture was made here.",
+    "Original raw session and response records remain unchanged."
+  ]
+}

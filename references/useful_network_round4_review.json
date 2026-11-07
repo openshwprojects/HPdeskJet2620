@@ -1,0 +1,384 @@
+{
+  "schema_version": 1,
+  "kind": "offline-static-review-not-a-physical-log",
+  "image": "artifacts/ghs/dram.bin",
+  "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+  "method": "Direct Thumb big-endian disassembly of handlers and named backend paths. SDIO virtual dispatch resolved against module tables and the initialized ROM object. UART/framework and general OS helpers are not formally proven transitively.",
+  "sdio_binding": {
+    "consumer": "ultra_spectra binding index 1 stores its SDIO interface at 0x20defe38; module table 0xa0622bfc identifies interface SUID 0x1216c.",
+    "provider": "sdio module request table 0xa06058ec uses the same SUID. Interface getter 0xa03c07b6 returns [0x208584c0] = 0xa0605968; that ROM object points to vtable 0xa060596c.",
+    "vtable": {
+      "offset_0x08": "0xa03c080d (request submission)",
+      "offset_0x14": "0xa03c0883 (copy counters)",
+      "offset_0x20": "0xa03c08a3 (read/dump function-0 status)"
+    },
+    "runtime_limit": "Binding is resolved from this image; a physical run must still establish that the live module is initialized. Each handler checks A045EA8C before accessing this interface."
+  },
+  "queries": [
+    {
+      "name": "ultra_spectra.get_sdio_counters",
+      "command": "udws \"ultra_spectra.get_sdio_counters;\"",
+      "arguments": [],
+      "handler": "0xa0454f77",
+      "descriptor_address": "0xa0622d3c",
+      "classification": "reviewed-bounded-diagnostic",
+      "purpose": "Read the WiFi SDIO command, transfer, timeout and error counters without clearing them.",
+      "argument_syntax": "No arguments are consumed.",
+      "review_evidence": "A0454F76 checks card availability, calls vtable +0x14 with port 0 and a 40-byte stack buffer, and prints only on interface result 1. Resolved A03C0882 -> A03C67C0 -> A03C129A copies ten words from driver object +0x3c4 into that buffer; no counter reset or card transaction.",
+      "side_effects_assessment": "Cached RAM reads, stack writes and UART output. Counters remain untouched by the getter.",
+      "code_evidence": [
+        {
+          "start": "0xa0454f76",
+          "end_exclusive": "0xa0454fdc",
+          "sha256": "c0817a9123fb54bdd7cdc211bbf091c7512b8f47cad85c068246fafba658d3f9",
+          "description": "handler"
+        },
+        {
+          "start": "0xa03c0882",
+          "end_exclusive": "0xa03c08a2",
+          "sha256": "e52a15ec42bbf68a98466dc69bf18db6c5726b835ea89846c1a0f80123a5a806",
+          "description": "resolved interface"
+        },
+        {
+          "start": "0xa03c67c0",
+          "end_exclusive": "0xa03c67dc",
+          "sha256": "6f985fe1239f8ce515dc2997e28123304ad31b9647287cbeebca80a076410546",
+          "description": "counter helper"
+        },
+        {
+          "start": "0xa03c129a",
+          "end_exclusive": "0xa03c12d6",
+          "sha256": "ac06b515dff62c57da7b66f798ec29f8da51cc1e01277c94121893c355e1be9a",
+          "description": "ten-word copy"
+        }
+      ],
+      "review_source": "references/useful_network_round4_review.json",
+      "timeout": 20,
+      "physically_tested_by_this_review": false
+    },
+    {
+      "name": "ultra_spectra.get_sdio_caps",
+      "command": "udws \"ultra_spectra.get_sdio_caps;\"",
+      "arguments": [],
+      "handler": "0xa0454797",
+      "descriptor_address": "0xa0622d0c",
+      "classification": "reviewed-bounded-diagnostic",
+      "purpose": "Read the SDIO manufacturer/device IDs, function capabilities, block sizes, and speed support needed by the emulator.",
+      "argument_syntax": "No arguments are consumed.",
+      "review_evidence": "A0454796 sends request 0x65 into a 0xac-byte stack structure, then request 0x64 into the same request output. Resolved A03C668E queues to A03C69C4; 0x65 selects A03C6D14, which copies cached CCCR/FBR and manufacturer/device fields via A03C130E/A03C1322/A03C12D6; 0x64 selects A03C6A66, which copies cached function count and function sizes via A03C138E/A03C13A0/A03C13A4. Formatting runs only after successful request completion.",
+      "side_effects_assessment": "Two serialized driver requests, semaphore/queue bookkeeping, cached RAM reads, caller-buffer writes and UART output. These selectors do not issue discovery, configuration, radio connection, reset or nonvolatile writes.",
+      "code_evidence": [
+        {
+          "start": "0xa0454796",
+          "end_exclusive": "0xa04547ce",
+          "sha256": "2fb05614b52b5be2fcdb61b9260a692666737a70893311b2c5ff1c38cf7bf8a0",
+          "description": "first request"
+        },
+        {
+          "start": "0xa0454a28",
+          "end_exclusive": "0xa0454b98",
+          "sha256": "2d1ce121c8e469d93ebb317a1e02b63c800151fc97fae2a268c2d8833d77c505",
+          "description": "format and second request"
+        },
+        {
+          "start": "0xa03c668e",
+          "end_exclusive": "0xa03c67c0",
+          "sha256": "40a1d0862719a4f133b7940eeed584c3137077c8fcc98c78bb04227c003dc692",
+          "description": "submission"
+        },
+        {
+          "start": "0xa03c69a0",
+          "end_exclusive": "0xa03c69f8",
+          "sha256": "0e49d783e1cc9564b662bd658c6fe73fa3c758947fda1d93d03c493490bde1e0",
+          "description": "selector dispatch"
+        },
+        {
+          "start": "0xa03c6a66",
+          "end_exclusive": "0xa03c6bda",
+          "sha256": "a8c78d3b168e43f5f5b04a751c13d755aa60840e09e22a524ddc79078414e82b",
+          "description": "selector 100"
+        },
+        {
+          "start": "0xa03c6d14",
+          "end_exclusive": "0xa03c6eb2",
+          "sha256": "6dd85b3b97e362b98ffe609a188c6be3e4ca85c4978e8dc1a3eb819206451aff",
+          "description": "selector 101"
+        },
+        {
+          "start": "0xa03c12d6",
+          "end_exclusive": "0xa03c1336",
+          "sha256": "1506e8fef0e173c3de9635e34b982cbebb27189889ea0385e1b26960b8593df9",
+          "description": "cached capability copies"
+        }
+      ],
+      "review_source": "references/useful_network_round4_review.json",
+      "timeout": 30,
+      "physically_tested_by_this_review": false,
+      "result_limitations": "The helper waits for request completion internally; host timeout is a capture bound, not a guarantee that every firmware fault is bounded. These fields are cached capability values, not a new card enumeration."
+    },
+    {
+      "name": "ultra_spectra.get_sdio_status",
+      "command": "udws \"ultra_spectra.get_sdio_status;\"",
+      "arguments": [],
+      "handler": "0xa04546c5",
+      "descriptor_address": "0xa0622ce8",
+      "classification": "reviewed-bounded-diagnostic",
+      "purpose": "Read and dump the current 32 bytes at SDIO function 0 offsets 0x00..0x1f.",
+      "argument_syntax": "No arguments are consumed.",
+      "review_evidence": "A04546C4 -> resolved vtable +0x20 A03C08A2 -> A03C6816 -> A03C4BD8. Last helper invokes A03C506C with direction 0, function 0, address 0, length 0x20 and a stack output buffer. A03C52E4 loops over exactly 32 bytes using A03C13DC. A045EE36 prints the successful read as hex.",
+      "side_effects_assessment": "32 SDIO read transactions and normal controller/request bookkeeping; this will increment the SDIO counters. No write request to card configuration, connection, scan, or persistent settings is selected.",
+      "code_evidence": [
+        {
+          "start": "0xa04546c4",
+          "end_exclusive": "0xa045470c",
+          "sha256": "0e33c0d37537387ca769d4d71cff50327cd66188aec0bcd3b690af856d264276",
+          "description": "handler"
+        },
+        {
+          "start": "0xa03c08a2",
+          "end_exclusive": "0xa03c08c0",
+          "sha256": "afa8695f0ab46d905978b3dab093411109ff87c969113674193fc6c627dde345",
+          "description": "resolved interface"
+        },
+        {
+          "start": "0xa03c6816",
+          "end_exclusive": "0xa03c682c",
+          "sha256": "4b90f724db46d469d8833e48237aa9d39e756425511f2893482247dbe6b92522",
+          "description": "status helper"
+        },
+        {
+          "start": "0xa03c4bd8",
+          "end_exclusive": "0xa03c4bfc",
+          "sha256": "f02d929b0329f6b2889e0199380c548a3d04bc1d4e733021e3b5bce76560af27",
+          "description": "read 32 bytes"
+        },
+        {
+          "start": "0xa03c52e4",
+          "end_exclusive": "0xa03c5326",
+          "sha256": "5fa7d82b4e06ddb68346231482ea6316fba2b674f257c6a4b0881d762a2be112",
+          "description": "bounded per-byte read loop"
+        },
+        {
+          "start": "0xa03c13dc",
+          "end_exclusive": "0xa03c148e",
+          "sha256": "3ef7b18a4f8b1919f7c7dea449632a917c71f11e8c7a0c864272a73ca53c617f",
+          "description": "CMD52 bit 31 is set only when direction equals 1; supplied direction 0 leaves write bit clear and stores response byte in caller output"
+        }
+      ],
+      "review_source": "references/useful_network_round4_review.json",
+      "timeout": 30,
+      "physically_tested_by_this_review": false,
+      "result_limitations": "CCCR registers are live, so compare to the cached capability dump without assuming atomicity. Handler success alone is weak: A03C6816 returns 1 after its helper even if that helper prints a read failure; require the 32-byte dump."
+    },
+    {
+      "name": "ultra_spectra.get_iovar",
+      "command": "udws \"ultra_spectra.get_iovar mpc;\"",
+      "arguments": [
+        "mpc"
+      ],
+      "handler": "0xa0453f3b",
+      "descriptor_address": "0xa0622d60",
+      "classification": "reviewed-bounded-diagnostic",
+      "purpose": "Read the WiFi driver integer variable mpc.",
+      "argument_syntax": "mpc",
+      "review_evidence": "A0453F3A consumes one bounded string (100-byte input buffer). A0459322 checks the driver pointer, calls A0459414 with no input payload and 4-byte output, and prints only on success. A0459414 passes ioctl 0x106 through getter A0459568 (vtable +0x0c), while setters use 0x107 through A045955C. The selected variable names occur in this firmware: mpc at A04585B8, nmode at A062303C. The corresponding getter output is interpreted as a little-endian 32-bit integer by A0459656.",
+      "side_effects_assessment": "A driver GET_VAR request with a variable name only, stack buffers, transaction bookkeeping and UART output. No setter payload or nonvolatile configuration path is selected.",
+      "code_evidence": [
+        {
+          "start": "0xa0453f3a",
+          "end_exclusive": "0xa0453f80",
+          "sha256": "0a4b5131a9a37452fa54a918a8d39b6c245efbdfbefaa5e7a143234a62605451",
+          "description": "bounded string argument and successful-only output"
+        },
+        {
+          "start": "0xa0459322",
+          "end_exclusive": "0xa0459356",
+          "sha256": "672e62a7d335a8ef56ba018050fbca4fc2ad8f55a52406bea00df09e454faaa7",
+          "description": "integer getter and null guard"
+        },
+        {
+          "start": "0xa0459414",
+          "end_exclusive": "0xa0459498",
+          "sha256": "65d2e2aba0fda296928da95ca258ea1a7966a4868ac15ff2a5036dc5686d526f",
+          "description": "GET_VAR 0x106 request"
+        },
+        {
+          "start": "0xa045955c",
+          "end_exclusive": "0xa0459580",
+          "sha256": "29c33a5bedfcbf149b85808aa67b4a55dc39d2c6cb936fc540f7fb8a6635ad8f",
+          "description": "separate set/get virtual paths"
+        }
+      ],
+      "review_source": "references/useful_network_round4_review.json",
+      "timeout": 30,
+      "physically_tested_by_this_review": false,
+      "result_limitations": "The radio firmware can reject unsupported variables. An empty result with a normal prompt is not a successful value read. Do not use this integer handler for strings such as ver or for secret material."
+    },
+    {
+      "name": "ultra_spectra.get_iovar",
+      "command": "udws \"ultra_spectra.get_iovar nmode;\"",
+      "arguments": [
+        "nmode"
+      ],
+      "handler": "0xa0453f3b",
+      "descriptor_address": "0xa0622d60",
+      "classification": "reviewed-bounded-diagnostic",
+      "purpose": "Read the WiFi driver integer variable nmode.",
+      "argument_syntax": "nmode",
+      "review_evidence": "A0453F3A consumes one bounded string (100-byte input buffer). A0459322 checks the driver pointer, calls A0459414 with no input payload and 4-byte output, and prints only on success. A0459414 passes ioctl 0x106 through getter A0459568 (vtable +0x0c), while setters use 0x107 through A045955C. The selected variable names occur in this firmware: mpc at A04585B8, nmode at A062303C. The corresponding getter output is interpreted as a little-endian 32-bit integer by A0459656.",
+      "side_effects_assessment": "A driver GET_VAR request with a variable name only, stack buffers, transaction bookkeeping and UART output. No setter payload or nonvolatile configuration path is selected.",
+      "code_evidence": [
+        {
+          "start": "0xa0453f3a",
+          "end_exclusive": "0xa0453f80",
+          "sha256": "0a4b5131a9a37452fa54a918a8d39b6c245efbdfbefaa5e7a143234a62605451",
+          "description": "bounded string argument and successful-only output"
+        },
+        {
+          "start": "0xa0459322",
+          "end_exclusive": "0xa0459356",
+          "sha256": "672e62a7d335a8ef56ba018050fbca4fc2ad8f55a52406bea00df09e454faaa7",
+          "description": "integer getter and null guard"
+        },
+        {
+          "start": "0xa0459414",
+          "end_exclusive": "0xa0459498",
+          "sha256": "65d2e2aba0fda296928da95ca258ea1a7966a4868ac15ff2a5036dc5686d526f",
+          "description": "GET_VAR 0x106 request"
+        },
+        {
+          "start": "0xa045955c",
+          "end_exclusive": "0xa0459580",
+          "sha256": "29c33a5bedfcbf149b85808aa67b4a55dc39d2c6cb936fc540f7fb8a6635ad8f",
+          "description": "separate set/get virtual paths"
+        }
+      ],
+      "review_source": "references/useful_network_round4_review.json",
+      "timeout": 30,
+      "physically_tested_by_this_review": false,
+      "result_limitations": "The radio firmware can reject unsupported variables. An empty result with a normal prompt is not a successful value read. Do not use this integer handler for strings such as ver or for secret material."
+    },
+    {
+      "name": "ultra_spectra.test_endian",
+      "command": "udws \"ultra_spectra.test_endian;\"",
+      "arguments": [],
+      "handler": "0xa045520b",
+      "descriptor_address": "0xa0622dc0",
+      "classification": "reviewed-bounded-diagnostic",
+      "purpose": "Record the compiled 16/32/64-bit endian conversion test vectors for emulator comparison.",
+      "argument_syntax": "No arguments are consumed.",
+      "review_evidence": "A045520A..A045527E prints twelve literal vectors through A0453EEE and returns; all values are fixed immediates/literals (0x0102, 0x01020304, 0x0102030405060708 and their reversed-byte counterparts). There is no hardware access.",
+      "side_effects_assessment": "UART output and stack/formatting bookkeeping only.",
+      "code_evidence": [
+        {
+          "start": "0xa045520a",
+          "end_exclusive": "0xa0455280",
+          "sha256": "02aba7a26a756fd9fbe76c6c26722039479387c3d5c5cc19fbac67ade3afdf05",
+          "description": "all twelve fixed-vector prints"
+        }
+      ],
+      "review_source": "references/useful_network_round4_review.json",
+      "timeout": 15,
+      "physically_tested_by_this_review": false,
+      "result_limitations": "These are compiled fixed-vector outputs. They are not evidence that the physical SDIO bus exercised all endian cases."
+    },
+    {
+      "name": "webfwupdate.get_base_md",
+      "command": "udws \"webfwupdate.get_base_md;\"",
+      "arguments": [],
+      "handler": "0xa0470eeb",
+      "descriptor_address": "0xa06322c0",
+      "classification": "reviewed-bounded-diagnostic",
+      "purpose": "Read the 16-byte base firmware digest and any matching base_md entry in local secure configuration.",
+      "argument_syntax": "No arguments are consumed.",
+      "review_evidence": "A0470EEA reads 16 bytes from the existing base-MD pointer at 20E09780 and formats 32 hex characters via A046ED8A. It then requests section web_product_update/key base_md with a 65-byte output buffer through A03C8882/A03C8696. The secure-configuration helper seeks and reads existing cached file descriptors; it never selects a file write. Missing entry is skipped because caller passed a NULL default.",
+      "side_effects_assessment": "Local metadata reads and UART output. Secure-config lookup uses its mutex and changes file positions; on bad/stale file reads it can close those cached handles and compact the in-memory descriptor list. No firmware update, download, or nonvolatile write.",
+      "code_evidence": [
+        {
+          "start": "0xa0470eea",
+          "end_exclusive": "0xa0470f32",
+          "sha256": "b586d77af06d86847cd05bc0f8e33edc8394d974ffb96a4ff49990ffd9be6a91",
+          "description": "digest and optional configuration query"
+        },
+        {
+          "start": "0xa046ed8a",
+          "end_exclusive": "0xa046edb8",
+          "sha256": "1890951f4037d8d18116f9a4c6004e6a817b9d2675979fd0e44fe8201f469a59",
+          "description": "bounded hex formatter"
+        },
+        {
+          "start": "0xa03c8696",
+          "end_exclusive": "0xa03c8780",
+          "sha256": "4f60dc01a7884d591f6622869042cd752c94a0ee140c821fd546504fecd8303e",
+          "description": "section search and file seek"
+        },
+        {
+          "start": "0xa03c8792",
+          "end_exclusive": "0xa03c8882",
+          "sha256": "3d09edfb6424ea5c8b68a1c5ec6b428b4010bf42fbfc021e48ee554be09617f2",
+          "description": "bounded read, copy and cached-handle cleanup"
+        },
+        {
+          "start": "0xa03c8882",
+          "end_exclusive": "0xa03c88a0",
+          "sha256": "3cdc86fa5b6a59c8a78d1b21bd5cf21ce2f83f1dea1a9716517ff38141951d9b",
+          "description": "NULL default on missing entry"
+        }
+      ],
+      "review_source": "references/useful_network_round4_review.json",
+      "timeout": 30,
+      "physically_tested_by_this_review": false,
+      "result_limitations": "The base digest pointer is initialized by the firmware lifecycle; unlike the formatted optional configuration entry it is not null-checked by this handler. Established running firmware is the precondition. This command does not recompute the digest."
+    }
+  ],
+  "held_for_further_review": [
+    {
+      "names": [
+        "ultra_spectra.get_wifi_ant"
+      ],
+      "reason": "Read-only ioctl 0x3f is selected, but A0458240 dereferences the WLC driver without a null check and ignores driver return status before converting uninitialized output. A live successful GET_VAR is a useful prerequisite, but the antenna value still needs an error check outside this handler. Not in this batch."
+    },
+    {
+      "names": [
+        "nca.get_wired_state"
+      ],
+      "reason": "Required numeric adaptor selector is real, but absent hardware can return before setting the stack output flag; this WiFi/USB printer is not a useful target for the unguarded wired formatter."
+    },
+    {
+      "names": [
+        "nca.get_mfg_ssid",
+        "nca.get_mfg_wireless_mode",
+        "nca.get_mfg_wireless_locale",
+        "nca.get_mfg_wireless_5ghz_config"
+      ],
+      "reason": "Prior cache-refresh hold strengthened: A02DDA8A clears/rebuilds manufacturing cache AND normalizes an NVM enum via setter vtable +0x0c at A02DDB34 when its value exceeds 2. These names are not passive read-only getters."
+    },
+    {
+      "names": [
+        "nca.get_wireless_5ghz_config"
+      ],
+      "reason": "A02E0140 leaves output length r4 uninitialized if enum is outside 1..4, including 0. Live enum precondition remains unproved."
+    },
+    {
+      "names": [
+        "nca.get_wireless_scan",
+        "nca.get_directed_wireless_scan",
+        "nca.get_num_aps_max_rssi",
+        "wifi_conman.scan",
+        "wifi_conman.find",
+        "wifi_conman.search"
+      ],
+      "reason": "Actual scans/discovery; not necessary to obtain the SDIO diagnostics in this batch. No claim these are intrinsically forbidden."
+    },
+    {
+      "names": [
+        "usb.convert_to_test_printer",
+        "dot4.convert_to_test_printer",
+        "usb_hs.set_cfg_desc_type",
+        "usb_hs.set_scan_hw_autonull"
+      ],
+      "reason": "USB behavior/configuration mutations. Available passive USB configuration queries already captured; no newly proved useful passive USB command remains in this reviewed set."
+    }
+  ],
+  "prior_hold_correction": "Manufacturing network getters may also normalize an out-of-range NVM field; earlier description as only a RAM cache refresh was incomplete."
+}

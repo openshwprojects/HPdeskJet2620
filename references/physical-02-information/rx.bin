@@ -1,0 +1,730 @@
+
+-> udws "udw.iter_reset;"
+udws() returns 0 (0x0)
+-> udws "udw.iter_get_next;"
+udw.cmds;udws() returns 0 (0x0)
+-> udws "udw.iter_get_next;"
+udw.iter_reset;udws() returns 0 (0x0)
+-> udws "ldn.long_name;"
+name conversion failed
+long name() : 
+;udws() returns 0 (0x0)
+-> udws "ldn.short_name;"
+name conversion failed
+short name() : 
+;udws() returns 0 (0x0)
+-> udws "bio.pkg_fw_rev;"
+NONE;udws() returns 0 (0x0)
+-> udws "bio.pkg_name;"
+NONE;udws() returns 0 (0x0)
+-> udws "bio.pkg_phase;"
+NONE;udws() returns 0 (0x0)
+-> udws "bio.bld_time;"
+Thu Mar 01, 2018 11:28:03PM;udws() returns 0 (0x0)
+-> udws "bio.target;"
+narel;udws() returns 0 (0x0)
+-> udws "bio.project;"
+taiji_pp_usr_hf;udws() returns 0 (0x0)
+-> udws "bio.machine;"
+clustersvr5.psr.rd.hpicorp.net;udws() returns 0 (0x0)
+-> udws "bio.userid;"
+bkdcl;udws() returns 0 (0x0)
+-> udws "bio.tgtname;"
+main.out;udws() returns 0 (0x0)
+-> udws "bio.scm_key;"
+95562589dffef839342c1fb7b9ca351bea808f89;udws() returns 0 (0x0)
+-> udws "bio.scm_url;"
+git@git.vcd.hp.com:sirius~frz_2017_taiji_taiji_ia_vr1_4;udws() returns 0 (0x0)
+-> udws "cache.query;"
+2;udws() returns 0 (0x0)
+-> udws "mem.dram_size;"
+udws() returns 0 (0x0)
+-> udws "ui_lite.get_state;"
+[UI_LITE]: Current state: 12, Error: 0x08, Pen: 0x10.
+[UI_LITE]: Network main state: 0 ( UI_LITE_WIRELESS_RADIO_OFF )
+[UI_LITE]: NETWORK: Error: 0, Signal strength: 0, Radio_on: 0, Radio on progress: 0
+[UI_LITE]: WD state: 1, wps state: 0
+[UI_LITE]: AWC( formerly known as WSOW ) State: WSOW_DONE
+;udws() returns 0 (0x0)
+-> udws "sm.on_off_status;"
+ 1;udws() returns 0 (0x0)
+-> udws "sm.get_pwrup_mode;"
+ 0;udws() returns 0 (0x0)
+-> udws "device_info.get_device_status;"
+ 35;udws() returns 0 (0x0)
+-> udws "ews.show_mem_usage;"
+udws() returns 0 (0x0)
+-> udws "ews.show_session_tbl;"
+udws() returns 0 (0x0)
+-> udws "roobe.supp_oobe_stages;"
+udws() returns 0 (0x0)
+-> udws "l10n.get_media_sizes;"
+udws() returns 0 (0x0)
+-> udws "l10n.get_media_types;"
+udws() returns 0 (0x0)
+-> udws "prdsts.get_active_alerts;"
+trayEmpty 65803,singleCartridgeMode 65553,genuineHP 65561,carriageJam 65579,;udws() returns 0 (0x0)
+-> udws "wifi_conman.help;"
+Usage:
+
+wifi_conman.config(role= (0=client, 1=go, 2=device), intent=(1-15)
+wifi_conman.start
+wifi_conman.stop
+wifi_conman.find
+wifi_conman.listen_state
+wifi_conman.search
+wifi_conman.scan
+
+wifi_conman.set_con_cap (1-new, 2-cli, 4-go, 5-new/go, 6-cli/go
+wifi_conman.service_status (avail/no avail)
+wifi_conman.auto_accept (T/F)
+wifi_conman.user_accept (0-False, 1-True, 2-Ignore)
+wifi_conman.set_wps_pin (example: 12345670
+wifi_conman.set_wps_mode (0-pbc, 1-pin
+wifi_conman.print_client_list
+wifi_conman.stop_provisioning
+wifi_conman.channel_override (1-11)
+wifi_conman.send_goneg_req p2pdevid=001112334455&intent=15&init=1&operChn=6
+wifi_conman.send_clientpd_req p2pdevid=001112334455&len=10&ssid=BCBroadcom
+udws() returns 0 (0x0)
+-> udws "nca.get_radio_fw_version;"
+00.00.00.00
+;udws() returns 0 (0x0)
+-> udws "nca.get_permanent_radio_mac 1;"
+00:00:00:00:00:00;udws() returns 0 (0x0)
+-> udws "nca.get_dot11ap_config;"
+
+Power On Enabled: On                  
+State: connected                       
+Mac Addr: 10:62:E5:42:EA:6C      
+ssid: DIRECT-6B-HP DeskJet 2600 series 
+Channel:  6                           
+Regulatory:  World                     
+Security: ON                           
+;udws() returns 0 (0x0)
+-> udws "hw.get_clk_rate;"
+ Clock 1x is set to 180MHz
+ ;udws() returns 0 (0x0)
+-> udws "hw_mcasic.get_supply_voltage;"
+21442 mV;udws() returns 0 (0x0)
+-> udws "lib_digital_sensor.list;"
+[0] DOOR_SENSOR
+[1] TRAY_SENSOR
+[2] TRAY_IR_SENSOR_S1
+[3] TRAY_IR_SENSOR_S2
+[4] TRAY_IR_SENSOR_S3
+[5] TOF_OOPS
+;udws() returns 0 (0x0)
+-> udws "lib_coordination.info;"
+Board Resource Coordination Table 
+Error while retrieving ownership info 
+;udws() returns 0 (0x0)
+-> udws "mem.help;"
+List of 'mem' udw commands: 
+
+	mem.show_pool
+	mem.list_pools
+	mem.check_ptr
+	mem.caller_id
+	mem.display_tag
+	mem.display_mask
+	mem.display_ptr
+	mem.get_tag
+	mem.set_tag
+	mem.enable_debug
+	mem.debug_pool
+	mem.snapshot_enter
+	mem.snapshot_exit
+	mem.snapshot_pool
+	mem.snapshot_diff
+	mem.show_summary
+	mem.help
+;udws() returns 0 (0x0)
+-> udws "mem.list_pools;"
+
+Pool handle = 44,   pool_entry = 0x20defe90,   pool_tag = 0x027f580e
+Total RAM size : 992 bytes
+Total RAM allocated : 192 bytes
+Peak RAM usage : 192 bytes
+Total free space: 800 bytes
+Total # of free blocks: 1
+Largest free block: 800 bytes
+Smallest free block: 800 bytes
+
+
+Pool handle = 43,   pool_entry = 0x20dc1b84,   pool_tag = 0x00185abd
+Total RAM size : 51168 bytes
+Total RAM allocated : 7000 bytes
+Peak RAM usage : 15592 bytes
+Total free space: 44168 bytes
+Total # of free blocks: 1
+Largest free block: 44168 bytes
+Smallest free block: 44168 bytes
+
+
+Pool handle = 41,   pool_entry = 0x20b2af58,   pool_tag = 0x0191b10d
+Total RAM size : 29968 bytes
+Total RAM allocated : 0 bytes
+Peak RAM usage : 9528 bytes
+Total free space: 29968 bytes
+Total # of free blocks: 1
+Largest free block: 29968 bytes
+Smallest free block: 29968 bytes
+
+
+Pool handle = 39,   pool_entry = 0x209e5524,   pool_tag = 0x0457cb1a
+Total RAM size : 230368 bytes
+Total RAM allocated : 0 bytes
+Peak RAM usage : 152 bytes
+Total free space: 230368 bytes
+Total # of free blocks: 1
+Largest free block: 230368 bytes
+Smallest free block: 230368 bytes
+
+
+Pool handle = 38,   pool_entry = 0x20ea7794,   pool_tag = 0x00292c78
+Total RAM size : 99968 bytes
+Total RAM allocated : 0 bytes
+Peak RAM usage : 0 bytes
+Total free space: 99968 bytes
+Total # of free blocks: 1
+Largest free block: 99968 bytes
+Smallest free block: 99968 bytes
+
+
+Pool handle = 37,   pool_entry = 0x20eced68,   pool_tag = 0x00184531
+Total RAM size : 102368 bytes
+Total RAM allocated : 0 bytes
+Peak RAM usage : 0 bytes
+Total free space: 102368 bytes
+Total # of free blocks: 1
+Largest free block: 102368 bytes
+Smallest free block: 102368 bytes
+
+
+Pool handle = 36,   pool_entry = 0x20878be0,   pool_tag = 0x003ca5b4
+Total RAM size : 20448 bytes
+Total RAM allocated : 0 bytes
+Peak RAM usage : 0 bytes
+Total free space: 20448 bytes
+Total # of free blocks: 1
+Largest free block: 20448 bytes
+Smallest free block: 20448 bytes
+
+
+Pool handle = 35,   pool_entry = 0x20bcc7d0,   pool_tag = 0x025b24f9
+Total RAM size : 3040 bytes
+Total RAM allocated : 0 bytes
+Peak RAM usage : 0 bytes
+Total free space: 3040 bytes
+Total # of free blocks: 1
+Largest free block: 3040 bytes
+Smallest free block: 3040 bytes
+
+
+Pool handle = 34,   pool_entry = 0x2095fa58,   pool_tag = 0x025f48b4
+Total RAM size : 2848 bytes
+Total RAM allocated : 0 bytes
+Peak RAM usage : 0 bytes
+Total free space: 2848 bytes
+Total # of free blocks: 1
+Largest free block: 2848 bytes
+Smallest free block: 2848 bytes
+
+
+Pool handle = 33,   pool_entry = 0x20946eb0,   pool_tag = 0x025f48b4
+Total RAM size : 3968 bytes
+Total RAM allocated : 0 bytes
+Peak RAM usage : 0 bytes
+Total free space: 3968 bytes
+Total # of free blocks: 1
+Largest free block: 3968 bytes
+Smallest free block: 3968 bytes
+
+
+Pool handle = 32,   pool_entry = 0x20947e74,   pool_tag = 0x025f48b4
+Total RAM size : 96224 bytes
+Total RAM allocated : 0 bytes
+Peak RAM usage : 42304 bytes
+Total free space: 96224 bytes
+Total # of free blocks: 1
+Largest free block: 96224 bytes
+Smallest free block: 96224 bytes
+
+
+Pool handle = 31,   pool_entry = 0x20ba3ca4,   pool_tag = 0x004aaaea
+Total RAM size : 14368 bytes
+Total RAM allocated : 0 bytes
+Peak RAM usage : 840 bytes
+Total free space: 14368 bytes
+Total # of free blocks: 1
+Largest free block: 14368 bytes
+Smallest free block: 14368 bytes
+
+
+Pool handle = 30,   pool_entry = 0x6077978c,   pool_tag = 0x003c1cbf
+Total RAM size : 655328 bytes
+Total RAM allocated : 232712 bytes
+Peak RAM usage : 236424 bytes
+Total free space: 422616 bytes
+Total # of free blocks: 2
+Largest free block: 418904 bytes
+Smallest free block: 3712 bytes
+
+
+Pool handle = 29,   pool_entry = 0x60753994,   pool_tag = 0x00a251eb
+Total RAM size : 98272 bytes
+Total RAM allocated : 0 bytes
+Peak RAM usage : 0 bytes
+Total free space: 98272 bytes
+Total # of free blocks: 1
+Largest free block: 98272 bytes
+Smallest free block: 98272 bytes
+
+
+Pool handle = 28,   pool_entry = 0x208cf960,   pool_tag = 0x00578ab1
+Total RAM size : 63936 bytes
+Total RAM allocated : 6560 bytes
+Peak RAM usage : 6560 bytes
+Total free space: 57376 bytes
+Total # of free blocks: 1
+Largest free block: 57376 bytes
+Smallest free block: 57376 bytes
+
+
+Pool handle = 27,   pool_entry = 0x20da6480,   pool_tag = 0x0220c2ed
+Total RAM size : 16320 bytes
+Total RAM allocated : 0 bytes
+Peak RAM usage : 352 bytes
+Total free space: 16320 bytes
+Total # of free blocks: 1
+Largest free block: 16320 bytes
+Smallest free block: 16320 bytes
+
+
+Pool handle = 26,   pool_entry = 0x20da5478,   pool_tag = 0x01d0c2ed
+Total RAM size : 4048 bytes
+Total RAM allocated : 0 bytes
+Peak RAM usage : 608 bytes
+Total free space: 4048 bytes
+Total # of free blocks: 1
+Largest free block: 4048 bytes
+Smallest free block: 4048 bytes
+
+
+Pool handle = 25,   pool_entry = 0x209c9d00,   pool_tag = 0x009139da
+Total RAM size : 76768 bytes
+Total RAM allocated : 13840 bytes
+Peak RAM usage : 13840 bytes
+Total free space: 62928 bytes
+Total # of free blocks: 1
+Largest free block: 62928 bytes
+Smallest free block: 62928 bytes
+
+
+Pool handle = 24,   pool_entry = 0x20e0aba4,   pool_tag = 0x004210f2
+Total RAM size : 71648 bytes
+Total RAM allocated : 4624 bytes
+Peak RAM usage : 35608 bytes
+Total free space: 67024 bytes
+Total # of free blocks: 2
+Largest free block: 53048 bytes
+Smallest free block: 13976 bytes
+
+
+Pool handle = 23,   pool_entry = 0x20e1e538,   pool_tag = 0x04cb4214
+Total RAM size : 49968 bytes
+Total RAM allocated : 24 bytes
+Peak RAM usage : 24 bytes
+Total free space: 49944 bytes
+Total # of free blocks: 1
+Largest free block: 49944 bytes
+Smallest free block: 49944 bytes
+
+
+Pool handle = 22,   pool_entry = 0x20e376d4,   pool_tag = 0x008332af
+Total RAM size : 383968 bytes
+Total RAM allocated : 0 bytes
+Peak RAM usage : 0 bytes
+Total free space: 383968 bytes
+Total # of free blocks: 1
+Largest free block: 383968 bytes
+Smallest free block: 383968 bytes
+
+
+Pool handle = 21,   pool_entry = 0x20b8952c,   pool_tag = 0x002f0b5a
+Total RAM size : 102368 bytes
+Total RAM allocated : 0 bytes
+Peak RAM usage : 40 bytes
+Total free space: 102368 bytes
+Total # of free blocks: 1
+Largest free block: 102368 bytes
+Smallest free block: 102368 bytes
+
+
+Pool handle = 20,   pool_entry = 0x208eaaa8,   pool_tag = 0x0088e5b5
+Total RAM size : 5088 bytes
+Total RAM allocated : 0 bytes
+Peak RAM usage : 1056 bytes
+Total free space: 5088 bytes
+Total # of free blocks: 1
+Largest free block: 5088 bytes
+Smallest free block: 5088 bytes
+
+
+Pool handle = 19,   pool_entry = 0x208efd3c,   pool_tag = 0x00523a32
+Total RAM size : 4576 bytes
+Total RAM allocated : 1288 bytes
+Peak RAM usage : 1288 bytes
+Total free space: 3288 bytes
+Total # of free blocks: 1
+Largest free block: 3288 bytes
+Smallest free block: 3288 bytes
+
+
+Pool handle = 18,   pool_entry = 0x2089ffd8,   pool_tag = 0x0122e4e5
+Total RAM size : 62632 bytes
+Total RAM allocated : 6408 bytes
+Peak RAM usage : 6408 bytes
+Total free space: 56224 bytes
+Total # of free blocks: 1
+Largest free block: 56224 bytes
+Smallest free block: 56224 bytes
+
+
+Pool handle = 17,   pool_entry = 0x209ae158,   pool_tag = 0x008f531a
+Total RAM size : 2568 bytes
+Total RAM allocated : 0 bytes
+Peak RAM usage : 0 bytes
+Total free space: 2568 bytes
+Total # of free blocks: 1
+Largest free block: 2568 bytes
+Smallest free block: 2568 bytes
+
+
+Pool handle = 16,   pool_entry = 0x209ae02c,   pool_tag = 0x008b531a
+Total RAM size : 264 bytes
+Total RAM allocated : 32 bytes
+Peak RAM usage : 32 bytes
+Total free space: 232 bytes
+Total # of free blocks: 1
+Largest free block: 232 bytes
+Smallest free block: 232 bytes
+
+
+Pool handle = 15,   pool_entry = 0x211be44c,   pool_tag = 0x0047472a
+Total RAM size : 145376 bytes
+Total RAM allocated : 121448 bytes
+Peak RAM usage : 121680 bytes
+Total free space: 23928 bytes
+Total # of free blocks: 2
+Largest free block: 23696 bytes
+Smallest free block: 232 bytes
+
+
+Pool handle = 14,   pool_entry = 0x2117b168,   pool_tag = 0x03f3e46e
+Total RAM size : 196576 bytes
+Total RAM allocated : 3560 bytes
+Peak RAM usage : 6904 bytes
+Total free space: 193016 bytes
+Total # of free blocks: 3
+Largest free block: 192952 bytes
+Smallest free block: 24 bytes
+
+
+Pool handle = 13,   pool_entry = 0x20dab1a0,   pool_tag = 0x00bd01b2
+Total RAM size : 16336 bytes
+Total RAM allocated : 1832 bytes
+Peak RAM usage : 2912 bytes
+Total free space: 14504 bytes
+Total # of free blocks: 2
+Largest free block: 13408 bytes
+Smallest free block: 1096 bytes
+
+
+Pool handle = 12,   pool_entry = 0x60779678,   pool_tag = 0x00a72cae
+Total RAM size : 240 bytes
+Total RAM allocated : 136 bytes
+Peak RAM usage : 136 bytes
+Total free space: 104 bytes
+Total # of free blocks: 1
+Largest free block: 104 bytes
+Smallest free block: 104 bytes
+
+
+Pool handle = 11,   pool_entry = 0x20da0b78,   pool_tag = 0x00a32cae
+Total RAM size : 8160 bytes
+Total RAM allocated : 1264 bytes
+Peak RAM usage : 1264 bytes
+Total free space: 6896 bytes
+Total # of free blocks: 1
+Largest free block: 6896 bytes
+Smallest free block: 6896 bytes
+
+
+Pool handle = 10,   pool_entry = 0x208993e4,   pool_tag = 0x005d0f7f
+Total RAM size : 20448 bytes
+Total RAM allocated : 0 bytes
+Peak RAM usage : 9528 bytes
+Total free space: 20448 bytes
+Total # of free blocks: 1
+Largest free block: 20448 bytes
+Smallest free block: 20448 bytes
+
+
+Pool handle = 9,   pool_entry = 0x20f4cb60,   pool_tag = 0x01e1c1f6
+Total RAM size : 2014144 bytes
+Total RAM allocated : 445728 bytes
+Peak RAM usage : 448896 bytes
+Total free space: 1568416 bytes
+Total # of free blocks: 151
+Largest free block: 1562656 bytes
+Smallest free block: 32 bytes
+
+
+Pool handle = 8,   pool_entry = 0x60d30760,   pool_tag = 0x00326144
+Total RAM size : 348128 bytes
+Total RAM allocated : 26272 bytes
+Peak RAM usage : 28064 bytes
+Total free space: 321856 bytes
+Total # of free blocks: 1
+Largest free block: 321856 bytes
+Smallest free block: 321856 bytes
+
+
+Pool handle = 7,   pool_entry = 0x20f245c0,   pool_tag = 0x00200ae7
+Total RAM size : 20448 bytes
+Total RAM allocated : 0 bytes
+Peak RAM usage : 0 bytes
+Total free space: 20448 bytes
+Total # of free blocks: 1
+Largest free block: 20448 bytes
+Smallest free block: 20448 bytes
+
+
+Pool handle = 6,   pool_entry = 0x20af33cc,   pool_tag = 0x00844efc
+Total RAM size : 204768 bytes
+Total RAM allocated : 0 bytes
+Peak RAM usage : 0 bytes
+Total free space: 204768 bytes
+Total # of free blocks: 1
+Largest free block: 204768 bytes
+Smallest free block: 204768 bytes
+
+
+Pool handle = 5,   pool_entry = 0x20ab3320,   pool_tag = 0x025f48b4
+Total RAM size : 262112 bytes
+Total RAM allocated : 0 bytes
+Peak RAM usage : 62688 bytes
+Total free space: 262112 bytes
+Total # of free blocks: 1
+Largest free block: 262112 bytes
+Smallest free block: 262112 bytes
+
+
+Pool handle = 4,   pool_entry = 0x2099281c,   pool_tag = 0x008f4581
+Total RAM size : 112608 bytes
+Total RAM allocated : 0 bytes
+Peak RAM usage : 0 bytes
+Total free space: 112608 bytes
+Total # of free blocks: 1
+Largest free block: 112608 bytes
+Smallest free block: 112608 bytes
+
+
+Pool handle = 3,   pool_entry = 0x606adf00,   pool_tag = 0x00841d42
+Total RAM size : 676256 bytes
+Total RAM allocated : 81248 bytes
+Peak RAM usage : 89664 bytes
+Total free space: 595008 bytes
+Total # of free blocks: 9
+Largest free block: 586560 bytes
+Smallest free block: 32 bytes
+
+
+Pool handle = 2,   pool_entry = 0x20ba2de8,   pool_tag = 0x0d915603
+Total RAM size : 1968 bytes
+Total RAM allocated : 168 bytes
+Peak RAM usage : 168 bytes
+Total free space: 1800 bytes
+Total # of free blocks: 1
+Largest free block: 1800 bytes
+Smallest free block: 1800 bytes
+
+
+Total number of pools: 41
+;udws() returns 0 (0x0)
+-> udws "mem.show_summary;"
+udws() returns 0 (0x0)
+-> udws "timer.get_factory_time;"
+1205;udws() returns 0 (0x0)
+-> udws "timer.get_rtc_status;"
+0;udws() returns 0 (0x0)
+-> udws "hw.get_kernel_exec_wait;"
+KERNEL_EXEC_WAIT: 0 
+;udws() returns 0 (0x0)
+-> udws "lib_pwr.get_active_clients;"
+Device - POWER_SCAN_ENCODER is held ON by Clients - POWER_CLIENT_SCAN, 
+Device - POWER_DOOR_SENSOR is held ON by Clients - POWER_CLIENT_SYS, 
+Device - POWER_TRAY_SENSOR is held ON by Clients - POWER_CLIENT_SYS, 
+Device - POWER_TRAY_IR_SENSOR_S1 is held ON by Clients - POWER_CLIENT_SYS, 
+Device - POWER_TRAY_IR_SENSOR_S2 is held ON by Clients - POWER_CLIENT_SYS, 
+Device - POWER_TRAY_IR_SENSOR_S3 is held ON by Clients - POWER_CLIENT_SYS, 
+Device - POWER_SCAN_SENSOR is held ON by Clients - POWER_CLIENT_SCAN, 
+Device - POWER_SCAN_AFE is held ON by Clients - POWER_CLIENT_SCAN, 
+Device - POWER_MAIN_PCA_AASIC is held ON by Clients - POWER_CLIENT_BOARD, 
+;udws() returns 0 (0x0)
+-> udws "pe_events.list;"
+4,
+     5,   79, 0x0000000000000000, , 0, 0,
+     6,   80, 0x0000000000000000, , 0, 0,
+     7,   80, 0x0000000000000000, , 0, 0,
+    11,   58, 0x0000000000000000, , 0, 1;
+;udws() returns 0 (0x0)
+-> udws "rev.get_fw;"
+TJP1FN1809AR;udws() returns 0 (0x0)
+-> udws "rev.get_base_fw;"
+TJP1FN1702CR    ;udws() returns 0 (0x0)
+-> udws "rev.get_verbose_fw;"
+Taiji_pp_usr_hf Built:Thu Mar 01, 2018 11:28:03PM {TJP1FN1809AR, ASIC id 0x00000;udws() returns 0 (0x0)
+-> udws "rev.get_raw_asic;"
+0x00000000;udws() returns 0 (0x0)
+-> udws "rev.get_aasic;"
+
+
+	*** ASSERT: 0xc4eb99f7
+	*** type of assert: ASSERT_TYPE_HW
+	*** line: 1733
+	*** file: hw_micci2.c
+	*** current page count: 0x0307
+	*** in component (CID): 0x04eb. Component error info: 0x99f7
+[nos_ui] No CGD, skipping backlight steps
+
+-------------------------- SUMMARY ---------------------------
+Summarized stack address backtrace for active stacks.
+- Most recent to least recent
+--------------------------------------------------------------
+
+ ARM processor Identified:-946
+Current mode = SVC
+
+--SVC stack --
+ current stack ptr = 0x20f2c488
+In task: tShell
+
+Call Stack:
+0xa0006eb0 0xa000714c 0xa0171aa7 0xa0172e1b 
+0xa02566c1 0xa001a9f3 0xa0259dc7 0xa046e3cb 
+0xa02c2ec7 0xa02f5f89 0xa02c281f 0xa02c2a4f 
+0xa02c2fc9 0xa02f5f89 0xa03cf7a9 0xa02c2d25 
+0xa03d0291 0xa03d02cd 0xa03cfca9 0xa042bc77 
+0xa03cf117 0xa03cf621 0xa03cf719 0xa03cea03 
+0xa02f6af3 0xa04e9c34 
+
+-------------------------- DETAILS ---------------------------
+Detailed register and stack dump for active stacks.
+- Most recent to least recent
+--------------------------------------------------------------
+
+ ARM processor Identified:-946
+-- ARM Registers --
+r0=0xa0006d6c        r1=0x00000001        r2=0x00000001        r3=0xefefefef
+r4=0x20001fe8        r5=0x200040a8        r6=0xa0006d6c        r7=0x000006a2
+r8=0x00000000        r9=0x00000000        r10=0x20f2a044       r11=0x00000000
+r12=0x00000000       r13=0x60000920       r14=0x281000a4       r15=0xa0006cec
+r8_fiq=0xbd040cc0    r9_fiq=0x60000010    r10_fiq=0x60000ae0   r11_fiq=0x0615e000
+r12_fiq=0x44800100   cpsr=0x200000d3      spsr_fiq=0x60000013  r13_fiq=0x60000a00
+r14_fiq=0xa000f7e0   spsr_irq=0x00000013  r13_irq=0x60000ae0   r14_irq=0x00000130
+spsr_svc=0x00000013  r13_svc=0x20f2c488   r14_svc=0xa0006eb0   spsr_abt=0x00000010
+r13_abt=0x20005524   r14_abt=0x0b205010   spsr_und=0x00000010  r13_und=0x20005524
+r14_und=0x48208421
+
+Current mode = SVC
+
+--ABT stack --
+ current stack ptr = 0x20005524
+Stack start = 0x20007524, Stack end = 0x20005524
+- Previous stack entries -
+0x20005504: 0xefefefef 0xefefefef 0xefefefef 0xefefefef 
+0x20005514: 0xefefefef 0xefefefef 0xefefefef 0xefefefef 
+
+--FIQ stack --
+ current stack ptr = 0x60000a00
+Stack start = 0x60000d80, Stack end = 0x60000a00
+- Previous stack entries -
+0x600009e0: 0x00000000 0x0badf00d 0x00000000 0x00000000 
+0x600009f0: 0x2122d064 0x00000000 0x44800100 0xa000f7e0 
+
+--IRQ stack --
+ current stack ptr = 0x60000ae0
+Stack start = 0x60000e60, Stack end = 0x60000ae0
+- Previous stack entries -
+0x60000ac0: 0x00000013 0x20f2a044 0x63007668 0x00000130 
+0x60000ad0: 0x00000006 0x00000040 0x00000034 0x00000000 
+
+--SYS (isr) stack --
+ current stack ptr = 0x60000920
+Stack start = 0x60002920, Stack end = 0x60000920
+- Previous stack entries -
+0x60000900: 0xa00e85d5 0x00000004 0xa0177a8f 0x00000112 
+0x60000910: 0x00000000 0x000001bc 0x80000092 0x281000a4 
+
+--SVC stack --
+ current stack ptr = 0x20f2c488
+In task: tShell
+Stack start = 0x20f2a044, Stack end = 0x20f2c723
+- Previous stack entries -
+0x20f2c468: 0x00000014 0xa04f6825 0x00000c94 0x00000001 
+0x20f2c478: 0x00000013 0x00000006 0x00000040 0x00000001 
+- Start of stack -
+0x20f2c488: 0x20001fe8 0x200040a8 0x00000000 0xa0006eb0 
+0x20f2c498: 0xbd300c00 0x20969234 0x36a2b625 0xa000714c 
+0x20f2c4a8: 0x00000001 0x00000000 0x00000000 0xa0171aa7 
+0x20f2c4b8: 0x00000001 0xbd300cb0 0x36a2b543 0x36a2b543 
+0x20f2c4c8: 0x00000000 0x00000000 0x00000000 0x00000034 
+0x20f2c4d8: 0x00000000 0x20969c00 0xffffffff 0x20b83e70 
+0x20f2c4e8: 0xa0172e1b 0x20f2c50c 0x20f2c50e 0xa02566c1 
+0x20f2c4f8: 0xa001a9f3 0x20f2c578 0x20b84204 0xa0259dc7 
+0x20f2c508: 0xa046e3cb 0x20f2a044 0x20f2c578 0xa02c2ec7 
+0x20f2c518: 0x00000000 0x00000005 0x00000026 0x0000003c 
+0x20f2c528: 0x00000001 0x20f21aa8 0x20b83e60 0xffffffff 
+0x20f2c538: 0x20f29f38 0x20f2a044 0xa02f5f89 0x20f2c5bc 
+0x20f2c548: 0xa02c281f 0x0000003b 0x0000000d 0x20f2c578 
+0x20f2c558: 0x00000000 0xa02c2a4f 0x0000003b 0x20f2c63c 
+0x20f2c568: 0xa02c2d1f 0x00000000 0x00000000 0xa02c2fc9 
+0x20f2c578: 0x7265762e 0x6765745f 0x61617369 0x63007668 
+0x20f2c588: 0x20da30e0 0x20f29f38 0x00000000 0x20f2a044 
+0x20f2c598: 0xa02f5f89 0x20f2c6d0 0xa03cf7a9 0x20f2c638 
+0x20f2c5a8: 0xa02c2d1f 0xa02c2d25 0xa03d0291 0x20debc8f 
+0x20f2c5b8: 0x20f2c6b8 0x20f29f38 0x0000003b 0xa0607590 
+0x20f2c5c8: 0x20f2c5b4 0x0100ffff 0x00000000 0x00000000 
+0x20f2c5d8: 0x00000000 0x00000000 0x00000000 0x00000000 
+0x20f2c5e8: 0x20f2c657 0x00000001 0x00000001 0xa042bc63 
+0x20f2c5f8: 0x00000000 0x20debc7c 0xa03d02cd 0xa03cfca9 
+0x20f2c608: 0xa043165d 0x20dfe3d4 0x20debc82 0x20debc81 
+0x20f2c618: 0x00000000 0x00000002 0x00000000 0x00000012 
+0x20f2c628: 0x00000000 0x00000000 0x20debc7c 0x20debc7c 
+0x20f2c638: 0x20debc81 0xa042bc77 0x20f2c674 0x20f2c670 
+0x20f2c648: 0x00000400 0x00000000 0xa03cf117 0x20f2c60a 
+0x20f2c658: 0xa03cf621 0x00000700 0x00000008 0xa042bc63 
+0x20f2c668: 0x00000000 0xa03cf719 0x20debc7c 0x00050015 
+0x20f2c678: 0x00160100 0x00debc7c 0x00000001 0x20debd7c 
+0x20f2c688: 0x00080004 0xa042bc3b 0xa042bc63 0x00000000 
+0x20f2c698: 0x00000000 0xa042bc63 0x00000000 0xa042bc3b 
+0x20f2c6a8: 0x20debc7c 0xa03cea03 0x00000900 0x00000100 
+0x20f2c6b8: 0xa042bc3b 0xa042bc63 0x00000000 0xffffffff 
+0x20f2c6c8: 0xffffffff 0x00efefef 0x20f29f38 0x20f2c6b8 
+0x20f2c6d8: 0x00000000 0x20f2a02c 0xa03ce9c1 0x00000000 
+0x20f2c6e8: 0x00000000 0xa02f6af3 0x00000900 0x00000100 
+0x20f2c6f8: 0x00000000 0x00000000 0x00000000 0x00000000 
+0x20f2c708: 0x20f29f38 0x00000000 0xa04e9c34 0x00000000 
+0x20f2c718: 0x00000000 0x00000000 0xefefefef 
+
+
+	*** ASSERT: 0xc4eb99f7
+	*** type of assert: ASSERT_TYPE_HW
+	*** line: 1733
+	*** file: hw_micci2.c
+	*** current page count: 0x0307
+	*** in component (CID): 0x04eb. Component error info: 0x99f7
+

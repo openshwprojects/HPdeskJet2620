@@ -1,0 +1,410 @@
+[
+  {
+    "command": "help",
+    "purpose": "Probe native shell command listing",
+    "classification": "command-discovery",
+    "provenance": "shell_query_review.json conditional read-only help handler"
+  },
+  {
+    "command": "dbug_fade_histo",
+    "kind": "shell_variable_read",
+    "target": "0x2091ee0c",
+    "registration_call": "0xa00d1d08",
+    "hardware_read": false,
+    "readiness": "reviewed; requires runtime registration",
+    "purpose": "Read current 32-bit RAM value without changing flag or behavior.",
+    "classification": "reviewed-information-query"
+  },
+  {
+    "command": "dbug_fade_maps",
+    "kind": "shell_variable_read",
+    "target": "0x2091ee10",
+    "registration_call": "0xa00d1d18",
+    "hardware_read": false,
+    "readiness": "reviewed; requires runtime registration",
+    "purpose": "Read current 32-bit RAM value without changing flag or behavior.",
+    "classification": "reviewed-information-query"
+  },
+  {
+    "command": "dbug_img_compact",
+    "kind": "shell_variable_read",
+    "target": "0x20987b0c",
+    "registration_call": "0xa01939c4",
+    "hardware_read": false,
+    "readiness": "reviewed; requires runtime registration",
+    "purpose": "Read current 32-bit RAM value without changing flag or behavior.",
+    "classification": "reviewed-information-query"
+  },
+  {
+    "command": "img_compact_embedded",
+    "kind": "shell_variable_read",
+    "target": "0x20838fbc",
+    "registration_call": "0xa01939ce",
+    "hardware_read": false,
+    "readiness": "reviewed; requires runtime registration",
+    "purpose": "Read current 32-bit RAM value without changing flag or behavior.",
+    "classification": "reviewed-information-query"
+  },
+  {
+    "command": "img_compact_copy",
+    "kind": "shell_variable_read",
+    "target": "0x20838fb8",
+    "registration_call": "0xa01939d8",
+    "hardware_read": false,
+    "readiness": "reviewed; requires runtime registration",
+    "purpose": "Read current 32-bit RAM value without changing flag or behavior.",
+    "classification": "reviewed-information-query"
+  },
+  {
+    "command": "dbug_mergein",
+    "kind": "shell_variable_read",
+    "target": "0x209e4104",
+    "registration_call": "0xa01ceb14",
+    "hardware_read": false,
+    "readiness": "reviewed; requires runtime registration",
+    "purpose": "Read current 32-bit RAM value without changing flag or behavior.",
+    "classification": "reviewed-information-query"
+  },
+  {
+    "command": "dbug_ip",
+    "kind": "shell_variable_read",
+    "target": "0x209dec08",
+    "registration_call": "0xa01cf0b0",
+    "hardware_read": false,
+    "readiness": "reviewed; requires runtime registration",
+    "purpose": "Read current 32-bit RAM value without changing flag or behavior.",
+    "classification": "reviewed-information-query"
+  },
+  {
+    "command": "dbug_ip_mem",
+    "kind": "shell_variable_read",
+    "target": "0x209e4100",
+    "registration_call": "0xa01cf0ba",
+    "hardware_read": false,
+    "readiness": "reviewed; requires runtime registration",
+    "purpose": "Read current 32-bit RAM value without changing flag or behavior.",
+    "classification": "reviewed-information-query"
+  },
+  {
+    "command": "dbug_ip_buf",
+    "kind": "shell_variable_read",
+    "target": "0x209e2a18",
+    "registration_call": "0xa01cf0c4",
+    "hardware_read": false,
+    "readiness": "reviewed; requires runtime registration",
+    "purpose": "Read current 32-bit RAM value without changing flag or behavior.",
+    "classification": "reviewed-information-query"
+  },
+  {
+    "command": "dbug_ip_colormap",
+    "kind": "shell_variable_read",
+    "target": "0x209e2ffc",
+    "registration_call": "0xa01cf0ce",
+    "hardware_read": false,
+    "readiness": "reviewed; requires runtime registration",
+    "purpose": "Read current 32-bit RAM value without changing flag or behavior.",
+    "classification": "reviewed-information-query"
+  },
+  {
+    "command": "dbug_ip_tenh",
+    "kind": "shell_variable_read",
+    "target": "0x209e4210",
+    "registration_call": "0xa01cf0d8",
+    "hardware_read": false,
+    "readiness": "reviewed; requires runtime registration",
+    "purpose": "Read current 32-bit RAM value without changing flag or behavior.",
+    "classification": "reviewed-information-query"
+  },
+  {
+    "command": "dbug_ip_lhcfifo",
+    "kind": "shell_variable_read",
+    "target": "0x209e4078",
+    "registration_call": "0xa01cf0e2",
+    "hardware_read": false,
+    "readiness": "reviewed; requires runtime registration",
+    "purpose": "Read current 32-bit RAM value without changing flag or behavior.",
+    "classification": "reviewed-information-query"
+  },
+  {
+    "command": "dbug_ip_tenh_block_disable",
+    "kind": "shell_variable_read",
+    "target": "0x209e4214",
+    "registration_call": "0xa01cf0ec",
+    "hardware_read": false,
+    "readiness": "reviewed; requires runtime registration",
+    "purpose": "Read current 32-bit RAM value without changing flag or behavior.",
+    "classification": "reviewed-information-query"
+  },
+  {
+    "command": "dbug_ip_gobble",
+    "kind": "shell_variable_read",
+    "target": "0x209e28d8",
+    "registration_call": "0xa01cf0f6",
+    "hardware_read": false,
+    "readiness": "reviewed; requires runtime registration",
+    "purpose": "Read current 32-bit RAM value without changing flag or behavior.",
+    "classification": "reviewed-information-query"
+  },
+  {
+    "command": "dbug_vscale",
+    "kind": "shell_variable_read",
+    "target": "0x209e4bec",
+    "registration_call": "0xa01d3374",
+    "hardware_read": false,
+    "readiness": "reviewed; requires runtime registration",
+    "purpose": "Read current 32-bit RAM value without changing flag or behavior.",
+    "classification": "reviewed-information-query"
+  },
+  {
+    "command": "dbug_vscale_factor",
+    "kind": "shell_variable_read",
+    "target": "0x209e4be8",
+    "registration_call": "0xa01d337e",
+    "hardware_read": false,
+    "readiness": "reviewed; requires runtime registration",
+    "purpose": "Read current 32-bit RAM value without changing flag or behavior.",
+    "classification": "reviewed-information-query"
+  },
+  {
+    "command": "dbug_ip2sp",
+    "kind": "shell_variable_read",
+    "target": "0x209e508c",
+    "registration_call": "0xa01d4a98",
+    "hardware_read": false,
+    "readiness": "reviewed; requires runtime registration",
+    "purpose": "Read current 32-bit RAM value without changing flag or behavior.",
+    "classification": "reviewed-information-query"
+  },
+  {
+    "command": "dbug_cjm_event",
+    "kind": "shell_variable_read",
+    "target": "0x20a2e6c0",
+    "registration_call": "0xa0204bbc",
+    "hardware_read": false,
+    "readiness": "reviewed; requires runtime registration",
+    "purpose": "Read current 32-bit RAM value without changing flag or behavior.",
+    "classification": "reviewed-information-query"
+  },
+  {
+    "command": "dbug_jm_jpeg_demo_hold_task",
+    "kind": "shell_variable_read",
+    "target": "0x20a3134c",
+    "registration_call": "0xa020d6f0",
+    "hardware_read": false,
+    "readiness": "reviewed; requires runtime registration",
+    "purpose": "Read current 32-bit RAM value without changing flag or behavior.",
+    "classification": "reviewed-information-query"
+  },
+  {
+    "command": "dbug_dump_matrix_regs",
+    "kind": "shell_variable_read",
+    "target": "0x20b83d98",
+    "registration_call": "0xa02c1616",
+    "hardware_read": false,
+    "readiness": "reviewed; requires runtime registration",
+    "purpose": "Read current 32-bit RAM value without changing flag or behavior.",
+    "classification": "reviewed-information-query"
+  },
+  {
+    "command": "dbug_tier1_mergein",
+    "kind": "shell_variable_read",
+    "target": "0x20b83de0",
+    "registration_call": "0xa02c1ab2",
+    "hardware_read": false,
+    "readiness": "reviewed; requires runtime registration",
+    "purpose": "Read current 32-bit RAM value without changing flag or behavior.",
+    "classification": "reviewed-information-query"
+  },
+  {
+    "command": "dbug_dump_mergein_regs",
+    "kind": "shell_variable_read",
+    "target": "0x20b83ddc",
+    "registration_call": "0xa02c1abc",
+    "hardware_read": false,
+    "readiness": "reviewed; requires runtime registration",
+    "purpose": "Read current 32-bit RAM value without changing flag or behavior.",
+    "classification": "reviewed-information-query"
+  },
+  {
+    "command": "dbug_dump_vscale_regs",
+    "kind": "shell_variable_read",
+    "target": "0x20b83e58",
+    "registration_call": "0xa02c2430",
+    "hardware_read": false,
+    "readiness": "reviewed; requires runtime registration",
+    "purpose": "Read current 32-bit RAM value without changing flag or behavior.",
+    "classification": "reviewed-information-query"
+  },
+  {
+    "command": "dbug_udw",
+    "kind": "shell_variable_read",
+    "target": "0x20b83e5c",
+    "registration_call": "0xa02c27e2",
+    "hardware_read": false,
+    "readiness": "reviewed; requires runtime registration",
+    "purpose": "Read current 32-bit RAM value without changing flag or behavior.",
+    "classification": "reviewed-information-query"
+  },
+  {
+    "command": "smtr_interface_dbug",
+    "kind": "shell_variable_read",
+    "target": "0x20db0154",
+    "registration_call": "0xa03e02d8",
+    "hardware_read": false,
+    "readiness": "reviewed; requires runtime registration",
+    "purpose": "Read current 32-bit RAM value without changing flag or behavior.",
+    "classification": "reviewed-information-query"
+  },
+  {
+    "command": "smtr_dcScanInit",
+    "kind": "shell_variable_read",
+    "target": "0x20db0140",
+    "registration_call": "0xa03e02e4",
+    "hardware_read": false,
+    "readiness": "reviewed; requires runtime registration",
+    "purpose": "Read current 32-bit RAM value without changing flag or behavior.",
+    "classification": "reviewed-information-query"
+  },
+  {
+    "command": "smtr_dcScanAt",
+    "kind": "shell_variable_read",
+    "target": "0x20db0144",
+    "registration_call": "0xa03e02f0",
+    "hardware_read": false,
+    "readiness": "reviewed; requires runtime registration",
+    "purpose": "Read current 32-bit RAM value without changing flag or behavior.",
+    "classification": "reviewed-information-query"
+  },
+  {
+    "command": "smtr_dcMotorMove",
+    "kind": "shell_variable_read",
+    "target": "0x20db0148",
+    "registration_call": "0xa03e02fc",
+    "hardware_read": false,
+    "readiness": "reviewed; requires runtime registration",
+    "purpose": "Read current 32-bit RAM value without changing flag or behavior.",
+    "classification": "reviewed-information-query"
+  },
+  {
+    "command": "smtr_dcIsrPrint",
+    "kind": "shell_variable_read",
+    "target": "0x20db014c",
+    "registration_call": "0xa03e0308",
+    "hardware_read": false,
+    "readiness": "reviewed; requires runtime registration",
+    "purpose": "Read current 32-bit RAM value without changing flag or behavior.",
+    "classification": "reviewed-information-query"
+  },
+  {
+    "command": "smtr_dcHome",
+    "kind": "shell_variable_read",
+    "target": "0x20db0150",
+    "registration_call": "0xa03e0314",
+    "hardware_read": false,
+    "readiness": "reviewed; requires runtime registration",
+    "purpose": "Read current 32-bit RAM value without changing flag or behavior.",
+    "classification": "reviewed-information-query"
+  },
+  {
+    "command": "smtr_dcEndpoint",
+    "kind": "shell_variable_read",
+    "target": "0x20db0158",
+    "registration_call": "0xa03e0320",
+    "hardware_read": false,
+    "readiness": "reviewed; requires runtime registration",
+    "purpose": "Read current 32-bit RAM value without changing flag or behavior.",
+    "classification": "reviewed-information-query"
+  },
+  {
+    "command": "smtr_dcMotorPwr",
+    "kind": "shell_variable_read",
+    "target": "0x20db015c",
+    "registration_call": "0xa03e032c",
+    "hardware_read": false,
+    "readiness": "reviewed; requires runtime registration",
+    "purpose": "Read current 32-bit RAM value without changing flag or behavior.",
+    "classification": "reviewed-information-query"
+  },
+  {
+    "command": "traceStore",
+    "kind": "shell_variable_read",
+    "target": "0x20e081f8",
+    "registration_call": "0xa046e8aa",
+    "hardware_read": false,
+    "readiness": "reviewed; requires runtime registration",
+    "purpose": "Read current 32-bit RAM value without changing flag or behavior.",
+    "classification": "reviewed-information-query"
+  },
+  {
+    "command": "i",
+    "kind": "shell_function",
+    "handler": "0xa02f63cb",
+    "hardware_read": false,
+    "readiness": "reviewed",
+    "purpose": "Task list with priorities, status and stack usage.",
+    "review": "No argument enumerates OS tasks. A02F621C builds/sorts a bounded 149-entry scratch task-pointer table at 20BDD678; A02F6274 scans stack sentinel words. A02F629A updates display totals at 20BDD8D0/4. No task-priority/state setter calls. Display counters/scratch are written, live task configuration is not.",
+    "classification": "reviewed-information-query"
+  },
+  {
+    "command": "taskLatency",
+    "kind": "shell_function",
+    "handler": "0xa02f6731",
+    "hardware_read": false,
+    "readiness": "reviewed",
+    "purpose": "Probe advertised task-latency command; expected return 0 only.",
+    "review": "Exact handler is MOVS r0,#0; BX LR. No arguments used and no measurements emitted.",
+    "classification": "reviewed-information-query"
+  },
+  {
+    "command": "ip_show",
+    "kind": "shell_function",
+    "handler": "0xa01c9631",
+    "hardware_read": false,
+    "readiness": "reviewed",
+    "purpose": "Show image-pipeline history; retail per-record formatting is compiled out.",
+    "review": "No args supplies zero to A01C95FC, which defaults to 200 records. Reads 209E3038 history index, does modulo arithmetic and calls A01C964C (BX LR) for each slot; no target mutation. Optional numeric count uses strtol but large counts are unnecessary; use no args only.",
+    "classification": "reviewed-information-query"
+  },
+  {
+    "command": "ip_buf_debug",
+    "kind": "shell_function",
+    "handler": "0xa01c66a7",
+    "hardware_read": false,
+    "readiness": "reviewed",
+    "purpose": "Probe current buffer debug view; expected return 0 only.",
+    "review": "Reads buffer pointer at 209E28DC+54 and, when nonzero, calls A01C6E7E. That helper only performs bounded pointer/count loops; no print call or target dereference/store remains in this retail image.",
+    "classification": "reviewed-information-query"
+  },
+  {
+    "command": "CIRBUF_debug",
+    "kind": "shell_function",
+    "handler": "0xa01c6d01",
+    "hardware_read": false,
+    "readiness": "reviewed; lazy registration may be absent",
+    "purpose": "Probe advertised circular-buffer diagnostic if dynamically registered.",
+    "review": "No args passes zero to A01C6E7E. The helper walks addresses in [209E2A50,209E2F90) with stride A8 and has no print call or target memory read/store. Optional numeric address is unnecessary; use no args.",
+    "classification": "reviewed-information-query"
+  },
+  {
+    "command": "ip_lmb_debug",
+    "kind": "shell_function",
+    "handler": "0xa01d6750",
+    "hardware_read": false,
+    "readiness": "reviewed",
+    "purpose": "Print image-pipeline LMB state and counters.",
+    "review": "119 reachable ARM instructions reviewed; accesses RAM state rooted at 209E50D8 and formats fields through A03CEA16. Only stores are to stack; all calls are UART formatting (including ARM interworking veneer A03CEA0C). No MMIO or configuration mutation in reviewed handler.",
+    "classification": "reviewed-information-query"
+  },
+  {
+    "command": "udws \"udw.mem_read 2 551170280;\"",
+    "purpose": "Read live shell list head",
+    "classification": "reviewed-information-query",
+    "provenance": "shell_query_review.json verified DDR address/type2wordread"
+  },
+  {
+    "command": "udws \"udw.mem_read 2 551170292;\"",
+    "purpose": "Read live shell mutex handle",
+    "classification": "reviewed-information-query",
+    "provenance": "shell_query_review.json verified DDR address/type2wordread"
+  }
+]

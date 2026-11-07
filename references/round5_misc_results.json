@@ -1,0 +1,148 @@
+{
+  "response_revalidations": [
+    {
+      "response_file": "physical-63-misc-queries/0001-udws_undercroft_get_rev.bin",
+      "response_sha256": "09201335bfc1d051b63760e6b28747a1d9fd9d4895df6aa127bd25b5e5810155",
+      "valid": true,
+      "complete": true,
+      "assessment": "validated-miscellaneous-query-payload",
+      "note": "Cached revision nibble2; not a chip-model identification."
+    },
+    {
+      "response_file": "physical-63-misc-queries/0002-udws_crypto_svc_is_secure.bin",
+      "response_sha256": "7695918be73341e0afa9468e672d4f143729236d2dcf39eb3693da7c5caf893d",
+      "valid": true,
+      "complete": true,
+      "assessment": "validated-miscellaneous-query-payload",
+      "note": "Firmware security predicate1; does not establish secure boot enforcement."
+    },
+    {
+      "response_file": "physical-63-misc-queries/0004-udws_crypto_svc_get_rand_seq_4.bin",
+      "response_sha256": "6153c700d21e862f824461bf0f9652d4901e49af815119ccc0e40d61b1e1f12f",
+      "valid": true,
+      "complete": true,
+      "assessment": "validated-miscellaneous-query-payload",
+      "note": "Exactly four processed32-bit random samples. PRNG state advances; no randomness-quality claim."
+    },
+    {
+      "response_file": "physical-63-misc-queries/0005-udws_mfg_info_calc_mfg_date_AA711_2017.bin",
+      "response_sha256": "9cbcb8308f22cb69c111d99fea11859011183334aa77f5b1ed7cb76d801cfd6c",
+      "valid": true,
+      "complete": true,
+      "assessment": "validated-miscellaneous-query-payload",
+      "note": "Synthetic serial-code fixture decoded exactly; not the printer manufacturing date."
+    },
+    {
+      "response_file": "physical-63-misc-queries/0006-udws_mfg_info_calc_mfg_date_AA7CV_2017.bin",
+      "response_sha256": "3ece480c427d1582d8f7a1ad499b4d3289d776251fe78cd66ecfdb7005a3dc5e",
+      "valid": true,
+      "complete": true,
+      "assessment": "validated-miscellaneous-query-payload",
+      "note": "Synthetic serial-code fixture decoded exactly; not the printer manufacturing date."
+    },
+    {
+      "response_file": "physical-63-misc-queries/0007-udws_mfg_info_calc_mfg_date_AA811_2018.bin",
+      "response_sha256": "a365744b4267d2053b36bf4d9684717206c2851c4cbfd838c622c10abe7b8230",
+      "valid": true,
+      "complete": true,
+      "assessment": "validated-miscellaneous-query-payload",
+      "note": "Synthetic serial-code fixture decoded exactly; not the printer manufacturing date."
+    },
+    {
+      "response_file": "physical-63-misc-queries/0009-udws_errlog_get_assert_entry_0.bin",
+      "response_sha256": "6e610fb5bdfa8a98425b155058cd74a3e7cde19ccd8cb04131d9310f37396f19",
+      "valid": true,
+      "complete": true,
+      "assessment": "validated-miscellaneous-query-payload",
+      "note": "Retained historical carriage-companion assertion, matching the prior fault code/source/line; record reports page count775. Not a new assertion."
+    }
+  ],
+  "data_quality": [
+    {
+      "response_file": "physical-63-misc-queries/0001-udws_undercroft_get_rev.bin",
+      "response_sha256": "09201335bfc1d051b63760e6b28747a1d9fd9d4895df6aa127bd25b5e5810155",
+      "complete": true,
+      "assessment": "Cached revision nibble2; not a chip-model identification."
+    },
+    {
+      "response_file": "physical-63-misc-queries/0002-udws_crypto_svc_is_secure.bin",
+      "response_sha256": "7695918be73341e0afa9468e672d4f143729236d2dcf39eb3693da7c5caf893d",
+      "complete": true,
+      "assessment": "Firmware security predicate1; does not establish secure boot enforcement."
+    },
+    {
+      "response_file": "physical-63-misc-queries/0004-udws_crypto_svc_get_rand_seq_4.bin",
+      "response_sha256": "6153c700d21e862f824461bf0f9652d4901e49af815119ccc0e40d61b1e1f12f",
+      "complete": true,
+      "assessment": "Exactly four processed32-bit random samples. PRNG state advances; no randomness-quality claim."
+    },
+    {
+      "response_file": "physical-63-misc-queries/0005-udws_mfg_info_calc_mfg_date_AA711_2017.bin",
+      "response_sha256": "9cbcb8308f22cb69c111d99fea11859011183334aa77f5b1ed7cb76d801cfd6c",
+      "complete": true,
+      "assessment": "Synthetic serial-code fixture decoded exactly; not the printer manufacturing date."
+    },
+    {
+      "response_file": "physical-63-misc-queries/0006-udws_mfg_info_calc_mfg_date_AA7CV_2017.bin",
+      "response_sha256": "3ece480c427d1582d8f7a1ad499b4d3289d776251fe78cd66ecfdb7005a3dc5e",
+      "complete": true,
+      "assessment": "Synthetic serial-code fixture decoded exactly; not the printer manufacturing date."
+    },
+    {
+      "response_file": "physical-63-misc-queries/0007-udws_mfg_info_calc_mfg_date_AA811_2018.bin",
+      "response_sha256": "a365744b4267d2053b36bf4d9684717206c2851c4cbfd838c622c10abe7b8230",
+      "complete": true,
+      "assessment": "Synthetic serial-code fixture decoded exactly; not the printer manufacturing date."
+    },
+    {
+      "response_file": "physical-63-misc-queries/0009-udws_errlog_get_assert_entry_0.bin",
+      "response_sha256": "6e610fb5bdfa8a98425b155058cd74a3e7cde19ccd8cb04131d9310f37396f19",
+      "complete": true,
+      "assessment": "Retained historical carriage-companion assertion, matching the prior fault code/source/line; record reports page count775. Not a new assertion."
+    }
+  ],
+  "observations": [
+    {
+      "name": "undercroft.get_rev",
+      "command": "udws \"undercroft.get_rev;\"",
+      "payload": "SUCCESS: undercroft chip rev is: 2",
+      "interpretation": "Cached revision nibble2; not a chip-model identification."
+    },
+    {
+      "name": "crypto_svc.is_secure",
+      "command": "udws \"crypto_svc.is_secure;\"",
+      "payload": "1",
+      "interpretation": "Firmware security predicate1; does not establish secure boot enforcement."
+    },
+    {
+      "name": "crypto_svc.get_rand_seq",
+      "command": "udws \"crypto_svc.get_rand_seq 4;\"",
+      "payload": "2467864732, 3488902879, 3252328757, 3907151461,",
+      "interpretation": "Exactly four processed32-bit random samples. PRNG state advances; no randomness-quality claim."
+    },
+    {
+      "name": "mfg_info.calc_mfg_date",
+      "command": "udws \"mfg_info.calc_mfg_date AA711 2017;\"",
+      "payload": "20170101",
+      "interpretation": "Synthetic serial-code fixture decoded exactly; not the printer manufacturing date."
+    },
+    {
+      "name": "mfg_info.calc_mfg_date",
+      "command": "udws \"mfg_info.calc_mfg_date AA7CV 2017;\"",
+      "payload": "20171231",
+      "interpretation": "Synthetic serial-code fixture decoded exactly; not the printer manufacturing date."
+    },
+    {
+      "name": "mfg_info.calc_mfg_date",
+      "command": "udws \"mfg_info.calc_mfg_date AA811 2018;\"",
+      "payload": "20180101",
+      "interpretation": "Synthetic serial-code fixture decoded exactly; not the printer manufacturing date."
+    },
+    {
+      "name": "errlog.get_assert_entry",
+      "command": "udws \"errlog.get_assert_entry 0;\"",
+      "payload": "1, ASSERT: c4eb99f7 type: ASSERT_TYPE_HW line: 1733 file: hw_micci2.c page count: 775 in component (CID): 4eb comp error info: 99f7",
+      "interpretation": "Retained historical carriage-companion assertion, matching the prior fault code/source/line; record reports page count775. Not a new assertion."
+    }
+  ]
+}

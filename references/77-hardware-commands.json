@@ -1,0 +1,276 @@
+[
+  {
+    "name": "scan orig locget",
+    "command": "udws \"scan orig locget;\"",
+    "argument_syntax": "",
+    "handler": "0xa03aeae9",
+    "descriptor_address": "0xa0600580",
+    "classification": "reviewed-information-query",
+    "purpose": "Read the scanner cover, park, white-reference and black-reference locations.",
+    "control_flow_proof": "A03AEAE8 calls four getters and prints four signed scalars. A03AE1CC reads cover override208582FC; if zero, it returns origin208582D4+0x4F6, otherwise override+0x8D8. A03AE1E0 reads park override20858300; if zero it callsA03A55C8. This tests bits2 and0 of DSID_PROGRAMMERS_BITS(0x107A2) throughA03A34DC/A03A34D0/A03A32A8 and the verified storage slot8 A005C38C, then cached home flag20D9CD45. Nonzero predicate returnsorigin+0x59; zero predicate reads the position getter with index0. Physical75 shows both overrides and home flagzero, and earlier NVM/DS2 both returnedzero for programmer bits. All branches are reviewed. A03AE204 selects nonzero white override20D9F280 or cached20D9F218 and addsorigin208582D4. A03AE216 selects nonzero black override20D9F284 or cached20D9F220 and adds the sameorigin. Physical75 resolves scanner provider20DA0AEC to objectA060BF74, vtableA060BF7C, slot0x28 A03E3BF0. A03AD8A8(0) selects that flatbed object. A03E3BF0 recognizes objectA060BF74 and selects motor index0, then callsA03E01F6 -> A03E3E32. This last helper performs one 32-bit load from position registerBD302010, callsA03E3E60(0,value) to refresh only volatile cache208593AC, and returns the loaded word. There are no MMIO stores, motion commands, power changes, delays or persistent writes on this path. This is a live position-register read, not a purely cached query.",
+    "timeout": 20,
+    "persistent_writes": false,
+    "runtime_registered": true,
+    "hardware_access": "Read-only position register BD302010; no actuator writes.",
+    "side_effects": "May refresh volatile position cache208593AC. UART formatting may update its output-throttle counter; no setting or mechanism state is commanded.",
+    "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+    "prior_invocation_status": "not-invoked",
+    "review_source": "references/round7_hardware_review.json",
+    "live_evidence": [
+      {
+        "label": "scanner_motor_provider",
+        "address": "0x20da0aec",
+        "count": 4,
+        "hex": "a060bf74",
+        "words_be": [
+          "0xa060bf74"
+        ],
+        "response_file": "references/physical-75-query-prerequisites/0079-udws_ustd_read_file_0_4.bin",
+        "response_sha256": "39238bec3e60456fa2393909e1685579ca0103dd77a97489e118cd1999d3e2ab",
+        "artifact": "references/physical-75-query-prerequisites/provider-pointers.json"
+      },
+      {
+        "label": "scanner_motor_object_vtable",
+        "address": "0xa060bf74",
+        "count": 4,
+        "hex": "a060bf7c",
+        "words_be": [
+          "0xa060bf7c"
+        ],
+        "response_file": "references/physical-75-query-prerequisites/0088-udws_ustd_read_file_0_4.bin",
+        "response_sha256": "950059ea9f658caf09acf618b23ec498b4e75c5f17e2783404ee9881c7678270",
+        "artifact": "references/physical-75-query-prerequisites/provider-pointers.json"
+      },
+      {
+        "label": "scanner_motor_vtable_methods",
+        "address": "0xa060bf7c",
+        "count": 64,
+        "hex": "a03e39e9a03e3a33a03e3abda03e3b37a03e3b6da03e3b6fa03e3b87a03e3b89a03e3b97a03e3bbda03e3bf1a03e3c21a03e3c45a03e39c1a03e3c15a03e3c17",
+        "words_be": [
+          "0xa03e39e9",
+          "0xa03e3a33",
+          "0xa03e3abd",
+          "0xa03e3b37",
+          "0xa03e3b6d",
+          "0xa03e3b6f",
+          "0xa03e3b87",
+          "0xa03e3b89",
+          "0xa03e3b97",
+          "0xa03e3bbd",
+          "0xa03e3bf1",
+          "0xa03e3c21",
+          "0xa03e3c45",
+          "0xa03e39c1",
+          "0xa03e3c15",
+          "0xa03e3c17"
+        ],
+        "response_file": "references/physical-75-query-prerequisites/0097-udws_ustd_read_file_0_64.bin",
+        "response_sha256": "1c3522400090f953b7c392a9db507d7adfba7fb96ff266fdd4c88a4be0122945",
+        "artifact": "references/physical-75-query-prerequisites/provider-pointers.json"
+      }
+    ],
+    "expected_field_labels": [
+      "cover location",
+      "park location",
+      "white location",
+      "black location"
+    ],
+    "expected_cover_from_preflight": 3534,
+    "origin_evidence": {
+      "label": "scanner_origin_offsets_and_overrides",
+      "address": "0x208582d0",
+      "count": 52,
+      "hex": "00000000000008d80000000000000000000000000000000000000000000000000000000000000000cfc700000000000000000000",
+      "words_be": [
+        "0x0",
+        "0x8d8",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0xcfc70000",
+        "0x0",
+        "0x0"
+      ],
+      "response_file": "references/physical-75-query-prerequisites/0052-udws_ustd_read_file_0_52.bin",
+      "response_sha256": "acc4b91a67cb8342e257b46029cf762f91295a4e0d0edc75bef5654ced357fbc",
+      "artifact": "references/physical-75-query-prerequisites/provider-pointers.json"
+    },
+    "home_evidence": {
+      "label": "scanner_home_flags",
+      "address": "0x20d9cd44",
+      "count": 4,
+      "hex": "00000000",
+      "words_be": [
+        "0x0"
+      ],
+      "response_file": "references/physical-75-query-prerequisites/0061-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "2efa0a73245bb096624260e30ce2ab7da8fbbe34187dc3e1149412323afc9a17",
+      "artifact": "references/physical-75-query-prerequisites/provider-pointers.json"
+    },
+    "storage_provider_evidence": {
+      "label": "scanner_storage_provider",
+      "address": "0x20da0af8",
+      "count": 4,
+      "hex": "a0517544",
+      "words_be": [
+        "0xa0517544"
+      ],
+      "response_file": "references/physical-75-query-prerequisites/0070-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "673fac89ba341afb16238aa450af37252d6f5cf5e971fef4a93964fe4fc8b4f0",
+      "artifact": "references/physical-75-query-prerequisites/provider-pointers.json"
+    },
+    "storage_method_evidence": [
+      {
+        "label": "led_interface_1_object_vtable",
+        "address": "0xa0517544",
+        "count": 4,
+        "hex": "a0517548",
+        "words_be": [
+          "0xa0517548"
+        ],
+        "response_file": "references/physical-59-metadata-pointers/0042-udws_ustd_read_file_0_4.bin",
+        "response_sha256": "95818bf79cdc5ce18d720f2a8486e3b39b8379f95a83c58d930491639ead5d16",
+        "artifact": "references/physical-59-metadata-pointers/provider-pointers.json"
+      },
+      {
+        "label": "led_interface_1_vtable_methods",
+        "address": "0xa0517548",
+        "count": 64,
+        "hex": "a005b379a005b3d9a005c38da005c46ba005c475a005be5da005be9fa005bf59a005b8fba005b92ba005b913a005b945a005b439a005b44fa005c373a005be43",
+        "words_be": [
+          "0xa005b379",
+          "0xa005b3d9",
+          "0xa005c38d",
+          "0xa005c46b",
+          "0xa005c475",
+          "0xa005be5d",
+          "0xa005be9f",
+          "0xa005bf59",
+          "0xa005b8fb",
+          "0xa005b92b",
+          "0xa005b913",
+          "0xa005b945",
+          "0xa005b439",
+          "0xa005b44f",
+          "0xa005c373",
+          "0xa005be43"
+        ],
+        "response_file": "references/physical-59-metadata-pointers/0051-udws_ustd_read_file_0_64.bin",
+        "response_sha256": "bd6855f97b58aea9e90f3e7146b89d9f4fbc6bcc41ca62244c00d20e2fbbc09b",
+        "artifact": "references/physical-59-metadata-pointers/provider-pointers.json"
+      }
+    ],
+    "prior_programmer_bits": [
+      {
+        "name": "nvm2.get_contents",
+        "dsid": 67490,
+        "file_id": 301,
+        "kind": 2,
+        "table_index": 70,
+        "object_index": 1,
+        "wire_value": 0,
+        "value": 0,
+        "value_interpretation": "scalar",
+        "source": {
+          "response_file": "references/physical-19b-storage-values/0165-udws_nvm2_get_contents_70_0_nvm2_get_contents_70_1_nvm2_get_conte.bin",
+          "response_sha256": "4fd169b5b576bd75917b5b6817dc8b62254978c9ee1d4238fc4f39dfb27b2b1f",
+          "started_utc": "2026-10-29T19:31:05.793669+00:00",
+          "plan_index": 190
+        }
+      },
+      {
+        "dsid": 67490,
+        "nvm_type": "NVM_SIM_UNSIGNED",
+        "wire_value": 0,
+        "value": 0,
+        "source": {
+          "response_file": "references/physical-19b-storage-values/0223-udws_ds2_get_list_67490_67491_67583_67584_67610_67631_67632_67633.bin",
+          "response_sha256": "f340facfae90037c03ba440a8ad7fead7bc8705a324bc61a3eabfbe4c3383465",
+          "started_utc": "2026-10-29T19:31:53.521911+00:00",
+          "plan_index": 248
+        }
+      }
+    ],
+    "interpretation": "Firmware location units; no physical distance conversion is assumed. Park may reflect the current position when the scanner has no retained home/override state."
+  },
+  {
+    "name": "scan mtr getpos",
+    "command": "udws \"scan mtr getpos;\"",
+    "argument_syntax": "",
+    "handler": "0xa03adf37",
+    "descriptor_address": "0xa0600388",
+    "classification": "reviewed-information-query",
+    "purpose": "Read the current flatbed scanner motor position register.",
+    "control_flow_proof": "A03ADF36 callsA03AD8A8 with fixedindex0, prints \"Motor Position: %d\", and returns. Physical75 resolves scanner provider20DA0AEC to objectA060BF74, vtableA060BF7C, slot0x28 A03E3BF0. A03AD8A8(0) selects that flatbed object. A03E3BF0 recognizes objectA060BF74 and selects motor index0, then callsA03E01F6 -> A03E3E32. This last helper performs one 32-bit load from position registerBD302010, callsA03E3E60(0,value) to refresh only volatile cache208593AC, and returns the loaded word. There are no MMIO stores, motion commands, power changes, delays or persistent writes on this path. This is a live position-register read, not a purely cached query.",
+    "timeout": 20,
+    "persistent_writes": false,
+    "runtime_registered": true,
+    "hardware_access": "Read-only position register BD302010; no actuator writes.",
+    "side_effects": "May refresh volatile position cache208593AC. UART formatting may update its output-throttle counter; no setting or mechanism state is commanded.",
+    "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+    "prior_invocation_status": "not-invoked",
+    "review_source": "references/round7_hardware_review.json",
+    "live_evidence": [
+      {
+        "label": "scanner_motor_provider",
+        "address": "0x20da0aec",
+        "count": 4,
+        "hex": "a060bf74",
+        "words_be": [
+          "0xa060bf74"
+        ],
+        "response_file": "references/physical-75-query-prerequisites/0079-udws_ustd_read_file_0_4.bin",
+        "response_sha256": "39238bec3e60456fa2393909e1685579ca0103dd77a97489e118cd1999d3e2ab",
+        "artifact": "references/physical-75-query-prerequisites/provider-pointers.json"
+      },
+      {
+        "label": "scanner_motor_object_vtable",
+        "address": "0xa060bf74",
+        "count": 4,
+        "hex": "a060bf7c",
+        "words_be": [
+          "0xa060bf7c"
+        ],
+        "response_file": "references/physical-75-query-prerequisites/0088-udws_ustd_read_file_0_4.bin",
+        "response_sha256": "950059ea9f658caf09acf618b23ec498b4e75c5f17e2783404ee9881c7678270",
+        "artifact": "references/physical-75-query-prerequisites/provider-pointers.json"
+      },
+      {
+        "label": "scanner_motor_vtable_methods",
+        "address": "0xa060bf7c",
+        "count": 64,
+        "hex": "a03e39e9a03e3a33a03e3abda03e3b37a03e3b6da03e3b6fa03e3b87a03e3b89a03e3b97a03e3bbda03e3bf1a03e3c21a03e3c45a03e39c1a03e3c15a03e3c17",
+        "words_be": [
+          "0xa03e39e9",
+          "0xa03e3a33",
+          "0xa03e3abd",
+          "0xa03e3b37",
+          "0xa03e3b6d",
+          "0xa03e3b6f",
+          "0xa03e3b87",
+          "0xa03e3b89",
+          "0xa03e3b97",
+          "0xa03e3bbd",
+          "0xa03e3bf1",
+          "0xa03e3c21",
+          "0xa03e3c45",
+          "0xa03e39c1",
+          "0xa03e3c15",
+          "0xa03e3c17"
+        ],
+        "response_file": "references/physical-75-query-prerequisites/0097-udws_ustd_read_file_0_64.bin",
+        "response_sha256": "1c3522400090f953b7c392a9db507d7adfba7fb96ff266fdd4c88a4be0122945",
+        "artifact": "references/physical-75-query-prerequisites/provider-pointers.json"
+      }
+    ],
+    "expected_field_labels": [
+      "Motor Position"
+    ],
+    "interpretation": "Raw signed position-register value in firmware units. Reading the position does not command a move or establish calibration accuracy."
+  }
+]

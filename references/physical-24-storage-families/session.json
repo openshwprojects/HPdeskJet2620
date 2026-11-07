@@ -1,0 +1,736 @@
+{
+  "started_utc": "2026-10-29T19:39:43.347795+00:00",
+  "port": "COM16",
+  "baud": 115200,
+  "data_bits": 8,
+  "parity": "N",
+  "stop_bits": 1,
+  "line_ending": "CRLF",
+  "source": "physical UART",
+  "rts": false,
+  "dtr": false,
+  "tx_character_delay_seconds": 0.003,
+  "capture_program_sha256": "685d8b07cd5afafeba32f37eb5722416458a08dafe09290576957e50b31bdb03",
+  "response_validator": {
+    "name": "validate_storage_response",
+    "file": "storage_response.py",
+    "sha256": "8274267a30879c20aab29003fd7983ba8ba7697389d52d637fe900a8f06f7e1d"
+  },
+  "requested_rx_buffer_bytes": 1048576,
+  "requested_tx_buffer_bytes": 65536,
+  "initial_prompt_seen": true,
+  "stop_reason": "batch-complete",
+  "ended_utc": "2026-10-29T19:39:50.336322+00:00",
+  "commands": [
+    {
+      "command": "udws \"ds2.get_by_name DSID_POWER_CYCLE_COUNT;\"",
+      "classification": "reviewed-information-query",
+      "purpose": "Exercise known-name and bounded storage helper read paths.",
+      "phase": "storage_family_samples",
+      "timeout": 90,
+      "udw_count": 1,
+      "uart_line_bytes": 46,
+      "expected": [
+        {
+          "udw_command": "ds2.get_by_name DSID_POWER_CYCLE_COUNT",
+          "name": "ds2.get_by_name",
+          "handler": "0xa005d2d1",
+          "dsid": 72089,
+          "known_name": "DSID_POWER_CYCLE_COUNT",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "identity_source": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 344
+          }
+        }
+      ],
+      "estimated_response_bytes_upper_bound": 123,
+      "response_batch_limit_bytes": 4096,
+      "review_source": "references/storage_query_review.json",
+      "plan_index": 1,
+      "index": 1,
+      "started_utc": "2026-10-29T19:39:44.039263+00:00",
+      "response_file": "0001-udws_ds2_get_by_name_DSID_POWER_CYCLE_COUNT.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:39:44.613877+00:00",
+      "elapsed_seconds": 0.573,
+      "response_bytes": 95,
+      "response_sha256": "da88c3c8386b34cde2d3343446154bfefc24fc1a203a657516a374bcf373c351",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "parsed": [
+          {
+            "name": "ds2.get_by_name",
+            "dsid": 72089,
+            "nvm_type": "NVM_SIM_UNSIGNED",
+            "wire_value": 520,
+            "value": 520
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "command": "udws \"ds2.get_sim_array_by_name DSID_NVM2_UT_1 0;\"",
+      "classification": "reviewed-information-query",
+      "purpose": "Exercise known-name and bounded storage helper read paths.",
+      "phase": "storage_family_samples",
+      "timeout": 90,
+      "udw_count": 1,
+      "uart_line_bytes": 50,
+      "expected": [
+        {
+          "udw_command": "ds2.get_sim_array_by_name DSID_NVM2_UT_1 0",
+          "name": "ds2.get_sim_array_by_name",
+          "handler": "0xa005d3a7",
+          "dsid": 66223,
+          "known_name": "DSID_NVM2_UT_1",
+          "nvm_type": "NVM_SIM_ARRAY_UNSIGNED",
+          "identity_source": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 95
+          },
+          "array_index": 0,
+          "fresh_element_count": 2,
+          "count_source": {
+            "response_file": "references/physical-19b-storage-values/0290-udws_ds2_get_num_elem_66223_ds2_get_num_elem_66224_ds2_get_elem_s.bin",
+            "response_sha256": "4ad190bbda5f927f1ff0f198b3a44e1059008b00e730d13cc440d5a716e41b24",
+            "started_utc": "2026-10-29T19:32:47.051125+00:00",
+            "plan_index": 315
+          }
+        }
+      ],
+      "estimated_response_bytes_upper_bound": 127,
+      "response_batch_limit_bytes": 4096,
+      "review_source": "references/storage_query_review.json",
+      "plan_index": 2,
+      "index": 2,
+      "started_utc": "2026-10-29T19:39:44.616484+00:00",
+      "response_file": "0002-udws_ds2_get_sim_array_by_name_DSID_NVM2_UT_1_0.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:39:45.200901+00:00",
+      "elapsed_seconds": 0.583,
+      "response_bytes": 99,
+      "response_sha256": "b0d1950b66cce97a83467e62c0cd792ae87312c14cd105c1380dfc870644f634",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "parsed": [
+          {
+            "name": "ds2.get_sim_array_by_name",
+            "dsid": 66223,
+            "nvm_type": "NVM_SIM_ARRAY_UNSIGNED",
+            "array_index": 0,
+            "wire_value": 0,
+            "value": 0
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "command": "udws \"ds2.get_rec_array_by_name DSID_MODEL_NAME 0;\"",
+      "classification": "reviewed-information-query",
+      "purpose": "Exercise known-name and bounded storage helper read paths.",
+      "phase": "storage_family_samples",
+      "timeout": 90,
+      "udw_count": 1,
+      "uart_line_bytes": 51,
+      "expected": [
+        {
+          "udw_command": "ds2.get_rec_array_by_name DSID_MODEL_NAME 0",
+          "name": "ds2.get_rec_array_by_name",
+          "handler": "0xa005d55b",
+          "dsid": 66037,
+          "known_name": "DSID_MODEL_NAME",
+          "nvm_type": "NVM_REC_ARRAY",
+          "identity_source": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 88
+          },
+          "array_index": 0,
+          "fresh_element_count": 1,
+          "count_source": {
+            "response_file": "references/physical-19b-storage-values/0288-udws_ds2_get_num_elem_66037_ds2_get_elem_size_66037_ds2_get_num_e.bin",
+            "response_sha256": "3667b161f4a54057fc11cfd3a002a8d626e618fc2204b76b4747810c5c9dc2d7",
+            "started_utc": "2026-10-29T19:32:45.378758+00:00",
+            "plan_index": 313
+          },
+          "expected_record_bytes": 40,
+          "size_source": {
+            "response_file": "references/physical-19b-storage-values/0288-udws_ds2_get_num_elem_66037_ds2_get_elem_size_66037_ds2_get_num_e.bin",
+            "response_sha256": "3667b161f4a54057fc11cfd3a002a8d626e618fc2204b76b4747810c5c9dc2d7",
+            "started_utc": "2026-10-29T19:32:45.378758+00:00",
+            "plan_index": 313
+          }
+        }
+      ],
+      "estimated_response_bytes_upper_bound": 361,
+      "response_batch_limit_bytes": 4096,
+      "review_source": "references/storage_query_review.json",
+      "plan_index": 3,
+      "index": 3,
+      "started_utc": "2026-10-29T19:39:45.202854+00:00",
+      "response_file": "0003-udws_ds2_get_rec_array_by_name_DSID_MODEL_NAME_0.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:39:45.830209+00:00",
+      "elapsed_seconds": 0.626,
+      "response_bytes": 333,
+      "response_sha256": "ee0f38edb63f208afda07a66a08157c974e2f70a61f9282600699575b2068389",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "parsed": [
+          {
+            "name": "ds2.get_rec_array_by_name",
+            "dsid": 66037,
+            "nvm_type": "NVM_REC_ARRAY",
+            "array_index": 0,
+            "record_byte_count": 40,
+            "bytes": [
+              68,
+              101,
+              115,
+              107,
+              74,
+              101,
+              116,
+              32,
+              50,
+              54,
+              48,
+              48,
+              32,
+              115,
+              101,
+              114,
+              105,
+              101,
+              115,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "hex": "4465736b4a6574203236303020736572696573000000000000000000000000000000000000000000"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "command": "udws \"ds2.get_rec_array_string 66037 0;\"",
+      "classification": "reviewed-information-query",
+      "purpose": "Exercise known-name and bounded storage helper read paths.",
+      "phase": "storage_family_samples",
+      "timeout": 90,
+      "udw_count": 1,
+      "uart_line_bytes": 40,
+      "expected": [
+        {
+          "udw_command": "ds2.get_rec_array_string 66037 0",
+          "name": "ds2.get_rec_array_string",
+          "handler": "0xa005cf17",
+          "dsid": 66037,
+          "known_name": "DSID_MODEL_NAME",
+          "nvm_type": "NVM_REC_ARRAY",
+          "identity_source": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 88
+          },
+          "array_index": 0,
+          "review": "A005CF88..CF8E explicitly appends NUL at buffer[bounded_size] before strlen; does not read beyond record-sized buffer.",
+          "fresh_element_count": 1,
+          "count_source": {
+            "response_file": "references/physical-19b-storage-values/0288-udws_ds2_get_num_elem_66037_ds2_get_elem_size_66037_ds2_get_num_e.bin",
+            "response_sha256": "3667b161f4a54057fc11cfd3a002a8d626e618fc2204b76b4747810c5c9dc2d7",
+            "started_utc": "2026-10-29T19:32:45.378758+00:00",
+            "plan_index": 313
+          },
+          "expected_record_bytes": 40,
+          "size_source": {
+            "response_file": "references/physical-19b-storage-values/0288-udws_ds2_get_num_elem_66037_ds2_get_elem_size_66037_ds2_get_num_e.bin",
+            "response_sha256": "3667b161f4a54057fc11cfd3a002a8d626e618fc2204b76b4747810c5c9dc2d7",
+            "started_utc": "2026-10-29T19:32:45.378758+00:00",
+            "plan_index": 313
+          }
+        }
+      ],
+      "estimated_response_bytes_upper_bound": 148,
+      "response_batch_limit_bytes": 4096,
+      "review_source": "references/storage_query_review.json",
+      "plan_index": 4,
+      "index": 4,
+      "started_utc": "2026-10-29T19:39:45.832996+00:00",
+      "response_file": "0004-udws_ds2_get_rec_array_string_66037_0.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:39:46.366666+00:00",
+      "elapsed_seconds": 0.532,
+      "response_bytes": 96,
+      "response_sha256": "61367d01e5c2d112fc0abdfbd6c56f8db62fff75ff2b0542a6392d816f4a04fd",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "parsed": [
+          {
+            "name": "ds2.get_rec_array_string",
+            "dsid": 66037,
+            "nvm_type": "NVM_REC_ARRAY",
+            "array_index": 0,
+            "value": "DeskJet 2600 series",
+            "maximum_record_bytes": 40,
+            "interpretation": "NUL-terminated string view; original decimal bytes are the authoritative binary record."
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "command": "udws \"ds2.get_rec_array_str_by_name DSID_MODEL_NAME 0;\"",
+      "classification": "reviewed-information-query",
+      "purpose": "Exercise known-name and bounded storage helper read paths.",
+      "phase": "storage_family_samples",
+      "timeout": 90,
+      "udw_count": 1,
+      "uart_line_bytes": 55,
+      "expected": [
+        {
+          "udw_command": "ds2.get_rec_array_str_by_name DSID_MODEL_NAME 0",
+          "name": "ds2.get_rec_array_str_by_name",
+          "handler": "0xa005d735",
+          "dsid": 66037,
+          "known_name": "DSID_MODEL_NAME",
+          "nvm_type": "NVM_REC_ARRAY",
+          "identity_source": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 88
+          },
+          "array_index": 0,
+          "fresh_element_count": 1,
+          "count_source": {
+            "response_file": "references/physical-19b-storage-values/0288-udws_ds2_get_num_elem_66037_ds2_get_elem_size_66037_ds2_get_num_e.bin",
+            "response_sha256": "3667b161f4a54057fc11cfd3a002a8d626e618fc2204b76b4747810c5c9dc2d7",
+            "started_utc": "2026-10-29T19:32:45.378758+00:00",
+            "plan_index": 313
+          },
+          "expected_record_bytes": 40,
+          "size_source": {
+            "response_file": "references/physical-19b-storage-values/0288-udws_ds2_get_num_elem_66037_ds2_get_elem_size_66037_ds2_get_num_e.bin",
+            "response_sha256": "3667b161f4a54057fc11cfd3a002a8d626e618fc2204b76b4747810c5c9dc2d7",
+            "started_utc": "2026-10-29T19:32:45.378758+00:00",
+            "plan_index": 313
+          }
+        }
+      ],
+      "estimated_response_bytes_upper_bound": 163,
+      "response_batch_limit_bytes": 4096,
+      "review_source": "references/storage_query_review.json",
+      "plan_index": 5,
+      "index": 5,
+      "started_utc": "2026-10-29T19:39:46.368618+00:00",
+      "response_file": "0005-udws_ds2_get_rec_array_str_by_name_DSID_MODEL_NAME_0.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:39:46.962736+00:00",
+      "elapsed_seconds": 0.592,
+      "response_bytes": 111,
+      "response_sha256": "19e84552c11fc9817d2c17bf7d5657a588eefaf36b727686f011422d13e622f3",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "parsed": [
+          {
+            "name": "ds2.get_rec_array_str_by_name",
+            "dsid": 66037,
+            "nvm_type": "NVM_REC_ARRAY",
+            "array_index": 0,
+            "value": "DeskJet 2600 series",
+            "maximum_record_bytes": 40,
+            "interpretation": "NUL-terminated string view; original decimal bytes are the authoritative binary record."
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "command": "udws \"ds2.get_num_elem_by_name DSID_NVM2_UT_1;\"",
+      "classification": "reviewed-information-query",
+      "purpose": "Exercise known-name and bounded storage helper read paths.",
+      "phase": "storage_family_samples",
+      "timeout": 90,
+      "udw_count": 1,
+      "uart_line_bytes": 47,
+      "expected": [
+        {
+          "udw_command": "ds2.get_num_elem_by_name DSID_NVM2_UT_1",
+          "name": "ds2.get_num_elem_by_name",
+          "handler": "0xa005d7f7",
+          "dsid": 66223,
+          "known_name": "DSID_NVM2_UT_1",
+          "nvm_type": "NVM_SIM_ARRAY_UNSIGNED",
+          "identity_source": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 95
+          },
+          "expected_from_prior_metadata": 2,
+          "fresh_element_count": 2,
+          "count_source": {
+            "response_file": "references/physical-19b-storage-values/0290-udws_ds2_get_num_elem_66223_ds2_get_num_elem_66224_ds2_get_elem_s.bin",
+            "response_sha256": "4ad190bbda5f927f1ff0f198b3a44e1059008b00e730d13cc440d5a716e41b24",
+            "started_utc": "2026-10-29T19:32:47.051125+00:00",
+            "plan_index": 315
+          }
+        }
+      ],
+      "estimated_response_bytes_upper_bound": 124,
+      "response_batch_limit_bytes": 4096,
+      "review_source": "references/storage_query_review.json",
+      "plan_index": 6,
+      "index": 6,
+      "started_utc": "2026-10-29T19:39:46.965075+00:00",
+      "response_file": "0006-udws_ds2_get_num_elem_by_name_DSID_NVM2_UT_1.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:39:47.532208+00:00",
+      "elapsed_seconds": 0.566,
+      "response_bytes": 96,
+      "response_sha256": "fca22366ae4ff1d866722ea98673e73ecc8b196e22efe379c4c62d3d09831d08",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "parsed": [
+          {
+            "name": "ds2.get_num_elem_by_name",
+            "dsid": 66223,
+            "nvm_type": "NVM_SIM_ARRAY_UNSIGNED",
+            "value": 2,
+            "prior_metadata_value": 2,
+            "matches_prior_metadata": true
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "command": "udws \"ds2.get_num_elem_by_name DSID_MODEL_NAME;\"",
+      "classification": "reviewed-information-query",
+      "purpose": "Exercise known-name and bounded storage helper read paths.",
+      "phase": "storage_family_samples",
+      "timeout": 90,
+      "udw_count": 1,
+      "uart_line_bytes": 48,
+      "expected": [
+        {
+          "udw_command": "ds2.get_num_elem_by_name DSID_MODEL_NAME",
+          "name": "ds2.get_num_elem_by_name",
+          "handler": "0xa005d7f7",
+          "dsid": 66037,
+          "known_name": "DSID_MODEL_NAME",
+          "nvm_type": "NVM_REC_ARRAY",
+          "identity_source": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 88
+          },
+          "expected_from_prior_metadata": 1,
+          "fresh_element_count": 1,
+          "count_source": {
+            "response_file": "references/physical-19b-storage-values/0288-udws_ds2_get_num_elem_66037_ds2_get_elem_size_66037_ds2_get_num_e.bin",
+            "response_sha256": "3667b161f4a54057fc11cfd3a002a8d626e618fc2204b76b4747810c5c9dc2d7",
+            "started_utc": "2026-10-29T19:32:45.378758+00:00",
+            "plan_index": 313
+          },
+          "expected_record_bytes": 40,
+          "size_source": {
+            "response_file": "references/physical-19b-storage-values/0288-udws_ds2_get_num_elem_66037_ds2_get_elem_size_66037_ds2_get_num_e.bin",
+            "response_sha256": "3667b161f4a54057fc11cfd3a002a8d626e618fc2204b76b4747810c5c9dc2d7",
+            "started_utc": "2026-10-29T19:32:45.378758+00:00",
+            "plan_index": 313
+          }
+        }
+      ],
+      "estimated_response_bytes_upper_bound": 125,
+      "response_batch_limit_bytes": 4096,
+      "review_source": "references/storage_query_review.json",
+      "plan_index": 7,
+      "index": 7,
+      "started_utc": "2026-10-29T19:39:47.534788+00:00",
+      "response_file": "0007-udws_ds2_get_num_elem_by_name_DSID_MODEL_NAME.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:39:48.101194+00:00",
+      "elapsed_seconds": 0.565,
+      "response_bytes": 97,
+      "response_sha256": "6c06683d60e4210374f4809f7fb85a2da334b2a28f5f1b2d690a2dbf91ad8115",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "parsed": [
+          {
+            "name": "ds2.get_num_elem_by_name",
+            "dsid": 66037,
+            "nvm_type": "NVM_REC_ARRAY",
+            "value": 1,
+            "prior_metadata_value": 1,
+            "matches_prior_metadata": true
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "command": "udws \"ds2.get_elem_size_by_name DSID_MODEL_NAME;\"",
+      "classification": "reviewed-information-query",
+      "purpose": "Exercise known-name and bounded storage helper read paths.",
+      "phase": "storage_family_samples",
+      "timeout": 90,
+      "udw_count": 1,
+      "uart_line_bytes": 49,
+      "expected": [
+        {
+          "udw_command": "ds2.get_elem_size_by_name DSID_MODEL_NAME",
+          "name": "ds2.get_elem_size_by_name",
+          "handler": "0xa005d853",
+          "dsid": 66037,
+          "known_name": "DSID_MODEL_NAME",
+          "nvm_type": "NVM_REC_ARRAY",
+          "identity_source": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 88
+          },
+          "expected_from_prior_metadata": 40,
+          "fresh_element_count": 1,
+          "count_source": {
+            "response_file": "references/physical-19b-storage-values/0288-udws_ds2_get_num_elem_66037_ds2_get_elem_size_66037_ds2_get_num_e.bin",
+            "response_sha256": "3667b161f4a54057fc11cfd3a002a8d626e618fc2204b76b4747810c5c9dc2d7",
+            "started_utc": "2026-10-29T19:32:45.378758+00:00",
+            "plan_index": 313
+          },
+          "expected_record_bytes": 40,
+          "size_source": {
+            "response_file": "references/physical-19b-storage-values/0288-udws_ds2_get_num_elem_66037_ds2_get_elem_size_66037_ds2_get_num_e.bin",
+            "response_sha256": "3667b161f4a54057fc11cfd3a002a8d626e618fc2204b76b4747810c5c9dc2d7",
+            "started_utc": "2026-10-29T19:32:45.378758+00:00",
+            "plan_index": 313
+          }
+        }
+      ],
+      "estimated_response_bytes_upper_bound": 126,
+      "response_batch_limit_bytes": 4096,
+      "review_source": "references/storage_query_review.json",
+      "plan_index": 8,
+      "index": 8,
+      "started_utc": "2026-10-29T19:39:48.103968+00:00",
+      "response_file": "0008-udws_ds2_get_elem_size_by_name_DSID_MODEL_NAME.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:39:48.699050+00:00",
+      "elapsed_seconds": 0.593,
+      "response_bytes": 98,
+      "response_sha256": "7cd0d129fe591141a5dc7d00167b2d539ca80c64df24ec0b5641dec2aac9632c",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "parsed": [
+          {
+            "name": "ds2.get_elem_size_by_name",
+            "dsid": 66037,
+            "nvm_type": "NVM_REC_ARRAY",
+            "value": 40,
+            "prior_metadata_value": 40,
+            "matches_prior_metadata": true
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "command": "udws \"nvm2.get_for_c 72089 0;\"",
+      "classification": "reviewed-information-query",
+      "purpose": "Exercise known-name and bounded storage helper read paths.",
+      "phase": "storage_family_samples",
+      "timeout": 90,
+      "udw_count": 1,
+      "uart_line_bytes": 30,
+      "expected": [
+        {
+          "udw_command": "nvm2.get_for_c 72089 0",
+          "name": "nvm2.get_for_c",
+          "handler": "0xa02f450f",
+          "dsid": 72089,
+          "known_name": "DSID_POWER_CYCLE_COUNT",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "identity_source": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 344
+          },
+          "array_index": 0,
+          "review": "DSID is physically in NVM catalog; scalar index0. No unknown-ID scan or unsupported array type."
+        }
+      ],
+      "estimated_response_bytes_upper_bound": 107,
+      "response_batch_limit_bytes": 4096,
+      "review_source": "references/storage_query_review.json",
+      "plan_index": 9,
+      "index": 9,
+      "started_utc": "2026-10-29T19:39:48.701760+00:00",
+      "response_file": "0009-udws_nvm2_get_for_c_72089_0.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:39:49.209628+00:00",
+      "elapsed_seconds": 0.506,
+      "response_bytes": 71,
+      "response_sha256": "f6ee64f22144fbe5e2304b015119be23aafed188b6baee92b5a9aab4c3ec2a13",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "parsed": [
+          {
+            "name": "nvm2.get_for_c",
+            "dsid": 72089,
+            "nvm_type": "NVM_SIM_UNSIGNED",
+            "wire_value": 520,
+            "value": 520
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "command": "udws \"nvm2.get_for_c 66223 0;\"",
+      "classification": "reviewed-information-query",
+      "purpose": "Exercise known-name and bounded storage helper read paths.",
+      "phase": "storage_family_samples",
+      "timeout": 90,
+      "udw_count": 1,
+      "uart_line_bytes": 30,
+      "expected": [
+        {
+          "udw_command": "nvm2.get_for_c 66223 0",
+          "name": "nvm2.get_for_c",
+          "handler": "0xa02f450f",
+          "dsid": 66223,
+          "known_name": "DSID_NVM2_UT_1",
+          "nvm_type": "NVM_SIM_ARRAY_UNSIGNED",
+          "identity_source": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 95
+          },
+          "array_index": 0,
+          "review": "Known simple-array DSID with fresh count>0; index0 fits uint8.",
+          "fresh_element_count": 2,
+          "count_source": {
+            "response_file": "references/physical-19b-storage-values/0290-udws_ds2_get_num_elem_66223_ds2_get_num_elem_66224_ds2_get_elem_s.bin",
+            "response_sha256": "4ad190bbda5f927f1ff0f198b3a44e1059008b00e730d13cc440d5a716e41b24",
+            "started_utc": "2026-10-29T19:32:47.051125+00:00",
+            "plan_index": 315
+          }
+        }
+      ],
+      "estimated_response_bytes_upper_bound": 107,
+      "response_batch_limit_bytes": 4096,
+      "review_source": "references/storage_query_review.json",
+      "plan_index": 10,
+      "index": 10,
+      "started_utc": "2026-10-29T19:39:49.212262+00:00",
+      "response_file": "0010-udws_nvm2_get_for_c_66223_0.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:39:49.746647+00:00",
+      "elapsed_seconds": 0.533,
+      "response_bytes": 69,
+      "response_sha256": "4fd5a2e30bcd163b28b2d7a3363b8c1c08f09c197e8b53c884a559f3709feef9",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "parsed": [
+          {
+            "name": "nvm2.get_for_c",
+            "dsid": 66223,
+            "nvm_type": "NVM_SIM_ARRAY_UNSIGNED",
+            "wire_value": 0,
+            "value": 0
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "command": "udws \"nvm2.get_rec_array_for_contents 66037 0;\"",
+      "classification": "reviewed-information-query",
+      "purpose": "Exercise known-name and bounded storage helper read paths.",
+      "phase": "storage_family_samples",
+      "timeout": 90,
+      "udw_count": 1,
+      "uart_line_bytes": 47,
+      "expected": [
+        {
+          "udw_command": "nvm2.get_rec_array_for_contents 66037 0",
+          "name": "nvm2.get_rec_array_for_contents",
+          "handler": "0xa02f4569",
+          "dsid": 66037,
+          "known_name": "DSID_MODEL_NAME",
+          "nvm_type": "NVM_REC_ARRAY",
+          "identity_source": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 88
+          },
+          "array_index": 0,
+          "byte_index": 0,
+          "review": "Reads byte0 of record0, not record index0 as the second argument. Known record count>0 and record length>0.",
+          "fresh_element_count": 1,
+          "count_source": {
+            "response_file": "references/physical-19b-storage-values/0288-udws_ds2_get_num_elem_66037_ds2_get_elem_size_66037_ds2_get_num_e.bin",
+            "response_sha256": "3667b161f4a54057fc11cfd3a002a8d626e618fc2204b76b4747810c5c9dc2d7",
+            "started_utc": "2026-10-29T19:32:45.378758+00:00",
+            "plan_index": 313
+          },
+          "expected_record_bytes": 40,
+          "size_source": {
+            "response_file": "references/physical-19b-storage-values/0288-udws_ds2_get_num_elem_66037_ds2_get_elem_size_66037_ds2_get_num_e.bin",
+            "response_sha256": "3667b161f4a54057fc11cfd3a002a8d626e618fc2204b76b4747810c5c9dc2d7",
+            "started_utc": "2026-10-29T19:32:45.378758+00:00",
+            "plan_index": 313
+          }
+        }
+      ],
+      "estimated_response_bytes_upper_bound": 124,
+      "response_batch_limit_bytes": 4096,
+      "review_source": "references/storage_query_review.json",
+      "plan_index": 11,
+      "index": 11,
+      "started_utc": "2026-10-29T19:39:49.748991+00:00",
+      "response_file": "0011-udws_nvm2_get_rec_array_for_contents_66037_0.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:39:50.333790+00:00",
+      "elapsed_seconds": 0.583,
+      "response_bytes": 87,
+      "response_sha256": "7b325cbd36cd171a50374dd2c79bfbbe4a600280a15e055f94a23665652f15d1",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "parsed": [
+          {
+            "name": "nvm2.get_rec_array_for_contents",
+            "dsid": 66037,
+            "array_index": 0,
+            "byte_index": 0,
+            "value": 68
+          }
+        ],
+        "errors": []
+      }
+    }
+  ]
+}

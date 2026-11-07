@@ -1,0 +1,69 @@
+{
+  "started_utc": "2026-10-29T21:52:19.504967+00:00",
+  "port": "COM16",
+  "baud": 115200,
+  "data_bits": 8,
+  "parity": "N",
+  "stop_bits": 1,
+  "line_ending": "CRLF",
+  "source": "physical UART",
+  "rts": false,
+  "dtr": false,
+  "tx_character_delay_seconds": 0.003,
+  "capture_program_sha256": "685d8b07cd5afafeba32f37eb5722416458a08dafe09290576957e50b31bdb03",
+  "requested_rx_buffer_bytes": 1048576,
+  "requested_tx_buffer_bytes": 65536,
+  "initial_prompt_seen": true,
+  "stop_reason": "batch-complete",
+  "ended_utc": "2026-10-29T21:52:20.763275+00:00",
+  "commands": [
+    {
+      "name": "heapmgr log block",
+      "command": "udws \"heapmgr log block 0 16777216 1;\"",
+      "handler": "0xa016098f",
+      "descriptor_address": "0xa053b948",
+      "context_word": "0x00000000",
+      "argument_syntax": "lookup flags=0, key high word=16777216 (0x01000000), key low word=1",
+      "classification": "reviewed-existing-block-metadata-query",
+      "purpose": "Read allocator purgeability, lock flag, client/priority fields, pin count and size for the existing root-directory block.",
+      "control_flow_proof": [
+        "A016098E..09AA reads three decimal uint32 words via A01612B8, then A01608F2 copies them to a 12-byte stack key and calls A0160802 with display_filter=0. Exact words 0,16777216,1 select name lookup of the existing root-directory key 0100000000000001; they are not raw addresses.",
+        "A0160802..089A calls A015FB5A six times with selectors1,3,2,5,6,7, each output pointing into its own stack. Selector0/4 and all property setters are unreachable. It formats one bounded metadata line and waits one RTOS tick.",
+        "A015FB5A -> A015F884: leading key flag is0, so only name-lookup branch A015FCF4 executes. A015FCF4 hashes eight key bytes with A015FB80 -> A000723C CRC and standard remainder trampoline A0025294, reads one of211 initialized buckets, and traverses existing links. A015FBF2 -> A0160D36 -> A015F3D6 resolves an existing descriptor and A016005A copies eight bytes to a local key buffer; A0010550 compares exactly eight bytes. A015FB92 -> A0160D36 -> A016007E reads the next existing link. No hash insert/remove or allocator path is reachable.",
+        "On a key match A0160D48 reads descriptor generation into caller-local storage. A0160D1A -> A0160C60 -> A015F3D6 checks index, non-null header and generation, then reads the existing header pointer. The successful branch was physically exercised for this exact key by ram.block_info in physical61, and the whole hash index was captured in physical58 (8 entries, this block index1 in bucket118).",
+        "A0160004 reads selected header fields: selector1=byte26 bit0 purgeable, selector3=byte24 client/major priority field, selector2=byte25 minor priority, selector5=word8 size, selector6=byte27 pin/use count, selector7=byte26 bit1 lock. Its only writes are to each caller-provided stack output.",
+        "A0161270 formats into a256-byte stack buffer, gets length, and calls provider vtable+24. Physical57 resolves 20943A40 -> A061F594 -> A061F598; +24=A0431A59 -> A02C2A7A UART writer; parser+10=A0431979 -> A02C3DE2 decimal parser. The fixed line format and integer arguments fit the formatting buffer.",
+        "A02F6D70(1) checks scheduler state through A02F7144 and invokes the established RTOS delay A04E6650. This updates volatile current-thread delay/scheduler counters for one tick and returns; it does not access storage or command actuators. This delay path is already used by captured heap tree diagnostics."
+      ],
+      "side_effects_assessment": "UART output, parser/formatter stack storage and a one-tick RTOS scheduling delay. No allocator mutation, file write, persistent setting or actuator operation.",
+      "output_limits": "Exactly one metadata line from6 property reads. Hash walks existing finite chain; prior complete capture has8 entries. Existing-key lookup errors are not checked by the formatter, so raw output must be cross-validated against the known header rather than assuming any prompt means valid data.",
+      "timeout": 20,
+      "hardware_access": false,
+      "prior_invocation_status": "not-invoked",
+      "review_source": "references/round6_system_review.json",
+      "expected": {
+        "key_words": [
+          "0x00000000",
+          "0x01000000",
+          "0x00000001"
+        ],
+        "purgeable": false,
+        "locked": false,
+        "priority_major_raw": 1,
+        "priority_minor_raw": 0,
+        "size_bytes": 16928,
+        "pin_count_at_header_capture": 1,
+        "pin_count_is_time_dependent": true
+      },
+      "index": 1,
+      "started_utc": "2026-10-29T21:52:20.207722+00:00",
+      "response_file": "0001-udws_heapmgr_log_block_0_16777216_1.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T21:52:20.760641+00:00",
+      "elapsed_seconds": 0.552,
+      "response_bytes": 164,
+      "response_sha256": "c83a0675a5db9c34be93aca90047d7bb5d1051295dc5e8261e6e438522846069",
+      "prompt_returned": true
+    }
+  ]
+}

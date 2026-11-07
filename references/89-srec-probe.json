@@ -1,0 +1,10 @@
+[
+  {
+    "name": "udw.srec_download",
+    "command": "udws \"udw.srec_download;\"",
+    "argument_syntax": "",
+    "classification": "S-record loader probe, no payload (round 8)",
+    "purpose": "Read the runtime response of udw.srec_download with no S-record data. Handler 0xa03da064 literal pool holds 'Sirius' and 'Commmand not supported'.",
+    "timeout": 20
+  }
+]

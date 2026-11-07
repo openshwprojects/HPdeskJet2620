@@ -1,0 +1,1 @@
+{"index": 1, "command": "udws \"heapmgr log block 0 16777216 1;\"", "bytes": 164, "prompt": true, "validated": null, "preview": "\r\n-> udws \"heapmgr log block 0 16777216 1;\"\r\n0x00000000 0x01000000 0x00000001  NOT PURGEABLE     priority 1:  0  pin=0  size = 16928\r\n;udws() returns 0 (0x0)\r\n-> "}

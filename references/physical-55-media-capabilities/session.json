@@ -1,0 +1,242 @@
+{
+  "started_utc": "2026-10-29T21:30:35.332250+00:00",
+  "port": "COM16",
+  "baud": 115200,
+  "data_bits": 8,
+  "parity": "N",
+  "stop_bits": 1,
+  "line_ending": "CRLF",
+  "source": "physical UART",
+  "rts": false,
+  "dtr": false,
+  "tx_character_delay_seconds": 0.003,
+  "capture_program_sha256": "685d8b07cd5afafeba32f37eb5722416458a08dafe09290576957e50b31bdb03",
+  "requested_rx_buffer_bytes": 1048576,
+  "requested_tx_buffer_bytes": 65536,
+  "initial_prompt_seen": true,
+  "stop_reason": "batch-complete",
+  "ended_utc": "2026-10-29T21:30:39.001944+00:00",
+  "commands": [
+    {
+      "name": "mhdlg.get_mhdlgcap_supported_trays",
+      "command": "udws \"mhdlg.get_mhdlgcap_supported_trays;\"",
+      "handler": "0xa006345f",
+      "descriptor_address": "0xa0518adc",
+      "arguments": [],
+      "purpose": "Enumerate supported paper input trays and their numeric IDs.",
+      "classification": "reviewed-bounded-product-query",
+      "review_source": "references/round5_product_review.json",
+      "review_evidence": "MHDLG consumer slot4 is interface SUID0x1154a in A0518754..A051876C. PE provider table A05CC93C has matching SUID, slot1; interface getter A0305068 returns initialized object A05CC04C from20848514. Object points to vtable20848770. Relevant methods +8/+10/+60/+64/+6C/+EC resolve to A0303E9C/A0303EBA/A030408C/A030409A/A03040B0/A030437A. A0062F7A uses +10 -> A0303EBA -> A030DC0C, a bounded ROM table traversal. ROM A05CFBB0 has1 record, ID1, so count fits14slots. A006345E formats count and name/ID using A02541FC.",
+      "side_effects_assessment": "Reads initialized metadata, writes caller buffers and formats UART output.",
+      "result_limitations": "Finite capability metadata. No tray activation or paper movement.",
+      "timeout": 30,
+      "prior_invocation_status": "not-invoked",
+      "code_evidence": [
+        {
+          "start": "0xa006345e",
+          "end_exclusive": "0xa0063562",
+          "sha256": "f2413e582876b5281dc9bc7eeacbc095a6a4a69484b3ab8a22349793a8689855"
+        },
+        {
+          "start": "0xa0062f7a",
+          "end_exclusive": "0xa0063052",
+          "sha256": "de3428ff4453a961fb67461b651961c2bbef416686b43a133b44f3b456bcd332"
+        },
+        {
+          "start": "0xa030dc0c",
+          "end_exclusive": "0xa030dc3c",
+          "sha256": "bfa9e5c1d8e038c29d9accc59c1128d31dfebf8b290506f29d406c6abdb05b1d"
+        }
+      ],
+      "index": 1,
+      "started_utc": "2026-10-29T21:30:36.032762+00:00",
+      "response_file": "0001-udws_mhdlg_get_mhdlgcap_supported_trays.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T21:30:36.595333+00:00",
+      "elapsed_seconds": 0.561,
+      "response_bytes": 95,
+      "response_sha256": "5ff97b5417659b0c5ed89637eb2b469c3ab5ec9bbedd947a9da2ff5e7f3d8feb",
+      "prompt_returned": true
+    },
+    {
+      "name": "mhdlg.get_mhdlgcap_supported_bins",
+      "command": "udws \"mhdlg.get_mhdlgcap_supported_bins;\"",
+      "handler": "0xa0063563",
+      "descriptor_address": "0xa0518ae8",
+      "arguments": [],
+      "purpose": "Enumerate the configured paper output bins.",
+      "classification": "reviewed-bounded-product-query",
+      "review_source": "references/round5_product_review.json",
+      "review_evidence": "MHDLG consumer slot4 is interface SUID0x1154a in A0518754..A051876C. PE provider table A05CC93C has matching SUID, slot1; interface getter A0305068 returns initialized object A05CC04C from20848514. Object points to vtable20848770. Relevant methods +8/+10/+60/+64/+6C/+EC resolve to A0303E9C/A0303EBA/A030408C/A030409A/A03040B0/A030437A. A0063052 uses +EC -> A030437A, which writes bin0 and returns count1. Handler A0063562 prints status200,count1,ID0; this is the model capability implementation, not a disabled command handler.",
+      "side_effects_assessment": "Reads initialized metadata, writes caller buffers and formats UART output.",
+      "result_limitations": "",
+      "timeout": 30,
+      "prior_invocation_status": "not-invoked",
+      "code_evidence": [
+        {
+          "start": "0xa0063562",
+          "end_exclusive": "0xa0063628",
+          "sha256": "88d37d4e93ce1d14ebeab51fc10ecf15dbebc9af7bc8d8694dc442a0b7a815fb"
+        },
+        {
+          "start": "0xa0063052",
+          "end_exclusive": "0xa00630a4",
+          "sha256": "1b069aa8edba2329423210beb081f54832ad41d1b88aabf4d738ff11e35033ed"
+        },
+        {
+          "start": "0xa030437a",
+          "end_exclusive": "0xa0304382",
+          "sha256": "fe123f422ea7892e6a027a5ddd5231b12b5e92a83e117a41da81e9dfd77aee20"
+        }
+      ],
+      "index": 2,
+      "started_utc": "2026-10-29T21:30:36.597541+00:00",
+      "response_file": "0002-udws_mhdlg_get_mhdlgcap_supported_bins.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T21:30:37.170372+00:00",
+      "elapsed_seconds": 0.571,
+      "response_bytes": 89,
+      "response_sha256": "21b1711b55f58088d928993b93ddd70e24c1aed759cd0b6c2bd0fe33375e312d",
+      "prompt_returned": true
+    },
+    {
+      "name": "mhdlg.get_mhdlgcap_media_type_size_list",
+      "command": "udws \"mhdlg.get_mhdlgcap_media_type_size_list 0 1;\"",
+      "handler": "0xa0063629",
+      "descriptor_address": "0xa0518af4",
+      "arguments": [
+        "0",
+        "1"
+      ],
+      "purpose": "Enumerate media sizes for verified tray1.",
+      "classification": "reviewed-bounded-product-query",
+      "review_source": "references/round5_product_review.json",
+      "review_evidence": "MHDLG consumer slot4 is interface SUID0x1154a in A0518754..A051876C. PE provider table A05CC93C has matching SUID, slot1; interface getter A0305068 returns initialized object A05CC04C from20848514. Object points to vtable20848770. Relevant methods +8/+10/+60/+64/+6C/+EC resolve to A0303E9C/A0303EBA/A030408C/A030409A/A03040B0/A030437A. First parsed integer0 selects sizes,1 selects types; second is trayID. A00630A4 routes sizes through +8 -> A030DADE and types through +60 -> A030E04C. Both deduplicate bounded ROM arrays into caller buffers; tray1 table has32 sizes and4 types. Handler prints symbolic and numeric identifiers.",
+      "side_effects_assessment": "Reads initialized metadata, writes caller buffers and formats UART output.",
+      "result_limitations": "The two selectors share one registered command name and count as one name.",
+      "timeout": 30,
+      "prior_invocation_status": "not-invoked",
+      "code_evidence": [
+        {
+          "start": "0xa0063628",
+          "end_exclusive": "0xa0063798",
+          "sha256": "07a51234ad3ea3d24be86ed160120df9a3a9845cfea08722325df8676e7aa729"
+        },
+        {
+          "start": "0xa00630a4",
+          "end_exclusive": "0xa006315a",
+          "sha256": "d0a7aceb882ab2d0d44a089952677cb5318acbf2ded2abd35bef148f9a9f9cba"
+        },
+        {
+          "start": "0xa030dade",
+          "end_exclusive": "0xa030db7a",
+          "sha256": "d031e6d04fd0d6ac3aeca95150fea35da8f66875a4cf6c33f2581f8c109fb7fc"
+        },
+        {
+          "start": "0xa030e04c",
+          "end_exclusive": "0xa030e0ba",
+          "sha256": "562fe6c1f7051e2e1990d99e522a0f1ada85486d2f7c6834beba1b7842c579b3"
+        }
+      ],
+      "index": 3,
+      "started_utc": "2026-10-29T21:30:37.173021+00:00",
+      "response_file": "0003-udws_mhdlg_get_mhdlgcap_media_type_size_list_0_1.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T21:30:37.835525+00:00",
+      "elapsed_seconds": 0.661,
+      "response_bytes": 867,
+      "response_sha256": "42804d99165865619912ffaaf81fa7eb15344ca341151e534301cb84195c3e2c",
+      "prompt_returned": true
+    },
+    {
+      "name": "mhdlg.get_mhdlgcap_media_type_size_list",
+      "command": "udws \"mhdlg.get_mhdlgcap_media_type_size_list 1 1;\"",
+      "handler": "0xa0063629",
+      "descriptor_address": "0xa0518af4",
+      "arguments": [
+        "1",
+        "1"
+      ],
+      "purpose": "Enumerate media types for verified tray1.",
+      "classification": "reviewed-bounded-product-query",
+      "review_source": "references/round5_product_review.json",
+      "review_evidence": "MHDLG consumer slot4 is interface SUID0x1154a in A0518754..A051876C. PE provider table A05CC93C has matching SUID, slot1; interface getter A0305068 returns initialized object A05CC04C from20848514. Object points to vtable20848770. Relevant methods +8/+10/+60/+64/+6C/+EC resolve to A0303E9C/A0303EBA/A030408C/A030409A/A03040B0/A030437A. First parsed integer0 selects sizes,1 selects types; second is trayID. A00630A4 routes sizes through +8 -> A030DADE and types through +60 -> A030E04C. Both deduplicate bounded ROM arrays into caller buffers; tray1 table has32 sizes and4 types. Handler prints symbolic and numeric identifiers.",
+      "side_effects_assessment": "Reads initialized metadata, writes caller buffers and formats UART output.",
+      "result_limitations": "The two selectors share one registered command name and count as one name.",
+      "timeout": 30,
+      "prior_invocation_status": "not-invoked",
+      "code_evidence": [
+        {
+          "start": "0xa0063628",
+          "end_exclusive": "0xa0063798",
+          "sha256": "07a51234ad3ea3d24be86ed160120df9a3a9845cfea08722325df8676e7aa729"
+        },
+        {
+          "start": "0xa00630a4",
+          "end_exclusive": "0xa006315a",
+          "sha256": "d0a7aceb882ab2d0d44a089952677cb5318acbf2ded2abd35bef148f9a9f9cba"
+        },
+        {
+          "start": "0xa030dade",
+          "end_exclusive": "0xa030db7a",
+          "sha256": "d031e6d04fd0d6ac3aeca95150fea35da8f66875a4cf6c33f2581f8c109fb7fc"
+        },
+        {
+          "start": "0xa030e04c",
+          "end_exclusive": "0xa030e0ba",
+          "sha256": "562fe6c1f7051e2e1990d99e522a0f1ada85486d2f7c6834beba1b7842c579b3"
+        }
+      ],
+      "index": 4,
+      "started_utc": "2026-10-29T21:30:37.838023+00:00",
+      "response_file": "0004-udws_mhdlg_get_mhdlgcap_media_type_size_list_1_1.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T21:30:38.439923+00:00",
+      "elapsed_seconds": 0.6,
+      "response_bytes": 160,
+      "response_sha256": "eedc5330f2292a7181e6a141559260485fcbdb72dacd6f328138cc63c1655488",
+      "prompt_returned": true
+    },
+    {
+      "name": "mhdlg.get_supported_df_groups",
+      "command": "udws \"mhdlg.get_supported_df_groups;\"",
+      "handler": "0xa0063897",
+      "descriptor_address": "0xa0518b3c",
+      "arguments": [],
+      "purpose": "Determine whether the firmware exposes additional media feed groups.",
+      "classification": "reviewed-bounded-product-query",
+      "review_source": "references/round5_product_review.json",
+      "review_evidence": "MHDLG consumer slot4 is interface SUID0x1154a in A0518754..A051876C. PE provider table A05CC93C has matching SUID, slot1; interface getter A0305068 returns initialized object A05CC04C from20848514. Object points to vtable20848770. Relevant methods +8/+10/+60/+64/+6C/+EC resolve to A0303E9C/A0303EBA/A030408C/A030409A/A03040B0/A030437A. A0063212 calls +64 -> A030409A -> A030E0BA. It reads group count from ROM A05CFBB8 (0 in this image), writes only bounded caller array, and returns status200 pluscount0. A0063896 outputs both status and count.",
+      "side_effects_assessment": "Reads initialized metadata, writes caller buffers and formats UART output.",
+      "result_limitations": "A successful zero-count capability result is expected, not a media-motion test.",
+      "timeout": 30,
+      "prior_invocation_status": "not-invoked",
+      "code_evidence": [
+        {
+          "start": "0xa0063896",
+          "end_exclusive": "0xa006390c",
+          "sha256": "c277ae7a4760074d79c822da73ed2edc53c35efbfdab28835e056b631d414605"
+        },
+        {
+          "start": "0xa0063212",
+          "end_exclusive": "0xa0063252",
+          "sha256": "3469ddf9d94979edbc4548fcda2e3fa70104a5e4fa1fbf39876fd96acf1f90e4"
+        },
+        {
+          "start": "0xa030e0ba",
+          "end_exclusive": "0xa030e0e0",
+          "sha256": "0048c6a46fc1bedbfa587294f75090e754e0aaed7bf7a8cc0a35f029ba3ecefe"
+        }
+      ],
+      "index": 5,
+      "started_utc": "2026-10-29T21:30:38.441965+00:00",
+      "response_file": "0005-udws_mhdlg_get_supported_df_groups.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T21:30:38.999877+00:00",
+      "elapsed_seconds": 0.557,
+      "response_bytes": 81,
+      "response_sha256": "858c7443992fd19cf709e0757f5775364618bdd456382d82e2ae58399588aa77",
+      "prompt_returned": true
+    }
+  ]
+}

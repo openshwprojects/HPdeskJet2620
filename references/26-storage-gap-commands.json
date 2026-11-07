@@ -1,0 +1,2034 @@
+[
+  {
+    "command": "udws \"nvm2.get_for_c 76270 0; nvm2.get_for_c 76383 0; nvm2.get_for_c 76384 0; nvm2.get_for_c 76385 0;\"",
+    "classification": "reviewed-information-query",
+    "purpose": "Exercise known-name and bounded storage helper read paths.",
+    "phase": "nvm_scalar_gaps",
+    "timeout": 90,
+    "udw_count": 4,
+    "uart_line_bytes": 102,
+    "expected": [
+      {
+        "udw_command": "nvm2.get_for_c 76270 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 76270,
+        "known_name": "DSID_PEN_ANTI_THEFT_ENABLE",
+        "nvm_type": "NVM_SIM_UNSIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 704
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 724
+            },
+            {
+              "response": "references/physical-18-storage-details/0374-udws_nvm2_list_reset_group_SEMI.bin",
+              "payload_line": 180
+            },
+            {
+              "response": "references/physical-18-storage-details/0375-udws_nvm2_list_reset_group_FULL.bin",
+              "payload_line": 639
+            },
+            {
+              "response": "references/physical-18-storage-details/0376-udws_nvm2_list_reset_group_FACTORY.bin",
+              "payload_line": 704
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 724
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 262
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 262,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      },
+      {
+        "udw_command": "nvm2.get_for_c 76383 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 76383,
+        "known_name": "DSID_PEN_BTM_PENDING_K",
+        "nvm_type": "NVM_SIM_UNSIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 708
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 726
+            },
+            {
+              "response": "references/physical-18-storage-details/0375-udws_nvm2_list_reset_group_FULL.bin",
+              "payload_line": 641
+            },
+            {
+              "response": "references/physical-18-storage-details/0376-udws_nvm2_list_reset_group_FACTORY.bin",
+              "payload_line": 706
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 726
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 264
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 264,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      },
+      {
+        "udw_command": "nvm2.get_for_c 76384 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 76384,
+        "known_name": "DSID_PEN_BTM_ACK_K",
+        "nvm_type": "NVM_SIM_UNSIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 709
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 727
+            },
+            {
+              "response": "references/physical-18-storage-details/0375-udws_nvm2_list_reset_group_FULL.bin",
+              "payload_line": 642
+            },
+            {
+              "response": "references/physical-18-storage-details/0376-udws_nvm2_list_reset_group_FACTORY.bin",
+              "payload_line": 707
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 727
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 265
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 265,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      },
+      {
+        "udw_command": "nvm2.get_for_c 76385 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 76385,
+        "known_name": "DSID_PEN_BTM_PENDING_CMY",
+        "nvm_type": "NVM_SIM_UNSIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 710
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 728
+            },
+            {
+              "response": "references/physical-18-storage-details/0375-udws_nvm2_list_reset_group_FULL.bin",
+              "payload_line": 643
+            },
+            {
+              "response": "references/physical-18-storage-details/0376-udws_nvm2_list_reset_group_FACTORY.bin",
+              "payload_line": 708
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 728
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 266
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 266,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      }
+    ],
+    "estimated_response_bytes_upper_bound": 218,
+    "response_batch_limit_bytes": 4096,
+    "review_source": "references/storage_query_review.json",
+    "plan_index": 1
+  },
+  {
+    "command": "udws \"nvm2.get_for_c 76386 0; nvm2.get_for_c 76937 0; nvm2.get_for_c 76938 0; nvm2.get_for_c 77178 0;\"",
+    "classification": "reviewed-information-query",
+    "purpose": "Exercise known-name and bounded storage helper read paths.",
+    "phase": "nvm_scalar_gaps",
+    "timeout": 90,
+    "udw_count": 4,
+    "uart_line_bytes": 102,
+    "expected": [
+      {
+        "udw_command": "nvm2.get_for_c 76386 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 76386,
+        "known_name": "DSID_PEN_BTM_ACK_CMY",
+        "nvm_type": "NVM_SIM_UNSIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 711
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 729
+            },
+            {
+              "response": "references/physical-18-storage-details/0375-udws_nvm2_list_reset_group_FULL.bin",
+              "payload_line": 644
+            },
+            {
+              "response": "references/physical-18-storage-details/0376-udws_nvm2_list_reset_group_FACTORY.bin",
+              "payload_line": 709
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 729
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 267
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 267,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      },
+      {
+        "udw_command": "nvm2.get_for_c 76937 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 76937,
+        "known_name": "DSID_PEN_FAKE_SECURE_BEHAVIOR",
+        "nvm_type": "NVM_SIM_UNSIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 749
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 730
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 730
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 268
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 268,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      },
+      {
+        "udw_command": "nvm2.get_for_c 76938 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 76938,
+        "known_name": "DSID_PEN_ASSERT_MISSING_UDW",
+        "nvm_type": "NVM_SIM_UNSIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 750
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 732
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 732
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 270
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 270,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      },
+      {
+        "udw_command": "nvm2.get_for_c 77178 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 77178,
+        "known_name": "DSID_PEN_TOTAL_K_INK_USAGE_ML",
+        "nvm_type": "NVM_SIM_UNSIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 755
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 733
+            },
+            {
+              "response": "references/physical-18-storage-details/0376-udws_nvm2_list_reset_group_FACTORY.bin",
+              "payload_line": 710
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 733
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 271
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 271,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      }
+    ],
+    "estimated_response_bytes_upper_bound": 218,
+    "response_batch_limit_bytes": 4096,
+    "review_source": "references/storage_query_review.json",
+    "plan_index": 2
+  },
+  {
+    "command": "udws \"nvm2.get_for_c 77179 0; nvm2.get_for_c 77180 0; nvm2.get_for_c 77181 0; nvm2.get_for_c 77475 0;\"",
+    "classification": "reviewed-information-query",
+    "purpose": "Exercise known-name and bounded storage helper read paths.",
+    "phase": "nvm_scalar_gaps",
+    "timeout": 90,
+    "udw_count": 4,
+    "uart_line_bytes": 102,
+    "expected": [
+      {
+        "udw_command": "nvm2.get_for_c 77179 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 77179,
+        "known_name": "DSID_PEN_TOTAL_CMYZ_INK_USAGE_ML",
+        "nvm_type": "NVM_SIM_UNSIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 756
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 734
+            },
+            {
+              "response": "references/physical-18-storage-details/0376-udws_nvm2_list_reset_group_FACTORY.bin",
+              "payload_line": 711
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 734
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 272
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 272,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      },
+      {
+        "udw_command": "nvm2.get_for_c 77180 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 77180,
+        "known_name": "DSID_PEN_TOTAL_K_HP_INK_USAGE_ML",
+        "nvm_type": "NVM_SIM_UNSIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 757
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 735
+            },
+            {
+              "response": "references/physical-18-storage-details/0376-udws_nvm2_list_reset_group_FACTORY.bin",
+              "payload_line": 712
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 735
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 273
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 273,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      },
+      {
+        "udw_command": "nvm2.get_for_c 77181 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 77181,
+        "known_name": "DSID_PEN_TOTAL_CMYZ_HP_INK_USAGE_ML",
+        "nvm_type": "NVM_SIM_UNSIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 758
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 736
+            },
+            {
+              "response": "references/physical-18-storage-details/0376-udws_nvm2_list_reset_group_FACTORY.bin",
+              "payload_line": 713
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 736
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 274
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 274,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      },
+      {
+        "udw_command": "nvm2.get_for_c 77475 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 77475,
+        "known_name": "DSID_PEN_HISTORY_DS_K_1_PEN_ID_BITS_8",
+        "nvm_type": "NVM_SIM_UNSIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 787
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 718
+            },
+            {
+              "response": "references/physical-18-storage-details/0375-udws_nvm2_list_reset_group_FULL.bin",
+              "payload_line": 633
+            },
+            {
+              "response": "references/physical-18-storage-details/0376-udws_nvm2_list_reset_group_FACTORY.bin",
+              "payload_line": 698
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 718
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 256
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 256,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      }
+    ],
+    "estimated_response_bytes_upper_bound": 218,
+    "response_batch_limit_bytes": 4096,
+    "review_source": "references/storage_query_review.json",
+    "plan_index": 3
+  },
+  {
+    "command": "udws \"nvm2.get_for_c 77476 0; nvm2.get_for_c 77483 0; nvm2.get_for_c 77484 0; nvm2.get_for_c 77491 0;\"",
+    "classification": "reviewed-information-query",
+    "purpose": "Exercise known-name and bounded storage helper read paths.",
+    "phase": "nvm_scalar_gaps",
+    "timeout": 90,
+    "udw_count": 4,
+    "uart_line_bytes": 102,
+    "expected": [
+      {
+        "udw_command": "nvm2.get_for_c 77476 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 77476,
+        "known_name": "DSID_PEN_HISTORY_DS_K_1_PEN_ID_BITS_9",
+        "nvm_type": "NVM_SIM_UNSIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 788
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 719
+            },
+            {
+              "response": "references/physical-18-storage-details/0375-udws_nvm2_list_reset_group_FULL.bin",
+              "payload_line": 634
+            },
+            {
+              "response": "references/physical-18-storage-details/0376-udws_nvm2_list_reset_group_FACTORY.bin",
+              "payload_line": 699
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 719
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 257
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 257,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      },
+      {
+        "udw_command": "nvm2.get_for_c 77483 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 77483,
+        "known_name": "DSID_PEN_HISTORY_DS_CMY_0_PEN_ID_BITS_8",
+        "nvm_type": "NVM_SIM_UNSIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 789
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 720
+            },
+            {
+              "response": "references/physical-18-storage-details/0375-udws_nvm2_list_reset_group_FULL.bin",
+              "payload_line": 635
+            },
+            {
+              "response": "references/physical-18-storage-details/0376-udws_nvm2_list_reset_group_FACTORY.bin",
+              "payload_line": 700
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 720
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 258
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 258,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      },
+      {
+        "udw_command": "nvm2.get_for_c 77484 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 77484,
+        "known_name": "DSID_PEN_HISTORY_DS_CMY_0_PEN_ID_BITS_9",
+        "nvm_type": "NVM_SIM_UNSIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 790
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 721
+            },
+            {
+              "response": "references/physical-18-storage-details/0375-udws_nvm2_list_reset_group_FULL.bin",
+              "payload_line": 636
+            },
+            {
+              "response": "references/physical-18-storage-details/0376-udws_nvm2_list_reset_group_FACTORY.bin",
+              "payload_line": 701
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 721
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 259
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 259,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      },
+      {
+        "udw_command": "nvm2.get_for_c 77491 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 77491,
+        "known_name": "DSID_PEN_HISTORY_DS_CMY_1_PEN_ID_BITS_8",
+        "nvm_type": "NVM_SIM_UNSIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 791
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 722
+            },
+            {
+              "response": "references/physical-18-storage-details/0375-udws_nvm2_list_reset_group_FULL.bin",
+              "payload_line": 637
+            },
+            {
+              "response": "references/physical-18-storage-details/0376-udws_nvm2_list_reset_group_FACTORY.bin",
+              "payload_line": 702
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 722
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 260
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 260,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      }
+    ],
+    "estimated_response_bytes_upper_bound": 218,
+    "response_batch_limit_bytes": 4096,
+    "review_source": "references/storage_query_review.json",
+    "plan_index": 4
+  },
+  {
+    "command": "udws \"nvm2.get_for_c 77492 0; nvm2.get_for_c 77616 0; nvm2.get_for_c 77962 0; nvm2.get_for_c 77963 0;\"",
+    "classification": "reviewed-information-query",
+    "purpose": "Exercise known-name and bounded storage helper read paths.",
+    "phase": "nvm_scalar_gaps",
+    "timeout": 90,
+    "udw_count": 4,
+    "uart_line_bytes": 102,
+    "expected": [
+      {
+        "udw_command": "nvm2.get_for_c 77492 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 77492,
+        "known_name": "DSID_PEN_HISTORY_DS_CMY_1_PEN_ID_BITS_9",
+        "nvm_type": "NVM_SIM_UNSIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 792
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 723
+            },
+            {
+              "response": "references/physical-18-storage-details/0375-udws_nvm2_list_reset_group_FULL.bin",
+              "payload_line": 638
+            },
+            {
+              "response": "references/physical-18-storage-details/0376-udws_nvm2_list_reset_group_FACTORY.bin",
+              "payload_line": 703
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 723
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 261
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 261,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      },
+      {
+        "udw_command": "nvm2.get_for_c 77616 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 77616,
+        "known_name": "DSID_PEN_T_SCORE",
+        "nvm_type": "NVM_SIM_SIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 808
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 737
+            },
+            {
+              "response": "references/physical-18-storage-details/0376-udws_nvm2_list_reset_group_FACTORY.bin",
+              "payload_line": 714
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 737
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 275
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 275,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      },
+      {
+        "udw_command": "nvm2.get_for_c 77962 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 77962,
+        "known_name": "DSID_PEN_IGNORE_ERROR_BITS_1",
+        "nvm_type": "NVM_SIM_SIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 858
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 738
+            },
+            {
+              "response": "references/physical-18-storage-details/0376-udws_nvm2_list_reset_group_FACTORY.bin",
+              "payload_line": 715
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 738
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 276
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 276,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      },
+      {
+        "udw_command": "nvm2.get_for_c 77963 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 77963,
+        "known_name": "DSID_PEN_IGNORE_ERROR_BITS_2",
+        "nvm_type": "NVM_SIM_SIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 859
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 739
+            },
+            {
+              "response": "references/physical-18-storage-details/0376-udws_nvm2_list_reset_group_FACTORY.bin",
+              "payload_line": 716
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 739
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 277
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 277,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      }
+    ],
+    "estimated_response_bytes_upper_bound": 218,
+    "response_batch_limit_bytes": 4096,
+    "review_source": "references/storage_query_review.json",
+    "plan_index": 5
+  },
+  {
+    "command": "udws \"nvm2.get_for_c 77964 0; nvm2.get_for_c 78069 0; nvm2.get_for_c 78540 0; nvm2.get_for_c 78541 0;\"",
+    "classification": "reviewed-information-query",
+    "purpose": "Exercise known-name and bounded storage helper read paths.",
+    "phase": "nvm_scalar_gaps",
+    "timeout": 90,
+    "udw_count": 4,
+    "uart_line_bytes": 102,
+    "expected": [
+      {
+        "udw_command": "nvm2.get_for_c 77964 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 77964,
+        "known_name": "DSID_PEN_IGNORE_ERROR_BITS_3",
+        "nvm_type": "NVM_SIM_SIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 860
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 740
+            },
+            {
+              "response": "references/physical-18-storage-details/0376-udws_nvm2_list_reset_group_FACTORY.bin",
+              "payload_line": 717
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 740
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 278
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 278,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      },
+      {
+        "udw_command": "nvm2.get_for_c 78069 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 78069,
+        "known_name": "DSID_PRINTHEAD_CAL_STATE",
+        "nvm_type": "NVM_SIM_UNSIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 869
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 758
+            },
+            {
+              "response": "references/physical-18-storage-details/0375-udws_nvm2_list_reset_group_FULL.bin",
+              "payload_line": 647
+            },
+            {
+              "response": "references/physical-18-storage-details/0376-udws_nvm2_list_reset_group_FACTORY.bin",
+              "payload_line": 735
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 758
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 296
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 296,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      },
+      {
+        "udw_command": "nvm2.get_for_c 78540 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 78540,
+        "known_name": "DSID_PEN_TOTAL_HP_INK_USAGE_UL",
+        "nvm_type": "NVM_SIM_UNSIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 893
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 741
+            },
+            {
+              "response": "references/physical-18-storage-details/0376-udws_nvm2_list_reset_group_FACTORY.bin",
+              "payload_line": 718
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 741
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 279
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 279,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      },
+      {
+        "udw_command": "nvm2.get_for_c 78541 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 78541,
+        "known_name": "DSID_PEN_TOTAL_K_INK_USAGE_UL",
+        "nvm_type": "NVM_SIM_UNSIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 894
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 742
+            },
+            {
+              "response": "references/physical-18-storage-details/0376-udws_nvm2_list_reset_group_FACTORY.bin",
+              "payload_line": 719
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 742
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 280
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 280,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      }
+    ],
+    "estimated_response_bytes_upper_bound": 218,
+    "response_batch_limit_bytes": 4096,
+    "review_source": "references/storage_query_review.json",
+    "plan_index": 6
+  },
+  {
+    "command": "udws \"nvm2.get_for_c 78542 0; nvm2.get_for_c 78543 0; nvm2.get_for_c 78544 0; nvm2.get_for_c 78815 0;\"",
+    "classification": "reviewed-information-query",
+    "purpose": "Exercise known-name and bounded storage helper read paths.",
+    "phase": "nvm_scalar_gaps",
+    "timeout": 90,
+    "udw_count": 4,
+    "uart_line_bytes": 102,
+    "expected": [
+      {
+        "udw_command": "nvm2.get_for_c 78542 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 78542,
+        "known_name": "DSID_PEN_TOTAL_K_HP_INK_USAGE_UL",
+        "nvm_type": "NVM_SIM_UNSIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 895
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 743
+            },
+            {
+              "response": "references/physical-18-storage-details/0376-udws_nvm2_list_reset_group_FACTORY.bin",
+              "payload_line": 720
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 743
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 281
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 281,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      },
+      {
+        "udw_command": "nvm2.get_for_c 78543 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 78543,
+        "known_name": "DSID_PEN_TOTAL_CMYZ_INK_USAGE_UL",
+        "nvm_type": "NVM_SIM_UNSIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 896
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 744
+            },
+            {
+              "response": "references/physical-18-storage-details/0376-udws_nvm2_list_reset_group_FACTORY.bin",
+              "payload_line": 721
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 744
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 282
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 282,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      },
+      {
+        "udw_command": "nvm2.get_for_c 78544 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 78544,
+        "known_name": "DSID_PEN_TOTAL_CMYZ_HP_INK_USAGE_UL",
+        "nvm_type": "NVM_SIM_UNSIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 897
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 745
+            },
+            {
+              "response": "references/physical-18-storage-details/0376-udws_nvm2_list_reset_group_FACTORY.bin",
+              "payload_line": 722
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 745
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 283
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 283,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      },
+      {
+        "udw_command": "nvm2.get_for_c 78815 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 78815,
+        "known_name": "DSID_PEN_CHUTE_DS_LEFT_PEN_ID_BITS_ADDR_MODE_LAST_GOOD",
+        "nvm_type": "NVM_SIM_UNSIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 928
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 746
+            },
+            {
+              "response": "references/physical-18-storage-details/0375-udws_nvm2_list_reset_group_FULL.bin",
+              "payload_line": 645
+            },
+            {
+              "response": "references/physical-18-storage-details/0376-udws_nvm2_list_reset_group_FACTORY.bin",
+              "payload_line": 723
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 746
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 284
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 284,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      }
+    ],
+    "estimated_response_bytes_upper_bound": 218,
+    "response_batch_limit_bytes": 4096,
+    "review_source": "references/storage_query_review.json",
+    "plan_index": 7
+  },
+  {
+    "command": "udws \"nvm2.get_for_c 78816 0; nvm2.get_for_c 79308 0; nvm2.get_for_c 79309 0; nvm2.get_for_c 79310 0;\"",
+    "classification": "reviewed-information-query",
+    "purpose": "Exercise known-name and bounded storage helper read paths.",
+    "phase": "nvm_scalar_gaps",
+    "timeout": 90,
+    "udw_count": 4,
+    "uart_line_bytes": 102,
+    "expected": [
+      {
+        "udw_command": "nvm2.get_for_c 78816 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 78816,
+        "known_name": "DSID_PEN_CHUTE_DS_RIGHT_PEN_ID_BITS_ADDR_MODE_LAST_GOOD",
+        "nvm_type": "NVM_SIM_UNSIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 929
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 747
+            },
+            {
+              "response": "references/physical-18-storage-details/0375-udws_nvm2_list_reset_group_FULL.bin",
+              "payload_line": 646
+            },
+            {
+              "response": "references/physical-18-storage-details/0376-udws_nvm2_list_reset_group_FACTORY.bin",
+              "payload_line": 724
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 747
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 285
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 285,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      },
+      {
+        "udw_command": "nvm2.get_for_c 79308 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 79308,
+        "known_name": "DSID_PEN_HISTORY_DS_K_0_PAGE_COUNT",
+        "nvm_type": "NVM_SIM_UNSIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 965
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 748
+            },
+            {
+              "response": "references/physical-18-storage-details/0376-udws_nvm2_list_reset_group_FACTORY.bin",
+              "payload_line": 725
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 748
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 286
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 286,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      },
+      {
+        "udw_command": "nvm2.get_for_c 79309 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 79309,
+        "known_name": "DSID_PEN_HISTORY_DS_K_1_PAGE_COUNT",
+        "nvm_type": "NVM_SIM_UNSIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 966
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 749
+            },
+            {
+              "response": "references/physical-18-storage-details/0376-udws_nvm2_list_reset_group_FACTORY.bin",
+              "payload_line": 726
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 749
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 287
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 287,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      },
+      {
+        "udw_command": "nvm2.get_for_c 79310 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 79310,
+        "known_name": "DSID_PEN_HISTORY_DS_CMY_0_PAGE_COUNT",
+        "nvm_type": "NVM_SIM_UNSIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 967
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 750
+            },
+            {
+              "response": "references/physical-18-storage-details/0376-udws_nvm2_list_reset_group_FACTORY.bin",
+              "payload_line": 727
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 750
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 288
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 288,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      }
+    ],
+    "estimated_response_bytes_upper_bound": 218,
+    "response_batch_limit_bytes": 4096,
+    "review_source": "references/storage_query_review.json",
+    "plan_index": 8
+  },
+  {
+    "command": "udws \"nvm2.get_for_c 79311 0; nvm2.get_for_c 80085 0; nvm2.get_for_c 80827 0; nvm2.get_for_c 80828 0;\"",
+    "classification": "reviewed-information-query",
+    "purpose": "Exercise known-name and bounded storage helper read paths.",
+    "phase": "nvm_scalar_gaps",
+    "timeout": 90,
+    "udw_count": 4,
+    "uart_line_bytes": 102,
+    "expected": [
+      {
+        "udw_command": "nvm2.get_for_c 79311 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 79311,
+        "known_name": "DSID_PEN_HISTORY_DS_CMY_1_PAGE_COUNT",
+        "nvm_type": "NVM_SIM_UNSIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 968
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 751
+            },
+            {
+              "response": "references/physical-18-storage-details/0376-udws_nvm2_list_reset_group_FACTORY.bin",
+              "payload_line": 728
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 751
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 289
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 289,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      },
+      {
+        "udw_command": "nvm2.get_for_c 80085 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 80085,
+        "known_name": "DSID_PEN_INTYWPH",
+        "nvm_type": "NVM_SIM_UNSIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 981
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 754
+            },
+            {
+              "response": "references/physical-18-storage-details/0376-udws_nvm2_list_reset_group_FACTORY.bin",
+              "payload_line": 731
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 754
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 292
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 292,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      },
+      {
+        "udw_command": "nvm2.get_for_c 80827 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 80827,
+        "known_name": "DSID_PEN_HOST_PENS_USED",
+        "nvm_type": "NVM_SIM_UNSIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 985
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 759
+            },
+            {
+              "response": "references/physical-18-storage-details/0376-udws_nvm2_list_reset_group_FACTORY.bin",
+              "payload_line": 736
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 759
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 297
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 297,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      },
+      {
+        "udw_command": "nvm2.get_for_c 80828 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 80828,
+        "known_name": "DSID_PEN_HOST_TRADE_OVERRIDE",
+        "nvm_type": "NVM_SIM_UNSIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 986
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 760
+            },
+            {
+              "response": "references/physical-18-storage-details/0374-udws_nvm2_list_reset_group_SEMI.bin",
+              "payload_line": 181
+            },
+            {
+              "response": "references/physical-18-storage-details/0375-udws_nvm2_list_reset_group_FULL.bin",
+              "payload_line": 648
+            },
+            {
+              "response": "references/physical-18-storage-details/0376-udws_nvm2_list_reset_group_FACTORY.bin",
+              "payload_line": 737
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 760
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 298
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 298,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      }
+    ],
+    "estimated_response_bytes_upper_bound": 218,
+    "response_batch_limit_bytes": 4096,
+    "review_source": "references/storage_query_review.json",
+    "plan_index": 9
+  },
+  {
+    "command": "udws \"nvm2.get_for_c 80868 0; nvm2.get_for_c 81084 0; nvm2.get_for_c 81085 0; nvm2.get_for_c 81086 0;\"",
+    "classification": "reviewed-information-query",
+    "purpose": "Exercise known-name and bounded storage helper read paths.",
+    "phase": "nvm_scalar_gaps",
+    "timeout": 90,
+    "udw_count": 4,
+    "uart_line_bytes": 102,
+    "expected": [
+      {
+        "udw_command": "nvm2.get_for_c 80868 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 80868,
+        "known_name": "DSID_PEN_ALLOW_PROTO",
+        "nvm_type": "NVM_SIM_UNSIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 987
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 761
+            },
+            {
+              "response": "references/physical-18-storage-details/0374-udws_nvm2_list_reset_group_SEMI.bin",
+              "payload_line": 182
+            },
+            {
+              "response": "references/physical-18-storage-details/0375-udws_nvm2_list_reset_group_FULL.bin",
+              "payload_line": 649
+            },
+            {
+              "response": "references/physical-18-storage-details/0376-udws_nvm2_list_reset_group_FACTORY.bin",
+              "payload_line": 738
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 761
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 299
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 299,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      },
+      {
+        "udw_command": "nvm2.get_for_c 81084 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 81084,
+        "known_name": "DSID_PEN_HISTORY_DS_K_0_SECOND_TOE_TEST_COMPLETE",
+        "nvm_type": "NVM_SIM_UNSIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 992
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 762
+            },
+            {
+              "response": "references/physical-18-storage-details/0375-udws_nvm2_list_reset_group_FULL.bin",
+              "payload_line": 650
+            },
+            {
+              "response": "references/physical-18-storage-details/0376-udws_nvm2_list_reset_group_FACTORY.bin",
+              "payload_line": 739
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 762
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 300
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 300,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      },
+      {
+        "udw_command": "nvm2.get_for_c 81085 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 81085,
+        "known_name": "DSID_PEN_HISTORY_DS_K_1_SECOND_TOE_TEST_COMPLETE",
+        "nvm_type": "NVM_SIM_UNSIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 993
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 763
+            },
+            {
+              "response": "references/physical-18-storage-details/0375-udws_nvm2_list_reset_group_FULL.bin",
+              "payload_line": 651
+            },
+            {
+              "response": "references/physical-18-storage-details/0376-udws_nvm2_list_reset_group_FACTORY.bin",
+              "payload_line": 740
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 763
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 301
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 301,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      },
+      {
+        "udw_command": "nvm2.get_for_c 81086 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 81086,
+        "known_name": "DSID_PEN_HISTORY_DS_CMY_0_SECOND_TOE_TEST_COMPLETE",
+        "nvm_type": "NVM_SIM_UNSIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 994
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 764
+            },
+            {
+              "response": "references/physical-18-storage-details/0375-udws_nvm2_list_reset_group_FULL.bin",
+              "payload_line": 652
+            },
+            {
+              "response": "references/physical-18-storage-details/0376-udws_nvm2_list_reset_group_FACTORY.bin",
+              "payload_line": 741
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 764
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 302
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 302,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      }
+    ],
+    "estimated_response_bytes_upper_bound": 218,
+    "response_batch_limit_bytes": 4096,
+    "review_source": "references/storage_query_review.json",
+    "plan_index": 10
+  },
+  {
+    "command": "udws \"nvm2.get_for_c 81087 0; nvm2.get_for_c 81859 0; nvm2.get_for_c 81864 0; nvm2.get_for_c 81865 0;\"",
+    "classification": "reviewed-information-query",
+    "purpose": "Exercise known-name and bounded storage helper read paths.",
+    "phase": "nvm_scalar_gaps",
+    "timeout": 90,
+    "udw_count": 4,
+    "uart_line_bytes": 102,
+    "expected": [
+      {
+        "udw_command": "nvm2.get_for_c 81087 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 81087,
+        "known_name": "DSID_PEN_HISTORY_DS_CMY_1_SECOND_TOE_TEST_COMPLETE",
+        "nvm_type": "NVM_SIM_UNSIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 995
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 765
+            },
+            {
+              "response": "references/physical-18-storage-details/0375-udws_nvm2_list_reset_group_FULL.bin",
+              "payload_line": 653
+            },
+            {
+              "response": "references/physical-18-storage-details/0376-udws_nvm2_list_reset_group_FACTORY.bin",
+              "payload_line": 742
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 765
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 303
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 303,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      },
+      {
+        "udw_command": "nvm2.get_for_c 81859 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 81859,
+        "known_name": "DSID_PEN_FAKE_PRINTER_BUILD_DATE",
+        "nvm_type": "NVM_SIM_UNSIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 999
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 766
+            },
+            {
+              "response": "references/physical-18-storage-details/0375-udws_nvm2_list_reset_group_FULL.bin",
+              "payload_line": 654
+            },
+            {
+              "response": "references/physical-18-storage-details/0376-udws_nvm2_list_reset_group_FACTORY.bin",
+              "payload_line": 743
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 766
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 304
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 304,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      },
+      {
+        "udw_command": "nvm2.get_for_c 81864 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 81864,
+        "known_name": "DSID_PEN_HISTORY_DS_K_0_USED_BUT_FULL_AT_INSTALL",
+        "nvm_type": "NVM_SIM_UNSIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 1000
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 767
+            },
+            {
+              "response": "references/physical-18-storage-details/0375-udws_nvm2_list_reset_group_FULL.bin",
+              "payload_line": 655
+            },
+            {
+              "response": "references/physical-18-storage-details/0376-udws_nvm2_list_reset_group_FACTORY.bin",
+              "payload_line": 744
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 767
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 305
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 305,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      },
+      {
+        "udw_command": "nvm2.get_for_c 81865 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 81865,
+        "known_name": "DSID_PEN_HISTORY_DS_K_1_USED_BUT_FULL_AT_INSTALL",
+        "nvm_type": "NVM_SIM_UNSIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 1001
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 768
+            },
+            {
+              "response": "references/physical-18-storage-details/0375-udws_nvm2_list_reset_group_FULL.bin",
+              "payload_line": 656
+            },
+            {
+              "response": "references/physical-18-storage-details/0376-udws_nvm2_list_reset_group_FACTORY.bin",
+              "payload_line": 745
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 768
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 306
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 306,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      }
+    ],
+    "estimated_response_bytes_upper_bound": 218,
+    "response_batch_limit_bytes": 4096,
+    "review_source": "references/storage_query_review.json",
+    "plan_index": 11
+  },
+  {
+    "command": "udws \"nvm2.get_for_c 81866 0; nvm2.get_for_c 81867 0;\"",
+    "classification": "reviewed-information-query",
+    "purpose": "Exercise known-name and bounded storage helper read paths.",
+    "phase": "nvm_scalar_gaps",
+    "timeout": 90,
+    "udw_count": 2,
+    "uart_line_bytes": 54,
+    "expected": [
+      {
+        "udw_command": "nvm2.get_for_c 81866 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 81866,
+        "known_name": "DSID_PEN_HISTORY_DS_CMY_0_USED_BUT_FULL_AT_INSTALL",
+        "nvm_type": "NVM_SIM_UNSIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 1002
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 769
+            },
+            {
+              "response": "references/physical-18-storage-details/0375-udws_nvm2_list_reset_group_FULL.bin",
+              "payload_line": 657
+            },
+            {
+              "response": "references/physical-18-storage-details/0376-udws_nvm2_list_reset_group_FACTORY.bin",
+              "payload_line": 746
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 769
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 307
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 307,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      },
+      {
+        "udw_command": "nvm2.get_for_c 81867 0",
+        "name": "nvm2.get_for_c",
+        "handler": "0xa02f450f",
+        "dsid": 81867,
+        "known_name": "DSID_PEN_HISTORY_DS_CMY_1_USED_BUT_FULL_AT_INSTALL",
+        "nvm_type": "NVM_SIM_UNSIGNED",
+        "array_index": 0,
+        "identity_source": {
+          "get_all": {
+            "response": "references/physical-16-storage-metadata/0001-udws_nvm2_get_all.bin",
+            "payload_line": 1003
+          },
+          "reset_membership": [
+            {
+              "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+              "payload_line": 770
+            },
+            {
+              "response": "references/physical-18-storage-details/0375-udws_nvm2_list_reset_group_FULL.bin",
+              "payload_line": 658
+            },
+            {
+              "response": "references/physical-18-storage-details/0376-udws_nvm2_list_reset_group_FACTORY.bin",
+              "payload_line": 747
+            },
+            {
+              "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+              "payload_line": 770
+            }
+          ],
+          "file_object_list": {
+            "response": "references/physical-18-storage-details/0164-udws_nvm2_list_objects_in_file_128.bin",
+            "object_ordinal": 308
+          },
+          "table_size": "references/physical-18-storage-details/0063-udws_nvm2_get_table_size_61.bin"
+        },
+        "expected_file_id": 128,
+        "original_table_index": 61,
+        "original_object_index": 308,
+        "review": "Known physically enumerated NVM scalar DSID, scalar index0. The NVM backend is independent of the possibly missing DS2 registry entry."
+      }
+    ],
+    "estimated_response_bytes_upper_bound": 144,
+    "response_batch_limit_bytes": 4096,
+    "review_source": "references/storage_query_review.json",
+    "plan_index": 12
+  }
+]

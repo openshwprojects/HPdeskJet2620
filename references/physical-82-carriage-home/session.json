@@ -1,0 +1,38 @@
+{
+  "started_utc": "2026-10-29T22:35:33.518209+00:00",
+  "port": "COM16",
+  "baud": 115200,
+  "data_bits": 8,
+  "parity": "N",
+  "stop_bits": 1,
+  "line_ending": "CRLF",
+  "source": "physical UART",
+  "rts": false,
+  "dtr": false,
+  "tx_character_delay_seconds": 0.003,
+  "capture_program_sha256": "685d8b07cd5afafeba32f37eb5722416458a08dafe09290576957e50b31bdb03",
+  "requested_rx_buffer_bytes": 1048576,
+  "requested_tx_buffer_bytes": 65536,
+  "initial_prompt_seen": true,
+  "stop_reason": "command-did-not-return-prompt",
+  "ended_utc": "2026-10-29T22:36:04.377113+00:00",
+  "commands": [
+    {
+      "name": "fm.carriage_home",
+      "command": "udws \"fm.carriage_home;\"",
+      "argument_syntax": "",
+      "classification": "user-requested print-carriage homing (round 8)",
+      "purpose": "Home the print carriage. Handler 0xa00e084a posts callback 0xa00e2454 (mech request 0x21) to the fm task and waits without timeout.",
+      "timeout": 30,
+      "index": 1,
+      "started_utc": "2026-10-29T22:35:34.219826+00:00",
+      "response_file": "0001-udws_fm_carriage_home.bin",
+      "status": "timeout-no-prompt",
+      "ended_utc": "2026-10-29T22:36:04.374972+00:00",
+      "elapsed_seconds": 30.154,
+      "response_bytes": 26,
+      "response_sha256": "d15936f226f471fdcdcad735d50276fc70fcb839e16df7518de096518eb96b1e",
+      "prompt_returned": false
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "command": "udws \"bio.rev_str; udw.get_board_id; shm.msecs;\"",
+    "classification": "reviewed-information-query",
+    "purpose": "Confirm firmware identity, board identity, and uptime after the physical command captures.",
+    "review_source": "references/query_review.json",
+    "timeout": 20
+  },
+  {
+    "command": "i",
+    "classification": "reviewed-information-query",
+    "purpose": "Capture final RTOS task state and verify the native shell still returns its prompt.",
+    "review_source": "references/shell_query_review.json",
+    "timeout": 20
+  }
+]

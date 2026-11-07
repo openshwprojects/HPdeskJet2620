@@ -1,0 +1,14 @@
+[
+  {
+    "command": "udws \"ustd.sizeof /ram/codex_hex_test;\"",
+    "classification": "reviewed-ram-filesystem-query",
+    "purpose": "Verify the exact upload destination or fixed firmware scratch file is absent before testing ram.file_write.",
+    "timeout": 20
+  },
+  {
+    "command": "udws \"ustd.sizeof /ram/file_write.tmp;\"",
+    "classification": "reviewed-ram-filesystem-query",
+    "purpose": "Verify the exact upload destination or fixed firmware scratch file is absent before testing ram.file_write.",
+    "timeout": 20
+  }
+]

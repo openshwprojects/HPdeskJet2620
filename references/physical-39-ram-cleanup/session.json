@@ -1,0 +1,58 @@
+{
+  "started_utc": "2026-10-29T20:12:23.310833+00:00",
+  "port": "COM16",
+  "baud": 115200,
+  "data_bits": 8,
+  "parity": "N",
+  "stop_bits": 1,
+  "line_ending": "CRLF",
+  "source": "physical UART",
+  "rts": false,
+  "dtr": false,
+  "tx_character_delay_seconds": 0.003,
+  "capture_program_sha256": "685d8b07cd5afafeba32f37eb5722416458a08dafe09290576957e50b31bdb03",
+  "requested_rx_buffer_bytes": 1048576,
+  "requested_tx_buffer_bytes": 65536,
+  "initial_prompt_seen": true,
+  "stop_reason": "batch-complete",
+  "ended_utc": "2026-10-29T20:12:25.098534+00:00",
+  "commands": [
+    {
+      "command": "udws \"ram.rmdir /codex_uart_20261029a 1;\"",
+      "classification": "reviewed-owned-empty-ram-directory-cleanup",
+      "purpose": "Remove only our physically verified empty test directory after guard0 errno158. Nativepath excludes/ram prefix; flag1 clears only thisdirectory stale child counters/protection flags. Not recursive.",
+      "review_source": "references/ram_filesystem_review.json",
+      "preconditions": [
+        "physical35 closed all owned file/map/directoryhandles anddeleted a/c",
+        "physical38 deleted uploadx",
+        "physical38/5 guardednative rmdirreturned158",
+        "physical38/7 lists0entries"
+      ],
+      "timeout": 20,
+      "index": 1,
+      "started_utc": "2026-10-29T20:12:24.016538+00:00",
+      "response_file": "0001-udws_ram_rmdir_codex_uart_20261029a_1.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:12:24.585202+00:00",
+      "elapsed_seconds": 0.568,
+      "response_bytes": 135,
+      "response_sha256": "b1b091ea20ff4a3e8ec44a41d72866166b2a26104f11ec24f8e7ab22a6274b60",
+      "prompt_returned": true
+    },
+    {
+      "command": "udws \"ustd.ls /ram;\"",
+      "classification": "reviewed-ram-filesystem-query",
+      "purpose": "Verify original eightrootentries andabsenceofourtestdirectory.",
+      "timeout": 20,
+      "index": 2,
+      "started_utc": "2026-10-29T20:12:24.587443+00:00",
+      "response_file": "0002-udws_ustd_ls_ram.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:12:25.096413+00:00",
+      "elapsed_seconds": 0.508,
+      "response_bytes": 568,
+      "response_sha256": "db6a62fca215b4d192d717ed63dc807c7bcdc71f93e161c25e6632132d859a59",
+      "prompt_returned": true
+    }
+  ]
+}

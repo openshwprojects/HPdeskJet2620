@@ -1,0 +1,16 @@
+{
+  "started_utc": "2026-10-29T18:38:47.514428+00:00",
+  "port": "COM16",
+  "baud": 115200,
+  "data_bits": 8,
+  "parity": "N",
+  "stop_bits": 1,
+  "line_ending": "CR",
+  "source": "physical UART",
+  "rts": false,
+  "dtr": false,
+  "commands": [],
+  "stop_reason": "listener-interrupted-after-user-confirmed-restart",
+  "mode": "passive-only; no transmitted bytes",
+  "termination_note": "Listener interrupted with Ctrl-C before resuming commands; original process did not finalize metadata. No ending timestamp inferred."
+}

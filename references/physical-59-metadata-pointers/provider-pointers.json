@@ -1,0 +1,437 @@
+{
+  "observations": [
+    {
+      "label": "led_interface_0",
+      "address": "0x20ab0148",
+      "count": 4,
+      "hex": "a061f594",
+      "words_be": [
+        "0xa061f594"
+      ],
+      "response_file": "0006-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "d9e28605ecd6861603e7359a1da2d3aee99880cd5406d4a73019025d6f78e8ff"
+    },
+    {
+      "label": "led_interface_0_object_vtable",
+      "address": "0xa061f594",
+      "count": 4,
+      "hex": "a061f598",
+      "words_be": [
+        "0xa061f598"
+      ],
+      "response_file": "0015-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "1610aac7933c5e6dfa5b788ed48a78909c40dae19b1b7fe6ca81ff390447e5fc"
+    },
+    {
+      "label": "led_interface_0_vtable_methods",
+      "address": "0xa061f598",
+      "count": 64,
+      "hex": "a0431a31a0431a41a0431a4da0431979a0431979a04319d1a04319e9a043199da0431a01a0431a59a04319a9a0431991a0431a65a061f5d0a0431aa1a0431aa3",
+      "words_be": [
+        "0xa0431a31",
+        "0xa0431a41",
+        "0xa0431a4d",
+        "0xa0431979",
+        "0xa0431979",
+        "0xa04319d1",
+        "0xa04319e9",
+        "0xa043199d",
+        "0xa0431a01",
+        "0xa0431a59",
+        "0xa04319a9",
+        "0xa0431991",
+        "0xa0431a65",
+        "0xa061f5d0",
+        "0xa0431aa1",
+        "0xa0431aa3"
+      ],
+      "response_file": "0024-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "b48b10f1e703c87a6e605a003b0b7fe52d5dda87a017db21769ee5d08a4d9faa"
+    },
+    {
+      "label": "led_interface_1",
+      "address": "0x20ab014c",
+      "count": 4,
+      "hex": "a0517544",
+      "words_be": [
+        "0xa0517544"
+      ],
+      "response_file": "0033-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "673fac89ba341afb16238aa450af37252d6f5cf5e971fef4a93964fe4fc8b4f0"
+    },
+    {
+      "label": "led_interface_1_object_vtable",
+      "address": "0xa0517544",
+      "count": 4,
+      "hex": "a0517548",
+      "words_be": [
+        "0xa0517548"
+      ],
+      "response_file": "0042-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "95818bf79cdc5ce18d720f2a8486e3b39b8379f95a83c58d930491639ead5d16"
+    },
+    {
+      "label": "led_interface_1_vtable_methods",
+      "address": "0xa0517548",
+      "count": 64,
+      "hex": "a005b379a005b3d9a005c38da005c46ba005c475a005be5da005be9fa005bf59a005b8fba005b92ba005b913a005b945a005b439a005b44fa005c373a005be43",
+      "words_be": [
+        "0xa005b379",
+        "0xa005b3d9",
+        "0xa005c38d",
+        "0xa005c46b",
+        "0xa005c475",
+        "0xa005be5d",
+        "0xa005be9f",
+        "0xa005bf59",
+        "0xa005b8fb",
+        "0xa005b92b",
+        "0xa005b913",
+        "0xa005b945",
+        "0xa005b439",
+        "0xa005b44f",
+        "0xa005c373",
+        "0xa005be43"
+      ],
+      "response_file": "0051-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "bd6855f97b58aea9e90f3e7146b89d9f4fbc6bcc41ca62244c00d20e2fbbc09b"
+    },
+    {
+      "label": "led_interface_2",
+      "address": "0x20ab0150",
+      "count": 4,
+      "hex": "a061e1e4",
+      "words_be": [
+        "0xa061e1e4"
+      ],
+      "response_file": "0060-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "4f4b209d52a6b909595773526f042c14ddf0e3be966cedbe9be4dfa8992a8162"
+    },
+    {
+      "label": "led_interface_2_object_vtable",
+      "address": "0xa061e1e4",
+      "count": 4,
+      "hex": "a061e1e8",
+      "words_be": [
+        "0xa061e1e8"
+      ],
+      "response_file": "0069-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "bd1b240d3e59a938386197c9e9164d69193bd5e4f01f7fce3afa4d8c171acf2a"
+    },
+    {
+      "label": "led_interface_2_vtable_methods",
+      "address": "0xa061e1e8",
+      "count": 64,
+      "hex": "a042ce4fa042ce6ba042ce87a042cf3fa042cfc3057300000000000000000000a061e24400000001a061e25c00000001a042d02100000001a061e27400000000",
+      "words_be": [
+        "0xa042ce4f",
+        "0xa042ce6b",
+        "0xa042ce87",
+        "0xa042cf3f",
+        "0xa042cfc3",
+        "0x5730000",
+        "0x0",
+        "0x0",
+        "0xa061e244",
+        "0x1",
+        "0xa061e25c",
+        "0x1",
+        "0xa042d021",
+        "0x1",
+        "0xa061e274",
+        "0x0"
+      ],
+      "response_file": "0078-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "ef0217b25daf6a108620756b16f5b58948858420e940125050b5e7cdb61b96a8"
+    },
+    {
+      "label": "led_interface_3",
+      "address": "0x20ab0154",
+      "count": 4,
+      "hex": "a05c35a8",
+      "words_be": [
+        "0xa05c35a8"
+      ],
+      "response_file": "0087-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "9de19ecb22f1bfc0493fa45e44091f190ba8099e02c8284112b42359d4c790cc"
+    },
+    {
+      "label": "led_interface_3_object_vtable",
+      "address": "0xa05c35a8",
+      "count": 4,
+      "hex": "a05c35ac",
+      "words_be": [
+        "0xa05c35ac"
+      ],
+      "response_file": "0096-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "80951c3c86597b588a4a4ea597be5535e103323d340f94a91232d7ea506fa2a3"
+    },
+    {
+      "label": "led_interface_3_vtable_methods",
+      "address": "0xa05c35ac",
+      "count": 64,
+      "hex": "a02cdd8da02cdd99a02cdda7a02cddb3a02cddbda02cddc7a02cddd1a02cdddb02370000a05c361400000000a05c361400000001a05c362c00000001a02cdde5",
+      "words_be": [
+        "0xa02cdd8d",
+        "0xa02cdd99",
+        "0xa02cdda7",
+        "0xa02cddb3",
+        "0xa02cddbd",
+        "0xa02cddc7",
+        "0xa02cddd1",
+        "0xa02cdddb",
+        "0x2370000",
+        "0xa05c3614",
+        "0x0",
+        "0xa05c3614",
+        "0x1",
+        "0xa05c362c",
+        "0x1",
+        "0xa02cdde5"
+      ],
+      "response_file": "0105-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "2712edb9fbc279148a77b8b21d8666000f53baba125c74c49d3158e736bdc551"
+    },
+    {
+      "label": "led_interface_4",
+      "address": "0x20ab0158",
+      "count": 4,
+      "hex": "a06053c0",
+      "words_be": [
+        "0xa06053c0"
+      ],
+      "response_file": "0114-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "f328fa2df378640aedfc9df78152226cb0db5cbe459ebd0d98afe8bbc97ba1a5"
+    },
+    {
+      "label": "led_interface_4_object_vtable",
+      "address": "0xa06053c0",
+      "count": 4,
+      "hex": "a06054b4",
+      "words_be": [
+        "0xa06054b4"
+      ],
+      "response_file": "0123-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "d20bbf64eb3e4c2d80035e369d25c3eeecb86243dd210ef318c59974bcdce998"
+    },
+    {
+      "label": "led_interface_4_vtable_methods",
+      "address": "0xa06054b4",
+      "count": 64,
+      "hex": "a03bf13ba03bf157a03bf14fa03bf22ba03bf1b9a03bf239a03bf1afa03bf145a03bf247a03bf1d1a03bf1c5a03bf355a03bf39da03bf3a7a03bf3aba03bf3e5",
+      "words_be": [
+        "0xa03bf13b",
+        "0xa03bf157",
+        "0xa03bf14f",
+        "0xa03bf22b",
+        "0xa03bf1b9",
+        "0xa03bf239",
+        "0xa03bf1af",
+        "0xa03bf145",
+        "0xa03bf247",
+        "0xa03bf1d1",
+        "0xa03bf1c5",
+        "0xa03bf355",
+        "0xa03bf39d",
+        "0xa03bf3a7",
+        "0xa03bf3ab",
+        "0xa03bf3e5"
+      ],
+      "response_file": "0132-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "f2aed857a26e9b7ceac2ffa6da5f94934a65b93b77e7031aaa55683c719bc85e"
+    },
+    {
+      "label": "led_output",
+      "address": "0x2083e248",
+      "count": 4,
+      "hex": "a0567abc",
+      "words_be": [
+        "0xa0567abc"
+      ],
+      "response_file": "0141-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "f7f46897c38221945be527850c499258fc1424c3077c603bf9932216f7aa0a88"
+    },
+    {
+      "label": "led_output_object_vtable",
+      "address": "0xa0567abc",
+      "count": 4,
+      "hex": "a0567ac0",
+      "words_be": [
+        "0xa0567ac0"
+      ],
+      "response_file": "0150-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "7dc09f1c965e78033f513c56b51eadfb3721c311d0ce75a3b1d4090dccd9fd5c"
+    },
+    {
+      "label": "led_output_vtable_methods",
+      "address": "0xa0567ac0",
+      "count": 64,
+      "hex": "a024e565a024e677a024e56fa024e5a3a024e5e5a0567b40a024e6ef00000000a0567b58a024e76900000000a0567b78a024e7e900000000a0567b9ca024e865",
+      "words_be": [
+        "0xa024e565",
+        "0xa024e677",
+        "0xa024e56f",
+        "0xa024e5a3",
+        "0xa024e5e5",
+        "0xa0567b40",
+        "0xa024e6ef",
+        "0x0",
+        "0xa0567b58",
+        "0xa024e769",
+        "0x0",
+        "0xa0567b78",
+        "0xa024e7e9",
+        "0x0",
+        "0xa0567b9c",
+        "0xa024e865"
+      ],
+      "response_file": "0159-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "3f4baf15bcbbb940feb97b620fc2cd7b3c92509e93db485f127657d668b831e1"
+    },
+    {
+      "label": "rng_initialized_flag",
+      "address": "0x2089e40c",
+      "count": 4,
+      "hex": "00000001",
+      "words_be": [
+        "0x1"
+      ],
+      "response_file": "0168-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "36ef9f3f3eaaecc2e7c06f22c34f81ffa6063531a354cb98447ec50fe46ebfbd"
+    },
+    {
+      "label": "firm_string_registry_21_rows",
+      "address": "0x2091f7a4",
+      "count": 420,
+      "hex": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000211fb7dc211fb814211fb84c211fb884a03d88c9211fa5f8211fa724211fa6b400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "words_be": [
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x211fb7dc",
+        "0x211fb814",
+        "0x211fb84c",
+        "0x211fb884",
+        "0xa03d88c9",
+        "0x211fa5f8",
+        "0x211fa724",
+        "0x211fa6b4",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0"
+      ],
+      "response_file": "0177-udws_ustd_read_file_0_420.bin",
+      "response_sha256": "53005f1d0904aaf28e01859292be5f78df809d0954afbcb769628ef488dcb535"
+    },
+    {
+      "label": "assert_ring_metadata",
+      "address": "0x20004158",
+      "count": 24,
+      "hex": "05010100000000000000000e000000a2000000460000005c",
+      "words_be": [
+        "0x5010100",
+        "0x0",
+        "0xe",
+        "0xa2",
+        "0x46",
+        "0x5c"
+      ],
+      "response_file": "0186-udws_ustd_read_file_0_24.bin",
+      "response_sha256": "f005c1c60a2c22c0afc05b199d8dff2705c44dff21587af639b260b5005c7a87"
+    }
+  ],
+  "cleanup_complete": true,
+  "source_memory_written": false,
+  "scope": "Named LED interfaces/vtables, RNG initialization flag, 21 string registry rows, and assertion-ring metadata only."
+}

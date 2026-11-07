@@ -1,0 +1,46 @@
+{
+  "observations": [
+    {
+      "label": "settings_provider_header",
+      "address": "0x2084a0b4",
+      "count": 12,
+      "hex": "a06073ec2084a0c000000033",
+      "words_be": [
+        "0xa06073ec",
+        "0x2084a0c0",
+        "0x33"
+      ],
+      "response_file": "0006-udws_ustd_read_file_0_12.bin",
+      "response_sha256": "94c9848fee20411d2693aca802a2853cd99a6572e3c41fd38d22adb6a15cb01a"
+    },
+    {
+      "label": "cover_provider_method",
+      "address": "0x20848894",
+      "count": 4,
+      "hex": "a0304335",
+      "words_be": [
+        "0xa0304335"
+      ],
+      "response_file": "0015-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "eb4db51acd4d25fd39b3662534f7d2d5b27eddeb33ca0cbbeadee72cce8442b8"
+    },
+    {
+      "label": "cover_cached_descriptor",
+      "address": "0x20848c74",
+      "count": 20,
+      "hex": "0000000000000002000000010000000000000001",
+      "words_be": [
+        "0x0",
+        "0x2",
+        "0x1",
+        "0x0",
+        "0x1"
+      ],
+      "response_file": "0024-udws_ustd_read_file_0_20.bin",
+      "response_sha256": "a896c3e5079507c290ff3d3495efb002cd80041a28a74ffe7c738f6998e22e6c"
+    }
+  ],
+  "cleanup_complete": true,
+  "source_memory_written": false,
+  "scope": "Settings-provider header, cover getter method, and cached cover descriptor only."
+}

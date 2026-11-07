@@ -1,0 +1,3 @@
+unicorn==2.1.4
+# Optional disassembly helper: analysis/uart_decode.py
+capstone==5.0.7

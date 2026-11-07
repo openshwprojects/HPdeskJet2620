@@ -1,0 +1,37 @@
+{
+  "started_utc": "2026-10-29T19:53:58.208038+00:00",
+  "port": "COM16",
+  "baud": 115200,
+  "data_bits": 8,
+  "parity": "N",
+  "stop_bits": 1,
+  "line_ending": "CRLF",
+  "source": "physical UART",
+  "rts": false,
+  "dtr": false,
+  "tx_character_delay_seconds": 0.003,
+  "capture_program_sha256": "685d8b07cd5afafeba32f37eb5722416458a08dafe09290576957e50b31bdb03",
+  "requested_rx_buffer_bytes": 1048576,
+  "requested_tx_buffer_bytes": 65536,
+  "initial_prompt_seen": true,
+  "stop_reason": "batch-complete",
+  "ended_utc": "2026-10-29T19:53:59.505889+00:00",
+  "commands": [
+    {
+      "command": "udws \"bio.rev_str; udw.get_board_id; shm.msecs;\"",
+      "classification": "reviewed-information-query",
+      "purpose": "Verify the live printer identity and UART prompt before resuming the requested command testing.",
+      "review_source": "references/query_review.json",
+      "timeout": 20,
+      "index": 1,
+      "started_utc": "2026-10-29T19:53:58.934380+00:00",
+      "response_file": "0001-udws_bio_rev_str_udw_get_board_id_shm_msecs.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:53:59.503706+00:00",
+      "elapsed_seconds": 0.568,
+      "response_bytes": 160,
+      "response_sha256": "ae15bb94a8200336ee479ac1312672f2a0a6f217820b36e31e04f92f0971c224",
+      "prompt_returned": true
+    }
+  ]
+}

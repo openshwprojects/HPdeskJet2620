@@ -1,0 +1,17 @@
+{
+  "started_utc": "2026-10-29T18:37:09.647217+00:00",
+  "port": "COM16",
+  "baud": 115200,
+  "data_bits": 8,
+  "parity": "N",
+  "stop_bits": 1,
+  "line_ending": "CR",
+  "source": "physical UART",
+  "rts": false,
+  "dtr": false,
+  "passive_prompt_seen": false,
+  "prompt_seen_after_blank_enter": false,
+  "stop_reason": "asserted-device-no-shell-response",
+  "ended_utc": "2026-10-29T18:37:44.694338+00:00",
+  "commands": []
+}

@@ -1,0 +1,60 @@
+{
+  "started_utc": "2026-10-29T18:45:40.612638+00:00",
+  "port": "COM16",
+  "baud": 115200,
+  "data_bits": 8,
+  "parity": "N",
+  "stop_bits": 1,
+  "line_ending": "CRLF",
+  "source": "physical UART",
+  "rts": false,
+  "dtr": false,
+  "tx_character_delay_seconds": 0.003,
+  "initial_prompt_seen": true,
+  "stop_reason": "check-complete",
+  "ended_utc": "2026-10-29T18:45:42.416821+00:00",
+  "commands": [
+    {
+      "command": "udws \"bio.rev_str;\"",
+      "purpose": "Verify CRLF UART transmission after restart",
+      "classification": "information-query",
+      "index": 1,
+      "started_utc": "2026-10-29T18:45:41.254557+00:00",
+      "response_file": "0001-udws_bio_rev_str.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T18:45:41.657821+00:00",
+      "elapsed_seconds": 0.403,
+      "response_bytes": 68,
+      "response_sha256": "f55837846c1c73435d403cbdaa3dbc959e7d76d014028c806f38c0211129fc9f",
+      "prompt_returned": true
+    },
+    {
+      "command": "udws \"shm.msecs;\"",
+      "purpose": "Verify CRLF UART transmission after restart",
+      "classification": "information-query",
+      "index": 2,
+      "started_utc": "2026-10-29T18:45:41.659097+00:00",
+      "response_file": "0002-udws_shm_msecs.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T18:45:41.998097+00:00",
+      "elapsed_seconds": 0.338,
+      "response_bytes": 70,
+      "response_sha256": "c108fff5d01028f27b6a2d727aa4d10efb85807e05c55602066a355e0b0c2b15",
+      "prompt_returned": true
+    },
+    {
+      "command": "udws \"udw.iter_get_next;\"",
+      "purpose": "Verify CRLF UART transmission after restart",
+      "classification": "information-query",
+      "index": 3,
+      "started_utc": "2026-10-29T18:45:41.999336+00:00",
+      "response_file": "0003-udws_udw_iter_get_next.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T18:45:42.415389+00:00",
+      "elapsed_seconds": 0.415,
+      "response_bytes": 74,
+      "response_sha256": "a627a25a8841e9cb5197fad53fecfe4e48db0529637adc6d41602bab754ab1d3",
+      "prompt_returned": true
+    }
+  ]
+}

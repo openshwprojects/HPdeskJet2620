@@ -1,0 +1,38 @@
+{
+  "kind": "offline review; physical evidence is in physical-51-nvm-mirror",
+  "image": "artifacts/ghs/dram.bin",
+  "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+  "source_dump_sha256": "b791436cf9152785fb5d3f6954aa5949d4ae7c7458af0e2031b9a41f5534c496",
+  "temporary_path": "/ram/codex_nvm_20261029b.bin",
+  "commands": [
+    {
+      "name": "nvm2.dump2file",
+      "handler": "0xa02f4795",
+      "arguments": "/ram/codex_nvm_20261029b.bin",
+      "proof": "A02F4794..4826 parses bounded pathname, opens flags0x41 mode0666, gets65536 from A0261BD8, loops at most512 bytes through A0261C9C and file-write A046BB9C, closes file, returns bytes copied or-1.",
+      "side_effects": "Creates and writes only the explicitly supplied volatile RAM path, which must first be absent. No NVM write or flush call.",
+      "limitations": "A0261C9C copies bytes from the RAM mirror pointer at20B28C1C and returns1 without copying if its error flag at+8 is set. dump2file ignores that status; transfer validation and direct-byte spot checks cannot prove all65536bytes match physical EEPROM. File copy is sequential, not atomic."
+    },
+    {
+      "name": "ustd.read_file",
+      "handler": "0xa046d8cf",
+      "arguments": "offset512*n, count512; n0..127",
+      "proof": "A046D8CE..D930 parses offset/count, caps count1024, seeks debug-reader fd, reads into1024byte static buffer, emits exactly two hex digits per returned byte via A046D898. Caller enforces nonnegative offsets and end<=65536.",
+      "side_effects": "Read-only file descriptor position and volatile output buffer change."
+    },
+    {
+      "name": "ustd.open_file",
+      "proof": "A046D81E..D880 opens pathname flags0 and returns seek-end size. Closes previous dedicated debug-reader fd if any. Previous session35 explicitly closed the handle."
+    },
+    {
+      "name": "ustd.close_file",
+      "proof": "A046D882..D896 closes only dedicated debug-reader fd and sets it to-1."
+    },
+    {
+      "name": "nvm2.nvm_read_byte",
+      "proof": "A02F3B3E..B66 parses offset then calls hardware read A0261BE2 -> A0261DFA -> A0254B48 with length1. All selected offsets0..65535. It ignores read-error status; observed byte equality is a spot check, not full EEPROM verification."
+    }
+  ],
+  "cleanup": "Close the debug-reader opened by this run, unlink only the newly created exact path, verify sizeof=-1. Never continue dependent commands after a missing prompt.",
+  "capture_validation": "Require expected echo/wrapper/prompt framing; exact file size65536; exactly1024hexcharacters per512byteblock; contiguous offsets0..65535; preserve responseSHA256and blockSHA256; compare22directEEPROMbyteobservations."
+}

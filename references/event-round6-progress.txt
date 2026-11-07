@@ -1,0 +1,1 @@
+{"index": 1, "command": "udws \"event_log.get_event 1266;\"", "bytes": 186, "prompt": true, "validated": null, "preview": "\r\n-> udws \"event_log.get_event 1266;\"\r\nget_event for seq_num: 0\r\ngot event for seq_num: 1266\r\ngot event occurences: 1\r\ngot event: 72234 with buf: FROM_NVM\r\n;udws() returns 0 (0x0)\r\n-> "}

@@ -1,0 +1,20 @@
+{
+  "observations": [
+    {
+      "label": "pen_ink_cache_state_and_flags",
+      "address": "0x20cfb4a0",
+      "count": 12,
+      "hex": "000000020000000000000000",
+      "words_be": [
+        "0x2",
+        "0x0",
+        "0x0"
+      ],
+      "response_file": "0006-udws_ustd_read_file_0_12.bin",
+      "response_sha256": "60bac40a9f074b4cdbc09d80f341e711bca1c077a37176f05250a8ad4d6ce4b3"
+    }
+  ],
+  "cleanup_complete": true,
+  "source_memory_written": false,
+  "scope": "Twelve bytes of PEN ink-cache state and flags."
+}

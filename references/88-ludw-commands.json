@@ -1,0 +1,22 @@
+[
+  {
+    "name": "ludw",
+    "command": "ludw \"shm.msecs;\"",
+    "classification": "native ludw UDW runner (round 8 re-confirm)"
+  },
+  {
+    "name": "udw_tags",
+    "command": "udw_tags on",
+    "classification": "native udw_tags toggle on"
+  },
+  {
+    "name": "ludw",
+    "command": "ludw \"bio.rev_str; shm.msecs;\"",
+    "classification": "native ludw, two expressions, tagged"
+  },
+  {
+    "name": "udw_tags",
+    "command": "udw_tags off",
+    "classification": "native udw_tags toggle off"
+  }
+]

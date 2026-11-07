@@ -1,0 +1,1455 @@
+{
+  "schema_version": 1,
+  "scope": "Additional valid software operations; offline review only. Root exclusively operates COM16.",
+  "firmware": {
+    "path": "artifacts/ghs/dram.bin",
+    "sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+    "address_mapping": "address & 0x03ffffff",
+    "architecture": "ARM/Thumb big-endian"
+  },
+  "plan": "references/30-software-commands.json",
+  "invocation_count": 68,
+  "ready_unique_command_count": 39,
+  "deduplication": {
+    "coverage_file": "references/coverage.json",
+    "excluded_guard_plan": "references/32-guard-commands.json",
+    "all_selected_names_not_invoked_at_preparation": true
+  },
+  "counter_argument_source": {
+    "path": "references/physical-10-reviewed-queries/0017-udws_cntrs_display_list.bin",
+    "sha256": "1676ce77cbc67188d215b0c74547fca17212915cfd313a19fe871ce5c121363f",
+    "reported_counter_count": 127,
+    "selected_rows": [
+      {
+        "counter_id": 3001,
+        "type": 3,
+        "prior_value": 68
+      },
+      {
+        "counter_id": 5000,
+        "type": 3,
+        "prior_value": 775
+      },
+      {
+        "counter_id": 5011,
+        "type": 2,
+        "prior_value": 0
+      },
+      {
+        "counter_id": 5082,
+        "type": 4,
+        "prior_value": 753
+      },
+      {
+        "counter_id": 11000,
+        "type": 4,
+        "prior_value": 4932015
+      },
+      {
+        "counter_id": 16076,
+        "type": 2,
+        "prior_value": 10
+      },
+      {
+        "counter_id": 28022,
+        "type": 0,
+        "prior_value": 0
+      },
+      {
+        "counter_id": 28024,
+        "type": 1,
+        "prior_value": 0
+      },
+      {
+        "counter_id": 28031,
+        "type": 4,
+        "prior_value": 30
+      },
+      {
+        "counter_id": 64227,
+        "type": 0,
+        "prior_value": 7
+      }
+    ]
+  },
+  "reviews": [
+    {
+      "name": "lib_json_writer.write_test",
+      "handler": "0xa025bb6b",
+      "descriptor_address": "0xa0581eac",
+      "argument_cases": [
+        ""
+      ],
+      "proof": "Each handler acquires one of two JSON writer slots via A025AF0E, checks failure, formats fixed constant input through callback A025BB51 to UDW output A02C2A7A, then releases the slot via A025AF4E. No network or file sink. The big_numbers build creates/closes an empty object, so do not infer integer boundary coverage from its name.",
+      "side_effects_assessment": "Temporary writer-slot allocation, mutex bookkeeping, stack buffers, and UART output. Slot is released on the completed success path.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa025bb50",
+          "length": 646,
+          "sha256": "8965a64296df885a6288b901ed09c99cbf3aeadf625d9350b108748b7691426b"
+        },
+        {
+          "address": "0xa025af0e",
+          "length": 106,
+          "sha256": "a37b6810fbd8f08494628b170e02463d30782b3fc18dd2e0f0d122d4d6477554"
+        }
+      ],
+      "status": "ready"
+    },
+    {
+      "name": "lib_json_writer.write_escaped",
+      "handler": "0xa025bc5b",
+      "descriptor_address": "0xa0581eb8",
+      "argument_cases": [
+        ""
+      ],
+      "proof": "Each handler acquires one of two JSON writer slots via A025AF0E, checks failure, formats fixed constant input through callback A025BB51 to UDW output A02C2A7A, then releases the slot via A025AF4E. No network or file sink. The big_numbers build creates/closes an empty object, so do not infer integer boundary coverage from its name.",
+      "side_effects_assessment": "Temporary writer-slot allocation, mutex bookkeeping, stack buffers, and UART output. Slot is released on the completed success path.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa025bb50",
+          "length": 646,
+          "sha256": "8965a64296df885a6288b901ed09c99cbf3aeadf625d9350b108748b7691426b"
+        },
+        {
+          "address": "0xa025af0e",
+          "length": 106,
+          "sha256": "a37b6810fbd8f08494628b170e02463d30782b3fc18dd2e0f0d122d4d6477554"
+        }
+      ],
+      "status": "ready"
+    },
+    {
+      "name": "lib_json_writer.write_base64",
+      "handler": "0xa025bd25",
+      "descriptor_address": "0xa0581ec4",
+      "argument_cases": [
+        ""
+      ],
+      "proof": "Each handler acquires one of two JSON writer slots via A025AF0E, checks failure, formats fixed constant input through callback A025BB51 to UDW output A02C2A7A, then releases the slot via A025AF4E. No network or file sink. The big_numbers build creates/closes an empty object, so do not infer integer boundary coverage from its name.",
+      "side_effects_assessment": "Temporary writer-slot allocation, mutex bookkeeping, stack buffers, and UART output. Slot is released on the completed success path.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa025bb50",
+          "length": 646,
+          "sha256": "8965a64296df885a6288b901ed09c99cbf3aeadf625d9350b108748b7691426b"
+        },
+        {
+          "address": "0xa025af0e",
+          "length": 106,
+          "sha256": "a37b6810fbd8f08494628b170e02463d30782b3fc18dd2e0f0d122d4d6477554"
+        }
+      ],
+      "status": "ready"
+    },
+    {
+      "name": "lib_json_writer.write_big_numbers",
+      "handler": "0xa025bda5",
+      "descriptor_address": "0xa0581ed0",
+      "argument_cases": [
+        ""
+      ],
+      "proof": "Each handler acquires one of two JSON writer slots via A025AF0E, checks failure, formats fixed constant input through callback A025BB51 to UDW output A02C2A7A, then releases the slot via A025AF4E. No network or file sink. The big_numbers build creates/closes an empty object, so do not infer integer boundary coverage from its name.",
+      "side_effects_assessment": "Temporary writer-slot allocation, mutex bookkeeping, stack buffers, and UART output. Slot is released on the completed success path.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa025bb50",
+          "length": 646,
+          "sha256": "8965a64296df885a6288b901ed09c99cbf3aeadf625d9350b108748b7691426b"
+        },
+        {
+          "address": "0xa025af0e",
+          "length": 106,
+          "sha256": "a37b6810fbd8f08494628b170e02463d30782b3fc18dd2e0f0d122d4d6477554"
+        }
+      ],
+      "status": "ready"
+    },
+    {
+      "name": "firm.query_num_ram",
+      "handler": "0xa00d53c5",
+      "descriptor_address": "0xa052b484",
+      "argument_cases": [
+        ""
+      ],
+      "proof": "A00D53C4 calls A00D35B6 and prints 22 minus the RAM override count at 2091F01C.",
+      "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa00d53c4",
+          "length": 48,
+          "sha256": "5cde88a9231fa9356d14db53df5ed51bccd0007e9a36fb71dee4c7f20820c9f0"
+        },
+        {
+          "address": "0xa00d35b6",
+          "length": 12,
+          "sha256": "0aad799bca88c3336492778177cb8ae26f87870d48aa4c3c264808f077a49528"
+        }
+      ],
+      "status": "ready"
+    },
+    {
+      "name": "firm.str_query_num_ram",
+      "handler": "0xa00d54fb",
+      "descriptor_address": "0xa052b4d8",
+      "argument_cases": [
+        ""
+      ],
+      "proof": "Reads two uint16 RAM counters at 20835208 via A00D3F8E/A00D3F98 and prints them.",
+      "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa00d54fa",
+          "length": 80,
+          "sha256": "d718b400d243e735ece2d1b44a99c0aef714ec0d63f037c2634f67e693c73c99"
+        },
+        {
+          "address": "0xa00d3f8e",
+          "length": 20,
+          "sha256": "a6c11e11ecfd75aecdd8dd4944ca21a99ed7e707d9eedd4169d67c336f9a23c8"
+        }
+      ],
+      "status": "ready"
+    },
+    {
+      "name": "firm.prt_ram_table",
+      "handler": "0xa00d4f2d",
+      "descriptor_address": "0xa052b4c0",
+      "argument_cases": [
+        ""
+      ],
+      "proof": "Loops 52 hash heads at 2091F6D4, traverses existing RAM override nodes via +0x0c and formats identifier/value fields. No add/delete/setter call.",
+      "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa00d4f2c",
+          "length": 110,
+          "sha256": "886d81ac9e95d4c2453afb92b9222518ba8c479feba31696f9c4699af7c68c39"
+        }
+      ],
+      "status": "ready",
+      "output_completeness": "Full table listing may exceed the earlier reliable bulk UART size. Preserve raw bytes and verify reported counts before treating the listing as complete; one command per line.",
+      "timeout": 90
+    },
+    {
+      "name": "firm.query_name",
+      "handler": "0xa00d4d5b",
+      "descriptor_address": "0xa052b3a0",
+      "argument_cases": [
+        ""
+      ],
+      "proof": "Loops 52 registered descriptor groups at 2091F1F4; only nonnull tables are visited. Bounds use each group maximum index, and descriptor name pointers are read without dispatching firmware operations. query_name_fmt prints decimal combined identifiers.",
+      "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa00d4d5a",
+          "length": 106,
+          "sha256": "372e812abf65c439b1039354b4b67fc73436c834d9917c75720ba935070f5689"
+        },
+        {
+          "address": "0xa00d4e58",
+          "length": 106,
+          "sha256": "3a99a424cd3a1029c8798f6a386d54af22b7cbcaee8e0c45337cfc2defdd4ccd"
+        },
+        {
+          "address": "0xa00d526a",
+          "length": 178,
+          "sha256": "d75341d0b38352e982736c1af1a02f36a34f080cde61d263e8d67fb99ee6e00a"
+        }
+      ],
+      "status": "ready",
+      "output_completeness": "Full table listing may exceed the earlier reliable bulk UART size. Preserve raw bytes and verify reported counts before treating the listing as complete; one command per line.",
+      "timeout": 90
+    },
+    {
+      "name": "firm.query_name_fmt",
+      "handler": "0xa00d526b",
+      "descriptor_address": "0xa052b49c",
+      "argument_cases": [
+        ""
+      ],
+      "proof": "Loops 52 registered descriptor groups at 2091F1F4; only nonnull tables are visited. Bounds use each group maximum index, and descriptor name pointers are read without dispatching firmware operations. query_name_fmt prints decimal combined identifiers.",
+      "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa00d4d5a",
+          "length": 106,
+          "sha256": "372e812abf65c439b1039354b4b67fc73436c834d9917c75720ba935070f5689"
+        },
+        {
+          "address": "0xa00d4e58",
+          "length": 106,
+          "sha256": "3a99a424cd3a1029c8798f6a386d54af22b7cbcaee8e0c45337cfc2defdd4ccd"
+        },
+        {
+          "address": "0xa00d526a",
+          "length": 178,
+          "sha256": "d75341d0b38352e982736c1af1a02f36a34f080cde61d263e8d67fb99ee6e00a"
+        }
+      ],
+      "status": "ready",
+      "output_completeness": "Full table listing may exceed the earlier reliable bulk UART size. Preserve raw bytes and verify reported counts before treating the listing as complete; one command per line.",
+      "timeout": 90
+    },
+    {
+      "name": "firm.query_value_name",
+      "handler": "0xa00d4c87",
+      "descriptor_address": "0xa052b394",
+      "argument_cases": [
+        ""
+      ],
+      "proof": "Loops the same 52 descriptor groups and bounded per-group descriptors. Reads initial descriptor values and names, formats using 80-byte local buffers; no setter/handler dispatch.",
+      "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa00d4c86",
+          "length": 210,
+          "sha256": "30499edf6d100975c8103ab14a91a183c29cca48c3383aafd9c114609ef40ef9"
+        },
+        {
+          "address": "0xa00d50f4",
+          "length": 132,
+          "sha256": "336fb63cd077b8a30890cca6c8c49f13b28e8aa3569358b6f8e5c2478d73ff36"
+        },
+        {
+          "address": "0xa00d522c",
+          "length": 62,
+          "sha256": "c4da7d65ea8be4143f184d2593fad24bddecef116f818238a6e0ad3184c5335b"
+        }
+      ],
+      "status": "ready",
+      "output_completeness": "Full table listing may exceed the earlier reliable bulk UART size. Preserve raw bytes and verify reported counts before treating the listing as complete; one command per line.",
+      "timeout": 90
+    },
+    {
+      "name": "firm.query_value_name_fmt",
+      "handler": "0xa00d50f5",
+      "descriptor_address": "0xa052b490",
+      "argument_cases": [
+        ""
+      ],
+      "proof": "Loops the same 52 descriptor groups and bounded per-group descriptors. Reads initial descriptor values and names, formats using 80-byte local buffers; no setter/handler dispatch.",
+      "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa00d4c86",
+          "length": 210,
+          "sha256": "30499edf6d100975c8103ab14a91a183c29cca48c3383aafd9c114609ef40ef9"
+        },
+        {
+          "address": "0xa00d50f4",
+          "length": 132,
+          "sha256": "336fb63cd077b8a30890cca6c8c49f13b28e8aa3569358b6f8e5c2478d73ff36"
+        },
+        {
+          "address": "0xa00d522c",
+          "length": 62,
+          "sha256": "c4da7d65ea8be4143f184d2593fad24bddecef116f818238a6e0ad3184c5335b"
+        }
+      ],
+      "status": "ready",
+      "output_completeness": "Full table listing may exceed the earlier reliable bulk UART size. Preserve raw bytes and verify reported counts before treating the listing as complete; one command per line.",
+      "timeout": 90
+    },
+    {
+      "name": "firm.query_value",
+      "handler": "0xa00d4ec3",
+      "descriptor_address": "0xa052b3ac",
+      "argument_cases": [
+        ""
+      ],
+      "proof": "Bounded 52-group descriptor traversal calls A00D3556 for current values. That helper performs SUID lookup and linked-list RAM override lookup; A00D37A8 reads descriptor fallback values. No firmware-item setter is called.",
+      "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa00d4ec2",
+          "length": 106,
+          "sha256": "facf85e937938f3d3e4030b2504a452bcb97aa55397ff3ad540664896a27f725"
+        },
+        {
+          "address": "0xa00d531c",
+          "length": 168,
+          "sha256": "cf83817a3bb0e1efebc0dd7c2168bebfdb63f9019f4630fae30d854896063e29"
+        },
+        {
+          "address": "0xa00d3556",
+          "length": 96,
+          "sha256": "1ed0dd3d71803fba956562b514ee87368a46eb1942790d671e845785a7baad1d"
+        },
+        {
+          "address": "0xa00d37a8",
+          "length": 74,
+          "sha256": "09aacab041a242b6f1a95f053c0c6e865e572c0243ecd26069956394507686f0"
+        }
+      ],
+      "status": "ready",
+      "output_completeness": "Full table listing may exceed the earlier reliable bulk UART size. Preserve raw bytes and verify reported counts before treating the listing as complete; one command per line.",
+      "timeout": 90
+    },
+    {
+      "name": "firm.query_value_fmt",
+      "handler": "0xa00d531d",
+      "descriptor_address": "0xa052b4a8",
+      "argument_cases": [
+        ""
+      ],
+      "proof": "Bounded 52-group descriptor traversal calls A00D3556 for current values. That helper performs SUID lookup and linked-list RAM override lookup; A00D37A8 reads descriptor fallback values. No firmware-item setter is called.",
+      "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa00d4ec2",
+          "length": 106,
+          "sha256": "facf85e937938f3d3e4030b2504a452bcb97aa55397ff3ad540664896a27f725"
+        },
+        {
+          "address": "0xa00d531c",
+          "length": 168,
+          "sha256": "cf83817a3bb0e1efebc0dd7c2168bebfdb63f9019f4630fae30d854896063e29"
+        },
+        {
+          "address": "0xa00d3556",
+          "length": 96,
+          "sha256": "1ed0dd3d71803fba956562b514ee87368a46eb1942790d671e845785a7baad1d"
+        },
+        {
+          "address": "0xa00d37a8",
+          "length": 74,
+          "sha256": "09aacab041a242b6f1a95f053c0c6e865e572c0243ecd26069956394507686f0"
+        }
+      ],
+      "status": "ready",
+      "output_completeness": "Full table listing may exceed the earlier reliable bulk UART size. Preserve raw bytes and verify reported counts before treating the listing as complete; one command per line.",
+      "timeout": 90
+    },
+    {
+      "name": "firm.str_query_value",
+      "handler": "0xa00d5485",
+      "descriptor_address": "0xa052b4cc",
+      "argument_cases": [
+        ""
+      ],
+      "proof": "Loops 10 registered string groups at 2091F7A4 with per-group maximum-index bounds. A00D3E42 searches existing string override nodes via +0x18 or returns original string pointer from the 12-byte descriptor. Formatter buffer is 0x112 bytes.",
+      "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa00d5484",
+          "length": 118,
+          "sha256": "d0586dd66be5b0ffce50f50632d95fa1407c5e749918eabd9f35e65b5f272253"
+        },
+        {
+          "address": "0xa00d3e42",
+          "length": 70,
+          "sha256": "8cd97b659f260d295ef26c7a5db9332f523109f158a5c548f5346367bb022295"
+        }
+      ],
+      "status": "ready",
+      "output_completeness": "Full table listing may exceed the earlier reliable bulk UART size. Preserve raw bytes and verify reported counts before treating the listing as complete; one command per line.",
+      "timeout": 90
+    },
+    {
+      "name": "patch.get_rev",
+      "handler": "0xa02fb365",
+      "descriptor_address": "0xa05cb534",
+      "argument_cases": [
+        ""
+      ],
+      "proof": "A02FB08C invokes the DS scalar reader for DSID 0x1088F then truncates to uint8; output is %4u;. It does not apply a patch.",
+      "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa02fb364",
+          "length": 52,
+          "sha256": "5f4fae3c9ad2efe8b940aabf5206016c6779fa4dc20e94481660c63329559ab4"
+        },
+        {
+          "address": "0xa02fb08c",
+          "length": 24,
+          "sha256": "29855179b2f5741c8685438b479a4dc364554fc1594ba29daedbdd8c5aab27a8"
+        }
+      ],
+      "status": "ready"
+    },
+    {
+      "name": "patch.get_v_string",
+      "handler": "0xa02fbaeb",
+      "descriptor_address": "0xa05cb5ac",
+      "argument_cases": [
+        ""
+      ],
+      "proof": "Handler ends at A02FBB0C and obtains the literal TJP1FN1809AR pointer through A046E262, computes string length, and writes UDW.",
+      "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa02fbaea",
+          "length": 36,
+          "sha256": "441e05df2b28b46a794ba63858d3bec2ff3fb08fc0b496f1194743fc7b822724"
+        },
+        {
+          "address": "0xa046e262",
+          "length": 4,
+          "sha256": "720dcb68d3be7a3bd65493e68ba1f1d327f8a64711e7c2a41297e13433321ac5"
+        }
+      ],
+      "status": "ready"
+    },
+    {
+      "name": "patch.get",
+      "handler": "0xa02fb295",
+      "descriptor_address": "0xa05cb510",
+      "argument_cases": [
+        ""
+      ],
+      "proof": "Fixed loop over 14 patch slots. A02FB04E reads DSID 0x105E2 record index 0..13, length 1900, into the firmware-owned buffer at 20BDE71C; the handler prints a bounded 0x104-byte textual prefix per slot. Physical storage metadata confirms count 14, size 1900. This is the dedicated firmware buffer, not the unproven scratch buffer of nvm2.get_rec_array_for_contents.",
+      "side_effects_assessment": "Refreshes the existing firmware patch-read buffer in RAM and emits textual prefixes; no patch apply or DS write.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa02fb294",
+          "length": 88,
+          "sha256": "77ce9331468927e39c6051f8138995e0f1fc586535493186fa15ac191d4656e5"
+        },
+        {
+          "address": "0xa02fb04e",
+          "length": 32,
+          "sha256": "594716f6d21cbbb494f7e4e6f025db85192009c352372c2e6c714c2c13d9f4c6"
+        }
+      ],
+      "status": "ready",
+      "output_completeness": "Fourteen textual prefixes, not the raw 1900-byte contents of all records."
+    },
+    {
+      "name": "timer.conv_int",
+      "handler": "0xa0430a5f",
+      "descriptor_address": "0xa061ed94",
+      "argument_cases": [
+        "0",
+        "86400",
+        "2147483647"
+      ],
+      "proof": "Parser %d writes an initialized local epoch value; A0430832 converts it via the local time conversion routine A04E3FF0. Three nonnegative signed-32-bit values cover epoch zero, next day, and maximum positive epoch. No date-set helper is called.",
+      "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa0430a5e",
+          "length": 66,
+          "sha256": "e05e5bcb41af66298bb1a6f56252ffa7a1b0c70a9131f9dfc06bc0ccdb97b33b"
+        },
+        {
+          "address": "0xa0430832",
+          "length": 106,
+          "sha256": "3f98932859597ea1c62f07aa5e2553215fef09651022f706e5a5fecab514ded1"
+        }
+      ],
+      "status": "ready"
+    },
+    {
+      "name": "timer.delay_ms",
+      "handler": "0xa042f599",
+      "descriptor_address": "0xa061ea5c",
+      "argument_cases": [
+        "1"
+      ],
+      "proof": "Both aliases point to A042F598; exactly one %d is supplied. Positive value 1 is multiplied by 1000 and passed to A042EE2C; no uninitialized no-argument path or large wait.",
+      "side_effects_assessment": "Briefly blocks the command thread for the requested delay; normal timer/scheduler bookkeeping only.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa042f598",
+          "length": 36,
+          "sha256": "e32f8479063e6bd8e78a18449a35e1a2ea2edcc32c983839903a688f88794083"
+        }
+      ],
+      "status": "ready"
+    },
+    {
+      "name": "udw.timer_delay_ms",
+      "handler": "0xa042f599",
+      "descriptor_address": "0xa061ea68",
+      "argument_cases": [
+        "1"
+      ],
+      "proof": "Both aliases point to A042F598; exactly one %d is supplied. Positive value 1 is multiplied by 1000 and passed to A042EE2C; no uninitialized no-argument path or large wait.",
+      "side_effects_assessment": "Briefly blocks the command thread for the requested delay; normal timer/scheduler bookkeeping only.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa042f598",
+          "length": 36,
+          "sha256": "e32f8479063e6bd8e78a18449a35e1a2ea2edcc32c983839903a688f88794083"
+        }
+      ],
+      "status": "ready"
+    },
+    {
+      "name": "udw.delay",
+      "handler": "0xa02c3fc5",
+      "descriptor_address": "0xa05bc718",
+      "argument_cases": [
+        "1"
+      ],
+      "proof": "Supplies the required %i value. A02F6AA8 returns scheduler tick rate, multiplied by 1 and passed to A02F6D70.",
+      "side_effects_assessment": "Briefly sleeps the command thread; normal scheduler bookkeeping only.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa02c3fc4",
+          "length": 32,
+          "sha256": "6241066647a67392b9c82c28f9b783491905a0fb6196bade762c073dabea6502"
+        }
+      ],
+      "status": "ready"
+    },
+    {
+      "name": "udw.timer_date_get",
+      "handler": "0xa04309d9",
+      "descriptor_address": "0xa061edc4",
+      "argument_cases": [
+        ""
+      ],
+      "proof": "Exact handlers are aliases of timer.* getters already exercised physically. Date helper A043074C reads local clock and converts it; A0430820 calls current-time routine; factory helper A04307E4 delegates to A042BA4E. No date-set helper.",
+      "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa04309d8",
+          "length": 94,
+          "sha256": "5dfa71d5509a6ccf4c2152b96a6388fecbfdb8a402dafdb8f049d925861f2bd8"
+        },
+        {
+          "address": "0xa043074c",
+          "length": 134,
+          "sha256": "769d733d8e3ceb22f1da936c16ec8a4306220bd0cfab97fa501c5a73d09666b3"
+        },
+        {
+          "address": "0xa04307e4",
+          "length": 8,
+          "sha256": "ccbf8e7847f318b83bdcd42a77778a9e272b32301ea2637caa975eb0b65a867e"
+        },
+        {
+          "address": "0xa0430820",
+          "length": 18,
+          "sha256": "68a987d37339b739b16123394dc8f21622ac696776a0e6ecbf90fee4f7d08e44"
+        }
+      ],
+      "status": "ready"
+    },
+    {
+      "name": "udw.timer_date_get_int",
+      "handler": "0xa0430a0f",
+      "descriptor_address": "0xa061edd0",
+      "argument_cases": [
+        ""
+      ],
+      "proof": "Exact handlers are aliases of timer.* getters already exercised physically. Date helper A043074C reads local clock and converts it; A0430820 calls current-time routine; factory helper A04307E4 delegates to A042BA4E. No date-set helper.",
+      "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa04309d8",
+          "length": 94,
+          "sha256": "5dfa71d5509a6ccf4c2152b96a6388fecbfdb8a402dafdb8f049d925861f2bd8"
+        },
+        {
+          "address": "0xa043074c",
+          "length": 134,
+          "sha256": "769d733d8e3ceb22f1da936c16ec8a4306220bd0cfab97fa501c5a73d09666b3"
+        },
+        {
+          "address": "0xa04307e4",
+          "length": 8,
+          "sha256": "ccbf8e7847f318b83bdcd42a77778a9e272b32301ea2637caa975eb0b65a867e"
+        },
+        {
+          "address": "0xa0430820",
+          "length": 18,
+          "sha256": "68a987d37339b739b16123394dc8f21622ac696776a0e6ecbf90fee4f7d08e44"
+        }
+      ],
+      "status": "ready"
+    },
+    {
+      "name": "udw.timer_get_factory_time",
+      "handler": "0xa0430a23",
+      "descriptor_address": "0xa061eddc",
+      "argument_cases": [
+        ""
+      ],
+      "proof": "Exact handlers are aliases of timer.* getters already exercised physically. Date helper A043074C reads local clock and converts it; A0430820 calls current-time routine; factory helper A04307E4 delegates to A042BA4E. No date-set helper.",
+      "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa04309d8",
+          "length": 94,
+          "sha256": "5dfa71d5509a6ccf4c2152b96a6388fecbfdb8a402dafdb8f049d925861f2bd8"
+        },
+        {
+          "address": "0xa043074c",
+          "length": 134,
+          "sha256": "769d733d8e3ceb22f1da936c16ec8a4306220bd0cfab97fa501c5a73d09666b3"
+        },
+        {
+          "address": "0xa04307e4",
+          "length": 8,
+          "sha256": "ccbf8e7847f318b83bdcd42a77778a9e272b32301ea2637caa975eb0b65a867e"
+        },
+        {
+          "address": "0xa0430820",
+          "length": 18,
+          "sha256": "68a987d37339b739b16123394dc8f21622ac696776a0e6ecbf90fee4f7d08e44"
+        }
+      ],
+      "status": "ready"
+    },
+    {
+      "name": "udw.timer_get_reliability",
+      "handler": "0xa0430a37",
+      "descriptor_address": "0xa061ede8",
+      "argument_cases": [
+        ""
+      ],
+      "proof": "A0430694 checks local timer availability A042BB00 and returns the reliability word at 2085E23C. When unavailable it latches reliability=2; no time-set call.",
+      "side_effects_assessment": "May latch the existing RAM reliability flag to 2 when the local clock is unavailable; no persistent clock configuration.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa0430a36",
+          "length": 20,
+          "sha256": "5674d07b0423a1fbedc0571873dc3158a48e2fcd44c10f0edc9d0bedc9b33974"
+        },
+        {
+          "address": "0xa0430694",
+          "length": 20,
+          "sha256": "d8bf243db3c72fa9d20e6041928f79e6df6fba785031f781ee27f02abeb461fb"
+        }
+      ],
+      "status": "ready"
+    },
+    {
+      "name": "udw.get_fw_rev",
+      "handler": "0xa046e379",
+      "descriptor_address": "0xa06319f4",
+      "argument_cases": [
+        ""
+      ],
+      "proof": "A046E35C..A046E392 use existing version-string pointers (ROM TJP1FN1809AR, initialized verbose RAM string, or base-ROM version at 0x2040) and the bounded formatter A046E324. These exact handlers were already exercised via safe rev.* aliases; ASIC readers are separate and excluded.",
+      "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa046e35c",
+          "length": 56,
+          "sha256": "c220647713e9057df58366aa766998929cf31f33f6709fdfea640993d6fbd4a8"
+        },
+        {
+          "address": "0xa046e262",
+          "length": 20,
+          "sha256": "041e3ae0b7648d08d14eb175380aecd20cea229d80408cc8c2f914abc8deb8c6"
+        },
+        {
+          "address": "0xa046e324",
+          "length": 56,
+          "sha256": "26c58daac61644d9ea0b2d9dba2acd11b01253e8c48e6bc5108f1de3dc2a11db"
+        }
+      ],
+      "status": "ready"
+    },
+    {
+      "name": "udw.get_base_fw_rev",
+      "handler": "0xa046e387",
+      "descriptor_address": "0xa0631a00",
+      "argument_cases": [
+        ""
+      ],
+      "proof": "A046E35C..A046E392 use existing version-string pointers (ROM TJP1FN1809AR, initialized verbose RAM string, or base-ROM version at 0x2040) and the bounded formatter A046E324. These exact handlers were already exercised via safe rev.* aliases; ASIC readers are separate and excluded.",
+      "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa046e35c",
+          "length": 56,
+          "sha256": "c220647713e9057df58366aa766998929cf31f33f6709fdfea640993d6fbd4a8"
+        },
+        {
+          "address": "0xa046e262",
+          "length": 20,
+          "sha256": "041e3ae0b7648d08d14eb175380aecd20cea229d80408cc8c2f914abc8deb8c6"
+        },
+        {
+          "address": "0xa046e324",
+          "length": 56,
+          "sha256": "26c58daac61644d9ea0b2d9dba2acd11b01253e8c48e6bc5108f1de3dc2a11db"
+        }
+      ],
+      "status": "ready"
+    },
+    {
+      "name": "udw.get_verbose_fw_rev",
+      "handler": "0xa046e36b",
+      "descriptor_address": "0xa0631a0c",
+      "argument_cases": [
+        ""
+      ],
+      "proof": "A046E35C..A046E392 use existing version-string pointers (ROM TJP1FN1809AR, initialized verbose RAM string, or base-ROM version at 0x2040) and the bounded formatter A046E324. These exact handlers were already exercised via safe rev.* aliases; ASIC readers are separate and excluded.",
+      "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa046e35c",
+          "length": 56,
+          "sha256": "c220647713e9057df58366aa766998929cf31f33f6709fdfea640993d6fbd4a8"
+        },
+        {
+          "address": "0xa046e262",
+          "length": 20,
+          "sha256": "041e3ae0b7648d08d14eb175380aecd20cea229d80408cc8c2f914abc8deb8c6"
+        },
+        {
+          "address": "0xa046e324",
+          "length": 56,
+          "sha256": "26c58daac61644d9ea0b2d9dba2acd11b01253e8c48e6bc5108f1de3dc2a11db"
+        }
+      ],
+      "status": "ready"
+    },
+    {
+      "name": "udw.id",
+      "handler": "0xa046e35d",
+      "descriptor_address": "0xa0631a18",
+      "argument_cases": [
+        ""
+      ],
+      "proof": "A046E35C..A046E392 use existing version-string pointers (ROM TJP1FN1809AR, initialized verbose RAM string, or base-ROM version at 0x2040) and the bounded formatter A046E324. These exact handlers were already exercised via safe rev.* aliases; ASIC readers are separate and excluded.",
+      "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa046e35c",
+          "length": 56,
+          "sha256": "c220647713e9057df58366aa766998929cf31f33f6709fdfea640993d6fbd4a8"
+        },
+        {
+          "address": "0xa046e262",
+          "length": 20,
+          "sha256": "041e3ae0b7648d08d14eb175380aecd20cea229d80408cc8c2f914abc8deb8c6"
+        },
+        {
+          "address": "0xa046e324",
+          "length": 56,
+          "sha256": "26c58daac61644d9ea0b2d9dba2acd11b01253e8c48e6bc5108f1de3dc2a11db"
+        }
+      ],
+      "status": "ready"
+    },
+    {
+      "name": "nca.get_preferred_address",
+      "handler": "0xa02e1889",
+      "descriptor_address": "0xa05c735c",
+      "argument_cases": [
+        ""
+      ],
+      "proof": "A02D5D00 initializes its output, locks NCA state, traverses the current adapter count and copies a cached preferred IPv4/IPv6 address. A02E1888 formats the copied address or No address found; no scan, connect, DNS, or transmit path.",
+      "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa02e1888",
+          "length": 170,
+          "sha256": "81be0d913a61cb276e6fbce47bf95c76764e32d2dcbf1561579dc07046c81245"
+        },
+        {
+          "address": "0xa02e1a1c",
+          "length": 88,
+          "sha256": "f1c2a4e0a78d6494508aed12e9e9bc3c885531916432bf6026b07a05503ee5ea"
+        },
+        {
+          "address": "0xa02d5d00",
+          "length": 228,
+          "sha256": "ec05d07f62a4cedd817e7233f5a9a89a7319cd4dc962aa8da548e34f3a45ef19"
+        }
+      ],
+      "status": "ready"
+    },
+    {
+      "name": "nca.get_preferred_fqdn",
+      "handler": "0xa02e1a75",
+      "descriptor_address": "0xa05c7368",
+      "argument_cases": [
+        ""
+      ],
+      "proof": "A02D5DE4 builds a name from locally stored hostname/domain. Fallback A00962DA reads a local adapter pointer and A00950C2 locks/copies cached domain-list pointers; no DNS resolver/transmit call. Output capacity is 256 bytes and the helper initializes output length.",
+      "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa02e1a74",
+          "length": 102,
+          "sha256": "cfc22fbe4d58095bbacff7b6ca1385c610284097dbddbfed9996327c51f1d85c"
+        },
+        {
+          "address": "0xa02d5de4",
+          "length": 244,
+          "sha256": "613ea7de2b9fed1b395f2da712362d5db1286975abfe6ec341e57f7fe70e4765"
+        },
+        {
+          "address": "0xa00962da",
+          "length": 20,
+          "sha256": "4b27e6e6ec11c9a17bfc142d25be91bd7081ae265bd06937b1e186f277c9f095"
+        },
+        {
+          "address": "0xa00950c2",
+          "length": 78,
+          "sha256": "4b4a6cfeadcf49ef81be9aabdf40dfcfaf6693dd0a991c9cbb13d6abf887e7a8"
+        }
+      ],
+      "status": "ready"
+    },
+    {
+      "name": "icc.get_url",
+      "handler": "0xa0179c81",
+      "descriptor_address": "0xa053f2c8",
+      "argument_cases": [
+        ""
+      ],
+      "proof": "A0178D18 reads firmware string selector 4 via A046E15C, selects/refreshes a cached server URL and copies the host portion into a caller buffer. The reviewed path performs string operations only; it does not create an HTTP request.",
+      "side_effects_assessment": "Refreshes local URL cache buffers at 2097175C/20971C74 from existing configuration; no network transmission or persistent change.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa0179c80",
+          "length": 56,
+          "sha256": "ae2353756f470b42ed52e0406af340cba4269ae12615f279d9d33de6a5e15387"
+        },
+        {
+          "address": "0xa0178d18",
+          "length": 146,
+          "sha256": "c95e79a93085a03a92dd9522e8e67cd0adb2b4e93196b83682ea46a0d6315e09"
+        }
+      ],
+      "status": "ready"
+    },
+    {
+      "name": "wifi_conman.get_p2p_pin",
+      "handler": "0xa047d355",
+      "descriptor_address": "0xa0635814",
+      "argument_cases": [
+        ""
+      ],
+      "proof": "A047C982 copies the existing eight-byte PIN from 20E2ACA8. Handler terminates the ninth byte and prints P2P_PIN=%-8s. No PIN generation, WPS start, radio operation, or configuration setter.",
+      "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa047d354",
+          "length": 70,
+          "sha256": "79f437c74ea50443f382052f9d8d65388b20cc7c2637d1814714925aaba6cbc7"
+        },
+        {
+          "address": "0xa047c982",
+          "length": 26,
+          "sha256": "2238ba6cf8de3c7693caf3a7ee8b316371a743528c56401bbb5850e9fa4717d0"
+        }
+      ],
+      "status": "ready",
+      "data_sensitivity": "May contain the user-owned device pairing PIN; retain as local reference evidence."
+    },
+    {
+      "name": "wps.status",
+      "handler": "0xa04c88bb",
+      "descriptor_address": "0xa063d7ac",
+      "argument_cases": [
+        ""
+      ],
+      "proof": "A04C3564 with selector 99 selects the current local adapter via A04C4B62/A02D658A, then A04C31F4 reads cached progress/error through mutex-protected helpers A04C48EE and A04C4930. Does not call WPS start or scan.",
+      "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa04c88ba",
+          "length": 82,
+          "sha256": "e9fa1562b333b977a5426fff9d4fc47780908ba1b7d11e25c442a71901add99a"
+        },
+        {
+          "address": "0xa04c3564",
+          "length": 98,
+          "sha256": "1b6360bf3bb2d456142582ee07f177c47c776dca9bc6039591df04c38a040e4b"
+        },
+        {
+          "address": "0xa04c31f4",
+          "length": 88,
+          "sha256": "f11b43a029cfb4e1b0c2107f7424c5d8754fda4b70cd2e6cf6543ab61b3a9146"
+        },
+        {
+          "address": "0xa04c48ee",
+          "length": 108,
+          "sha256": "e12e10816a1e5aa1f97b88cff7ec1a9edca86c28cc8373b6fae6e9f0baf22fda"
+        },
+        {
+          "address": "0xa04c4b62",
+          "length": 56,
+          "sha256": "8bae6f0af40f7274de1580114ce8e2d4b2eeb059eb01fc84f39b36d468d2d993"
+        }
+      ],
+      "status": "ready"
+    },
+    {
+      "name": "rest_fw_update.get_state",
+      "handler": "0xa03805e9",
+      "descriptor_address": "0xa05effdc",
+      "argument_cases": [
+        "2"
+      ],
+      "proof": "Required argument is class ID. ROM enum table 20853798 identifies 2 as WebFWUpdate, and A037FC6A accepts this class. A03802BC reads service cached state/error and DSID 0x125CD. State conversion A037FE46 reads DSID 0x125CC and A037FDF4 may retain source states 1 or 4 in its RAM latch. No download/apply request.",
+      "side_effects_assessment": "Reads current service data and may refresh the RAM state latch at 20D9278C to 1 or 4. No persistent write, update activation, or network request.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa03805e8",
+          "length": 170,
+          "sha256": "8c9acaf4bf6485a0628c38b8212b93ce3ea49055236ebe5235d832b019a1343a"
+        },
+        {
+          "address": "0xa037fc6a",
+          "length": 40,
+          "sha256": "3c5de46864f540753d3e5dfa320f1102fff74bf489e5f3a2b64c21ecec8f738f"
+        },
+        {
+          "address": "0xa03802bc",
+          "length": 74,
+          "sha256": "1957706a42205d40b22159fc16105ccdb7d7d8cb258a4de09db2966ebe20fa41"
+        },
+        {
+          "address": "0xa037fdf4",
+          "length": 106,
+          "sha256": "2261f20f71d83587fa68a65fdf818069b7648f015d1be023bf754ff8534feb78"
+        }
+      ],
+      "status": "ready"
+    },
+    {
+      "name": "l10n.get_language",
+      "handler": "0xa02cc5e7",
+      "descriptor_address": "0xa05bd638",
+      "argument_cases": [
+        ""
+      ],
+      "proof": "Static interface A05BCFF8 method +0xB4 targets A02CAD31 -> A02CB5EA. It reads DSID 0x1124E and checks language availability, falling back to 1 if unavailable. Returns through UDW integer formatter.",
+      "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa02cc5e6",
+          "length": 30,
+          "sha256": "84af553acc5d189e186941dbade6f68204e558e66a7fff1846a43e7f77895c4c"
+        },
+        {
+          "address": "0xa02cb5ea",
+          "length": 40,
+          "sha256": "86202ff2d4a08d3a8ed226343b0c4ec952288d2a1034a1f6a0e4adae87004d09"
+        }
+      ],
+      "status": "ready"
+    },
+    {
+      "name": "cntrs.get_dsid",
+      "handler": "0xa0037ebf",
+      "descriptor_address": "0xa050c060",
+      "argument_cases": [
+        "3001",
+        "5000",
+        "5011",
+        "5082",
+        "11000",
+        "16076",
+        "28022",
+        "28024",
+        "28031",
+        "64227"
+      ],
+      "proof": "Each handler consumes one integer. A0037ACA searches counter metadata tables rooted at 208969CC and returns a mapped DSID; A0037B3A checks mapping existence (special excluded ID 5021 is not selected); A0037B7E/A0037C1A call the DS scalar reader through 208969D4 without increment, clear, or setter. Only IDs from the validated physical counter list are used, spanning all five observed counter types.",
+      "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa0037ebe",
+          "length": 150,
+          "sha256": "13b96b88a089cc90c82e35a0cf33123aac43af30bf3b8441a317077832185c05"
+        },
+        {
+          "address": "0xa0037aca",
+          "length": 112,
+          "sha256": "16c9c6ebd8f2ae4f6eddb9aa0d75425424e2337c25595a88ded0da75d7bc7e04"
+        },
+        {
+          "address": "0xa0037b3a",
+          "length": 68,
+          "sha256": "af98a78a69cd6ae31f58ae6e343d966ffbe8e34e1847be0a8c8d3f2cdb969c8c"
+        },
+        {
+          "address": "0xa0037c1a",
+          "length": 52,
+          "sha256": "cd0a9a46d7d4b764559a1ddf5fd5a0655c625563d46c0c2b0e9b98a9f83f06f1"
+        },
+        {
+          "address": "0xa0037d9c",
+          "length": 20,
+          "sha256": "0c7e7509ef2d718d24d6ce5f379419ac456337e2e1b34d755176528cc24b5856"
+        }
+      ],
+      "status": "ready",
+      "argument_provenance": {
+        "path": "references/physical-10-reviewed-queries/0017-udws_cntrs_display_list.bin",
+        "sha256": "1676ce77cbc67188d215b0c74547fca17212915cfd313a19fe871ce5c121363f",
+        "reported_counter_count": 127,
+        "selected_rows": [
+          {
+            "counter_id": 3001,
+            "type": 3,
+            "prior_value": 68
+          },
+          {
+            "counter_id": 5000,
+            "type": 3,
+            "prior_value": 775
+          },
+          {
+            "counter_id": 5011,
+            "type": 2,
+            "prior_value": 0
+          },
+          {
+            "counter_id": 5082,
+            "type": 4,
+            "prior_value": 753
+          },
+          {
+            "counter_id": 11000,
+            "type": 4,
+            "prior_value": 4932015
+          },
+          {
+            "counter_id": 16076,
+            "type": 2,
+            "prior_value": 10
+          },
+          {
+            "counter_id": 28022,
+            "type": 0,
+            "prior_value": 0
+          },
+          {
+            "counter_id": 28024,
+            "type": 1,
+            "prior_value": 0
+          },
+          {
+            "counter_id": 28031,
+            "type": 4,
+            "prior_value": 30
+          },
+          {
+            "counter_id": 64227,
+            "type": 0,
+            "prior_value": 7
+          }
+        ]
+      }
+    },
+    {
+      "name": "cntrs.is_cntr_registered",
+      "handler": "0xa0037ef1",
+      "descriptor_address": "0xa050c06c",
+      "argument_cases": [
+        "3001",
+        "5000",
+        "5011",
+        "5082",
+        "11000",
+        "16076",
+        "28022",
+        "28024",
+        "28031",
+        "64227"
+      ],
+      "proof": "Each handler consumes one integer. A0037ACA searches counter metadata tables rooted at 208969CC and returns a mapped DSID; A0037B3A checks mapping existence (special excluded ID 5021 is not selected); A0037B7E/A0037C1A call the DS scalar reader through 208969D4 without increment, clear, or setter. Only IDs from the validated physical counter list are used, spanning all five observed counter types.",
+      "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa0037ebe",
+          "length": 150,
+          "sha256": "13b96b88a089cc90c82e35a0cf33123aac43af30bf3b8441a317077832185c05"
+        },
+        {
+          "address": "0xa0037aca",
+          "length": 112,
+          "sha256": "16c9c6ebd8f2ae4f6eddb9aa0d75425424e2337c25595a88ded0da75d7bc7e04"
+        },
+        {
+          "address": "0xa0037b3a",
+          "length": 68,
+          "sha256": "af98a78a69cd6ae31f58ae6e343d966ffbe8e34e1847be0a8c8d3f2cdb969c8c"
+        },
+        {
+          "address": "0xa0037c1a",
+          "length": 52,
+          "sha256": "cd0a9a46d7d4b764559a1ddf5fd5a0655c625563d46c0c2b0e9b98a9f83f06f1"
+        },
+        {
+          "address": "0xa0037d9c",
+          "length": 20,
+          "sha256": "0c7e7509ef2d718d24d6ce5f379419ac456337e2e1b34d755176528cc24b5856"
+        }
+      ],
+      "status": "ready",
+      "argument_provenance": {
+        "path": "references/physical-10-reviewed-queries/0017-udws_cntrs_display_list.bin",
+        "sha256": "1676ce77cbc67188d215b0c74547fca17212915cfd313a19fe871ce5c121363f",
+        "reported_counter_count": 127,
+        "selected_rows": [
+          {
+            "counter_id": 3001,
+            "type": 3,
+            "prior_value": 68
+          },
+          {
+            "counter_id": 5000,
+            "type": 3,
+            "prior_value": 775
+          },
+          {
+            "counter_id": 5011,
+            "type": 2,
+            "prior_value": 0
+          },
+          {
+            "counter_id": 5082,
+            "type": 4,
+            "prior_value": 753
+          },
+          {
+            "counter_id": 11000,
+            "type": 4,
+            "prior_value": 4932015
+          },
+          {
+            "counter_id": 16076,
+            "type": 2,
+            "prior_value": 10
+          },
+          {
+            "counter_id": 28022,
+            "type": 0,
+            "prior_value": 0
+          },
+          {
+            "counter_id": 28024,
+            "type": 1,
+            "prior_value": 0
+          },
+          {
+            "counter_id": 28031,
+            "type": 4,
+            "prior_value": 30
+          },
+          {
+            "counter_id": 64227,
+            "type": 0,
+            "prior_value": 7
+          }
+        ]
+      }
+    },
+    {
+      "name": "cntrs.get_value",
+      "handler": "0xa0037f23",
+      "descriptor_address": "0xa050c078",
+      "argument_cases": [
+        "3001",
+        "5000",
+        "5011",
+        "5082",
+        "11000",
+        "16076",
+        "28022",
+        "28024",
+        "28031",
+        "64227"
+      ],
+      "proof": "Each handler consumes one integer. A0037ACA searches counter metadata tables rooted at 208969CC and returns a mapped DSID; A0037B3A checks mapping existence (special excluded ID 5021 is not selected); A0037B7E/A0037C1A call the DS scalar reader through 208969D4 without increment, clear, or setter. Only IDs from the validated physical counter list are used, spanning all five observed counter types.",
+      "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+      "reviewed_code_ranges": [
+        {
+          "address": "0xa0037ebe",
+          "length": 150,
+          "sha256": "13b96b88a089cc90c82e35a0cf33123aac43af30bf3b8441a317077832185c05"
+        },
+        {
+          "address": "0xa0037aca",
+          "length": 112,
+          "sha256": "16c9c6ebd8f2ae4f6eddb9aa0d75425424e2337c25595a88ded0da75d7bc7e04"
+        },
+        {
+          "address": "0xa0037b3a",
+          "length": 68,
+          "sha256": "af98a78a69cd6ae31f58ae6e343d966ffbe8e34e1847be0a8c8d3f2cdb969c8c"
+        },
+        {
+          "address": "0xa0037c1a",
+          "length": 52,
+          "sha256": "cd0a9a46d7d4b764559a1ddf5fd5a0655c625563d46c0c2b0e9b98a9f83f06f1"
+        },
+        {
+          "address": "0xa0037d9c",
+          "length": 20,
+          "sha256": "0c7e7509ef2d718d24d6ce5f379419ac456337e2e1b34d755176528cc24b5856"
+        }
+      ],
+      "status": "ready",
+      "argument_provenance": {
+        "path": "references/physical-10-reviewed-queries/0017-udws_cntrs_display_list.bin",
+        "sha256": "1676ce77cbc67188d215b0c74547fca17212915cfd313a19fe871ce5c121363f",
+        "reported_counter_count": 127,
+        "selected_rows": [
+          {
+            "counter_id": 3001,
+            "type": 3,
+            "prior_value": 68
+          },
+          {
+            "counter_id": 5000,
+            "type": 3,
+            "prior_value": 775
+          },
+          {
+            "counter_id": 5011,
+            "type": 2,
+            "prior_value": 0
+          },
+          {
+            "counter_id": 5082,
+            "type": 4,
+            "prior_value": 753
+          },
+          {
+            "counter_id": 11000,
+            "type": 4,
+            "prior_value": 4932015
+          },
+          {
+            "counter_id": 16076,
+            "type": 2,
+            "prior_value": 10
+          },
+          {
+            "counter_id": 28022,
+            "type": 0,
+            "prior_value": 0
+          },
+          {
+            "counter_id": 28024,
+            "type": 1,
+            "prior_value": 0
+          },
+          {
+            "counter_id": 28031,
+            "type": 4,
+            "prior_value": 30
+          },
+          {
+            "counter_id": 64227,
+            "type": 0,
+            "prior_value": 7
+          }
+        ]
+      }
+    },
+    {
+      "name": "wifi_conman.service_status",
+      "handler": "0xa047ce99",
+      "status": "held-for-further-review",
+      "reason": "Despite its name, this consumes a numeric value and writes the service-status word in a copied 356-byte configuration via A047B03E/A047B066. No matching old-value retrieval/restoration has been proven."
+    },
+    {
+      "name": "nca.get_mfg_ssid",
+      "handler": "0xa02dfbdb",
+      "status": "held-for-further-review",
+      "reason": "A02DDA8A reinitializes the manufacturing-network cache at 20BC56CC from NVM. Potential current RAM overrides would be lost; several enum formatters also leave output length unset on unsupported values."
+    },
+    {
+      "name": "nca.get_mfg_wireless_locale",
+      "handler": "0xa02dff35",
+      "status": "held-for-further-review",
+      "reason": "A02DDA8A reinitializes the manufacturing-network cache at 20BC56CC from NVM. Potential current RAM overrides would be lost; several enum formatters also leave output length unset on unsupported values."
+    },
+    {
+      "name": "nca.get_mfg_wireless_mode",
+      "handler": "0xa02dfcd9",
+      "status": "held-for-further-review",
+      "reason": "A02DDA8A reinitializes the manufacturing-network cache at 20BC56CC from NVM. Potential current RAM overrides would be lost; several enum formatters also leave output length unset on unsupported values."
+    },
+    {
+      "name": "nca.get_mfg_wireless_5ghz_config",
+      "handler": "0xa02e002b",
+      "status": "held-for-further-review",
+      "reason": "A02DDA8A reinitializes the manufacturing-network cache at 20BC56CC from NVM. Potential current RAM overrides would be lost; several enum formatters also leave output length unset on unsupported values."
+    },
+    {
+      "name": "nca.get_wireless_5ghz_config",
+      "handler": "0xa02e0141",
+      "status": "held-for-further-review",
+      "reason": "Output-length register is assigned only for enum values 1..4. A zero/unsupported value is plausible on this 2.4GHz device, so a valid precondition is needed."
+    },
+    {
+      "name": "nca.get_num_aps_max_rssi",
+      "handler": "0xa02e01cb",
+      "status": "held-for-further-review",
+      "reason": "Calls A02D67EC to initiate a wireless scan, then polls A02D680C up to 60 times. Not a cached status getter."
+    },
+    {
+      "name": "nca.get_addr_info",
+      "handler": "0xa02e1adb",
+      "status": "held-for-further-review",
+      "reason": "Calls the resolver A02D687E for supplied hostname/flags; external DNS is possible. Numeric-only local behavior and flags have not been proven."
+    },
+    {
+      "name": "cloud_reg.get_email",
+      "handler": "0xa0030791",
+      "status": "held-for-further-review",
+      "reason": "Likely asynchronous service/request dispatch. Local cached-only semantics have not been proven."
+    },
+    {
+      "name": "cloud_reg.get_claim_status",
+      "handler": "0xa0030b6f",
+      "status": "held-for-further-review",
+      "reason": "Likely asynchronous service/request dispatch. Local cached-only semantics have not been proven."
+    },
+    {
+      "name": "reports_mgr.reports_list",
+      "handler": "0xa0364dd5",
+      "status": "held-for-further-review",
+      "reason": "Metadata loop spans IDs 1..999 and appears to ignore the metadata-call return before strlen. Need to prove the output buffer is initialized for unsupported IDs."
+    },
+    {
+      "name": "rest_ink_sub.get_info",
+      "handler": "0xa0382f7f",
+      "status": "held-for-further-review",
+      "reason": "Local cache refresh is evident but the complete service getter path is not yet traced. Not admitted from the getter name alone."
+    },
+    {
+      "name": "ews_strings.get_ledm_status_id_str",
+      "handler": "0xa00c43c1",
+      "status": "held-for-further-review",
+      "reason": "Some concrete ROM status/string IDs are known, but complete localization library/language/buffer semantics have not yet been resolved. Retain for the next bounded valid-argument review."
+    },
+    {
+      "name": "l10n.get_string",
+      "handler": "0xa02cc567",
+      "status": "held-for-further-review",
+      "reason": "Some concrete ROM status/string IDs are known, but complete localization library/language/buffer semantics have not yet been resolved. Retain for the next bounded valid-argument review."
+    },
+    {
+      "name": "strings.get_string",
+      "handler": "0xa03ff9d3",
+      "status": "held-for-further-review",
+      "reason": "Some concrete ROM status/string IDs are known, but complete localization library/language/buffer semantics have not yet been resolved. Retain for the next bounded valid-argument review."
+    },
+    {
+      "name": "strings.get_library_string",
+      "handler": "0xa03ffa15",
+      "status": "held-for-further-review",
+      "reason": "Some concrete ROM status/string IDs are known, but complete localization library/language/buffer semantics have not yet been resolved. Retain for the next bounded valid-argument review."
+    },
+    {
+      "name": "strings.get_tmp_str",
+      "handler": "0xa03ffb5b",
+      "status": "held-for-further-review",
+      "reason": "Some concrete ROM status/string IDs are known, but complete localization library/language/buffer semantics have not yet been resolved. Retain for the next bounded valid-argument review."
+    }
+  ],
+  "limits": [
+    "No live serial access was performed by this reviewer.",
+    "Full-table commands provide real command behavior; completeness requires count reconciliation against capture.",
+    "Counter values and caches are read at different times; this is not an atomic snapshot.",
+    "Read operations may update ordinary locks, allocator metadata, output buffers, or explicitly described caches. No global read-only assertion is made."
+  ]
+}

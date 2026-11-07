@@ -1,0 +1,13 @@
+{
+  "time_utc": "2026-10-29T18:30:07.920112+00:00",
+  "ports": [
+    {
+      "device": "COM16",
+      "description": "USB-SERIAL CH340 (COM16)",
+      "hwid": "USB VID:PID=1A86:7523 SER= LOCATION=1-5"
+    }
+  ],
+  "opened": true,
+  "passive_bytes": 0,
+  "passive_hex": ""
+}

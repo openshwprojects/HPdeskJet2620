@@ -1,0 +1,91 @@
+[
+  {
+    "command": "udws \"secutils.test;\"",
+    "name": "secutils.test",
+    "kind": "exact_empty_argument_rejection_path",
+    "purpose": "Record the exact empty-argument response without reaching the underlying operation.",
+    "behavior_from_review": "returns_without_operation_or_handler_output",
+    "handler": "0xa03caf21",
+    "descriptor_address": "0xa0606678",
+    "runtime_registered_at_review": false,
+    "runtime_registry_complete_at_review": false,
+    "side_effects_assessment": "Exact empty arguments only. For parser returns 0 and -1 the handler returns without non-stack writes, global/peripheral data reads, unknown calls, uninitialized argument reads, or decisions based on unknown values. All parser destinations are stack-local; %n and unsupported formats are excluded. Any help/error formatter has known arguments. Normal parser/output bookkeeping remains; supplying valid arguments is NOT covered.",
+    "evidence": {
+      "checker": "references/check_empty_argument_paths.py",
+      "parser_address": "0xa02c3de2",
+      "formatter_address": "0xa02c37be",
+      "paths": [
+        {
+          "parser_return": 0,
+          "instructions": [
+            "0xa03caf20: push {lr}",
+            "0xa03caf22: sub sp, #4",
+            "0xa03caf24: mov r2, sp",
+            "0xa03caf26: adr r1, #0x10",
+            "0xa03caf28: movs r3, #0",
+            "0xa03caf2a: mvns r0, r3",
+            "0xa03caf2c: bl #0xa02c3de2",
+            "0xa03caf30: add sp, #4",
+            "0xa03caf32: pop {pc}"
+          ],
+          "calls": [
+            {
+              "at": "0xa03caf2c",
+              "target": "0xa02c3de2"
+            }
+          ],
+          "outputs": [],
+          "parser_count": 1,
+          "parser_formats": [
+            "%d"
+          ],
+          "returned": true,
+          "failure": null,
+          "parser_destinations": [
+            {
+              "address": "0x7100fef8",
+              "format": "%d",
+              "maximum_extent": 4
+            }
+          ]
+        },
+        {
+          "parser_return": -1,
+          "instructions": [
+            "0xa03caf20: push {lr}",
+            "0xa03caf22: sub sp, #4",
+            "0xa03caf24: mov r2, sp",
+            "0xa03caf26: adr r1, #0x10",
+            "0xa03caf28: movs r3, #0",
+            "0xa03caf2a: mvns r0, r3",
+            "0xa03caf2c: bl #0xa02c3de2",
+            "0xa03caf30: add sp, #4",
+            "0xa03caf32: pop {pc}"
+          ],
+          "calls": [
+            {
+              "at": "0xa03caf2c",
+              "target": "0xa02c3de2"
+            }
+          ],
+          "outputs": [],
+          "parser_count": 1,
+          "parser_formats": [
+            "%d"
+          ],
+          "returned": true,
+          "failure": null,
+          "parser_destinations": [
+            {
+              "address": "0x7100fef8",
+              "format": "%d",
+              "maximum_extent": 4
+            }
+          ]
+        }
+      ]
+    },
+    "physically_tested_by_this_review": false,
+    "classification": "reviewed-empty-argument-path"
+  }
+]

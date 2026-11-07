@@ -1,0 +1,7 @@
+
+-> 
+-> udws "temp.job;"
+submit_job(mem_size = 0, tid = 68988) : OK
+;udws() returns 0 (0x0)
+-> 
+-> 

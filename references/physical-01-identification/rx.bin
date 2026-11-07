@@ -1,0 +1,15 @@
+
+-> udws "bio.rev_str;"
+TJP1FN1809AR;udws() returns 0 (0x0)
+-> udws "bio.base_rev_str;"
+TJP1FN1702CR;udws() returns 0 (0x0)
+-> udws "bdid.get_board_id;"
+0x68a4 (26788),(MFG:6, FAM:0x45 (69), NUM:4);udws() returns 0 (0x0)
+-> udws "bdid.get_mapped_board_id;"
+26788,(MFG:6, FAM:69, NUM:4);udws() returns 0 (0x0)
+-> udws "shm.msecs;"
+msecs = 956076
+;udws() returns 0 (0x0)
+-> udws "udw.cmds;"
+udws() returns 0 (0x0)
+-> 

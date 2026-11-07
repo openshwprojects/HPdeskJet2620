@@ -1,0 +1,6 @@
+#ifndef _SHIM_LWIP_MDNS_OPTS_H
+#define _SHIM_LWIP_MDNS_OPTS_H
+
+#define LWIP_MDNS_RESPONDER 1
+
+#endif

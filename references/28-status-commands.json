@@ -1,0 +1,129 @@
+[
+  {
+    "name": "scan scansm getSerial",
+    "command": "udws \"scan scansm getSerial;\"",
+    "handler": "0xa03bab15",
+    "classification": "reviewed-information-query-after-live-metadata",
+    "dsid": 76898,
+    "dsid_hex": "0x12c62",
+    "record_index": 0,
+    "requested_bytes": 15,
+    "read_helper": "0xa03a37c2",
+    "prerequisite_commands": [
+      "udws \"ds2.get_num_elem 76898;\"",
+      "udws \"ds2.get_elem_size 76898;\""
+    ],
+    "accept_if": {
+      "both_prompt_returned": true,
+      "both_responses_valid_single_numeric_payloads": true,
+      "record_count_min": 1,
+      "record_count_max": 65535,
+      "record_size_bytes_min": 15,
+      "record_size_bytes_max": 65535
+    },
+    "hold_if": "Any response missing/timeout/malformed, count0, element-size0, count>65535 or element-size outside requested_bytes..65535. Never infer existence from NVM type alone.",
+    "control_flow_proof": "0xa03a37c2 passes fixed DSID76898, record_index0 and byte_count15 to data-store vtable+0x20 using caller stack buffer. Handler adds a NUL within allocated buffer and formats via A03BEF18. No scan job or motor path.",
+    "argument_note": "No command input consumed.",
+    "hardware_access": "Only registered data-store read callback; no scanner hardware control requested.",
+    "timeout": 25,
+    "static_descriptor_name": "DSID_SCAN_MODULE_SERIAL",
+    "static_descriptor_address": "0xa05fc50c",
+    "static_descriptor_count": 1,
+    "static_descriptor_bytes": 15,
+    "physical_prerequisites": {
+      "record_count": 1,
+      "record_bytes": 15,
+      "count_source": "references/physical-27-status-prerequisites/0001-udws_ds2_get_num_elem_76898.bin",
+      "size_source": "references/physical-27-status-prerequisites/0002-udws_ds2_get_elem_size_76898.bin"
+    },
+    "review_source": "references/status_prerequisite_review.json"
+  },
+  {
+    "name": "scan scansm getCorrectionMatrixBarcode",
+    "command": "udws \"scan scansm getCorrectionMatrixBarcode 0;\"",
+    "handler": "0xa03bac6d",
+    "classification": "reviewed-information-query-after-live-metadata",
+    "dsid": 77445,
+    "dsid_hex": "0x12e85",
+    "record_index": 0,
+    "requested_bytes": 10,
+    "read_helper": "0xa03a3714",
+    "prerequisite_commands": [
+      "udws \"ds2.get_num_elem 77445;\"",
+      "udws \"ds2.get_elem_size 77445;\""
+    ],
+    "accept_if": {
+      "both_prompt_returned": true,
+      "both_responses_valid_single_numeric_payloads": true,
+      "record_count_min": 1,
+      "record_count_max": 65535,
+      "record_size_bytes_min": 10,
+      "record_size_bytes_max": 65535
+    },
+    "hold_if": "Any response missing/timeout/malformed, count0, element-size0, count>65535 or element-size outside requested_bytes..65535. Never infer existence from NVM type alone.",
+    "control_flow_proof": "0xa03a3714 passes fixed DSID77445, record_index0 and byte_count10 to data-store vtable+0x20 using caller stack buffer. Handler adds a NUL within allocated buffer and formats via A03BEF18. No scan job or motor path.",
+    "argument_note": "Explicit0 is consumed by A03BEF76 and discarded before fixed record read.",
+    "hardware_access": "Only registered data-store read callback; no scanner hardware control requested.",
+    "timeout": 25,
+    "static_descriptor_name": "DSID_IP_CORRECTION_MATRIX_BARCODE",
+    "static_descriptor_address": "0xa05fc548",
+    "static_descriptor_count": 1,
+    "static_descriptor_bytes": 10,
+    "physical_prerequisites": {
+      "record_count": 1,
+      "record_bytes": 10,
+      "count_source": "references/physical-27-status-prerequisites/0013-udws_ds2_get_num_elem_77445.bin",
+      "size_source": "references/physical-27-status-prerequisites/0014-udws_ds2_get_elem_size_77445.bin"
+    },
+    "review_source": "references/status_prerequisite_review.json"
+  },
+  {
+    "name": "escl.get_remote_scan_state",
+    "command": "udws \"escl.get_remote_scan_state;\"",
+    "handler": "0xa0373f31",
+    "dsid": 78788,
+    "dsid_hex": "0x133c4",
+    "static_descriptor_address": "0xa05ee1d0",
+    "static_descriptor_name": "DSID_REMOTELY_INITIATED_SCAN",
+    "static_descriptor_words": [
+      "0x000133c4",
+      "0xa05ee230",
+      "0x00000001",
+      "0xffffffff",
+      "0x00000000",
+      "0x00000000"
+    ],
+    "prerequisite_commands": [
+      "udws \"ds2.get_name 78788;\"",
+      "udws \"ds2.get_num_elem 78788;\"",
+      "udws \"ds2.get_elem_size 78788;\"",
+      "udws \"ds2.get 78788;\""
+    ],
+    "accept_if": {
+      "all_prompt_returned": true,
+      "name_exact": "DSID_REMOTELY_INITIATED_SCAN",
+      "element_count_equals": 0,
+      "record_size_bytes_equals": 0,
+      "value_in": [
+        0,
+        1
+      ]
+    },
+    "hold_if": "Missing/malformed response, wrong/NULL name, nonzero array metadata, or value outside0/1. A raw ds2.get zero alone is not proof that the ID exists.",
+    "control_flow_proof": "A0373F30 reads DSID0x133c4 through data-store vtable+8. For0/1 it formats state into local10-byte buffer and writes returned formatted length; all other values leave length-1. Live scalar checks and static width1 descriptor establish the admitted branch. No scan request is emitted.",
+    "timeout": 25,
+    "hardware_access": "Data-store state read only.",
+    "classification": "reviewed-information-query-after-live-metadata",
+    "physical_prerequisites": {
+      "observed_name": "DSID_REMOTELY_INITIATED_SCAN",
+      "element_count": 0,
+      "record_bytes": 0,
+      "value": 1,
+      "name_source": "references/physical-27-status-prerequisites/0015-udws_ds2_get_name_78788.bin",
+      "count_source": "references/physical-27-status-prerequisites/0016-udws_ds2_get_num_elem_78788.bin",
+      "size_source": "references/physical-27-status-prerequisites/0017-udws_ds2_get_elem_size_78788.bin",
+      "value_source": "references/physical-27-status-prerequisites/0018-udws_ds2_get_78788.bin"
+    },
+    "review_source": "references/status_prerequisite_review.json"
+  }
+]

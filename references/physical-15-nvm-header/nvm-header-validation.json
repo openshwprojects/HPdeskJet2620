@@ -1,0 +1,652 @@
+{
+  "source": "physical nvm2.nvm_read_byte responses",
+  "offset": 0,
+  "length": 256,
+  "complete_for_requested_range": true,
+  "sha256": "ab54fcff08581d7c3efabfcd877a3e7f93df33ab6f95a1e8676df800b1c6ee93",
+  "update_status_at_1": "0xa9",
+  "board_id_at_12_big_endian": "0x68a4",
+  "sources": [
+    {
+      "response": "0001-udws_nvm2_nvm_read_byte_0_nvm2_nvm_read_byte_1_nvm2_nvm_read_byte.bin",
+      "offsets": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "sha256": "3e972cf773723460b5ddc49b55a8f464a1b29d07f5cfb041d308ef1e8ae97f9a"
+    },
+    {
+      "response": "0002-udws_nvm2_nvm_read_byte_4_nvm2_nvm_read_byte_5_nvm2_nvm_read_byte.bin",
+      "offsets": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "sha256": "4517c75ba683e908635860e1d41e581447aff329c33098b0143b7bf7c81231ad"
+    },
+    {
+      "response": "0003-udws_nvm2_nvm_read_byte_8_nvm2_nvm_read_byte_9_nvm2_nvm_read_byte.bin",
+      "offsets": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "sha256": "ce2ff8bc4a2ccf8bcd2d2a6a186dccc57fe3539d7f5ce742186a4eae5bcc5d17"
+    },
+    {
+      "response": "0004-udws_nvm2_nvm_read_byte_12_nvm2_nvm_read_byte_13_nvm2_nvm_read_by.bin",
+      "offsets": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "sha256": "2982d4bdca842bba9900e0fdd319e6d756025216aa182f3f33dfaa108220c2d1"
+    },
+    {
+      "response": "0005-udws_nvm2_nvm_read_byte_16_nvm2_nvm_read_byte_17_nvm2_nvm_read_by.bin",
+      "offsets": [
+        16,
+        17,
+        18,
+        19
+      ],
+      "sha256": "fa9ed43e451596e4c1b4c4fc0d87b7571ced5c1cdf2a5e5d5cb56874933d291a"
+    },
+    {
+      "response": "0006-udws_nvm2_nvm_read_byte_20_nvm2_nvm_read_byte_21_nvm2_nvm_read_by.bin",
+      "offsets": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "sha256": "28de075f1687b435c4308baae4bc01d6b55bab87e40e6d71077b242e230cfffd"
+    },
+    {
+      "response": "0007-udws_nvm2_nvm_read_byte_24_nvm2_nvm_read_byte_25_nvm2_nvm_read_by.bin",
+      "offsets": [
+        24,
+        25,
+        26,
+        27
+      ],
+      "sha256": "3e9ba119eec461c971933b1af82e5c23d0784ee12c7cf8f2540183df42306592"
+    },
+    {
+      "response": "0008-udws_nvm2_nvm_read_byte_28_nvm2_nvm_read_byte_29_nvm2_nvm_read_by.bin",
+      "offsets": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "sha256": "f426d4369a82f50ee02d3f38168e76e37ad61ffeb9a5a34ffdc493a04c6a0f58"
+    },
+    {
+      "response": "0009-udws_nvm2_nvm_read_byte_32_nvm2_nvm_read_byte_33_nvm2_nvm_read_by.bin",
+      "offsets": [
+        32,
+        33,
+        34,
+        35
+      ],
+      "sha256": "e88132bd5d766bd9427456988ac4a2437522f6cf2ea22989215f825955e347de"
+    },
+    {
+      "response": "0010-udws_nvm2_nvm_read_byte_36_nvm2_nvm_read_byte_37_nvm2_nvm_read_by.bin",
+      "offsets": [
+        36,
+        37,
+        38,
+        39
+      ],
+      "sha256": "ca4f4adb95aca7a82f23d21a7802737c1f0be41a5e9e518339a45a5550026a15"
+    },
+    {
+      "response": "0011-udws_nvm2_nvm_read_byte_40_nvm2_nvm_read_byte_41_nvm2_nvm_read_by.bin",
+      "offsets": [
+        40,
+        41,
+        42,
+        43
+      ],
+      "sha256": "0e50841483dc5560936de68298f2ee0c06bb9c7ccc7371d5b5baf9a65fa6e3c8"
+    },
+    {
+      "response": "0012-udws_nvm2_nvm_read_byte_44_nvm2_nvm_read_byte_45_nvm2_nvm_read_by.bin",
+      "offsets": [
+        44,
+        45,
+        46,
+        47
+      ],
+      "sha256": "483e6cfa1fbc34c2cb5dc2f5d20bba89ea9b71b522d61dbcbf2401d57befb07c"
+    },
+    {
+      "response": "0013-udws_nvm2_nvm_read_byte_48_nvm2_nvm_read_byte_49_nvm2_nvm_read_by.bin",
+      "offsets": [
+        48,
+        49,
+        50,
+        51
+      ],
+      "sha256": "86aac0fa6e2638107ebb3541ee068f5bc976bd20ba2d05c4c8257138bcdde437"
+    },
+    {
+      "response": "0014-udws_nvm2_nvm_read_byte_52_nvm2_nvm_read_byte_53_nvm2_nvm_read_by.bin",
+      "offsets": [
+        52,
+        53,
+        54,
+        55
+      ],
+      "sha256": "21dc811db59d2096c76b47aa362805f05b6299143c7bb2c973781ceb5a4e368a"
+    },
+    {
+      "response": "0015-udws_nvm2_nvm_read_byte_56_nvm2_nvm_read_byte_57_nvm2_nvm_read_by.bin",
+      "offsets": [
+        56,
+        57,
+        58,
+        59
+      ],
+      "sha256": "5c669fdd9b24076ea355cba10eb90d7831a9f70a00ae6825299296b25f31cb26"
+    },
+    {
+      "response": "0016-udws_nvm2_nvm_read_byte_60_nvm2_nvm_read_byte_61_nvm2_nvm_read_by.bin",
+      "offsets": [
+        60,
+        61,
+        62,
+        63
+      ],
+      "sha256": "ee0addbe5979854ce8dc7f6791698e33b6a9acc0887fe4100b0d1c70f1e7ab84"
+    },
+    {
+      "response": "0017-udws_nvm2_nvm_read_byte_64_nvm2_nvm_read_byte_65_nvm2_nvm_read_by.bin",
+      "offsets": [
+        64,
+        65,
+        66,
+        67
+      ],
+      "sha256": "68342f40e98115f5f87428ea16cfebb2ad90e55b800bafb80c8cfd851e7290ae"
+    },
+    {
+      "response": "0018-udws_nvm2_nvm_read_byte_68_nvm2_nvm_read_byte_69_nvm2_nvm_read_by.bin",
+      "offsets": [
+        68,
+        69,
+        70,
+        71
+      ],
+      "sha256": "8cbe9e34fbdda609e698114f62228409118df4d6202b3db298e34eb16549d5f3"
+    },
+    {
+      "response": "0019-udws_nvm2_nvm_read_byte_72_nvm2_nvm_read_byte_73_nvm2_nvm_read_by.bin",
+      "offsets": [
+        72,
+        73,
+        74,
+        75
+      ],
+      "sha256": "44f6b758e1c5ca9bc09584e61adbc46839d9a8f96e083925ea90c74e0785ac5b"
+    },
+    {
+      "response": "0020-udws_nvm2_nvm_read_byte_76_nvm2_nvm_read_byte_77_nvm2_nvm_read_by.bin",
+      "offsets": [
+        76,
+        77,
+        78,
+        79
+      ],
+      "sha256": "dc5fe26d4b6d373688d00348ca02ab67c4535bc9dec9fc033a6866416754cfa8"
+    },
+    {
+      "response": "0021-udws_nvm2_nvm_read_byte_80_nvm2_nvm_read_byte_81_nvm2_nvm_read_by.bin",
+      "offsets": [
+        80,
+        81,
+        82,
+        83
+      ],
+      "sha256": "fa44a4eb32b28b4aaa3f6328c9817f2449a35f16b0b9ab9bef3663dc2a88cacf"
+    },
+    {
+      "response": "0022-udws_nvm2_nvm_read_byte_84_nvm2_nvm_read_byte_85_nvm2_nvm_read_by.bin",
+      "offsets": [
+        84,
+        85,
+        86,
+        87
+      ],
+      "sha256": "a6b38e08075957d7c544579fb22985bb58e584dd143bbb0d6da98eefa7ec232a"
+    },
+    {
+      "response": "0023-udws_nvm2_nvm_read_byte_88_nvm2_nvm_read_byte_89_nvm2_nvm_read_by.bin",
+      "offsets": [
+        88,
+        89,
+        90,
+        91
+      ],
+      "sha256": "c5c8bb5e3cb7da267f370c442c25538204427473a7cf8c35142c1ed52be123b0"
+    },
+    {
+      "response": "0024-udws_nvm2_nvm_read_byte_92_nvm2_nvm_read_byte_93_nvm2_nvm_read_by.bin",
+      "offsets": [
+        92,
+        93,
+        94,
+        95
+      ],
+      "sha256": "e683e940bbb3aaf9e5efb131630e704f9bd699d14cd94710f7a5c93dff6afb48"
+    },
+    {
+      "response": "0025-udws_nvm2_nvm_read_byte_96_nvm2_nvm_read_byte_97_nvm2_nvm_read_by.bin",
+      "offsets": [
+        96,
+        97,
+        98,
+        99
+      ],
+      "sha256": "bf86100a01aabf2e852fe2126a969423b6d4039ed923c1c7a9112ee864caf846"
+    },
+    {
+      "response": "0026-udws_nvm2_nvm_read_byte_100_nvm2_nvm_read_byte_101_nvm2_nvm_read_.bin",
+      "offsets": [
+        100,
+        101,
+        102,
+        103
+      ],
+      "sha256": "a5d820c32a67ae0974cf8913826dad4cfea0d4958a1db5b87887f94b2e269e22"
+    },
+    {
+      "response": "0027-udws_nvm2_nvm_read_byte_104_nvm2_nvm_read_byte_105_nvm2_nvm_read_.bin",
+      "offsets": [
+        104,
+        105,
+        106,
+        107
+      ],
+      "sha256": "f5497fb319ab03678fae02b65cc60578246abb3a773a952a31de79d03b04ad94"
+    },
+    {
+      "response": "0028-udws_nvm2_nvm_read_byte_108_nvm2_nvm_read_byte_109_nvm2_nvm_read_.bin",
+      "offsets": [
+        108,
+        109,
+        110,
+        111
+      ],
+      "sha256": "9a103ee4b8715774d2cfd212a2d173f0111426e3f0497f11a85105a971db8ac4"
+    },
+    {
+      "response": "0029-udws_nvm2_nvm_read_byte_112_nvm2_nvm_read_byte_113_nvm2_nvm_read_.bin",
+      "offsets": [
+        112,
+        113,
+        114,
+        115
+      ],
+      "sha256": "aa7ff748c8245a6bc8f226a7d44f09f22bed781e76af03dd6fab93063c9d2ced"
+    },
+    {
+      "response": "0030-udws_nvm2_nvm_read_byte_116_nvm2_nvm_read_byte_117_nvm2_nvm_read_.bin",
+      "offsets": [
+        116,
+        117,
+        118,
+        119
+      ],
+      "sha256": "8538dcae720d79e4b9fc696450f8e96628077d523c2012fb996523a54a7451f9"
+    },
+    {
+      "response": "0031-udws_nvm2_nvm_read_byte_120_nvm2_nvm_read_byte_121_nvm2_nvm_read_.bin",
+      "offsets": [
+        120,
+        121,
+        122,
+        123
+      ],
+      "sha256": "330a6e4a51bf80fec511a01b76e028bdcc403a2913b16040d93e5de2f088e94b"
+    },
+    {
+      "response": "0032-udws_nvm2_nvm_read_byte_124_nvm2_nvm_read_byte_125_nvm2_nvm_read_.bin",
+      "offsets": [
+        124,
+        125,
+        126,
+        127
+      ],
+      "sha256": "0a7bbb0bd1863ecfade855af23ba8f2f4dc5a85ddc94edbb39092f9f4283cc0f"
+    },
+    {
+      "response": "0033-udws_nvm2_nvm_read_byte_128_nvm2_nvm_read_byte_129_nvm2_nvm_read_.bin",
+      "offsets": [
+        128,
+        129,
+        130,
+        131
+      ],
+      "sha256": "28b25cc322c992ba4e9f6658ddc64f51a7e8549e8873f970c5b4ef6fed4ec348"
+    },
+    {
+      "response": "0034-udws_nvm2_nvm_read_byte_132_nvm2_nvm_read_byte_133_nvm2_nvm_read_.bin",
+      "offsets": [
+        132,
+        133,
+        134,
+        135
+      ],
+      "sha256": "0b057ff23482e92f8f9564c7c0cfa4d42f276b8c408f948493d9c9a46cce2824"
+    },
+    {
+      "response": "0035-udws_nvm2_nvm_read_byte_136_nvm2_nvm_read_byte_137_nvm2_nvm_read_.bin",
+      "offsets": [
+        136,
+        137,
+        138,
+        139
+      ],
+      "sha256": "f35d638a3b49939d22ef20c6d7281b84d4e994dc40ceacc8466a6dc2ed4bd9de"
+    },
+    {
+      "response": "0036-udws_nvm2_nvm_read_byte_140_nvm2_nvm_read_byte_141_nvm2_nvm_read_.bin",
+      "offsets": [
+        140,
+        141,
+        142,
+        143
+      ],
+      "sha256": "7e8fe79c8c275b4726dcdc216b05687b3e26290e83e17ea54d80754c28eb1736"
+    },
+    {
+      "response": "0037-udws_nvm2_nvm_read_byte_144_nvm2_nvm_read_byte_145_nvm2_nvm_read_.bin",
+      "offsets": [
+        144,
+        145,
+        146,
+        147
+      ],
+      "sha256": "5bf673063bd1470a6f07833411d5640b3fa88f9872959d04933d85505b440369"
+    },
+    {
+      "response": "0038-udws_nvm2_nvm_read_byte_148_nvm2_nvm_read_byte_149_nvm2_nvm_read_.bin",
+      "offsets": [
+        148,
+        149,
+        150,
+        151
+      ],
+      "sha256": "cae94adf601ef9ed5c3ff607ac1e045b6f1da12390e8ff458da8d86e160dd749"
+    },
+    {
+      "response": "0039-udws_nvm2_nvm_read_byte_152_nvm2_nvm_read_byte_153_nvm2_nvm_read_.bin",
+      "offsets": [
+        152,
+        153,
+        154,
+        155
+      ],
+      "sha256": "296a351ac30519b57ee6f9dd7351cd38d0d9546fbeead59ff922647f112c9883"
+    },
+    {
+      "response": "0040-udws_nvm2_nvm_read_byte_156_nvm2_nvm_read_byte_157_nvm2_nvm_read_.bin",
+      "offsets": [
+        156,
+        157,
+        158,
+        159
+      ],
+      "sha256": "9a0625e7fe5914924a6e453b1f4e38299fd5862353ff847821938ab572c626fd"
+    },
+    {
+      "response": "0041-udws_nvm2_nvm_read_byte_160_nvm2_nvm_read_byte_161_nvm2_nvm_read_.bin",
+      "offsets": [
+        160,
+        161,
+        162,
+        163
+      ],
+      "sha256": "9159dfbf1fadc1986e3e1cca6049c215d0a8d8c0e7e7fab495ccf2b422eb239e"
+    },
+    {
+      "response": "0042-udws_nvm2_nvm_read_byte_164_nvm2_nvm_read_byte_165_nvm2_nvm_read_.bin",
+      "offsets": [
+        164,
+        165,
+        166,
+        167
+      ],
+      "sha256": "2bd6f4a7fefeb0ab0f91c79c3e7b3c168b50eb2e8a32027054d11a6678283916"
+    },
+    {
+      "response": "0043-udws_nvm2_nvm_read_byte_168_nvm2_nvm_read_byte_169_nvm2_nvm_read_.bin",
+      "offsets": [
+        168,
+        169,
+        170,
+        171
+      ],
+      "sha256": "82408c70ade70120953f01df6c8ca35b36bad998f9158ac5c96a1eb9d94abc21"
+    },
+    {
+      "response": "0044-udws_nvm2_nvm_read_byte_172_nvm2_nvm_read_byte_173_nvm2_nvm_read_.bin",
+      "offsets": [
+        172,
+        173,
+        174,
+        175
+      ],
+      "sha256": "d4b62363b9fdd3d056f6e9d00d07bfd5ebbd9b21c2632b423927bec54d8a26f9"
+    },
+    {
+      "response": "0045-udws_nvm2_nvm_read_byte_176_nvm2_nvm_read_byte_177_nvm2_nvm_read_.bin",
+      "offsets": [
+        176,
+        177,
+        178,
+        179
+      ],
+      "sha256": "ecbe07e69bea3b8a5d4e5766f7c19584b6a3307922c3fd0e6f3ca663fd83f9c9"
+    },
+    {
+      "response": "0046-udws_nvm2_nvm_read_byte_180_nvm2_nvm_read_byte_181_nvm2_nvm_read_.bin",
+      "offsets": [
+        180,
+        181,
+        182,
+        183
+      ],
+      "sha256": "66e790f654e44ab3a96e98a12713ce8f0e4beecdc0bb19f5f8e463f3aca53951"
+    },
+    {
+      "response": "0047-udws_nvm2_nvm_read_byte_184_nvm2_nvm_read_byte_185_nvm2_nvm_read_.bin",
+      "offsets": [
+        184,
+        185,
+        186,
+        187
+      ],
+      "sha256": "618bbdc11a1fe1de429d84fd2f98495c0bf929a9ca27f416e8445b0ddae4cbc3"
+    },
+    {
+      "response": "0048-udws_nvm2_nvm_read_byte_188_nvm2_nvm_read_byte_189_nvm2_nvm_read_.bin",
+      "offsets": [
+        188,
+        189,
+        190,
+        191
+      ],
+      "sha256": "afaee0a141e49ad83697e1621a29e0cdbc231d5c986649a11d36243f731f529d"
+    },
+    {
+      "response": "0049-udws_nvm2_nvm_read_byte_192_nvm2_nvm_read_byte_193_nvm2_nvm_read_.bin",
+      "offsets": [
+        192,
+        193,
+        194,
+        195
+      ],
+      "sha256": "04ebfdb4c9a63a6fb2bf9a9a1247f89c960c0f079e51a12375a15578052e1e4c"
+    },
+    {
+      "response": "0050-udws_nvm2_nvm_read_byte_196_nvm2_nvm_read_byte_197_nvm2_nvm_read_.bin",
+      "offsets": [
+        196,
+        197,
+        198,
+        199
+      ],
+      "sha256": "76bac08ac776499e434006779b79fc2da20281c41b28e0244e3b7b01c51cdc6e"
+    },
+    {
+      "response": "0051-udws_nvm2_nvm_read_byte_200_nvm2_nvm_read_byte_201_nvm2_nvm_read_.bin",
+      "offsets": [
+        200,
+        201,
+        202,
+        203
+      ],
+      "sha256": "1871b475d88b500c1809bd44e020b962852df4db34e9441ffb3e369a735d4f66"
+    },
+    {
+      "response": "0052-udws_nvm2_nvm_read_byte_204_nvm2_nvm_read_byte_205_nvm2_nvm_read_.bin",
+      "offsets": [
+        204,
+        205,
+        206,
+        207
+      ],
+      "sha256": "1008a5cd060c831558598b82a7954d441995bfe2274532c8decb56abf5a7436e"
+    },
+    {
+      "response": "0053-udws_nvm2_nvm_read_byte_208_nvm2_nvm_read_byte_209_nvm2_nvm_read_.bin",
+      "offsets": [
+        208,
+        209,
+        210,
+        211
+      ],
+      "sha256": "03a1b952e29edcb0e4b18d4822dae0062e39fad898017d5c5de661d48b80c98f"
+    },
+    {
+      "response": "0054-udws_nvm2_nvm_read_byte_212_nvm2_nvm_read_byte_213_nvm2_nvm_read_.bin",
+      "offsets": [
+        212,
+        213,
+        214,
+        215
+      ],
+      "sha256": "1aa44a85a59583979d158e43e61e66e89a432927d16ba8119b11152415ded2b7"
+    },
+    {
+      "response": "0055-udws_nvm2_nvm_read_byte_216_nvm2_nvm_read_byte_217_nvm2_nvm_read_.bin",
+      "offsets": [
+        216,
+        217,
+        218,
+        219
+      ],
+      "sha256": "9bd945b163522a63811be8c8a177db7b881ad730d3fb8fa15b785336b5a3c367"
+    },
+    {
+      "response": "0056-udws_nvm2_nvm_read_byte_220_nvm2_nvm_read_byte_221_nvm2_nvm_read_.bin",
+      "offsets": [
+        220,
+        221,
+        222,
+        223
+      ],
+      "sha256": "af490a2e0001d1d2ced32ebbe77a54ade107e279a9f4f0154fcbdfcf170674cf"
+    },
+    {
+      "response": "0057-udws_nvm2_nvm_read_byte_224_nvm2_nvm_read_byte_225_nvm2_nvm_read_.bin",
+      "offsets": [
+        224,
+        225,
+        226,
+        227
+      ],
+      "sha256": "4587a3e03b86e15ec618f2255fa22a65b773f25a08b2865339d22d890dd22b63"
+    },
+    {
+      "response": "0058-udws_nvm2_nvm_read_byte_228_nvm2_nvm_read_byte_229_nvm2_nvm_read_.bin",
+      "offsets": [
+        228,
+        229,
+        230,
+        231
+      ],
+      "sha256": "07fa586efc43232e435f4a27ff914502362223541371e37adf81df48d064eb47"
+    },
+    {
+      "response": "0059-udws_nvm2_nvm_read_byte_232_nvm2_nvm_read_byte_233_nvm2_nvm_read_.bin",
+      "offsets": [
+        232,
+        233,
+        234,
+        235
+      ],
+      "sha256": "19eb873731eaf4ad59081c4c79b28abd46690afd9d378fa361459b5093a43b8b"
+    },
+    {
+      "response": "0060-udws_nvm2_nvm_read_byte_236_nvm2_nvm_read_byte_237_nvm2_nvm_read_.bin",
+      "offsets": [
+        236,
+        237,
+        238,
+        239
+      ],
+      "sha256": "f77a68dacff24eae7bcbeb74081f3756f798a95c52fc274a134a73da9f694c88"
+    },
+    {
+      "response": "0061-udws_nvm2_nvm_read_byte_240_nvm2_nvm_read_byte_241_nvm2_nvm_read_.bin",
+      "offsets": [
+        240,
+        241,
+        242,
+        243
+      ],
+      "sha256": "3c4132c0cf334c1c9a89969dc245440e7adf9ccf5a589b941473e8d5081861f7"
+    },
+    {
+      "response": "0062-udws_nvm2_nvm_read_byte_244_nvm2_nvm_read_byte_245_nvm2_nvm_read_.bin",
+      "offsets": [
+        244,
+        245,
+        246,
+        247
+      ],
+      "sha256": "436186172a4ec79ecd9e9aa21a24f81e2103d8bd61b7f10ab2ab51fc9de7d02c"
+    },
+    {
+      "response": "0063-udws_nvm2_nvm_read_byte_248_nvm2_nvm_read_byte_249_nvm2_nvm_read_.bin",
+      "offsets": [
+        248,
+        249,
+        250,
+        251
+      ],
+      "sha256": "8e1c015fbb21d1127037bac5904e567b97413400b789c455fe2bec6d5c51ad3f"
+    },
+    {
+      "response": "0064-udws_nvm2_nvm_read_byte_252_nvm2_nvm_read_byte_253_nvm2_nvm_read_.bin",
+      "offsets": [
+        252,
+        253,
+        254,
+        255
+      ],
+      "sha256": "c4dabaef452723e3e1907da57d5fb613cfa5c3a215e3ca2ad13870d1f7201b12"
+    }
+  ],
+  "note": "Only offsets0..255. Not a full64KiB dump; successive reads are not an atomic snapshot."
+}

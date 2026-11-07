@@ -1,0 +1,7 @@
+#ifndef _SHIM_LWIP_INIT_H
+#define _SHIM_LWIP_INIT_H
+
+#define LWIP_VERSION_MAJOR 2
+#define LWIP_VERSION_MINOR 1
+
+#endif

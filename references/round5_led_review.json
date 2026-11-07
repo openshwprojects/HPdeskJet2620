@@ -1,0 +1,274 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-10-29T21:25:35.399405+00:00",
+  "queries": [
+    {
+      "name": "led_color_cal.get_default_matrix",
+      "command": "udws \"led_color_cal.get_default_matrix 0;\"",
+      "handler": "0xa024ea75",
+      "descriptor_address": "0xa0567b10",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "0",
+      "purpose": "Read LED color calibration metadata without enabling illumination or performing calibration.",
+      "control_flow_proof": "Physical provider20AB0154 isA05C35A8 with vtableA05C35AC. Its slot0x10 isA02CDDBC, forwarding toA02CD9E6. For index0/1 this returns fixed ROM addressA05C439C/A05C43F4, with nine valid signed halfwords. HandlerA024EA74 prints exactly three rows of three; only parser/formatting and pure table-selection helpers execute.",
+      "hardware_access": false,
+      "persistent_writes": false,
+      "timeout": 20,
+      "side_effects": "Local output buffers, UART output and parser state only.",
+      "prior_invocation_status": "not-invoked",
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "provider_evidence": "references/physical-59-metadata-pointers/provider-pointers.json",
+      "provider_evidence_sha256": "ade621c3abc3fcba9cca093587077584674f57dafbc988ac7847519dcdc138c7",
+      "reviewed_ranges": [
+        {
+          "address": "0xa024ea74",
+          "bytes": 88,
+          "disassembly": "0xa024ea74: push {r4, r5, lr}\n0xa024ea76: ldr r2, [pc, #0x124] [0xa024eb9c]=0x20ab0148\n0xa024ea78: ldr r0, [r2]\n0xa024ea7a: ldr r1, [r0]\n0xa024ea7c: ldr r1, [r1, #0x10]\n0xa024ea7e: blx r1\n0xa024ea80: adds r5, r0, #0\n0xa024ea82: bl #0xa024eed8\n0xa024ea86: adds r4, r0, #0\n0xa024ea88: cmp r5, #0\n0xa024ea8a: bne #0xa024ea92\n0xa024ea8c: adr r0, #0x178 'Default correction frontside matrix:'\n0xa024ea8e: bl #0xa024e6a0\n0xa024ea92: movs r3, #4\n0xa024ea94: ldrsh r3, [r4, r3]\n0xa024ea96: movs r0, #2\n0xa024ea98: ldrsh r2, [r4, r0]\n0xa024ea9a: movs r0, #0\n0xa024ea9c: ldrsh r1, [r4, r0]\n0xa024ea9e: adr r0, #0x128 ' %5i %5i %5i\\n'\n0xa024eaa0: bl #0xa024e6a0\n0xa024eaa4: adr r5, #0x188 '                                     %5i %5i %5i\\n'\n0xa024eaa6: movs r3, #0xa\n0xa024eaa8: ldrsh r3, [r4, r3]\n0xa024eaaa: movs r0, #8\n0xa024eaac: ldrsh r2, [r4, r0]\n0xa024eaae: movs r0, #6\n0xa024eab0: ldrsh r1, [r4, r0]\n0xa024eab2: adds r0, r5, #0\n0xa024eab4: bl #0xa024e6a0\n0xa024eab8: movs r3, #0x10\n0xa024eaba: ldrsh r3, [r4, r3]\n0xa024eabc: movs r0, #0xe\n0xa024eabe: ldrsh r2, [r4, r0]\n0xa024eac0: movs r0, #0xc\n0xa024eac2: ldrsh r1, [r4, r0]\n0xa024eac4: adds r0, r5, #0\n0xa024eac6: bl #0xa024e6a0\n0xa024eaca: pop {r4, r5, pc}"
+        },
+        {
+          "address": "0xa024eed8",
+          "bytes": 16,
+          "disassembly": "0xa024eed8: push {lr}\n0xa024eeda: adds r1, r0, #0\n0xa024eedc: ldr r3, [pc, #0x50] [0xa024ef30]=0x20ab0148\n0xa024eede: ldr r0, [r3, #0xc]\n0xa024eee0: ldr r2, [r0]\n0xa024eee2: ldr r2, [r2, #0x10]\n0xa024eee4: blx r2\n0xa024eee6: pop {pc}"
+        },
+        {
+          "address": "0xa02cddbc",
+          "bytes": 10,
+          "disassembly": "0xa02cddbc: push {lr}\n0xa02cddbe: adds r0, r1, #0\n0xa02cddc0: bl #0xa02cd9e6\n0xa02cddc4: pop {pc}"
+        },
+        {
+          "address": "0xa02cd9e6",
+          "bytes": 16,
+          "disassembly": "0xa02cd9e6: cmp r0, #0\n0xa02cd9e8: beq #0xa02cd9f2\n0xa02cd9ea: cmp r0, #1\n0xa02cd9ec: bne #0xa02cd9f2\n0xa02cd9ee: ldr r0, [pc, #0x248] [0xa02cdc38]=0xa05c43f4\n0xa02cd9f0: b #0xa02cd9f4\n0xa02cd9f2: ldr r0, [pc, #0x248] [0xa02cdc3c]=0xa05c439c\n0xa02cd9f4: bx lr"
+        }
+      ],
+      "expected_values": [
+        3672,
+        4747,
+        -228,
+        1015,
+        8154,
+        -978,
+        -1152,
+        1389,
+        7954
+      ],
+      "interpretation": "Compiled default matrix, not measured or current calibration."
+    },
+    {
+      "name": "led_color_cal.get_golden_peaks_widths",
+      "command": "udws \"led_color_cal.get_golden_peaks_widths 0;\"",
+      "handler": "0xa024eb51",
+      "descriptor_address": "0xa0567b28",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "0",
+      "purpose": "Read LED color calibration metadata without enabling illumination or performing calibration.",
+      "control_flow_proof": "Same physically resolved provider slot0x0C isA02CDDB2, forwarding toA02CD9D6. Exact index0/1 returns constantA05C4390/A05C43E8; handler prints exactly six signed halfwords as RGB peak/width pairs. No calibration, lighting, scanner transaction, or storage write occurs.",
+      "hardware_access": false,
+      "persistent_writes": false,
+      "timeout": 20,
+      "side_effects": "Local output buffers, UART output and parser state only.",
+      "prior_invocation_status": "not-invoked",
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "provider_evidence": "references/physical-59-metadata-pointers/provider-pointers.json",
+      "provider_evidence_sha256": "ade621c3abc3fcba9cca093587077584674f57dafbc988ac7847519dcdc138c7",
+      "reviewed_ranges": [
+        {
+          "address": "0xa024eb50",
+          "bytes": 74,
+          "disassembly": "0xa024eb50: push {r4, r5, lr}\n0xa024eb52: ldr r2, [pc, #0x48] [0xa024eb9c]=0x20ab0148\n0xa024eb54: ldr r0, [r2]\n0xa024eb56: ldr r1, [r0]\n0xa024eb58: ldr r1, [r1, #0x10]\n0xa024eb5a: blx r1\n0xa024eb5c: adds r5, r0, #0\n0xa024eb5e: bl #0xa024eee8\n0xa024eb62: adds r4, r0, #0\n0xa024eb64: cmp r5, #0\n0xa024eb66: bne #0xa024eb6e\n0xa024eb68: adr r0, #0x164 'Frontside Golden LED peaks and widths:\\n'\n0xa024eb6a: bl #0xa024e6a0\n0xa024eb6e: movs r3, #2\n0xa024eb70: ldrsh r2, [r4, r3]\n0xa024eb72: movs r0, #0\n0xa024eb74: ldrsh r1, [r4, r0]\n0xa024eb76: ldr r0, [pc, #0x14c] [0xa024ecc4]=0xa024e90c\n0xa024eb78: bl #0xa024e6a0\n0xa024eb7c: movs r3, #6\n0xa024eb7e: ldrsh r2, [r4, r3]\n0xa024eb80: movs r0, #4\n0xa024eb82: ldrsh r1, [r4, r0]\n0xa024eb84: ldr r0, [pc, #0x140] [0xa024ecc8]=0xa024e920\n0xa024eb86: bl #0xa024e6a0\n0xa024eb8a: movs r3, #0xa\n0xa024eb8c: ldrsh r2, [r4, r3]\n0xa024eb8e: movs r0, #8\n0xa024eb90: ldrsh r1, [r4, r0]\n0xa024eb92: ldr r0, [pc, #0x138] [0xa024eccc]=0xa024e934\n0xa024eb94: bl #0xa024e6a0\n0xa024eb98: pop {r4, r5, pc}"
+        },
+        {
+          "address": "0xa024eee8",
+          "bytes": 16,
+          "disassembly": "0xa024eee8: push {lr}\n0xa024eeea: adds r1, r0, #0\n0xa024eeec: ldr r3, [pc, #0x40] [0xa024ef30]=0x20ab0148\n0xa024eeee: ldr r0, [r3, #0xc]\n0xa024eef0: ldr r2, [r0]\n0xa024eef2: ldr r2, [r2, #0xc]\n0xa024eef4: blx r2\n0xa024eef6: pop {pc}"
+        },
+        {
+          "address": "0xa02cddb2",
+          "bytes": 10,
+          "disassembly": "0xa02cddb2: push {lr}\n0xa02cddb4: adds r0, r1, #0\n0xa02cddb6: bl #0xa02cd9d6\n0xa02cddba: pop {pc}"
+        },
+        {
+          "address": "0xa02cd9d6",
+          "bytes": 16,
+          "disassembly": "0xa02cd9d6: cmp r0, #0\n0xa02cd9d8: beq #0xa02cd9e2\n0xa02cd9da: cmp r0, #1\n0xa02cd9dc: bne #0xa02cd9e2\n0xa02cd9de: ldr r0, [pc, #0x250] [0xa02cdc30]=0xa05c43e8\n0xa02cd9e0: b #0xa02cd9e4\n0xa02cd9e2: ldr r0, [pc, #0x250] [0xa02cdc34]=0xa05c4390\n0xa02cd9e4: bx lr"
+        }
+      ],
+      "expected_values": [
+        620,
+        14,
+        521,
+        34,
+        452,
+        22
+      ],
+      "interpretation": "Compiled golden reference values. Index1 table is all zero; this is not a physical light measurement."
+    },
+    {
+      "name": "led_color_cal.get_default_matrix",
+      "command": "udws \"led_color_cal.get_default_matrix 1;\"",
+      "handler": "0xa024ea75",
+      "descriptor_address": "0xa0567b10",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "1",
+      "purpose": "Read LED color calibration metadata without enabling illumination or performing calibration.",
+      "control_flow_proof": "Physical provider20AB0154 isA05C35A8 with vtableA05C35AC. Its slot0x10 isA02CDDBC, forwarding toA02CD9E6. For index0/1 this returns fixed ROM addressA05C439C/A05C43F4, with nine valid signed halfwords. HandlerA024EA74 prints exactly three rows of three; only parser/formatting and pure table-selection helpers execute.",
+      "hardware_access": false,
+      "persistent_writes": false,
+      "timeout": 20,
+      "side_effects": "Local output buffers, UART output and parser state only.",
+      "prior_invocation_status": "not-invoked",
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "provider_evidence": "references/physical-59-metadata-pointers/provider-pointers.json",
+      "provider_evidence_sha256": "ade621c3abc3fcba9cca093587077584674f57dafbc988ac7847519dcdc138c7",
+      "reviewed_ranges": [
+        {
+          "address": "0xa024ea74",
+          "bytes": 88,
+          "disassembly": "0xa024ea74: push {r4, r5, lr}\n0xa024ea76: ldr r2, [pc, #0x124] [0xa024eb9c]=0x20ab0148\n0xa024ea78: ldr r0, [r2]\n0xa024ea7a: ldr r1, [r0]\n0xa024ea7c: ldr r1, [r1, #0x10]\n0xa024ea7e: blx r1\n0xa024ea80: adds r5, r0, #0\n0xa024ea82: bl #0xa024eed8\n0xa024ea86: adds r4, r0, #0\n0xa024ea88: cmp r5, #0\n0xa024ea8a: bne #0xa024ea92\n0xa024ea8c: adr r0, #0x178 'Default correction frontside matrix:'\n0xa024ea8e: bl #0xa024e6a0\n0xa024ea92: movs r3, #4\n0xa024ea94: ldrsh r3, [r4, r3]\n0xa024ea96: movs r0, #2\n0xa024ea98: ldrsh r2, [r4, r0]\n0xa024ea9a: movs r0, #0\n0xa024ea9c: ldrsh r1, [r4, r0]\n0xa024ea9e: adr r0, #0x128 ' %5i %5i %5i\\n'\n0xa024eaa0: bl #0xa024e6a0\n0xa024eaa4: adr r5, #0x188 '                                     %5i %5i %5i\\n'\n0xa024eaa6: movs r3, #0xa\n0xa024eaa8: ldrsh r3, [r4, r3]\n0xa024eaaa: movs r0, #8\n0xa024eaac: ldrsh r2, [r4, r0]\n0xa024eaae: movs r0, #6\n0xa024eab0: ldrsh r1, [r4, r0]\n0xa024eab2: adds r0, r5, #0\n0xa024eab4: bl #0xa024e6a0\n0xa024eab8: movs r3, #0x10\n0xa024eaba: ldrsh r3, [r4, r3]\n0xa024eabc: movs r0, #0xe\n0xa024eabe: ldrsh r2, [r4, r0]\n0xa024eac0: movs r0, #0xc\n0xa024eac2: ldrsh r1, [r4, r0]\n0xa024eac4: adds r0, r5, #0\n0xa024eac6: bl #0xa024e6a0\n0xa024eaca: pop {r4, r5, pc}"
+        },
+        {
+          "address": "0xa024eed8",
+          "bytes": 16,
+          "disassembly": "0xa024eed8: push {lr}\n0xa024eeda: adds r1, r0, #0\n0xa024eedc: ldr r3, [pc, #0x50] [0xa024ef30]=0x20ab0148\n0xa024eede: ldr r0, [r3, #0xc]\n0xa024eee0: ldr r2, [r0]\n0xa024eee2: ldr r2, [r2, #0x10]\n0xa024eee4: blx r2\n0xa024eee6: pop {pc}"
+        },
+        {
+          "address": "0xa02cddbc",
+          "bytes": 10,
+          "disassembly": "0xa02cddbc: push {lr}\n0xa02cddbe: adds r0, r1, #0\n0xa02cddc0: bl #0xa02cd9e6\n0xa02cddc4: pop {pc}"
+        },
+        {
+          "address": "0xa02cd9e6",
+          "bytes": 16,
+          "disassembly": "0xa02cd9e6: cmp r0, #0\n0xa02cd9e8: beq #0xa02cd9f2\n0xa02cd9ea: cmp r0, #1\n0xa02cd9ec: bne #0xa02cd9f2\n0xa02cd9ee: ldr r0, [pc, #0x248] [0xa02cdc38]=0xa05c43f4\n0xa02cd9f0: b #0xa02cd9f4\n0xa02cd9f2: ldr r0, [pc, #0x248] [0xa02cdc3c]=0xa05c439c\n0xa02cd9f4: bx lr"
+        }
+      ],
+      "expected_values": [
+        3672,
+        4747,
+        -228,
+        1015,
+        8154,
+        -978,
+        -1152,
+        1389,
+        7954
+      ],
+      "interpretation": "Compiled default matrix, not measured or current calibration."
+    },
+    {
+      "name": "led_color_cal.get_golden_peaks_widths",
+      "command": "udws \"led_color_cal.get_golden_peaks_widths 1;\"",
+      "handler": "0xa024eb51",
+      "descriptor_address": "0xa0567b28",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "1",
+      "purpose": "Read LED color calibration metadata without enabling illumination or performing calibration.",
+      "control_flow_proof": "Same physically resolved provider slot0x0C isA02CDDB2, forwarding toA02CD9D6. Exact index0/1 returns constantA05C4390/A05C43E8; handler prints exactly six signed halfwords as RGB peak/width pairs. No calibration, lighting, scanner transaction, or storage write occurs.",
+      "hardware_access": false,
+      "persistent_writes": false,
+      "timeout": 20,
+      "side_effects": "Local output buffers, UART output and parser state only.",
+      "prior_invocation_status": "not-invoked",
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "provider_evidence": "references/physical-59-metadata-pointers/provider-pointers.json",
+      "provider_evidence_sha256": "ade621c3abc3fcba9cca093587077584674f57dafbc988ac7847519dcdc138c7",
+      "reviewed_ranges": [
+        {
+          "address": "0xa024eb50",
+          "bytes": 74,
+          "disassembly": "0xa024eb50: push {r4, r5, lr}\n0xa024eb52: ldr r2, [pc, #0x48] [0xa024eb9c]=0x20ab0148\n0xa024eb54: ldr r0, [r2]\n0xa024eb56: ldr r1, [r0]\n0xa024eb58: ldr r1, [r1, #0x10]\n0xa024eb5a: blx r1\n0xa024eb5c: adds r5, r0, #0\n0xa024eb5e: bl #0xa024eee8\n0xa024eb62: adds r4, r0, #0\n0xa024eb64: cmp r5, #0\n0xa024eb66: bne #0xa024eb6e\n0xa024eb68: adr r0, #0x164 'Frontside Golden LED peaks and widths:\\n'\n0xa024eb6a: bl #0xa024e6a0\n0xa024eb6e: movs r3, #2\n0xa024eb70: ldrsh r2, [r4, r3]\n0xa024eb72: movs r0, #0\n0xa024eb74: ldrsh r1, [r4, r0]\n0xa024eb76: ldr r0, [pc, #0x14c] [0xa024ecc4]=0xa024e90c\n0xa024eb78: bl #0xa024e6a0\n0xa024eb7c: movs r3, #6\n0xa024eb7e: ldrsh r2, [r4, r3]\n0xa024eb80: movs r0, #4\n0xa024eb82: ldrsh r1, [r4, r0]\n0xa024eb84: ldr r0, [pc, #0x140] [0xa024ecc8]=0xa024e920\n0xa024eb86: bl #0xa024e6a0\n0xa024eb8a: movs r3, #0xa\n0xa024eb8c: ldrsh r2, [r4, r3]\n0xa024eb8e: movs r0, #8\n0xa024eb90: ldrsh r1, [r4, r0]\n0xa024eb92: ldr r0, [pc, #0x138] [0xa024eccc]=0xa024e934\n0xa024eb94: bl #0xa024e6a0\n0xa024eb98: pop {r4, r5, pc}"
+        },
+        {
+          "address": "0xa024eee8",
+          "bytes": 16,
+          "disassembly": "0xa024eee8: push {lr}\n0xa024eeea: adds r1, r0, #0\n0xa024eeec: ldr r3, [pc, #0x40] [0xa024ef30]=0x20ab0148\n0xa024eeee: ldr r0, [r3, #0xc]\n0xa024eef0: ldr r2, [r0]\n0xa024eef2: ldr r2, [r2, #0xc]\n0xa024eef4: blx r2\n0xa024eef6: pop {pc}"
+        },
+        {
+          "address": "0xa02cddb2",
+          "bytes": 10,
+          "disassembly": "0xa02cddb2: push {lr}\n0xa02cddb4: adds r0, r1, #0\n0xa02cddb6: bl #0xa02cd9d6\n0xa02cddba: pop {pc}"
+        },
+        {
+          "address": "0xa02cd9d6",
+          "bytes": 16,
+          "disassembly": "0xa02cd9d6: cmp r0, #0\n0xa02cd9d8: beq #0xa02cd9e2\n0xa02cd9da: cmp r0, #1\n0xa02cd9dc: bne #0xa02cd9e2\n0xa02cd9de: ldr r0, [pc, #0x250] [0xa02cdc30]=0xa05c43e8\n0xa02cd9e0: b #0xa02cd9e4\n0xa02cd9e2: ldr r0, [pc, #0x250] [0xa02cdc34]=0xa05c4390\n0xa02cd9e4: bx lr"
+        }
+      ],
+      "expected_values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "interpretation": "Compiled golden reference values. Index1 table is all zero; this is not a physical light measurement."
+    },
+    {
+      "name": "led_color_cal.get_barcode",
+      "command": "udws \"led_color_cal.get_barcode 0;\"",
+      "handler": "0xa024eacd",
+      "descriptor_address": "0xa0567b1c",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "0",
+      "purpose": "Read LED color calibration metadata without enabling illumination or performing calibration.",
+      "control_flow_proof": "Physical scanner providerA06053C0 vtableA06054B4 slot0x80 resolvesA03BF716. Exact index0 andsize11 pass its guards. It callsA03A3714, a10-byte storage record read DSID0x12E85,index0 via storage slot0x20, then forces output[10]=NUL. The CLI initializes all11bytes tozero before the read. DecoderA024E026 requiresstrlen10 and performs exactlythree bounded groups throughA024DFBE, writing only its caller-owned output arrays. The result is cached barcode plus decoded RGB metadata or a validation error.",
+      "hardware_access": false,
+      "persistent_writes": false,
+      "timeout": 20,
+      "side_effects": "Local output buffers, UART output and parser state only.",
+      "prior_invocation_status": "not-invoked",
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "provider_evidence": "references/physical-59-metadata-pointers/provider-pointers.json",
+      "provider_evidence_sha256": "ade621c3abc3fcba9cca093587077584674f57dafbc988ac7847519dcdc138c7",
+      "reviewed_ranges": [
+        {
+          "address": "0xa024eacc",
+          "bytes": 132,
+          "disassembly": "0xa024eacc: push {r4, r5, lr}\n0xa024eace: sub sp, #0x24\n0xa024ead0: movs r2, #0xb\n0xa024ead2: ldr r1, [pc, #0x190] [0xa024ec64]=0xa0567c64\n0xa024ead4: mov r0, sp\n0xa024ead6: blx #0xa0019444\n0xa024eada: ldr r5, [pc, #0xc0] [0xa024eb9c]=0x20ab0148\n0xa024eadc: ldr r0, [r5]\n0xa024eade: ldr r1, [r0]\n0xa024eae0: ldr r1, [r1, #0x10]\n0xa024eae2: blx r1\n0xa024eae4: adds r4, r0, #0\n0xa024eae6: adds r1, r4, #0\n0xa024eae8: ldr r0, [r5, #0x10]\n0xa024eaea: ldr r2, [r0]\n0xa024eaec: adds r2, #0x80\n0xa024eaee: ldr r5, [r2]\n0xa024eaf0: movs r3, #0xb\n0xa024eaf2: mov r2, sp\n0xa024eaf4: blx r5\n0xa024eaf6: cmp r0, #0\n0xa024eaf8: beq #0xa024eafc\n0xa024eafa: movs r0, #1\n0xa024eafc: cmp r0, #0\n0xa024eafe: bne #0xa024eb04\n0xa024eb00: adr r0, #0x164 \"Can't get barcode %d\\n\"\n0xa024eb02: b #0xa024eb48\n0xa024eb04: mov r1, sp\n0xa024eb06: adr r0, #0x178 'Barcode %s\\n'\n0xa024eb08: bl #0xa024e6a0\n0xa024eb0c: mov r2, sp\n0xa024eb0e: add r1, sp, #0xc\n0xa024eb10: add r0, sp, #0x18\n0xa024eb12: bl #0xa024e06e\n0xa024eb16: cmp r0, #0\n0xa024eb18: beq #0xa024eb1c\n0xa024eb1a: movs r0, #1\n0xa024eb1c: cmp r0, #0\n0xa024eb1e: bne #0xa024eb24\n0xa024eb20: adr r0, #0x168 'Barcode not valid\\n'\n0xa024eb22: b #0xa024eb48\n0xa024eb24: cmp r4, #0\n0xa024eb26: bne #0xa024eb2e\n0xa024eb28: adr r0, #0x174 'Frontside LED peaks and widths:\\n'\n0xa024eb2a: bl #0xa024e6a0\n0xa024eb2e: ldr r2, [sp, #0xc]\n0xa024eb30: ldr r1, [sp, #0x18]\n0xa024eb32: ldr r0, [pc, #0x190] [0xa024ecc4]=0xa024e90c\n0xa024eb34: bl #0xa024e6a0\n0xa024eb38: ldr r2, [sp, #0x10]\n0xa024eb3a: ldr r1, [sp, #0x1c]\n0xa024eb3c: ldr r0, [pc, #0x188] [0xa024ecc8]=0xa024e920\n0xa024eb3e: bl #0xa024e6a0\n0xa024eb42: ldr r2, [sp, #0x14]\n0xa024eb44: ldr r1, [sp, #0x20]\n0xa024eb46: ldr r0, [pc, #0x184] [0xa024eccc]=0xa024e934\n0xa024eb48: bl #0xa024e6a0\n0xa024eb4c: add sp, #0x24\n0xa024eb4e: pop {r4, r5, pc}"
+        },
+        {
+          "address": "0xa03bf716",
+          "bytes": 30,
+          "disassembly": "0xa03bf716: push {r4, lr}\n0xa03bf718: adds r4, r2, #0\n0xa03bf71a: cmp r3, #0xb\n0xa03bf71c: blt #0xa03bf730\n0xa03bf71e: cmp r1, #0\n0xa03bf720: bne #0xa03bf730\n0xa03bf722: adds r0, r4, #0\n0xa03bf724: bl #0xa03a3714\n0xa03bf728: movs r3, #0\n0xa03bf72a: strb r3, [r4, #0xa]\n0xa03bf72c: movs r0, #1\n0xa03bf72e: b #0xa03bf732\n0xa03bf730: movs r0, #0\n0xa03bf732: pop {r4, pc}"
+        },
+        {
+          "address": "0xa03a3714",
+          "bytes": 28,
+          "disassembly": "0xa03a3714: push {r4, lr}\n0xa03a3716: sub sp, #4\n0xa03a3718: adds r1, r0, #0\n0xa03a371a: ldr r2, [pc, #0x118] [0xa03a3834]=0x20da0ae8\n0xa03a371c: ldr r0, [r2, #0x10]\n0xa03a371e: ldr r2, [r0]\n0xa03a3720: ldr r4, [r2, #0x20]\n0xa03a3722: str r1, [sp]\n0xa03a3724: movs r3, #0xa\n0xa03a3726: ldr r1, [pc, #0x11c] [0xa03a3844]=0x12e85\n0xa03a3728: movs r2, #0\n0xa03a372a: blx r4\n0xa03a372c: add sp, #4\n0xa03a372e: pop {r4, pc}"
+        },
+        {
+          "address": "0xa024e026",
+          "bytes": 72,
+          "disassembly": "0xa024e026: push {r4, r5, r6, r7, lr}\n0xa024e028: sub sp, #4\n0xa024e02a: adds r7, r0, #0\n0xa024e02c: str r1, [sp]\n0xa024e02e: adds r6, r2, #0\n0xa024e030: adds r0, r6, #0\n0xa024e032: blx #0xa0010538\n0xa024e036: cmp r0, #0xa\n0xa024e038: beq #0xa024e03e\n0xa024e03a: movs r0, #0\n0xa024e03c: b #0xa024e06a\n0xa024e03e: movs r4, #0\n0xa024e040: lsls r0, r4, #2\n0xa024e042: subs r3, r0, r4\n0xa024e044: adds r5, r3, r6\n0xa024e046: adds r0, r5, #1\n0xa024e048: movs r1, #2\n0xa024e04a: bl #0xa024dfbe\n0xa024e04e: lsls r3, r4, #2\n0xa024e050: str r0, [r3, r7]\n0xa024e052: adds r0, r5, #3\n0xa024e054: movs r1, #1\n0xa024e056: bl #0xa024dfbe\n0xa024e05a: lsls r0, r0, #1\n0xa024e05c: lsls r2, r4, #2\n0xa024e05e: ldr r3, [sp]\n0xa024e060: str r0, [r2, r3]\n0xa024e062: adds r4, #1\n0xa024e064: cmp r4, #3\n0xa024e066: blt #0xa024e040\n0xa024e068: movs r0, #1\n0xa024e06a: add sp, #4\n0xa024e06c: pop {r4, r5, r6, r7, pc}"
+        },
+        {
+          "address": "0xa024dfbe",
+          "bytes": 78,
+          "disassembly": "0xa024dfbe: push {r4, r5, r6, lr}\n0xa024dfc0: movs r2, #0\n0xa024dfc2: adds r5, r2, #0\n0xa024dfc4: b #0xa024dffe\n0xa024dfc6: movs r3, #0x24\n0xa024dfc8: muls r2, r3, r2\n0xa024dfca: ldrb r4, [r0, r5]\n0xa024dfcc: adds r6, r4, r2\n0xa024dfce: subs r6, #0x30\n0xa024dfd0: adds r3, r4, #0\n0xa024dfd2: subs r3, #0x30\n0xa024dfd4: cmp r3, #9\n0xa024dfd6: bls #0xa024dffa\n0xa024dfd8: adds r3, r2, r4\n0xa024dfda: adds r2, r4, #0\n0xa024dfdc: subs r2, #0x41\n0xa024dfde: cmp r2, #0x19\n0xa024dfe0: bls #0xa024dfe6\n0xa024dfe2: movs r2, #0\n0xa024dfe4: b #0xa024dfe8\n0xa024dfe6: movs r2, #0x20\n0xa024dfe8: adds r2, r2, r3\n0xa024dfea: movs r3, #0x56\n0xa024dfec: mvns r3, r3\n0xa024dfee: adds r6, r2, r3\n0xa024dff0: movs r3, #0x20\n0xa024dff2: orrs r3, r4\n0xa024dff4: subs r3, #0x61\n0xa024dff6: cmp r3, #0x19\n0xa024dff8: bhi #0xa024e006\n0xa024dffa: adds r2, r6, #0\n0xa024dffc: adds r5, #1\n0xa024dffe: cmp r5, r1\n0xa024e000: blt #0xa024dfc6\n0xa024e002: adds r0, r2, #0\n0xa024e004: b #0xa024e00a\n0xa024e006: movs r1, #0\n0xa024e008: mvns r0, r1\n0xa024e00a: pop {r4, r5, r6, pc}"
+        }
+      ],
+      "interpretation": "Stored scanner LED barcode. Validation failure means no valid ten-character barcode decoded; no calibration is performed."
+    }
+  ],
+  "summary": {
+    "ready_invocations": 5,
+    "unique_names": 3,
+    "new_unique_names": 3
+  },
+  "provenance": {
+    "serial_access_by_reviewer": "none",
+    "provider_evidence": "references/physical-59-metadata-pointers/provider-pointers.json"
+  },
+  "held_paths": [
+    {
+      "name": "led_color_cal.get_matrix",
+      "reason": "Await live2083E244 count to ensure getter fills every stack byte; handler ignores failure."
+    }
+  ]
+}

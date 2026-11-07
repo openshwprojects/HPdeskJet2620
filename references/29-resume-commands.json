@@ -1,0 +1,9 @@
+[
+  {
+    "command": "udws \"bio.rev_str; udw.get_board_id; shm.msecs;\"",
+    "classification": "reviewed-information-query",
+    "purpose": "Verify the live printer identity and UART prompt before resuming the requested command testing.",
+    "review_source": "references/query_review.json",
+    "timeout": 20
+  }
+]

@@ -1,0 +1,1779 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-10-29T21:34:52.771636+00:00",
+  "provenance": {
+    "serial_access_by_reviewer": "none",
+    "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+    "source_sessions": [
+      {
+        "path": "references/physical-56-calibration-pen/session.json",
+        "sha256": "69e15e8090106b21ca8990cdad0192d893d06d7136ff33452f681ea1c58cd7f6"
+      },
+      {
+        "path": "references/physical-56b-led-metadata/session.json",
+        "sha256": "ea60e0ad4d6ec52d52ad8f1237cdb0c4d5be5086b15f93e86eb2ab35aa3896c8"
+      },
+      {
+        "path": "references/physical-56c-ui-status/session.json",
+        "sha256": "83dc60ffac0e965848f6ecd5c41df8fcff4aaeca31cd689d07a3cbe2a0794ca6"
+      },
+      {
+        "path": "references/physical-62-current-matrices/session.json",
+        "sha256": "549b6bb088bd2e73720b3c8e0c92620c82a45c2534f3ccef34fb68fc8cd4d4fc"
+      },
+      {
+        "path": "references/physical-65-frontpanel-settings/session.json",
+        "sha256": "04e1ae396277e3b8dfa8990beb827740664394988b3ed945f37017774e2c8e90"
+      }
+    ]
+  },
+  "summary": {
+    "physical_commands": 45,
+    "validated_responses": 45,
+    "unique_names": 23,
+    "pen_range_entries": 126,
+    "dot_counters_cross_checked": 4,
+    "dynamic_refresh_status_cross_checked": true,
+    "current_settings_cross_checked": 3,
+    "default_matrix_fields_matched": 18,
+    "golden_reference_fields_matched": 12,
+    "current_matrix_fields_matched": 18,
+    "cached_ui_fields": 14
+  },
+  "response_revalidations": [
+    {
+      "response_file": "references/physical-56-calibration-pen/0001-udws_cal_val_get_pa_value_P2PX_FIRST_CMY_0_FWD.bin",
+      "response_sha256": "62edc3151badfbe960794cf905964658cec43ceb9c8a9a7416351e9525b7e3c9",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0002-udws_cal_val_get_pa_value_P2PY_FIRST_CMY_0_FWD.bin",
+      "response_sha256": "cf16614a4481aaf24597f7f4e322ad6c35cdc1f2a4358fc6e8db2c47eae04b0b",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0003-udws_cal_val_get_pa_value_BIDI_FIRST_K_0_FWD.bin",
+      "response_sha256": "8cad2e14b606e0d9935627c886568cd9fc846926ace14455fab98616f5939bd2",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0004-udws_cal_val_get_pa_value_THETAZ_FIRST_K_0_FWD.bin",
+      "response_sha256": "dd20137fa0d7ca4c14ed52bda09e9d782d8cf8df1aa49852cf9fc76d7b3136ba",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0005-udws_cal_val_get_pa_value_status_P2PX_FIRST_CMY_0_FWD.bin",
+      "response_sha256": "ba6e77b7cb1c94c898e3acd7d7f0f0382e08f16adf0968f47330b43ab23ac617",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0006-udws_cal_val_get_pa_value_status_P2PY_FIRST_CMY_0_FWD.bin",
+      "response_sha256": "443049a9c95d1771379e2c23adbcbd6de9efe5a2a64c4ed6852f9aed9433db30",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0007-udws_cal_val_get_pa_value_status_BIDI_FIRST_K_0_FWD.bin",
+      "response_sha256": "149992400e9fd11c22387adb262f47bb04e5a48f2c46482497287ef554b73e17",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0008-udws_cal_val_get_pa_value_status_THETAZ_FIRST_K_0_FWD.bin",
+      "response_sha256": "cef774388eba1f35dd74fcdce165858e924f78eeaa907cb978b0f3f72ec20502",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0009-udws_cal_val_get_unused_pa_value_P2PX_FIRST_CMY_0_FWD.bin",
+      "response_sha256": "0de5d3deecaa3799e7a96e442fc5f1c0a2ade98f93a16f1850df7699756b575d",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0010-udws_cal_val_get_unused_pa_value_P2PY_FIRST_CMY_0_FWD.bin",
+      "response_sha256": "2741d30156a0ae310ddc72564642cb25e6575815491b1a3b4ae353f9ddd7a36e",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0011-udws_cal_val_get_unused_pa_value_BIDI_FIRST_K_0_FWD.bin",
+      "response_sha256": "51119a17a12f95884bcfedbc3b82a9852847977384cf565d77cc346b48302d0e",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0012-udws_cal_val_get_unused_pa_value_THETAZ_FIRST_K_0_FWD.bin",
+      "response_sha256": "d842f20cbe2a3370a0c5733038bbc20fbbc6e72b755b0315defe6edec299c390",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0013-udws_cal_val_get_unused_pa_status_P2PX_FIRST_CMY_0_FWD.bin",
+      "response_sha256": "df35e6e6ca74be2bb423c8927044259cf612680717c2a8dce4c3e062c6dce194",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0014-udws_cal_val_get_unused_pa_status_P2PY_FIRST_CMY_0_FWD.bin",
+      "response_sha256": "03c51bf925b2caf3842629bdc8a6ff3a87dca213da56bcfbd42436a58db528a2",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0015-udws_cal_val_get_unused_pa_status_BIDI_FIRST_K_0_FWD.bin",
+      "response_sha256": "a6775dd02526fe5913a1af7ec1534517b2e28ec67b4a799ecbfc60e6c1f6ca8e",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0016-udws_cal_val_get_unused_pa_status_THETAZ_FIRST_K_0_FWD.bin",
+      "response_sha256": "998e1b197d65444f296c53b274ee2f95d1fc05aac55d267976bd41d8680caf38",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0017-udws_cal_val_get_linefeed_err_1_1_K.bin",
+      "response_sha256": "4400d0a51258d3f08a101ee321efbbf94664efa1ea837a78492870d69f4bd04a",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0018-udws_cal_val_get_linefeed_err_status_1_1_K.bin",
+      "response_sha256": "21e12ef6f3e0904d6d00aace71d809cede08ff7fe8e6bdb65da17fb3ea6758c5",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0019-udws_cal_val_get_edge_err_1.bin",
+      "response_sha256": "f23246c13e5435bb6955fc408782dd502964dca745126d664d3f5e17664e0ec5",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0020-udws_cal_val_get_edge_err_status_1.bin",
+      "response_sha256": "082b662a964ff90fcddcc11b78ee55d1d59a31746853a6abca0a514231de875a",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0021-udws_pen_get_ttoe_ad_range.bin",
+      "response_sha256": "7b19609c8a505e84033c31b8358ff967cd942486294d57a1e0c9e22d852e10e5",
+      "assessment": "complete-bounded-pen-calibration-table",
+      "note": "Count63 and exactly63 unsigned halfwords are present. All are zero in this capture; these cached table values do not demonstrate calibration or hardware health.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0022-udws_pen_get_ttoe_test_range.bin",
+      "response_sha256": "e5ec1b84a986c37a244a21940db2c836f656fc555add36126ea2bbcd68cc390d",
+      "assessment": "complete-bounded-pen-calibration-table",
+      "note": "Count63 and exactly63 unsigned halfwords are present. All are zero in this capture; these cached table values do not demonstrate calibration or hardware health.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0023-udws_pen_is_ttoed_0.bin",
+      "response_sha256": "a18d05404659f32d325f92b05a48dbcf4f7269aa2a1f53cbe6ada861c5276e98",
+      "assessment": "complete-cached-pen-state",
+      "note": "One bounded Boolean value returned for the requested chute. It is a stored calibration-state query, not a live electrical test.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0024-udws_pen_is_ttoed_1.bin",
+      "response_sha256": "6dc96bf4237f9343e1fc435787ba525bd51fe448605a81f6042460a09e535fae",
+      "assessment": "complete-cached-pen-state",
+      "note": "One bounded Boolean value returned for the requested chute. It is a stored calibration-state query, not a live electrical test.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0025-udws_pen_is_ldw_ttoed_0.bin",
+      "response_sha256": "ad7d5412c36a52d18822e99e2bd65e4d93ca87d9f58147ed3e1775e0d30509fd",
+      "assessment": "complete-cached-pen-state",
+      "note": "One bounded Boolean value returned for the requested chute. It is a stored calibration-state query, not a live electrical test.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0026-udws_pen_is_ldw_ttoed_1.bin",
+      "response_sha256": "a2cf3ddb01b334ba760d98c0efce74f4ff7184dfb6738d596fb97e969f8cc9cd",
+      "assessment": "complete-cached-pen-state",
+      "note": "One bounded Boolean value returned for the requested chute. It is a stored calibration-state query, not a live electrical test.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0027-udws_pen_get_dotcount_0_0_0.bin",
+      "response_sha256": "be4c9559c4b1444c4d6b981f38634d7965b90697ac302e516de39821903e860c",
+      "assessment": "complete-dot-counter-matching-storage",
+      "note": "The full scalar matches both earlier direct NVM and DS2 observations for the ROM-mapped DSID. Catalog names identify the last argument as a history-slot index; the original plan used the generic word channel. These are stored raw dot counts, not page counts or live nozzle tests.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0028-udws_pen_get_dotcount_1_0_0.bin",
+      "response_sha256": "b92d3e7fe4bca169cd50052dc6964f8011eb4f970bf64e536a925bcfbda00f80",
+      "assessment": "complete-dot-counter-matching-storage",
+      "note": "The full scalar matches both earlier direct NVM and DS2 observations for the ROM-mapped DSID. Catalog names identify the last argument as a history-slot index; the original plan used the generic word channel. These are stored raw dot counts, not page counts or live nozzle tests.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0029-udws_pen_get_dotcount_0_0_1.bin",
+      "response_sha256": "8f777ce247405afb6f157e91387265f07596203ee344822f6214a8f8f9e9ca3f",
+      "assessment": "complete-dot-counter-matching-storage",
+      "note": "The full scalar matches both earlier direct NVM and DS2 observations for the ROM-mapped DSID. Catalog names identify the last argument as a history-slot index; the original plan used the generic word channel. These are stored raw dot counts, not page counts or live nozzle tests.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0030-udws_pen_get_dotcount_1_0_1.bin",
+      "response_sha256": "461c7401fbcec3355236cf270c7ecacf8192d54f0fafc98486a37fcdb268727f",
+      "assessment": "complete-dot-counter-matching-storage",
+      "note": "The full scalar matches both earlier direct NVM and DS2 observations for the ROM-mapped DSID. Catalog names identify the last argument as a history-slot index; the original plan used the generic word channel. These are stored raw dot counts, not page counts or live nozzle tests.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0031-udws_pen_get_drfs.bin",
+      "response_sha256": "43ded4c0dee6e55b639b8405205aa591daccf1a2c975342e2989719ec3133df7",
+      "assessment": "complete-dynamic-refresh-status",
+      "note": "Value2 matches the earlier indexed DS2 read of DSID_PEN_DYNAMIC_REFRESH_STATUS[0].",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56b-led-metadata/0001-udws_led_color_cal_get_default_matrix_0.bin",
+      "response_sha256": "ace60dd320e734f333262e5b2be746cafff034308ac59e5de7a92f29548465b4",
+      "assessment": "complete-default-matrix-matching-rom",
+      "note": "All nine signed fields and all three rows match the selected compiled ROM matrix. This is a default matrix, not measured or current calibration.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56b-led-metadata/0002-udws_led_color_cal_get_golden_peaks_widths_0.bin",
+      "response_sha256": "c3b62221de71680d248792b3e064e845b43649d9f59fb3f44aaa3e6a2de5138e",
+      "assessment": "complete-golden-reference-matching-rom",
+      "note": "Three labelled RGB pairs match all six compiled ROM values. Index0 is620/14,521/34,452/22; index1 iszero. No light measurement took place.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56b-led-metadata/0003-udws_led_color_cal_get_default_matrix_1.bin",
+      "response_sha256": "3f68661e9fd7a64c4528cef2dbcf0ae741e448d58befda72dee99bd45737a8a8",
+      "assessment": "complete-default-matrix-matching-rom",
+      "note": "All nine signed fields and all three rows match the selected compiled ROM matrix. This is a default matrix, not measured or current calibration.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56b-led-metadata/0004-udws_led_color_cal_get_golden_peaks_widths_1.bin",
+      "response_sha256": "c151cdd78f30cbeaa243bafadca73270528a91e267f94be29e2047c88d1a6e88",
+      "assessment": "complete-golden-reference-matching-rom",
+      "note": "Three labelled RGB pairs match all six compiled ROM values. Index0 is620/14,521/34,452/22; index1 iszero. No light measurement took place.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56b-led-metadata/0005-udws_led_color_cal_get_barcode_0.bin",
+      "response_sha256": "4c4fd3dd2752839f6f15d76f94a395faf09918705353d787b52f77da6b69782b",
+      "assessment": "complete-empty-barcode-result",
+      "note": "The getter returned an empty stored barcode and explicitly rejected it as invalid. Capture is complete, but no valid LED barcode or derived calibration values were obtained.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56c-ui-status/0001-udws_ui_lite_display_status.bin",
+      "response_sha256": "1852b41999ebe393e5e3d46199f851fcd952339544bd664ba5b6bbb7a51bcb81",
+      "assessment": "complete-cached-ui-display-state",
+      "note": "Four complete labelled lines contain fourteen cached fields. Active0 is consistent with no per-error rows. Auto_E is1 and other captured fields are0; labels are retained without assuming undocumented flag meanings.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-62-current-matrices/0001-udws_led_color_cal_get_matrix_0.bin",
+      "response_sha256": "d6619eda6a12e4d9cf72ea480f24b091ef7a4380d046102dfd33945f41e9866b",
+      "assessment": "complete-current-matrix-matching-default",
+      "note": "All nine current cached coefficients match the independently captured default matrix for this index. Both live-valid indices0/1 were tested; this does not prove physical LED calibration or health.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-62-current-matrices/0002-udws_led_color_cal_get_matrix_1.bin",
+      "response_sha256": "2971824c4fddc9e38a5ec0d95d554374b47f32e86b16c0c2fe8875e94e1c58a8",
+      "assessment": "complete-current-matrix-matching-default",
+      "note": "All nine current cached coefficients match the independently captured default matrix for this index. Both live-valid indices0/1 were tested; this does not prove physical LED calibration or health.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-65-frontpanel-settings/0001-udws_smgr_pe_get_current_setting_1.bin",
+      "response_sha256": "229fdba02f33aad8124bfa1bccbf4bbe46c32c2a35f85f5a4592c3ca80048578",
+      "assessment": "complete-current-setting-matching-storage",
+      "note": "The one-digit cached setting fits the tiny CLI buffer completely and matches earlier DS2. Indices1/3/4 map to ColorLok1,dry-time2,eject1; no setting was changed.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-65-frontpanel-settings/0002-udws_smgr_pe_get_current_setting_3.bin",
+      "response_sha256": "edefe96291bf59d96f9a39ff993d61bdd2aa44a273c2cb01067db2500fd2c404",
+      "assessment": "complete-current-setting-matching-storage",
+      "note": "The one-digit cached setting fits the tiny CLI buffer completely and matches earlier DS2. Indices1/3/4 map to ColorLok1,dry-time2,eject1; no setting was changed.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-65-frontpanel-settings/0003-udws_smgr_pe_get_current_setting_4.bin",
+      "response_sha256": "8d259b4d4f6e611a6446d0c28f86d50f90de233e7eaee9c20ce1e5c9889e83cc",
+      "assessment": "complete-current-setting-matching-storage",
+      "note": "The one-digit cached setting fits the tiny CLI buffer completely and matches earlier DS2. Indices1/3/4 map to ColorLok1,dry-time2,eject1; no setting was changed.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-65-frontpanel-settings/0004-udws_pe_cover_open_query.bin",
+      "response_sha256": "bc954935403188c66f9613e31bbf74ab9638eee4ca1329afcf73b6692eaec736",
+      "assessment": "complete-cached-cover-state",
+      "note": "Raw-cover and state-manager Boolean queries both returned0, consistent with their reviewed mapping and a cached closed state. The physically verified descriptor selected the cached branch; this did not poll GPIO or change cover handling.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-65-frontpanel-settings/0005-udws_smgr_pe_cover_open_query.bin",
+      "response_sha256": "c4aa628422567d293140a9256a86c4a0bc88a432959fe2202a3ebaaeed57ccfa",
+      "assessment": "complete-cached-cover-state",
+      "note": "Raw-cover and state-manager Boolean queries both returned0, consistent with their reviewed mapping and a cached closed state. The physically verified descriptor selected the cached branch; this did not poll GPIO or change cover handling.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-65-frontpanel-settings/0006-udws_smgr_pe_user_power_on_query.bin",
+      "response_sha256": "9ab06241e2729963ca4ac0895a9a24947915ec8af1770504336640b3008dc6db",
+      "assessment": "complete-stored-power-state-classification",
+      "note": "Boolean1 returned completely. Handler derives it from fixed storage DSID0x10005 using predicate value not in{0,1,2}; no power transition or electrical measurement occurred.",
+      "valid": true,
+      "complete": true
+    }
+  ],
+  "data_quality": [
+    {
+      "response_file": "references/physical-56-calibration-pen/0001-udws_cal_val_get_pa_value_P2PX_FIRST_CMY_0_FWD.bin",
+      "response_sha256": "62edc3151badfbe960794cf905964658cec43ceb9c8a9a7416351e9525b7e3c9",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0002-udws_cal_val_get_pa_value_P2PY_FIRST_CMY_0_FWD.bin",
+      "response_sha256": "cf16614a4481aaf24597f7f4e322ad6c35cdc1f2a4358fc6e8db2c47eae04b0b",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0003-udws_cal_val_get_pa_value_BIDI_FIRST_K_0_FWD.bin",
+      "response_sha256": "8cad2e14b606e0d9935627c886568cd9fc846926ace14455fab98616f5939bd2",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0004-udws_cal_val_get_pa_value_THETAZ_FIRST_K_0_FWD.bin",
+      "response_sha256": "dd20137fa0d7ca4c14ed52bda09e9d782d8cf8df1aa49852cf9fc76d7b3136ba",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0005-udws_cal_val_get_pa_value_status_P2PX_FIRST_CMY_0_FWD.bin",
+      "response_sha256": "ba6e77b7cb1c94c898e3acd7d7f0f0382e08f16adf0968f47330b43ab23ac617",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0006-udws_cal_val_get_pa_value_status_P2PY_FIRST_CMY_0_FWD.bin",
+      "response_sha256": "443049a9c95d1771379e2c23adbcbd6de9efe5a2a64c4ed6852f9aed9433db30",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0007-udws_cal_val_get_pa_value_status_BIDI_FIRST_K_0_FWD.bin",
+      "response_sha256": "149992400e9fd11c22387adb262f47bb04e5a48f2c46482497287ef554b73e17",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0008-udws_cal_val_get_pa_value_status_THETAZ_FIRST_K_0_FWD.bin",
+      "response_sha256": "cef774388eba1f35dd74fcdce165858e924f78eeaa907cb978b0f3f72ec20502",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0009-udws_cal_val_get_unused_pa_value_P2PX_FIRST_CMY_0_FWD.bin",
+      "response_sha256": "0de5d3deecaa3799e7a96e442fc5f1c0a2ade98f93a16f1850df7699756b575d",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0010-udws_cal_val_get_unused_pa_value_P2PY_FIRST_CMY_0_FWD.bin",
+      "response_sha256": "2741d30156a0ae310ddc72564642cb25e6575815491b1a3b4ae353f9ddd7a36e",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0011-udws_cal_val_get_unused_pa_value_BIDI_FIRST_K_0_FWD.bin",
+      "response_sha256": "51119a17a12f95884bcfedbc3b82a9852847977384cf565d77cc346b48302d0e",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0012-udws_cal_val_get_unused_pa_value_THETAZ_FIRST_K_0_FWD.bin",
+      "response_sha256": "d842f20cbe2a3370a0c5733038bbc20fbbc6e72b755b0315defe6edec299c390",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0013-udws_cal_val_get_unused_pa_status_P2PX_FIRST_CMY_0_FWD.bin",
+      "response_sha256": "df35e6e6ca74be2bb423c8927044259cf612680717c2a8dce4c3e062c6dce194",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0014-udws_cal_val_get_unused_pa_status_P2PY_FIRST_CMY_0_FWD.bin",
+      "response_sha256": "03c51bf925b2caf3842629bdc8a6ff3a87dca213da56bcfbd42436a58db528a2",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0015-udws_cal_val_get_unused_pa_status_BIDI_FIRST_K_0_FWD.bin",
+      "response_sha256": "a6775dd02526fe5913a1af7ec1534517b2e28ec67b4a799ecbfc60e6c1f6ca8e",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0016-udws_cal_val_get_unused_pa_status_THETAZ_FIRST_K_0_FWD.bin",
+      "response_sha256": "998e1b197d65444f296c53b274ee2f95d1fc05aac55d267976bd41d8680caf38",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0017-udws_cal_val_get_linefeed_err_1_1_K.bin",
+      "response_sha256": "4400d0a51258d3f08a101ee321efbbf94664efa1ea837a78492870d69f4bd04a",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0018-udws_cal_val_get_linefeed_err_status_1_1_K.bin",
+      "response_sha256": "21e12ef6f3e0904d6d00aace71d809cede08ff7fe8e6bdb65da17fb3ea6758c5",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0019-udws_cal_val_get_edge_err_1.bin",
+      "response_sha256": "f23246c13e5435bb6955fc408782dd502964dca745126d664d3f5e17664e0ec5",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0020-udws_cal_val_get_edge_err_status_1.bin",
+      "response_sha256": "082b662a964ff90fcddcc11b78ee55d1d59a31746853a6abca0a514231de875a",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0021-udws_pen_get_ttoe_ad_range.bin",
+      "response_sha256": "7b19609c8a505e84033c31b8358ff967cd942486294d57a1e0c9e22d852e10e5",
+      "assessment": "complete-bounded-pen-calibration-table",
+      "note": "Count63 and exactly63 unsigned halfwords are present. All are zero in this capture; these cached table values do not demonstrate calibration or hardware health.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0022-udws_pen_get_ttoe_test_range.bin",
+      "response_sha256": "e5ec1b84a986c37a244a21940db2c836f656fc555add36126ea2bbcd68cc390d",
+      "assessment": "complete-bounded-pen-calibration-table",
+      "note": "Count63 and exactly63 unsigned halfwords are present. All are zero in this capture; these cached table values do not demonstrate calibration or hardware health.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0023-udws_pen_is_ttoed_0.bin",
+      "response_sha256": "a18d05404659f32d325f92b05a48dbcf4f7269aa2a1f53cbe6ada861c5276e98",
+      "assessment": "complete-cached-pen-state",
+      "note": "One bounded Boolean value returned for the requested chute. It is a stored calibration-state query, not a live electrical test.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0024-udws_pen_is_ttoed_1.bin",
+      "response_sha256": "6dc96bf4237f9343e1fc435787ba525bd51fe448605a81f6042460a09e535fae",
+      "assessment": "complete-cached-pen-state",
+      "note": "One bounded Boolean value returned for the requested chute. It is a stored calibration-state query, not a live electrical test.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0025-udws_pen_is_ldw_ttoed_0.bin",
+      "response_sha256": "ad7d5412c36a52d18822e99e2bd65e4d93ca87d9f58147ed3e1775e0d30509fd",
+      "assessment": "complete-cached-pen-state",
+      "note": "One bounded Boolean value returned for the requested chute. It is a stored calibration-state query, not a live electrical test.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0026-udws_pen_is_ldw_ttoed_1.bin",
+      "response_sha256": "a2cf3ddb01b334ba760d98c0efce74f4ff7184dfb6738d596fb97e969f8cc9cd",
+      "assessment": "complete-cached-pen-state",
+      "note": "One bounded Boolean value returned for the requested chute. It is a stored calibration-state query, not a live electrical test.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0027-udws_pen_get_dotcount_0_0_0.bin",
+      "response_sha256": "be4c9559c4b1444c4d6b981f38634d7965b90697ac302e516de39821903e860c",
+      "assessment": "complete-dot-counter-matching-storage",
+      "note": "The full scalar matches both earlier direct NVM and DS2 observations for the ROM-mapped DSID. Catalog names identify the last argument as a history-slot index; the original plan used the generic word channel. These are stored raw dot counts, not page counts or live nozzle tests.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0028-udws_pen_get_dotcount_1_0_0.bin",
+      "response_sha256": "b92d3e7fe4bca169cd50052dc6964f8011eb4f970bf64e536a925bcfbda00f80",
+      "assessment": "complete-dot-counter-matching-storage",
+      "note": "The full scalar matches both earlier direct NVM and DS2 observations for the ROM-mapped DSID. Catalog names identify the last argument as a history-slot index; the original plan used the generic word channel. These are stored raw dot counts, not page counts or live nozzle tests.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0029-udws_pen_get_dotcount_0_0_1.bin",
+      "response_sha256": "8f777ce247405afb6f157e91387265f07596203ee344822f6214a8f8f9e9ca3f",
+      "assessment": "complete-dot-counter-matching-storage",
+      "note": "The full scalar matches both earlier direct NVM and DS2 observations for the ROM-mapped DSID. Catalog names identify the last argument as a history-slot index; the original plan used the generic word channel. These are stored raw dot counts, not page counts or live nozzle tests.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0030-udws_pen_get_dotcount_1_0_1.bin",
+      "response_sha256": "461c7401fbcec3355236cf270c7ecacf8192d54f0fafc98486a37fcdb268727f",
+      "assessment": "complete-dot-counter-matching-storage",
+      "note": "The full scalar matches both earlier direct NVM and DS2 observations for the ROM-mapped DSID. Catalog names identify the last argument as a history-slot index; the original plan used the generic word channel. These are stored raw dot counts, not page counts or live nozzle tests.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0031-udws_pen_get_drfs.bin",
+      "response_sha256": "43ded4c0dee6e55b639b8405205aa591daccf1a2c975342e2989719ec3133df7",
+      "assessment": "complete-dynamic-refresh-status",
+      "note": "Value2 matches the earlier indexed DS2 read of DSID_PEN_DYNAMIC_REFRESH_STATUS[0].",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56b-led-metadata/0001-udws_led_color_cal_get_default_matrix_0.bin",
+      "response_sha256": "ace60dd320e734f333262e5b2be746cafff034308ac59e5de7a92f29548465b4",
+      "assessment": "complete-default-matrix-matching-rom",
+      "note": "All nine signed fields and all three rows match the selected compiled ROM matrix. This is a default matrix, not measured or current calibration.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56b-led-metadata/0002-udws_led_color_cal_get_golden_peaks_widths_0.bin",
+      "response_sha256": "c3b62221de71680d248792b3e064e845b43649d9f59fb3f44aaa3e6a2de5138e",
+      "assessment": "complete-golden-reference-matching-rom",
+      "note": "Three labelled RGB pairs match all six compiled ROM values. Index0 is620/14,521/34,452/22; index1 iszero. No light measurement took place.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56b-led-metadata/0003-udws_led_color_cal_get_default_matrix_1.bin",
+      "response_sha256": "3f68661e9fd7a64c4528cef2dbcf0ae741e448d58befda72dee99bd45737a8a8",
+      "assessment": "complete-default-matrix-matching-rom",
+      "note": "All nine signed fields and all three rows match the selected compiled ROM matrix. This is a default matrix, not measured or current calibration.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56b-led-metadata/0004-udws_led_color_cal_get_golden_peaks_widths_1.bin",
+      "response_sha256": "c151cdd78f30cbeaa243bafadca73270528a91e267f94be29e2047c88d1a6e88",
+      "assessment": "complete-golden-reference-matching-rom",
+      "note": "Three labelled RGB pairs match all six compiled ROM values. Index0 is620/14,521/34,452/22; index1 iszero. No light measurement took place.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56b-led-metadata/0005-udws_led_color_cal_get_barcode_0.bin",
+      "response_sha256": "4c4fd3dd2752839f6f15d76f94a395faf09918705353d787b52f77da6b69782b",
+      "assessment": "complete-empty-barcode-result",
+      "note": "The getter returned an empty stored barcode and explicitly rejected it as invalid. Capture is complete, but no valid LED barcode or derived calibration values were obtained.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-56c-ui-status/0001-udws_ui_lite_display_status.bin",
+      "response_sha256": "1852b41999ebe393e5e3d46199f851fcd952339544bd664ba5b6bbb7a51bcb81",
+      "assessment": "complete-cached-ui-display-state",
+      "note": "Four complete labelled lines contain fourteen cached fields. Active0 is consistent with no per-error rows. Auto_E is1 and other captured fields are0; labels are retained without assuming undocumented flag meanings.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-62-current-matrices/0001-udws_led_color_cal_get_matrix_0.bin",
+      "response_sha256": "d6619eda6a12e4d9cf72ea480f24b091ef7a4380d046102dfd33945f41e9866b",
+      "assessment": "complete-current-matrix-matching-default",
+      "note": "All nine current cached coefficients match the independently captured default matrix for this index. Both live-valid indices0/1 were tested; this does not prove physical LED calibration or health.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-62-current-matrices/0002-udws_led_color_cal_get_matrix_1.bin",
+      "response_sha256": "2971824c4fddc9e38a5ec0d95d554374b47f32e86b16c0c2fe8875e94e1c58a8",
+      "assessment": "complete-current-matrix-matching-default",
+      "note": "All nine current cached coefficients match the independently captured default matrix for this index. Both live-valid indices0/1 were tested; this does not prove physical LED calibration or health.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-65-frontpanel-settings/0001-udws_smgr_pe_get_current_setting_1.bin",
+      "response_sha256": "229fdba02f33aad8124bfa1bccbf4bbe46c32c2a35f85f5a4592c3ca80048578",
+      "assessment": "complete-current-setting-matching-storage",
+      "note": "The one-digit cached setting fits the tiny CLI buffer completely and matches earlier DS2. Indices1/3/4 map to ColorLok1,dry-time2,eject1; no setting was changed.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-65-frontpanel-settings/0002-udws_smgr_pe_get_current_setting_3.bin",
+      "response_sha256": "edefe96291bf59d96f9a39ff993d61bdd2aa44a273c2cb01067db2500fd2c404",
+      "assessment": "complete-current-setting-matching-storage",
+      "note": "The one-digit cached setting fits the tiny CLI buffer completely and matches earlier DS2. Indices1/3/4 map to ColorLok1,dry-time2,eject1; no setting was changed.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-65-frontpanel-settings/0003-udws_smgr_pe_get_current_setting_4.bin",
+      "response_sha256": "8d259b4d4f6e611a6446d0c28f86d50f90de233e7eaee9c20ce1e5c9889e83cc",
+      "assessment": "complete-current-setting-matching-storage",
+      "note": "The one-digit cached setting fits the tiny CLI buffer completely and matches earlier DS2. Indices1/3/4 map to ColorLok1,dry-time2,eject1; no setting was changed.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-65-frontpanel-settings/0004-udws_pe_cover_open_query.bin",
+      "response_sha256": "bc954935403188c66f9613e31bbf74ab9638eee4ca1329afcf73b6692eaec736",
+      "assessment": "complete-cached-cover-state",
+      "note": "Raw-cover and state-manager Boolean queries both returned0, consistent with their reviewed mapping and a cached closed state. The physically verified descriptor selected the cached branch; this did not poll GPIO or change cover handling.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-65-frontpanel-settings/0005-udws_smgr_pe_cover_open_query.bin",
+      "response_sha256": "c4aa628422567d293140a9256a86c4a0bc88a432959fe2202a3ebaaeed57ccfa",
+      "assessment": "complete-cached-cover-state",
+      "note": "Raw-cover and state-manager Boolean queries both returned0, consistent with their reviewed mapping and a cached closed state. The physically verified descriptor selected the cached branch; this did not poll GPIO or change cover handling.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-65-frontpanel-settings/0006-udws_smgr_pe_user_power_on_query.bin",
+      "response_sha256": "9ab06241e2729963ca4ac0895a9a24947915ec8af1770504336640b3008dc6db",
+      "assessment": "complete-stored-power-state-classification",
+      "note": "Boolean1 returned completely. Handler derives it from fixed storage DSID0x10005 using predicate value not in{0,1,2}; no power transition or electrical measurement occurred.",
+      "complete": true
+    }
+  ],
+  "results": [
+    {
+      "name": "cal_val.get_pa_value",
+      "command": "udws \"cal_val.get_pa_value P2PX FIRST CMY 0 FWD;\"",
+      "index": 1,
+      "response_file": "references/physical-56-calibration-pen/0001-udws_cal_val_get_pa_value_P2PX_FIRST_CMY_0_FWD.bin",
+      "response_sha256": "62edc3151badfbe960794cf905964658cec43ceb9c8a9a7416351e9525b7e3c9",
+      "response_bytes": 87,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "value": 0,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration."
+    },
+    {
+      "name": "cal_val.get_pa_value",
+      "command": "udws \"cal_val.get_pa_value P2PY FIRST CMY 0 FWD;\"",
+      "index": 2,
+      "response_file": "references/physical-56-calibration-pen/0002-udws_cal_val_get_pa_value_P2PY_FIRST_CMY_0_FWD.bin",
+      "response_sha256": "cf16614a4481aaf24597f7f4e322ad6c35cdc1f2a4358fc6e8db2c47eae04b0b",
+      "response_bytes": 87,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "value": 0,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration."
+    },
+    {
+      "name": "cal_val.get_pa_value",
+      "command": "udws \"cal_val.get_pa_value BIDI FIRST K 0 FWD;\"",
+      "index": 3,
+      "response_file": "references/physical-56-calibration-pen/0003-udws_cal_val_get_pa_value_BIDI_FIRST_K_0_FWD.bin",
+      "response_sha256": "8cad2e14b606e0d9935627c886568cd9fc846926ace14455fab98616f5939bd2",
+      "response_bytes": 86,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "value": -5,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration."
+    },
+    {
+      "name": "cal_val.get_pa_value",
+      "command": "udws \"cal_val.get_pa_value THETAZ FIRST K 0 FWD;\"",
+      "index": 4,
+      "response_file": "references/physical-56-calibration-pen/0004-udws_cal_val_get_pa_value_THETAZ_FIRST_K_0_FWD.bin",
+      "response_sha256": "dd20137fa0d7ca4c14ed52bda09e9d782d8cf8df1aa49852cf9fc76d7b3136ba",
+      "response_bytes": 87,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "value": 3,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration."
+    },
+    {
+      "name": "cal_val.get_pa_value_status",
+      "command": "udws \"cal_val.get_pa_value_status P2PX FIRST CMY 0 FWD;\"",
+      "index": 5,
+      "response_file": "references/physical-56-calibration-pen/0005-udws_cal_val_get_pa_value_status_P2PX_FIRST_CMY_0_FWD.bin",
+      "response_sha256": "ba6e77b7cb1c94c898e3acd7d7f0f0382e08f16adf0968f47330b43ab23ac617",
+      "response_bytes": 95,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "value": -1,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration."
+    },
+    {
+      "name": "cal_val.get_pa_value_status",
+      "command": "udws \"cal_val.get_pa_value_status P2PY FIRST CMY 0 FWD;\"",
+      "index": 6,
+      "response_file": "references/physical-56-calibration-pen/0006-udws_cal_val_get_pa_value_status_P2PY_FIRST_CMY_0_FWD.bin",
+      "response_sha256": "443049a9c95d1771379e2c23adbcbd6de9efe5a2a64c4ed6852f9aed9433db30",
+      "response_bytes": 95,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "value": -1,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration."
+    },
+    {
+      "name": "cal_val.get_pa_value_status",
+      "command": "udws \"cal_val.get_pa_value_status BIDI FIRST K 0 FWD;\"",
+      "index": 7,
+      "response_file": "references/physical-56-calibration-pen/0007-udws_cal_val_get_pa_value_status_BIDI_FIRST_K_0_FWD.bin",
+      "response_sha256": "149992400e9fd11c22387adb262f47bb04e5a48f2c46482497287ef554b73e17",
+      "response_bytes": 93,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "value": -1,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration."
+    },
+    {
+      "name": "cal_val.get_pa_value_status",
+      "command": "udws \"cal_val.get_pa_value_status THETAZ FIRST K 0 FWD;\"",
+      "index": 8,
+      "response_file": "references/physical-56-calibration-pen/0008-udws_cal_val_get_pa_value_status_THETAZ_FIRST_K_0_FWD.bin",
+      "response_sha256": "cef774388eba1f35dd74fcdce165858e924f78eeaa907cb978b0f3f72ec20502",
+      "response_bytes": 95,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "value": -1,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration."
+    },
+    {
+      "name": "cal_val.get_unused_pa_value",
+      "command": "udws \"cal_val.get_unused_pa_value P2PX FIRST CMY 0 FWD;\"",
+      "index": 9,
+      "response_file": "references/physical-56-calibration-pen/0009-udws_cal_val_get_unused_pa_value_P2PX_FIRST_CMY_0_FWD.bin",
+      "response_sha256": "0de5d3deecaa3799e7a96e442fc5f1c0a2ade98f93a16f1850df7699756b575d",
+      "response_bytes": 94,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "value": 0,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration."
+    },
+    {
+      "name": "cal_val.get_unused_pa_value",
+      "command": "udws \"cal_val.get_unused_pa_value P2PY FIRST CMY 0 FWD;\"",
+      "index": 10,
+      "response_file": "references/physical-56-calibration-pen/0010-udws_cal_val_get_unused_pa_value_P2PY_FIRST_CMY_0_FWD.bin",
+      "response_sha256": "2741d30156a0ae310ddc72564642cb25e6575815491b1a3b4ae353f9ddd7a36e",
+      "response_bytes": 94,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "value": 0,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration."
+    },
+    {
+      "name": "cal_val.get_unused_pa_value",
+      "command": "udws \"cal_val.get_unused_pa_value BIDI FIRST K 0 FWD;\"",
+      "index": 11,
+      "response_file": "references/physical-56-calibration-pen/0011-udws_cal_val_get_unused_pa_value_BIDI_FIRST_K_0_FWD.bin",
+      "response_sha256": "51119a17a12f95884bcfedbc3b82a9852847977384cf565d77cc346b48302d0e",
+      "response_bytes": 92,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "value": 0,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration."
+    },
+    {
+      "name": "cal_val.get_unused_pa_value",
+      "command": "udws \"cal_val.get_unused_pa_value THETAZ FIRST K 0 FWD;\"",
+      "index": 12,
+      "response_file": "references/physical-56-calibration-pen/0012-udws_cal_val_get_unused_pa_value_THETAZ_FIRST_K_0_FWD.bin",
+      "response_sha256": "d842f20cbe2a3370a0c5733038bbc20fbbc6e72b755b0315defe6edec299c390",
+      "response_bytes": 94,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "value": 0,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration."
+    },
+    {
+      "name": "cal_val.get_unused_pa_status",
+      "command": "udws \"cal_val.get_unused_pa_status P2PX FIRST CMY 0 FWD;\"",
+      "index": 13,
+      "response_file": "references/physical-56-calibration-pen/0013-udws_cal_val_get_unused_pa_status_P2PX_FIRST_CMY_0_FWD.bin",
+      "response_sha256": "df35e6e6ca74be2bb423c8927044259cf612680717c2a8dce4c3e062c6dce194",
+      "response_bytes": 96,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "value": -1,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration."
+    },
+    {
+      "name": "cal_val.get_unused_pa_status",
+      "command": "udws \"cal_val.get_unused_pa_status P2PY FIRST CMY 0 FWD;\"",
+      "index": 14,
+      "response_file": "references/physical-56-calibration-pen/0014-udws_cal_val_get_unused_pa_status_P2PY_FIRST_CMY_0_FWD.bin",
+      "response_sha256": "03c51bf925b2caf3842629bdc8a6ff3a87dca213da56bcfbd42436a58db528a2",
+      "response_bytes": 96,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "value": -1,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration."
+    },
+    {
+      "name": "cal_val.get_unused_pa_status",
+      "command": "udws \"cal_val.get_unused_pa_status BIDI FIRST K 0 FWD;\"",
+      "index": 15,
+      "response_file": "references/physical-56-calibration-pen/0015-udws_cal_val_get_unused_pa_status_BIDI_FIRST_K_0_FWD.bin",
+      "response_sha256": "a6775dd02526fe5913a1af7ec1534517b2e28ec67b4a799ecbfc60e6c1f6ca8e",
+      "response_bytes": 94,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "value": -1,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration."
+    },
+    {
+      "name": "cal_val.get_unused_pa_status",
+      "command": "udws \"cal_val.get_unused_pa_status THETAZ FIRST K 0 FWD;\"",
+      "index": 16,
+      "response_file": "references/physical-56-calibration-pen/0016-udws_cal_val_get_unused_pa_status_THETAZ_FIRST_K_0_FWD.bin",
+      "response_sha256": "998e1b197d65444f296c53b274ee2f95d1fc05aac55d267976bd41d8680caf38",
+      "response_bytes": 96,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "value": -1,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration."
+    },
+    {
+      "name": "cal_val.get_linefeed_err",
+      "command": "udws \"cal_val.get_linefeed_err 1 1 K;\"",
+      "index": 17,
+      "response_file": "references/physical-56-calibration-pen/0017-udws_cal_val_get_linefeed_err_1_1_K.bin",
+      "response_sha256": "4400d0a51258d3f08a101ee321efbbf94664efa1ea837a78492870d69f4bd04a",
+      "response_bytes": 76,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "value": 0,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration."
+    },
+    {
+      "name": "cal_val.get_linefeed_err_status",
+      "command": "udws \"cal_val.get_linefeed_err_status 1 1 K;\"",
+      "index": 18,
+      "response_file": "references/physical-56-calibration-pen/0018-udws_cal_val_get_linefeed_err_status_1_1_K.bin",
+      "response_sha256": "21e12ef6f3e0904d6d00aace71d809cede08ff7fe8e6bdb65da17fb3ea6758c5",
+      "response_bytes": 84,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "value": -1,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration."
+    },
+    {
+      "name": "cal_val.get_edge_err",
+      "command": "udws \"cal_val.get_edge_err 1;\"",
+      "index": 19,
+      "response_file": "references/physical-56-calibration-pen/0019-udws_cal_val_get_edge_err_1.bin",
+      "response_sha256": "f23246c13e5435bb6955fc408782dd502964dca745126d664d3f5e17664e0ec5",
+      "response_bytes": 68,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "value": 0,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration."
+    },
+    {
+      "name": "cal_val.get_edge_err_status",
+      "command": "udws \"cal_val.get_edge_err_status 1;\"",
+      "index": 20,
+      "response_file": "references/physical-56-calibration-pen/0020-udws_cal_val_get_edge_err_status_1.bin",
+      "response_sha256": "082b662a964ff90fcddcc11b78ee55d1d59a31746853a6abca0a514231de875a",
+      "response_bytes": 76,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "value": -1,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration."
+    },
+    {
+      "name": "pen.get_ttoe_ad_range",
+      "command": "udws \"pen.get_ttoe_ad_range;\"",
+      "index": 21,
+      "response_file": "references/physical-56-calibration-pen/0021-udws_pen_get_ttoe_ad_range.bin",
+      "response_sha256": "7b19609c8a505e84033c31b8358ff967cd942486294d57a1e0c9e22d852e10e5",
+      "response_bytes": 513,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "declared_count": 63,
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "all_cached_entries_zero": true,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-bounded-pen-calibration-table",
+      "note": "Count63 and exactly63 unsigned halfwords are present. All are zero in this capture; these cached table values do not demonstrate calibration or hardware health."
+    },
+    {
+      "name": "pen.get_ttoe_test_range",
+      "command": "udws \"pen.get_ttoe_test_range;\"",
+      "index": 22,
+      "response_file": "references/physical-56-calibration-pen/0022-udws_pen_get_ttoe_test_range.bin",
+      "response_sha256": "e5ec1b84a986c37a244a21940db2c836f656fc555add36126ea2bbcd68cc390d",
+      "response_bytes": 515,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "declared_count": 63,
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "all_cached_entries_zero": true,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-bounded-pen-calibration-table",
+      "note": "Count63 and exactly63 unsigned halfwords are present. All are zero in this capture; these cached table values do not demonstrate calibration or hardware health."
+    },
+    {
+      "name": "pen.is_ttoed",
+      "command": "udws \"pen.is_ttoed 0;\"",
+      "index": 23,
+      "response_file": "references/physical-56-calibration-pen/0023-udws_pen_is_ttoed_0.bin",
+      "response_sha256": "a18d05404659f32d325f92b05a48dbcf4f7269aa2a1f53cbe6ada861c5276e98",
+      "response_bytes": 64,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "value": 0,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-cached-pen-state",
+      "note": "One bounded Boolean value returned for the requested chute. It is a stored calibration-state query, not a live electrical test."
+    },
+    {
+      "name": "pen.is_ttoed",
+      "command": "udws \"pen.is_ttoed 1;\"",
+      "index": 24,
+      "response_file": "references/physical-56-calibration-pen/0024-udws_pen_is_ttoed_1.bin",
+      "response_sha256": "6dc96bf4237f9343e1fc435787ba525bd51fe448605a81f6042460a09e535fae",
+      "response_bytes": 64,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "value": 1,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-cached-pen-state",
+      "note": "One bounded Boolean value returned for the requested chute. It is a stored calibration-state query, not a live electrical test."
+    },
+    {
+      "name": "pen.is_ldw_ttoed",
+      "command": "udws \"pen.is_ldw_ttoed 0;\"",
+      "index": 25,
+      "response_file": "references/physical-56-calibration-pen/0025-udws_pen_is_ldw_ttoed_0.bin",
+      "response_sha256": "ad7d5412c36a52d18822e99e2bd65e4d93ca87d9f58147ed3e1775e0d30509fd",
+      "response_bytes": 68,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "value": 0,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-cached-pen-state",
+      "note": "One bounded Boolean value returned for the requested chute. It is a stored calibration-state query, not a live electrical test."
+    },
+    {
+      "name": "pen.is_ldw_ttoed",
+      "command": "udws \"pen.is_ldw_ttoed 1;\"",
+      "index": 26,
+      "response_file": "references/physical-56-calibration-pen/0026-udws_pen_is_ldw_ttoed_1.bin",
+      "response_sha256": "a2cf3ddb01b334ba760d98c0efce74f4ff7184dfb6738d596fb97e969f8cc9cd",
+      "response_bytes": 68,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "value": 0,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-cached-pen-state",
+      "note": "One bounded Boolean value returned for the requested chute. It is a stored calibration-state query, not a live electrical test."
+    },
+    {
+      "name": "pen.get_dotcount",
+      "command": "udws \"pen.get_dotcount 0 0 0;\"",
+      "index": 27,
+      "response_file": "references/physical-56-calibration-pen/0027-udws_pen_get_dotcount_0_0_0.bin",
+      "response_sha256": "be4c9559c4b1444c4d6b981f38634d7965b90697ac302e516de39821903e860c",
+      "response_bytes": 77,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "value": 94132798,
+      "dsid": 65808,
+      "storage_name": "DSID_PEN_HISTORY_DS_K_0_RAW_DOT_COUNT_K",
+      "matches_prior_nvm_and_ds2": true,
+      "cross_check_sources": [
+        {
+          "response_file": "references/physical-19b-storage-values/0106-udws_nvm2_get_contents_61_61_nvm2_get_contents_61_62_nvm2_get_con.bin",
+          "response_sha256": "ca6044339ff49e3edc887bcf81510fe73192f1fbe522d1181c6ce91ac5457b36",
+          "started_utc": "2026-10-29T19:30:15.651267+00:00",
+          "plan_index": 131
+        },
+        {
+          "response_file": "references/physical-19b-storage-values/0218-udws_ds2_get_list_65739_65740_65741_65742_65761_65762_65769_65770.bin",
+          "response_sha256": "3984e6fdc0773e10fde91ada67afce65ecde1e99c69d8a0360fce662ea21b7b2",
+          "started_utc": "2026-10-29T19:31:49.530833+00:00",
+          "plan_index": 243
+        }
+      ],
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-dot-counter-matching-storage",
+      "note": "The full scalar matches both earlier direct NVM and DS2 observations for the ROM-mapped DSID. Catalog names identify the last argument as a history-slot index; the original plan used the generic word channel. These are stored raw dot counts, not page counts or live nozzle tests."
+    },
+    {
+      "name": "pen.get_dotcount",
+      "command": "udws \"pen.get_dotcount 1 0 0;\"",
+      "index": 28,
+      "response_file": "references/physical-56-calibration-pen/0028-udws_pen_get_dotcount_1_0_0.bin",
+      "response_sha256": "b92d3e7fe4bca169cd50052dc6964f8011eb4f970bf64e536a925bcfbda00f80",
+      "response_bytes": 77,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "value": 18365755,
+      "dsid": 65811,
+      "storage_name": "DSID_PEN_HISTORY_DS_CMY_0_RAW_DOT_COUNT_C",
+      "matches_prior_nvm_and_ds2": true,
+      "cross_check_sources": [
+        {
+          "response_file": "references/physical-19b-storage-values/0107-udws_nvm2_get_contents_61_65_nvm2_get_contents_61_66_nvm2_get_con.bin",
+          "response_sha256": "9db992241c17da91cb2441e379526e5b016bbadd85155be3207fa3d870364be6",
+          "started_utc": "2026-10-29T19:30:16.486178+00:00",
+          "plan_index": 132
+        },
+        {
+          "response_file": "references/physical-19b-storage-values/0218-udws_ds2_get_list_65739_65740_65741_65742_65761_65762_65769_65770.bin",
+          "response_sha256": "3984e6fdc0773e10fde91ada67afce65ecde1e99c69d8a0360fce662ea21b7b2",
+          "started_utc": "2026-10-29T19:31:49.530833+00:00",
+          "plan_index": 243
+        }
+      ],
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-dot-counter-matching-storage",
+      "note": "The full scalar matches both earlier direct NVM and DS2 observations for the ROM-mapped DSID. Catalog names identify the last argument as a history-slot index; the original plan used the generic word channel. These are stored raw dot counts, not page counts or live nozzle tests."
+    },
+    {
+      "name": "pen.get_dotcount",
+      "command": "udws \"pen.get_dotcount 0 0 1;\"",
+      "index": 29,
+      "response_file": "references/physical-56-calibration-pen/0029-udws_pen_get_dotcount_0_0_1.bin",
+      "response_sha256": "8f777ce247405afb6f157e91387265f07596203ee344822f6214a8f8f9e9ca3f",
+      "response_bytes": 77,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "value": 95415927,
+      "dsid": 65809,
+      "storage_name": "DSID_PEN_HISTORY_DS_K_1_RAW_DOT_COUNT_K",
+      "matches_prior_nvm_and_ds2": true,
+      "cross_check_sources": [
+        {
+          "response_file": "references/physical-19b-storage-values/0107-udws_nvm2_get_contents_61_65_nvm2_get_contents_61_66_nvm2_get_con.bin",
+          "response_sha256": "9db992241c17da91cb2441e379526e5b016bbadd85155be3207fa3d870364be6",
+          "started_utc": "2026-10-29T19:30:16.486178+00:00",
+          "plan_index": 132
+        },
+        {
+          "response_file": "references/physical-19b-storage-values/0218-udws_ds2_get_list_65739_65740_65741_65742_65761_65762_65769_65770.bin",
+          "response_sha256": "3984e6fdc0773e10fde91ada67afce65ecde1e99c69d8a0360fce662ea21b7b2",
+          "started_utc": "2026-10-29T19:31:49.530833+00:00",
+          "plan_index": 243
+        }
+      ],
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-dot-counter-matching-storage",
+      "note": "The full scalar matches both earlier direct NVM and DS2 observations for the ROM-mapped DSID. Catalog names identify the last argument as a history-slot index; the original plan used the generic word channel. These are stored raw dot counts, not page counts or live nozzle tests."
+    },
+    {
+      "name": "pen.get_dotcount",
+      "command": "udws \"pen.get_dotcount 1 0 1;\"",
+      "index": 30,
+      "response_file": "references/physical-56-calibration-pen/0030-udws_pen_get_dotcount_1_0_1.bin",
+      "response_sha256": "461c7401fbcec3355236cf270c7ecacf8192d54f0fafc98486a37fcdb268727f",
+      "response_bytes": 77,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "value": 0,
+      "dsid": 65812,
+      "storage_name": "DSID_PEN_HISTORY_DS_CMY_1_RAW_DOT_COUNT_C",
+      "matches_prior_nvm_and_ds2": true,
+      "cross_check_sources": [
+        {
+          "response_file": "references/physical-19b-storage-values/0107-udws_nvm2_get_contents_61_65_nvm2_get_contents_61_66_nvm2_get_con.bin",
+          "response_sha256": "9db992241c17da91cb2441e379526e5b016bbadd85155be3207fa3d870364be6",
+          "started_utc": "2026-10-29T19:30:16.486178+00:00",
+          "plan_index": 132
+        },
+        {
+          "response_file": "references/physical-19b-storage-values/0218-udws_ds2_get_list_65739_65740_65741_65742_65761_65762_65769_65770.bin",
+          "response_sha256": "3984e6fdc0773e10fde91ada67afce65ecde1e99c69d8a0360fce662ea21b7b2",
+          "started_utc": "2026-10-29T19:31:49.530833+00:00",
+          "plan_index": 243
+        }
+      ],
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-dot-counter-matching-storage",
+      "note": "The full scalar matches both earlier direct NVM and DS2 observations for the ROM-mapped DSID. Catalog names identify the last argument as a history-slot index; the original plan used the generic word channel. These are stored raw dot counts, not page counts or live nozzle tests."
+    },
+    {
+      "name": "pen.get_drfs",
+      "command": "udws \"pen.get_drfs;\"",
+      "index": 31,
+      "response_file": "references/physical-56-calibration-pen/0031-udws_pen_get_drfs.bin",
+      "response_sha256": "43ded4c0dee6e55b639b8405205aa591daccf1a2c975342e2989719ec3133df7",
+      "response_bytes": 59,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "value": 2,
+      "dsid": 81071,
+      "storage_name": "DSID_PEN_DYNAMIC_REFRESH_STATUS",
+      "matches_prior_ds2": true,
+      "cross_check_source": {
+        "response_file": "references/physical-23-storage-arrays/0114-udws_ds2_get_sim_array_79933_57_ds2_get_sim_array_79933_58_ds2_ge.bin",
+        "response_sha256": "b8f33cc2cfb5314858de5dccee042e5225339e077d8e54a87a19e7f345f0b17b",
+        "started_utc": "2026-10-29T19:39:33.655969+00:00",
+        "plan_index": 114
+      },
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-dynamic-refresh-status",
+      "note": "Value2 matches the earlier indexed DS2 read of DSID_PEN_DYNAMIC_REFRESH_STATUS[0]."
+    },
+    {
+      "name": "led_color_cal.get_default_matrix",
+      "command": "udws \"led_color_cal.get_default_matrix 0;\"",
+      "index": 1,
+      "response_file": "references/physical-56b-led-metadata/0001-udws_led_color_cal_get_default_matrix_0.bin",
+      "response_sha256": "ace60dd320e734f333262e5b2be746cafff034308ac59e5de7a92f29548465b4",
+      "response_bytes": 247,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "index_argument": 0,
+      "matrix": [
+        [
+          3672,
+          4747,
+          -228
+        ],
+        [
+          1015,
+          8154,
+          -978
+        ],
+        [
+          -1152,
+          1389,
+          7954
+        ]
+      ],
+      "matches_rom": true,
+      "rom_address": "0xa05c439c",
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-default-matrix-matching-rom",
+      "note": "All nine signed fields and all three rows match the selected compiled ROM matrix. This is a default matrix, not measured or current calibration."
+    },
+    {
+      "name": "led_color_cal.get_golden_peaks_widths",
+      "command": "udws \"led_color_cal.get_golden_peaks_widths 0;\"",
+      "index": 2,
+      "response_file": "references/physical-56b-led-metadata/0002-udws_led_color_cal_get_golden_peaks_widths_0.bin",
+      "response_sha256": "c3b62221de71680d248792b3e064e845b43649d9f59fb3f44aaa3e6a2de5138e",
+      "response_bytes": 187,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "index_argument": 0,
+      "rgb_peak_width_pairs": [
+        [
+          620,
+          14
+        ],
+        [
+          521,
+          34
+        ],
+        [
+          452,
+          22
+        ]
+      ],
+      "matches_rom": true,
+      "rom_address": "0xa05c4390",
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-golden-reference-matching-rom",
+      "note": "Three labelled RGB pairs match all six compiled ROM values. Index0 is620/14,521/34,452/22; index1 iszero. No light measurement took place."
+    },
+    {
+      "name": "led_color_cal.get_default_matrix",
+      "command": "udws \"led_color_cal.get_default_matrix 1;\"",
+      "index": 3,
+      "response_file": "references/physical-56b-led-metadata/0003-udws_led_color_cal_get_default_matrix_1.bin",
+      "response_sha256": "3f68661e9fd7a64c4528cef2dbcf0ae741e448d58befda72dee99bd45737a8a8",
+      "response_bytes": 211,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "index_argument": 1,
+      "matrix": [
+        [
+          3672,
+          4747,
+          -228
+        ],
+        [
+          1015,
+          8154,
+          -978
+        ],
+        [
+          -1152,
+          1389,
+          7954
+        ]
+      ],
+      "matches_rom": true,
+      "rom_address": "0xa05c43f4",
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-default-matrix-matching-rom",
+      "note": "All nine signed fields and all three rows match the selected compiled ROM matrix. This is a default matrix, not measured or current calibration."
+    },
+    {
+      "name": "led_color_cal.get_golden_peaks_widths",
+      "command": "udws \"led_color_cal.get_golden_peaks_widths 1;\"",
+      "index": 4,
+      "response_file": "references/physical-56b-led-metadata/0004-udws_led_color_cal_get_golden_peaks_widths_1.bin",
+      "response_sha256": "c151cdd78f30cbeaa243bafadca73270528a91e267f94be29e2047c88d1a6e88",
+      "response_bytes": 147,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "index_argument": 1,
+      "rgb_peak_width_pairs": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "matches_rom": true,
+      "rom_address": "0xa05c43e8",
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-golden-reference-matching-rom",
+      "note": "Three labelled RGB pairs match all six compiled ROM values. Index0 is620/14,521/34,452/22; index1 iszero. No light measurement took place."
+    },
+    {
+      "name": "led_color_cal.get_barcode",
+      "command": "udws \"led_color_cal.get_barcode 0;\"",
+      "index": 5,
+      "response_file": "references/physical-56b-led-metadata/0005-udws_led_color_cal_get_barcode_0.bin",
+      "response_sha256": "4c4fd3dd2752839f6f15d76f94a395faf09918705353d787b52f77da6b69782b",
+      "response_bytes": 101,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "index_argument": 0,
+      "barcode": "",
+      "barcode_decoded": false,
+      "expected_validation_failure": true,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-empty-barcode-result",
+      "note": "The getter returned an empty stored barcode and explicitly rejected it as invalid. Capture is complete, but no valid LED barcode or derived calibration values were obtained."
+    },
+    {
+      "name": "ui_lite.display_status",
+      "command": "udws \"ui_lite.display_status;\"",
+      "index": 1,
+      "response_file": "references/physical-56c-ui-status/0001-udws_ui_lite_display_status.bin",
+      "response_sha256": "1852b41999ebe393e5e3d46199f851fcd952339544bd664ba5b6bbb7a51bcb81",
+      "response_bytes": 283,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "fields": {
+        "popup_state": 0,
+        "dashboard": 0,
+        "active": 0,
+        "pen_type": 0,
+        "size_error": 0,
+        "sensor_error": 0,
+        "allows": 0,
+        "admin_d": 0,
+        "registered": 0,
+        "auto_e": 1,
+        "pending": 0,
+        "e": 0,
+        "server": 0,
+        "main": 0
+      },
+      "field_count": 14,
+      "active_error_rows": 0,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-cached-ui-display-state",
+      "note": "Four complete labelled lines contain fourteen cached fields. Active0 is consistent with no per-error rows. Auto_E is1 and other captured fields are0; labels are retained without assuming undocumented flag meanings."
+    },
+    {
+      "name": "led_color_cal.get_matrix",
+      "command": "udws \"led_color_cal.get_matrix 0;\"",
+      "index": 1,
+      "response_file": "references/physical-62-current-matrices/0001-udws_led_color_cal_get_matrix_0.bin",
+      "response_sha256": "d6619eda6a12e4d9cf72ea480f24b091ef7a4380d046102dfd33945f41e9866b",
+      "response_bytes": 233,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "index_argument": 0,
+      "matrix": [
+        [
+          3672,
+          4747,
+          -228
+        ],
+        [
+          1015,
+          8154,
+          -978
+        ],
+        [
+          -1152,
+          1389,
+          7954
+        ]
+      ],
+      "matches_captured_default": true,
+      "default_source": {
+        "response_file": "references/physical-56b-led-metadata/0001-udws_led_color_cal_get_default_matrix_0.bin",
+        "response_sha256": "ace60dd320e734f333262e5b2be746cafff034308ac59e5de7a92f29548465b4"
+      },
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-current-matrix-matching-default",
+      "note": "All nine current cached coefficients match the independently captured default matrix for this index. Both live-valid indices0/1 were tested; this does not prove physical LED calibration or health."
+    },
+    {
+      "name": "led_color_cal.get_matrix",
+      "command": "udws \"led_color_cal.get_matrix 1;\"",
+      "index": 2,
+      "response_file": "references/physical-62-current-matrices/0002-udws_led_color_cal_get_matrix_1.bin",
+      "response_sha256": "2971824c4fddc9e38a5ec0d95d554374b47f32e86b16c0c2fe8875e94e1c58a8",
+      "response_bytes": 199,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "index_argument": 1,
+      "matrix": [
+        [
+          3672,
+          4747,
+          -228
+        ],
+        [
+          1015,
+          8154,
+          -978
+        ],
+        [
+          -1152,
+          1389,
+          7954
+        ]
+      ],
+      "matches_captured_default": true,
+      "default_source": {
+        "response_file": "references/physical-56b-led-metadata/0003-udws_led_color_cal_get_default_matrix_1.bin",
+        "response_sha256": "3f68661e9fd7a64c4528cef2dbcf0ae741e448d58befda72dee99bd45737a8a8"
+      },
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-current-matrix-matching-default",
+      "note": "All nine current cached coefficients match the independently captured default matrix for this index. Both live-valid indices0/1 were tested; this does not prove physical LED calibration or health."
+    },
+    {
+      "name": "smgr_pe.get_current_setting",
+      "command": "udws \"smgr_pe.get_current_setting 1;\"",
+      "index": 1,
+      "response_file": "references/physical-65-frontpanel-settings/0001-udws_smgr_pe_get_current_setting_1.bin",
+      "response_sha256": "229fdba02f33aad8124bfa1bccbf4bbe46c32c2a35f85f5a4592c3ca80048578",
+      "response_bytes": 75,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "value": 1,
+      "setting_index": 1,
+      "dsid": 76777,
+      "storage_name": "DSID_COLORLOK",
+      "matches_prior_ds2": true,
+      "cross_check_source": {
+        "response_file": "references/physical-19b-storage-values/0268-udws_ds2_get_list_76567_76568_76569_76570_76686_76721_76740_76777.bin",
+        "response_sha256": "58ec248b96bbcfeae17e9d98eb26dc8ae669afaae41f870df168a95402e95be2",
+        "started_utc": "2026-10-29T19:32:29.426406+00:00",
+        "plan_index": 293
+      },
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-current-setting-matching-storage",
+      "note": "The one-digit cached setting fits the tiny CLI buffer completely and matches earlier DS2. Indices1/3/4 map to ColorLok1,dry-time2,eject1; no setting was changed."
+    },
+    {
+      "name": "smgr_pe.get_current_setting",
+      "command": "udws \"smgr_pe.get_current_setting 3;\"",
+      "index": 2,
+      "response_file": "references/physical-65-frontpanel-settings/0002-udws_smgr_pe_get_current_setting_3.bin",
+      "response_sha256": "edefe96291bf59d96f9a39ff993d61bdd2aa44a273c2cb01067db2500fd2c404",
+      "response_bytes": 75,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "value": 2,
+      "setting_index": 3,
+      "dsid": 76840,
+      "storage_name": "DSID_DRY_TIME_SETTING",
+      "matches_prior_ds2": true,
+      "cross_check_source": {
+        "response_file": "references/physical-19b-storage-values/0268-udws_ds2_get_list_76567_76568_76569_76570_76686_76721_76740_76777.bin",
+        "response_sha256": "58ec248b96bbcfeae17e9d98eb26dc8ae669afaae41f870df168a95402e95be2",
+        "started_utc": "2026-10-29T19:32:29.426406+00:00",
+        "plan_index": 293
+      },
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-current-setting-matching-storage",
+      "note": "The one-digit cached setting fits the tiny CLI buffer completely and matches earlier DS2. Indices1/3/4 map to ColorLok1,dry-time2,eject1; no setting was changed."
+    },
+    {
+      "name": "smgr_pe.get_current_setting",
+      "command": "udws \"smgr_pe.get_current_setting 4;\"",
+      "index": 3,
+      "response_file": "references/physical-65-frontpanel-settings/0003-udws_smgr_pe_get_current_setting_4.bin",
+      "response_sha256": "8d259b4d4f6e611a6446d0c28f86d50f90de233e7eaee9c20ce1e5c9889e83cc",
+      "response_bytes": 75,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "value": 1,
+      "setting_index": 4,
+      "dsid": 76841,
+      "storage_name": "DSID_EJECT_SETTING",
+      "matches_prior_ds2": true,
+      "cross_check_source": {
+        "response_file": "references/physical-19b-storage-values/0268-udws_ds2_get_list_76567_76568_76569_76570_76686_76721_76740_76777.bin",
+        "response_sha256": "58ec248b96bbcfeae17e9d98eb26dc8ae669afaae41f870df168a95402e95be2",
+        "started_utc": "2026-10-29T19:32:29.426406+00:00",
+        "plan_index": 293
+      },
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-current-setting-matching-storage",
+      "note": "The one-digit cached setting fits the tiny CLI buffer completely and matches earlier DS2. Indices1/3/4 map to ColorLok1,dry-time2,eject1; no setting was changed."
+    },
+    {
+      "name": "pe.cover_open_query",
+      "command": "udws \"pe.cover_open_query;\"",
+      "index": 4,
+      "response_file": "references/physical-65-frontpanel-settings/0004-udws_pe_cover_open_query.bin",
+      "response_sha256": "bc954935403188c66f9613e31bbf74ab9638eee4ca1329afcf73b6692eaec736",
+      "response_bytes": 65,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "value": 0,
+      "cached_closed_state": true,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-cached-cover-state",
+      "note": "Raw-cover and state-manager Boolean queries both returned0, consistent with their reviewed mapping and a cached closed state. The physically verified descriptor selected the cached branch; this did not poll GPIO or change cover handling."
+    },
+    {
+      "name": "smgr_pe.cover_open_query",
+      "command": "udws \"smgr_pe.cover_open_query;\"",
+      "index": 5,
+      "response_file": "references/physical-65-frontpanel-settings/0005-udws_smgr_pe_cover_open_query.bin",
+      "response_sha256": "c4aa628422567d293140a9256a86c4a0bc88a432959fe2202a3ebaaeed57ccfa",
+      "response_bytes": 70,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "value": 0,
+      "cached_closed_state": true,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-cached-cover-state",
+      "note": "Raw-cover and state-manager Boolean queries both returned0, consistent with their reviewed mapping and a cached closed state. The physically verified descriptor selected the cached branch; this did not poll GPIO or change cover handling."
+    },
+    {
+      "name": "smgr_pe.user_power_on_query",
+      "command": "udws \"smgr_pe.user_power_on_query;\"",
+      "index": 6,
+      "response_file": "references/physical-65-frontpanel-settings/0006-udws_smgr_pe_user_power_on_query.bin",
+      "response_sha256": "9ab06241e2729963ca4ac0895a9a24947915ec8af1770504336640b3008dc6db",
+      "response_bytes": 73,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "value": 1,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-stored-power-state-classification",
+      "note": "Boolean1 returned completely. Handler derives it from fixed storage DSID0x10005 using predicate value not in{0,1,2}; no power transition or electrical measurement occurred."
+    }
+  ],
+  "limitations": [
+    "Cached calibration and stored counter queries do not test motors, ink firing, LEDs, or physical sensor health.",
+    "Snapshots are sequential and not atomic. Historical counts agreeing do not establish that every storage object is current.",
+    "Original capture bytes and historical metadata remain unchanged."
+  ]
+}

@@ -1,0 +1,930 @@
+{
+  "generated_utc": "2026-10-29T23:51:16.944163+00:00",
+  "sessions": [
+    {
+      "directory": "physical-01-identification",
+      "started_utc": "2026-10-29T18:31:55.279376+00:00",
+      "ended_utc": "2026-10-29T18:31:57.842846+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 6,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-02-information",
+      "started_utc": "2026-10-29T18:35:52.026447+00:00",
+      "ended_utc": "2026-10-29T18:36:29.822117+00:00",
+      "stop_reason": "command-did-not-return-prompt",
+      "command_count": 49,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-03-assert-recovery-check",
+      "started_utc": "2026-10-29T18:37:09.647217+00:00",
+      "ended_utc": "2026-10-29T18:37:44.694338+00:00",
+      "stop_reason": "asserted-device-no-shell-response",
+      "command_count": 0,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-04-recovery-listen",
+      "started_utc": "2026-10-29T18:38:47.514428+00:00",
+      "ended_utc": null,
+      "stop_reason": "listener-interrupted-after-user-confirmed-restart",
+      "command_count": 0,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-05-registry",
+      "started_utc": "2026-10-29T18:40:53.842527+00:00",
+      "ended_utc": "2026-10-29T18:41:17.386226+00:00",
+      "stop_reason": "RuntimeError: Iterator did not return prompt",
+      "command_count": 9,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-06-line-recovery",
+      "started_utc": "2026-10-29T18:43:28.967529+00:00",
+      "ended_utc": "2026-10-29T18:43:49.605449+00:00",
+      "stop_reason": "command-did-not-return-prompt",
+      "command_count": 1,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-07-paced-check",
+      "started_utc": "2026-10-29T18:44:51.565721+00:00",
+      "ended_utc": "2026-10-29T18:45:00.305267+00:00",
+      "stop_reason": "command-did-not-return-prompt",
+      "command_count": 1,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-08-crlf-check",
+      "started_utc": "2026-10-29T18:45:40.612638+00:00",
+      "ended_utc": "2026-10-29T18:45:42.416821+00:00",
+      "stop_reason": "check-complete",
+      "command_count": 3,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-09-registry",
+      "started_utc": "2026-10-29T18:45:57.008655+00:00",
+      "ended_utc": "2026-10-29T18:52:08.031215+00:00",
+      "stop_reason": "iterator-reported-iter_done",
+      "command_count": 560,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-10-reviewed-queries",
+      "started_utc": "2026-10-29T18:52:53.116085+00:00",
+      "ended_utc": "2026-10-29T18:53:27.087799+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 74,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-11-software-network",
+      "started_utc": "2026-10-29T18:53:37.008680+00:00",
+      "ended_utc": "2026-10-29T18:54:18.032710+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 83,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-12-storage-catalog",
+      "started_utc": "2026-10-29T18:55:27.193281+00:00",
+      "ended_utc": "2026-10-29T18:58:28.005911+00:00",
+      "stop_reason": "command-did-not-return-prompt",
+      "command_count": 1,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-13-storage-retry",
+      "started_utc": "2026-10-29T18:59:37.049510+00:00",
+      "ended_utc": "2026-10-29T19:02:37.871997+00:00",
+      "stop_reason": "command-did-not-return-prompt",
+      "command_count": 1,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-14-help-validation",
+      "started_utc": "2026-10-29T19:02:56.064591+00:00",
+      "ended_utc": "2026-10-29T19:03:28.193933+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 63,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-15-nvm-header",
+      "started_utc": "2026-10-29T19:04:05.324231+00:00",
+      "ended_utc": "2026-10-29T19:04:55.658863+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 64,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-16-storage-metadata",
+      "started_utc": "2026-10-29T19:05:19.836963+00:00",
+      "ended_utc": "2026-10-29T19:05:30.589291+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 2,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-17-shell",
+      "started_utc": "2026-10-29T19:07:55.941356+00:00",
+      "ended_utc": "2026-10-29T19:08:16.650509+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 42,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-18-storage-details",
+      "started_utc": "2026-10-29T19:10:34.227810+00:00",
+      "ended_utc": "2026-10-29T19:14:18.597401+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 377,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-20-native-guards",
+      "started_utc": "2026-10-29T19:19:41.130201+00:00",
+      "ended_utc": "2026-10-29T19:19:50.921081+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 21,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-21-stub-handlers",
+      "started_utc": "2026-10-29T19:20:50.240425+00:00",
+      "ended_utc": "2026-10-29T19:21:51.501417+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 120,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-19-storage-values",
+      "started_utc": "2026-10-29T19:26:55.132912+00:00",
+      "ended_utc": "2026-10-29T19:27:16.174264+00:00",
+      "stop_reason": "response-validation-failed",
+      "command_count": 26,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-19b-storage-values",
+      "started_utc": "2026-10-29T19:28:49.523028+00:00",
+      "ended_utc": "2026-10-29T19:33:24.265021+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 333,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-22-additional",
+      "started_utc": "2026-10-29T19:36:49.994543+00:00",
+      "ended_utc": "2026-10-29T19:37:30.078341+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 75,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-23-storage-arrays",
+      "started_utc": "2026-10-29T19:37:55.844530+00:00",
+      "ended_utc": "2026-10-29T19:39:34.524825+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 114,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-24-storage-families",
+      "started_utc": "2026-10-29T19:39:43.347795+00:00",
+      "ended_utc": "2026-10-29T19:39:50.336322+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 11,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-26-storage-gaps",
+      "started_utc": "2026-10-29T19:40:04.234917+00:00",
+      "ended_utc": "2026-10-29T19:40:14.310789+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 12,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-27-status-prerequisites",
+      "started_utc": "2026-10-29T19:41:37.418380+00:00",
+      "ended_utc": "2026-10-29T19:41:47.724415+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 19,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-28-status",
+      "started_utc": "2026-10-29T19:42:59.579995+00:00",
+      "ended_utc": "2026-10-29T19:43:01.791687+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 3,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-25-final-status",
+      "started_utc": "2026-10-29T19:43:13.314680+00:00",
+      "ended_utc": "2026-10-29T19:43:16.044544+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 2,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-29-resume",
+      "started_utc": "2026-10-29T19:53:58.208038+00:00",
+      "ended_utc": "2026-10-29T19:53:59.505889+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 1,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-32-guard-paths",
+      "started_utc": "2026-10-29T19:59:58.403873+00:00",
+      "ended_utc": "2026-10-29T20:00:18.149030+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 37,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-33-ram-preflight",
+      "started_utc": "2026-10-29T20:00:57.577875+00:00",
+      "ended_utc": "2026-10-29T20:01:00.533608+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 4,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-34-ram-file-operations",
+      "started_utc": "2026-10-29T20:02:40.265393+00:00",
+      "ended_utc": "2026-10-29T20:02:49.914822+00:00",
+      "stop_reason": "Stopped on unexpected physical reply: ustd.copy /ram/codex_uart_20261029a/a /ram/codex_uart_20261029a/b",
+      "command_count": 16,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-35-ram-handles-and-cleanup",
+      "started_utc": "2026-10-29T20:04:13.508118+00:00",
+      "ended_utc": "2026-10-29T20:04:29.284835+00:00",
+      "stop_reason": "Unexpected physical response: ustd.rmdir /ram/codex_uart_20261029a",
+      "command_count": 27,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-36-ram-cleanup-check",
+      "started_utc": "2026-10-29T20:05:33.346308+00:00",
+      "ended_utc": "2026-10-29T20:05:35.128022+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 2,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-31-hardware-status",
+      "started_utc": "2026-10-29T20:06:09.911313+00:00",
+      "ended_utc": "2026-10-29T20:06:49.562796+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 74,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-30-software-queries",
+      "started_utc": "2026-10-29T20:07:13.501839+00:00",
+      "ended_utc": "2026-10-29T20:08:55.456476+00:00",
+      "stop_reason": "command-did-not-return-prompt",
+      "command_count": 10,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-30b-software-queries",
+      "started_utc": "2026-10-29T20:10:04.433006+00:00",
+      "ended_utc": "2026-10-29T20:10:36.920808+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 57,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-38-ram-upload-cleanup",
+      "started_utc": "2026-10-29T20:11:27.940006+00:00",
+      "ended_utc": "2026-10-29T20:11:32.586109+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 7,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-39-ram-cleanup",
+      "started_utc": "2026-10-29T20:12:23.310833+00:00",
+      "ended_utc": "2026-10-29T20:12:25.098534+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 2,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-32b-guard-paths",
+      "started_utc": "2026-10-29T20:12:27.698523+00:00",
+      "ended_utc": "2026-10-29T20:12:31.324931+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 6,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-40-ram-hex-preflight",
+      "started_utc": "2026-10-29T20:15:13.109895+00:00",
+      "ended_utc": "2026-10-29T20:15:14.923594+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 2,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-41-ram-hex-upload",
+      "started_utc": "2026-10-29T20:15:50.759010+00:00",
+      "ended_utc": "2026-10-29T20:15:55.794430+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 8,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-37-bounded-software",
+      "started_utc": "2026-10-29T20:18:23.284144+00:00",
+      "ended_utc": "2026-10-29T20:18:51.484166+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 50,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-42-firmware-table-formatter",
+      "started_utc": "2026-10-29T20:19:58.643493+00:00",
+      "ended_utc": "2026-10-29T20:20:14.527098+00:00",
+      "stop_reason": "command-did-not-return-prompt",
+      "command_count": 1,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-44-supported-clock-test",
+      "started_utc": "2026-10-29T20:22:18.311589+00:00",
+      "ended_utc": "2026-10-29T20:22:35.620104+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 1,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-45-firmware-groups",
+      "started_utc": "2026-10-29T20:24:36.244594+00:00",
+      "ended_utc": "2026-10-29T20:24:47.669972+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 16,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-46-final-live-check",
+      "started_utc": "2026-10-29T20:26:41.439653+00:00",
+      "ended_utc": "2026-10-29T20:26:42.733328+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 1,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-47-resume",
+      "started_utc": "2026-10-29T20:42:23.822713+00:00",
+      "ended_utc": "2026-10-29T20:42:25.108590+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 1,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-51-nvm-mirror",
+      "started_utc": "2026-10-29T20:44:43.971631+00:00",
+      "ended_utc": "2026-10-29T20:46:20.790225+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 157,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-49-system-metadata",
+      "started_utc": "2026-10-29T20:46:46.882514+00:00",
+      "ended_utc": "2026-10-29T20:47:05.263192+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 16,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-48-wifi-sdio",
+      "started_utc": "2026-10-29T20:49:03.877241+00:00",
+      "ended_utc": "2026-10-29T20:49:09.029935+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 8,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-50-scanner-capabilities",
+      "started_utc": "2026-10-29T20:49:46.696279+00:00",
+      "ended_utc": "2026-10-29T20:49:53.458644+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 12,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-53-resume",
+      "started_utc": "2026-10-29T21:16:07.077540+00:00",
+      "ended_utc": "2026-10-29T21:16:08.399084+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 1,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-57-provider-pointers",
+      "started_utc": "2026-10-29T21:18:47.514833+00:00",
+      "ended_utc": "2026-10-29T21:19:18.027157+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 54,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-54-system-services",
+      "started_utc": "2026-10-29T21:20:18.465867+00:00",
+      "ended_utc": "2026-10-29T21:20:59.024079+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 10,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-59-metadata-pointers",
+      "started_utc": "2026-10-29T21:21:54.515203+00:00",
+      "ended_utc": "2026-10-29T21:23:38.165725+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 189,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-58-heap-diagnostics",
+      "started_utc": "2026-10-29T21:24:14.928060+00:00",
+      "ended_utc": "2026-10-29T21:24:20.232735+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 9,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-56-calibration-pen",
+      "started_utc": "2026-10-29T21:27:36.646279+00:00",
+      "ended_utc": "2026-10-29T21:27:54.532461+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 31,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-60-ui-metadata",
+      "started_utc": "2026-10-29T21:28:18.493714+00:00",
+      "ended_utc": "2026-10-29T21:29:52.136954+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 171,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-55-media-capabilities",
+      "started_utc": "2026-10-29T21:30:35.332250+00:00",
+      "ended_utc": "2026-10-29T21:30:39.001944+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 5,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-56b-led-metadata",
+      "started_utc": "2026-10-29T21:30:39.325804+00:00",
+      "ended_utc": "2026-10-29T21:30:42.842119+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 5,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-56c-ui-status",
+      "started_utc": "2026-10-29T21:30:43.138335+00:00",
+      "ended_utc": "2026-10-29T21:30:44.320158+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 1,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-63-misc-queries",
+      "started_utc": "2026-10-29T21:31:13.303651+00:00",
+      "ended_utc": "2026-10-29T21:31:18.705947+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 9,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-64-ui-fields",
+      "started_utc": "2026-10-29T21:31:40.247030+00:00",
+      "ended_utc": "2026-10-29T21:31:55.736481+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 27,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-61-block-metadata",
+      "started_utc": "2026-10-29T21:32:55.808877+00:00",
+      "ended_utc": "2026-10-29T21:32:57.010257+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 1,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-62-current-matrices",
+      "started_utc": "2026-10-29T21:32:57.451055+00:00",
+      "ended_utc": "2026-10-29T21:32:59.241073+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 2,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-65-frontpanel-settings",
+      "started_utc": "2026-10-29T21:33:58.350584+00:00",
+      "ended_utc": "2026-10-29T21:34:02.232018+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 6,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-67-mount-metadata",
+      "started_utc": "2026-10-29T21:35:00.457230+00:00",
+      "ended_utc": "2026-10-29T21:35:11.307421+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 18,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-66-rng-uart",
+      "started_utc": "2026-10-29T21:35:36.911314+00:00",
+      "ended_utc": "2026-10-29T21:35:38.174316+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 1,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-68-query-prerequisites",
+      "started_utc": "2026-10-29T21:48:18.943000+00:00",
+      "ended_utc": "2026-10-29T21:48:44.687907+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 45,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-69-provider-prerequisites",
+      "started_utc": "2026-10-29T21:49:05.629471+00:00",
+      "ended_utc": "2026-10-29T21:49:25.846810+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 36,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-74-event-prerequisite",
+      "started_utc": "2026-10-29T21:50:21.385014+00:00",
+      "ended_utc": "2026-10-29T21:50:27.050442+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 9,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-73-event-query",
+      "started_utc": "2026-10-29T21:51:50.598309+00:00",
+      "ended_utc": "2026-10-29T21:51:51.783589+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 1,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-70-heap-block-flags",
+      "started_utc": "2026-10-29T21:52:19.504967+00:00",
+      "ended_utc": "2026-10-29T21:52:20.763275+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 1,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-71-settings-build-date",
+      "started_utc": "2026-10-29T21:52:22.573987+00:00",
+      "ended_utc": "2026-10-29T21:52:25.398724+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 4,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-72-consumable-status",
+      "started_utc": "2026-10-29T21:53:51.768639+00:00",
+      "ended_utc": "2026-10-29T21:53:53.610744+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 2,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-75-query-prerequisites",
+      "started_utc": "2026-10-29T21:59:35.799303+00:00",
+      "ended_utc": "2026-10-29T22:00:30.302474+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 100,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-79-ink-cache-prerequisite",
+      "started_utc": "2026-10-29T22:01:14.651382+00:00",
+      "ended_utc": "2026-10-29T22:01:20.185155+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 9,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-76-consumable-system",
+      "started_utc": "2026-10-29T22:03:39.515176+00:00",
+      "ended_utc": "2026-10-29T22:03:40.718704+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 1,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-78-ip-job-memory",
+      "started_utc": "2026-10-29T22:03:44.119339+00:00",
+      "ended_utc": "2026-10-29T22:04:03.374888+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 39,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-77-scanner-origins",
+      "started_utc": "2026-10-29T22:04:50.855647+00:00",
+      "ended_utc": "2026-10-29T22:04:52.567013+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 2,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-80-extra-queries",
+      "started_utc": "2026-10-29T22:23:33.242703+00:00",
+      "ended_utc": "2026-10-29T22:23:54.081751+00:00",
+      "stop_reason": "command-did-not-return-prompt",
+      "command_count": 1,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-80b-listen",
+      "started_utc": "2026-10-29T22:24:03.627190+00:00",
+      "ended_utc": "2026-10-29T22:24:33.643333+00:00",
+      "stop_reason": "passive-recording-duration-complete",
+      "command_count": 0,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-80c-prompt-check",
+      "started_utc": "2026-10-29T22:25:02.698244+00:00",
+      "ended_utc": "2026-10-29T22:25:13.039504+00:00",
+      "stop_reason": "initial-prompt-not-observed",
+      "command_count": 0,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-80d-reboot-listen",
+      "started_utc": "2026-10-29T22:26:09.930047+00:00",
+      "ended_utc": null,
+      "stop_reason": "listener-stopped-by-host-after-boot-prompt",
+      "command_count": 0,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-82-carriage-home",
+      "started_utc": "2026-10-29T22:35:33.518209+00:00",
+      "ended_utc": "2026-10-29T22:36:04.377113+00:00",
+      "stop_reason": "command-did-not-return-prompt",
+      "command_count": 1,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-82b-prompt-check",
+      "started_utc": "2026-10-29T22:36:13.189121+00:00",
+      "ended_utc": "2026-10-29T22:36:23.471988+00:00",
+      "stop_reason": "initial-prompt-not-observed",
+      "command_count": 0,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-82c-reboot-listen",
+      "started_utc": "2026-10-29T22:36:31.469209+00:00",
+      "ended_utc": "2026-10-29T22:46:31.583224+00:00",
+      "stop_reason": "passive-recording-duration-complete",
+      "command_count": 0,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-81-extra-queries",
+      "started_utc": "2026-10-29T23:07:09.444354+00:00",
+      "ended_utc": "2026-10-29T23:07:17.862758+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 16,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-83-temp-job",
+      "started_utc": "2026-10-29T23:37:38.280586+00:00",
+      "ended_utc": "2026-10-29T23:37:39.407819+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 1,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-84-temp-async",
+      "started_utc": "2026-10-29T23:37:50.837033+00:00",
+      "ended_utc": "2026-10-29T23:37:52.012832+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 1,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-85-fm-luau",
+      "started_utc": "2026-10-29T23:43:59.951103+00:00",
+      "ended_utc": "2026-10-29T23:44:01.071229+00:00",
+      "stop_reason": null,
+      "command_count": 0,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-86-fm-lua",
+      "started_utc": "2026-10-29T23:44:21.500095+00:00",
+      "ended_utc": "2026-10-29T23:44:52.338259+00:00",
+      "stop_reason": "command-did-not-return-prompt",
+      "command_count": 1,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-86b-prompt-check",
+      "started_utc": "2026-10-29T23:45:00.907234+00:00",
+      "ended_utc": "2026-10-29T23:45:11.266150+00:00",
+      "stop_reason": "initial-prompt-not-observed",
+      "command_count": 0,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-87-prompt-resync",
+      "started_utc": "2026-10-29T23:46:11.354359+00:00",
+      "ended_utc": "2026-10-29T23:46:12.071123+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 0,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-88-ludw",
+      "started_utc": "2026-10-29T23:47:17.165120+00:00",
+      "ended_utc": "2026-10-29T23:47:19.706715+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 4,
+      "responses_indexed": true
+    },
+    {
+      "directory": "physical-89-srec-probe",
+      "started_utc": "2026-10-29T23:50:21.773586+00:00",
+      "ended_utc": "2026-10-29T23:50:22.969784+00:00",
+      "stop_reason": "batch-complete",
+      "command_count": 1,
+      "responses_indexed": true
+    }
+  ],
+  "transmissions_with_command_records": 3403,
+  "outcomes": {
+    "output-returned": 2452,
+    "returned-without-payload": 296,
+    "registry-enumeration": 572,
+    "reported-error": 22,
+    "usage-response": 35,
+    "firmware-assertion": 1,
+    "timeout-no-prompt": 8,
+    "malformed-bulk-response": 2,
+    "output-returned-incomplete": 5,
+    "silent-unregistered-command": 2,
+    "argument-error-response": 5,
+    "response-validation-failed": 3
+  },
+  "transmissions_confirmed_by_tx_files": 3403,
+  "registry_enumeration_records": 573,
+  "non_enumeration_command_records": 2830,
+  "command_records_by_family": {
+    "udw-expression-batch": 3334,
+    "native-function-call": 36,
+    "native-variable-read": 33
+  },
+  "exercise_scope_records": {
+    "supplied-invocation-only": 2590,
+    "registry-enumeration-only": 573,
+    "help-or-usage-output-only": 6,
+    "empty-argument-path-only": 92,
+    "unregistered-name-attempt": 2,
+    "compiled-handler-only": 120,
+    "read-and-clear-volatile-counters": 1,
+    "software-only-empty-path": 19
+  },
+  "native_function_names_attempted": [
+    "CIRBUF_debug",
+    "cp",
+    "dskcpy",
+    "efShow",
+    "help",
+    "i",
+    "ip_buf_debug",
+    "ip_lhcfifo_reg",
+    "ip_lmb_debug",
+    "ip_show",
+    "jmpp_terse",
+    "jmpp_verbose",
+    "ll",
+    "ls",
+    "ludw",
+    "netstat",
+    "semShow",
+    "taskLatency",
+    "tps",
+    "uart_reset",
+    "udw_tags",
+    "udws"
+  ],
+  "native_function_names_with_return_marker": [
+    "cp",
+    "dskcpy",
+    "efShow",
+    "i",
+    "ip_buf_debug",
+    "ip_lhcfifo_reg",
+    "ip_lmb_debug",
+    "ip_show",
+    "jmpp_terse",
+    "jmpp_verbose",
+    "ll",
+    "ls",
+    "ludw",
+    "netstat",
+    "semShow",
+    "taskLatency",
+    "tps",
+    "uart_reset",
+    "udw_tags",
+    "udws"
+  ],
+  "native_variable_names_read": [
+    "dbug_cjm_event",
+    "dbug_dump_matrix_regs",
+    "dbug_dump_mergein_regs",
+    "dbug_dump_vscale_regs",
+    "dbug_fade_histo",
+    "dbug_fade_maps",
+    "dbug_img_compact",
+    "dbug_ip",
+    "dbug_ip2sp",
+    "dbug_ip_buf",
+    "dbug_ip_colormap",
+    "dbug_ip_gobble",
+    "dbug_ip_lhcfifo",
+    "dbug_ip_mem",
+    "dbug_ip_tenh",
+    "dbug_ip_tenh_block_disable",
+    "dbug_jm_jpeg_demo_hold_task",
+    "dbug_mergein",
+    "dbug_tier1_mergein",
+    "dbug_udw",
+    "dbug_vscale",
+    "dbug_vscale_factor",
+    "img_compact_copy",
+    "img_compact_embedded",
+    "smtr_dcEndpoint",
+    "smtr_dcHome",
+    "smtr_dcIsrPrint",
+    "smtr_dcMotorMove",
+    "smtr_dcMotorPwr",
+    "smtr_dcScanAt",
+    "smtr_dcScanInit",
+    "smtr_interface_dbug",
+    "traceStore"
+  ],
+  "unique_native_function_names_attempted": 22,
+  "unique_native_function_names_with_return_marker": 20,
+  "unique_native_variable_names_read": 33,
+  "semantic_capture_validation": {
+    "passed_records": 1367,
+    "failed_records": 3,
+    "not_applied_records": 2033,
+    "note": "Typed capture validation is separate from byte-integrity checks and full-NVM structural checks."
+  },
+  "data_quality": {
+    "known_incomplete_response_records": 7,
+    "note": "Recovered catalog coverage does not make a damaged individual response complete."
+  },
+  "post_capture_validation": {
+    "passed_records": 627,
+    "failed_records": 11,
+    "capture_failures_later_revalidated": 2,
+    "note": "Later source-hash-bound assessments never replace historical status, validation, or outcome."
+  },
+  "registry_complete": true,
+  "unique_registered_names": 2235,
+  "registered_names_invoked": 730,
+  "registered_names_invoked_non_enumeration": 728,
+  "registered_names_with_hold_history": 251,
+  "uninvoked_registered_names_with_hold_history": 192,
+  "registered_names_with_unproven_checker_path_history": 1779,
+  "coverage_note": "Enumeration proves a name is registered, not that its command was tested. Usage responses test argument validation, not the underlying operation. Invocation means the expression was transmitted, not that every operation succeeded. A zero wrapper return can also accompany an unregistered command. Native functions and variable reads are counted separately from UDW batches. Native function attempts do not prove registration; return markers identify resolved function calls. Empty-argument, help, and compiled-out paths do not test the corresponding operational behavior. Active sessions are listed but indexed only after closing or stopping."
+}

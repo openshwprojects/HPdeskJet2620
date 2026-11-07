@@ -1,0 +1,653 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-10-29T20:52:21.462152+00:00",
+  "provenance": {
+    "source": "Physical UART capture independently validated offline against firmware",
+    "capture": "references/physical-50-scanner-capabilities/session.json",
+    "capture_sha256": "43b63ccdf0a50427d2745ebcb9300459b7b128fa7c386d05970a972a3bcab6e2",
+    "image": "artifacts/ghs/dram.bin",
+    "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+    "serial_access_by_reviewer": "none",
+    "review": "references/useful_scanner_round4_review.json",
+    "review_sha256": "387844f0f7a82feb776edd44901693c6af147917ed89ff71116ede61f141e4dc"
+  },
+  "summary": {
+    "physical_commands": 12,
+    "prompt_returned": 12,
+    "validated_responses": 12,
+    "unique_names": 7,
+    "new_unique_names_at_plan_creation": 6,
+    "resolution_lists": 4,
+    "resolution_lists_match_binary_model": true,
+    "empty_led_record_queries": 6,
+    "help_only_queries": 1
+  },
+  "response_revalidations": [
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0001-udws_scan_sensor_CCD_0.bin",
+      "response_sha256": "58cc9b4a498ec650ec86047a09e7a52f5ef0606b51f6e3b506d9fc364908a29a",
+      "assessment": "complete-cached-scanner-identity",
+      "note": "Both sensor and supplier fields are present and match the required TEMPO identity.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0002-udws_scan_led_LEDONTIMEGET.bin",
+      "response_sha256": "36f8f866505723d40ee9089bf28ddbeb533a4c483b8f19416ee2792dc667d666",
+      "assessment": "complete-cached-led-on-times",
+      "note": "Exactly three cached RGB on-time values. All are zero; this does not measure LED electrical behavior.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0003-udws_scan_bolt_yy.bin",
+      "response_sha256": "e4935999775557ec08fbf057fb9f9eef4bee0175ff625fee533607c3d86cd4f2",
+      "assessment": "complete-cached-bolt-detection-state",
+      "note": "Both cached fields are present and zero. These fields do not identify the main AXON SoC or disprove the separately identified COMET scanner AFE.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0004-udws_scan_keep_yy_0.bin",
+      "response_sha256": "59da50e351e30f929012f8d3f9f1bb4c2d4fec0ecb70bf1e8310699b0aa21e63",
+      "assessment": "complete-cached-keep-configuration",
+      "note": "One KEEP region has all five expected fields; numeric and decimal forms agree at zero.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0005-udws_scan_ifc_yreslist.bin",
+      "response_sha256": "73453bcc69f77e0effb087312912b55ec9ca6bfbee38693ef6636d2a02d96675",
+      "assessment": "complete-resolution-lists-matching-binary-model",
+      "note": "All four ordered rows and every integer, including each zero terminator, match A03BD61C applied to the TEMPO tables. The helper clears the value immediately before the -1 marker, so 4800 in the underlying table is omitted. This does not establish optical resolution or installed ADF hardware.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0006-udws_scan_led_LEDONTIMEINFO_300.bin",
+      "response_sha256": "7820066ea211c21debd84bf5c78f748710603b80a0acc22724ad2eb716b52403",
+      "assessment": "complete-empty-led-record-query",
+      "note": "The full wrapper and prompt returned with no payload. A03A9A9C only prints an empty line when the selected cached record pointer is null. Null-pointer interpretation is inferred from the reviewed control flow; no calibration values were returned.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0007-udws_scan_led_LEDONTIMEINFO_600.bin",
+      "response_sha256": "1bfd319cf1c5f7617768030472fe710979f5e2ce6f7ca06dfe040f056c53bc97",
+      "assessment": "complete-empty-led-record-query",
+      "note": "The full wrapper and prompt returned with no payload. A03A9A9C only prints an empty line when the selected cached record pointer is null. Null-pointer interpretation is inferred from the reviewed control flow; no calibration values were returned.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0008-udws_scan_led_LEDONTIMEINFO_1200.bin",
+      "response_sha256": "50483e8770e033778a10e18cfa7bc29b4de7e1bc8ed4e70c6ec87a6d456711dd",
+      "assessment": "complete-empty-led-record-query",
+      "note": "The full wrapper and prompt returned with no payload. A03A9A9C only prints an empty line when the selected cached record pointer is null. Null-pointer interpretation is inferred from the reviewed control flow; no calibration values were returned.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0009-udws_scan_led_LEDONTIMEINFO_2400.bin",
+      "response_sha256": "db893d31b4ecc598697f872e7bb8d8ce5d4a1b417aca93d2935854579d99dfb1",
+      "assessment": "complete-empty-led-record-query",
+      "note": "The full wrapper and prompt returned with no payload. A03A9A9C only prints an empty line when the selected cached record pointer is null. Null-pointer interpretation is inferred from the reviewed control flow; no calibration values were returned.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0010-udws_scan_led_LEDONTIMEINFO_4800.bin",
+      "response_sha256": "213e708245ba81d5ba98a71f77eca13b3ec0f4249f2c50546ea9f5b71a33bbd3",
+      "assessment": "complete-empty-led-record-query",
+      "note": "The full wrapper and prompt returned with no payload. A03A9A9C only prints an empty line when the selected cached record pointer is null. Null-pointer interpretation is inferred from the reviewed control flow; no calibration values were returned.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0011-udws_scan_led_LEDONTIMEINFO_9600.bin",
+      "response_sha256": "d6f04292f9987099513e2d95b3df5d634ea7232e6527a7509d43934571876dcb",
+      "assessment": "complete-empty-led-record-query",
+      "note": "The full wrapper and prompt returned with no payload. A03A9A9C only prints an empty line when the selected cached record pointer is null. Null-pointer interpretation is inferred from the reviewed control flow; no calibration values were returned.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0012-udws_scan_sensor_timing_0.bin",
+      "response_sha256": "6a20368cb4fe179d1dfaef4efca106c68ab03d4f8c7f4bbf3a28a3c321ffdd2b",
+      "assessment": "complete-built-in-help-only",
+      "note": "Help matches all seven firmware literals and lists nine selectors. Only selector 0 ran; no timing parameters were queried or changed. Help advertises selector 2, but binary A03BDE50 immediately enters the common return epilogue for it.",
+      "valid": true,
+      "complete": true
+    }
+  ],
+  "data_quality": [
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0001-udws_scan_sensor_CCD_0.bin",
+      "response_sha256": "58cc9b4a498ec650ec86047a09e7a52f5ef0606b51f6e3b506d9fc364908a29a",
+      "assessment": "complete-cached-scanner-identity",
+      "note": "Both sensor and supplier fields are present and match the required TEMPO identity.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0002-udws_scan_led_LEDONTIMEGET.bin",
+      "response_sha256": "36f8f866505723d40ee9089bf28ddbeb533a4c483b8f19416ee2792dc667d666",
+      "assessment": "complete-cached-led-on-times",
+      "note": "Exactly three cached RGB on-time values. All are zero; this does not measure LED electrical behavior.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0003-udws_scan_bolt_yy.bin",
+      "response_sha256": "e4935999775557ec08fbf057fb9f9eef4bee0175ff625fee533607c3d86cd4f2",
+      "assessment": "complete-cached-bolt-detection-state",
+      "note": "Both cached fields are present and zero. These fields do not identify the main AXON SoC or disprove the separately identified COMET scanner AFE.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0004-udws_scan_keep_yy_0.bin",
+      "response_sha256": "59da50e351e30f929012f8d3f9f1bb4c2d4fec0ecb70bf1e8310699b0aa21e63",
+      "assessment": "complete-cached-keep-configuration",
+      "note": "One KEEP region has all five expected fields; numeric and decimal forms agree at zero.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0005-udws_scan_ifc_yreslist.bin",
+      "response_sha256": "73453bcc69f77e0effb087312912b55ec9ca6bfbee38693ef6636d2a02d96675",
+      "assessment": "complete-resolution-lists-matching-binary-model",
+      "note": "All four ordered rows and every integer, including each zero terminator, match A03BD61C applied to the TEMPO tables. The helper clears the value immediately before the -1 marker, so 4800 in the underlying table is omitted. This does not establish optical resolution or installed ADF hardware.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0006-udws_scan_led_LEDONTIMEINFO_300.bin",
+      "response_sha256": "7820066ea211c21debd84bf5c78f748710603b80a0acc22724ad2eb716b52403",
+      "assessment": "complete-empty-led-record-query",
+      "note": "The full wrapper and prompt returned with no payload. A03A9A9C only prints an empty line when the selected cached record pointer is null. Null-pointer interpretation is inferred from the reviewed control flow; no calibration values were returned.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0007-udws_scan_led_LEDONTIMEINFO_600.bin",
+      "response_sha256": "1bfd319cf1c5f7617768030472fe710979f5e2ce6f7ca06dfe040f056c53bc97",
+      "assessment": "complete-empty-led-record-query",
+      "note": "The full wrapper and prompt returned with no payload. A03A9A9C only prints an empty line when the selected cached record pointer is null. Null-pointer interpretation is inferred from the reviewed control flow; no calibration values were returned.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0008-udws_scan_led_LEDONTIMEINFO_1200.bin",
+      "response_sha256": "50483e8770e033778a10e18cfa7bc29b4de7e1bc8ed4e70c6ec87a6d456711dd",
+      "assessment": "complete-empty-led-record-query",
+      "note": "The full wrapper and prompt returned with no payload. A03A9A9C only prints an empty line when the selected cached record pointer is null. Null-pointer interpretation is inferred from the reviewed control flow; no calibration values were returned.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0009-udws_scan_led_LEDONTIMEINFO_2400.bin",
+      "response_sha256": "db893d31b4ecc598697f872e7bb8d8ce5d4a1b417aca93d2935854579d99dfb1",
+      "assessment": "complete-empty-led-record-query",
+      "note": "The full wrapper and prompt returned with no payload. A03A9A9C only prints an empty line when the selected cached record pointer is null. Null-pointer interpretation is inferred from the reviewed control flow; no calibration values were returned.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0010-udws_scan_led_LEDONTIMEINFO_4800.bin",
+      "response_sha256": "213e708245ba81d5ba98a71f77eca13b3ec0f4249f2c50546ea9f5b71a33bbd3",
+      "assessment": "complete-empty-led-record-query",
+      "note": "The full wrapper and prompt returned with no payload. A03A9A9C only prints an empty line when the selected cached record pointer is null. Null-pointer interpretation is inferred from the reviewed control flow; no calibration values were returned.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0011-udws_scan_led_LEDONTIMEINFO_9600.bin",
+      "response_sha256": "d6f04292f9987099513e2d95b3df5d634ea7232e6527a7509d43934571876dcb",
+      "assessment": "complete-empty-led-record-query",
+      "note": "The full wrapper and prompt returned with no payload. A03A9A9C only prints an empty line when the selected cached record pointer is null. Null-pointer interpretation is inferred from the reviewed control flow; no calibration values were returned.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0012-udws_scan_sensor_timing_0.bin",
+      "response_sha256": "6a20368cb4fe179d1dfaef4efca106c68ab03d4f8c7f4bbf3a28a3c321ffdd2b",
+      "assessment": "complete-built-in-help-only",
+      "note": "Help matches all seven firmware literals and lists nine selectors. Only selector 0 ran; no timing parameters were queried or changed. Help advertises selector 2, but binary A03BDE50 immediately enters the common return epilogue for it.",
+      "complete": true
+    }
+  ],
+  "results": [
+    {
+      "index": 1,
+      "name": "scan sensor CCD",
+      "command": "udws \"scan sensor CCD 0;\"",
+      "response_file": "references/physical-50-scanner-capabilities/0001-udws_scan_sensor_CCD_0.bin",
+      "response_sha256": "58cc9b4a498ec650ec86047a09e7a52f5ef0606b51f6e3b506d9fc364908a29a",
+      "response_bytes": 141,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "sensor": "CIS_MODULE_TEMPO_TOS",
+      "sensor_enum_from_binary": 2,
+      "supplier": "CIS_SUPPLIER_CSI",
+      "field_count": 2,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-cached-scanner-identity",
+      "note": "Both sensor and supplier fields are present and match the required TEMPO identity."
+    },
+    {
+      "index": 2,
+      "name": "scan led LEDONTIMEGET",
+      "command": "udws \"scan led LEDONTIMEGET;\"",
+      "response_file": "references/physical-50-scanner-capabilities/0002-udws_scan_led_LEDONTIMEGET.bin",
+      "response_sha256": "36f8f866505723d40ee9089bf28ddbeb533a4c483b8f19416ee2792dc667d666",
+      "response_bytes": 90,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "rgb_on_times": [
+        0,
+        0,
+        0
+      ],
+      "field_count": 3,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-cached-led-on-times",
+      "note": "Exactly three cached RGB on-time values. All are zero; this does not measure LED electrical behavior."
+    },
+    {
+      "index": 3,
+      "name": "scan bolt yy",
+      "command": "udws \"scan bolt yy;\"",
+      "response_file": "references/physical-50-scanner-capabilities/0003-udws_scan_bolt_yy.bin",
+      "response_sha256": "e4935999775557ec08fbf057fb9f9eef4bee0175ff625fee533607c3d86cd4f2",
+      "response_bytes": 122,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "detected": 0,
+      "chip_id": 0,
+      "field_count": 2,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-cached-bolt-detection-state",
+      "note": "Both cached fields are present and zero. These fields do not identify the main AXON SoC or disprove the separately identified COMET scanner AFE."
+    },
+    {
+      "index": 4,
+      "name": "scan keep yy",
+      "command": "udws \"scan keep yy 0;\"",
+      "response_file": "references/physical-50-scanner-capabilities/0004-udws_scan_keep_yy_0.bin",
+      "response_sha256": "59da50e351e30f929012f8d3f9f1bb4c2d4fec0ecb70bf1e8310699b0aa21e63",
+      "response_bytes": 329,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "fields": {
+        "start_pix": 0,
+        "npixels_keep": 0,
+        "v0": 0,
+        "vn": 0,
+        "_db_udw": 0
+      },
+      "field_count": 5,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-cached-keep-configuration",
+      "note": "One KEEP region has all five expected fields; numeric and decimal forms agree at zero."
+    },
+    {
+      "index": 5,
+      "name": "scan ifc yreslist",
+      "command": "udws \"scan ifc yreslist;\"",
+      "response_file": "references/physical-50-scanner-capabilities/0005-udws_scan_ifc_yreslist.bin",
+      "response_sha256": "73453bcc69f77e0effb087312912b55ec9ca6bfbee38693ef6636d2a02d96675",
+      "response_bytes": 376,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "rows": [
+        {
+          "adf_label": "No",
+          "color_space": "RGB",
+          "indices": [
+            0,
+            0
+          ],
+          "printed_values": [
+            75,
+            150,
+            300,
+            450,
+            600,
+            900,
+            1200,
+            2400,
+            0
+          ],
+          "model": {
+            "table_index": 84,
+            "pointer": "0x20857678",
+            "source_halfwords": [
+              75,
+              150,
+              300,
+              450,
+              600,
+              900,
+              1200,
+              2400,
+              4800,
+              -1,
+              600,
+              0,
+              0,
+              0
+            ],
+            "sentinel_index": 9,
+            "selected_limit": 4800,
+            "result": [
+              75,
+              150,
+              300,
+              450,
+              600,
+              900,
+              1200,
+              2400
+            ],
+            "scratch_terminator_included_in_printed_output": 0
+          }
+        },
+        {
+          "adf_label": "No",
+          "color_space": "K",
+          "indices": [
+            0,
+            1
+          ],
+          "printed_values": [
+            150,
+            300,
+            450,
+            600,
+            900,
+            1200,
+            2400,
+            0
+          ],
+          "model": {
+            "table_index": 72,
+            "pointer": "0x208575b8",
+            "source_halfwords": [
+              150,
+              300,
+              450,
+              600,
+              900,
+              1200,
+              2400,
+              4800,
+              -1,
+              600,
+              0,
+              0,
+              0,
+              0
+            ],
+            "sentinel_index": 8,
+            "selected_limit": 4800,
+            "result": [
+              150,
+              300,
+              450,
+              600,
+              900,
+              1200,
+              2400
+            ],
+            "scratch_terminator_included_in_printed_output": 0
+          }
+        },
+        {
+          "adf_label": "Yes",
+          "color_space": "RGB",
+          "indices": [
+            1,
+            0
+          ],
+          "printed_values": [
+            75,
+            150,
+            300,
+            450,
+            600,
+            0
+          ],
+          "model": {
+            "table_index": 84,
+            "pointer": "0x20857678",
+            "source_halfwords": [
+              75,
+              150,
+              300,
+              450,
+              600,
+              900,
+              1200,
+              2400,
+              4800,
+              -1,
+              600,
+              0,
+              0,
+              0
+            ],
+            "sentinel_index": 9,
+            "selected_limit": 600,
+            "result": [
+              75,
+              150,
+              300,
+              450,
+              600
+            ],
+            "scratch_terminator_included_in_printed_output": 0
+          }
+        },
+        {
+          "adf_label": "Yes",
+          "color_space": "K",
+          "indices": [
+            1,
+            1
+          ],
+          "printed_values": [
+            150,
+            300,
+            450,
+            600,
+            0
+          ],
+          "model": {
+            "table_index": 72,
+            "pointer": "0x208575b8",
+            "source_halfwords": [
+              150,
+              300,
+              450,
+              600,
+              900,
+              1200,
+              2400,
+              4800,
+              -1,
+              600,
+              0,
+              0,
+              0,
+              0
+            ],
+            "sentinel_index": 8,
+            "selected_limit": 600,
+            "result": [
+              150,
+              300,
+              450,
+              600
+            ],
+            "scratch_terminator_included_in_printed_output": 0
+          }
+        }
+      ],
+      "row_count": 4,
+      "all_rows_match_binary_model": true,
+      "upper_listed_non_adf_dpi": 2400,
+      "upper_listed_adf_dpi": 600,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-resolution-lists-matching-binary-model",
+      "note": "All four ordered rows and every integer, including each zero terminator, match A03BD61C applied to the TEMPO tables. The helper clears the value immediately before the -1 marker, so 4800 in the underlying table is omitted. This does not establish optical resolution or installed ADF hardware."
+    },
+    {
+      "index": 6,
+      "name": "scan led LEDONTIMEINFO",
+      "command": "udws \"scan led LEDONTIMEINFO 300;\"",
+      "response_file": "references/physical-50-scanner-capabilities/0006-udws_scan_led_LEDONTIMEINFO_300.bin",
+      "response_sha256": "7820066ea211c21debd84bf5c78f748710603b80a0acc22724ad2eb716b52403",
+      "response_bytes": 73,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "resolution_argument": 300,
+      "payload_empty": true,
+      "inferred_null_cached_record": true,
+      "calibration_fields_returned": 0,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-empty-led-record-query",
+      "note": "The full wrapper and prompt returned with no payload. A03A9A9C only prints an empty line when the selected cached record pointer is null. Null-pointer interpretation is inferred from the reviewed control flow; no calibration values were returned."
+    },
+    {
+      "index": 7,
+      "name": "scan led LEDONTIMEINFO",
+      "command": "udws \"scan led LEDONTIMEINFO 600;\"",
+      "response_file": "references/physical-50-scanner-capabilities/0007-udws_scan_led_LEDONTIMEINFO_600.bin",
+      "response_sha256": "1bfd319cf1c5f7617768030472fe710979f5e2ce6f7ca06dfe040f056c53bc97",
+      "response_bytes": 73,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "resolution_argument": 600,
+      "payload_empty": true,
+      "inferred_null_cached_record": true,
+      "calibration_fields_returned": 0,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-empty-led-record-query",
+      "note": "The full wrapper and prompt returned with no payload. A03A9A9C only prints an empty line when the selected cached record pointer is null. Null-pointer interpretation is inferred from the reviewed control flow; no calibration values were returned."
+    },
+    {
+      "index": 8,
+      "name": "scan led LEDONTIMEINFO",
+      "command": "udws \"scan led LEDONTIMEINFO 1200;\"",
+      "response_file": "references/physical-50-scanner-capabilities/0008-udws_scan_led_LEDONTIMEINFO_1200.bin",
+      "response_sha256": "50483e8770e033778a10e18cfa7bc29b4de7e1bc8ed4e70c6ec87a6d456711dd",
+      "response_bytes": 74,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "resolution_argument": 1200,
+      "payload_empty": true,
+      "inferred_null_cached_record": true,
+      "calibration_fields_returned": 0,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-empty-led-record-query",
+      "note": "The full wrapper and prompt returned with no payload. A03A9A9C only prints an empty line when the selected cached record pointer is null. Null-pointer interpretation is inferred from the reviewed control flow; no calibration values were returned."
+    },
+    {
+      "index": 9,
+      "name": "scan led LEDONTIMEINFO",
+      "command": "udws \"scan led LEDONTIMEINFO 2400;\"",
+      "response_file": "references/physical-50-scanner-capabilities/0009-udws_scan_led_LEDONTIMEINFO_2400.bin",
+      "response_sha256": "db893d31b4ecc598697f872e7bb8d8ce5d4a1b417aca93d2935854579d99dfb1",
+      "response_bytes": 74,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "resolution_argument": 2400,
+      "payload_empty": true,
+      "inferred_null_cached_record": true,
+      "calibration_fields_returned": 0,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-empty-led-record-query",
+      "note": "The full wrapper and prompt returned with no payload. A03A9A9C only prints an empty line when the selected cached record pointer is null. Null-pointer interpretation is inferred from the reviewed control flow; no calibration values were returned."
+    },
+    {
+      "index": 10,
+      "name": "scan led LEDONTIMEINFO",
+      "command": "udws \"scan led LEDONTIMEINFO 4800;\"",
+      "response_file": "references/physical-50-scanner-capabilities/0010-udws_scan_led_LEDONTIMEINFO_4800.bin",
+      "response_sha256": "213e708245ba81d5ba98a71f77eca13b3ec0f4249f2c50546ea9f5b71a33bbd3",
+      "response_bytes": 74,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "resolution_argument": 4800,
+      "payload_empty": true,
+      "inferred_null_cached_record": true,
+      "calibration_fields_returned": 0,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-empty-led-record-query",
+      "note": "The full wrapper and prompt returned with no payload. A03A9A9C only prints an empty line when the selected cached record pointer is null. Null-pointer interpretation is inferred from the reviewed control flow; no calibration values were returned."
+    },
+    {
+      "index": 11,
+      "name": "scan led LEDONTIMEINFO",
+      "command": "udws \"scan led LEDONTIMEINFO 9600;\"",
+      "response_file": "references/physical-50-scanner-capabilities/0011-udws_scan_led_LEDONTIMEINFO_9600.bin",
+      "response_sha256": "d6f04292f9987099513e2d95b3df5d634ea7232e6527a7509d43934571876dcb",
+      "response_bytes": 74,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "resolution_argument": 9600,
+      "payload_empty": true,
+      "inferred_null_cached_record": true,
+      "calibration_fields_returned": 0,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-empty-led-record-query",
+      "note": "The full wrapper and prompt returned with no payload. A03A9A9C only prints an empty line when the selected cached record pointer is null. Null-pointer interpretation is inferred from the reviewed control flow; no calibration values were returned."
+    },
+    {
+      "index": 12,
+      "name": "scan sensor timing",
+      "command": "udws \"scan sensor timing 0;\"",
+      "response_file": "references/physical-50-scanner-capabilities/0012-udws_scan_sensor_timing_0.bin",
+      "response_sha256": "6a20368cb4fe179d1dfaef4efca106c68ab03d4f8c7f4bbf3a28a3c321ffdd2b",
+      "response_bytes": 803,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "help_only": true,
+      "selector_count": 9,
+      "selectors": [
+        0,
+        1,
+        2,
+        10,
+        11,
+        12,
+        20,
+        30,
+        99
+      ],
+      "help_matches_all_seven_firmware_literals": true,
+      "selector_meaning": {
+        "0": "Usage",
+        "1": "Select timing (sets volatile override)",
+        "2": "Duplex selection documented, but this build immediately returns",
+        "10": "Read selected timing parameters",
+        "11": "Read with resolution/exposure/color details",
+        "12": "Read with field offsets",
+        "20": "Set selected parameter",
+        "30": "Set all gain parameters",
+        "99": "Set debug mode"
+      },
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-built-in-help-only",
+      "note": "Help matches all seven firmware literals and lists nine selectors. Only selector 0 ran; no timing parameters were queried or changed. Help advertises selector 2, but binary A03BDE50 immediately enters the common return epilogue for it."
+    }
+  ],
+  "limitations": [
+    "These commands read cached configuration and capability lists; none measured hardware operation.",
+    "All six per-resolution LED records were absent at query time; no LED calibration was established.",
+    "Resolution lists are firmware-reported values, not verified optical scanner capability.",
+    "Raw captures and original capture metadata were not modified."
+  ]
+}

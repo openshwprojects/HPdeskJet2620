@@ -1,0 +1,3150 @@
+{
+  "started_utc": "2026-10-29T20:24:36.244594+00:00",
+  "port": "COM16",
+  "baud": 115200,
+  "data_bits": 8,
+  "parity": "N",
+  "stop_bits": 1,
+  "line_ending": "CRLF",
+  "source": "physical UART",
+  "rts": false,
+  "dtr": false,
+  "tx_character_delay_seconds": 0.003,
+  "capture_program_sha256": "685d8b07cd5afafeba32f37eb5722416458a08dafe09290576957e50b31bdb03",
+  "response_validator": {
+    "name": "validate",
+    "file": "capture_firmware_groups.py",
+    "sha256": "6f3d5e2b2ea44a10631b47f917f2ff974e1ac9a6dfa90f2209e344e64787ac0d"
+  },
+  "requested_rx_buffer_bytes": 1048576,
+  "requested_tx_buffer_bytes": 65536,
+  "initial_prompt_seen": true,
+  "stop_reason": "batch-complete",
+  "ended_utc": "2026-10-29T20:24:47.669972+00:00",
+  "commands": [
+    {
+      "name": "firm.query_value_suid",
+      "command": "udws \"firm.query_value_suid 2437;\"",
+      "handler": "0xa00d4f8b",
+      "classification": "reviewed-bounded-numeric-firmware-group-read",
+      "timeout": 25,
+      "purpose": "Read current and compiled values for one physically established numeric firmware group.",
+      "argument_syntax": "SUID (13-bit unsigned group ID), not a packed item ID",
+      "side_effects_assessment": "Existing local registry/data reads and UART output only.",
+      "source": {
+        "response_file": "references/physical-30-software-queries/0008-udws_firm_query_name.bin",
+        "response_sha256": "de7e519c5bb424d83f90c26ab339b670fbbb860fc64fe70d41f8d1d07127015b"
+      },
+      "expected": {
+        "suid": 2437,
+        "group_name": "FIRM_DEB",
+        "item_count": 6,
+        "items": [
+          {
+            "index": 0,
+            "name": "FIRM_DEB.FIRM_DEBUG_COMP_PARAM1"
+          },
+          {
+            "index": 1,
+            "name": "FIRM_DEB.FIRM_DEBUG_COMP_PARAM2"
+          },
+          {
+            "index": 2,
+            "name": "FIRM_DEB.FIRM_DEBUG_COMP_PARAM3"
+          },
+          {
+            "index": 3,
+            "name": "FIRM_DEB.FIRM_DEBUG_COMP_PARAM4"
+          },
+          {
+            "index": 4,
+            "name": "FIRM_DEB.FIRM_DEBUG_COMP_PARAM5"
+          },
+          {
+            "index": 5,
+            "name": "FIRM_DEB.END"
+          }
+        ],
+        "max_row_bytes_before_CR_translation": 59,
+        "max_payload_bytes_before_CR_translation": 365
+      },
+      "review": {
+        "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+        "handler_bytes_start": "0xa00d4f8a",
+        "handler_bytes_end_exclusive": "0xa00d50c8",
+        "handler_bytes_sha256": "5e4af2ae4f169663ff54c6f9edefc15770bd4bb733f0c782c56cc5a55d5363db",
+        "proof": "Masks input to 13 bits, resolves registered SUID, loops 0..descriptor maximum, gets current value using actual SUID and index, prints current/default/name in 100-byte row buffer with byte99 NUL. All known name lengths fit even two signed32 minima.",
+        "data_quality": "One group per UART line. Largest group may exceed conservative 4KB transport guideline; validate exact expected item identities and full-row delimiters before calling complete. No whole-table retry."
+      },
+      "index": 1,
+      "started_utc": "2026-10-29T20:24:36.950648+00:00",
+      "response_file": "0001-udws_firm_query_value_suid_2437.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:24:37.473314+00:00",
+      "elapsed_seconds": 0.522,
+      "response_bytes": 321,
+      "response_sha256": "1172879ec7df8abf16ae50b9424c6be9f46c94c2890ef5388ba39f98e4489c33",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "rows": 6,
+        "expected_rows": 6,
+        "checks": [
+          "group identity",
+          "complete ordered item IDs/names",
+          "integer fields",
+          "row delimiters"
+        ]
+      }
+    },
+    {
+      "name": "firm.query_value_suid",
+      "command": "udws \"firm.query_value_suid 325;\"",
+      "handler": "0xa00d4f8b",
+      "classification": "reviewed-bounded-numeric-firmware-group-read",
+      "timeout": 25,
+      "purpose": "Read current and compiled values for one physically established numeric firmware group.",
+      "argument_syntax": "SUID (13-bit unsigned group ID), not a packed item ID",
+      "side_effects_assessment": "Existing local registry/data reads and UART output only.",
+      "source": {
+        "response_file": "references/physical-30-software-queries/0008-udws_firm_query_name.bin",
+        "response_sha256": "de7e519c5bb424d83f90c26ab339b670fbbb860fc64fe70d41f8d1d07127015b"
+      },
+      "expected": {
+        "suid": 325,
+        "group_name": "FIRMDEB2",
+        "item_count": 6,
+        "items": [
+          {
+            "index": 0,
+            "name": "FIRMDEB2.FIRM_DEBUG_COMP_PARAM1"
+          },
+          {
+            "index": 1,
+            "name": "FIRMDEB2.FIRM_DEBUG_COMP_PARAM2"
+          },
+          {
+            "index": 2,
+            "name": "FIRMDEB2.FIRM_DEBUG_COMP_PARAM3"
+          },
+          {
+            "index": 3,
+            "name": "FIRMDEB2.FIRM_DEBUG_COMP_PARAM4"
+          },
+          {
+            "index": 4,
+            "name": "FIRMDEB2.FIRM_DEBUG_COMP_PARAM5"
+          },
+          {
+            "index": 5,
+            "name": "FIRMDEB2.END"
+          }
+        ],
+        "max_row_bytes_before_CR_translation": 59,
+        "max_payload_bytes_before_CR_translation": 365
+      },
+      "review": {
+        "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+        "handler_bytes_start": "0xa00d4f8a",
+        "handler_bytes_end_exclusive": "0xa00d50c8",
+        "handler_bytes_sha256": "5e4af2ae4f169663ff54c6f9edefc15770bd4bb733f0c782c56cc5a55d5363db",
+        "proof": "Masks input to 13 bits, resolves registered SUID, loops 0..descriptor maximum, gets current value using actual SUID and index, prints current/default/name in 100-byte row buffer with byte99 NUL. All known name lengths fit even two signed32 minima.",
+        "data_quality": "One group per UART line. Largest group may exceed conservative 4KB transport guideline; validate exact expected item identities and full-row delimiters before calling complete. No whole-table retry."
+      },
+      "index": 2,
+      "started_utc": "2026-10-29T20:24:37.476709+00:00",
+      "response_file": "0002-udws_firm_query_value_suid_325.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:24:38.012737+00:00",
+      "elapsed_seconds": 0.535,
+      "response_bytes": 320,
+      "response_sha256": "04f336f18e7307d83b7ebfc26e98c9741bc57edf5ff8d6eedc8047a64a95680f",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "rows": 6,
+        "expected_rows": 6,
+        "checks": [
+          "group identity",
+          "complete ordered item IDs/names",
+          "integer fields",
+          "row delimiters"
+        ]
+      }
+    },
+    {
+      "name": "firm.query_value_suid",
+      "command": "udws \"firm.query_value_suid 2359;\"",
+      "handler": "0xa00d4f8b",
+      "classification": "reviewed-bounded-numeric-firmware-group-read",
+      "timeout": 25,
+      "purpose": "Read current and compiled values for one physically established numeric firmware group.",
+      "argument_syntax": "SUID (13-bit unsigned group ID), not a packed item ID",
+      "side_effects_assessment": "Existing local registry/data reads and UART output only.",
+      "source": {
+        "response_file": "references/physical-30-software-queries/0008-udws_firm_query_name.bin",
+        "response_sha256": "de7e519c5bb424d83f90c26ab339b670fbbb860fc64fe70d41f8d1d07127015b"
+      },
+      "expected": {
+        "suid": 2359,
+        "group_name": "SCAN",
+        "item_count": 197,
+        "items": [
+          {
+            "index": 0,
+            "name": "SCAN.UNUSED"
+          },
+          {
+            "index": 1,
+            "name": "SCAN.SC_FIRMS_AFE_MCLK_FREQ"
+          },
+          {
+            "index": 2,
+            "name": "SCAN.SC_FIRMS_AFE_TRAIN_FREQ_REG_VAL"
+          },
+          {
+            "index": 3,
+            "name": "SCAN.SC_FIRMS_MAX_FLATBED_IPS_TENTHS"
+          },
+          {
+            "index": 4,
+            "name": "SCAN.SC_FIRMS_MAX_ADF_IPS_TENTHS"
+          },
+          {
+            "index": 5,
+            "name": "SCAN.SC_FIRMS_ADF_DOC_X_TWEAK2"
+          },
+          {
+            "index": 6,
+            "name": "SCAN.SC_FIRMS_LVDS_DISABLE_FOR_SCANNER_IDLE"
+          },
+          {
+            "index": 7,
+            "name": "SCAN.SC_FIRMS_WIDTH_DETECT_ENABLE"
+          },
+          {
+            "index": 8,
+            "name": "SCAN.SC_FIRMS_JM_MEM_RETURN"
+          },
+          {
+            "index": 9,
+            "name": "SCAN.SC_FIRMS_TRIM_CHIP_EDGE_PIXELS"
+          },
+          {
+            "index": 10,
+            "name": "SCAN.SC_FIRMS_BOISE_PAUSE_TICKS"
+          },
+          {
+            "index": 11,
+            "name": "SCAN.SC_FIRMS_DOC_X_TWEAK"
+          },
+          {
+            "index": 12,
+            "name": "SCAN.SC_FIRMS_DOC_Y_TWEAK"
+          },
+          {
+            "index": 13,
+            "name": "SCAN.SC_FIRMS_ADF_DOC_X_TWEAK"
+          },
+          {
+            "index": 14,
+            "name": "SCAN.SC_FIRMS_SCANSM_RECAL_ENABLE"
+          },
+          {
+            "index": 15,
+            "name": "SCAN.SC_FIRMS_SCANSM_RECAL_PRNU_LOCKOUT"
+          },
+          {
+            "index": 16,
+            "name": "SCAN.SC_FIRMS_SCANSM_RECAL_TALIGN_LOCKOUT"
+          },
+          {
+            "index": 17,
+            "name": "SCAN.SC_FIRMS_TALIGN_RECAL_ENABLE"
+          },
+          {
+            "index": 18,
+            "name": "SCAN.SC_FIRMS_CISSM_RECAL_ENABLE"
+          },
+          {
+            "index": 19,
+            "name": "SCAN.SC_FIRMS_CISSM_RECAL_IDLE_TIMEOUT"
+          },
+          {
+            "index": 20,
+            "name": "SCAN.SC_FIRMS_DISABLE_ALL_THERMAL_RECAL"
+          },
+          {
+            "index": 21,
+            "name": "SCAN.SC_FIRMS_JOB_LOG_MODE"
+          },
+          {
+            "index": 22,
+            "name": "SCAN.SC_FIRMS_CISSM_RECAL_IDLE_TIMEOUT_DAY"
+          },
+          {
+            "index": 23,
+            "name": "SCAN.SC_FIRMS_TALIGN_FULL_Y_ALIGN"
+          },
+          {
+            "index": 24,
+            "name": "SCAN.SC_FIRMS_CISSM_RECAL_DELAY_TICKS"
+          },
+          {
+            "index": 25,
+            "name": "SCAN.SC_FIRMS_LMW_GAIN_ADJUST_JOB_TIMEOUT"
+          },
+          {
+            "index": 26,
+            "name": "SCAN.SC_FIRMS_LMW_GAIN_ADJUST_RECAL_TIMEOUT"
+          },
+          {
+            "index": 27,
+            "name": "SCAN.SC_FIRMS_LMW_GAIN_ADJUST_DGAIN_THRESH"
+          },
+          {
+            "index": 28,
+            "name": "SCAN.SC_FIRMS_LMW_GAIN_ADJUST_DGAIN_MIN"
+          },
+          {
+            "index": 29,
+            "name": "SCAN.SC_FIRMS_LMW_GAIN_ADJUST_DGAIN_MAX"
+          },
+          {
+            "index": 30,
+            "name": "SCAN.SC_FIRMS_END_PAGE_PAST_USEC"
+          },
+          {
+            "index": 31,
+            "name": "SCAN.SC_FIRMS_SKIP_POWER_ON_CALS"
+          },
+          {
+            "index": 32,
+            "name": "SCAN.SC_FIRMS_CAL_ON_ADF_WHITE"
+          },
+          {
+            "index": 33,
+            "name": "SCAN.SC_FIRMS_MFG_MODE"
+          },
+          {
+            "index": 34,
+            "name": "SCAN.SC_FIRMS_WAKEUP_SANITY_THRESHOLDS"
+          },
+          {
+            "index": 35,
+            "name": "SCAN.SC_FIRMS_LED_AFE_CAL_RETRY_LIMIT0"
+          },
+          {
+            "index": 36,
+            "name": "SCAN.SC_FIRMS_LED_AFE_CAL_RETRY_LIMIT1"
+          },
+          {
+            "index": 37,
+            "name": "SCAN.SC_FIRMS_LED_AFE_CAL_RETRY_GAIN_THRESHOLD"
+          },
+          {
+            "index": 38,
+            "name": "SCAN.SC_FIRMS_LED_AFE_CAL_RETRY_ENABLE"
+          },
+          {
+            "index": 39,
+            "name": "SCAN.SC_FIRMS_REF_MARK_H_THRESH"
+          },
+          {
+            "index": 40,
+            "name": "SCAN.SC_FIRMS_REF_MARK_V_THRESH"
+          },
+          {
+            "index": 41,
+            "name": "SCAN.SC_FIRMS_REF_MARK_FIND_LEFT_ADJUST"
+          },
+          {
+            "index": 42,
+            "name": "SCAN.SC_FIRMS_START_TG_DELAY_MONO_300"
+          },
+          {
+            "index": 43,
+            "name": "SCAN.SC_FIRMS_START_TG_DELAY_COLOR_300"
+          },
+          {
+            "index": 44,
+            "name": "SCAN.SC_FIRMS_START_TG_DELAY_MONO_600"
+          },
+          {
+            "index": 45,
+            "name": "SCAN.SC_FIRMS_START_TG_DELAY_COLOR_600"
+          },
+          {
+            "index": 46,
+            "name": "SCAN.SC_FIRMS_START_TG_DELAY_1200"
+          },
+          {
+            "index": 47,
+            "name": "SCAN.SC_FIRMS_STOP_TG_DELAY_MONO_300"
+          },
+          {
+            "index": 48,
+            "name": "SCAN.SC_FIRMS_STOP_TG_DELAY_COLOR_300"
+          },
+          {
+            "index": 49,
+            "name": "SCAN.SC_FIRMS_STOP_TG_DELAY_MONO_600"
+          },
+          {
+            "index": 50,
+            "name": "SCAN.SC_FIRMS_STOP_TG_DELAY_COLOR_600"
+          },
+          {
+            "index": 51,
+            "name": "SCAN.SC_FIRMS_STOP_TG_DELAY_1200"
+          },
+          {
+            "index": 52,
+            "name": "SCAN.SC_FIRMS_OVERRIDE_RANGE_0_SENSOR_MODULE"
+          },
+          {
+            "index": 53,
+            "name": "SCAN.SC_FIRMS_OVERRIDE_RANGE_1_SENSOR_MODULE"
+          },
+          {
+            "index": 54,
+            "name": "SCAN.SC_FIRMS_OVERRIDE_RANGE_2_SENSOR_MODULE"
+          },
+          {
+            "index": 55,
+            "name": "SCAN.SC_FIRMS_OVERRIDE_RANGE_3_SENSOR_MODULE"
+          },
+          {
+            "index": 56,
+            "name": "SCAN.SC_FIRMS_REF_MARK_FIND_RIGHT_ADJUST"
+          },
+          {
+            "index": 57,
+            "name": "SCAN.SC_FIRMS_SCIF_EDGE_SANITY"
+          },
+          {
+            "index": 58,
+            "name": "SCAN.SC_FIRMS_BOLT2_LED_DRIVE"
+          },
+          {
+            "index": 59,
+            "name": "SCAN.SC_FIRMS_DASHER_DITHER_SYNC_ENABLE"
+          },
+          {
+            "index": 60,
+            "name": "SCAN.SC_FIRMS_DASHER_DITHER_DIGITAL_TRIM"
+          },
+          {
+            "index": 61,
+            "name": "SCAN.SC_FIRMS_QUAD_PRNU"
+          },
+          {
+            "index": 62,
+            "name": "SCAN.SC_FIRMS_DITHER_TG_EXP_TIME"
+          },
+          {
+            "index": 63,
+            "name": "SCAN.SC_FIRMS_CLAMP_AVERAGE"
+          },
+          {
+            "index": 64,
+            "name": "SCAN.SC_FIRMS_ILLUM_HIST_AVG_NUM_PIXS"
+          },
+          {
+            "index": 65,
+            "name": "SCAN.SC_FIRMS_WEAK_PIXEL_NAVG"
+          },
+          {
+            "index": 66,
+            "name": "SCAN.SC_FIRMS_WEAK_PIXEL_CLEAN_THRESH"
+          },
+          {
+            "index": 67,
+            "name": "SCAN.SC_FIRMS_WEAK_PIXEL_DIRTY_THRESH"
+          },
+          {
+            "index": 68,
+            "name": "SCAN.SC_FIRMS_WEAK_PIXEL_DEADZONE"
+          },
+          {
+            "index": 69,
+            "name": "SCAN.SC_FIRMS_WEAK_PIXEL_MAX_DIP_WIDTH"
+          },
+          {
+            "index": 70,
+            "name": "SCAN.SC_FIRMS_TIER0_PATH"
+          },
+          {
+            "index": 71,
+            "name": "SCAN.SC_FIRMS_WAKEUP_SANITY_RETRY_LIMIT"
+          },
+          {
+            "index": 72,
+            "name": "SCAN.SC_FIRMS_FIX_UNGROUNDED_NOISE"
+          },
+          {
+            "index": 73,
+            "name": "SCAN.SC_FIRMS_SENSOR_TARGET_VERSION"
+          },
+          {
+            "index": 74,
+            "name": "SCAN.SC_FIRMS_WAKEUP_SANITY_FRONT_TRIGGER_COUNT"
+          },
+          {
+            "index": 75,
+            "name": "SCAN.SC_FIRMS_WAKEUP_SANITY_BACK_TRIGGER_COUNT"
+          },
+          {
+            "index": 76,
+            "name": "SCAN.SC_FIRMS_WAKEUP_SANITY_FRONT_TRIGGER_SECONDS"
+          },
+          {
+            "index": 77,
+            "name": "SCAN.SC_FIRMS_WAKEUP_SANITY_BACK_TRIGGER_SECONDS"
+          },
+          {
+            "index": 78,
+            "name": "SCAN.SC_FIRMS_CIS_00"
+          },
+          {
+            "index": 79,
+            "name": "SCAN.SC_FIRMS_CIS_01"
+          },
+          {
+            "index": 80,
+            "name": "SCAN.SC_FIRMS_CIS_02"
+          },
+          {
+            "index": 81,
+            "name": "SCAN.SC_FIRMS_CIS_03"
+          },
+          {
+            "index": 82,
+            "name": "SCAN.SC_FIRMS_CIS_04"
+          },
+          {
+            "index": 83,
+            "name": "SCAN.SC_FIRMS_CIS_05"
+          },
+          {
+            "index": 84,
+            "name": "SCAN.SC_FIRMS_CIS_06"
+          },
+          {
+            "index": 85,
+            "name": "SCAN.SC_FIRMS_CIS_07"
+          },
+          {
+            "index": 86,
+            "name": "SCAN.SC_FIRMS_CIS_08"
+          },
+          {
+            "index": 87,
+            "name": "SCAN.SC_FIRMS_CIS_09"
+          },
+          {
+            "index": 88,
+            "name": "SCAN.SC_FIRMS_CIS_10"
+          },
+          {
+            "index": 89,
+            "name": "SCAN.SC_FIRMS_CIS_11"
+          },
+          {
+            "index": 90,
+            "name": "SCAN.SC_FIRMS_CIS_12"
+          },
+          {
+            "index": 91,
+            "name": "SCAN.SC_FIRMS_CIS_13"
+          },
+          {
+            "index": 92,
+            "name": "SCAN.SC_FIRMS_CIS_14"
+          },
+          {
+            "index": 93,
+            "name": "SCAN.SC_FIRMS_CIS_15"
+          },
+          {
+            "index": 94,
+            "name": "SCAN.SC_FIRMS_CIS_16"
+          },
+          {
+            "index": 95,
+            "name": "SCAN.SC_FIRMS_CIS_17"
+          },
+          {
+            "index": 96,
+            "name": "SCAN.SC_FIRMS_CIS_18"
+          },
+          {
+            "index": 97,
+            "name": "SCAN.SC_FIRMS_CIS_19"
+          },
+          {
+            "index": 98,
+            "name": "SCAN.SC_FIRMS_CIS_20"
+          },
+          {
+            "index": 99,
+            "name": "SCAN.SC_FIRMS_CIS_21"
+          },
+          {
+            "index": 100,
+            "name": "SCAN.SC_FIRMS_CIS_22"
+          },
+          {
+            "index": 101,
+            "name": "SCAN.SC_FIRMS_CIS_23"
+          },
+          {
+            "index": 102,
+            "name": "SCAN.SC_FIRMS_CIS_24"
+          },
+          {
+            "index": 103,
+            "name": "SCAN.SC_FIRMS_CIS_25"
+          },
+          {
+            "index": 104,
+            "name": "SCAN.SC_FIRMS_CIS_26"
+          },
+          {
+            "index": 105,
+            "name": "SCAN.SC_FIRMS_CIS_27"
+          },
+          {
+            "index": 106,
+            "name": "SCAN.SC_FIRMS_CIS_28"
+          },
+          {
+            "index": 107,
+            "name": "SCAN.SC_FIRMS_CIS_29"
+          },
+          {
+            "index": 108,
+            "name": "SCAN.SC_FIRMS_CIS_30"
+          },
+          {
+            "index": 109,
+            "name": "SCAN.SC_FIRMS_CIS_31"
+          },
+          {
+            "index": 110,
+            "name": "SCAN.SC_FIRMS_CIS_32"
+          },
+          {
+            "index": 111,
+            "name": "SCAN.SC_FIRMS_CIS_33"
+          },
+          {
+            "index": 112,
+            "name": "SCAN.SC_FIRMS_CIS_34"
+          },
+          {
+            "index": 113,
+            "name": "SCAN.SC_FIRMS_CIS_35"
+          },
+          {
+            "index": 114,
+            "name": "SCAN.SC_FIRMS_CIS_36"
+          },
+          {
+            "index": 115,
+            "name": "SCAN.SC_FIRMS_CIS_37"
+          },
+          {
+            "index": 116,
+            "name": "SCAN.SC_FIRMS_CIS_38"
+          },
+          {
+            "index": 117,
+            "name": "SCAN.SC_FIRMS_CIS_39"
+          },
+          {
+            "index": 118,
+            "name": "SCAN.SC_FIRMS_CIS_40"
+          },
+          {
+            "index": 119,
+            "name": "SCAN.SC_FIRMS_CIS_41"
+          },
+          {
+            "index": 120,
+            "name": "SCAN.SC_FIRMS_CIS_42"
+          },
+          {
+            "index": 121,
+            "name": "SCAN.SC_FIRMS_CIS_43"
+          },
+          {
+            "index": 122,
+            "name": "SCAN.SC_FIRMS_CIS_44"
+          },
+          {
+            "index": 123,
+            "name": "SCAN.SC_FIRMS_CIS_45"
+          },
+          {
+            "index": 124,
+            "name": "SCAN.SC_FIRMS_CIS_46"
+          },
+          {
+            "index": 125,
+            "name": "SCAN.SC_FIRMS_CIS_47"
+          },
+          {
+            "index": 126,
+            "name": "SCAN.SC_FIRMS_CIS_48"
+          },
+          {
+            "index": 127,
+            "name": "SCAN.SC_FIRMS_CIS_49"
+          },
+          {
+            "index": 128,
+            "name": "SCAN.SC_FIRMS_CIS_50"
+          },
+          {
+            "index": 129,
+            "name": "SCAN.SC_FIRMS_CIS_51"
+          },
+          {
+            "index": 130,
+            "name": "SCAN.SC_FIRMS_CIS_52"
+          },
+          {
+            "index": 131,
+            "name": "SCAN.SC_FIRMS_CIS_53"
+          },
+          {
+            "index": 132,
+            "name": "SCAN.SC_FIRMS_CIS_54"
+          },
+          {
+            "index": 133,
+            "name": "SCAN.SC_FIRMS_CIS_55"
+          },
+          {
+            "index": 134,
+            "name": "SCAN.SC_FIRMS_CIS_56"
+          },
+          {
+            "index": 135,
+            "name": "SCAN.SC_FIRMS_CIS_57"
+          },
+          {
+            "index": 136,
+            "name": "SCAN.SC_FIRMS_CIS_58"
+          },
+          {
+            "index": 137,
+            "name": "SCAN.SC_FIRMS_CIS_59"
+          },
+          {
+            "index": 138,
+            "name": "SCAN.SC_FIRMS_CIS_LAST"
+          },
+          {
+            "index": 139,
+            "name": "SCAN.SC_FIRMS_DITHER_AVOID_CAL"
+          },
+          {
+            "index": 140,
+            "name": "SCAN.SC_FIRMS_DITHER_CHANNEL"
+          },
+          {
+            "index": 141,
+            "name": "SCAN.SC_FIRMS_DASHER_DITHER_ENABLE_TI"
+          },
+          {
+            "index": 142,
+            "name": "SCAN.SC_FIRMS_DASHER_DITHER_LEVEL_TI"
+          },
+          {
+            "index": 143,
+            "name": "SCAN.SC_FIRMS_DASHER_DITHER_ENABLE_WOLFSON"
+          },
+          {
+            "index": 144,
+            "name": "SCAN.SC_FIRMS_DASHER_DITHER_LEVEL_WOLFSON"
+          },
+          {
+            "index": 145,
+            "name": "SCAN.SC_FIRMS_DARK_PRNU_LEDFRAC_ENABLE"
+          },
+          {
+            "index": 146,
+            "name": "SCAN.SC_FIRMS_UDW_START"
+          },
+          {
+            "index": 147,
+            "name": "SCAN.SC_FIRMS_LED_PERCENT_FOR_GAIN_SET"
+          },
+          {
+            "index": 148,
+            "name": "SCAN.SC_FIRMS_WHITE_LOC_OFFSET"
+          },
+          {
+            "index": 149,
+            "name": "SCAN.SC_FIRMS_DISABLE_HLINE_FIND"
+          },
+          {
+            "index": 150,
+            "name": "SCAN.SC_FIRMS_START_TG_DELAY_MONO_200"
+          },
+          {
+            "index": 151,
+            "name": "SCAN.SC_FIRMS_START_TG_DELAY_COLOR_200"
+          },
+          {
+            "index": 152,
+            "name": "SCAN.SC_FIRMS_STOP_TG_DELAY_MONO_200"
+          },
+          {
+            "index": 153,
+            "name": "SCAN.SC_FIRMS_STOP_TG_DELAY_COLOR_200"
+          },
+          {
+            "index": 154,
+            "name": "SCAN.SC_FIRMS_SCIF0_CLK_DELAY_TC"
+          },
+          {
+            "index": 155,
+            "name": "SCAN.SC_FIRMS_DASHER_LED_RGB_MONO_GAP_PIXELS"
+          },
+          {
+            "index": 156,
+            "name": "SCAN.SC_FIRMS_NOTCH_Y_START"
+          },
+          {
+            "index": 157,
+            "name": "SCAN.SC_FIRMS_DO_NOTCH_FW_PRNU"
+          },
+          {
+            "index": 158,
+            "name": "SCAN.SC_FIRMS_HOME_SAVE_RESTORE_ENABLE"
+          },
+          {
+            "index": 159,
+            "name": "SCAN.SC_FIRMS_LMW_FIND"
+          },
+          {
+            "index": 160,
+            "name": "SCAN.SC_FIRMS_LMW_NUM_SAMPLES"
+          },
+          {
+            "index": 161,
+            "name": "SCAN.SC_FIRMS_REF_MARK_ILLUM_FACTOR"
+          },
+          {
+            "index": 162,
+            "name": "SCAN.SC_FIRMS_THERMAL_ENABLE"
+          },
+          {
+            "index": 163,
+            "name": "SCAN.SC_FIRMS_AFE_MCLK_FREQ_BACKSIDE"
+          },
+          {
+            "index": 164,
+            "name": "SCAN.SC_FIRMS_ADF_WALL_LOC"
+          },
+          {
+            "index": 165,
+            "name": "SCAN.SC_FIRMS_LED_MAX_CURRENT_PER_COLOR"
+          },
+          {
+            "index": 166,
+            "name": "SCAN.SC_FIRMS_END_PAGE_PAST_LINES"
+          },
+          {
+            "index": 167,
+            "name": "SCAN.SC_FIRMS_JACKPOTP_NEW"
+          },
+          {
+            "index": 168,
+            "name": "SCAN.SC_FIRMS_JACKPOT_A3_LED_ENABLE"
+          },
+          {
+            "index": 169,
+            "name": "SCAN.SC_FIRMS_SCAN_SPEED_FB_XRES_300_EXP_FACTOR_MONO"
+          },
+          {
+            "index": 170,
+            "name": "SCAN.SC_FIRMS_SCAN_SPEED_FB_XRES_600_EXP_FACTOR_MONO"
+          },
+          {
+            "index": 171,
+            "name": "SCAN.SC_FIRMS_SCAN_SPEED_ADF_XRES_200_EXP_FACTOR_RGB"
+          },
+          {
+            "index": 172,
+            "name": "SCAN.SC_FIRMS_SCAN_SPEED_ADF_XRES_300_EXP_FACTOR_RGB"
+          },
+          {
+            "index": 173,
+            "name": "SCAN.SC_FIRMS_SKIP_SENSOR_TWEAK_TIMING2"
+          },
+          {
+            "index": 174,
+            "name": "SCAN.SC_FIRMS_BACKSIDE_CAL_SANITY"
+          },
+          {
+            "index": 175,
+            "name": "SCAN.SC_FIRMS_BCCC_WHITE_BLACK_THRESHOLD"
+          },
+          {
+            "index": 176,
+            "name": "SCAN.SC_FIRMS_IDLE_BACKSIDE_CAL_RETRY_LIMIT"
+          },
+          {
+            "index": 177,
+            "name": "SCAN.SC_FIRMS_THERMAL_CCNPIX300"
+          },
+          {
+            "index": 178,
+            "name": "SCAN.SC_FIRMS_LMW_GAIN_ADJUST_ENABLE"
+          },
+          {
+            "index": 179,
+            "name": "SCAN.SC_FIRMS_REPRNU_THRESHOLD"
+          },
+          {
+            "index": 180,
+            "name": "SCAN.SC_FIRMS_REPRNU_HIST_BUF_SIZE"
+          },
+          {
+            "index": 181,
+            "name": "SCAN.SC_FIRMS_LED_NTSC_FRAC"
+          },
+          {
+            "index": 182,
+            "name": "SCAN.SC_FIRMS_CC_SUM_NPIXELS"
+          },
+          {
+            "index": 183,
+            "name": "SCAN.SC_FIRMS_X_MAG"
+          },
+          {
+            "index": 184,
+            "name": "SCAN.SC_FIRMS_MBACK_ENABLE"
+          },
+          {
+            "index": 185,
+            "name": "SCAN.SC_FIRMS_MBACK_NUM_MAX_TO_TOSS"
+          },
+          {
+            "index": 186,
+            "name": "SCAN.SC_FIRMS_MBACK_NUM_MIN_TO_TOSS"
+          },
+          {
+            "index": 187,
+            "name": "SCAN.SC_FIRMS_MBACK_NUM_TO_AVG"
+          },
+          {
+            "index": 188,
+            "name": "SCAN.SC_FIRMS_BOISE_QUIET"
+          },
+          {
+            "index": 189,
+            "name": "SCAN.SC_FIRMS_MBACK_MSEC_DELAY_RGB"
+          },
+          {
+            "index": 190,
+            "name": "SCAN.SC_FIRMS_DASHER_LVDS_PREEMPHASIS"
+          },
+          {
+            "index": 191,
+            "name": "SCAN.SC_FIRMS_AFE_VENDOR_REG_ENABLE"
+          },
+          {
+            "index": 192,
+            "name": "SCAN.SC_FIRMS_THERMAL_SCORE_THRESH"
+          },
+          {
+            "index": 193,
+            "name": "SCAN.SC_FIRMS_THERMAL_COARSE_SEARCH_REGION_300"
+          },
+          {
+            "index": 194,
+            "name": "SCAN.SC_FIRMS_ADF_HOLDOFF_ALLOW"
+          },
+          {
+            "index": 195,
+            "name": "SCAN.SC_FIRMS_TALIGN_RECAL_THRESH"
+          },
+          {
+            "index": 196,
+            "name": "SCAN.END"
+          }
+        ],
+        "max_row_bytes_before_CR_translation": 84,
+        "max_payload_bytes_before_CR_translation": 12298
+      },
+      "review": {
+        "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+        "handler_bytes_start": "0xa00d4f8a",
+        "handler_bytes_end_exclusive": "0xa00d50c8",
+        "handler_bytes_sha256": "5e4af2ae4f169663ff54c6f9edefc15770bd4bb733f0c782c56cc5a55d5363db",
+        "proof": "Masks input to 13 bits, resolves registered SUID, loops 0..descriptor maximum, gets current value using actual SUID and index, prints current/default/name in 100-byte row buffer with byte99 NUL. All known name lengths fit even two signed32 minima.",
+        "data_quality": "One group per UART line. Largest group may exceed conservative 4KB transport guideline; validate exact expected item identities and full-row delimiters before calling complete. No whole-table retry."
+      },
+      "index": 3,
+      "started_utc": "2026-10-29T20:24:38.015004+00:00",
+      "response_file": "0003-udws_firm_query_value_suid_2359.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:24:39.327512+00:00",
+      "elapsed_seconds": 1.311,
+      "response_bytes": 8907,
+      "response_sha256": "582cc3d4396429730209b225d088b6d3974ed3fbc1801e971182c8ec8071201d",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "rows": 197,
+        "expected_rows": 197,
+        "checks": [
+          "group identity",
+          "complete ordered item IDs/names",
+          "integer fields",
+          "row delimiters"
+        ]
+      }
+    },
+    {
+      "name": "firm.query_value_suid",
+      "command": "udws \"firm.query_value_suid 2397;\"",
+      "handler": "0xa00d4f8b",
+      "classification": "reviewed-bounded-numeric-firmware-group-read",
+      "timeout": 25,
+      "purpose": "Read current and compiled values for one physically established numeric firmware group.",
+      "argument_syntax": "SUID (13-bit unsigned group ID), not a packed item ID",
+      "side_effects_assessment": "Existing local registry/data reads and UART output only.",
+      "source": {
+        "response_file": "references/physical-30-software-queries/0008-udws_firm_query_name.bin",
+        "response_sha256": "de7e519c5bb424d83f90c26ab339b670fbbb860fc64fe70d41f8d1d07127015b"
+      },
+      "expected": {
+        "suid": 2397,
+        "group_name": "PXG",
+        "item_count": 9,
+        "items": [
+          {
+            "index": 0,
+            "name": "PXG.SWEEP_EDGE_FUDGE"
+          },
+          {
+            "index": 1,
+            "name": "PXG.ENABLE_TO_PZONE_DIST"
+          },
+          {
+            "index": 2,
+            "name": "PXG.FORCED_PEN_WIDTH_INDEX"
+          },
+          {
+            "index": 3,
+            "name": "PXG.PEN_TO_PAPER_SPACING_LOW_UM"
+          },
+          {
+            "index": 4,
+            "name": "PXG.PEN_TO_PAPER_SPACING_MEDIUM_UM"
+          },
+          {
+            "index": 5,
+            "name": "PXG.PEN_TO_PAPER_SPACING_HIGH_UM"
+          },
+          {
+            "index": 6,
+            "name": "PXG.DROP_VELOCITY_U_MM_PER_S"
+          },
+          {
+            "index": 7,
+            "name": "PXG.DROP_VELOCITY_V_MM_PER_S"
+          },
+          {
+            "index": 8,
+            "name": "PXG.END"
+          }
+        ],
+        "max_row_bytes_before_CR_translation": 67,
+        "max_payload_bytes_before_CR_translation": 557
+      },
+      "review": {
+        "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+        "handler_bytes_start": "0xa00d4f8a",
+        "handler_bytes_end_exclusive": "0xa00d50c8",
+        "handler_bytes_sha256": "5e4af2ae4f169663ff54c6f9edefc15770bd4bb733f0c782c56cc5a55d5363db",
+        "proof": "Masks input to 13 bits, resolves registered SUID, loops 0..descriptor maximum, gets current value using actual SUID and index, prints current/default/name in 100-byte row buffer with byte99 NUL. All known name lengths fit even two signed32 minima.",
+        "data_quality": "One group per UART line. Largest group may exceed conservative 4KB transport guideline; validate exact expected item identities and full-row delimiters before calling complete. No whole-table retry."
+      },
+      "index": 4,
+      "started_utc": "2026-10-29T20:24:39.332780+00:00",
+      "response_file": "0004-udws_firm_query_value_suid_2397.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:24:39.894136+00:00",
+      "elapsed_seconds": 0.559,
+      "response_bytes": 493,
+      "response_sha256": "2eebca5907ecd47842e16dcc25b1ffd3878f482c6039f3d6af6d5ce3e606971b",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "rows": 9,
+        "expected_rows": 9,
+        "checks": [
+          "group identity",
+          "complete ordered item IDs/names",
+          "integer fields",
+          "row delimiters"
+        ]
+      }
+    },
+    {
+      "name": "firm.query_value_suid",
+      "command": "udws \"firm.query_value_suid 2399;\"",
+      "handler": "0xa00d4f8b",
+      "classification": "reviewed-bounded-numeric-firmware-group-read",
+      "timeout": 25,
+      "purpose": "Read current and compiled values for one physically established numeric firmware group.",
+      "argument_syntax": "SUID (13-bit unsigned group ID), not a packed item ID",
+      "side_effects_assessment": "Existing local registry/data reads and UART output only.",
+      "source": {
+        "response_file": "references/physical-30-software-queries/0008-udws_firm_query_name.bin",
+        "response_sha256": "de7e519c5bb424d83f90c26ab339b670fbbb860fc64fe70d41f8d1d07127015b"
+      },
+      "expected": {
+        "suid": 2399,
+        "group_name": "PEN",
+        "item_count": 81,
+        "items": [
+          {
+            "index": 0,
+            "name": "PEN.PEN_PACING_DELAY_US"
+          },
+          {
+            "index": 1,
+            "name": "PEN.PEN_NOMINAL_AMB_REF"
+          },
+          {
+            "index": 2,
+            "name": "PEN.PEN_ALLOW_SPITS_ENABLE"
+          },
+          {
+            "index": 3,
+            "name": "PEN.PEN_MIN_FIRING_FREQ_HZ"
+          },
+          {
+            "index": 4,
+            "name": "PEN.PEN_MAX_FIRING_FREQ_HZ"
+          },
+          {
+            "index": 5,
+            "name": "PEN.PEN_CRG_BLOCK_FLUSH_DELAY_US"
+          },
+          {
+            "index": 6,
+            "name": "PEN.PEN_THERMAL_FREQ_HZ"
+          },
+          {
+            "index": 7,
+            "name": "PEN.PEN_MIN_AD_VALUE"
+          },
+          {
+            "index": 8,
+            "name": "PEN.PEN_MAX_AD_VALUE"
+          },
+          {
+            "index": 9,
+            "name": "PEN.PEN_EMPTY_CHUTE_MIN_TSR"
+          },
+          {
+            "index": 10,
+            "name": "PEN.PEN_ALLOW_PACING"
+          },
+          {
+            "index": 11,
+            "name": "PEN.PEN_ALLOW_BLOCK_HEATING"
+          },
+          {
+            "index": 12,
+            "name": "PEN.PEN_ENABLE_WATCHDOG_TIMER"
+          },
+          {
+            "index": 13,
+            "name": "PEN.PEN_MIN_FIRE_DEAD_TIME_NS"
+          },
+          {
+            "index": 14,
+            "name": "PEN.PEN_AMBIENT_SENSOR_EXISTS"
+          },
+          {
+            "index": 15,
+            "name": "PEN.PEN_ALLOW_ENCODED_TSRS"
+          },
+          {
+            "index": 16,
+            "name": "PEN.PEN_MAX_MVOLTS"
+          },
+          {
+            "index": 17,
+            "name": "PEN.PEN_MIN_MVOLTS"
+          },
+          {
+            "index": 18,
+            "name": "PEN.PEN_FIXED_MVOLTS"
+          },
+          {
+            "index": 19,
+            "name": "PEN.PEN_MAX_SHORTED_ADDR_ALLOWED"
+          },
+          {
+            "index": 20,
+            "name": "PEN.PEN_MAX_SHORTED_PRIM_ALLOWED"
+          },
+          {
+            "index": 21,
+            "name": "PEN.PEN_NO_ETEST"
+          },
+          {
+            "index": 22,
+            "name": "PEN.PEN_MAX_POWER_MW"
+          },
+          {
+            "index": 23,
+            "name": "PEN.PEN_POWER_DEPTH"
+          },
+          {
+            "index": 24,
+            "name": "PEN.PEN_MAX_POWER_PAUSE_DURATION_MS"
+          },
+          {
+            "index": 25,
+            "name": "PEN.PEN_NUM_ALLOWED_FIRE_FAULTS_PER_PAGE"
+          },
+          {
+            "index": 26,
+            "name": "PEN.PEN_K_FIRE_ENERGY_PLAIN_SUPERDRAFT"
+          },
+          {
+            "index": 27,
+            "name": "PEN.PEN_GRANITE_MAX_PULSE"
+          },
+          {
+            "index": 28,
+            "name": "PEN.PEN_GRANITE_DEFAULT_PULSE"
+          },
+          {
+            "index": 29,
+            "name": "PEN.PEN_REGION_LOCK_PAGE_COUNT"
+          },
+          {
+            "index": 30,
+            "name": "PEN.PEN_BARRACUDA_BHEAT_PERCENT_IN_SWEEPS"
+          },
+          {
+            "index": 31,
+            "name": "PEN.PEN_BARRACUDA_BHEAT_PERCENT_NOT_IN_SWEEPS"
+          },
+          {
+            "index": 32,
+            "name": "PEN.PEN_VPEN_ALWAYS_ON"
+          },
+          {
+            "index": 33,
+            "name": "PEN.PEN_ALLOW_BLACK_COLOR_SWAP"
+          },
+          {
+            "index": 34,
+            "name": "PEN.PEN_DISABLE_THERMAL_PROTECTION"
+          },
+          {
+            "index": 35,
+            "name": "PEN.PEN_PWARM_ONLY_DURING_QWARM"
+          },
+          {
+            "index": 36,
+            "name": "PEN.PEN_LOI_K_FILL_TO_FILL_PERCENT_X_1000"
+          },
+          {
+            "index": 37,
+            "name": "PEN.PEN_LOI_X_FILL_TO_FILL_PERCENT_X_1000"
+          },
+          {
+            "index": 38,
+            "name": "PEN.PEN_GRANITE_FIRE_ENERGY_PERCENT_TOE"
+          },
+          {
+            "index": 39,
+            "name": "PEN.PEN_ALLOW_SCORCH"
+          },
+          {
+            "index": 40,
+            "name": "PEN.PEN_BIT_BLOWING_MVOLTS"
+          },
+          {
+            "index": 41,
+            "name": "PEN.PEN_ALLOW_SERVICING_WITH_ONE_FAILED_PEN"
+          },
+          {
+            "index": 42,
+            "name": "PEN.PEN_MODIFY_REGION_ZERO_PEN_GEN2"
+          },
+          {
+            "index": 43,
+            "name": "PEN.PEN_MODIFY_REGION_ZERO_PEN_GEN3"
+          },
+          {
+            "index": 44,
+            "name": "PEN.PEN_USE_ASYMMETRIC_INK_FILLS"
+          },
+          {
+            "index": 45,
+            "name": "PEN.PEN_ALLOW_PUMICE"
+          },
+          {
+            "index": 46,
+            "name": "PEN.PEN_ALLOW_SMOKE"
+          },
+          {
+            "index": 47,
+            "name": "PEN.PEN_ALLOW_KONA_CMY"
+          },
+          {
+            "index": 48,
+            "name": "PEN.PEN_ALLOW_EUREKA"
+          },
+          {
+            "index": 49,
+            "name": "PEN.PEN_EPR_NEW_PEN_PERCENT"
+          },
+          {
+            "index": 50,
+            "name": "PEN.PEN_STARTER_PEN_RETURN_EPR_VALUES"
+          },
+          {
+            "index": 51,
+            "name": "PEN.PEN_PIR_STARTER_PEN_LOW_PERCENT"
+          },
+          {
+            "index": 52,
+            "name": "PEN.PEN_PIR_STARTER_PEN_HIGH_PERCENT"
+          },
+          {
+            "index": 53,
+            "name": "PEN.PEN_PIR_STARTER_PEN_THRESHOLD_PERCENT"
+          },
+          {
+            "index": 54,
+            "name": "PEN.PEN_FORCE_EUREKA"
+          },
+          {
+            "index": 55,
+            "name": "PEN.PEN_LDW_TO_HDW_DROP_RATIO_X100"
+          },
+          {
+            "index": 56,
+            "name": "PEN.PEN_COLOR_DEFAULT_FIRE_MODE_TTOE"
+          },
+          {
+            "index": 57,
+            "name": "PEN.PEN_ENFORCE_ALL_ID_RULES"
+          },
+          {
+            "index": 58,
+            "name": "PEN.PEN_MAX_LEGAL_TEMP_DIFFERENCE"
+          },
+          {
+            "index": 59,
+            "name": "PEN.PEN_SPITTOON_TRIG_LEVEL_1"
+          },
+          {
+            "index": 60,
+            "name": "PEN.PEN_SPITTOON_TRIG_LEVEL_2A"
+          },
+          {
+            "index": 61,
+            "name": "PEN.PEN_SPITTOON_TRIG_LEVEL_2B"
+          },
+          {
+            "index": 62,
+            "name": "PEN.PEN_SPITTOON_TRIG_LEVEL_3"
+          },
+          {
+            "index": 63,
+            "name": "PEN.PEN_ENFORCE_CRC"
+          },
+          {
+            "index": 64,
+            "name": "PEN.PEN_IGNORE_ANTI_THEFT"
+          },
+          {
+            "index": 65,
+            "name": "PEN.PEN_IGNORE_SKD_IN_AREL"
+          },
+          {
+            "index": 66,
+            "name": "PEN.PEN_TIJ4_INKSHORTS_ENABLED"
+          },
+          {
+            "index": 67,
+            "name": "PEN.PEN_FAKE_INKSUB_PENS"
+          },
+          {
+            "index": 68,
+            "name": "PEN.PEN_ASSERT_ON_ERROR_NUMBER"
+          },
+          {
+            "index": 69,
+            "name": "PEN.PEN_FAKE_TRIAL_PENS"
+          },
+          {
+            "index": 70,
+            "name": "PEN.PEN_FAKE_MAX_ALLOWED_TRIAL_PENS_COUNT"
+          },
+          {
+            "index": 71,
+            "name": "PEN.PEN_ABD_READ_TOLERANCE"
+          },
+          {
+            "index": 72,
+            "name": "PEN.PEN_FAKE_CISS_SHAID_STATUS"
+          },
+          {
+            "index": 73,
+            "name": "PEN.PEN_CISS_SHAID_THRESHOLD_K"
+          },
+          {
+            "index": 74,
+            "name": "PEN.PEN_CISS_SHAID_THRESHOLD_C"
+          },
+          {
+            "index": 75,
+            "name": "PEN.PEN_CISS_SHAID_THRESHOLD_M"
+          },
+          {
+            "index": 76,
+            "name": "PEN.PEN_CISS_SHAID_THRESHOLD_Y"
+          },
+          {
+            "index": 77,
+            "name": "PEN.PEN_ID_NO_SCRAMBLE"
+          },
+          {
+            "index": 78,
+            "name": "PEN.PEN_ID_USE_D4_DDR_VS_D3_FOR_BITSTREAM"
+          },
+          {
+            "index": 79,
+            "name": "PEN.PEN_ID_ALLOW_BITSTREAM_OVERRIDE"
+          },
+          {
+            "index": 80,
+            "name": "PEN.END"
+          }
+        ],
+        "max_row_bytes_before_CR_translation": 78,
+        "max_payload_bytes_before_CR_translation": 5021
+      },
+      "review": {
+        "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+        "handler_bytes_start": "0xa00d4f8a",
+        "handler_bytes_end_exclusive": "0xa00d50c8",
+        "handler_bytes_sha256": "5e4af2ae4f169663ff54c6f9edefc15770bd4bb733f0c782c56cc5a55d5363db",
+        "proof": "Masks input to 13 bits, resolves registered SUID, loops 0..descriptor maximum, gets current value using actual SUID and index, prints current/default/name in 100-byte row buffer with byte99 NUL. All known name lengths fit even two signed32 minima.",
+        "data_quality": "One group per UART line. Largest group may exceed conservative 4KB transport guideline; validate exact expected item identities and full-row delimiters before calling complete. No whole-table retry."
+      },
+      "index": 5,
+      "started_utc": "2026-10-29T20:24:39.896589+00:00",
+      "response_file": "0005-udws_firm_query_value_suid_2399.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:24:40.736247+00:00",
+      "elapsed_seconds": 0.838,
+      "response_bytes": 3715,
+      "response_sha256": "2361308402e9a0065fecb40af3f02326fbb27f17a29ed711497d4994f90a2bdc",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "rows": 81,
+        "expected_rows": 81,
+        "checks": [
+          "group identity",
+          "complete ordered item IDs/names",
+          "integer fields",
+          "row delimiters"
+        ]
+      }
+    },
+    {
+      "name": "firm.query_value_suid",
+      "command": "udws \"firm.query_value_suid 2431;\"",
+      "handler": "0xa00d4f8b",
+      "classification": "reviewed-bounded-numeric-firmware-group-read",
+      "timeout": 25,
+      "purpose": "Read current and compiled values for one physically established numeric firmware group.",
+      "argument_syntax": "SUID (13-bit unsigned group ID), not a packed item ID",
+      "side_effects_assessment": "Existing local registry/data reads and UART output only.",
+      "source": {
+        "response_file": "references/physical-30-software-queries/0008-udws_firm_query_name.bin",
+        "response_sha256": "de7e519c5bb424d83f90c26ab339b670fbbb860fc64fe70d41f8d1d07127015b"
+      },
+      "expected": {
+        "suid": 2431,
+        "group_name": "PEN_G3_K",
+        "item_count": 117,
+        "items": [
+          {
+            "index": 0,
+            "name": "PEN_G3_K.PEN_MAX_FIRE_PULSE"
+          },
+          {
+            "index": 1,
+            "name": "PEN_G3_K.PEN_MIN_FIRE_PULSE"
+          },
+          {
+            "index": 2,
+            "name": "PEN_G3_K.PEN_DEFAULT_FIRE_PULSE"
+          },
+          {
+            "index": 3,
+            "name": "PEN_G3_K.PEN_DEFAULT_FIRE_MVOLTS"
+          },
+          {
+            "index": 4,
+            "name": "PEN_G3_K.PEN_OE_IN_VOLTAGE"
+          },
+          {
+            "index": 5,
+            "name": "PEN_G3_K.PEN_FIRE_ENERGY_PERCENT_TOE"
+          },
+          {
+            "index": 6,
+            "name": "PEN_G3_K.PEN_FIRE_ENERGY_PERCENT_TOE_CRUTCH"
+          },
+          {
+            "index": 7,
+            "name": "PEN_G3_K.PEN_WARM_ENERGY_PERCENT_TOE"
+          },
+          {
+            "index": 8,
+            "name": "PEN_G3_K.PEN_RTEST_TOTAL_RESISTORS"
+          },
+          {
+            "index": 9,
+            "name": "PEN_G3_K.PEN_RTEST_MIN_PERCENT_OK"
+          },
+          {
+            "index": 10,
+            "name": "PEN_G3_K.PEN_TTOE_PREHEAT_TEMP_TARGET"
+          },
+          {
+            "index": 11,
+            "name": "PEN_G3_K.PEN_TTOE_PREHEAT_TEMP_LOWER1"
+          },
+          {
+            "index": 12,
+            "name": "PEN_G3_K.PEN_TTOE_PREHEAT_TEMP_LOWER2"
+          },
+          {
+            "index": 13,
+            "name": "PEN_G3_K.PEN_TTOE_PREHEAT_TEMP_LOWER3"
+          },
+          {
+            "index": 14,
+            "name": "PEN_G3_K.PEN_TTOE_PREHEAT_TEMP_UPPER"
+          },
+          {
+            "index": 15,
+            "name": "PEN_G3_K.PEN_TTOE_PREHEAT_DWELL_MS"
+          },
+          {
+            "index": 16,
+            "name": "PEN_G3_K.PEN_TTOE_MAX_ENERGY"
+          },
+          {
+            "index": 17,
+            "name": "PEN_G3_K.PEN_TTOE_MIN_ENERGY"
+          },
+          {
+            "index": 18,
+            "name": "PEN_G3_K.PEN_TTOE_START_DWELL"
+          },
+          {
+            "index": 19,
+            "name": "PEN_G3_K.PEN_TTOE_SPIT_FREQ"
+          },
+          {
+            "index": 20,
+            "name": "PEN_G3_K.PEN_TTOE_SPIT_COUNT"
+          },
+          {
+            "index": 21,
+            "name": "PEN_G3_K.PEN_TTOE_RECOVERY_SPIT_PERCENT"
+          },
+          {
+            "index": 22,
+            "name": "PEN_G3_K.PEN_TTOE_NUM_STEPS"
+          },
+          {
+            "index": 23,
+            "name": "PEN_G3_K.PEN_ALLOW_TTOE"
+          },
+          {
+            "index": 24,
+            "name": "PEN_G3_K.PEN_FIRE_ENERGY_PERCENT_TOE_INIT"
+          },
+          {
+            "index": 25,
+            "name": "PEN_G3_K.PEN_INIT_TOE_PERIOD_DROPS"
+          },
+          {
+            "index": 26,
+            "name": "PEN_G3_K.PEN_QWARM_ENERGY_PERCENT_TOE"
+          },
+          {
+            "index": 27,
+            "name": "PEN_G3_K.PEN_QWARM_TRIGGER_TEMP_DELTA"
+          },
+          {
+            "index": 28,
+            "name": "PEN_G3_K.PEN_DROP_VOL_NOMINAL_PG"
+          },
+          {
+            "index": 29,
+            "name": "PEN_G3_K.PEN_DROP_VOL_STEP_PG"
+          },
+          {
+            "index": 30,
+            "name": "PEN_G3_K.PEN_LOI_T2_HIGHEST_FILL_DIV_10"
+          },
+          {
+            "index": 31,
+            "name": "PEN_G3_K.PEN_LOI_T2_LINEAR_STEP_SIZE"
+          },
+          {
+            "index": 32,
+            "name": "PEN_G3_K.PEN_LOI_T1_PERCENT_T2"
+          },
+          {
+            "index": 33,
+            "name": "PEN_G3_K.PEN_LOI_T3_PERCENT_T2"
+          },
+          {
+            "index": 34,
+            "name": "PEN_G3_K.PEN_LOI_STARTER_PEN_FILL_PERCENTAGE"
+          },
+          {
+            "index": 35,
+            "name": "PEN_G3_K.PEN_LOI_T1_PERCENT_T2_STARTER_PEN"
+          },
+          {
+            "index": 36,
+            "name": "PEN_G3_K.PEN_LOI_T3_PERCENT_T2_STARTER_PEN"
+          },
+          {
+            "index": 37,
+            "name": "PEN_G3_K.PEN_ALLOW_OTOE"
+          },
+          {
+            "index": 38,
+            "name": "PEN_G3_K.PEN_OTOE_MAX_ENERGY"
+          },
+          {
+            "index": 39,
+            "name": "PEN_G3_K.PEN_OTOE_MIN_ENERGY"
+          },
+          {
+            "index": 40,
+            "name": "PEN_G3_K.PEN_FIRE_ENERGY_PERCENT_OTOE"
+          },
+          {
+            "index": 41,
+            "name": "PEN_G3_K.PEN_EUREKA_THRESHOLD_DELTA_TEMP_X10_CHAMBER_0"
+          },
+          {
+            "index": 42,
+            "name": "PEN_G3_K.PEN_EUREKA_THRESHOLD_DELTA_TEMP_X10_CHAMBER_1"
+          },
+          {
+            "index": 43,
+            "name": "PEN_G3_K.PEN_EUREKA_THRESHOLD_DELTA_TEMP_X10_CHAMBER_2"
+          },
+          {
+            "index": 44,
+            "name": "PEN_G3_K.PEN_EUREKA_THRESHOLD_DELTA_TEMP_X10_CHAMBER_3"
+          },
+          {
+            "index": 45,
+            "name": "PEN_G3_K.PEN_EUREKA_THRESHOLD_DELTA_TEMP_X10_CHAMBER_0_SUBSCRIPTION"
+          },
+          {
+            "index": 46,
+            "name": "PEN_G3_K.PEN_EUREKA_THRESHOLD_DELTA_TEMP_X10_CHAMBER_1_SUBSCRIPTION"
+          },
+          {
+            "index": 47,
+            "name": "PEN_G3_K.PEN_EUREKA_THRESHOLD_DELTA_TEMP_X10_CHAMBER_2_SUBSCRIPTION"
+          },
+          {
+            "index": 48,
+            "name": "PEN_G3_K.PEN_EUREKA_THRESHOLD_DELTA_TEMP_X10_CHAMBER_3_SUBSCRIPTION"
+          },
+          {
+            "index": 49,
+            "name": "PEN_G3_K.PEN_EUREKA_SPIT_FREQ"
+          },
+          {
+            "index": 50,
+            "name": "PEN_G3_K.PEN_EUREKA_SPIT_VOL"
+          },
+          {
+            "index": 51,
+            "name": "PEN_G3_K.PEN_EUREKA_NUM_SUBSPITS"
+          },
+          {
+            "index": 52,
+            "name": "PEN_G3_K.PEN_EUREKA_CHECKPOINT_AFTER_SUBSPIT"
+          },
+          {
+            "index": 53,
+            "name": "PEN_G3_K.PEN_EUREKA_FIRE_ENERGY_PERCENT_TOE"
+          },
+          {
+            "index": 54,
+            "name": "PEN_G3_K.PEN_EUREKA_PREHEAT_TEMP_MIN"
+          },
+          {
+            "index": 55,
+            "name": "PEN_G3_K.PEN_EUREKA_PREHEAT_TEMP_TARGET"
+          },
+          {
+            "index": 56,
+            "name": "PEN_G3_K.PEN_EUREKA_PREHEAT_TEMP_MAX"
+          },
+          {
+            "index": 57,
+            "name": "PEN_G3_K.PEN_EUREKA_PREHEAT_DWELL_MS"
+          },
+          {
+            "index": 58,
+            "name": "PEN_G3_K.PEN_EUREKA_PREHEAT_DWELL_2_MS"
+          },
+          {
+            "index": 59,
+            "name": "PEN_G3_K.PEN_EUREKA_MAX_ATTEMPTS_AFTER_T3"
+          },
+          {
+            "index": 60,
+            "name": "PEN_G3_K.PEN_EUREKA_DOTCOUNT_THRESHOLD_CHAMBER_0"
+          },
+          {
+            "index": 61,
+            "name": "PEN_G3_K.PEN_EUREKA_DOTCOUNT_THRESHOLD_CHAMBER_1"
+          },
+          {
+            "index": 62,
+            "name": "PEN_G3_K.PEN_EUREKA_DOTCOUNT_THRESHOLD_CHAMBER_2"
+          },
+          {
+            "index": 63,
+            "name": "PEN_G3_K.PEN_EUREKA_DOTCOUNT_THRESHOLD_CHAMBER_3"
+          },
+          {
+            "index": 64,
+            "name": "PEN_G3_K.PEN_EUREKA_CAL_OVERRIDE_VALUE"
+          },
+          {
+            "index": 65,
+            "name": "PEN_G3_K.PEN_EUREKA_CAL_1_PIR"
+          },
+          {
+            "index": 66,
+            "name": "PEN_G3_K.PEN_EUREKA_CAL_2_PIR"
+          },
+          {
+            "index": 67,
+            "name": "PEN_G3_K.PEN_EUREKA_CAL_3_PIR"
+          },
+          {
+            "index": 68,
+            "name": "PEN_G3_K.PEN_EUREKA_MAX_ALLOWED_TEMP"
+          },
+          {
+            "index": 69,
+            "name": "PEN_G3_K.PEN_LDW_MAX_FIRE_PULSE"
+          },
+          {
+            "index": 70,
+            "name": "PEN_G3_K.PEN_LDW_MIN_FIRE_PULSE"
+          },
+          {
+            "index": 71,
+            "name": "PEN_G3_K.PEN_LDW_DEFAULT_FIRE_PULSE"
+          },
+          {
+            "index": 72,
+            "name": "PEN_G3_K.PEN_LDW_FIRE_ENERGY_PERCENT_TOE"
+          },
+          {
+            "index": 73,
+            "name": "PEN_G3_K.PEN_LDW_WARM_ENERGY_PERCENT_TOE"
+          },
+          {
+            "index": 74,
+            "name": "PEN_G3_K.PEN_LDW_QWARM_ENERGY_PERCENT_TOE"
+          },
+          {
+            "index": 75,
+            "name": "PEN_G3_K.PEN_LDW_FIRE_ENERGY_PERCENT_OTOE"
+          },
+          {
+            "index": 76,
+            "name": "PEN_G3_K.PEN_STARTER_PEN_INIT_SPIT_VOLUME"
+          },
+          {
+            "index": 77,
+            "name": "PEN_G3_K.PEN_STARTER_PEN_INIT_SPIT_FREQUENCY"
+          },
+          {
+            "index": 78,
+            "name": "PEN_G3_K.PEN_REDUCED_FLOW_RATE_DOT_COUNT"
+          },
+          {
+            "index": 79,
+            "name": "PEN_G3_K.PEN_REDUCED_FLOW_RATE_PERCENT"
+          },
+          {
+            "index": 80,
+            "name": "PEN_G3_K.PEN_DROP_VOL_OFFSET_PG"
+          },
+          {
+            "index": 81,
+            "name": "PEN_G3_K.PEN_ODD_MAX_FIRE_PULSE"
+          },
+          {
+            "index": 82,
+            "name": "PEN_G3_K.PEN_ODD_MIN_FIRE_PULSE"
+          },
+          {
+            "index": 83,
+            "name": "PEN_G3_K.PEN_ODD_DEFAULT_FIRE_PULSE"
+          },
+          {
+            "index": 84,
+            "name": "PEN_G3_K.PEN_ODD_FIRE_ENERGY_PERCENT_TOE"
+          },
+          {
+            "index": 85,
+            "name": "PEN_G3_K.PEN_ODD_WARM_ENERGY_PERCENT_TOE"
+          },
+          {
+            "index": 86,
+            "name": "PEN_G3_K.PEN_ODD_QWARM_ENERGY_PERCENT_TOE"
+          },
+          {
+            "index": 87,
+            "name": "PEN_G3_K.PEN_EVEN_MAX_FIRE_PULSE"
+          },
+          {
+            "index": 88,
+            "name": "PEN_G3_K.PEN_EVEN_MIN_FIRE_PULSE"
+          },
+          {
+            "index": 89,
+            "name": "PEN_G3_K.PEN_EVEN_DEFAULT_FIRE_PULSE"
+          },
+          {
+            "index": 90,
+            "name": "PEN_G3_K.PEN_EVEN_FIRE_ENERGY_PERCENT_TOE"
+          },
+          {
+            "index": 91,
+            "name": "PEN_G3_K.PEN_EVEN_WARM_ENERGY_PERCENT_TOE"
+          },
+          {
+            "index": 92,
+            "name": "PEN_G3_K.PEN_EVEN_QWARM_ENERGY_PERCENT_TOE"
+          },
+          {
+            "index": 93,
+            "name": "PEN_G3_K.PEN_SIMUL_MAX_FIRE_PULSE"
+          },
+          {
+            "index": 94,
+            "name": "PEN_G3_K.PEN_SIMUL_MIN_FIRE_PULSE"
+          },
+          {
+            "index": 95,
+            "name": "PEN_G3_K.PEN_SIMUL_DEFAULT_FIRE_PULSE"
+          },
+          {
+            "index": 96,
+            "name": "PEN_G3_K.PEN_SIMUL_FIRE_ENERGY_PERCENT_TOE"
+          },
+          {
+            "index": 97,
+            "name": "PEN_G3_K.PEN_SIMUL_FIRE_ENERGY_PERCENT_TOE_EXT_LIFE"
+          },
+          {
+            "index": 98,
+            "name": "PEN_G3_K.PEN_SIMUL_WARM_ENERGY_PERCENT_TOE"
+          },
+          {
+            "index": 99,
+            "name": "PEN_G3_K.PEN_SIMUL_QWARM_ENERGY_PERCENT_TOE"
+          },
+          {
+            "index": 100,
+            "name": "PEN_G3_K.PEN_MIN_ALLOWABLE_TTOE_VALUE"
+          },
+          {
+            "index": 101,
+            "name": "PEN_G3_K.PEN_TIJ4_PCP_DURATION_NS_DEFAULT"
+          },
+          {
+            "index": 102,
+            "name": "PEN_G3_K.PEN_TIJ4_PCP_DURATION_PERCENT_TOE"
+          },
+          {
+            "index": 103,
+            "name": "PEN_G3_K.PEN_TIJ4_DT_DURATION_NS_DEFAULT"
+          },
+          {
+            "index": 104,
+            "name": "PEN_G3_K.PEN_TIJ4_PREFAULT_TEMP"
+          },
+          {
+            "index": 105,
+            "name": "PEN_G3_K.PEN_TIJ4_FAULT_TEMP"
+          },
+          {
+            "index": 106,
+            "name": "PEN_G3_K.PEN_PILS_P0_PERCENT_T2_FIRM"
+          },
+          {
+            "index": 107,
+            "name": "PEN_G3_K.PEN_PILS_CAL_1_PIR_FIRM"
+          },
+          {
+            "index": 108,
+            "name": "PEN_G3_K.PEN_PILS_CAL_2_PIR_FIRM"
+          },
+          {
+            "index": 109,
+            "name": "PEN_G3_K.PEN_PILS_CAL_3_PIR_FIRM"
+          },
+          {
+            "index": 110,
+            "name": "PEN_G3_K.PEN_PILS_DOTCOUNT_THRESHOLD_CHAMBER_0_FIRM"
+          },
+          {
+            "index": 111,
+            "name": "PEN_G3_K.PEN_PILS_DOTCOUNT_THRESHOLD_CHAMBER_1_FIRM"
+          },
+          {
+            "index": 112,
+            "name": "PEN_G3_K.PEN_PILS_DOTCOUNT_THRESHOLD_CHAMBER_2_FIRM"
+          },
+          {
+            "index": 113,
+            "name": "PEN_G3_K.PEN_PILS_FIRE_ENERGY_PERCENT_TOE_FIRM"
+          },
+          {
+            "index": 114,
+            "name": "PEN_G3_K.PEN_FIRING_ORDER_FIRM"
+          },
+          {
+            "index": 115,
+            "name": "PEN_G3_K.PEN_COLUMN_WIDTH_INDEX_FIRM"
+          },
+          {
+            "index": 116,
+            "name": "PEN_G3_K.END"
+          }
+        ],
+        "max_row_bytes_before_CR_translation": 95,
+        "max_payload_bytes_before_CR_translation": 7710
+      },
+      "review": {
+        "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+        "handler_bytes_start": "0xa00d4f8a",
+        "handler_bytes_end_exclusive": "0xa00d50c8",
+        "handler_bytes_sha256": "5e4af2ae4f169663ff54c6f9edefc15770bd4bb733f0c782c56cc5a55d5363db",
+        "proof": "Masks input to 13 bits, resolves registered SUID, loops 0..descriptor maximum, gets current value using actual SUID and index, prints current/default/name in 100-byte row buffer with byte99 NUL. All known name lengths fit even two signed32 minima.",
+        "data_quality": "One group per UART line. Largest group may exceed conservative 4KB transport guideline; validate exact expected item identities and full-row delimiters before calling complete. No whole-table retry."
+      },
+      "index": 6,
+      "started_utc": "2026-10-29T20:24:40.740087+00:00",
+      "response_file": "0006-udws_firm_query_value_suid_2431.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:24:41.759102+00:00",
+      "elapsed_seconds": 1.015,
+      "response_bytes": 5881,
+      "response_sha256": "17befe94eb1a3a05cc6d542045f7e44b01d20b8bc9e0614e08dd9fd714da99a1",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "rows": 117,
+        "expected_rows": 117,
+        "checks": [
+          "group identity",
+          "complete ordered item IDs/names",
+          "integer fields",
+          "row delimiters"
+        ]
+      }
+    },
+    {
+      "name": "firm.query_value_suid",
+      "command": "udws \"firm.query_value_suid 2432;\"",
+      "handler": "0xa00d4f8b",
+      "classification": "reviewed-bounded-numeric-firmware-group-read",
+      "timeout": 25,
+      "purpose": "Read current and compiled values for one physically established numeric firmware group.",
+      "argument_syntax": "SUID (13-bit unsigned group ID), not a packed item ID",
+      "side_effects_assessment": "Existing local registry/data reads and UART output only.",
+      "source": {
+        "response_file": "references/physical-30-software-queries/0008-udws_firm_query_name.bin",
+        "response_sha256": "de7e519c5bb424d83f90c26ab339b670fbbb860fc64fe70d41f8d1d07127015b"
+      },
+      "expected": {
+        "suid": 2432,
+        "group_name": "PEN_G3_C",
+        "item_count": 117,
+        "items": [
+          {
+            "index": 0,
+            "name": "PEN_G3_C.PEN_MAX_FIRE_PULSE"
+          },
+          {
+            "index": 1,
+            "name": "PEN_G3_C.PEN_MIN_FIRE_PULSE"
+          },
+          {
+            "index": 2,
+            "name": "PEN_G3_C.PEN_DEFAULT_FIRE_PULSE"
+          },
+          {
+            "index": 3,
+            "name": "PEN_G3_C.PEN_DEFAULT_FIRE_MVOLTS"
+          },
+          {
+            "index": 4,
+            "name": "PEN_G3_C.PEN_OE_IN_VOLTAGE"
+          },
+          {
+            "index": 5,
+            "name": "PEN_G3_C.PEN_FIRE_ENERGY_PERCENT_TOE"
+          },
+          {
+            "index": 6,
+            "name": "PEN_G3_C.PEN_FIRE_ENERGY_PERCENT_TOE_CRUTCH"
+          },
+          {
+            "index": 7,
+            "name": "PEN_G3_C.PEN_WARM_ENERGY_PERCENT_TOE"
+          },
+          {
+            "index": 8,
+            "name": "PEN_G3_C.PEN_RTEST_TOTAL_RESISTORS"
+          },
+          {
+            "index": 9,
+            "name": "PEN_G3_C.PEN_RTEST_MIN_PERCENT_OK"
+          },
+          {
+            "index": 10,
+            "name": "PEN_G3_C.PEN_TTOE_PREHEAT_TEMP_TARGET"
+          },
+          {
+            "index": 11,
+            "name": "PEN_G3_C.PEN_TTOE_PREHEAT_TEMP_LOWER1"
+          },
+          {
+            "index": 12,
+            "name": "PEN_G3_C.PEN_TTOE_PREHEAT_TEMP_LOWER2"
+          },
+          {
+            "index": 13,
+            "name": "PEN_G3_C.PEN_TTOE_PREHEAT_TEMP_LOWER3"
+          },
+          {
+            "index": 14,
+            "name": "PEN_G3_C.PEN_TTOE_PREHEAT_TEMP_UPPER"
+          },
+          {
+            "index": 15,
+            "name": "PEN_G3_C.PEN_TTOE_PREHEAT_DWELL_MS"
+          },
+          {
+            "index": 16,
+            "name": "PEN_G3_C.PEN_TTOE_MAX_ENERGY"
+          },
+          {
+            "index": 17,
+            "name": "PEN_G3_C.PEN_TTOE_MIN_ENERGY"
+          },
+          {
+            "index": 18,
+            "name": "PEN_G3_C.PEN_TTOE_START_DWELL"
+          },
+          {
+            "index": 19,
+            "name": "PEN_G3_C.PEN_TTOE_SPIT_FREQ"
+          },
+          {
+            "index": 20,
+            "name": "PEN_G3_C.PEN_TTOE_SPIT_COUNT"
+          },
+          {
+            "index": 21,
+            "name": "PEN_G3_C.PEN_TTOE_RECOVERY_SPIT_PERCENT"
+          },
+          {
+            "index": 22,
+            "name": "PEN_G3_C.PEN_TTOE_NUM_STEPS"
+          },
+          {
+            "index": 23,
+            "name": "PEN_G3_C.PEN_ALLOW_TTOE"
+          },
+          {
+            "index": 24,
+            "name": "PEN_G3_C.PEN_FIRE_ENERGY_PERCENT_TOE_INIT"
+          },
+          {
+            "index": 25,
+            "name": "PEN_G3_C.PEN_INIT_TOE_PERIOD_DROPS"
+          },
+          {
+            "index": 26,
+            "name": "PEN_G3_C.PEN_QWARM_ENERGY_PERCENT_TOE"
+          },
+          {
+            "index": 27,
+            "name": "PEN_G3_C.PEN_QWARM_TRIGGER_TEMP_DELTA"
+          },
+          {
+            "index": 28,
+            "name": "PEN_G3_C.PEN_DROP_VOL_NOMINAL_PG"
+          },
+          {
+            "index": 29,
+            "name": "PEN_G3_C.PEN_DROP_VOL_STEP_PG"
+          },
+          {
+            "index": 30,
+            "name": "PEN_G3_C.PEN_LOI_T2_HIGHEST_FILL_DIV_10"
+          },
+          {
+            "index": 31,
+            "name": "PEN_G3_C.PEN_LOI_T2_LINEAR_STEP_SIZE"
+          },
+          {
+            "index": 32,
+            "name": "PEN_G3_C.PEN_LOI_T1_PERCENT_T2"
+          },
+          {
+            "index": 33,
+            "name": "PEN_G3_C.PEN_LOI_T3_PERCENT_T2"
+          },
+          {
+            "index": 34,
+            "name": "PEN_G3_C.PEN_LOI_STARTER_PEN_FILL_PERCENTAGE"
+          },
+          {
+            "index": 35,
+            "name": "PEN_G3_C.PEN_LOI_T1_PERCENT_T2_STARTER_PEN"
+          },
+          {
+            "index": 36,
+            "name": "PEN_G3_C.PEN_LOI_T3_PERCENT_T2_STARTER_PEN"
+          },
+          {
+            "index": 37,
+            "name": "PEN_G3_C.PEN_ALLOW_OTOE"
+          },
+          {
+            "index": 38,
+            "name": "PEN_G3_C.PEN_OTOE_MAX_ENERGY"
+          },
+          {
+            "index": 39,
+            "name": "PEN_G3_C.PEN_OTOE_MIN_ENERGY"
+          },
+          {
+            "index": 40,
+            "name": "PEN_G3_C.PEN_FIRE_ENERGY_PERCENT_OTOE"
+          },
+          {
+            "index": 41,
+            "name": "PEN_G3_C.PEN_EUREKA_THRESHOLD_DELTA_TEMP_X10_CHAMBER_0"
+          },
+          {
+            "index": 42,
+            "name": "PEN_G3_C.PEN_EUREKA_THRESHOLD_DELTA_TEMP_X10_CHAMBER_1"
+          },
+          {
+            "index": 43,
+            "name": "PEN_G3_C.PEN_EUREKA_THRESHOLD_DELTA_TEMP_X10_CHAMBER_2"
+          },
+          {
+            "index": 44,
+            "name": "PEN_G3_C.PEN_EUREKA_THRESHOLD_DELTA_TEMP_X10_CHAMBER_3"
+          },
+          {
+            "index": 45,
+            "name": "PEN_G3_C.PEN_EUREKA_THRESHOLD_DELTA_TEMP_X10_CHAMBER_0_SUBSCRIPTION"
+          },
+          {
+            "index": 46,
+            "name": "PEN_G3_C.PEN_EUREKA_THRESHOLD_DELTA_TEMP_X10_CHAMBER_1_SUBSCRIPTION"
+          },
+          {
+            "index": 47,
+            "name": "PEN_G3_C.PEN_EUREKA_THRESHOLD_DELTA_TEMP_X10_CHAMBER_2_SUBSCRIPTION"
+          },
+          {
+            "index": 48,
+            "name": "PEN_G3_C.PEN_EUREKA_THRESHOLD_DELTA_TEMP_X10_CHAMBER_3_SUBSCRIPTION"
+          },
+          {
+            "index": 49,
+            "name": "PEN_G3_C.PEN_EUREKA_SPIT_FREQ"
+          },
+          {
+            "index": 50,
+            "name": "PEN_G3_C.PEN_EUREKA_SPIT_VOL"
+          },
+          {
+            "index": 51,
+            "name": "PEN_G3_C.PEN_EUREKA_NUM_SUBSPITS"
+          },
+          {
+            "index": 52,
+            "name": "PEN_G3_C.PEN_EUREKA_CHECKPOINT_AFTER_SUBSPIT"
+          },
+          {
+            "index": 53,
+            "name": "PEN_G3_C.PEN_EUREKA_FIRE_ENERGY_PERCENT_TOE"
+          },
+          {
+            "index": 54,
+            "name": "PEN_G3_C.PEN_EUREKA_PREHEAT_TEMP_MIN"
+          },
+          {
+            "index": 55,
+            "name": "PEN_G3_C.PEN_EUREKA_PREHEAT_TEMP_TARGET"
+          },
+          {
+            "index": 56,
+            "name": "PEN_G3_C.PEN_EUREKA_PREHEAT_TEMP_MAX"
+          },
+          {
+            "index": 57,
+            "name": "PEN_G3_C.PEN_EUREKA_PREHEAT_DWELL_MS"
+          },
+          {
+            "index": 58,
+            "name": "PEN_G3_C.PEN_EUREKA_PREHEAT_DWELL_2_MS"
+          },
+          {
+            "index": 59,
+            "name": "PEN_G3_C.PEN_EUREKA_MAX_ATTEMPTS_AFTER_T3"
+          },
+          {
+            "index": 60,
+            "name": "PEN_G3_C.PEN_EUREKA_DOTCOUNT_THRESHOLD_CHAMBER_0"
+          },
+          {
+            "index": 61,
+            "name": "PEN_G3_C.PEN_EUREKA_DOTCOUNT_THRESHOLD_CHAMBER_1"
+          },
+          {
+            "index": 62,
+            "name": "PEN_G3_C.PEN_EUREKA_DOTCOUNT_THRESHOLD_CHAMBER_2"
+          },
+          {
+            "index": 63,
+            "name": "PEN_G3_C.PEN_EUREKA_DOTCOUNT_THRESHOLD_CHAMBER_3"
+          },
+          {
+            "index": 64,
+            "name": "PEN_G3_C.PEN_EUREKA_CAL_OVERRIDE_VALUE"
+          },
+          {
+            "index": 65,
+            "name": "PEN_G3_C.PEN_EUREKA_CAL_1_PIR"
+          },
+          {
+            "index": 66,
+            "name": "PEN_G3_C.PEN_EUREKA_CAL_2_PIR"
+          },
+          {
+            "index": 67,
+            "name": "PEN_G3_C.PEN_EUREKA_CAL_3_PIR"
+          },
+          {
+            "index": 68,
+            "name": "PEN_G3_C.PEN_EUREKA_MAX_ALLOWED_TEMP"
+          },
+          {
+            "index": 69,
+            "name": "PEN_G3_C.PEN_LDW_MAX_FIRE_PULSE"
+          },
+          {
+            "index": 70,
+            "name": "PEN_G3_C.PEN_LDW_MIN_FIRE_PULSE"
+          },
+          {
+            "index": 71,
+            "name": "PEN_G3_C.PEN_LDW_DEFAULT_FIRE_PULSE"
+          },
+          {
+            "index": 72,
+            "name": "PEN_G3_C.PEN_LDW_FIRE_ENERGY_PERCENT_TOE"
+          },
+          {
+            "index": 73,
+            "name": "PEN_G3_C.PEN_LDW_WARM_ENERGY_PERCENT_TOE"
+          },
+          {
+            "index": 74,
+            "name": "PEN_G3_C.PEN_LDW_QWARM_ENERGY_PERCENT_TOE"
+          },
+          {
+            "index": 75,
+            "name": "PEN_G3_C.PEN_LDW_FIRE_ENERGY_PERCENT_OTOE"
+          },
+          {
+            "index": 76,
+            "name": "PEN_G3_C.PEN_STARTER_PEN_INIT_SPIT_VOLUME"
+          },
+          {
+            "index": 77,
+            "name": "PEN_G3_C.PEN_STARTER_PEN_INIT_SPIT_FREQUENCY"
+          },
+          {
+            "index": 78,
+            "name": "PEN_G3_C.PEN_REDUCED_FLOW_RATE_DOT_COUNT"
+          },
+          {
+            "index": 79,
+            "name": "PEN_G3_C.PEN_REDUCED_FLOW_RATE_PERCENT"
+          },
+          {
+            "index": 80,
+            "name": "PEN_G3_C.PEN_DROP_VOL_OFFSET_PG"
+          },
+          {
+            "index": 81,
+            "name": "PEN_G3_C.PEN_ODD_MAX_FIRE_PULSE"
+          },
+          {
+            "index": 82,
+            "name": "PEN_G3_C.PEN_ODD_MIN_FIRE_PULSE"
+          },
+          {
+            "index": 83,
+            "name": "PEN_G3_C.PEN_ODD_DEFAULT_FIRE_PULSE"
+          },
+          {
+            "index": 84,
+            "name": "PEN_G3_C.PEN_ODD_FIRE_ENERGY_PERCENT_TOE"
+          },
+          {
+            "index": 85,
+            "name": "PEN_G3_C.PEN_ODD_WARM_ENERGY_PERCENT_TOE"
+          },
+          {
+            "index": 86,
+            "name": "PEN_G3_C.PEN_ODD_QWARM_ENERGY_PERCENT_TOE"
+          },
+          {
+            "index": 87,
+            "name": "PEN_G3_C.PEN_EVEN_MAX_FIRE_PULSE"
+          },
+          {
+            "index": 88,
+            "name": "PEN_G3_C.PEN_EVEN_MIN_FIRE_PULSE"
+          },
+          {
+            "index": 89,
+            "name": "PEN_G3_C.PEN_EVEN_DEFAULT_FIRE_PULSE"
+          },
+          {
+            "index": 90,
+            "name": "PEN_G3_C.PEN_EVEN_FIRE_ENERGY_PERCENT_TOE"
+          },
+          {
+            "index": 91,
+            "name": "PEN_G3_C.PEN_EVEN_WARM_ENERGY_PERCENT_TOE"
+          },
+          {
+            "index": 92,
+            "name": "PEN_G3_C.PEN_EVEN_QWARM_ENERGY_PERCENT_TOE"
+          },
+          {
+            "index": 93,
+            "name": "PEN_G3_C.PEN_SIMUL_MAX_FIRE_PULSE"
+          },
+          {
+            "index": 94,
+            "name": "PEN_G3_C.PEN_SIMUL_MIN_FIRE_PULSE"
+          },
+          {
+            "index": 95,
+            "name": "PEN_G3_C.PEN_SIMUL_DEFAULT_FIRE_PULSE"
+          },
+          {
+            "index": 96,
+            "name": "PEN_G3_C.PEN_SIMUL_FIRE_ENERGY_PERCENT_TOE"
+          },
+          {
+            "index": 97,
+            "name": "PEN_G3_C.PEN_SIMUL_FIRE_ENERGY_PERCENT_TOE_EXT_LIFE"
+          },
+          {
+            "index": 98,
+            "name": "PEN_G3_C.PEN_SIMUL_WARM_ENERGY_PERCENT_TOE"
+          },
+          {
+            "index": 99,
+            "name": "PEN_G3_C.PEN_SIMUL_QWARM_ENERGY_PERCENT_TOE"
+          },
+          {
+            "index": 100,
+            "name": "PEN_G3_C.PEN_MIN_ALLOWABLE_TTOE_VALUE"
+          },
+          {
+            "index": 101,
+            "name": "PEN_G3_C.PEN_TIJ4_PCP_DURATION_NS_DEFAULT"
+          },
+          {
+            "index": 102,
+            "name": "PEN_G3_C.PEN_TIJ4_PCP_DURATION_PERCENT_TOE"
+          },
+          {
+            "index": 103,
+            "name": "PEN_G3_C.PEN_TIJ4_DT_DURATION_NS_DEFAULT"
+          },
+          {
+            "index": 104,
+            "name": "PEN_G3_C.PEN_TIJ4_PREFAULT_TEMP"
+          },
+          {
+            "index": 105,
+            "name": "PEN_G3_C.PEN_TIJ4_FAULT_TEMP"
+          },
+          {
+            "index": 106,
+            "name": "PEN_G3_C.PEN_PILS_P0_PERCENT_T2_FIRM"
+          },
+          {
+            "index": 107,
+            "name": "PEN_G3_C.PEN_PILS_CAL_1_PIR_FIRM"
+          },
+          {
+            "index": 108,
+            "name": "PEN_G3_C.PEN_PILS_CAL_2_PIR_FIRM"
+          },
+          {
+            "index": 109,
+            "name": "PEN_G3_C.PEN_PILS_CAL_3_PIR_FIRM"
+          },
+          {
+            "index": 110,
+            "name": "PEN_G3_C.PEN_PILS_DOTCOUNT_THRESHOLD_CHAMBER_0_FIRM"
+          },
+          {
+            "index": 111,
+            "name": "PEN_G3_C.PEN_PILS_DOTCOUNT_THRESHOLD_CHAMBER_1_FIRM"
+          },
+          {
+            "index": 112,
+            "name": "PEN_G3_C.PEN_PILS_DOTCOUNT_THRESHOLD_CHAMBER_2_FIRM"
+          },
+          {
+            "index": 113,
+            "name": "PEN_G3_C.PEN_PILS_FIRE_ENERGY_PERCENT_TOE_FIRM"
+          },
+          {
+            "index": 114,
+            "name": "PEN_G3_C.PEN_FIRING_ORDER_FIRM"
+          },
+          {
+            "index": 115,
+            "name": "PEN_G3_C.PEN_COLUMN_WIDTH_INDEX_FIRM"
+          },
+          {
+            "index": 116,
+            "name": "PEN_G3_C.END"
+          }
+        ],
+        "max_row_bytes_before_CR_translation": 95,
+        "max_payload_bytes_before_CR_translation": 7710
+      },
+      "review": {
+        "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+        "handler_bytes_start": "0xa00d4f8a",
+        "handler_bytes_end_exclusive": "0xa00d50c8",
+        "handler_bytes_sha256": "5e4af2ae4f169663ff54c6f9edefc15770bd4bb733f0c782c56cc5a55d5363db",
+        "proof": "Masks input to 13 bits, resolves registered SUID, loops 0..descriptor maximum, gets current value using actual SUID and index, prints current/default/name in 100-byte row buffer with byte99 NUL. All known name lengths fit even two signed32 minima.",
+        "data_quality": "One group per UART line. Largest group may exceed conservative 4KB transport guideline; validate exact expected item identities and full-row delimiters before calling complete. No whole-table retry."
+      },
+      "index": 7,
+      "started_utc": "2026-10-29T20:24:41.763597+00:00",
+      "response_file": "0007-udws_firm_query_value_suid_2432.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:24:42.750986+00:00",
+      "elapsed_seconds": 0.985,
+      "response_bytes": 6005,
+      "response_sha256": "da31f12f661cde430fd83495f03ddd081f3de39178dcb707baff72cd66a1e792",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "rows": 117,
+        "expected_rows": 117,
+        "checks": [
+          "group identity",
+          "complete ordered item IDs/names",
+          "integer fields",
+          "row delimiters"
+        ]
+      }
+    },
+    {
+      "name": "firm.query_value_suid",
+      "command": "udws \"firm.query_value_suid 2356;\"",
+      "handler": "0xa00d4f8b",
+      "classification": "reviewed-bounded-numeric-firmware-group-read",
+      "timeout": 25,
+      "purpose": "Read current and compiled values for one physically established numeric firmware group.",
+      "argument_syntax": "SUID (13-bit unsigned group ID), not a packed item ID",
+      "side_effects_assessment": "Existing local registry/data reads and UART output only.",
+      "source": {
+        "response_file": "references/physical-30-software-queries/0008-udws_firm_query_name.bin",
+        "response_sha256": "de7e519c5bb424d83f90c26ab339b670fbbb860fc64fe70d41f8d1d07127015b"
+      },
+      "expected": {
+        "suid": 2356,
+        "group_name": "SWPM",
+        "item_count": 15,
+        "items": [
+          {
+            "index": 0,
+            "name": "SWPM.FULL_BLEED_TOF_POS"
+          },
+          {
+            "index": 1,
+            "name": "SWPM.MEDIA_SENSE_TOF_POS"
+          },
+          {
+            "index": 2,
+            "name": "SWPM.DOT_LIMIT_ENABLE"
+          },
+          {
+            "index": 3,
+            "name": "SWPM.DOT_LIMIT_INTERVAL"
+          },
+          {
+            "index": 4,
+            "name": "SWPM.DOT_LIMIT_LEFT_OFFSET"
+          },
+          {
+            "index": 5,
+            "name": "SWPM.DOT_LIMIT_RIGHT_OFFSET"
+          },
+          {
+            "index": 6,
+            "name": "SWPM.DOT_LIMIT_REGION_SIZE"
+          },
+          {
+            "index": 7,
+            "name": "SWPM.LINUS_FIRST_NOZ"
+          },
+          {
+            "index": 8,
+            "name": "SWPM.BORDERLESS_PIGMENT_COMPK_THRESHOLD"
+          },
+          {
+            "index": 9,
+            "name": "SWPM.BORDERLESS_PIGMENT_COMPK_AGRESSIVE_BORDER"
+          },
+          {
+            "index": 10,
+            "name": "SWPM.BORDERLESS_PIGMENT_COMPK_CONSERVATIVE_BORDER"
+          },
+          {
+            "index": 11,
+            "name": "SWPM.USE_ALT_DAT"
+          },
+          {
+            "index": 12,
+            "name": "SWPM.FULL_BLEED_TOF_POS_ROLL"
+          },
+          {
+            "index": 13,
+            "name": "SWPM.MEDIA_SENSE_TOF_POS_ROLL"
+          },
+          {
+            "index": 14,
+            "name": "SWPM.END"
+          }
+        ],
+        "max_row_bytes_before_CR_translation": 81,
+        "max_payload_bytes_before_CR_translation": 915
+      },
+      "review": {
+        "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+        "handler_bytes_start": "0xa00d4f8a",
+        "handler_bytes_end_exclusive": "0xa00d50c8",
+        "handler_bytes_sha256": "5e4af2ae4f169663ff54c6f9edefc15770bd4bb733f0c782c56cc5a55d5363db",
+        "proof": "Masks input to 13 bits, resolves registered SUID, loops 0..descriptor maximum, gets current value using actual SUID and index, prints current/default/name in 100-byte row buffer with byte99 NUL. All known name lengths fit even two signed32 minima.",
+        "data_quality": "One group per UART line. Largest group may exceed conservative 4KB transport guideline; validate exact expected item identities and full-row delimiters before calling complete. No whole-table retry."
+      },
+      "index": 8,
+      "started_utc": "2026-10-29T20:24:42.756854+00:00",
+      "response_file": "0008-udws_firm_query_value_suid_2356.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:24:43.351498+00:00",
+      "elapsed_seconds": 0.592,
+      "response_bytes": 744,
+      "response_sha256": "ee3e423d626e07f6efbf9f8550d83242d31814d5a649079398e3012ef3cce112",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "rows": 15,
+        "expected_rows": 15,
+        "checks": [
+          "group identity",
+          "complete ordered item IDs/names",
+          "integer fields",
+          "row delimiters"
+        ]
+      }
+    },
+    {
+      "name": "firm.query_value_suid",
+      "command": "udws \"firm.query_value_suid 2415;\"",
+      "handler": "0xa00d4f8b",
+      "classification": "reviewed-bounded-numeric-firmware-group-read",
+      "timeout": 25,
+      "purpose": "Read current and compiled values for one physically established numeric firmware group.",
+      "argument_syntax": "SUID (13-bit unsigned group ID), not a packed item ID",
+      "side_effects_assessment": "Existing local registry/data reads and UART output only.",
+      "source": {
+        "response_file": "references/physical-30-software-queries/0008-udws_firm_query_name.bin",
+        "response_sha256": "de7e519c5bb424d83f90c26ab339b670fbbb860fc64fe70d41f8d1d07127015b"
+      },
+      "expected": {
+        "suid": 2415,
+        "group_name": "CV_FIRMS",
+        "item_count": 9,
+        "items": [
+          {
+            "index": 0,
+            "name": "CV_FIRMS.CV_FIRM_CAL_PAGE_MAINT_INTERVAL_1"
+          },
+          {
+            "index": 1,
+            "name": "CV_FIRMS.CV_FIRM_CAL_PAGE_RETRY_INTERVAL_1"
+          },
+          {
+            "index": 2,
+            "name": "CV_FIRMS.CV_FIRM_CAL_PAGE_RETRY_INTERVAL_2"
+          },
+          {
+            "index": 3,
+            "name": "CV_FIRMS.CV_FIRM_CAL_PAGE_MAX_RETRIES"
+          },
+          {
+            "index": 4,
+            "name": "CV_FIRMS.CV_FIRM_ENABLE_LINEFEED_CAL"
+          },
+          {
+            "index": 5,
+            "name": "CV_FIRMS.CV_FIRM_CAL_PAGE_MAINT_INTERVAL_2"
+          },
+          {
+            "index": 6,
+            "name": "CV_FIRMS.CV_FIRM_MAINT_INTERVAL_ROLLOVER"
+          },
+          {
+            "index": 7,
+            "name": "CV_FIRMS.CV_FIRM_HPHASE_PATCNT_THRESH_PCT"
+          },
+          {
+            "index": 8,
+            "name": "CV_FIRMS.CV_FIRM_RETRY_SCAN_DELAY_MSECS"
+          }
+        ],
+        "max_row_bytes_before_CR_translation": 70,
+        "max_payload_bytes_before_CR_translation": 643
+      },
+      "review": {
+        "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+        "handler_bytes_start": "0xa00d4f8a",
+        "handler_bytes_end_exclusive": "0xa00d50c8",
+        "handler_bytes_sha256": "5e4af2ae4f169663ff54c6f9edefc15770bd4bb733f0c782c56cc5a55d5363db",
+        "proof": "Masks input to 13 bits, resolves registered SUID, loops 0..descriptor maximum, gets current value using actual SUID and index, prints current/default/name in 100-byte row buffer with byte99 NUL. All known name lengths fit even two signed32 minima.",
+        "data_quality": "One group per UART line. Largest group may exceed conservative 4KB transport guideline; validate exact expected item identities and full-row delimiters before calling complete. No whole-table retry."
+      },
+      "index": 9,
+      "started_utc": "2026-10-29T20:24:43.356053+00:00",
+      "response_file": "0009-udws_firm_query_value_suid_2415.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:24:43.939957+00:00",
+      "elapsed_seconds": 0.581,
+      "response_bytes": 624,
+      "response_sha256": "42531bd8382b2d0b00ed83692000ac4e6b7d71ce364ac0eb5ca9e677b050180d",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "rows": 9,
+        "expected_rows": 9,
+        "checks": [
+          "group identity",
+          "complete ordered item IDs/names",
+          "integer fields",
+          "row delimiters"
+        ]
+      }
+    },
+    {
+      "name": "firm.query_value_suid",
+      "command": "udws \"firm.query_value_suid 2752;\"",
+      "handler": "0xa00d4f8b",
+      "classification": "reviewed-bounded-numeric-firmware-group-read",
+      "timeout": 25,
+      "purpose": "Read current and compiled values for one physically established numeric firmware group.",
+      "argument_syntax": "SUID (13-bit unsigned group ID), not a packed item ID",
+      "side_effects_assessment": "Existing local registry/data reads and UART output only.",
+      "source": {
+        "response_file": "references/physical-30-software-queries/0008-udws_firm_query_name.bin",
+        "response_sha256": "de7e519c5bb424d83f90c26ab339b670fbbb860fc64fe70d41f8d1d07127015b"
+      },
+      "expected": {
+        "suid": 2752,
+        "group_name": "NKSU",
+        "item_count": 1,
+        "items": [
+          {
+            "index": 0,
+            "name": "NKSU.XMO2_DECLARE_OVERRIDE"
+          }
+        ],
+        "max_row_bytes_before_CR_translation": 58,
+        "max_payload_bytes_before_CR_translation": 88
+      },
+      "review": {
+        "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+        "handler_bytes_start": "0xa00d4f8a",
+        "handler_bytes_end_exclusive": "0xa00d50c8",
+        "handler_bytes_sha256": "5e4af2ae4f169663ff54c6f9edefc15770bd4bb733f0c782c56cc5a55d5363db",
+        "proof": "Masks input to 13 bits, resolves registered SUID, loops 0..descriptor maximum, gets current value using actual SUID and index, prints current/default/name in 100-byte row buffer with byte99 NUL. All known name lengths fit even two signed32 minima.",
+        "data_quality": "One group per UART line. Largest group may exceed conservative 4KB transport guideline; validate exact expected item identities and full-row delimiters before calling complete. No whole-table retry."
+      },
+      "index": 10,
+      "started_utc": "2026-10-29T20:24:43.944320+00:00",
+      "response_file": "0010-udws_firm_query_value_suid_2752.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:24:44.465469+00:00",
+      "elapsed_seconds": 0.518,
+      "response_bytes": 125,
+      "response_sha256": "e63b5c83cf4bb9920f55c68e2452a358c260156d1a11ed66e32ea28efaab8396",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "rows": 1,
+        "expected_rows": 1,
+        "checks": [
+          "group identity",
+          "complete ordered item IDs/names",
+          "integer fields",
+          "row delimiters"
+        ]
+      }
+    },
+    {
+      "name": "firm.query_value_suid",
+      "command": "udws \"firm.query_value_suid 2365;\"",
+      "handler": "0xa00d4f8b",
+      "classification": "reviewed-bounded-numeric-firmware-group-read",
+      "timeout": 25,
+      "purpose": "Read current and compiled values for one physically established numeric firmware group.",
+      "argument_syntax": "SUID (13-bit unsigned group ID), not a packed item ID",
+      "side_effects_assessment": "Existing local registry/data reads and UART output only.",
+      "source": {
+        "response_file": "references/physical-30-software-queries/0008-udws_firm_query_name.bin",
+        "response_sha256": "de7e519c5bb424d83f90c26ab339b670fbbb860fc64fe70d41f8d1d07127015b"
+      },
+      "expected": {
+        "suid": 2365,
+        "group_name": "PRESCAN",
+        "item_count": 3,
+        "items": [
+          {
+            "index": 0,
+            "name": "PRESCAN.PRESCAN_BOTTOM_SHADOW"
+          },
+          {
+            "index": 1,
+            "name": "PRESCAN.PRESCAN_RIGHT_SHADOW"
+          },
+          {
+            "index": 2,
+            "name": "PRESCAN.END"
+          }
+        ],
+        "max_row_bytes_before_CR_translation": 58,
+        "max_payload_bytes_before_CR_translation": 185
+      },
+      "review": {
+        "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+        "handler_bytes_start": "0xa00d4f8a",
+        "handler_bytes_end_exclusive": "0xa00d50c8",
+        "handler_bytes_sha256": "5e4af2ae4f169663ff54c6f9edefc15770bd4bb733f0c782c56cc5a55d5363db",
+        "proof": "Masks input to 13 bits, resolves registered SUID, loops 0..descriptor maximum, gets current value using actual SUID and index, prints current/default/name in 100-byte row buffer with byte99 NUL. All known name lengths fit even two signed32 minima.",
+        "data_quality": "One group per UART line. Largest group may exceed conservative 4KB transport guideline; validate exact expected item identities and full-row delimiters before calling complete. No whole-table retry."
+      },
+      "index": 11,
+      "started_utc": "2026-10-29T20:24:44.469811+00:00",
+      "response_file": "0011-udws_firm_query_value_suid_2365.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:24:45.007388+00:00",
+      "elapsed_seconds": 0.534,
+      "response_bytes": 187,
+      "response_sha256": "8a1602c4400c32605485c8c4f642de596896d2cb840906f81efc37f44fe10603",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "rows": 3,
+        "expected_rows": 3,
+        "checks": [
+          "group identity",
+          "complete ordered item IDs/names",
+          "integer fields",
+          "row delimiters"
+        ]
+      }
+    },
+    {
+      "name": "firm.query_value_suid",
+      "command": "udws \"firm.query_value_suid 2414;\"",
+      "handler": "0xa00d4f8b",
+      "classification": "reviewed-bounded-numeric-firmware-group-read",
+      "timeout": 25,
+      "purpose": "Read current and compiled values for one physically established numeric firmware group.",
+      "argument_syntax": "SUID (13-bit unsigned group ID), not a packed item ID",
+      "side_effects_assessment": "Existing local registry/data reads and UART output only.",
+      "source": {
+        "response_file": "references/physical-30-software-queries/0008-udws_firm_query_name.bin",
+        "response_sha256": "de7e519c5bb424d83f90c26ab339b670fbbb860fc64fe70d41f8d1d07127015b"
+      },
+      "expected": {
+        "suid": 2414,
+        "group_name": "CP_JM",
+        "item_count": 2,
+        "items": [
+          {
+            "index": 0,
+            "name": "CP_JM.CP_JM_CAL_PAGE_ENABLE_MASK"
+          },
+          {
+            "index": 1,
+            "name": "CP_JM.WHOA"
+          }
+        ],
+        "max_row_bytes_before_CR_translation": 63,
+        "max_payload_bytes_before_CR_translation": 134
+      },
+      "review": {
+        "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+        "handler_bytes_start": "0xa00d4f8a",
+        "handler_bytes_end_exclusive": "0xa00d50c8",
+        "handler_bytes_sha256": "5e4af2ae4f169663ff54c6f9edefc15770bd4bb733f0c782c56cc5a55d5363db",
+        "proof": "Masks input to 13 bits, resolves registered SUID, loops 0..descriptor maximum, gets current value using actual SUID and index, prints current/default/name in 100-byte row buffer with byte99 NUL. All known name lengths fit even two signed32 minima.",
+        "data_quality": "One group per UART line. Largest group may exceed conservative 4KB transport guideline; validate exact expected item identities and full-row delimiters before calling complete. No whole-table retry."
+      },
+      "index": 12,
+      "started_utc": "2026-10-29T20:24:45.012318+00:00",
+      "response_file": "0012-udws_firm_query_value_suid_2414.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:24:45.535037+00:00",
+      "elapsed_seconds": 0.519,
+      "response_bytes": 161,
+      "response_sha256": "41ae30fc5bd41c2e0ad15e573e5f22cc5146a6bb168d02237f3c79b9f148a441",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "rows": 2,
+        "expected_rows": 2,
+        "checks": [
+          "group identity",
+          "complete ordered item IDs/names",
+          "integer fields",
+          "row delimiters"
+        ]
+      }
+    },
+    {
+      "name": "firm.query_value_suid",
+      "command": "udws \"firm.query_value_suid 2430;\"",
+      "handler": "0xa00d4f8b",
+      "classification": "reviewed-bounded-numeric-firmware-group-read",
+      "timeout": 25,
+      "purpose": "Read current and compiled values for one physically established numeric firmware group.",
+      "argument_syntax": "SUID (13-bit unsigned group ID), not a packed item ID",
+      "side_effects_assessment": "Existing local registry/data reads and UART output only.",
+      "source": {
+        "response_file": "references/physical-30-software-queries/0008-udws_firm_query_name.bin",
+        "response_sha256": "de7e519c5bb424d83f90c26ab339b670fbbb860fc64fe70d41f8d1d07127015b"
+      },
+      "expected": {
+        "suid": 2430,
+        "group_name": "L10N",
+        "item_count": 6,
+        "items": [
+          {
+            "index": 0,
+            "name": "L10N.LOCALIZATION_FIRM_0"
+          },
+          {
+            "index": 1,
+            "name": "L10N.LOCALIZATION_FIRM_1"
+          },
+          {
+            "index": 2,
+            "name": "L10N.LOCALIZATION_FIRM_2"
+          },
+          {
+            "index": 3,
+            "name": "L10N.LOCALIZATION_FIRM_3"
+          },
+          {
+            "index": 4,
+            "name": "L10N.LOCALIZATION_FIRM_4"
+          },
+          {
+            "index": 5,
+            "name": "L10N.END"
+          }
+        ],
+        "max_row_bytes_before_CR_translation": 56,
+        "max_payload_bytes_before_CR_translation": 350
+      },
+      "review": {
+        "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+        "handler_bytes_start": "0xa00d4f8a",
+        "handler_bytes_end_exclusive": "0xa00d50c8",
+        "handler_bytes_sha256": "5e4af2ae4f169663ff54c6f9edefc15770bd4bb733f0c782c56cc5a55d5363db",
+        "proof": "Masks input to 13 bits, resolves registered SUID, loops 0..descriptor maximum, gets current value using actual SUID and index, prints current/default/name in 100-byte row buffer with byte99 NUL. All known name lengths fit even two signed32 minima.",
+        "data_quality": "One group per UART line. Largest group may exceed conservative 4KB transport guideline; validate exact expected item identities and full-row delimiters before calling complete. No whole-table retry."
+      },
+      "index": 13,
+      "started_utc": "2026-10-29T20:24:45.538856+00:00",
+      "response_file": "0013-udws_firm_query_value_suid_2430.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:24:46.073271+00:00",
+      "elapsed_seconds": 0.531,
+      "response_bytes": 302,
+      "response_sha256": "a6c8347e7078050cffc27453173cc640b60b6d96a939f85a8e343e818d6f2160",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "rows": 6,
+        "expected_rows": 6,
+        "checks": [
+          "group identity",
+          "complete ordered item IDs/names",
+          "integer fields",
+          "row delimiters"
+        ]
+      }
+    },
+    {
+      "name": "firm.query_value_suid",
+      "command": "udws \"firm.query_value_suid 2371;\"",
+      "handler": "0xa00d4f8b",
+      "classification": "reviewed-bounded-numeric-firmware-group-read",
+      "timeout": 25,
+      "purpose": "Read current and compiled values for one physically established numeric firmware group.",
+      "argument_syntax": "SUID (13-bit unsigned group ID), not a packed item ID",
+      "side_effects_assessment": "Existing local registry/data reads and UART output only.",
+      "source": {
+        "response_file": "references/physical-30-software-queries/0008-udws_firm_query_name.bin",
+        "response_sha256": "de7e519c5bb424d83f90c26ab339b670fbbb860fc64fe70d41f8d1d07127015b"
+      },
+      "expected": {
+        "suid": 2371,
+        "group_name": "MFG_SVC_",
+        "item_count": 2,
+        "items": [
+          {
+            "index": 0,
+            "name": "MFG_SVC_.MFG_SVC_REPORTS_SHORT_NVM_DUMP_FIRM"
+          },
+          {
+            "index": 1,
+            "name": "MFG_SVC_.END"
+          }
+        ],
+        "max_row_bytes_before_CR_translation": 72,
+        "max_payload_bytes_before_CR_translation": 142
+      },
+      "review": {
+        "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+        "handler_bytes_start": "0xa00d4f8a",
+        "handler_bytes_end_exclusive": "0xa00d50c8",
+        "handler_bytes_sha256": "5e4af2ae4f169663ff54c6f9edefc15770bd4bb733f0c782c56cc5a55d5363db",
+        "proof": "Masks input to 13 bits, resolves registered SUID, loops 0..descriptor maximum, gets current value using actual SUID and index, prints current/default/name in 100-byte row buffer with byte99 NUL. All known name lengths fit even two signed32 minima.",
+        "data_quality": "One group per UART line. Largest group may exceed conservative 4KB transport guideline; validate exact expected item identities and full-row delimiters before calling complete. No whole-table retry."
+      },
+      "index": 14,
+      "started_utc": "2026-10-29T20:24:46.077737+00:00",
+      "response_file": "0014-udws_firm_query_value_suid_2371.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:24:46.604269+00:00",
+      "elapsed_seconds": 0.524,
+      "response_bytes": 174,
+      "response_sha256": "6adaf162cd11dd0a3429aa568c9bae503a07e936986f6d70dfe82700a5f6c125",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "rows": 2,
+        "expected_rows": 2,
+        "checks": [
+          "group identity",
+          "complete ordered item IDs/names",
+          "integer fields",
+          "row delimiters"
+        ]
+      }
+    },
+    {
+      "name": "firm.query_value_suid",
+      "command": "udws \"firm.query_value_suid 2416;\"",
+      "handler": "0xa00d4f8b",
+      "classification": "reviewed-bounded-numeric-firmware-group-read",
+      "timeout": 25,
+      "purpose": "Read current and compiled values for one physically established numeric firmware group.",
+      "argument_syntax": "SUID (13-bit unsigned group ID), not a packed item ID",
+      "side_effects_assessment": "Existing local registry/data reads and UART output only.",
+      "source": {
+        "response_file": "references/physical-30-software-queries/0008-udws_firm_query_name.bin",
+        "response_sha256": "de7e519c5bb424d83f90c26ab339b670fbbb860fc64fe70d41f8d1d07127015b"
+      },
+      "expected": {
+        "suid": 2416,
+        "group_name": "SPC",
+        "item_count": 4,
+        "items": [
+          {
+            "index": 0,
+            "name": "SPC.SPC_ENABLE_ADAPTIVE_SWEEP_SPEED_ALG"
+          },
+          {
+            "index": 1,
+            "name": "SPC.SPC_MINIMUM_ALLOWED_CARRIAGE_SPEED"
+          },
+          {
+            "index": 2,
+            "name": "SPC.SPC_NUM_PUNTS_TO_ENABLE_ADAPTIVE_ALG"
+          },
+          {
+            "index": 3,
+            "name": "SPC.END"
+          }
+        ],
+        "max_row_bytes_before_CR_translation": 73,
+        "max_payload_bytes_before_CR_translation": 286
+      },
+      "review": {
+        "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+        "handler_bytes_start": "0xa00d4f8a",
+        "handler_bytes_end_exclusive": "0xa00d50c8",
+        "handler_bytes_sha256": "5e4af2ae4f169663ff54c6f9edefc15770bd4bb733f0c782c56cc5a55d5363db",
+        "proof": "Masks input to 13 bits, resolves registered SUID, loops 0..descriptor maximum, gets current value using actual SUID and index, prints current/default/name in 100-byte row buffer with byte99 NUL. All known name lengths fit even two signed32 minima.",
+        "data_quality": "One group per UART line. Largest group may exceed conservative 4KB transport guideline; validate exact expected item identities and full-row delimiters before calling complete. No whole-table retry."
+      },
+      "index": 15,
+      "started_utc": "2026-10-29T20:24:46.608785+00:00",
+      "response_file": "0015-udws_firm_query_value_suid_2416.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:24:47.140826+00:00",
+      "elapsed_seconds": 0.528,
+      "response_bytes": 277,
+      "response_sha256": "a517917f50ff8c50524cf09bbe3ac255b68dc809eb08c0f197e6c4e4757be0e4",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "rows": 4,
+        "expected_rows": 4,
+        "checks": [
+          "group identity",
+          "complete ordered item IDs/names",
+          "integer fields",
+          "row delimiters"
+        ]
+      }
+    },
+    {
+      "name": "firm.query_value_suid",
+      "command": "udws \"firm.query_value_suid 2408;\"",
+      "handler": "0xa00d4f8b",
+      "classification": "reviewed-bounded-numeric-firmware-group-read",
+      "timeout": 25,
+      "purpose": "Read current and compiled values for one physically established numeric firmware group.",
+      "argument_syntax": "SUID (13-bit unsigned group ID), not a packed item ID",
+      "side_effects_assessment": "Existing local registry/data reads and UART output only.",
+      "source": {
+        "response_file": "references/physical-30-software-queries/0008-udws_firm_query_name.bin",
+        "response_sha256": "de7e519c5bb424d83f90c26ab339b670fbbb860fc64fe70d41f8d1d07127015b"
+      },
+      "expected": {
+        "suid": 2408,
+        "group_name": "DEV_INFO",
+        "item_count": 2,
+        "items": [
+          {
+            "index": 0,
+            "name": "DEV_INFO.ENABLE_ECP_REVERSE"
+          },
+          {
+            "index": 1,
+            "name": "DEV_INFO.END"
+          }
+        ],
+        "max_row_bytes_before_CR_translation": 55,
+        "max_payload_bytes_before_CR_translation": 125
+      },
+      "review": {
+        "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+        "handler_bytes_start": "0xa00d4f8a",
+        "handler_bytes_end_exclusive": "0xa00d50c8",
+        "handler_bytes_sha256": "5e4af2ae4f169663ff54c6f9edefc15770bd4bb733f0c782c56cc5a55d5363db",
+        "proof": "Masks input to 13 bits, resolves registered SUID, loops 0..descriptor maximum, gets current value using actual SUID and index, prints current/default/name in 100-byte row buffer with byte99 NUL. All known name lengths fit even two signed32 minima.",
+        "data_quality": "One group per UART line. Largest group may exceed conservative 4KB transport guideline; validate exact expected item identities and full-row delimiters before calling complete. No whole-table retry."
+      },
+      "index": 16,
+      "started_utc": "2026-10-29T20:24:47.146726+00:00",
+      "response_file": "0016-udws_firm_query_value_suid_2408.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:24:47.665996+00:00",
+      "elapsed_seconds": 0.517,
+      "response_bytes": 157,
+      "response_sha256": "b2e4ef42681f6a904f29d7035e5d56f1831ba5695bfa824b872a0a6873558ea1",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "rows": 2,
+        "expected_rows": 2,
+        "checks": [
+          "group identity",
+          "complete ordered item IDs/names",
+          "integer fields",
+          "row delimiters"
+        ]
+      }
+    }
+  ]
+}

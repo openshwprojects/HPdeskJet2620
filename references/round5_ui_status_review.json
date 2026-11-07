@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-10-29T21:27:17.030050+00:00",
+  "queries": [
+    {
+      "name": "ui_lite.display_status",
+      "command": "udws \"ui_lite.display_status;\"",
+      "handler": "0xa044dddb",
+      "descriptor_address": "0xa0621810",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "",
+      "timeout": 20,
+      "purpose": "Read the cached front-panel status, error selections, digit values, wireless/button/LED flags.",
+      "control_flow_proof": "A044DDDA copies48bytes of status20DEFE04 throughA0453960, and optionally formats up to16active error slots. A04539C6 tests a bit in the cached word20DEFE2C. A0450338 reads cached displaydigits20DEF73C/740. A044FE6A copies12bytes20DEF044. TailA044E08C copies28bytes20DEFDE8 viaA0453326 and prints byteflags. All three copy helpers tail throughA03E47C4, an ARM veneer to ITCM000006BC, the reviewed bounded memmove. No UI refresh/setter, GPIO, illumination or state-machine dispatch is called. All loop bounds and stack destinations are fixed.",
+      "side_effects": "UART output, local stack buffers and parser state only.",
+      "hardware_access": false,
+      "persistent_writes": false,
+      "interpretation": "Cached UI state; no physical panel changes or refresh request. Concurrent firmware tasks may change fields during the query.",
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "itcm_sha256": "bf99db18d8e211712f76ee69454ff3f7ffafe4dcc8f868c360e8cc62f8f83ac9",
+      "reviewed_ranges": [
+        {
+          "address": "0xa044ddda",
+          "bytes": 162,
+          "disassembly": "0xa044ddda: push {r4, r5, r6, lr}\n0xa044dddc: sub sp, #0xd8\n0xa044ddde: add r0, sp, #0x44\n0xa044dde0: bl #0xa0453960\n0xa044dde4: ldr r3, [sp, #0x48]\n0xa044dde6: str r3, [sp]\n0xa044dde8: ldr r3, [sp, #0x44]\n0xa044ddea: adr r2, #0x1e4 '[UI_LITE]: ui ii pop up state: %d, dashboard: %d\\n'\n0xa044ddec: movs r1, #0x64\n0xa044ddee: add r0, sp, #0x74\n0xa044ddf0: bl #0xa04f0b50\n0xa044ddf4: adds r2, r0, #0\n0xa044ddf6: ldr r5, [pc, #0xcc] [0xa044dec4]=0x20deef44\n0xa044ddf8: ldr r0, [r5]\n0xa044ddfa: ldr r1, [r0]\n0xa044ddfc: ldr r3, [r1, #0x24]\n0xa044ddfe: add r1, sp, #0x74\n0xa044de00: blx r3\n0xa044de02: ldr r3, [sp, #0x6c]\n0xa044de04: cmp r3, #0\n0xa044de06: beq #0xa044de3a\n0xa044de08: movs r4, #0\n0xa044de0a: adds r0, r4, #0\n0xa044de0c: bl #0xa04539c6\n0xa044de10: cmp r0, #0\n0xa044de12: beq #0xa044de34\n0xa044de14: add r0, sp, #0x4c\n0xa044de16: lsls r1, r4, #1\n0xa044de18: ldrh r3, [r0, r1]\n0xa044de1a: str r3, [sp]\n0xa044de1c: adds r3, r4, #0\n0xa044de1e: adr r2, #0x1e4 '[UI_LITE]: Active ii state: %2d, priority: %d\\n'\n0xa044de20: movs r1, #0x64\n0xa044de22: adds r0, #0x28\n0xa044de24: bl #0xa04f0b50\n0xa044de28: adds r2, r0, #0\n0xa044de2a: ldr r0, [r5]\n0xa044de2c: ldr r1, [r0]\n0xa044de2e: ldr r3, [r1, #0x24]\n0xa044de30: add r1, sp, #0x74\n0xa044de32: blx r3\n0xa044de34: adds r4, #1\n0xa044de36: cmp r4, #0x10\n0xa044de38: blo #0xa044de0a\n0xa044de3a: movs r0, #0\n0xa044de3c: bl #0xa0450338\n0xa044de40: movs r4, #0xa\n0xa044de42: muls r4, r0, r4\n0xa044de44: movs r0, #1\n0xa044de46: bl #0xa0450338\n0xa044de4a: adds r0, r0, r4\n0xa044de4c: str r0, [sp]\n0xa044de4e: ldr r3, [sp, #0x6c]\n0xa044de50: adr r2, #0x1e0 '[UI_LITE]: Active: %x, pen type: %d\\n'\n0xa044de52: movs r1, #0x64\n0xa044de54: add r0, sp, #0x74\n0xa044de56: bl #0xa04f0b50\n0xa044de5a: adds r2, r0, #0\n0xa044de5c: ldr r0, [r5]\n0xa044de5e: ldr r1, [r0]\n0xa044de60: ldr r3, [r1, #0x24]\n0xa044de62: add r1, sp, #0x74\n0xa044de64: blx r3\n0xa044de66: add r0, sp, #0x38\n0xa044de68: bl #0xa044fe6a\n0xa044de6c: add r0, sp, #0x40\n0xa044de6e: ldrb r3, [r0]\n0xa044de70: str r3, [sp]\n0xa044de72: ldrb r3, [r0, #1]\n0xa044de74: adr r2, #0x1e4 '[UI_LITE]: size error: %d, sensor error: %d\\n'\n0xa044de76: movs r1, #0x64\n0xa044de78: adds r0, #0x34\n0xa044de7a: b #0xa044e08c"
+        },
+        {
+          "address": "0xa044e08c",
+          "bytes": 82,
+          "disassembly": "0xa044e08c: bl #0xa04f0b50\n0xa044e090: adds r2, r0, #0\n0xa044e092: ldr r0, [r5]\n0xa044e094: ldr r1, [r0]\n0xa044e096: ldr r3, [r1, #0x24]\n0xa044e098: add r1, sp, #0x74\n0xa044e09a: blx r3\n0xa044e09c: add r0, sp, #0x1c\n0xa044e09e: bl #0xa0453326\n0xa044e0a2: add r6, sp, #0x2c\n0xa044e0a4: ldrb r3, [r6]\n0xa044e0a6: str r3, [sp, #0x18]\n0xa044e0a8: subs r6, #0x10\n0xa044e0aa: ldrb r0, [r6, #9]\n0xa044e0ac: str r0, [sp, #0x14]\n0xa044e0ae: ldrb r0, [r6, #8]\n0xa044e0b0: str r0, [sp, #0x10]\n0xa044e0b2: ldrb r0, [r6, #7]\n0xa044e0b4: str r0, [sp, #0xc]\n0xa044e0b6: ldrb r0, [r6, #6]\n0xa044e0b8: str r0, [sp, #8]\n0xa044e0ba: ldrb r0, [r6, #5]\n0xa044e0bc: str r0, [sp, #4]\n0xa044e0be: ldrb r0, [r6, #4]\n0xa044e0c0: str r0, [sp]\n0xa044e0c2: ldrb r3, [r6, #3]\n0xa044e0c4: adr r2, #0x204 '[UI_LITE]: Allows: %d, Admin_D: %d, Reged: %d, Auto_E: %d, Pend: %d, e: %d, Server: %d, Main: %d\\n'\n0xa044e0c6: movs r1, #0x64\n0xa044e0c8: add r0, sp, #0x74\n0xa044e0ca: bl #0xa04f0b50\n0xa044e0ce: adds r2, r0, #0\n0xa044e0d0: ldr r0, [r5]\n0xa044e0d2: ldr r1, [r0]\n0xa044e0d4: ldr r3, [r1, #0x24]\n0xa044e0d6: add r1, sp, #0x74\n0xa044e0d8: blx r3\n0xa044e0da: add sp, #0xd8\n0xa044e0dc: pop {r4, r5, r6, pc}"
+        },
+        {
+          "address": "0xa0453960",
+          "bytes": 12,
+          "disassembly": "0xa0453960: push {lr}\n0xa0453962: movs r2, #0x30\n0xa0453964: ldr r1, [pc, #0x2a4] [0xa0453c0c]=0x20defe04\n0xa0453966: blx #0xa03e47c4\n0xa045396a: pop {pc}"
+        },
+        {
+          "address": "0xa04539c6",
+          "bytes": 16,
+          "disassembly": "0xa04539c6: movs r1, #1\n0xa04539c8: lsls r1, r0\n0xa04539ca: ldr r2, [pc, #0x240] [0xa0453c0c]=0x20defe04\n0xa04539cc: ldr r0, [r2, #0x28]\n0xa04539ce: ands r0, r1\n0xa04539d0: beq #0xa04539d4\n0xa04539d2: movs r0, #1\n0xa04539d4: bx lr"
+        },
+        {
+          "address": "0xa0450338",
+          "bytes": 22,
+          "disassembly": "0xa0450338: adds r1, r0, #0\n0xa045033a: bne #0xa0450342\n0xa045033c: ldr r1, [pc, #0x64] [0xa04503a4]=0x20def6f4\n0xa045033e: ldr r0, [r1, #0x48]\n0xa0450340: b #0xa045034c\n0xa0450342: movs r0, #0\n0xa0450344: cmp r1, #1\n0xa0450346: bne #0xa045034c\n0xa0450348: ldr r1, [pc, #0x58] [0xa04503a4]=0x20def6f4\n0xa045034a: ldr r0, [r1, #0x4c]\n0xa045034c: bx lr"
+        },
+        {
+          "address": "0xa044fe6a",
+          "bytes": 12,
+          "disassembly": "0xa044fe6a: push {lr}\n0xa044fe6c: movs r2, #0xc\n0xa044fe6e: ldr r1, [pc, #0x34] [0xa044fea4]=0x20def044\n0xa044fe70: blx #0xa03e47c4\n0xa044fe74: pop {pc}"
+        },
+        {
+          "address": "0xa0453326",
+          "bytes": 12,
+          "disassembly": "0xa0453326: push {lr}\n0xa0453328: movs r2, #0x1c\n0xa045332a: ldr r1, [pc, #0x1dc] [0xa0453508]=0x20defde8\n0xa045332c: blx #0xa03e47c4\n0xa0453330: pop {pc}"
+        }
+      ],
+      "itcm_memmove_disassembly": "0x6bc: cmp r2, #0\n0x6c0: cmpne r1, r0\n0x6c4: bxeq lr\n0x6c8: subs r3, r1, r0\n0x6cc: rsbmi r3, r3, #0\n0x6d0: cmp r3, r2\n0x6d4: bhs #0x438\n0x6d8: mov r3, r0\n0x6dc: tst r2, #3\n0x6e0: tsteq r1, #3\n0x6e4: tsteq r3, #3\n0x6e8: beq #0x73c\n0x6ec: cmp r1, r3\n0x6f0: bgt #0x71c\n0x6f4: add r1, r1, r2\n0x6f8: add r3, r3, r2\n0x6fc: ldrb ip, [r1, #-1]!\n0x700: subs r2, r2, #1\n0x704: strbne ip, [r3, #-1]!\n0x708: ldrbne ip, [r1, #-1]!\n0x70c: subsne r2, r2, #1\n0x710: strb ip, [r3, #-1]!\n0x714: bne #0x6fc\n0x718: bx lr\n0x71c: ldrb ip, [r1], #1\n0x720: subs r2, r2, #1\n0x724: strbne ip, [r3], #1\n0x728: ldrbne ip, [r1], #1\n0x72c: subsne r2, r2, #1\n0x730: strb ip, [r3], #1\n0x734: bne #0x71c\n0x738: bx lr\n0x73c: cmp r1, r3\n0x740: bgt #0x76c\n0x744: add r1, r1, r2\n0x748: add r3, r3, r2\n0x74c: ldr ip, [r1, #-4]!\n0x750: subs r2, r2, #4\n0x754: strne ip, [r3, #-4]!\n0x758: ldrne ip, [r1, #-4]!\n0x75c: subsne r2, r2, #4\n0x760: str ip, [r3, #-4]!\n0x764: bne #0x74c\n0x768: bx lr\n0x76c: ldr ip, [r1], #4\n0x770: subs r2, r2, #4\n0x774: strne ip, [r3], #4\n0x778: ldrne ip, [r1], #4\n0x77c: subsne r2, r2, #4\n0x780: str ip, [r3], #4\n0x784: bne #0x76c\n0x788: bx lr",
+      "runtime_registered": true,
+      "prior_invocation_status": "not-invoked"
+    }
+  ],
+  "summary": {
+    "ready_invocations": 1,
+    "unique_names": 1,
+    "new_unique_names": 1
+  },
+  "provenance": {
+    "serial_access_by_reviewer": "none"
+  }
+}

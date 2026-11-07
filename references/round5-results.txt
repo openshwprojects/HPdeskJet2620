@@ -1,0 +1,459 @@
+HP DeskJet 2620 — 54 additional commands tested on the physical printer
+COM16, 115200 8N1. Firmware TJP1FN1809AR; board ID 0x68a4.
+
+Registered names invoked: 644 -> 698 / 2235.
+This round: 17 sessions, 540 transmissions, 540 returned prompts.
+80 focused command invocations, 459 operations for 51 RAM metadata snapshots, 1 identity check.
+Every new name has a validated query reply. This is not coverage of all arguments or physical operations.
+
+Useful results:
+- 1,900 module connections, 443 providers, 1,900 requirements, 94 event records, 29 job types.
+- Eight named heap blocks; 46,414,880-byte free block; 16,928-byte root-directory block.
+- BIDI alignment -5 and THETAZ 3; four cartridge dot counters match earlier NVM/DS2.
+- 32 media sizes, four media types, one tray and one output bin.
+- Current LED matrices match defaults; ColorLok/dry-time/eject settings 1/2/1.
+- Retained assertion 0xc4eb99f7: hw_micci2.c line 1733, page count 775.
+
+Caveats recorded in the evidence:
+- 20 connection rows have unknown providers/unreliable enums; do not use them as emulator bindings.
+- Empty job/relocation lists and empty/invalid stored barcode are recorded as those results.
+- Cover/UI/calibration queries read cached state; they do not verify physical sensors or mechanics.
+- The random-byte query needs no inner semicolon: udws "crypto_svc.get_rand_num 16".
+ The first semicolon form selected an empty-filename branch and printed an unconditional write claim;
+ its response is incomplete. Corrected syntax returned exactly 16 UART bytes.
+- NOS item 12 returned signed -1 (0xffffffff data), not a dispatch error; integrity is not independently proven.
+- Manufacturing dates below use synthetic fixtures, not this printer serial number.
+
+Below: all 54 new names with exact commands and real response excerpts.
+Excerpts collapse whitespace and stop at 240 characters; referenced TXT/BIN files retain full output.
+Full combined UART log: all_uart_output.txt
+Evidence: physical-round5-assessments.json; round5_audit.json; capture_integrity.json
+
+01. cal_val.get_edge_err
+    udws "cal_val.get_edge_err 1;"
+    Reply: 0
+    Assessment: complete-cached-calibration-scalar
+    File: physical-56-calibration-pen/0019-udws_cal_val_get_edge_err_1.txt
+
+02. cal_val.get_edge_err_status
+    udws "cal_val.get_edge_err_status 1;"
+    Reply: -1
+    Assessment: complete-cached-calibration-scalar
+    File: physical-56-calibration-pen/0020-udws_cal_val_get_edge_err_status_1.txt
+
+03. cal_val.get_linefeed_err
+    udws "cal_val.get_linefeed_err 1 1 K;"
+    Reply: 0
+    Assessment: complete-cached-calibration-scalar
+    File: physical-56-calibration-pen/0017-udws_cal_val_get_linefeed_err_1_1_K.txt
+
+04. cal_val.get_linefeed_err_status
+    udws "cal_val.get_linefeed_err_status 1 1 K;"
+    Reply: -1
+    Assessment: complete-cached-calibration-scalar
+    File: physical-56-calibration-pen/0018-udws_cal_val_get_linefeed_err_status_1_1_K.txt
+
+05. cal_val.get_pa_value
+    udws "cal_val.get_pa_value P2PX FIRST CMY 0 FWD;"
+    Reply: 0
+    Assessment: complete-cached-calibration-scalar
+    File: physical-56-calibration-pen/0001-udws_cal_val_get_pa_value_P2PX_FIRST_CMY_0_FWD.txt
+    udws "cal_val.get_pa_value P2PY FIRST CMY 0 FWD;"
+    Reply: 0
+    Assessment: complete-cached-calibration-scalar
+    File: physical-56-calibration-pen/0002-udws_cal_val_get_pa_value_P2PY_FIRST_CMY_0_FWD.txt
+    udws "cal_val.get_pa_value BIDI FIRST K 0 FWD;"
+    Reply: -5
+    Assessment: complete-cached-calibration-scalar
+    File: physical-56-calibration-pen/0003-udws_cal_val_get_pa_value_BIDI_FIRST_K_0_FWD.txt
+    udws "cal_val.get_pa_value THETAZ FIRST K 0 FWD;"
+    Reply: 3
+    Assessment: complete-cached-calibration-scalar
+    File: physical-56-calibration-pen/0004-udws_cal_val_get_pa_value_THETAZ_FIRST_K_0_FWD.txt
+
+06. cal_val.get_pa_value_status
+    udws "cal_val.get_pa_value_status P2PX FIRST CMY 0 FWD;"
+    Reply: -1
+    Assessment: complete-cached-calibration-scalar
+    File: physical-56-calibration-pen/0005-udws_cal_val_get_pa_value_status_P2PX_FIRST_CMY_0_FWD.txt
+    udws "cal_val.get_pa_value_status P2PY FIRST CMY 0 FWD;"
+    Reply: -1
+    Assessment: complete-cached-calibration-scalar
+    File: physical-56-calibration-pen/0006-udws_cal_val_get_pa_value_status_P2PY_FIRST_CMY_0_FWD.txt
+    udws "cal_val.get_pa_value_status BIDI FIRST K 0 FWD;"
+    Reply: -1
+    Assessment: complete-cached-calibration-scalar
+    File: physical-56-calibration-pen/0007-udws_cal_val_get_pa_value_status_BIDI_FIRST_K_0_FWD.txt
+    udws "cal_val.get_pa_value_status THETAZ FIRST K 0 FWD;"
+    Reply: -1
+    Assessment: complete-cached-calibration-scalar
+    File: physical-56-calibration-pen/0008-udws_cal_val_get_pa_value_status_THETAZ_FIRST_K_0_FWD.txt
+
+07. cal_val.get_unused_pa_status
+    udws "cal_val.get_unused_pa_status P2PX FIRST CMY 0 FWD;"
+    Reply: -1
+    Assessment: complete-cached-calibration-scalar
+    File: physical-56-calibration-pen/0013-udws_cal_val_get_unused_pa_status_P2PX_FIRST_CMY_0_FWD.txt
+    udws "cal_val.get_unused_pa_status P2PY FIRST CMY 0 FWD;"
+    Reply: -1
+    Assessment: complete-cached-calibration-scalar
+    File: physical-56-calibration-pen/0014-udws_cal_val_get_unused_pa_status_P2PY_FIRST_CMY_0_FWD.txt
+    udws "cal_val.get_unused_pa_status BIDI FIRST K 0 FWD;"
+    Reply: -1
+    Assessment: complete-cached-calibration-scalar
+    File: physical-56-calibration-pen/0015-udws_cal_val_get_unused_pa_status_BIDI_FIRST_K_0_FWD.txt
+    udws "cal_val.get_unused_pa_status THETAZ FIRST K 0 FWD;"
+    Reply: -1
+    Assessment: complete-cached-calibration-scalar
+    File: physical-56-calibration-pen/0016-udws_cal_val_get_unused_pa_status_THETAZ_FIRST_K_0_FWD.txt
+
+08. cal_val.get_unused_pa_value
+    udws "cal_val.get_unused_pa_value P2PX FIRST CMY 0 FWD;"
+    Reply: 0
+    Assessment: complete-cached-calibration-scalar
+    File: physical-56-calibration-pen/0009-udws_cal_val_get_unused_pa_value_P2PX_FIRST_CMY_0_FWD.txt
+    udws "cal_val.get_unused_pa_value P2PY FIRST CMY 0 FWD;"
+    Reply: 0
+    Assessment: complete-cached-calibration-scalar
+    File: physical-56-calibration-pen/0010-udws_cal_val_get_unused_pa_value_P2PY_FIRST_CMY_0_FWD.txt
+    udws "cal_val.get_unused_pa_value BIDI FIRST K 0 FWD;"
+    Reply: 0
+    Assessment: complete-cached-calibration-scalar
+    File: physical-56-calibration-pen/0011-udws_cal_val_get_unused_pa_value_BIDI_FIRST_K_0_FWD.txt
+    udws "cal_val.get_unused_pa_value THETAZ FIRST K 0 FWD;"
+    Reply: 0
+    Assessment: complete-cached-calibration-scalar
+    File: physical-56-calibration-pen/0012-udws_cal_val_get_unused_pa_value_THETAZ_FIRST_K_0_FWD.txt
+
+09. crypto_svc.get_rand_num
+    udws "crypto_svc.get_rand_num 16;"
+    Reply: --- writing to file [] --- just wrote 16 bytes to
+    Assessment: unexpected-empty-filename-file-branch
+    File: physical-63-misc-queries/0003-udws_crypto_svc_get_rand_num_16.txt
+    udws "crypto_svc.get_rand_num 16"
+    Reply: ec53fee074e7725e1d5f9fca175e1cdd
+    Assessment: complete-random-byte-sample-uart-path
+    File: physical-66-rng-uart/0001-udws_crypto_svc_get_rand_num_16.txt
+
+10. crypto_svc.get_rand_seq
+    udws "crypto_svc.get_rand_seq 4;"
+    Reply: 2467864732, 3488902879, 3252328757, 3907151461,
+    Assessment: validated-miscellaneous-query-payload
+    File: physical-63-misc-queries/0004-udws_crypto_svc_get_rand_seq_4.txt
+
+11. crypto_svc.is_secure
+    udws "crypto_svc.is_secure;"
+    Reply: 1
+    Assessment: validated-miscellaneous-query-payload
+    File: physical-63-misc-queries/0002-udws_crypto_svc_is_secure.txt
+
+12. errlog.get_assert_entry
+    udws "errlog.get_assert_entry 0;"
+    Reply: 1, ASSERT: c4eb99f7 type: ASSERT_TYPE_HW line: 1733 file: hw_micci2.c page count: 775 in component (CID): 4eb comp error info: 99f7
+    Assessment: validated-miscellaneous-query-payload
+    File: physical-63-misc-queries/0009-udws_errlog_get_assert_entry_0.txt
+
+13. heapmgr client prt
+    udws "heapmgr client prt;"
+    Reply: client_id: 1 major_number: 0 client_id: 2 major_number: 1 client_id: 0 major_number: 0
+    Assessment: validated-heap-or-partition-diagnostic
+    File: physical-58-heap-diagnostics/0001-udws_heapmgr_client_prt.txt
+
+14. heapmgr free prt
+    udws "heapmgr free prt;"
+    Reply: Nonreloc Mem Start: (0x23fd4460) Free List Start: (0x21376ac0) Free Mem - Start:(0x21390840) Size:(0x2c43c20 46414880) End:(0x23fd4460) Free List End: (0x23fdd060)
+    Assessment: validated-heap-or-partition-diagnostic
+    File: physical-58-heap-diagnostics/0002-udws_heapmgr_free_prt.txt
+
+15. heapmgr hash load
+    udws "heapmgr hash load;"
+    Reply: Hash table size: 211 Number of entries: 8
+    Assessment: validated-heap-or-partition-diagnostic
+    File: physical-58-heap-diagnostics/0003-udws_heapmgr_hash_load.txt
+
+16. heapmgr hash prt
+    udws "heapmgr hash prt;"
+    Reply: hash_index sys_indexs 6 6 29 4 33 7 37 3 48 5 118 1 152 11 203 2
+    Assessment: validated-heap-or-partition-diagnostic
+    File: physical-58-heap-diagnostics/0004-udws_heapmgr_hash_prt.txt
+
+17. heapmgr heap ls
+    udws "heapmgr heap ls;"
+    Reply: The heap is empty.
+    Assessment: validated-heap-or-partition-diagnostic
+    File: physical-58-heap-diagnostics/0007-udws_heapmgr_heap_ls.txt
+
+18. heapmgr heap mem
+    udws "heapmgr heap mem 100;"
+    Reply: sizeof blocks with priority > 100 : 0
+    Assessment: validated-heap-or-partition-diagnostic
+    File: physical-58-heap-diagnostics/0008-udws_heapmgr_heap_mem_100.txt
+
+19. heapmgr heap prt
+    udws "heapmgr heap prt;"
+    Reply: The heap is empty.
+    Assessment: validated-heap-or-partition-diagnostic
+    File: physical-58-heap-diagnostics/0006-udws_heapmgr_heap_prt.txt
+
+20. heapmgr name prt
+    udws "heapmgr name prt;"
+    Reply: index count hdr_ptr 1 1 0x21376ac0 2 1 0x2137ad00 3 1 0x2137ef40 4 1 0x21383180 5 1 0x21383540 6 1 0x21384380 7 2 0x2138c600 11 17 0x213885c0
+    Assessment: validated-heap-or-partition-diagnostic
+    File: physical-58-heap-diagnostics/0005-udws_heapmgr_name_prt.txt
+
+21. led_color_cal.get_barcode
+    udws "led_color_cal.get_barcode 0;"
+    Reply: Barcode Barcode not valid
+    Assessment: complete-empty-barcode-result
+    File: physical-56b-led-metadata/0005-udws_led_color_cal_get_barcode_0.txt
+
+22. led_color_cal.get_default_matrix
+    udws "led_color_cal.get_default_matrix 0;"
+    Reply: Default correction frontside matrix: 3672 4747 -228 1015 8154 -978 -1152 1389 7954
+    Assessment: complete-default-matrix-matching-rom
+    File: physical-56b-led-metadata/0001-udws_led_color_cal_get_default_matrix_0.txt
+    udws "led_color_cal.get_default_matrix 1;"
+    Reply: 3672 4747 -228 1015 8154 -978 -1152 1389 7954
+    Assessment: complete-default-matrix-matching-rom
+    File: physical-56b-led-metadata/0003-udws_led_color_cal_get_default_matrix_1.txt
+
+23. led_color_cal.get_golden_peaks_widths
+    udws "led_color_cal.get_golden_peaks_widths 0;"
+    Reply: Frontside Golden LED peaks and widths: Red 620 14 Green 521 34 Blue 452 22
+    Assessment: complete-golden-reference-matching-rom
+    File: physical-56b-led-metadata/0002-udws_led_color_cal_get_golden_peaks_widths_0.txt
+    udws "led_color_cal.get_golden_peaks_widths 1;"
+    Reply: Red 0 0 Green 0 0 Blue 0 0
+    Assessment: complete-golden-reference-matching-rom
+    File: physical-56b-led-metadata/0004-udws_led_color_cal_get_golden_peaks_widths_1.txt
+
+24. led_color_cal.get_matrix
+    udws "led_color_cal.get_matrix 0;"
+    Reply: Color correction frontside matrix: 3672 4747 -228 1015 8154 -978 -1152 1389 7954
+    Assessment: complete-current-matrix-matching-default
+    File: physical-62-current-matrices/0001-udws_led_color_cal_get_matrix_0.txt
+    udws "led_color_cal.get_matrix 1;"
+    Reply: 3672 4747 -228 1015 8154 -978 -1152 1389 7954
+    Assessment: complete-current-matrix-matching-default
+    File: physical-62-current-matrices/0002-udws_led_color_cal_get_matrix_1.txt
+
+25. mfg_info.calc_mfg_date
+    udws "mfg_info.calc_mfg_date AA711 2017;"
+    Reply: 20170101
+    Assessment: validated-miscellaneous-query-payload
+    File: physical-63-misc-queries/0005-udws_mfg_info_calc_mfg_date_AA711_2017.txt
+    udws "mfg_info.calc_mfg_date AA7CV 2017;"
+    Reply: 20171231
+    Assessment: validated-miscellaneous-query-payload
+    File: physical-63-misc-queries/0006-udws_mfg_info_calc_mfg_date_AA7CV_2017.txt
+    udws "mfg_info.calc_mfg_date AA811 2018;"
+    Reply: 20180101
+    Assessment: validated-miscellaneous-query-payload
+    File: physical-63-misc-queries/0007-udws_mfg_info_calc_mfg_date_AA811_2018.txt
+
+26. mhdlg.get_mhdlgcap_media_type_size_list
+    udws "mhdlg.get_mhdlgcap_media_type_size_list 0 1;"
+    Reply: 200; 32;na_executive_7.25x10.5in(1),na_letter_8.5x11in(2),na_legal_8.5x14in(3),na_govt-letter_8x10in(7),na_invoice_5.5x8.5in(15),iso_a5_148x210mm(25),iso_a4_210x297mm(26),custom(101),jis_b5_182x257mm(45),jpn_hagaki_100x148mm(71),iso_a6_105x [excerpt ends; full response in linked file]
+    Assessment: complete-media-size-capability
+    File: physical-55-media-capabilities/0003-udws_mhdlg_get_mhdlgcap_media_type_size_list_0_1.txt
+    udws "mhdlg.get_mhdlgcap_media_type_size_list 1 1;"
+    Reply: 200; 4;plain(0),photoStandard(2),specialtyGlossy(56),specialtyMatte(57)
+    Assessment: complete-media-type-capability
+    File: physical-55-media-capabilities/0004-udws_mhdlg_get_mhdlgcap_media_type_size_list_1_1.txt
+
+27. mhdlg.get_mhdlgcap_supported_bins
+    udws "mhdlg.get_mhdlgcap_supported_bins;"
+    Reply: 200; 1;(0)
+    Assessment: complete-output-bin-capability
+    File: physical-55-media-capabilities/0002-udws_mhdlg_get_mhdlgcap_supported_bins.txt
+
+28. mhdlg.get_mhdlgcap_supported_trays
+    udws "mhdlg.get_mhdlgcap_supported_trays;"
+    Reply: 200; 1;Tray1(1)
+    Assessment: complete-input-tray-capability
+    File: physical-55-media-capabilities/0001-udws_mhdlg_get_mhdlgcap_supported_trays.txt
+
+29. mhdlg.get_supported_df_groups
+    udws "mhdlg.get_supported_df_groups;"
+    Reply: 200; 0
+    Assessment: complete-zero-group-capability
+    File: physical-55-media-capabilities/0005-udws_mhdlg_get_supported_df_groups.txt
+
+30. nos_nvm_sirius.get
+    udws "nos_nvm_sirius.get 18;"
+    Reply: -1
+    Assessment: complete-signed-full-width-nos-nvm-scalar
+    File: physical-63-misc-queries/0008-udws_nos_nvm_sirius_get_18.txt
+
+31. pe.cover_open_query
+    udws "pe.cover_open_query;"
+    Reply: 0
+    Assessment: complete-cached-cover-state
+    File: physical-65-frontpanel-settings/0004-udws_pe_cover_open_query.txt
+
+32. pen.get_dotcount
+    udws "pen.get_dotcount 0 0 0;"
+    Reply: 94132798
+    Assessment: complete-dot-counter-matching-storage
+    File: physical-56-calibration-pen/0027-udws_pen_get_dotcount_0_0_0.txt
+    udws "pen.get_dotcount 1 0 0;"
+    Reply: 18365755
+    Assessment: complete-dot-counter-matching-storage
+    File: physical-56-calibration-pen/0028-udws_pen_get_dotcount_1_0_0.txt
+    udws "pen.get_dotcount 0 0 1;"
+    Reply: 95415927
+    Assessment: complete-dot-counter-matching-storage
+    File: physical-56-calibration-pen/0029-udws_pen_get_dotcount_0_0_1.txt
+    udws "pen.get_dotcount 1 0 1;"
+    Reply: 0
+    Assessment: complete-dot-counter-matching-storage
+    File: physical-56-calibration-pen/0030-udws_pen_get_dotcount_1_0_1.txt
+
+33. pen.get_drfs
+    udws "pen.get_drfs;"
+    Reply: 2
+    Assessment: complete-dynamic-refresh-status
+    File: physical-56-calibration-pen/0031-udws_pen_get_drfs.txt
+
+34. pen.get_ttoe_ad_range
+    udws "pen.get_ttoe_ad_range;"
+    Reply: 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+    Assessment: complete-bounded-pen-calibration-table
+    File: physical-56-calibration-pen/0021-udws_pen_get_ttoe_ad_range.txt
+
+35. pen.get_ttoe_test_range
+    udws "pen.get_ttoe_test_range;"
+    Reply: 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+    Assessment: complete-bounded-pen-calibration-table
+    File: physical-56-calibration-pen/0022-udws_pen_get_ttoe_test_range.txt
+
+36. pen.is_ldw_ttoed
+    udws "pen.is_ldw_ttoed 0;"
+    Reply: 0
+    Assessment: complete-cached-pen-state
+    File: physical-56-calibration-pen/0025-udws_pen_is_ldw_ttoed_0.txt
+    udws "pen.is_ldw_ttoed 1;"
+    Reply: 0
+    Assessment: complete-cached-pen-state
+    File: physical-56-calibration-pen/0026-udws_pen_is_ldw_ttoed_1.txt
+
+37. pen.is_ttoed
+    udws "pen.is_ttoed 0;"
+    Reply: 0
+    Assessment: complete-cached-pen-state
+    File: physical-56-calibration-pen/0023-udws_pen_is_ttoed_0.txt
+    udws "pen.is_ttoed 1;"
+    Reply: 1
+    Assessment: complete-cached-pen-state
+    File: physical-56-calibration-pen/0024-udws_pen_is_ttoed_1.txt
+
+38. ram.block_info
+    udws "ram.block_info 1 1 0;"
+    Reply: DIR inode 1 : block # = 0, priority = 0, size = 16928, use_count = 0, Non Purgeable
+    Assessment: validated-live-directory-block-metadata
+    File: physical-61-block-metadata/0001-udws_ram_block_info_1_1_0.txt
+
+39. ram.part_info
+    udws "ram.part_info 0;"
+    Reply: partition # : 0 name : /, type : heap, block_size : 16384 curr_size = 105404, available_mem = 46556576 0
+    Assessment: validated-heap-or-partition-diagnostic
+    File: physical-58-heap-diagnostics/0009-udws_ram_part_info_0.txt
+
+40. sm_module conn
+    udws "sm_module conn;"
+    Reply: --------------- Requested ------------- ---------- Provided ------ # Type Requesting Module IID PCID Enum Providing Module Enum --- ------ -------------------- -------- ---- ---- -------------------- ---- 0 VTABLE DAT_file_mgr 00010d77 0000 [excerpt ends; full response in linked file]
+    Assessment: validated-module-connection-or-job-state
+    File: physical-54-system-services/0001-udws_sm_module_conn.txt
+
+41. sm_module pevent
+    udws "sm_module pevent;"
+    Reply: 96 produces 78982 1905 produces 78944 314 produces 94528 314 produces 94529 314 produces 94530 314 produces 94531 314 produces 94532 314 produces 94533 2630 produces 79551 2630 produces 79488 573 produces 79014 573 produces 79669 1324 produ [excerpt ends; full response in linked file]
+    Assessment: validated-module-connection-or-job-state
+    File: physical-54-system-services/0005-udws_sm_module_pevent.txt
+
+42. sm_module prov
+    udws "sm_module prov;"
+    Reply: # Type Providing Module IID Enum --- ------ -------------------- -------- ---- 0 VTABLE DAT_file_mgr 00010f06 17 1 VTABLE dpof 00010dc6 0 2 VTABLE dpof 00010ecc 1 3 VTABLE access_list 00013009 0 4 DIRECT assert 00010fd7 0 5 VTABLE auto_alig [excerpt ends; full response in linked file]
+    Assessment: validated-module-connection-or-job-state
+    File: physical-54-system-services/0002-udws_sm_module_prov.txt
+
+43. sm_module req
+    udws "sm_module req;"
+    Reply: # Type Requiring Module Required Module IID Enum ;--- ------ -------------------- -------------------- -------- ---- 0 VTABLE DAT_file_mgr ANY 00010d77 228 1 VTABLE DAT_file_mgr ANY 00010d47 229 2 VTABLE DAT_file_mgr ANY 00011604 230 3 VTAB [excerpt ends; full response in linked file]
+    Assessment: validated-module-connection-or-job-state
+    File: physical-54-system-services/0003-udws_sm_module_req.txt
+
+44. sm_module revent
+    udws "sm_module revent;"
+    Reply: 0 requires 78975 0 requires 78975 0 requires 78975 0 requires 78975 0 requires 79209 0 requires 79049 0 requires 78975 0 requires 78975 0 requires 79488 0 requires 78975 0 requires 79073 0 requires 79073 0 requires 78975 0 requires 79488 0  [excerpt ends; full response in linked file]
+    Assessment: validated-module-connection-or-job-state
+    File: physical-54-system-services/0006-udws_sm_module_revent.txt
+
+45. sm_module tabl
+    udws "sm_module tabl;"
+    Reply: DAT_file_mgr -> udw DAT_file_mgr -> ds2 DAT_file_mgr -> temp_agency dpof -> udw dpof -> ds2 dpof -> database dpof -> database dpof -> jm_udw_mem access_list -> ds2 access_list -> httpmgr access_list -> dsd_ols_mgr access_list -> http_sec ac [excerpt ends; full response in linked file]
+    Assessment: validated-module-connection-or-job-state
+    File: physical-54-system-services/0004-udws_sm_module_tabl.txt
+
+46. smgr_pe.cover_open_query
+    udws "smgr_pe.cover_open_query;"
+    Reply: 0
+    Assessment: complete-cached-cover-state
+    File: physical-65-frontpanel-settings/0005-udws_smgr_pe_cover_open_query.txt
+
+47. smgr_pe.get_current_setting
+    udws "smgr_pe.get_current_setting 1;"
+    Reply: 1
+    Assessment: complete-current-setting-matching-storage
+    File: physical-65-frontpanel-settings/0001-udws_smgr_pe_get_current_setting_1.txt
+    udws "smgr_pe.get_current_setting 3;"
+    Reply: 2
+    Assessment: complete-current-setting-matching-storage
+    File: physical-65-frontpanel-settings/0002-udws_smgr_pe_get_current_setting_3.txt
+    udws "smgr_pe.get_current_setting 4;"
+    Reply: 1
+    Assessment: complete-current-setting-matching-storage
+    File: physical-65-frontpanel-settings/0003-udws_smgr_pe_get_current_setting_4.txt
+
+48. smgr_pe.user_power_on_query
+    udws "smgr_pe.user_power_on_query;"
+    Reply: 1
+    Assessment: complete-stored-power-state-classification
+    File: physical-65-frontpanel-settings/0006-udws_smgr_pe_user_power_on_query.txt
+
+49. smjob blk
+    udws "smjob blk;"
+    Reply: 
+    Assessment: validated-module-connection-or-job-state
+    File: physical-54-system-services/0009-udws_smjob_blk.txt
+
+50. smjob filter show
+    udws "smjob filter show 0;"
+    Reply: JOBTYPE: WFWU, SUID 2301 -> UNFILTERED JOBTYPE: JM_REPORTS, SUID 492 -> UNFILTERED JOBTYPE: URF, SUID 2101 -> UNFILTERED JOBTYPE: UDW, SUID 337 -> UNFILTERED JOBTYPE: PCLM, SUID 2175 -> UNFILTERED JOBTYPE: PCL_KHEOPS, SUID 330 -> UNFILTERED [excerpt ends; full response in linked file]
+    Assessment: validated-module-connection-or-job-state
+    File: physical-54-system-services/0010-udws_smjob_filter_show_0.txt
+
+51. smjob job
+    udws "smjob job;"
+    Reply: 
+    Assessment: validated-module-connection-or-job-state
+    File: physical-54-system-services/0007-udws_smjob_job.txt
+
+52. smjob types
+    udws "smjob types;"
+    Reply: JOBTYPE: WFWU, SUID 2301, JS_JOB_TYPE 40, JM IFC: a0631f04 JOBTYPE: JM_REPORTS, SUID 492, JS_JOB_TYPE 33, JM IFC: a055cc4c JOBTYPE: URF, SUID 2101, JS_JOB_TYPE 1, JM IFC: 2083e13c JOBTYPE: UDW, SUID 337, JS_JOB_TYPE 18, JM IFC: a0562750 JOB [excerpt ends; full response in linked file]
+    Assessment: validated-module-connection-or-job-state
+    File: physical-54-system-services/0008-udws_smjob_types.txt
+
+53. ui_lite.display_status
+    udws "ui_lite.display_status;"
+    Reply: [UI_LITE]: ui ii pop up state: 0, dashboard: 0 [UI_LITE]: Active: 0, pen type: 0 [UI_LITE]: size error: 0, sensor error: 0 [UI_LITE]: Allows: 0, Admin_D: 0, Reged: 0, Auto_E: 1, Pend: 0, e: 0, Server: 0, Main: 0
+    Assessment: complete-cached-ui-display-state
+    File: physical-56c-ui-status/0001-udws_ui_lite_display_status.txt
+
+54. undercroft.get_rev
+    udws "undercroft.get_rev;"
+    Reply: SUCCESS: undercroft chip rev is: 2
+    Assessment: validated-miscellaneous-query-payload
+    File: physical-63-misc-queries/0001-udws_undercroft_get_rev.txt
+

@@ -1,0 +1,395 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-10-29T22:03:48.859530+00:00",
+  "provenance": {
+    "serial_access_by_reviewer": "none",
+    "baseline": "references/round7-baseline.json",
+    "baseline_count": 703,
+    "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330"
+  },
+  "summary": {
+    "ready_invocations": 2,
+    "new_unique_names": 2,
+    "new_unique_handlers": 2
+  },
+  "queries": [
+    {
+      "name": "scan orig locget",
+      "command": "udws \"scan orig locget;\"",
+      "argument_syntax": "",
+      "handler": "0xa03aeae9",
+      "descriptor_address": "0xa0600580",
+      "classification": "reviewed-information-query",
+      "purpose": "Read the scanner cover, park, white-reference and black-reference locations.",
+      "control_flow_proof": "A03AEAE8 calls four getters and prints four signed scalars. A03AE1CC reads cover override208582FC; if zero, it returns origin208582D4+0x4F6, otherwise override+0x8D8. A03AE1E0 reads park override20858300; if zero it callsA03A55C8. This tests bits2 and0 of DSID_PROGRAMMERS_BITS(0x107A2) throughA03A34DC/A03A34D0/A03A32A8 and the verified storage slot8 A005C38C, then cached home flag20D9CD45. Nonzero predicate returnsorigin+0x59; zero predicate reads the position getter with index0. Physical75 shows both overrides and home flagzero, and earlier NVM/DS2 both returnedzero for programmer bits. All branches are reviewed. A03AE204 selects nonzero white override20D9F280 or cached20D9F218 and addsorigin208582D4. A03AE216 selects nonzero black override20D9F284 or cached20D9F220 and adds the sameorigin. Physical75 resolves scanner provider20DA0AEC to objectA060BF74, vtableA060BF7C, slot0x28 A03E3BF0. A03AD8A8(0) selects that flatbed object. A03E3BF0 recognizes objectA060BF74 and selects motor index0, then callsA03E01F6 -> A03E3E32. This last helper performs one 32-bit load from position registerBD302010, callsA03E3E60(0,value) to refresh only volatile cache208593AC, and returns the loaded word. There are no MMIO stores, motion commands, power changes, delays or persistent writes on this path. This is a live position-register read, not a purely cached query.",
+      "timeout": 20,
+      "persistent_writes": false,
+      "runtime_registered": true,
+      "hardware_access": "Read-only position register BD302010; no actuator writes.",
+      "side_effects": "May refresh volatile position cache208593AC. UART formatting may update its output-throttle counter; no setting or mechanism state is commanded.",
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "prior_invocation_status": "not-invoked",
+      "review_source": "references/round7_hardware_review.json",
+      "live_evidence": [
+        {
+          "label": "scanner_motor_provider",
+          "address": "0x20da0aec",
+          "count": 4,
+          "hex": "a060bf74",
+          "words_be": [
+            "0xa060bf74"
+          ],
+          "response_file": "references/physical-75-query-prerequisites/0079-udws_ustd_read_file_0_4.bin",
+          "response_sha256": "39238bec3e60456fa2393909e1685579ca0103dd77a97489e118cd1999d3e2ab",
+          "artifact": "references/physical-75-query-prerequisites/provider-pointers.json"
+        },
+        {
+          "label": "scanner_motor_object_vtable",
+          "address": "0xa060bf74",
+          "count": 4,
+          "hex": "a060bf7c",
+          "words_be": [
+            "0xa060bf7c"
+          ],
+          "response_file": "references/physical-75-query-prerequisites/0088-udws_ustd_read_file_0_4.bin",
+          "response_sha256": "950059ea9f658caf09acf618b23ec498b4e75c5f17e2783404ee9881c7678270",
+          "artifact": "references/physical-75-query-prerequisites/provider-pointers.json"
+        },
+        {
+          "label": "scanner_motor_vtable_methods",
+          "address": "0xa060bf7c",
+          "count": 64,
+          "hex": "a03e39e9a03e3a33a03e3abda03e3b37a03e3b6da03e3b6fa03e3b87a03e3b89a03e3b97a03e3bbda03e3bf1a03e3c21a03e3c45a03e39c1a03e3c15a03e3c17",
+          "words_be": [
+            "0xa03e39e9",
+            "0xa03e3a33",
+            "0xa03e3abd",
+            "0xa03e3b37",
+            "0xa03e3b6d",
+            "0xa03e3b6f",
+            "0xa03e3b87",
+            "0xa03e3b89",
+            "0xa03e3b97",
+            "0xa03e3bbd",
+            "0xa03e3bf1",
+            "0xa03e3c21",
+            "0xa03e3c45",
+            "0xa03e39c1",
+            "0xa03e3c15",
+            "0xa03e3c17"
+          ],
+          "response_file": "references/physical-75-query-prerequisites/0097-udws_ustd_read_file_0_64.bin",
+          "response_sha256": "1c3522400090f953b7c392a9db507d7adfba7fb96ff266fdd4c88a4be0122945",
+          "artifact": "references/physical-75-query-prerequisites/provider-pointers.json"
+        }
+      ],
+      "reviewed_ranges": [
+        {
+          "address": "0xa03aeae8",
+          "bytes": 52,
+          "disassembly": "0xa03aeae8: push {lr}\n0xa03aeaea: bl #0xa03ae1cc\n0xa03aeaee: adds r1, r0, #0\n0xa03aeaf0: adr r0, #0xf0 'cover location: %d\\n'\n0xa03aeaf2: bl #0xa03bef18\n0xa03aeaf6: bl #0xa03ae1e0\n0xa03aeafa: adds r1, r0, #0\n0xa03aeafc: adr r0, #0xf8 'park location:  %d\\n'\n0xa03aeafe: bl #0xa03bef18\n0xa03aeb02: bl #0xa03ae204\n0xa03aeb06: adds r1, r0, #0\n0xa03aeb08: adr r0, #0x100 'white location: %d\\n'\n0xa03aeb0a: bl #0xa03bef18\n0xa03aeb0e: bl #0xa03ae216\n0xa03aeb12: adds r1, r0, #0\n0xa03aeb14: adr r0, #0x108 'black location: %d\\n'\n0xa03aeb16: bl #0xa03bef18\n0xa03aeb1a: pop {pc}"
+        },
+        {
+          "address": "0xa03ae1cc",
+          "bytes": 92,
+          "disassembly": "0xa03ae1cc: ldr r0, [pc, #0x134] [0xa03ae304]=0x208582d0\n0xa03ae1ce: ldr r1, [r0, #0x2c]\n0xa03ae1d0: cmp r1, #0\n0xa03ae1d2: beq #0xa03ae1d8\n0xa03ae1d4: ldr r3, [pc, #0x140] [0xa03ae318]=0x8d8\n0xa03ae1d6: b #0xa03ae1dc\n0xa03ae1d8: ldr r1, [r0, #4]\n0xa03ae1da: ldr r3, [pc, #0x140] [0xa03ae31c]=0x4f6\n0xa03ae1dc: adds r0, r1, r3\n0xa03ae1de: bx lr\n0xa03ae1e0: push {r4, lr}\n0xa03ae1e2: ldr r4, [pc, #0x120] [0xa03ae304]=0x208582d0\n0xa03ae1e4: ldr r0, [r4, #0x30]\n0xa03ae1e6: cmp r0, #0\n0xa03ae1e8: beq #0xa03ae1f0\n0xa03ae1ea: ldr r3, [pc, #0x12c] [0xa03ae318]=0x8d8\n0xa03ae1ec: adds r0, r0, r3\n0xa03ae1ee: b #0xa03ae202\n0xa03ae1f0: bl #0xa03a55c8\n0xa03ae1f4: cmp r0, #0\n0xa03ae1f6: bne #0xa03ae1fe\n0xa03ae1f8: bl #0xa03ad8c6\n0xa03ae1fc: b #0xa03ae202\n0xa03ae1fe: ldr r0, [r4, #4]\n0xa03ae200: adds r0, #0x59\n0xa03ae202: pop {r4, pc}\n0xa03ae204: ldr r1, [pc, #0xd8] [0xa03ae2e0]=0x20d9f218\n0xa03ae206: ldr r0, [r1, #0x68]\n0xa03ae208: cmp r0, #0\n0xa03ae20a: bne #0xa03ae20e\n0xa03ae20c: ldr r0, [r1]\n0xa03ae20e: ldr r2, [pc, #0xf4] [0xa03ae304]=0x208582d0\n0xa03ae210: ldr r3, [r2, #4]\n0xa03ae212: adds r0, r0, r3\n0xa03ae214: bx lr\n0xa03ae216: ldr r1, [pc, #0x108] [0xa03ae320]=0x20d9f220\n0xa03ae218: ldr r0, [r1, #0x64]\n0xa03ae21a: cmp r0, #0\n0xa03ae21c: bne #0xa03ae220\n0xa03ae21e: ldr r0, [r1]\n0xa03ae220: ldr r2, [pc, #0xe0] [0xa03ae304]=0x208582d0\n0xa03ae222: ldr r3, [r2, #4]\n0xa03ae224: adds r0, r0, r3\n0xa03ae226: bx lr"
+        },
+        {
+          "address": "0xa03a55c8",
+          "bytes": 28,
+          "disassembly": "0xa03a55c8: push {lr}\n0xa03a55ca: bl #0xa03a34dc\n0xa03a55ce: cmp r0, #0\n0xa03a55d0: bne #0xa03a55da\n0xa03a55d2: bl #0xa03a34d0\n0xa03a55d6: cmp r0, #0\n0xa03a55d8: beq #0xa03a55de\n0xa03a55da: movs r0, #1\n0xa03a55dc: b #0xa03a55e2\n0xa03a55de: ldr r1, [pc, #0x1c0] [0xa03a57a0]=0x20d9cd45\n0xa03a55e0: ldrb r0, [r1]\n0xa03a55e2: pop {pc}"
+        },
+        {
+          "address": "0xa03a34d0",
+          "bytes": 24,
+          "disassembly": "0xa03a34d0: push {lr}\n0xa03a34d2: bl #0xa03a32a8\n0xa03a34d6: lsls r0, r0, #0x1f\n0xa03a34d8: lsrs r0, r0, #0x1f\n0xa03a34da: pop {pc}\n0xa03a34dc: push {lr}\n0xa03a34de: bl #0xa03a32a8\n0xa03a34e2: lsls r0, r0, #0x1d\n0xa03a34e4: lsrs r0, r0, #0x1f\n0xa03a34e6: pop {pc}"
+        },
+        {
+          "address": "0xa03a32a8",
+          "bytes": 16,
+          "disassembly": "0xa03a32a8: push {lr}\n0xa03a32aa: ldr r3, [pc, #0x144] [0xa03a33f0]=0x20da0ae8\n0xa03a32ac: ldr r0, [r3, #0x10]\n0xa03a32ae: ldr r1, [r0]\n0xa03a32b0: ldr r2, [r1, #8]\n0xa03a32b2: ldr r1, [pc, #0x140] [0xa03a33f4]=0x107a2\n0xa03a32b4: blx r2\n0xa03a32b6: pop {pc}"
+        },
+        {
+          "address": "0xa005c38c",
+          "bytes": 62,
+          "disassembly": "0xa005c38c: push {r4, r5, lr}\n0xa005c38e: adds r2, r1, #0\n0xa005c390: ldr r4, [pc, #0x2c8] [0xa005c65c]=0x208dfebc\n0xa005c392: lsls r3, r2, #0x16\n0xa005c394: lsrs r0, r3, #0x15\n0xa005c396: adds r3, r4, #4\n0xa005c398: ldrh r0, [r0, r3]\n0xa005c39a: b #0xa005c3b0\n0xa005c39c: ldr r5, [r4]\n0xa005c39e: lsls r3, r0, #3\n0xa005c3a0: ldr r1, [r3, r5]\n0xa005c3a2: lsls r3, r1, #0xd\n0xa005c3a4: lsrs r3, r3, #0xd\n0xa005c3a6: cmp r3, r2\n0xa005c3a8: bne #0xa005c3ae\n0xa005c3aa: lsls r3, r1, #0xc\n0xa005c3ac: bpl #0xa005c3c2\n0xa005c3ae: lsrs r0, r1, #0x14\n0xa005c3b0: ldr r3, [pc, #0x2ac] [0xa005c660]=0xfff\n0xa005c3b2: cmp r0, r3\n0xa005c3b4: bne #0xa005c39c\n0xa005c3b6: adr r1, #0x2b0 'ds2_get_sim_ob'\n0xa005c3b8: adds r0, r2, #0\n0xa005c3ba: bl #0xa005ad7a\n0xa005c3be: movs r0, #0\n0xa005c3c0: b #0xa005c3c8\n0xa005c3c2: lsls r3, r0, #3\n0xa005c3c4: adds r0, r5, r3\n0xa005c3c6: ldr r0, [r0, #4]\n0xa005c3c8: pop {r4, r5, pc}"
+        },
+        {
+          "address": "0xa03ad8a8",
+          "bytes": 38,
+          "disassembly": "0xa03ad8a8: push {lr}\n0xa03ad8aa: ldr r1, [pc, #0x2a0] [0xa03adb4c]=0x20da0ae8\n0xa03ad8ac: cmp r0, #1\n0xa03ad8ae: bne #0xa03ad8b4\n0xa03ad8b0: ldr r0, [r1, #8]\n0xa03ad8b2: b #0xa03ad8be\n0xa03ad8b4: cmp r0, #2\n0xa03ad8b6: bne #0xa03ad8bc\n0xa03ad8b8: ldr r0, [r1, #0xc]\n0xa03ad8ba: b #0xa03ad8be\n0xa03ad8bc: ldr r0, [r1, #4]\n0xa03ad8be: ldr r1, [r0]\n0xa03ad8c0: ldr r1, [r1, #0x28]\n0xa03ad8c2: blx r1\n0xa03ad8c4: pop {pc}\n0xa03ad8c6: push {lr}\n0xa03ad8c8: bl #0xa03ad8a8\n0xa03ad8cc: pop {pc}"
+        },
+        {
+          "address": "0xa03e3bf0",
+          "bytes": 36,
+          "disassembly": "0xa03e3bf0: push {lr}\n0xa03e3bf2: adds r1, r0, #0\n0xa03e3bf4: ldr r3, [pc, #0xfc] [0xa03e3cf4]=0xa060bf70\n0xa03e3bf6: cmp r1, r3\n0xa03e3bf8: bne #0xa03e3bfe\n0xa03e3bfa: movs r0, #1\n0xa03e3bfc: b #0xa03e3c0e\n0xa03e3bfe: movs r0, #0\n0xa03e3c00: ldr r3, [pc, #0xf4] [0xa03e3cf8]=0xa060bf74\n0xa03e3c02: cmp r1, r3\n0xa03e3c04: beq #0xa03e3c0e\n0xa03e3c06: ldr r3, [pc, #0xf4] [0xa03e3cfc]=0xa060bf78\n0xa03e3c08: cmp r1, r3\n0xa03e3c0a: bne #0xa03e3c0e\n0xa03e3c0c: movs r0, #2\n0xa03e3c0e: bl #0xa03e01f6\n0xa03e3c12: pop {pc}"
+        },
+        {
+          "address": "0xa03e01f6",
+          "bytes": 8,
+          "disassembly": "0xa03e01f6: push {lr}\n0xa03e01f8: bl #0xa03e3e32\n0xa03e01fc: pop {pc}"
+        },
+        {
+          "address": "0xa03e3e32",
+          "bytes": 16,
+          "disassembly": "0xa03e3e32: push {r4, lr}\n0xa03e3e34: ldr r2, [pc, #0x2ac] [0xa03e40e4]=0xbd302010\n0xa03e3e36: ldr r4, [r2]\n0xa03e3e38: adds r1, r4, #0\n0xa03e3e3a: bl #0xa03e3e60\n0xa03e3e3e: adds r0, r4, #0\n0xa03e3e40: pop {r4, pc}"
+        },
+        {
+          "address": "0xa03e3e60",
+          "bytes": 26,
+          "disassembly": "0xa03e3e60: ldr r2, [pc, #0x284] [0xa03e40e8]=0x208593a8\n0xa03e3e62: cmp r0, #1\n0xa03e3e64: blo #0xa03e3e72\n0xa03e3e66: beq #0xa03e3e6e\n0xa03e3e68: cmp r0, #2\n0xa03e3e6a: bne #0xa03e3e78\n0xa03e3e6c: b #0xa03e3e76\n0xa03e3e6e: str r1, [r2, #8]\n0xa03e3e70: b #0xa03e3e78\n0xa03e3e72: str r1, [r2, #4]\n0xa03e3e74: b #0xa03e3e78\n0xa03e3e76: str r1, [r2]\n0xa03e3e78: bx lr"
+        }
+      ],
+      "expected_field_labels": [
+        "cover location",
+        "park location",
+        "white location",
+        "black location"
+      ],
+      "expected_cover_from_preflight": 3534,
+      "origin_evidence": {
+        "label": "scanner_origin_offsets_and_overrides",
+        "address": "0x208582d0",
+        "count": 52,
+        "hex": "00000000000008d80000000000000000000000000000000000000000000000000000000000000000cfc700000000000000000000",
+        "words_be": [
+          "0x0",
+          "0x8d8",
+          "0x0",
+          "0x0",
+          "0x0",
+          "0x0",
+          "0x0",
+          "0x0",
+          "0x0",
+          "0x0",
+          "0xcfc70000",
+          "0x0",
+          "0x0"
+        ],
+        "response_file": "references/physical-75-query-prerequisites/0052-udws_ustd_read_file_0_52.bin",
+        "response_sha256": "acc4b91a67cb8342e257b46029cf762f91295a4e0d0edc75bef5654ced357fbc",
+        "artifact": "references/physical-75-query-prerequisites/provider-pointers.json"
+      },
+      "home_evidence": {
+        "label": "scanner_home_flags",
+        "address": "0x20d9cd44",
+        "count": 4,
+        "hex": "00000000",
+        "words_be": [
+          "0x0"
+        ],
+        "response_file": "references/physical-75-query-prerequisites/0061-udws_ustd_read_file_0_4.bin",
+        "response_sha256": "2efa0a73245bb096624260e30ce2ab7da8fbbe34187dc3e1149412323afc9a17",
+        "artifact": "references/physical-75-query-prerequisites/provider-pointers.json"
+      },
+      "storage_provider_evidence": {
+        "label": "scanner_storage_provider",
+        "address": "0x20da0af8",
+        "count": 4,
+        "hex": "a0517544",
+        "words_be": [
+          "0xa0517544"
+        ],
+        "response_file": "references/physical-75-query-prerequisites/0070-udws_ustd_read_file_0_4.bin",
+        "response_sha256": "673fac89ba341afb16238aa450af37252d6f5cf5e971fef4a93964fe4fc8b4f0",
+        "artifact": "references/physical-75-query-prerequisites/provider-pointers.json"
+      },
+      "storage_method_evidence": [
+        {
+          "label": "led_interface_1_object_vtable",
+          "address": "0xa0517544",
+          "count": 4,
+          "hex": "a0517548",
+          "words_be": [
+            "0xa0517548"
+          ],
+          "response_file": "references/physical-59-metadata-pointers/0042-udws_ustd_read_file_0_4.bin",
+          "response_sha256": "95818bf79cdc5ce18d720f2a8486e3b39b8379f95a83c58d930491639ead5d16",
+          "artifact": "references/physical-59-metadata-pointers/provider-pointers.json"
+        },
+        {
+          "label": "led_interface_1_vtable_methods",
+          "address": "0xa0517548",
+          "count": 64,
+          "hex": "a005b379a005b3d9a005c38da005c46ba005c475a005be5da005be9fa005bf59a005b8fba005b92ba005b913a005b945a005b439a005b44fa005c373a005be43",
+          "words_be": [
+            "0xa005b379",
+            "0xa005b3d9",
+            "0xa005c38d",
+            "0xa005c46b",
+            "0xa005c475",
+            "0xa005be5d",
+            "0xa005be9f",
+            "0xa005bf59",
+            "0xa005b8fb",
+            "0xa005b92b",
+            "0xa005b913",
+            "0xa005b945",
+            "0xa005b439",
+            "0xa005b44f",
+            "0xa005c373",
+            "0xa005be43"
+          ],
+          "response_file": "references/physical-59-metadata-pointers/0051-udws_ustd_read_file_0_64.bin",
+          "response_sha256": "bd6855f97b58aea9e90f3e7146b89d9f4fbc6bcc41ca62244c00d20e2fbbc09b",
+          "artifact": "references/physical-59-metadata-pointers/provider-pointers.json"
+        }
+      ],
+      "prior_programmer_bits": [
+        {
+          "name": "nvm2.get_contents",
+          "dsid": 67490,
+          "file_id": 301,
+          "kind": 2,
+          "table_index": 70,
+          "object_index": 1,
+          "wire_value": 0,
+          "value": 0,
+          "value_interpretation": "scalar",
+          "source": {
+            "response_file": "references/physical-19b-storage-values/0165-udws_nvm2_get_contents_70_0_nvm2_get_contents_70_1_nvm2_get_conte.bin",
+            "response_sha256": "4fd169b5b576bd75917b5b6817dc8b62254978c9ee1d4238fc4f39dfb27b2b1f",
+            "started_utc": "2026-10-29T19:31:05.793669+00:00",
+            "plan_index": 190
+          }
+        },
+        {
+          "dsid": 67490,
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "wire_value": 0,
+          "value": 0,
+          "source": {
+            "response_file": "references/physical-19b-storage-values/0223-udws_ds2_get_list_67490_67491_67583_67584_67610_67631_67632_67633.bin",
+            "response_sha256": "f340facfae90037c03ba440a8ad7fead7bc8705a324bc61a3eabfbe4c3383465",
+            "started_utc": "2026-10-29T19:31:53.521911+00:00",
+            "plan_index": 248
+          }
+        }
+      ],
+      "interpretation": "Firmware location units; no physical distance conversion is assumed. Park may reflect the current position when the scanner has no retained home/override state."
+    },
+    {
+      "name": "scan mtr getpos",
+      "command": "udws \"scan mtr getpos;\"",
+      "argument_syntax": "",
+      "handler": "0xa03adf37",
+      "descriptor_address": "0xa0600388",
+      "classification": "reviewed-information-query",
+      "purpose": "Read the current flatbed scanner motor position register.",
+      "control_flow_proof": "A03ADF36 callsA03AD8A8 with fixedindex0, prints \"Motor Position: %d\", and returns. Physical75 resolves scanner provider20DA0AEC to objectA060BF74, vtableA060BF7C, slot0x28 A03E3BF0. A03AD8A8(0) selects that flatbed object. A03E3BF0 recognizes objectA060BF74 and selects motor index0, then callsA03E01F6 -> A03E3E32. This last helper performs one 32-bit load from position registerBD302010, callsA03E3E60(0,value) to refresh only volatile cache208593AC, and returns the loaded word. There are no MMIO stores, motion commands, power changes, delays or persistent writes on this path. This is a live position-register read, not a purely cached query.",
+      "timeout": 20,
+      "persistent_writes": false,
+      "runtime_registered": true,
+      "hardware_access": "Read-only position register BD302010; no actuator writes.",
+      "side_effects": "May refresh volatile position cache208593AC. UART formatting may update its output-throttle counter; no setting or mechanism state is commanded.",
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "prior_invocation_status": "not-invoked",
+      "review_source": "references/round7_hardware_review.json",
+      "live_evidence": [
+        {
+          "label": "scanner_motor_provider",
+          "address": "0x20da0aec",
+          "count": 4,
+          "hex": "a060bf74",
+          "words_be": [
+            "0xa060bf74"
+          ],
+          "response_file": "references/physical-75-query-prerequisites/0079-udws_ustd_read_file_0_4.bin",
+          "response_sha256": "39238bec3e60456fa2393909e1685579ca0103dd77a97489e118cd1999d3e2ab",
+          "artifact": "references/physical-75-query-prerequisites/provider-pointers.json"
+        },
+        {
+          "label": "scanner_motor_object_vtable",
+          "address": "0xa060bf74",
+          "count": 4,
+          "hex": "a060bf7c",
+          "words_be": [
+            "0xa060bf7c"
+          ],
+          "response_file": "references/physical-75-query-prerequisites/0088-udws_ustd_read_file_0_4.bin",
+          "response_sha256": "950059ea9f658caf09acf618b23ec498b4e75c5f17e2783404ee9881c7678270",
+          "artifact": "references/physical-75-query-prerequisites/provider-pointers.json"
+        },
+        {
+          "label": "scanner_motor_vtable_methods",
+          "address": "0xa060bf7c",
+          "count": 64,
+          "hex": "a03e39e9a03e3a33a03e3abda03e3b37a03e3b6da03e3b6fa03e3b87a03e3b89a03e3b97a03e3bbda03e3bf1a03e3c21a03e3c45a03e39c1a03e3c15a03e3c17",
+          "words_be": [
+            "0xa03e39e9",
+            "0xa03e3a33",
+            "0xa03e3abd",
+            "0xa03e3b37",
+            "0xa03e3b6d",
+            "0xa03e3b6f",
+            "0xa03e3b87",
+            "0xa03e3b89",
+            "0xa03e3b97",
+            "0xa03e3bbd",
+            "0xa03e3bf1",
+            "0xa03e3c21",
+            "0xa03e3c45",
+            "0xa03e39c1",
+            "0xa03e3c15",
+            "0xa03e3c17"
+          ],
+          "response_file": "references/physical-75-query-prerequisites/0097-udws_ustd_read_file_0_64.bin",
+          "response_sha256": "1c3522400090f953b7c392a9db507d7adfba7fb96ff266fdd4c88a4be0122945",
+          "artifact": "references/physical-75-query-prerequisites/provider-pointers.json"
+        }
+      ],
+      "reviewed_ranges": [
+        {
+          "address": "0xa03adf36",
+          "bytes": 18,
+          "disassembly": "0xa03adf36: push {lr}\n0xa03adf38: movs r0, #0\n0xa03adf3a: bl #0xa03ad8a8\n0xa03adf3e: adds r1, r0, #0\n0xa03adf40: adr r0, #0xc4 'Motor Position: %d\\n'\n0xa03adf42: bl #0xa03bef18\n0xa03adf46: pop {pc}"
+        },
+        {
+          "address": "0xa03ad8a8",
+          "bytes": 38,
+          "disassembly": "0xa03ad8a8: push {lr}\n0xa03ad8aa: ldr r1, [pc, #0x2a0] [0xa03adb4c]=0x20da0ae8\n0xa03ad8ac: cmp r0, #1\n0xa03ad8ae: bne #0xa03ad8b4\n0xa03ad8b0: ldr r0, [r1, #8]\n0xa03ad8b2: b #0xa03ad8be\n0xa03ad8b4: cmp r0, #2\n0xa03ad8b6: bne #0xa03ad8bc\n0xa03ad8b8: ldr r0, [r1, #0xc]\n0xa03ad8ba: b #0xa03ad8be\n0xa03ad8bc: ldr r0, [r1, #4]\n0xa03ad8be: ldr r1, [r0]\n0xa03ad8c0: ldr r1, [r1, #0x28]\n0xa03ad8c2: blx r1\n0xa03ad8c4: pop {pc}\n0xa03ad8c6: push {lr}\n0xa03ad8c8: bl #0xa03ad8a8\n0xa03ad8cc: pop {pc}"
+        },
+        {
+          "address": "0xa03e3bf0",
+          "bytes": 36,
+          "disassembly": "0xa03e3bf0: push {lr}\n0xa03e3bf2: adds r1, r0, #0\n0xa03e3bf4: ldr r3, [pc, #0xfc] [0xa03e3cf4]=0xa060bf70\n0xa03e3bf6: cmp r1, r3\n0xa03e3bf8: bne #0xa03e3bfe\n0xa03e3bfa: movs r0, #1\n0xa03e3bfc: b #0xa03e3c0e\n0xa03e3bfe: movs r0, #0\n0xa03e3c00: ldr r3, [pc, #0xf4] [0xa03e3cf8]=0xa060bf74\n0xa03e3c02: cmp r1, r3\n0xa03e3c04: beq #0xa03e3c0e\n0xa03e3c06: ldr r3, [pc, #0xf4] [0xa03e3cfc]=0xa060bf78\n0xa03e3c08: cmp r1, r3\n0xa03e3c0a: bne #0xa03e3c0e\n0xa03e3c0c: movs r0, #2\n0xa03e3c0e: bl #0xa03e01f6\n0xa03e3c12: pop {pc}"
+        },
+        {
+          "address": "0xa03e01f6",
+          "bytes": 8,
+          "disassembly": "0xa03e01f6: push {lr}\n0xa03e01f8: bl #0xa03e3e32\n0xa03e01fc: pop {pc}"
+        },
+        {
+          "address": "0xa03e3e32",
+          "bytes": 16,
+          "disassembly": "0xa03e3e32: push {r4, lr}\n0xa03e3e34: ldr r2, [pc, #0x2ac] [0xa03e40e4]=0xbd302010\n0xa03e3e36: ldr r4, [r2]\n0xa03e3e38: adds r1, r4, #0\n0xa03e3e3a: bl #0xa03e3e60\n0xa03e3e3e: adds r0, r4, #0\n0xa03e3e40: pop {r4, pc}"
+        },
+        {
+          "address": "0xa03e3e60",
+          "bytes": 26,
+          "disassembly": "0xa03e3e60: ldr r2, [pc, #0x284] [0xa03e40e8]=0x208593a8\n0xa03e3e62: cmp r0, #1\n0xa03e3e64: blo #0xa03e3e72\n0xa03e3e66: beq #0xa03e3e6e\n0xa03e3e68: cmp r0, #2\n0xa03e3e6a: bne #0xa03e3e78\n0xa03e3e6c: b #0xa03e3e76\n0xa03e3e6e: str r1, [r2, #8]\n0xa03e3e70: b #0xa03e3e78\n0xa03e3e72: str r1, [r2, #4]\n0xa03e3e74: b #0xa03e3e78\n0xa03e3e76: str r1, [r2]\n0xa03e3e78: bx lr"
+        }
+      ],
+      "expected_field_labels": [
+        "Motor Position"
+      ],
+      "interpretation": "Raw signed position-register value in firmware units. Reading the position does not command a move or establish calibration accuracy."
+    }
+  ],
+  "held_paths": [
+    {
+      "name": "scan ifc cabledetect",
+      "reason": "Live init count is sentinel -1 and this board has no current detector callback; omitted in favor of two commands returning real location data."
+    },
+    {
+      "name": "pen.is_ready_for_speed_testing",
+      "reason": "Lazy date/state initialization requires a broader helper review; not admitted in this batch."
+    }
+  ],
+  "notes": [
+    "The origin fallback and explicit position query share the same position reader but have distinct handlers and outputs.",
+    "No homing, scanning, motor start, motor disable, ink firing or persistent setter is called.",
+    "Earlier unresolved callback hold for scan orig locget is superseded for this exact physical interface by physical75."
+  ]
+}

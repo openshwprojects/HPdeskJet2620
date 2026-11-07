@@ -1,0 +1,4 @@
+{"index": 1, "command": "udws \"smgr_pe.get_default_setting 1;\"", "bytes": 75, "prompt": true, "validated": null, "preview": "\r\n-> udws \"smgr_pe.get_default_setting 1;\"\r\n1;udws() returns 0 (0x0)\r\n-> "}
+{"index": 2, "command": "udws \"smgr_pe.get_default_setting 3;\"", "bytes": 75, "prompt": true, "validated": null, "preview": "\r\n-> udws \"smgr_pe.get_default_setting 3;\"\r\n2;udws() returns 0 (0x0)\r\n-> "}
+{"index": 3, "command": "udws \"smgr_pe.get_default_setting 4;\"", "bytes": 75, "prompt": true, "validated": null, "preview": "\r\n-> udws \"smgr_pe.get_default_setting 4;\"\r\n1;udws() returns 0 (0x0)\r\n-> "}
+{"index": 4, "command": "udws \"pen.get_printer_build_date;\"", "bytes": 80, "prompt": true, "validated": null, "preview": "\r\n-> udws \"pen.get_printer_build_date;\"\r\n 20180624;udws() returns 0 (0x0)\r\n-> "}

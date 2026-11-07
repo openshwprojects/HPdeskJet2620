@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-10-29T21:32:02.041678+00:00",
+  "queries": [
+    {
+      "name": "led_color_cal.get_matrix",
+      "command": "udws \"led_color_cal.get_matrix 0;\"",
+      "handler": "0xa024ea05",
+      "descriptor_address": "0xa0567b04",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "0",
+      "timeout": 20,
+      "purpose": "Read all nine current LED color-correction coefficients for the selected configured side.",
+      "control_flow_proof": "Physical59 resolves output object2083E248 toA0567ABC, vtableA0567AC0, slot8 targetA024E56E. Physical60 reads live index-count2083E244 as2. Exact index0/1 passes both target guards, so all18output bytes are initialized. Target chooses cached normal matrix20AB00B4+18*index or override20AB00FC+18*index based on cached flag20AB00A0[index], and copies18bytes to caller stack. Handler prints nine signed halfwords. No setter, light, calibration or motor operation.",
+      "hardware_access": false,
+      "persistent_writes": false,
+      "side_effects": "Local stack output buffer, UART output and parser state only.",
+      "runtime_registered": true,
+      "prior_invocation_status": "not-invoked",
+      "live_count_evidence": {
+        "label": "current_matrix_count",
+        "address": "0x2083e244",
+        "count": 4,
+        "hex": "00000002",
+        "words_be": [
+          "0x2"
+        ],
+        "response_file": "0141-udws_ustd_read_file_0_4.bin",
+        "response_sha256": "26a885e8a36daaeb1cca175ed56b4842b627098c6ddc37200c00a15e2ea2e94b",
+        "artifact": "references/physical-60-ui-metadata/provider-pointers.json"
+      },
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "reviewed_ranges": [
+        {
+          "address": "0xa024ea04",
+          "bytes": 112,
+          "disassembly": "0xa024ea04: push {r4, r5, r7, lr}\n0xa024ea06: sub sp, #0x14\n0xa024ea08: ldr r1, [pc, #0x190] [0xa024eb9c]=0x20ab0148\n0xa024ea0a: ldr r0, [r1]\n0xa024ea0c: ldr r1, [r0]\n0xa024ea0e: ldr r1, [r1, #0x10]\n0xa024ea10: blx r1\n0xa024ea12: adds r4, r0, #0\n0xa024ea14: adds r2, r4, #0\n0xa024ea16: ldr r1, [pc, #0x188] [0xa024eba0]=0x2083e248\n0xa024ea18: ldr r0, [r1]\n0xa024ea1a: ldr r1, [r0]\n0xa024ea1c: ldr r3, [r1, #8]\n0xa024ea1e: mov r1, sp\n0xa024ea20: blx r3\n0xa024ea22: cmp r4, #0\n0xa024ea24: bne #0xa024ea2c\n0xa024ea26: adr r0, #0x17c 'Color correction frontside matrix:'\n0xa024ea28: bl #0xa024e6a0\n0xa024ea2c: add r0, sp, #4\n0xa024ea2e: movs r1, #0\n0xa024ea30: ldrsh r3, [r0, r1]\n0xa024ea32: mov r0, sp\n0xa024ea34: movs r1, #2\n0xa024ea36: ldrsh r2, [r0, r1]\n0xa024ea38: movs r7, #0\n0xa024ea3a: ldrsh r1, [r0, r7]\n0xa024ea3c: adr r0, #0x188 ' %5i %5i %5i\\n'\n0xa024ea3e: bl #0xa024e6a0\n0xa024ea42: adr r4, #0x194 '                                   %5i %5i %5i\\n'\n0xa024ea44: add r5, sp, #8\n0xa024ea46: movs r7, #2\n0xa024ea48: ldrsh r3, [r5, r7]\n0xa024ea4a: movs r7, #0\n0xa024ea4c: ldrsh r2, [r5, r7]\n0xa024ea4e: subs r5, #4\n0xa024ea50: movs r7, #2\n0xa024ea52: ldrsh r1, [r5, r7]\n0xa024ea54: adds r0, r4, #0\n0xa024ea56: bl #0xa024e6a0\n0xa024ea5a: add r5, sp, #0x10\n0xa024ea5c: movs r7, #0\n0xa024ea5e: ldrsh r3, [r5, r7]\n0xa024ea60: subs r5, #4\n0xa024ea62: movs r7, #2\n0xa024ea64: ldrsh r2, [r5, r7]\n0xa024ea66: movs r7, #0\n0xa024ea68: ldrsh r1, [r5, r7]\n0xa024ea6a: adds r0, r4, #0\n0xa024ea6c: bl #0xa024e6a0\n0xa024ea70: add sp, #0x14\n0xa024ea72: pop {r4, r5, r7, pc}"
+        },
+        {
+          "address": "0xa024e56e",
+          "bytes": 52,
+          "disassembly": "0xa024e56e: push {r4, r5, lr}\n0xa024e570: adds r4, r1, #0\n0xa024e572: ldr r3, [pc, #0x60] [0xa024e5d4]=0x2083e244\n0xa024e574: ldr r5, [pc, #0x60] [0xa024e5d8]=0x20ab00a0\n0xa024e576: ldr r3, [r3]\n0xa024e578: cmp r2, r3\n0xa024e57a: bhs #0xa024e580\n0xa024e57c: cmp r2, #0\n0xa024e57e: bge #0xa024e584\n0xa024e580: movs r0, #0\n0xa024e582: b #0xa024e5a0\n0xa024e584: ldrb r0, [r5, r2]\n0xa024e586: movs r3, #0x12\n0xa024e588: muls r3, r2, r3\n0xa024e58a: cmp r0, #0\n0xa024e58c: beq #0xa024e592\n0xa024e58e: adds r5, #0x5c\n0xa024e590: b #0xa024e594\n0xa024e592: adds r5, #0x14\n0xa024e594: adds r1, r5, r3\n0xa024e596: movs r2, #0x12\n0xa024e598: adds r0, r4, #0\n0xa024e59a: blx #0xa0019444\n0xa024e59e: movs r0, #1\n0xa024e5a0: pop {r4, r5, pc}"
+        }
+      ],
+      "interpretation": "Current cached coefficients; this query does not run or validate physical calibration. Side labels follow firmware index conventions."
+    },
+    {
+      "name": "led_color_cal.get_matrix",
+      "command": "udws \"led_color_cal.get_matrix 1;\"",
+      "handler": "0xa024ea05",
+      "descriptor_address": "0xa0567b04",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "1",
+      "timeout": 20,
+      "purpose": "Read all nine current LED color-correction coefficients for the selected configured side.",
+      "control_flow_proof": "Physical59 resolves output object2083E248 toA0567ABC, vtableA0567AC0, slot8 targetA024E56E. Physical60 reads live index-count2083E244 as2. Exact index0/1 passes both target guards, so all18output bytes are initialized. Target chooses cached normal matrix20AB00B4+18*index or override20AB00FC+18*index based on cached flag20AB00A0[index], and copies18bytes to caller stack. Handler prints nine signed halfwords. No setter, light, calibration or motor operation.",
+      "hardware_access": false,
+      "persistent_writes": false,
+      "side_effects": "Local stack output buffer, UART output and parser state only.",
+      "runtime_registered": true,
+      "prior_invocation_status": "not-invoked",
+      "live_count_evidence": {
+        "label": "current_matrix_count",
+        "address": "0x2083e244",
+        "count": 4,
+        "hex": "00000002",
+        "words_be": [
+          "0x2"
+        ],
+        "response_file": "0141-udws_ustd_read_file_0_4.bin",
+        "response_sha256": "26a885e8a36daaeb1cca175ed56b4842b627098c6ddc37200c00a15e2ea2e94b",
+        "artifact": "references/physical-60-ui-metadata/provider-pointers.json"
+      },
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "reviewed_ranges": [
+        {
+          "address": "0xa024ea04",
+          "bytes": 112,
+          "disassembly": "0xa024ea04: push {r4, r5, r7, lr}\n0xa024ea06: sub sp, #0x14\n0xa024ea08: ldr r1, [pc, #0x190] [0xa024eb9c]=0x20ab0148\n0xa024ea0a: ldr r0, [r1]\n0xa024ea0c: ldr r1, [r0]\n0xa024ea0e: ldr r1, [r1, #0x10]\n0xa024ea10: blx r1\n0xa024ea12: adds r4, r0, #0\n0xa024ea14: adds r2, r4, #0\n0xa024ea16: ldr r1, [pc, #0x188] [0xa024eba0]=0x2083e248\n0xa024ea18: ldr r0, [r1]\n0xa024ea1a: ldr r1, [r0]\n0xa024ea1c: ldr r3, [r1, #8]\n0xa024ea1e: mov r1, sp\n0xa024ea20: blx r3\n0xa024ea22: cmp r4, #0\n0xa024ea24: bne #0xa024ea2c\n0xa024ea26: adr r0, #0x17c 'Color correction frontside matrix:'\n0xa024ea28: bl #0xa024e6a0\n0xa024ea2c: add r0, sp, #4\n0xa024ea2e: movs r1, #0\n0xa024ea30: ldrsh r3, [r0, r1]\n0xa024ea32: mov r0, sp\n0xa024ea34: movs r1, #2\n0xa024ea36: ldrsh r2, [r0, r1]\n0xa024ea38: movs r7, #0\n0xa024ea3a: ldrsh r1, [r0, r7]\n0xa024ea3c: adr r0, #0x188 ' %5i %5i %5i\\n'\n0xa024ea3e: bl #0xa024e6a0\n0xa024ea42: adr r4, #0x194 '                                   %5i %5i %5i\\n'\n0xa024ea44: add r5, sp, #8\n0xa024ea46: movs r7, #2\n0xa024ea48: ldrsh r3, [r5, r7]\n0xa024ea4a: movs r7, #0\n0xa024ea4c: ldrsh r2, [r5, r7]\n0xa024ea4e: subs r5, #4\n0xa024ea50: movs r7, #2\n0xa024ea52: ldrsh r1, [r5, r7]\n0xa024ea54: adds r0, r4, #0\n0xa024ea56: bl #0xa024e6a0\n0xa024ea5a: add r5, sp, #0x10\n0xa024ea5c: movs r7, #0\n0xa024ea5e: ldrsh r3, [r5, r7]\n0xa024ea60: subs r5, #4\n0xa024ea62: movs r7, #2\n0xa024ea64: ldrsh r2, [r5, r7]\n0xa024ea66: movs r7, #0\n0xa024ea68: ldrsh r1, [r5, r7]\n0xa024ea6a: adds r0, r4, #0\n0xa024ea6c: bl #0xa024e6a0\n0xa024ea70: add sp, #0x14\n0xa024ea72: pop {r4, r5, r7, pc}"
+        },
+        {
+          "address": "0xa024e56e",
+          "bytes": 52,
+          "disassembly": "0xa024e56e: push {r4, r5, lr}\n0xa024e570: adds r4, r1, #0\n0xa024e572: ldr r3, [pc, #0x60] [0xa024e5d4]=0x2083e244\n0xa024e574: ldr r5, [pc, #0x60] [0xa024e5d8]=0x20ab00a0\n0xa024e576: ldr r3, [r3]\n0xa024e578: cmp r2, r3\n0xa024e57a: bhs #0xa024e580\n0xa024e57c: cmp r2, #0\n0xa024e57e: bge #0xa024e584\n0xa024e580: movs r0, #0\n0xa024e582: b #0xa024e5a0\n0xa024e584: ldrb r0, [r5, r2]\n0xa024e586: movs r3, #0x12\n0xa024e588: muls r3, r2, r3\n0xa024e58a: cmp r0, #0\n0xa024e58c: beq #0xa024e592\n0xa024e58e: adds r5, #0x5c\n0xa024e590: b #0xa024e594\n0xa024e592: adds r5, #0x14\n0xa024e594: adds r1, r5, r3\n0xa024e596: movs r2, #0x12\n0xa024e598: adds r0, r4, #0\n0xa024e59a: blx #0xa0019444\n0xa024e59e: movs r0, #1\n0xa024e5a0: pop {r4, r5, pc}"
+        }
+      ],
+      "interpretation": "Current cached coefficients; this query does not run or validate physical calibration. Side labels follow firmware index conventions."
+    }
+  ],
+  "summary": {
+    "ready_invocations": 2,
+    "unique_names": 1,
+    "new_unique_names": 1
+  },
+  "provenance": {
+    "serial_access_by_reviewer": "none"
+  },
+  "caution": "Static dump count was4; live configured count is2. Only live-proven indices0/1 are used. The handler ignores getter failure, so out-of-range arguments could print uninitialized stack values."
+}

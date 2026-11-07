@@ -1,0 +1,205 @@
+{
+  "started_utc": "2026-10-29T21:50:21.385014+00:00",
+  "port": "COM16",
+  "baud": 115200,
+  "data_bits": 8,
+  "parity": "N",
+  "stop_bits": 1,
+  "line_ending": "CRLF",
+  "source": "physical UART",
+  "rts": false,
+  "dtr": false,
+  "tx_character_delay_seconds": 0.003,
+  "capture_program_sha256": "685d8b07cd5afafeba32f37eb5722416458a08dafe09290576957e50b31bdb03",
+  "response_validator": {
+    "name": "validate",
+    "file": "capture_nvm_mirror.py",
+    "sha256": "9f8766d65b73dad50cfa053184e563cca08453aedef2e0b07454ee42aa7c62f0"
+  },
+  "requested_rx_buffer_bytes": 1048576,
+  "requested_tx_buffer_bytes": 65536,
+  "initial_prompt_seen": true,
+  "stop_reason": "batch-complete",
+  "ended_utc": "2026-10-29T21:50:27.050442+00:00",
+  "commands": [
+    {
+      "command": "udws \"ustd.sizeof /ram/codex_event_r6.bin;\"",
+      "purpose": "Require our exact temporary file to be absent.",
+      "classification": "reviewed-owned-ram-file-operation",
+      "review_source": "ram_filesystem_review.json; A035612A..6162 source buffer -> file write",
+      "expected": -1,
+      "index": 1,
+      "started_utc": "2026-10-29T21:50:22.077471+00:00",
+      "response_file": "0001-udws_ustd_sizeof_ram_codex_event_r6_bin.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T21:50:22.649848+00:00",
+      "elapsed_seconds": 0.571,
+      "response_bytes": 83,
+      "response_sha256": "7e0f56170066352f8bc5a5c071280fe8be11d66e9689b4993710e2789ba64a63",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "errors": []
+      }
+    },
+    {
+      "command": "udws \"ram.creat /ram/codex_event_r6.bin;\"",
+      "purpose": "Create only our temporary file and retain returned descriptor.",
+      "classification": "reviewed-owned-ram-file-operation",
+      "review_source": "ram_filesystem_review.json; A035612A..6162 source buffer -> file write",
+      "index": 2,
+      "started_utc": "2026-10-29T21:50:22.672653+00:00",
+      "response_file": "0002-udws_ram_creat_ram_codex_event_r6_bin.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T21:50:23.248241+00:00",
+      "elapsed_seconds": 0.574,
+      "response_bytes": 82,
+      "response_sha256": "4de8d42f6c476e54532ab50ebd087fecb85701b97573af3ba014a04147c8571c",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "errors": []
+      }
+    },
+    {
+      "command": "udws \"ram.write 215 0x2091dc48 248;\"",
+      "purpose": "Copy 248 bytes from known DRAM source next_event_ring_record into our file; source memory is read-only.",
+      "classification": "reviewed-owned-ram-file-operation",
+      "review_source": "ram_filesystem_review.json; A035612A..6162 source buffer -> file write",
+      "expected": 248,
+      "index": 3,
+      "started_utc": "2026-10-29T21:50:23.264063+00:00",
+      "response_file": "0003-udws_ram_write_215_0x2091dc48_248.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T21:50:23.799817+00:00",
+      "elapsed_seconds": 0.535,
+      "response_bytes": 77,
+      "response_sha256": "29747bb69eb034828e6eb5c7d2fd3dbbcd5b738f3a0418de62e76e3f3c481b30",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "errors": []
+      }
+    },
+    {
+      "command": "udws \"ram.close 215;\"",
+      "purpose": "Close our writer.",
+      "classification": "reviewed-owned-ram-file-operation",
+      "review_source": "ram_filesystem_review.json; A035612A..6162 source buffer -> file write",
+      "expected": 0,
+      "index": 4,
+      "started_utc": "2026-10-29T21:50:23.814213+00:00",
+      "response_file": "0004-udws_ram_close_215.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T21:50:24.274320+00:00",
+      "elapsed_seconds": 0.459,
+      "response_bytes": 60,
+      "response_sha256": "f0bb8b4d7d23f0f79b8777c69762f6b612c7ead4d464d37b81636e295dcd22f6",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "errors": []
+      }
+    },
+    {
+      "command": "udws \"ustd.open_file /ram/codex_event_r6.bin;\"",
+      "purpose": "Open our snapshot file read-only.",
+      "classification": "reviewed-owned-ram-file-operation",
+      "review_source": "ram_filesystem_review.json; A035612A..6162 source buffer -> file write",
+      "expected": 248,
+      "index": 5,
+      "started_utc": "2026-10-29T21:50:24.291415+00:00",
+      "response_file": "0005-udws_ustd_open_file_ram_codex_event_r6_bin.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T21:50:24.874689+00:00",
+      "elapsed_seconds": 0.582,
+      "response_bytes": 86,
+      "response_sha256": "a23d88828bb7336c3b8b968851e9119b0a7b38ab5a1017c2f9b5fa33d85606f8",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "errors": []
+      }
+    },
+    {
+      "command": "udws \"ustd.read_file 0 248;\"",
+      "purpose": "Retrieve the exact snapshot bytes.",
+      "classification": "reviewed-owned-ram-file-operation",
+      "review_source": "ram_filesystem_review.json; A035612A..6162 source buffer -> file write",
+      "hex_bytes": 248,
+      "index": 6,
+      "started_utc": "2026-10-29T21:50:24.888439+00:00",
+      "response_file": "0006-udws_ustd_read_file_0_248.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T21:50:25.414857+00:00",
+      "elapsed_seconds": 0.525,
+      "response_bytes": 561,
+      "response_sha256": "cfced0b9c5735b084bd4b7cb79f166ea1fd56f4ebc30d90156375010608123ce",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "errors": []
+      }
+    },
+    {
+      "command": "udws \"ustd.close_file;\"",
+      "purpose": "Close only our debug reader.",
+      "classification": "reviewed-owned-ram-file-operation",
+      "review_source": "ram_filesystem_review.json; A035612A..6162 source buffer -> file write",
+      "expected": "",
+      "index": 7,
+      "started_utc": "2026-10-29T21:50:25.431557+00:00",
+      "response_file": "0007-udws_ustd_close_file.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T21:50:25.908935+00:00",
+      "elapsed_seconds": 0.476,
+      "response_bytes": 59,
+      "response_sha256": "205b39a89b65dc737adaba2c07187715769a768e387829000b4c625cc23048f5",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "errors": []
+      }
+    },
+    {
+      "command": "udws \"ram.unlink /ram/codex_event_r6.bin;\"",
+      "purpose": "Remove only our temporary snapshot file.",
+      "classification": "reviewed-owned-ram-file-operation",
+      "review_source": "ram_filesystem_review.json; A035612A..6162 source buffer -> file write",
+      "expected": 0,
+      "index": 8,
+      "started_utc": "2026-10-29T21:50:25.919458+00:00",
+      "response_file": "0008-udws_ram_unlink_ram_codex_event_r6_bin.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T21:50:26.476453+00:00",
+      "elapsed_seconds": 0.555,
+      "response_bytes": 81,
+      "response_sha256": "cb1924ff4d34ee7a93652ab7324623b65d41953a3ed62a4a07ba0f5a9d05f252",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "errors": []
+      }
+    },
+    {
+      "command": "udws \"ustd.sizeof /ram/codex_event_r6.bin;\"",
+      "purpose": "Verify removal.",
+      "classification": "reviewed-owned-ram-file-operation",
+      "review_source": "ram_filesystem_review.json; A035612A..6162 source buffer -> file write",
+      "expected": -1,
+      "index": 9,
+      "started_utc": "2026-10-29T21:50:26.491940+00:00",
+      "response_file": "0009-udws_ustd_sizeof_ram_codex_event_r6_bin.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T21:50:27.045856+00:00",
+      "elapsed_seconds": 0.553,
+      "response_bytes": 83,
+      "response_sha256": "7e0f56170066352f8bc5a5c071280fe8be11d66e9689b4993710e2789ba64a63",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "errors": []
+      }
+    }
+  ]
+}

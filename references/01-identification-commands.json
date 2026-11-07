@@ -1,0 +1,8 @@
+[
+  {"command":"udws \"bio.rev_str;\"", "purpose":"Running firmware revision", "classification":"information-query"},
+  {"command":"udws \"bio.base_rev_str;\"", "purpose":"Base firmware revision", "classification":"information-query"},
+  {"command":"udws \"bdid.get_board_id;\"", "purpose":"Physical board identity", "classification":"information-query"},
+  {"command":"udws \"bdid.get_mapped_board_id;\"", "purpose":"Mapped board identity", "classification":"information-query"},
+  {"command":"udws \"shm.msecs;\"", "purpose":"Uptime", "classification":"information-query"},
+  {"command":"udws \"udw.cmds;\"", "purpose":"Discover command-list usage", "classification":"command-discovery", "timeout":45}
+]

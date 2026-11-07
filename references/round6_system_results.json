@@ -1,0 +1,41 @@
+{
+  "source": "physical-70-heap-block-flags",
+  "serial_access": "none",
+  "review_source": "round6_system_review.json",
+  "review_sha256": "e1771739e4070d2b42e77a70577884d8c816e970f08034e25cdf81d7f9c9ebcd",
+  "responses": [
+    {
+      "response_file": "physical-70-heap-block-flags/0001-udws_heapmgr_log_block_0_16777216_1.bin",
+      "response_sha256": "c83a0675a5db9c34be93aca90047d7bb5d1051295dc5e8261e6e438522846069",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "fields": {
+          "key_words": [
+            "0x00000000",
+            "0x01000000",
+            "0x00000001"
+          ],
+          "purgeable": false,
+          "locked": false,
+          "priority_major_raw": 1,
+          "priority_minor_raw": 0,
+          "pin_count": 0,
+          "size_bytes": 16928
+        },
+        "header_fixed_fields_match": true,
+        "pin_count_matches_prior_snapshot": false
+      }
+    }
+  ],
+  "response_revalidations": [
+    {
+      "response_file": "physical-70-heap-block-flags/0001-udws_heapmgr_log_block_0_16777216_1.bin",
+      "response_sha256": "c83a0675a5db9c34be93aca90047d7bb5d1051295dc5e8261e6e438522846069",
+      "valid": true,
+      "assessment": "validated-live-allocator-block-metadata",
+      "note": "Real root-directory block key. Identity, purgeability, lock, both priority bytes and size match independently captured live header; pin count is a time-dependent field. Complete single-line payload and normal return verified."
+    }
+  ],
+  "data_quality": []
+}

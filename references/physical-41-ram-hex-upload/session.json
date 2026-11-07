@@ -1,0 +1,181 @@
+{
+  "started_utc": "2026-10-29T20:15:50.759010+00:00",
+  "port": "COM16",
+  "baud": 115200,
+  "data_bits": 8,
+  "parity": "N",
+  "stop_bits": 1,
+  "line_ending": "CRLF",
+  "source": "physical UART",
+  "rts": false,
+  "dtr": false,
+  "tx_character_delay_seconds": 0.003,
+  "capture_program_sha256": "685d8b07cd5afafeba32f37eb5722416458a08dafe09290576957e50b31bdb03",
+  "requested_rx_buffer_bytes": 1048576,
+  "requested_tx_buffer_bytes": 65536,
+  "initial_prompt_seen": true,
+  "stop_reason": "batch-complete",
+  "ended_utc": "2026-10-29T20:15:55.794430+00:00",
+  "commands": [
+    {
+      "command": "udws \"ram.file_write /ram/codex_hex_test 8 3031323334353637;\"",
+      "classification": "reviewed-owned-ram-file-operation",
+      "purpose": "Upload eight bytes using sixteen inline hexadecimal digits. Both destination and firmware scratch path were absent in session40. Handler closes both descriptors and unlinks its scratch file.",
+      "timeout": 20,
+      "scope": [
+        "/ram/codex_hex_test",
+        "/ram/file_write.tmp"
+      ],
+      "review_source": "2018 disassembly: A0356164..62A8, A046D6C4, A046D7A0; raw input channel proof A03D0224..023A",
+      "index": 1,
+      "started_utc": "2026-10-29T20:15:51.451389+00:00",
+      "response_file": "0001-udws_ram_file_write_ram_codex_hex_test_8_3031323334353637.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:15:52.082009+00:00",
+      "elapsed_seconds": 0.63,
+      "response_bytes": 101,
+      "response_sha256": "737cd3aefd908059e46c1cf4e5cf993c99b4a72f21457825df4ceb9dfe4570b8",
+      "prompt_returned": true
+    },
+    {
+      "command": "udws \"ustd.cat /ram/codex_hex_test 0;\"",
+      "classification": "reviewed-owned-ram-file-operation",
+      "purpose": "Read back the eight decoded ASCII bytes.",
+      "timeout": 20,
+      "scope": [
+        "/ram/codex_hex_test",
+        "/ram/file_write.tmp"
+      ],
+      "review_source": "2018 disassembly: A0356164..62A8, A046D6C4, A046D7A0; raw input channel proof A03D0224..023A",
+      "index": 2,
+      "started_utc": "2026-10-29T20:15:52.084106+00:00",
+      "response_file": "0002-udws_ustd_cat_ram_codex_hex_test_0.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:15:52.566385+00:00",
+      "elapsed_seconds": 0.481,
+      "response_bytes": 83,
+      "response_sha256": "b0700c748a138aaae7c74f7e3dd07e838e16d22b856e9d45b5476536041c189b",
+      "prompt_returned": true
+    },
+    {
+      "command": "udws \"ustd.sizeof /ram/codex_hex_test;\"",
+      "classification": "reviewed-owned-ram-file-operation",
+      "purpose": "Check the decoded file size.",
+      "timeout": 20,
+      "scope": [
+        "/ram/codex_hex_test",
+        "/ram/file_write.tmp"
+      ],
+      "review_source": "2018 disassembly: A0356164..62A8, A046D6C4, A046D7A0; raw input channel proof A03D0224..023A",
+      "index": 3,
+      "started_utc": "2026-10-29T20:15:52.568186+00:00",
+      "response_file": "0003-udws_ustd_sizeof_ram_codex_hex_test.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:15:53.127350+00:00",
+      "elapsed_seconds": 0.558,
+      "response_bytes": 78,
+      "response_sha256": "0872f87fd5e9cab334662dde9703651814ef32e0276fe74622ba337ef9fd7bc7",
+      "prompt_returned": true
+    },
+    {
+      "command": "udws \"ustd.short_name /ram/codex_hex_test;\"",
+      "classification": "reviewed-owned-ram-file-operation",
+      "purpose": "Query short-name metadata of our test file through ioctl19.",
+      "timeout": 20,
+      "scope": [
+        "/ram/codex_hex_test",
+        "/ram/file_write.tmp"
+      ],
+      "review_source": "2018 disassembly: A0356164..62A8, A046D6C4, A046D7A0; raw input channel proof A03D0224..023A",
+      "index": 4,
+      "started_utc": "2026-10-29T20:15:53.129538+00:00",
+      "response_file": "0004-udws_ustd_short_name_ram_codex_hex_test.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:15:53.684756+00:00",
+      "elapsed_seconds": 0.554,
+      "response_bytes": 124,
+      "response_sha256": "a839db5d9aefbadb948868892e7c9386c5ebeca3ba13c84a6642aa918354e0ef",
+      "prompt_returned": true
+    },
+    {
+      "command": "udws \"ustd.long_name /ram/codex_hex_test;\"",
+      "classification": "reviewed-owned-ram-file-operation",
+      "purpose": "Query long-name metadata of our test file through ioctl18.",
+      "timeout": 20,
+      "scope": [
+        "/ram/codex_hex_test",
+        "/ram/file_write.tmp"
+      ],
+      "review_source": "2018 disassembly: A0356164..62A8, A046D6C4, A046D7A0; raw input channel proof A03D0224..023A",
+      "index": 5,
+      "started_utc": "2026-10-29T20:15:53.686936+00:00",
+      "response_file": "0005-udws_ustd_long_name_ram_codex_hex_test.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:15:54.256721+00:00",
+      "elapsed_seconds": 0.568,
+      "response_bytes": 128,
+      "response_sha256": "79862413c578c1b7e2835ed9310b3f2f86ace74dc9c859272d0ad2be47088a06",
+      "prompt_returned": true
+    },
+    {
+      "command": "udws \"ustd.sizeof /ram/file_write.tmp;\"",
+      "classification": "reviewed-owned-ram-file-operation",
+      "purpose": "Verify firmware removed its temporary scratch file.",
+      "timeout": 20,
+      "scope": [
+        "/ram/codex_hex_test",
+        "/ram/file_write.tmp"
+      ],
+      "review_source": "2018 disassembly: A0356164..62A8, A046D6C4, A046D7A0; raw input channel proof A03D0224..023A",
+      "index": 6,
+      "started_utc": "2026-10-29T20:15:54.258346+00:00",
+      "response_file": "0006-udws_ustd_sizeof_ram_file_write_tmp.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:15:54.823709+00:00",
+      "elapsed_seconds": 0.564,
+      "response_bytes": 79,
+      "response_sha256": "de2b0f1aa060567b5acd6893fe701067ab1b337b76c06a661d929392122e6cd7",
+      "prompt_returned": true
+    },
+    {
+      "command": "udws \"ram.unlink /ram/codex_hex_test;\"",
+      "classification": "reviewed-owned-ram-file-operation",
+      "purpose": "Delete only the test file created by this batch.",
+      "timeout": 20,
+      "scope": [
+        "/ram/codex_hex_test",
+        "/ram/file_write.tmp"
+      ],
+      "review_source": "2018 disassembly: A0356164..62A8, A046D6C4, A046D7A0; raw input channel proof A03D0224..023A",
+      "index": 7,
+      "started_utc": "2026-10-29T20:15:54.825841+00:00",
+      "response_file": "0007-udws_ram_unlink_ram_codex_hex_test.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:15:55.294641+00:00",
+      "elapsed_seconds": 0.468,
+      "response_bytes": 77,
+      "response_sha256": "fc8d4024514f7e6231bdb340648f3af7e1e72bf23d3607378101743ebf32ce2e",
+      "prompt_returned": true
+    },
+    {
+      "command": "udws \"ustd.ls /ram;\"",
+      "classification": "reviewed-owned-ram-file-operation",
+      "purpose": "Verify no upload or scratch files remain in the RAM root.",
+      "timeout": 20,
+      "scope": [
+        "/ram/codex_hex_test",
+        "/ram/file_write.tmp"
+      ],
+      "review_source": "2018 disassembly: A0356164..62A8, A046D6C4, A046D7A0; raw input channel proof A03D0224..023A",
+      "index": 8,
+      "started_utc": "2026-10-29T20:15:55.296501+00:00",
+      "response_file": "0008-udws_ustd_ls_ram.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:15:55.792061+00:00",
+      "elapsed_seconds": 0.494,
+      "response_bytes": 568,
+      "response_sha256": "db6a62fca215b4d192d717ed63dc807c7bcdc71f93e161c25e6632132d859a59",
+      "prompt_returned": true
+    }
+  ]
+}

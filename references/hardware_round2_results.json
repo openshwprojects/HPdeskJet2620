@@ -1,0 +1,2228 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-10-29T20:13:53.630378+00:00",
+  "provenance": {
+    "source": "physical UART capture checked against2018 firmware",
+    "capture": "references/physical-31-hardware-status/session.json",
+    "capture_sha256": "3a1e30b554884787d80b9107af5d9a5d28e6cdee1fc54249514fbea2d478ceb4",
+    "image": "artifacts/ghs/dram.bin",
+    "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+    "serial_access_by_reviewer": "none"
+  },
+  "summary": {
+    "physical_commands": 74,
+    "prompt_returned": 74,
+    "unique_handlers": 54,
+    "scanner_config_rows": 197,
+    "scanner_config_indices_complete": true,
+    "scanner_config_rows_match_firmware": true
+  },
+  "response_revalidations": [
+    {
+      "response_file": "references/physical-31-hardware-status/0033-udws_scan_firms_tables.bin",
+      "response_sha256": "0fdad4a0e8e159cd69b2474fa9a68f978f66f0529ca3a3977741177a85080f67",
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-scanner-firmware-metadata-table",
+      "note": "Exactly197 rows, unique ordered indices0..196. All three integer columns, kind andname match the verified2018 table atA05FCE34, stride20. Prompt returned."
+    }
+  ],
+  "data_quality": [
+    {
+      "response_file": "references/physical-31-hardware-status/0033-udws_scan_firms_tables.bin",
+      "response_sha256": "0fdad4a0e8e159cd69b2474fa9a68f978f66f0529ca3a3977741177a85080f67",
+      "complete": true,
+      "assessment": "compiled-configuration-metadata-not-current-values",
+      "note": "scan firms tables prints197 compiled descriptors. Integer columns appear to be default/min/max; this semantic labeling is inferred. It does not read the current configuration values through the service getters."
+    }
+  ],
+  "scanner_configuration_table": {
+    "command": "udws \"scan firms tables;\"",
+    "response_file": "references/physical-31-hardware-status/0033-udws_scan_firms_tables.bin",
+    "response_sha256": "0fdad4a0e8e159cd69b2474fa9a68f978f66f0529ca3a3977741177a85080f67",
+    "row_count": 197,
+    "indices": [
+      0,
+      196
+    ],
+    "row_format": "index: integer_column1 integer_column2 integer_column3 kind SCAN.symbol",
+    "likely_integer_column_semantics": [
+      "default",
+      "minimum",
+      "maximum"
+    ],
+    "semantic_labels_inferred": true,
+    "rom_base": "0xa05fce34",
+    "rom_stride_bytes": 20,
+    "mismatches": [],
+    "rows": [
+      {
+        "index": 0,
+        "integer_columns": [
+          0,
+          0,
+          0
+        ],
+        "kind": 4,
+        "name": "SCAN.UNUSED",
+        "firmware_table_address": "0xa05fce34"
+      },
+      {
+        "index": 1,
+        "integer_columns": [
+          0,
+          0,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_AFE_MCLK_FREQ",
+        "firmware_table_address": "0xa05fce48"
+      },
+      {
+        "index": 2,
+        "integer_columns": [
+          0,
+          -1,
+          31
+        ],
+        "kind": 1,
+        "name": "SCAN.SC_FIRMS_AFE_TRAIN_FREQ_REG_VAL",
+        "firmware_table_address": "0xa05fce5c"
+      },
+      {
+        "index": 3,
+        "integer_columns": [
+          0,
+          0,
+          1000
+        ],
+        "kind": 2,
+        "name": "SCAN.SC_FIRMS_MAX_FLATBED_IPS_TENTHS",
+        "firmware_table_address": "0xa05fce70"
+      },
+      {
+        "index": 4,
+        "integer_columns": [
+          0,
+          0,
+          1000
+        ],
+        "kind": 2,
+        "name": "SCAN.SC_FIRMS_MAX_ADF_IPS_TENTHS",
+        "firmware_table_address": "0xa05fce84"
+      },
+      {
+        "index": 5,
+        "integer_columns": [
+          0,
+          -300,
+          300
+        ],
+        "kind": 3,
+        "name": "SCAN.SC_FIRMS_ADF_DOC_X_TWEAK2",
+        "firmware_table_address": "0xa05fce98"
+      },
+      {
+        "index": 6,
+        "integer_columns": [
+          -1,
+          -1,
+          10
+        ],
+        "kind": 1,
+        "name": "SCAN.SC_FIRMS_LVDS_DISABLE_FOR_SCANNER_IDLE",
+        "firmware_table_address": "0xa05fceac"
+      },
+      {
+        "index": 7,
+        "integer_columns": [
+          -1,
+          -1,
+          1
+        ],
+        "kind": 1,
+        "name": "SCAN.SC_FIRMS_WIDTH_DETECT_ENABLE",
+        "firmware_table_address": "0xa05fcec0"
+      },
+      {
+        "index": 8,
+        "integer_columns": [
+          -1,
+          -1,
+          32767
+        ],
+        "kind": 3,
+        "name": "SCAN.SC_FIRMS_JM_MEM_RETURN",
+        "firmware_table_address": "0xa05fced4"
+      },
+      {
+        "index": 9,
+        "integer_columns": [
+          65535,
+          0,
+          65535
+        ],
+        "kind": 2,
+        "name": "SCAN.SC_FIRMS_TRIM_CHIP_EDGE_PIXELS",
+        "firmware_table_address": "0xa05fcee8"
+      },
+      {
+        "index": 10,
+        "integer_columns": [
+          -1,
+          -1,
+          32767
+        ],
+        "kind": 3,
+        "name": "SCAN.SC_FIRMS_BOISE_PAUSE_TICKS",
+        "firmware_table_address": "0xa05fcefc"
+      },
+      {
+        "index": 11,
+        "integer_columns": [
+          0,
+          -32768,
+          32767
+        ],
+        "kind": 3,
+        "name": "SCAN.SC_FIRMS_DOC_X_TWEAK",
+        "firmware_table_address": "0xa05fcf10"
+      },
+      {
+        "index": 12,
+        "integer_columns": [
+          0,
+          -32768,
+          32767
+        ],
+        "kind": 3,
+        "name": "SCAN.SC_FIRMS_DOC_Y_TWEAK",
+        "firmware_table_address": "0xa05fcf24"
+      },
+      {
+        "index": 13,
+        "integer_columns": [
+          0,
+          -150,
+          150
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_ADF_DOC_X_TWEAK",
+        "firmware_table_address": "0xa05fcf38"
+      },
+      {
+        "index": 14,
+        "integer_columns": [
+          -1,
+          -1,
+          127
+        ],
+        "kind": 1,
+        "name": "SCAN.SC_FIRMS_SCANSM_RECAL_ENABLE",
+        "firmware_table_address": "0xa05fcf4c"
+      },
+      {
+        "index": 15,
+        "integer_columns": [
+          -1,
+          -1,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_SCANSM_RECAL_PRNU_LOCKOUT",
+        "firmware_table_address": "0xa05fcf60"
+      },
+      {
+        "index": 16,
+        "integer_columns": [
+          -1,
+          -1,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_SCANSM_RECAL_TALIGN_LOCKOUT",
+        "firmware_table_address": "0xa05fcf74"
+      },
+      {
+        "index": 17,
+        "integer_columns": [
+          -1,
+          -1,
+          1
+        ],
+        "kind": 1,
+        "name": "SCAN.SC_FIRMS_TALIGN_RECAL_ENABLE",
+        "firmware_table_address": "0xa05fcf88"
+      },
+      {
+        "index": 18,
+        "integer_columns": [
+          -1,
+          -1,
+          127
+        ],
+        "kind": 1,
+        "name": "SCAN.SC_FIRMS_CISSM_RECAL_ENABLE",
+        "firmware_table_address": "0xa05fcf9c"
+      },
+      {
+        "index": 19,
+        "integer_columns": [
+          -1,
+          -1,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CISSM_RECAL_IDLE_TIMEOUT",
+        "firmware_table_address": "0xa05fcfb0"
+      },
+      {
+        "index": 20,
+        "integer_columns": [
+          0,
+          -1,
+          1
+        ],
+        "kind": 1,
+        "name": "SCAN.SC_FIRMS_DISABLE_ALL_THERMAL_RECAL",
+        "firmware_table_address": "0xa05fcfc4"
+      },
+      {
+        "index": 21,
+        "integer_columns": [
+          -1,
+          -1,
+          127
+        ],
+        "kind": 1,
+        "name": "SCAN.SC_FIRMS_JOB_LOG_MODE",
+        "firmware_table_address": "0xa05fcfd8"
+      },
+      {
+        "index": 22,
+        "integer_columns": [
+          -1,
+          -1,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CISSM_RECAL_IDLE_TIMEOUT_DAY",
+        "firmware_table_address": "0xa05fcfec"
+      },
+      {
+        "index": 23,
+        "integer_columns": [
+          -1,
+          -1,
+          1
+        ],
+        "kind": 1,
+        "name": "SCAN.SC_FIRMS_TALIGN_FULL_Y_ALIGN",
+        "firmware_table_address": "0xa05fd000"
+      },
+      {
+        "index": 24,
+        "integer_columns": [
+          -1,
+          -1,
+          32767
+        ],
+        "kind": 3,
+        "name": "SCAN.SC_FIRMS_CISSM_RECAL_DELAY_TICKS",
+        "firmware_table_address": "0xa05fd014"
+      },
+      {
+        "index": 25,
+        "integer_columns": [
+          -1,
+          -1,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_LMW_GAIN_ADJUST_JOB_TIMEOUT",
+        "firmware_table_address": "0xa05fd028"
+      },
+      {
+        "index": 26,
+        "integer_columns": [
+          -1,
+          -1,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_LMW_GAIN_ADJUST_RECAL_TIMEOUT",
+        "firmware_table_address": "0xa05fd03c"
+      },
+      {
+        "index": 27,
+        "integer_columns": [
+          -1,
+          -1,
+          127
+        ],
+        "kind": 1,
+        "name": "SCAN.SC_FIRMS_LMW_GAIN_ADJUST_DGAIN_THRESH",
+        "firmware_table_address": "0xa05fd050"
+      },
+      {
+        "index": 28,
+        "integer_columns": [
+          -1,
+          -1,
+          200
+        ],
+        "kind": 3,
+        "name": "SCAN.SC_FIRMS_LMW_GAIN_ADJUST_DGAIN_MIN",
+        "firmware_table_address": "0xa05fd064"
+      },
+      {
+        "index": 29,
+        "integer_columns": [
+          -1,
+          -1,
+          200
+        ],
+        "kind": 3,
+        "name": "SCAN.SC_FIRMS_LMW_GAIN_ADJUST_DGAIN_MAX",
+        "firmware_table_address": "0xa05fd078"
+      },
+      {
+        "index": 30,
+        "integer_columns": [
+          -1,
+          -1,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_END_PAGE_PAST_USEC",
+        "firmware_table_address": "0xa05fd08c"
+      },
+      {
+        "index": 31,
+        "integer_columns": [
+          -1,
+          -1,
+          1
+        ],
+        "kind": 1,
+        "name": "SCAN.SC_FIRMS_SKIP_POWER_ON_CALS",
+        "firmware_table_address": "0xa05fd0a0"
+      },
+      {
+        "index": 32,
+        "integer_columns": [
+          -1,
+          -1,
+          1
+        ],
+        "kind": 1,
+        "name": "SCAN.SC_FIRMS_CAL_ON_ADF_WHITE",
+        "firmware_table_address": "0xa05fd0b4"
+      },
+      {
+        "index": 33,
+        "integer_columns": [
+          -1,
+          -1,
+          1
+        ],
+        "kind": 1,
+        "name": "SCAN.SC_FIRMS_MFG_MODE",
+        "firmware_table_address": "0xa05fd0c8"
+      },
+      {
+        "index": 34,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_WAKEUP_SANITY_THRESHOLDS",
+        "firmware_table_address": "0xa05fd0dc"
+      },
+      {
+        "index": 35,
+        "integer_columns": [
+          0,
+          0,
+          255
+        ],
+        "kind": 0,
+        "name": "SCAN.SC_FIRMS_LED_AFE_CAL_RETRY_LIMIT0",
+        "firmware_table_address": "0xa05fd0f0"
+      },
+      {
+        "index": 36,
+        "integer_columns": [
+          0,
+          0,
+          255
+        ],
+        "kind": 0,
+        "name": "SCAN.SC_FIRMS_LED_AFE_CAL_RETRY_LIMIT1",
+        "firmware_table_address": "0xa05fd104"
+      },
+      {
+        "index": 37,
+        "integer_columns": [
+          0,
+          0,
+          10000
+        ],
+        "kind": 2,
+        "name": "SCAN.SC_FIRMS_LED_AFE_CAL_RETRY_GAIN_THRESHOLD",
+        "firmware_table_address": "0xa05fd118"
+      },
+      {
+        "index": 38,
+        "integer_columns": [
+          -1,
+          -1,
+          1
+        ],
+        "kind": 1,
+        "name": "SCAN.SC_FIRMS_LED_AFE_CAL_RETRY_ENABLE",
+        "firmware_table_address": "0xa05fd12c"
+      },
+      {
+        "index": 39,
+        "integer_columns": [
+          0,
+          0,
+          32000
+        ],
+        "kind": 2,
+        "name": "SCAN.SC_FIRMS_REF_MARK_H_THRESH",
+        "firmware_table_address": "0xa05fd140"
+      },
+      {
+        "index": 40,
+        "integer_columns": [
+          0,
+          0,
+          32000
+        ],
+        "kind": 2,
+        "name": "SCAN.SC_FIRMS_REF_MARK_V_THRESH",
+        "firmware_table_address": "0xa05fd154"
+      },
+      {
+        "index": 41,
+        "integer_columns": [
+          0,
+          -600,
+          600
+        ],
+        "kind": 3,
+        "name": "SCAN.SC_FIRMS_REF_MARK_FIND_LEFT_ADJUST",
+        "firmware_table_address": "0xa05fd168"
+      },
+      {
+        "index": 42,
+        "integer_columns": [
+          0,
+          -255,
+          255
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_START_TG_DELAY_MONO_300",
+        "firmware_table_address": "0xa05fd17c"
+      },
+      {
+        "index": 43,
+        "integer_columns": [
+          0,
+          -255,
+          255
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_START_TG_DELAY_COLOR_300",
+        "firmware_table_address": "0xa05fd190"
+      },
+      {
+        "index": 44,
+        "integer_columns": [
+          0,
+          -255,
+          255
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_START_TG_DELAY_MONO_600",
+        "firmware_table_address": "0xa05fd1a4"
+      },
+      {
+        "index": 45,
+        "integer_columns": [
+          0,
+          -255,
+          255
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_START_TG_DELAY_COLOR_600",
+        "firmware_table_address": "0xa05fd1b8"
+      },
+      {
+        "index": 46,
+        "integer_columns": [
+          0,
+          -255,
+          255
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_START_TG_DELAY_1200",
+        "firmware_table_address": "0xa05fd1cc"
+      },
+      {
+        "index": 47,
+        "integer_columns": [
+          0,
+          -255,
+          255
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_STOP_TG_DELAY_MONO_300",
+        "firmware_table_address": "0xa05fd1e0"
+      },
+      {
+        "index": 48,
+        "integer_columns": [
+          0,
+          -255,
+          255
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_STOP_TG_DELAY_COLOR_300",
+        "firmware_table_address": "0xa05fd1f4"
+      },
+      {
+        "index": 49,
+        "integer_columns": [
+          0,
+          -255,
+          255
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_STOP_TG_DELAY_MONO_600",
+        "firmware_table_address": "0xa05fd208"
+      },
+      {
+        "index": 50,
+        "integer_columns": [
+          0,
+          -255,
+          255
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_STOP_TG_DELAY_COLOR_600",
+        "firmware_table_address": "0xa05fd21c"
+      },
+      {
+        "index": 51,
+        "integer_columns": [
+          0,
+          -255,
+          255
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_STOP_TG_DELAY_1200",
+        "firmware_table_address": "0xa05fd230"
+      },
+      {
+        "index": 52,
+        "integer_columns": [
+          65535,
+          0,
+          65535
+        ],
+        "kind": 2,
+        "name": "SCAN.SC_FIRMS_OVERRIDE_RANGE_0_SENSOR_MODULE",
+        "firmware_table_address": "0xa05fd244"
+      },
+      {
+        "index": 53,
+        "integer_columns": [
+          65535,
+          0,
+          65535
+        ],
+        "kind": 2,
+        "name": "SCAN.SC_FIRMS_OVERRIDE_RANGE_1_SENSOR_MODULE",
+        "firmware_table_address": "0xa05fd258"
+      },
+      {
+        "index": 54,
+        "integer_columns": [
+          65535,
+          0,
+          65535
+        ],
+        "kind": 2,
+        "name": "SCAN.SC_FIRMS_OVERRIDE_RANGE_2_SENSOR_MODULE",
+        "firmware_table_address": "0xa05fd26c"
+      },
+      {
+        "index": 55,
+        "integer_columns": [
+          65535,
+          0,
+          65535
+        ],
+        "kind": 2,
+        "name": "SCAN.SC_FIRMS_OVERRIDE_RANGE_3_SENSOR_MODULE",
+        "firmware_table_address": "0xa05fd280"
+      },
+      {
+        "index": 56,
+        "integer_columns": [
+          0,
+          -600,
+          600
+        ],
+        "kind": 3,
+        "name": "SCAN.SC_FIRMS_REF_MARK_FIND_RIGHT_ADJUST",
+        "firmware_table_address": "0xa05fd294"
+      },
+      {
+        "index": 57,
+        "integer_columns": [
+          0,
+          0,
+          255
+        ],
+        "kind": 0,
+        "name": "SCAN.SC_FIRMS_SCIF_EDGE_SANITY",
+        "firmware_table_address": "0xa05fd2a8"
+      },
+      {
+        "index": 58,
+        "integer_columns": [
+          -1,
+          -1,
+          2
+        ],
+        "kind": 1,
+        "name": "SCAN.SC_FIRMS_BOLT2_LED_DRIVE",
+        "firmware_table_address": "0xa05fd2bc"
+      },
+      {
+        "index": 59,
+        "integer_columns": [
+          -1,
+          -1,
+          1
+        ],
+        "kind": 1,
+        "name": "SCAN.SC_FIRMS_DASHER_DITHER_SYNC_ENABLE",
+        "firmware_table_address": "0xa05fd2d0"
+      },
+      {
+        "index": 60,
+        "integer_columns": [
+          -1,
+          -1,
+          3
+        ],
+        "kind": 1,
+        "name": "SCAN.SC_FIRMS_DASHER_DITHER_DIGITAL_TRIM",
+        "firmware_table_address": "0xa05fd2e4"
+      },
+      {
+        "index": 61,
+        "integer_columns": [
+          0,
+          -1,
+          1
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_QUAD_PRNU",
+        "firmware_table_address": "0xa05fd2f8"
+      },
+      {
+        "index": 62,
+        "integer_columns": [
+          0,
+          0,
+          255
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_DITHER_TG_EXP_TIME",
+        "firmware_table_address": "0xa05fd30c"
+      },
+      {
+        "index": 63,
+        "integer_columns": [
+          0,
+          0,
+          255
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CLAMP_AVERAGE",
+        "firmware_table_address": "0xa05fd320"
+      },
+      {
+        "index": 64,
+        "integer_columns": [
+          1,
+          0,
+          255
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_ILLUM_HIST_AVG_NUM_PIXS",
+        "firmware_table_address": "0xa05fd334"
+      },
+      {
+        "index": 65,
+        "integer_columns": [
+          0,
+          0,
+          255
+        ],
+        "kind": 0,
+        "name": "SCAN.SC_FIRMS_WEAK_PIXEL_NAVG",
+        "firmware_table_address": "0xa05fd348"
+      },
+      {
+        "index": 66,
+        "integer_columns": [
+          0,
+          0,
+          255
+        ],
+        "kind": 0,
+        "name": "SCAN.SC_FIRMS_WEAK_PIXEL_CLEAN_THRESH",
+        "firmware_table_address": "0xa05fd35c"
+      },
+      {
+        "index": 67,
+        "integer_columns": [
+          0,
+          0,
+          255
+        ],
+        "kind": 0,
+        "name": "SCAN.SC_FIRMS_WEAK_PIXEL_DIRTY_THRESH",
+        "firmware_table_address": "0xa05fd370"
+      },
+      {
+        "index": 68,
+        "integer_columns": [
+          0,
+          0,
+          255
+        ],
+        "kind": 0,
+        "name": "SCAN.SC_FIRMS_WEAK_PIXEL_DEADZONE",
+        "firmware_table_address": "0xa05fd384"
+      },
+      {
+        "index": 69,
+        "integer_columns": [
+          0,
+          0,
+          255
+        ],
+        "kind": 0,
+        "name": "SCAN.SC_FIRMS_WEAK_PIXEL_MAX_DIP_WIDTH",
+        "firmware_table_address": "0xa05fd398"
+      },
+      {
+        "index": 70,
+        "integer_columns": [
+          -1,
+          -1,
+          127
+        ],
+        "kind": 1,
+        "name": "SCAN.SC_FIRMS_TIER0_PATH",
+        "firmware_table_address": "0xa05fd3ac"
+      },
+      {
+        "index": 71,
+        "integer_columns": [
+          0,
+          0,
+          255
+        ],
+        "kind": 0,
+        "name": "SCAN.SC_FIRMS_WAKEUP_SANITY_RETRY_LIMIT",
+        "firmware_table_address": "0xa05fd3c0"
+      },
+      {
+        "index": 72,
+        "integer_columns": [
+          0,
+          0,
+          1
+        ],
+        "kind": 0,
+        "name": "SCAN.SC_FIRMS_FIX_UNGROUNDED_NOISE",
+        "firmware_table_address": "0xa05fd3d4"
+      },
+      {
+        "index": 73,
+        "integer_columns": [
+          0,
+          0,
+          100
+        ],
+        "kind": 0,
+        "name": "SCAN.SC_FIRMS_SENSOR_TARGET_VERSION",
+        "firmware_table_address": "0xa05fd3e8"
+      },
+      {
+        "index": 74,
+        "integer_columns": [
+          65535,
+          0,
+          65535
+        ],
+        "kind": 2,
+        "name": "SCAN.SC_FIRMS_WAKEUP_SANITY_FRONT_TRIGGER_COUNT",
+        "firmware_table_address": "0xa05fd3fc"
+      },
+      {
+        "index": 75,
+        "integer_columns": [
+          65535,
+          0,
+          65535
+        ],
+        "kind": 2,
+        "name": "SCAN.SC_FIRMS_WAKEUP_SANITY_BACK_TRIGGER_COUNT",
+        "firmware_table_address": "0xa05fd410"
+      },
+      {
+        "index": 76,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_WAKEUP_SANITY_FRONT_TRIGGER_SECONDS",
+        "firmware_table_address": "0xa05fd424"
+      },
+      {
+        "index": 77,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_WAKEUP_SANITY_BACK_TRIGGER_SECONDS",
+        "firmware_table_address": "0xa05fd438"
+      },
+      {
+        "index": 78,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_00",
+        "firmware_table_address": "0xa05fd44c"
+      },
+      {
+        "index": 79,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_01",
+        "firmware_table_address": "0xa05fd460"
+      },
+      {
+        "index": 80,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_02",
+        "firmware_table_address": "0xa05fd474"
+      },
+      {
+        "index": 81,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_03",
+        "firmware_table_address": "0xa05fd488"
+      },
+      {
+        "index": 82,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_04",
+        "firmware_table_address": "0xa05fd49c"
+      },
+      {
+        "index": 83,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_05",
+        "firmware_table_address": "0xa05fd4b0"
+      },
+      {
+        "index": 84,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_06",
+        "firmware_table_address": "0xa05fd4c4"
+      },
+      {
+        "index": 85,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_07",
+        "firmware_table_address": "0xa05fd4d8"
+      },
+      {
+        "index": 86,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_08",
+        "firmware_table_address": "0xa05fd4ec"
+      },
+      {
+        "index": 87,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_09",
+        "firmware_table_address": "0xa05fd500"
+      },
+      {
+        "index": 88,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_10",
+        "firmware_table_address": "0xa05fd514"
+      },
+      {
+        "index": 89,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_11",
+        "firmware_table_address": "0xa05fd528"
+      },
+      {
+        "index": 90,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_12",
+        "firmware_table_address": "0xa05fd53c"
+      },
+      {
+        "index": 91,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_13",
+        "firmware_table_address": "0xa05fd550"
+      },
+      {
+        "index": 92,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_14",
+        "firmware_table_address": "0xa05fd564"
+      },
+      {
+        "index": 93,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_15",
+        "firmware_table_address": "0xa05fd578"
+      },
+      {
+        "index": 94,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_16",
+        "firmware_table_address": "0xa05fd58c"
+      },
+      {
+        "index": 95,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_17",
+        "firmware_table_address": "0xa05fd5a0"
+      },
+      {
+        "index": 96,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_18",
+        "firmware_table_address": "0xa05fd5b4"
+      },
+      {
+        "index": 97,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_19",
+        "firmware_table_address": "0xa05fd5c8"
+      },
+      {
+        "index": 98,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_20",
+        "firmware_table_address": "0xa05fd5dc"
+      },
+      {
+        "index": 99,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_21",
+        "firmware_table_address": "0xa05fd5f0"
+      },
+      {
+        "index": 100,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_22",
+        "firmware_table_address": "0xa05fd604"
+      },
+      {
+        "index": 101,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_23",
+        "firmware_table_address": "0xa05fd618"
+      },
+      {
+        "index": 102,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_24",
+        "firmware_table_address": "0xa05fd62c"
+      },
+      {
+        "index": 103,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_25",
+        "firmware_table_address": "0xa05fd640"
+      },
+      {
+        "index": 104,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_26",
+        "firmware_table_address": "0xa05fd654"
+      },
+      {
+        "index": 105,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_27",
+        "firmware_table_address": "0xa05fd668"
+      },
+      {
+        "index": 106,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_28",
+        "firmware_table_address": "0xa05fd67c"
+      },
+      {
+        "index": 107,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_29",
+        "firmware_table_address": "0xa05fd690"
+      },
+      {
+        "index": 108,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_30",
+        "firmware_table_address": "0xa05fd6a4"
+      },
+      {
+        "index": 109,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_31",
+        "firmware_table_address": "0xa05fd6b8"
+      },
+      {
+        "index": 110,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_32",
+        "firmware_table_address": "0xa05fd6cc"
+      },
+      {
+        "index": 111,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_33",
+        "firmware_table_address": "0xa05fd6e0"
+      },
+      {
+        "index": 112,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_34",
+        "firmware_table_address": "0xa05fd6f4"
+      },
+      {
+        "index": 113,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_35",
+        "firmware_table_address": "0xa05fd708"
+      },
+      {
+        "index": 114,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_36",
+        "firmware_table_address": "0xa05fd71c"
+      },
+      {
+        "index": 115,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_37",
+        "firmware_table_address": "0xa05fd730"
+      },
+      {
+        "index": 116,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_38",
+        "firmware_table_address": "0xa05fd744"
+      },
+      {
+        "index": 117,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_39",
+        "firmware_table_address": "0xa05fd758"
+      },
+      {
+        "index": 118,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_40",
+        "firmware_table_address": "0xa05fd76c"
+      },
+      {
+        "index": 119,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_41",
+        "firmware_table_address": "0xa05fd780"
+      },
+      {
+        "index": 120,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_42",
+        "firmware_table_address": "0xa05fd794"
+      },
+      {
+        "index": 121,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_43",
+        "firmware_table_address": "0xa05fd7a8"
+      },
+      {
+        "index": 122,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_44",
+        "firmware_table_address": "0xa05fd7bc"
+      },
+      {
+        "index": 123,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_45",
+        "firmware_table_address": "0xa05fd7d0"
+      },
+      {
+        "index": 124,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_46",
+        "firmware_table_address": "0xa05fd7e4"
+      },
+      {
+        "index": 125,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_47",
+        "firmware_table_address": "0xa05fd7f8"
+      },
+      {
+        "index": 126,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_48",
+        "firmware_table_address": "0xa05fd80c"
+      },
+      {
+        "index": 127,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_49",
+        "firmware_table_address": "0xa05fd820"
+      },
+      {
+        "index": 128,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_50",
+        "firmware_table_address": "0xa05fd834"
+      },
+      {
+        "index": 129,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_51",
+        "firmware_table_address": "0xa05fd848"
+      },
+      {
+        "index": 130,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_52",
+        "firmware_table_address": "0xa05fd85c"
+      },
+      {
+        "index": 131,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_53",
+        "firmware_table_address": "0xa05fd870"
+      },
+      {
+        "index": 132,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_54",
+        "firmware_table_address": "0xa05fd884"
+      },
+      {
+        "index": 133,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_55",
+        "firmware_table_address": "0xa05fd898"
+      },
+      {
+        "index": 134,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_56",
+        "firmware_table_address": "0xa05fd8ac"
+      },
+      {
+        "index": 135,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_57",
+        "firmware_table_address": "0xa05fd8c0"
+      },
+      {
+        "index": 136,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_58",
+        "firmware_table_address": "0xa05fd8d4"
+      },
+      {
+        "index": 137,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_59",
+        "firmware_table_address": "0xa05fd8e8"
+      },
+      {
+        "index": 138,
+        "integer_columns": [
+          -1,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_CIS_LAST",
+        "firmware_table_address": "0xa05fd8fc"
+      },
+      {
+        "index": 139,
+        "integer_columns": [
+          1,
+          0,
+          1
+        ],
+        "kind": 0,
+        "name": "SCAN.SC_FIRMS_DITHER_AVOID_CAL",
+        "firmware_table_address": "0xa05fd910"
+      },
+      {
+        "index": 140,
+        "integer_columns": [
+          0,
+          0,
+          255
+        ],
+        "kind": 0,
+        "name": "SCAN.SC_FIRMS_DITHER_CHANNEL",
+        "firmware_table_address": "0xa05fd924"
+      },
+      {
+        "index": 141,
+        "integer_columns": [
+          1,
+          0,
+          1
+        ],
+        "kind": 0,
+        "name": "SCAN.SC_FIRMS_DASHER_DITHER_ENABLE_TI",
+        "firmware_table_address": "0xa05fd938"
+      },
+      {
+        "index": 142,
+        "integer_columns": [
+          0,
+          0,
+          4
+        ],
+        "kind": 0,
+        "name": "SCAN.SC_FIRMS_DASHER_DITHER_LEVEL_TI",
+        "firmware_table_address": "0xa05fd94c"
+      },
+      {
+        "index": 143,
+        "integer_columns": [
+          1,
+          0,
+          1
+        ],
+        "kind": 0,
+        "name": "SCAN.SC_FIRMS_DASHER_DITHER_ENABLE_WOLFSON",
+        "firmware_table_address": "0xa05fd960"
+      },
+      {
+        "index": 144,
+        "integer_columns": [
+          0,
+          0,
+          4
+        ],
+        "kind": 0,
+        "name": "SCAN.SC_FIRMS_DASHER_DITHER_LEVEL_WOLFSON",
+        "firmware_table_address": "0xa05fd974"
+      },
+      {
+        "index": 145,
+        "integer_columns": [
+          0,
+          0,
+          1
+        ],
+        "kind": 0,
+        "name": "SCAN.SC_FIRMS_DARK_PRNU_LEDFRAC_ENABLE",
+        "firmware_table_address": "0xa05fd988"
+      },
+      {
+        "index": 146,
+        "integer_columns": [
+          0,
+          -2147483648,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_UDW_START",
+        "firmware_table_address": "0xa05fd99c"
+      },
+      {
+        "index": 147,
+        "integer_columns": [
+          0,
+          0,
+          100
+        ],
+        "kind": 1,
+        "name": "SCAN.SC_FIRMS_LED_PERCENT_FOR_GAIN_SET",
+        "firmware_table_address": "0xa05fd9b0"
+      },
+      {
+        "index": 148,
+        "integer_columns": [
+          -1,
+          -1,
+          64000
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_WHITE_LOC_OFFSET",
+        "firmware_table_address": "0xa05fd9c4"
+      },
+      {
+        "index": 149,
+        "integer_columns": [
+          0,
+          0,
+          1
+        ],
+        "kind": 0,
+        "name": "SCAN.SC_FIRMS_DISABLE_HLINE_FIND",
+        "firmware_table_address": "0xa05fd9d8"
+      },
+      {
+        "index": 150,
+        "integer_columns": [
+          0,
+          -255,
+          255
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_START_TG_DELAY_MONO_200",
+        "firmware_table_address": "0xa05fd9ec"
+      },
+      {
+        "index": 151,
+        "integer_columns": [
+          0,
+          -255,
+          255
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_START_TG_DELAY_COLOR_200",
+        "firmware_table_address": "0xa05fda00"
+      },
+      {
+        "index": 152,
+        "integer_columns": [
+          0,
+          -255,
+          255
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_STOP_TG_DELAY_MONO_200",
+        "firmware_table_address": "0xa05fda14"
+      },
+      {
+        "index": 153,
+        "integer_columns": [
+          0,
+          -255,
+          255
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_STOP_TG_DELAY_COLOR_200",
+        "firmware_table_address": "0xa05fda28"
+      },
+      {
+        "index": 154,
+        "integer_columns": [
+          0,
+          0,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_SCIF0_CLK_DELAY_TC",
+        "firmware_table_address": "0xa05fda3c"
+      },
+      {
+        "index": 155,
+        "integer_columns": [
+          -1,
+          -1,
+          10000
+        ],
+        "kind": 3,
+        "name": "SCAN.SC_FIRMS_DASHER_LED_RGB_MONO_GAP_PIXELS",
+        "firmware_table_address": "0xa05fda50"
+      },
+      {
+        "index": 156,
+        "integer_columns": [
+          0,
+          0,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_NOTCH_Y_START",
+        "firmware_table_address": "0xa05fda64"
+      },
+      {
+        "index": 157,
+        "integer_columns": [
+          -1,
+          -1,
+          1
+        ],
+        "kind": 1,
+        "name": "SCAN.SC_FIRMS_DO_NOTCH_FW_PRNU",
+        "firmware_table_address": "0xa05fda78"
+      },
+      {
+        "index": 158,
+        "integer_columns": [
+          -1,
+          -1,
+          1
+        ],
+        "kind": 1,
+        "name": "SCAN.SC_FIRMS_HOME_SAVE_RESTORE_ENABLE",
+        "firmware_table_address": "0xa05fda8c"
+      },
+      {
+        "index": 159,
+        "integer_columns": [
+          -1,
+          -1,
+          1
+        ],
+        "kind": 1,
+        "name": "SCAN.SC_FIRMS_LMW_FIND",
+        "firmware_table_address": "0xa05fdaa0"
+      },
+      {
+        "index": 160,
+        "integer_columns": [
+          0,
+          0,
+          65535
+        ],
+        "kind": 2,
+        "name": "SCAN.SC_FIRMS_LMW_NUM_SAMPLES",
+        "firmware_table_address": "0xa05fdab4"
+      },
+      {
+        "index": 161,
+        "integer_columns": [
+          0,
+          0,
+          65535
+        ],
+        "kind": 2,
+        "name": "SCAN.SC_FIRMS_REF_MARK_ILLUM_FACTOR",
+        "firmware_table_address": "0xa05fdac8"
+      },
+      {
+        "index": 162,
+        "integer_columns": [
+          -1,
+          -1,
+          127
+        ],
+        "kind": 1,
+        "name": "SCAN.SC_FIRMS_THERMAL_ENABLE",
+        "firmware_table_address": "0xa05fdadc"
+      },
+      {
+        "index": 163,
+        "integer_columns": [
+          0,
+          0,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_AFE_MCLK_FREQ_BACKSIDE",
+        "firmware_table_address": "0xa05fdaf0"
+      },
+      {
+        "index": 164,
+        "integer_columns": [
+          -1,
+          -1,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_ADF_WALL_LOC",
+        "firmware_table_address": "0xa05fdb04"
+      },
+      {
+        "index": 165,
+        "integer_columns": [
+          0,
+          0,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_LED_MAX_CURRENT_PER_COLOR",
+        "firmware_table_address": "0xa05fdb18"
+      },
+      {
+        "index": 166,
+        "integer_columns": [
+          0,
+          0,
+          255
+        ],
+        "kind": 0,
+        "name": "SCAN.SC_FIRMS_END_PAGE_PAST_LINES",
+        "firmware_table_address": "0xa05fdb2c"
+      },
+      {
+        "index": 167,
+        "integer_columns": [
+          -1,
+          -1,
+          127
+        ],
+        "kind": 1,
+        "name": "SCAN.SC_FIRMS_JACKPOTP_NEW",
+        "firmware_table_address": "0xa05fdb40"
+      },
+      {
+        "index": 168,
+        "integer_columns": [
+          0,
+          0,
+          255
+        ],
+        "kind": 0,
+        "name": "SCAN.SC_FIRMS_JACKPOT_A3_LED_ENABLE",
+        "firmware_table_address": "0xa05fdb54"
+      },
+      {
+        "index": 169,
+        "integer_columns": [
+          0,
+          0,
+          65535
+        ],
+        "kind": 2,
+        "name": "SCAN.SC_FIRMS_SCAN_SPEED_FB_XRES_300_EXP_FACTOR_MONO",
+        "firmware_table_address": "0xa05fdb68"
+      },
+      {
+        "index": 170,
+        "integer_columns": [
+          0,
+          0,
+          65535
+        ],
+        "kind": 2,
+        "name": "SCAN.SC_FIRMS_SCAN_SPEED_FB_XRES_600_EXP_FACTOR_MONO",
+        "firmware_table_address": "0xa05fdb7c"
+      },
+      {
+        "index": 171,
+        "integer_columns": [
+          0,
+          0,
+          65535
+        ],
+        "kind": 2,
+        "name": "SCAN.SC_FIRMS_SCAN_SPEED_ADF_XRES_200_EXP_FACTOR_RGB",
+        "firmware_table_address": "0xa05fdb90"
+      },
+      {
+        "index": 172,
+        "integer_columns": [
+          0,
+          0,
+          65535
+        ],
+        "kind": 2,
+        "name": "SCAN.SC_FIRMS_SCAN_SPEED_ADF_XRES_300_EXP_FACTOR_RGB",
+        "firmware_table_address": "0xa05fdba4"
+      },
+      {
+        "index": 173,
+        "integer_columns": [
+          0,
+          0,
+          255
+        ],
+        "kind": 0,
+        "name": "SCAN.SC_FIRMS_SKIP_SENSOR_TWEAK_TIMING2",
+        "firmware_table_address": "0xa05fdbb8"
+      },
+      {
+        "index": 174,
+        "integer_columns": [
+          -1,
+          -1,
+          1
+        ],
+        "kind": 1,
+        "name": "SCAN.SC_FIRMS_BACKSIDE_CAL_SANITY",
+        "firmware_table_address": "0xa05fdbcc"
+      },
+      {
+        "index": 175,
+        "integer_columns": [
+          0,
+          0,
+          255
+        ],
+        "kind": 0,
+        "name": "SCAN.SC_FIRMS_BCCC_WHITE_BLACK_THRESHOLD",
+        "firmware_table_address": "0xa05fdbe0"
+      },
+      {
+        "index": 176,
+        "integer_columns": [
+          -1,
+          -1,
+          127
+        ],
+        "kind": 1,
+        "name": "SCAN.SC_FIRMS_IDLE_BACKSIDE_CAL_RETRY_LIMIT",
+        "firmware_table_address": "0xa05fdbf4"
+      },
+      {
+        "index": 177,
+        "integer_columns": [
+          0,
+          0,
+          65535
+        ],
+        "kind": 2,
+        "name": "SCAN.SC_FIRMS_THERMAL_CCNPIX300",
+        "firmware_table_address": "0xa05fdc08"
+      },
+      {
+        "index": 178,
+        "integer_columns": [
+          -1,
+          -1,
+          1
+        ],
+        "kind": 1,
+        "name": "SCAN.SC_FIRMS_LMW_GAIN_ADJUST_ENABLE",
+        "firmware_table_address": "0xa05fdc1c"
+      },
+      {
+        "index": 179,
+        "integer_columns": [
+          -1,
+          -1,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_REPRNU_THRESHOLD",
+        "firmware_table_address": "0xa05fdc30"
+      },
+      {
+        "index": 180,
+        "integer_columns": [
+          0,
+          0,
+          65535
+        ],
+        "kind": 2,
+        "name": "SCAN.SC_FIRMS_REPRNU_HIST_BUF_SIZE",
+        "firmware_table_address": "0xa05fdc44"
+      },
+      {
+        "index": 181,
+        "integer_columns": [
+          -1,
+          -1,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_LED_NTSC_FRAC",
+        "firmware_table_address": "0xa05fdc58"
+      },
+      {
+        "index": 182,
+        "integer_columns": [
+          0,
+          0,
+          255
+        ],
+        "kind": 0,
+        "name": "SCAN.SC_FIRMS_CC_SUM_NPIXELS",
+        "firmware_table_address": "0xa05fdc6c"
+      },
+      {
+        "index": 183,
+        "integer_columns": [
+          -10001,
+          -10001,
+          10000
+        ],
+        "kind": 3,
+        "name": "SCAN.SC_FIRMS_X_MAG",
+        "firmware_table_address": "0xa05fdc80"
+      },
+      {
+        "index": 184,
+        "integer_columns": [
+          -1,
+          -1,
+          1
+        ],
+        "kind": 1,
+        "name": "SCAN.SC_FIRMS_MBACK_ENABLE",
+        "firmware_table_address": "0xa05fdc94"
+      },
+      {
+        "index": 185,
+        "integer_columns": [
+          -1,
+          -1,
+          10000
+        ],
+        "kind": 3,
+        "name": "SCAN.SC_FIRMS_MBACK_NUM_MAX_TO_TOSS",
+        "firmware_table_address": "0xa05fdca8"
+      },
+      {
+        "index": 186,
+        "integer_columns": [
+          -1,
+          -1,
+          10000
+        ],
+        "kind": 3,
+        "name": "SCAN.SC_FIRMS_MBACK_NUM_MIN_TO_TOSS",
+        "firmware_table_address": "0xa05fdcbc"
+      },
+      {
+        "index": 187,
+        "integer_columns": [
+          -1,
+          -1,
+          10000
+        ],
+        "kind": 3,
+        "name": "SCAN.SC_FIRMS_MBACK_NUM_TO_AVG",
+        "firmware_table_address": "0xa05fdcd0"
+      },
+      {
+        "index": 188,
+        "integer_columns": [
+          -2,
+          -2,
+          1
+        ],
+        "kind": 1,
+        "name": "SCAN.SC_FIRMS_BOISE_QUIET",
+        "firmware_table_address": "0xa05fdce4"
+      },
+      {
+        "index": 189,
+        "integer_columns": [
+          -1,
+          -1,
+          32767
+        ],
+        "kind": 3,
+        "name": "SCAN.SC_FIRMS_MBACK_MSEC_DELAY_RGB",
+        "firmware_table_address": "0xa05fdcf8"
+      },
+      {
+        "index": 190,
+        "integer_columns": [
+          -1,
+          -1,
+          127
+        ],
+        "kind": 1,
+        "name": "SCAN.SC_FIRMS_DASHER_LVDS_PREEMPHASIS",
+        "firmware_table_address": "0xa05fdd0c"
+      },
+      {
+        "index": 191,
+        "integer_columns": [
+          -1,
+          -1,
+          127
+        ],
+        "kind": 1,
+        "name": "SCAN.SC_FIRMS_AFE_VENDOR_REG_ENABLE",
+        "firmware_table_address": "0xa05fdd20"
+      },
+      {
+        "index": 192,
+        "integer_columns": [
+          0,
+          0,
+          65535
+        ],
+        "kind": 2,
+        "name": "SCAN.SC_FIRMS_THERMAL_SCORE_THRESH",
+        "firmware_table_address": "0xa05fdd34"
+      },
+      {
+        "index": 193,
+        "integer_columns": [
+          0,
+          0,
+          255
+        ],
+        "kind": 0,
+        "name": "SCAN.SC_FIRMS_THERMAL_COARSE_SEARCH_REGION_300",
+        "firmware_table_address": "0xa05fdd48"
+      },
+      {
+        "index": 194,
+        "integer_columns": [
+          -1,
+          -1,
+          1
+        ],
+        "kind": 1,
+        "name": "SCAN.SC_FIRMS_ADF_HOLDOFF_ALLOW",
+        "firmware_table_address": "0xa05fdd5c"
+      },
+      {
+        "index": 195,
+        "integer_columns": [
+          -1,
+          -1,
+          2147483647
+        ],
+        "kind": 4,
+        "name": "SCAN.SC_FIRMS_TALIGN_RECAL_THRESH",
+        "firmware_table_address": "0xa05fdd70"
+      },
+      {
+        "index": 196,
+        "integer_columns": [
+          0,
+          0,
+          0
+        ],
+        "kind": 4,
+        "name": "SCAN.END",
+        "firmware_table_address": "0xa05fdd84"
+      }
+    ]
+  }
+}

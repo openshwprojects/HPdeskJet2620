@@ -1,0 +1,28 @@
+[
+  {
+    "command": "udws \"nvm2.nvm_read_all;\"",
+    "handler": "0xa02f3b69",
+    "purpose": "Print physical NVM size, then all bytes. Handler obtains size from A0261BD8 and loops A0261BE2 one byte at a time; no arguments and no writes.",
+    "hardware_access": true,
+    "timeout": 180,
+    "confidence": "reviewed_information_query",
+    "caveat": "May take significantly longer than ordinary queries because each byte is a separate NVM read. Keep exact output locally; it may include device configuration.",
+    "classification": "reviewed-information-query"
+  },
+  {
+    "command": "udws \"nvm2.get_all;\"",
+    "purpose": "Read all registered NVM object metadata",
+    "classification": "reviewed-information-query",
+    "handler": "0xa02f4873",
+    "provenance": "2018 handler review by command_query_review",
+    "timeout": 180
+  },
+  {
+    "command": "udws \"nvm2.list_reset_group;\"",
+    "purpose": "List reset-group membership; does not reset groups",
+    "classification": "reviewed-information-query",
+    "handler": "0xa02f4ac7",
+    "provenance": "2018 handler review by command_query_review",
+    "timeout": 180
+  }
+]

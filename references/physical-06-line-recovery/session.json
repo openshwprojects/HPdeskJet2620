@@ -1,0 +1,31 @@
+{
+  "started_utc": "2026-10-29T18:43:28.967529+00:00",
+  "port": "COM16",
+  "baud": 115200,
+  "data_bits": 8,
+  "parity": "N",
+  "stop_bits": 1,
+  "line_ending": "CR",
+  "source": "physical UART",
+  "rts": false,
+  "dtr": false,
+  "initial_prompt_seen": true,
+  "stop_reason": "command-did-not-return-prompt",
+  "ended_utc": "2026-10-29T18:43:49.605449+00:00",
+  "commands": [
+    {
+      "command": "udws \"bio.rev_str;\"",
+      "purpose": "Verify shell after incomplete iterator echo",
+      "classification": "information-query",
+      "index": 1,
+      "started_utc": "2026-10-29T18:43:29.549286+00:00",
+      "response_file": "0001-udws_bio_rev_str.bin",
+      "status": "timeout-no-prompt",
+      "ended_utc": "2026-10-29T18:43:49.603969+00:00",
+      "elapsed_seconds": 20.054,
+      "response_bytes": 25,
+      "response_sha256": "6f301e8a0932ce7066fe7e802fb50598af721ad99b9a14ccac21b49ce6f039df",
+      "prompt_returned": false
+    }
+  ]
+}

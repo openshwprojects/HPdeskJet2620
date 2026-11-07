@@ -1,0 +1,103 @@
+{
+  "observations": [
+    {
+      "label": "heap_output_provider",
+      "address": "0x20943a40",
+      "count": 4,
+      "hex": "a061f594",
+      "words_be": [
+        "0xa061f594"
+      ],
+      "response_file": "0006-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "d9e28605ecd6861603e7359a1da2d3aee99880cd5406d4a73019025d6f78e8ff"
+    },
+    {
+      "label": "heap_output_provider_object_vtable",
+      "address": "0xa061f594",
+      "count": 4,
+      "hex": "a061f598",
+      "words_be": [
+        "0xa061f598"
+      ],
+      "response_file": "0015-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "1610aac7933c5e6dfa5b788ed48a78909c40dae19b1b7fe6ca81ff390447e5fc"
+    },
+    {
+      "label": "heap_output_provider_vtable_methods",
+      "address": "0xa061f598",
+      "count": 64,
+      "hex": "a0431a31a0431a41a0431a4da0431979a0431979a04319d1a04319e9a043199da0431a01a0431a59a04319a9a0431991a0431a65a061f5d0a0431aa1a0431aa3",
+      "words_be": [
+        "0xa0431a31",
+        "0xa0431a41",
+        "0xa0431a4d",
+        "0xa0431979",
+        "0xa0431979",
+        "0xa04319d1",
+        "0xa04319e9",
+        "0xa043199d",
+        "0xa0431a01",
+        "0xa0431a59",
+        "0xa04319a9",
+        "0xa0431991",
+        "0xa0431a65",
+        "0xa061f5d0",
+        "0xa0431aa1",
+        "0xa0431aa3"
+      ],
+      "response_file": "0024-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "b48b10f1e703c87a6e605a003b0b7fe52d5dda87a017db21769ee5d08a4d9faa"
+    },
+    {
+      "label": "ram_partition_provider",
+      "address": "0x20d23b24",
+      "count": 4,
+      "hex": "a053bb24",
+      "words_be": [
+        "0xa053bb24"
+      ],
+      "response_file": "0033-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "21ae7cee77d0efb9545ac1d95fe5827216f4e06608d6495ebe32d9339799224b"
+    },
+    {
+      "label": "ram_partition_provider_object_vtable",
+      "address": "0xa053bb24",
+      "count": 4,
+      "hex": "a053bb48",
+      "words_be": [
+        "0xa053bb48"
+      ],
+      "response_file": "0042-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "f32a1deca793cb426be018a6129409c1a641659f4760714b5755616548e09a95"
+    },
+    {
+      "label": "ram_partition_provider_vtable_methods",
+      "address": "0xa053bb48",
+      "count": 64,
+      "hex": "a0160f05a0160f37a0160f55a0160faba0160fc3a016101da0161035a0161055a01610756465627567000000a053bb78a01610e5a01610f9a0161109a0161119",
+      "words_be": [
+        "0xa0160f05",
+        "0xa0160f37",
+        "0xa0160f55",
+        "0xa0160fab",
+        "0xa0160fc3",
+        "0xa016101d",
+        "0xa0161035",
+        "0xa0161055",
+        "0xa0161075",
+        "0x64656275",
+        "0x67000000",
+        "0xa053bb78",
+        "0xa01610e5",
+        "0xa01610f9",
+        "0xa0161109",
+        "0xa0161119"
+      ],
+      "response_file": "0051-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "dc46789a2ec81e6b80bcd807bdf49612c9611b2ac66fa0710c298d5d6433cc81"
+    }
+  ],
+  "cleanup_complete": true,
+  "source_memory_written": false,
+  "scope": "Two named provider pointers and their vtables only."
+}

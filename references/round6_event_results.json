@@ -1,0 +1,20 @@
+{
+  "response_revalidations": [
+    {
+      "response_file": "physical-73-event-query/0001-udws_event_log_get_event_1266.bin",
+      "response_sha256": "2fead85a5bc025f927bac360e37d883dfc6aaa2de3305c568bfdb67a925c3f73",
+      "valid": true,
+      "complete": true,
+      "assessment": "existing-event-matches-independent-ring-snapshot",
+      "note": "Existing event sequence1266, event ID72234, string FROM_NVM match the independently captured RAM record. The first printed sequence0 is a handler diagnostic bug: it prints the zeroed output before lookup. The occurrences field1 is the getter presence flag, not a measured occurrence count. No event was added or cleared."
+    }
+  ],
+  "data_quality": [
+    {
+      "response_file": "physical-73-event-query/0001-udws_event_log_get_event_1266.bin",
+      "response_sha256": "2fead85a5bc025f927bac360e37d883dfc6aaa2de3305c568bfdb67a925c3f73",
+      "complete": true,
+      "assessment": "Existing event sequence1266, event ID72234, string FROM_NVM match the independently captured RAM record. The first printed sequence0 is a handler diagnostic bug: it prints the zeroed output before lookup. The occurrences field1 is the getter presence flag, not a measured occurrence count. No event was added or cleared."
+    }
+  ]
+}

@@ -1,0 +1,590 @@
+[
+  {
+    "session": "physical-01-identification",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 436,
+    "rx_sha256": "f2e01aa1f89e8cbf0bc1e30f2235b478a0d1fcb1cf490f57f230223b90d2ff30"
+  },
+  {
+    "session": "physical-02-information",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 23675,
+    "rx_sha256": "0914b047d5efa33de88915b4be3dd0dad659f41042e3c6566bb8093c66373ab0"
+  },
+  {
+    "session": "physical-03-assert-recovery-check",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 11572,
+    "rx_sha256": "c0f1263c50ce88d7af4b60df312048ed0c0ad4fe0153520cf8561bc0157caad6"
+  },
+  {
+    "session": "physical-04-recovery-listen",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 0,
+    "rx_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "session": "physical-05-registry",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 1289,
+    "rx_sha256": "057c1351942ad27f0acbff7684f84bdb2c2fd56c3ac383dcb0c690ec9b90fbaf"
+  },
+  {
+    "session": "physical-06-line-recovery",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 107,
+    "rx_sha256": "6bd21e6595c2ff9f27318bffd8a8b2815cb62abfd98478b4c057a6652a46cd59"
+  },
+  {
+    "session": "physical-07-paced-check",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 68,
+    "rx_sha256": "14596fdbb100ec068981c1cf32eb62a6703b4d666fe475b160cd33d10251719e"
+  },
+  {
+    "session": "physical-08-crlf-check",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 261,
+    "rx_sha256": "8f77fb90014d9e9445a1e04fe5e8040286d645665adc2d26c55a01e60e8e9bfa"
+  },
+  {
+    "session": "physical-09-registry",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 109543,
+    "rx_sha256": "b9769188424badf52af39c137552b61d1e626f126296a59c679af77012fb84fa"
+  },
+  {
+    "session": "physical-10-reviewed-queries",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 19055,
+    "rx_sha256": "c6451b37d206b9d598d90b9f5b776177991a5849c02a0b5be4d194eeae31f57e"
+  },
+  {
+    "session": "physical-11-software-network",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 37410,
+    "rx_sha256": "98a54c6e6079f0c9eb89a4e87f97ffb3af7b9c642e44c9dbd3846b4af7324a7f"
+  },
+  {
+    "session": "physical-12-storage-catalog",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 244539,
+    "rx_sha256": "24dc55a7d42ffd1fde61ce68ed3d4797c8a6afaa2ece0aeb804a0314078952b8"
+  },
+  {
+    "session": "physical-13-storage-retry",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 244524,
+    "rx_sha256": "5694673616a32b7a61c9bfe15fae554166885743483682e013ce6309fb094890"
+  },
+  {
+    "session": "physical-14-help-validation",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 7732,
+    "rx_sha256": "7b643ffa94223988660a0c741f2f03e32eec149f02fae6150a14feab69d87546"
+  },
+  {
+    "session": "physical-15-nvm-header",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 9595,
+    "rx_sha256": "8e6fd650511c1a8f01c5a503f5d760ecfec3bcfd108deb5258f38570d5052302"
+  },
+  {
+    "session": "physical-16-storage-metadata",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 100170,
+    "rx_sha256": "6baffd1546f5f5fe2ca69e0ed2dc07a4a997f28e407ad6ee464af761d776e0ad"
+  },
+  {
+    "session": "physical-17-shell",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 14594,
+    "rx_sha256": "25e7a356686be5f8bfd9d6ab1a5b4aa13d745cdeaf3ab4582affc53bf07f841d"
+  },
+  {
+    "session": "physical-18-storage-details",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 292022,
+    "rx_sha256": "291fd6c066f97413dcc5a79a87d795f3f967adafb87fecdd3e71e88eb08bd536"
+  },
+  {
+    "session": "physical-20-native-guards",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 2880,
+    "rx_sha256": "94b5ace87bf292858e8802695a45900a30ce9a3735ed7fa09c84e0a3c51c6e55"
+  },
+  {
+    "session": "physical-21-stub-handlers",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 7682,
+    "rx_sha256": "4d8d81c7a156be323c163429604b07defd631fc4bdf0c32d1277452ba8338aa7"
+  },
+  {
+    "session": "physical-19-storage-values",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 5539,
+    "rx_sha256": "d2c5059571b6bc5b0c31c119be0d503949ad596930e17f28423fa234c6f527ae"
+  },
+  {
+    "session": "physical-19b-storage-values",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 77073,
+    "rx_sha256": "7c09791477453a5e67f5339240bbfc573a00800aeada409e050bbdbff402759d"
+  },
+  {
+    "session": "physical-22-additional",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 6593,
+    "rx_sha256": "19a14da0eebe7c13de3b3a42f4ed8c2ba861dea33e59c0eea82f4f82f13dbad8"
+  },
+  {
+    "session": "physical-23-storage-arrays",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 57938,
+    "rx_sha256": "6426c4054a21e06229fd2658042ab7a04ed3129c50136062666f5baaad54f582"
+  },
+  {
+    "session": "physical-24-storage-families",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 1264,
+    "rx_sha256": "8b321ae7a9a17840f2fc6e540dc3d1549c7026e2ce65702da25c3a23434fddb9"
+  },
+  {
+    "session": "physical-26-storage-gaps",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 1797,
+    "rx_sha256": "3ebb3e453644dfe2da0cd4d5aaf14c512c7058628e1cb12a1d9fe39903535da1"
+  },
+  {
+    "session": "physical-27-status-prerequisites",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 1589,
+    "rx_sha256": "0e6014e26a5069bdde9163c651a4c99f81f61e3c10ebc4272c6da113ea8d5245"
+  },
+  {
+    "session": "physical-28-status",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 290,
+    "rx_sha256": "656debc05e163033d9518fe50bdfd6d12b10b1a4c54fd1c2261033013d9e32d5"
+  },
+  {
+    "session": "physical-25-final-status",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 12168,
+    "rx_sha256": "c254d4bf5835c5e34bc31b9a234c306a125020fa9a00c109da37c4dfa7297b0c"
+  },
+  {
+    "session": "physical-29-resume",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 172,
+    "rx_sha256": "d8d06c07ca0a8aa269a22b2070f57ef7f4f56d5d868cf6c2308fc071eb537303"
+  },
+  {
+    "session": "physical-32-guard-paths",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 3528,
+    "rx_sha256": "d39e90d9cf5e9704ed52e20de36108b8c372ae37b9e9f69a09094ec853e7539b"
+  },
+  {
+    "session": "physical-33-ram-preflight",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 3313,
+    "rx_sha256": "b0a8cffc50ad14ec11f0203cecc59b42d8998f42458b418870baad406d90d173"
+  },
+  {
+    "session": "physical-34-ram-file-operations",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 1378,
+    "rx_sha256": "d033bb095e4f43a70d3670f152b580e110f1522236c989d2cac61c24d99f9ecd"
+  },
+  {
+    "session": "physical-35-ram-handles-and-cleanup",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 2736,
+    "rx_sha256": "7eabd8796a8dc50d3db28dcfe66e61a22ab3f195e234da5a60f5d04cedc0d2a8"
+  },
+  {
+    "session": "physical-36-ram-cleanup-check",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 792,
+    "rx_sha256": "e756930747b1c9c62ffe59e3e6cbe5dadbd5386284b3554bfed6a611a84e73c0"
+  },
+  {
+    "session": "physical-31-hardware-status",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 23277,
+    "rx_sha256": "6b1c3115149c98ded95927e1e159532d51de6f67468690fb5bd4ae46e62715c3"
+  },
+  {
+    "session": "physical-30-software-queries",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 116385,
+    "rx_sha256": "ab323f3a4ca6f62d74d7e9d9c8c767cff27c722610e61384ef3407e51af75def"
+  },
+  {
+    "session": "physical-30b-software-queries",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 31811,
+    "rx_sha256": "d9b0d863c73f5b3a734436be4cf5e0fbaf9be026c60423cc32b5966d233037cf"
+  },
+  {
+    "session": "physical-38-ram-upload-cleanup",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 857,
+    "rx_sha256": "e50b12317834efb7e6112f2f58aa2e4fcaab7c80441a7c808086bd88d5bd8aa2"
+  },
+  {
+    "session": "physical-39-ram-cleanup",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 715,
+    "rx_sha256": "491b69f69c929124ca5b29148a981519fd3fe0b8c5d3780cef78e2e0eecb1435"
+  },
+  {
+    "session": "physical-32b-guard-paths",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 393,
+    "rx_sha256": "6b48ba46eec965b8e541fcfede3a4542633121e4dedaedaa1b7a984058c7feba"
+  },
+  {
+    "session": "physical-40-ram-hex-preflight",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 170,
+    "rx_sha256": "95831f2bbaa4a8cec4c4625a6d21a95adf7e67d96b2e5078a78fd106d508ca18"
+  },
+  {
+    "session": "physical-41-ram-hex-upload",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 1250,
+    "rx_sha256": "9d28cc39ac0435fe16a8a7ff8db2b246bf8dda98252691ad3c96fcc2d23b5de6"
+  },
+  {
+    "session": "physical-37-bounded-software",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 17990,
+    "rx_sha256": "75870a7c1dea2804e90486662c2edf95916fc40bec793d662cf12651423b42e6"
+  },
+  {
+    "session": "physical-42-firmware-table-formatter",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 41343,
+    "rx_sha256": "a8ed64df24be6bb84c2eef316e8a84406cecdc367928780f9ea562f60d7a0160"
+  },
+  {
+    "session": "physical-44-supported-clock-test",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 145,
+    "rx_sha256": "9e938330218fe7609eeab35ff861f224d17dc2cd30f62945b048d6313acad4f7"
+  },
+  {
+    "session": "physical-45-firmware-groups",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 28405,
+    "rx_sha256": "320e4b435a8b55994ba962c6a9358c0b1b44c28f1689a74027244412932d6255"
+  },
+  {
+    "session": "physical-46-final-live-check",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 172,
+    "rx_sha256": "c6ecdbd490f441689c8ea7e35a22dadfaa43c1a9d4dd0ab2f3bc9b0e735e109a"
+  },
+  {
+    "session": "physical-47-resume",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 172,
+    "rx_sha256": "1042f58b69a9c6086b2e44a5d827c19502a0d84999a47617adf6ae639afc278c"
+  },
+  {
+    "session": "physical-51-nvm-mirror",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 142070,
+    "rx_sha256": "4cc4b3b5e71580e0478cc2c22d50576366a5690f118946f58c70ffd59b99bb04"
+  },
+  {
+    "session": "physical-49-system-metadata",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 102231,
+    "rx_sha256": "2bea0366b2c1ff09d1b4edb84bd288510dd2e8967006e1ca74e1101957b016d8"
+  },
+  {
+    "session": "physical-48-wifi-sdio",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 2291,
+    "rx_sha256": "1430255acdb44fdeb0026ea30483c48757e54a7929ee12d5d48d9b4ea6c74e3b"
+  },
+  {
+    "session": "physical-50-scanner-capabilities",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 2315,
+    "rx_sha256": "7456e61647ae9c6d788fb167de58097984e143c669cca501d7010f827ea0dbdd"
+  },
+  {
+    "session": "physical-53-resume",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 172,
+    "rx_sha256": "95e756f94ffdbbc773257331211d229b3a0b29d90194443639fbcb18dea2b827"
+  },
+  {
+    "session": "physical-57-provider-pointers",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 4436,
+    "rx_sha256": "6c51ac72d15a442c2abc289ccde26ad1c2427e09e8b720600e4f357a69feed57"
+  },
+  {
+    "session": "physical-54-system-services",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 394888,
+    "rx_sha256": "2915206ad5986f711f3e1d4d61633ff911f818b749359c8e6f1cc9c18ca18413"
+  },
+  {
+    "session": "physical-59-metadata-pointers",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 16151,
+    "rx_sha256": "ea368cc608bfcf1e8087393499f93560aa15cf817c1508c8cf87ff4ca46ac2f0"
+  },
+  {
+    "session": "physical-58-heap-diagnostics",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 1295,
+    "rx_sha256": "3b74b12c0e4aa9c6d60682c6725b76225702e447e376228aa5104145599fbf5e"
+  },
+  {
+    "session": "physical-56-calibration-pen",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 3456,
+    "rx_sha256": "750bda1c245e69cbc53abac2d5e44b54c6ad87c424d3d74e20c6b68ff2e45a0b"
+  },
+  {
+    "session": "physical-60-ui-metadata",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 13734,
+    "rx_sha256": "0bd97783857a3c7bb88a11faec7deaea8a71dcd03e7f2d1e41ac72b5f45ca555"
+  },
+  {
+    "session": "physical-55-media-capabilities",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 1304,
+    "rx_sha256": "20c5df916951bae2cbebd4e64e363285792ea4a3d3d342404d6a0eecc9355eee"
+  },
+  {
+    "session": "physical-56b-led-metadata",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 905,
+    "rx_sha256": "6f6f09b8eba9713f5c4095241955e69c7d7c4f81cda8be7ba9344251b4e4d940"
+  },
+  {
+    "session": "physical-56c-ui-status",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 295,
+    "rx_sha256": "facd2b4afd9aa45a8837e0731a174ed93af7a1a33cbf4c255d20764a43766652"
+  },
+  {
+    "session": "physical-63-misc-queries",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 951,
+    "rx_sha256": "f934cb96c65a01facad2746422c7a121e6eb0af96cd8e4fa218cde2adf5a18d8"
+  },
+  {
+    "session": "physical-64-ui-fields",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 2156,
+    "rx_sha256": "8ed7ea42c79b3cba2bbc7c5b6e8a1d8f4d893a808a0c1f38b9d15820b29de679"
+  },
+  {
+    "session": "physical-61-block-metadata",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 162,
+    "rx_sha256": "db8cbc8daa59993a3bd22b3077ef4b912201fc0fd3aa2dc3e1b45ed1d4668c2f"
+  },
+  {
+    "session": "physical-62-current-matrices",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 444,
+    "rx_sha256": "e836b6ff60cec051176e3b88fa68b464eafa0add6e9e9861c57518d6ff744121"
+  },
+  {
+    "session": "physical-65-frontpanel-settings",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 445,
+    "rx_sha256": "8b725fdd99c7e9ed038bb025d579c408599db9c78319d0fa8d3f618e1adb25cd"
+  },
+  {
+    "session": "physical-67-mount-metadata",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 3206,
+    "rx_sha256": "e375c35c35671fc95eb184f9c0e6ce41f4f3c036b3ed86d6fe9e309dbd700366"
+  },
+  {
+    "session": "physical-66-rng-uart",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 114,
+    "rx_sha256": "a8376e23a39e2d315b6bf9e6d4e475c8f59860a1f408431b5b8ca60df59186d4"
+  },
+  {
+    "session": "physical-68-query-prerequisites",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 3974,
+    "rx_sha256": "4212c9337cc9f1f3a274042a91959a2b4067286eea0617db3b1d33bfe5af6171"
+  },
+  {
+    "session": "physical-69-provider-prerequisites",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 3156,
+    "rx_sha256": "146df1a62f9cf7a4c0127c9a39a08dfc2a30e2b15eba3067db2e84b792ad3fa9"
+  },
+  {
+    "session": "physical-74-event-prerequisite",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 1184,
+    "rx_sha256": "a991e913216392e8bb3a130b5a0877381c8cb50ce7f32dfb70a67e169067a34f"
+  },
+  {
+    "session": "physical-73-event-query",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 198,
+    "rx_sha256": "c102d3e9e3397ca3f58d978edb73650424372e61330f76fab0c1e220a58f3870"
+  },
+  {
+    "session": "physical-70-heap-block-flags",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 176,
+    "rx_sha256": "c429d75330738713e696dbafa69116fddc4c43010331d4534b52fb7ecceb40d2"
+  },
+  {
+    "session": "physical-71-settings-build-date",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 317,
+    "rx_sha256": "fbfa53c39f0e45bdb7caa9e642c3035301514d0bad647a712a51052ae2228a90"
+  },
+  {
+    "session": "physical-72-consumable-status",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 244,
+    "rx_sha256": "c52993c8a743f853f52bffb812516ce0ed581e8dd8d578c97a8fa124f59c1e38"
+  },
+  {
+    "session": "physical-75-query-prerequisites",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 8673,
+    "rx_sha256": "bd5c547892b2bc4588449ef235919c0274fb3879b10ec15882a1e55fce0de555"
+  },
+  {
+    "session": "physical-79-ink-cache-prerequisite",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 728,
+    "rx_sha256": "4776b9f57db742dd99fb8beee667d85ea8b2ca5591e747c67e9c7a04ea6792ce"
+  },
+  {
+    "session": "physical-76-consumable-system",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 187,
+    "rx_sha256": "8e19eef60d57d7dea6cfe790296b00aa6684d434c9c548d5bad54abec9ad425c"
+  },
+  {
+    "session": "physical-78-ip-job-memory",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 3383,
+    "rx_sha256": "0e6d213b6bfd7f2f010514f3759c35738684f3ef65877e38146938bbde5e5c74"
+  },
+  {
+    "session": "physical-77-scanner-origins",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 243,
+    "rx_sha256": "03f19fcbc84f33a9058174302339b7f69678dce7bf931d9b984db3acca25bcbe"
+  },
+  {
+    "session": "physical-80-extra-queries",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 44,
+    "rx_sha256": "4b662af1bac53ab95be17fcc8fae0d6ec6af5a7aee5a2268e4e3c3ce30622215"
+  },
+  {
+    "session": "physical-80b-listen",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 0,
+    "rx_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "session": "physical-80c-prompt-check",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 0,
+    "rx_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "session": "physical-80d-reboot-listen",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 2752,
+    "rx_sha256": "a80e666ca59bc3807f6a9fd6b229071d47f4acd84c9988930e040e3872521f61"
+  },
+  {
+    "session": "physical-82-carriage-home",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 38,
+    "rx_sha256": "d1ee1c9de9bd9c8f6e53cc803b5b2da96e5c10907cdb5bc1e570f5caa6202d02"
+  },
+  {
+    "session": "physical-82b-prompt-check",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 0,
+    "rx_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "session": "physical-82c-reboot-listen",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 0,
+    "rx_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "session": "physical-81-extra-queries",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 6152,
+    "rx_sha256": "29f3289aafb702e4003e6e6e52ae6b1a84adf6fcac34d956bb36f296e889e5da"
+  },
+  {
+    "session": "physical-83-temp-job",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 109,
+    "rx_sha256": "64e52016dbd4368157b9406ccfff8db374e41201ed31aa68c1448579ecab7964"
+  },
+  {
+    "session": "physical-84-temp-async",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 104,
+    "rx_sha256": "c9e1a6e7b4690a2e737b9d61deaf159dba0370adb2fcf6d418edd3befb35f5fa"
+  },
+  {
+    "session": "physical-85-fm-luau",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 69,
+    "rx_sha256": "a52a2ff887e994130062deabcd8671956b0f4cd553110efe9939175d4ad3a191"
+  },
+  {
+    "session": "physical-86-fm-lua",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 28,
+    "rx_sha256": "6ee696ec1663e0b0545580c2989676b8002e2fd29a23bde3b11d2266a17b19b7"
+  },
+  {
+    "session": "physical-86b-prompt-check",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 0,
+    "rx_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "session": "physical-87-prompt-resync",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 12,
+    "rx_sha256": "5120874a16829f095d4b956f62ae927da74fcb6ad5fa3b70a72430f5bf979c62"
+  },
+  {
+    "session": "physical-88-ludw",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 312,
+    "rx_sha256": "7203e6cc5cef0862307c7abfa2ac324e55d1d43ed3498cd2061112596c91de0c"
+  },
+  {
+    "session": "physical-89-srec-probe",
+    "wire_matches_rx_bin": true,
+    "rx_bytes": 73,
+    "rx_sha256": "d260208fc972a24f72cf3c0e2465589036110b513dc77b88ecbd1b042cfe60e1"
+  }
+]

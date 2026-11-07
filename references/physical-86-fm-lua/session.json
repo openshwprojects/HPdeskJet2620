@@ -1,0 +1,38 @@
+{
+  "started_utc": "2026-10-29T23:44:21.500095+00:00",
+  "port": "COM16",
+  "baud": 115200,
+  "data_bits": 8,
+  "parity": "N",
+  "stop_bits": 1,
+  "line_ending": "CRLF",
+  "source": "physical UART",
+  "rts": false,
+  "dtr": false,
+  "tx_character_delay_seconds": 0.003,
+  "capture_program_sha256": "685d8b07cd5afafeba32f37eb5722416458a08dafe09290576957e50b31bdb03",
+  "requested_rx_buffer_bytes": 1048576,
+  "requested_tx_buffer_bytes": 65536,
+  "initial_prompt_seen": true,
+  "stop_reason": "command-did-not-return-prompt",
+  "ended_utc": "2026-10-29T23:44:52.338259+00:00",
+  "commands": [
+    {
+      "name": "fm.lua",
+      "command": "udws \"fm.lua;\"",
+      "argument_syntax": "",
+      "classification": "Lua interpreter entry, generic fm handler (round 8, user-authorized, hang expected)",
+      "purpose": "Attempt the embedded Lua interpreter. Handler 0xa00e084a posts to the fm task and waits without timeout, the pattern that hung fm.version_query and fm.carriage_home.",
+      "timeout": 30,
+      "index": 1,
+      "started_utc": "2026-10-29T23:44:22.214833+00:00",
+      "response_file": "0001-udws_fm_lua.bin",
+      "status": "timeout-no-prompt",
+      "ended_utc": "2026-10-29T23:44:52.336407+00:00",
+      "elapsed_seconds": 30.12,
+      "response_bytes": 16,
+      "response_sha256": "84cd6f992a5fda5694036701dfbfafe5c878d925aaddd748b2305f2968c6a300",
+      "prompt_returned": false
+    }
+  ]
+}

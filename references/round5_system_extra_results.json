@@ -1,0 +1,35 @@
+{
+  "source": "physical-61-block-metadata",
+  "responses": [
+    {
+      "response_file": "physical-61-block-metadata/0001-udws_ram_block_info_1_1_0.bin",
+      "response_sha256": "7cb799cc9d5be8eab40de3fd48e600a6a2fc8395fbb8fe1bd56a8a2665515a76",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "fields": {
+          "kind": "DIR",
+          "inode": 1,
+          "block": 0,
+          "priority": 0,
+          "size": 16928,
+          "use_count": 0,
+          "purgeable": false
+        },
+        "header_fields_match": true,
+        "use_count_matches_prior_snapshot": false
+      }
+    }
+  ],
+  "response_revalidations": [
+    {
+      "response_file": "physical-61-block-metadata/0001-udws_ram_block_info_1_1_0.bin",
+      "response_sha256": "7cb799cc9d5be8eab40de3fd48e600a6a2fc8395fbb8fe1bd56a8a2665515a76",
+      "valid": true,
+      "assessment": "validated-live-directory-block-metadata",
+      "note": "Actual DIR inode1 block0 query; identity,size,priority,purgeable fields exactly match independently captured live32-byte header. Reference count is separately compared as a time-dependent field."
+    }
+  ],
+  "data_quality": [],
+  "serial_access": "none"
+}

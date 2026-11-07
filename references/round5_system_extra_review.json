@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "query": {
+    "name": "ram.block_info",
+    "command": "udws \"ram.block_info 1 1 0;\"",
+    "handler": "0xa0356983",
+    "argument_syntax": "type=1 DIR, inode=1, block=0 from captured header key0100000000000001",
+    "classification": "reviewed-existing-block-metadata-query",
+    "purpose": "Read metadata of real root-directory block and cross-check known live header fields.",
+    "control_flow_proof": "A0356982..6A02 parses type,inode,block. A03559E6 builds12-byte key in locals: key+4=(type<<24)|block, key+8=inode. A0355DD8 uses physically resolved providerA053BB48+1C=A0161055; takes/releases heap mutex throughA0160E84/ED4, callsA015FB5A. A015F884/A015FCF4 use existing hash chain and8-byte name compare; A0160D1A resolves existing name descriptor, thenA0160004 selectors2,1,6,5 read priority,purgeable,use_count,size. Only caller-local output fields and lock accounting modified.",
+    "side_effects_assessment": "UART output and volatile mutex accounting. Does not write the target block, allocate, free or change a file.",
+    "timeout": 20,
+    "hardware_access": false,
+    "prior_invocation_status": "not-invoked",
+    "expected": {
+      "kind": "DIR",
+      "inode": 1,
+      "block": 0,
+      "priority": 0,
+      "size": 16928,
+      "purgeable": false,
+      "use_count_at_header_capture": 1
+    },
+    "review_source": "references/round5_system_extra_review.json"
+  },
+  "source_header": {
+    "label": "named_heap_block_header",
+    "address": "0x21376ac0",
+    "count": 32,
+    "hex": "0100000000000001000042200000000000000000ffffffff01002801000000bc",
+    "words_be": [
+      "0x1000000",
+      "0x1",
+      "0x4220",
+      "0x0",
+      "0x0",
+      "0xffffffff",
+      "0x1002801",
+      "0xbc"
+    ],
+    "response_file": "0150-udws_ustd_read_file_0_32.bin",
+    "response_sha256": "b116b4bc362319f352c881b9c54d23b099699a3a0ec3d5a2378d444390ec5e87"
+  },
+  "source_header_report": "references/physical-60-ui-metadata/provider-pointers.json",
+  "provider_evidence": "references/physical-57-provider-pointers/provider-pointers.json",
+  "interpretation": "This is a DIR block key, not a raw pointer argument. Size is payload16928bytes from header+8; use_count is sampled and may change between captures.",
+  "no_serial_access": true
+}

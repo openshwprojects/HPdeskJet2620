@@ -1,0 +1,246 @@
+{
+  "schema_version": 1,
+  "kind": "offline-review-not-physical-results",
+  "image": "artifacts/ghs/dram.bin",
+  "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+  "serial_access": "none",
+  "method": "Direct big-endian Thumb disassembly, concrete argument-path review and provider resolution. Generic UART and OS helpers not formally proven transitively.",
+  "queries": [
+    {
+      "name": "mhdlg.get_mhdlgcap_supported_trays",
+      "command": "udws \"mhdlg.get_mhdlgcap_supported_trays;\"",
+      "handler": "0xa006345f",
+      "descriptor_address": "0xa0518adc",
+      "arguments": [],
+      "purpose": "Enumerate supported paper input trays and their numeric IDs.",
+      "classification": "reviewed-bounded-product-query",
+      "review_source": "references/round5_product_review.json",
+      "review_evidence": "MHDLG consumer slot4 is interface SUID0x1154a in A0518754..A051876C. PE provider table A05CC93C has matching SUID, slot1; interface getter A0305068 returns initialized object A05CC04C from20848514. Object points to vtable20848770. Relevant methods +8/+10/+60/+64/+6C/+EC resolve to A0303E9C/A0303EBA/A030408C/A030409A/A03040B0/A030437A. A0062F7A uses +10 -> A0303EBA -> A030DC0C, a bounded ROM table traversal. ROM A05CFBB0 has1 record, ID1, so count fits14slots. A006345E formats count and name/ID using A02541FC.",
+      "side_effects_assessment": "Reads initialized metadata, writes caller buffers and formats UART output.",
+      "result_limitations": "Finite capability metadata. No tray activation or paper movement.",
+      "timeout": 30,
+      "prior_invocation_status": "not-invoked",
+      "code_evidence": [
+        {
+          "start": "0xa006345e",
+          "end_exclusive": "0xa0063562",
+          "sha256": "f2413e582876b5281dc9bc7eeacbc095a6a4a69484b3ab8a22349793a8689855"
+        },
+        {
+          "start": "0xa0062f7a",
+          "end_exclusive": "0xa0063052",
+          "sha256": "de3428ff4453a961fb67461b651961c2bbef416686b43a133b44f3b456bcd332"
+        },
+        {
+          "start": "0xa030dc0c",
+          "end_exclusive": "0xa030dc3c",
+          "sha256": "bfa9e5c1d8e038c29d9accc59c1128d31dfebf8b290506f29d406c6abdb05b1d"
+        }
+      ]
+    },
+    {
+      "name": "mhdlg.get_mhdlgcap_supported_bins",
+      "command": "udws \"mhdlg.get_mhdlgcap_supported_bins;\"",
+      "handler": "0xa0063563",
+      "descriptor_address": "0xa0518ae8",
+      "arguments": [],
+      "purpose": "Enumerate the configured paper output bins.",
+      "classification": "reviewed-bounded-product-query",
+      "review_source": "references/round5_product_review.json",
+      "review_evidence": "MHDLG consumer slot4 is interface SUID0x1154a in A0518754..A051876C. PE provider table A05CC93C has matching SUID, slot1; interface getter A0305068 returns initialized object A05CC04C from20848514. Object points to vtable20848770. Relevant methods +8/+10/+60/+64/+6C/+EC resolve to A0303E9C/A0303EBA/A030408C/A030409A/A03040B0/A030437A. A0063052 uses +EC -> A030437A, which writes bin0 and returns count1. Handler A0063562 prints status200,count1,ID0; this is the model capability implementation, not a disabled command handler.",
+      "side_effects_assessment": "Reads initialized metadata, writes caller buffers and formats UART output.",
+      "result_limitations": "",
+      "timeout": 30,
+      "prior_invocation_status": "not-invoked",
+      "code_evidence": [
+        {
+          "start": "0xa0063562",
+          "end_exclusive": "0xa0063628",
+          "sha256": "88d37d4e93ce1d14ebeab51fc10ecf15dbebc9af7bc8d8694dc442a0b7a815fb"
+        },
+        {
+          "start": "0xa0063052",
+          "end_exclusive": "0xa00630a4",
+          "sha256": "1b069aa8edba2329423210beb081f54832ad41d1b88aabf4d738ff11e35033ed"
+        },
+        {
+          "start": "0xa030437a",
+          "end_exclusive": "0xa0304382",
+          "sha256": "fe123f422ea7892e6a027a5ddd5231b12b5e92a83e117a41da81e9dfd77aee20"
+        }
+      ]
+    },
+    {
+      "name": "mhdlg.get_mhdlgcap_media_type_size_list",
+      "command": "udws \"mhdlg.get_mhdlgcap_media_type_size_list 0 1;\"",
+      "handler": "0xa0063629",
+      "descriptor_address": "0xa0518af4",
+      "arguments": [
+        "0",
+        "1"
+      ],
+      "purpose": "Enumerate media sizes for verified tray1.",
+      "classification": "reviewed-bounded-product-query",
+      "review_source": "references/round5_product_review.json",
+      "review_evidence": "MHDLG consumer slot4 is interface SUID0x1154a in A0518754..A051876C. PE provider table A05CC93C has matching SUID, slot1; interface getter A0305068 returns initialized object A05CC04C from20848514. Object points to vtable20848770. Relevant methods +8/+10/+60/+64/+6C/+EC resolve to A0303E9C/A0303EBA/A030408C/A030409A/A03040B0/A030437A. First parsed integer0 selects sizes,1 selects types; second is trayID. A00630A4 routes sizes through +8 -> A030DADE and types through +60 -> A030E04C. Both deduplicate bounded ROM arrays into caller buffers; tray1 table has32 sizes and4 types. Handler prints symbolic and numeric identifiers.",
+      "side_effects_assessment": "Reads initialized metadata, writes caller buffers and formats UART output.",
+      "result_limitations": "The two selectors share one registered command name and count as one name.",
+      "timeout": 30,
+      "prior_invocation_status": "not-invoked",
+      "code_evidence": [
+        {
+          "start": "0xa0063628",
+          "end_exclusive": "0xa0063798",
+          "sha256": "07a51234ad3ea3d24be86ed160120df9a3a9845cfea08722325df8676e7aa729"
+        },
+        {
+          "start": "0xa00630a4",
+          "end_exclusive": "0xa006315a",
+          "sha256": "d0a7aceb882ab2d0d44a089952677cb5318acbf2ded2abd35bef148f9a9f9cba"
+        },
+        {
+          "start": "0xa030dade",
+          "end_exclusive": "0xa030db7a",
+          "sha256": "d031e6d04fd0d6ac3aeca95150fea35da8f66875a4cf6c33f2581f8c109fb7fc"
+        },
+        {
+          "start": "0xa030e04c",
+          "end_exclusive": "0xa030e0ba",
+          "sha256": "562fe6c1f7051e2e1990d99e522a0f1ada85486d2f7c6834beba1b7842c579b3"
+        }
+      ]
+    },
+    {
+      "name": "mhdlg.get_mhdlgcap_media_type_size_list",
+      "command": "udws \"mhdlg.get_mhdlgcap_media_type_size_list 1 1;\"",
+      "handler": "0xa0063629",
+      "descriptor_address": "0xa0518af4",
+      "arguments": [
+        "1",
+        "1"
+      ],
+      "purpose": "Enumerate media types for verified tray1.",
+      "classification": "reviewed-bounded-product-query",
+      "review_source": "references/round5_product_review.json",
+      "review_evidence": "MHDLG consumer slot4 is interface SUID0x1154a in A0518754..A051876C. PE provider table A05CC93C has matching SUID, slot1; interface getter A0305068 returns initialized object A05CC04C from20848514. Object points to vtable20848770. Relevant methods +8/+10/+60/+64/+6C/+EC resolve to A0303E9C/A0303EBA/A030408C/A030409A/A03040B0/A030437A. First parsed integer0 selects sizes,1 selects types; second is trayID. A00630A4 routes sizes through +8 -> A030DADE and types through +60 -> A030E04C. Both deduplicate bounded ROM arrays into caller buffers; tray1 table has32 sizes and4 types. Handler prints symbolic and numeric identifiers.",
+      "side_effects_assessment": "Reads initialized metadata, writes caller buffers and formats UART output.",
+      "result_limitations": "The two selectors share one registered command name and count as one name.",
+      "timeout": 30,
+      "prior_invocation_status": "not-invoked",
+      "code_evidence": [
+        {
+          "start": "0xa0063628",
+          "end_exclusive": "0xa0063798",
+          "sha256": "07a51234ad3ea3d24be86ed160120df9a3a9845cfea08722325df8676e7aa729"
+        },
+        {
+          "start": "0xa00630a4",
+          "end_exclusive": "0xa006315a",
+          "sha256": "d0a7aceb882ab2d0d44a089952677cb5318acbf2ded2abd35bef148f9a9f9cba"
+        },
+        {
+          "start": "0xa030dade",
+          "end_exclusive": "0xa030db7a",
+          "sha256": "d031e6d04fd0d6ac3aeca95150fea35da8f66875a4cf6c33f2581f8c109fb7fc"
+        },
+        {
+          "start": "0xa030e04c",
+          "end_exclusive": "0xa030e0ba",
+          "sha256": "562fe6c1f7051e2e1990d99e522a0f1ada85486d2f7c6834beba1b7842c579b3"
+        }
+      ]
+    },
+    {
+      "name": "mhdlg.get_supported_df_groups",
+      "command": "udws \"mhdlg.get_supported_df_groups;\"",
+      "handler": "0xa0063897",
+      "descriptor_address": "0xa0518b3c",
+      "arguments": [],
+      "purpose": "Determine whether the firmware exposes additional media feed groups.",
+      "classification": "reviewed-bounded-product-query",
+      "review_source": "references/round5_product_review.json",
+      "review_evidence": "MHDLG consumer slot4 is interface SUID0x1154a in A0518754..A051876C. PE provider table A05CC93C has matching SUID, slot1; interface getter A0305068 returns initialized object A05CC04C from20848514. Object points to vtable20848770. Relevant methods +8/+10/+60/+64/+6C/+EC resolve to A0303E9C/A0303EBA/A030408C/A030409A/A03040B0/A030437A. A0063212 calls +64 -> A030409A -> A030E0BA. It reads group count from ROM A05CFBB8 (0 in this image), writes only bounded caller array, and returns status200 pluscount0. A0063896 outputs both status and count.",
+      "side_effects_assessment": "Reads initialized metadata, writes caller buffers and formats UART output.",
+      "result_limitations": "A successful zero-count capability result is expected, not a media-motion test.",
+      "timeout": 30,
+      "prior_invocation_status": "not-invoked",
+      "code_evidence": [
+        {
+          "start": "0xa0063896",
+          "end_exclusive": "0xa006390c",
+          "sha256": "c277ae7a4760074d79c822da73ed2edc53c35efbfdab28835e056b631d414605"
+        },
+        {
+          "start": "0xa0063212",
+          "end_exclusive": "0xa0063252",
+          "sha256": "3469ddf9d94979edbc4548fcda2e3fa70104a5e4fa1fbf39876fd96acf1f90e4"
+        },
+        {
+          "start": "0xa030e0ba",
+          "end_exclusive": "0xa030e0e0",
+          "sha256": "0048c6a46fc1bedbfa587294f75090e754e0aaed7bf7a8cc0a35f029ba3ecefe"
+        }
+      ]
+    }
+  ],
+  "held_for_further_review": [
+    {
+      "names": [
+        "dsd_ols_prdcfg.get_time_stamp"
+      ],
+      "reason": "Misleading getter name: handler A0074F86 parses a date string, then A0072AD0 validates and converts it. Its success path calls A00727F6 and A04306EE to update date/clock state. Not a passive timestamp read."
+    },
+    {
+      "names": [
+        "ultra_spectra.get_vendor_ie",
+        "ultra_spectra.get_vendor_ie_json"
+      ],
+      "reason": "Local GET_VAR path A0459A3C checks driver, zeroes 2048-byte output and checks result, but both formatters trust returned item count and IE lengths without checking the end of that buffer. Deferred instead of claiming a fully bounded parse."
+    },
+    {
+      "names": [
+        "mhdlg.get_supported_types_by_group"
+      ],
+      "reason": "No DF groups in ROM A05CFBB8. A supplied group would only test404, adding no useful successful capability read."
+    },
+    {
+      "names": [
+        "mhdlg.get_mhdlgdyn",
+        "rest_eccl.get_copy_caps",
+        "rest_eccl.get_copy_default_settings",
+        "rest_eccl.get_copy_dependent_caps_list",
+        "cloud_data.get_current_config",
+        "cloud_data.get_printer_config",
+        "cloud_data.get_reg_id",
+        "gcp_privet.get_email_addr",
+        "jm_copy.get_supported_media_sizes",
+        "jm_copy.get_mcm_page_count"
+      ],
+      "reason": "Output paths are removed or do not publish the fetched values in this build; excluded from useful-command target instead of padding names."
+    },
+    {
+      "names": [
+        "escl.get_config_state"
+      ],
+      "reason": "Misleading getter: A0373DF2 calls A0378624 with callback A0373F19, which stores callback at20D8E258 and returns1. It reports callback-registration success rather than querying current configuration."
+    },
+    {
+      "names": [
+        "cloud_reg.get_claim_info",
+        "cloud_reg.get_claim_status",
+        "cloud_reg.get_email"
+      ],
+      "reason": "Callbacks are queued to cloud worker; may initiate external service requests. Not needed for local state capture."
+    },
+    {
+      "names": [
+        "reports_mgr.reports_list"
+      ],
+      "reason": "Handler loops all IDs1..999 and unconditionally counts each lookup; it ignores backend success before strlen on stack output. Cannot establish meaningful bounded report rows without further backend proof."
+    }
+  ],
+  "summary": {
+    "invocations": 5,
+    "new_names": 4
+  }
+}

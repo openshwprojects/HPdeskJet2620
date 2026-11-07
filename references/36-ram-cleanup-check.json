@@ -1,0 +1,12 @@
+[
+  {
+    "command": "udws \"ustd.ll /ram/codex_uart_20261029a;\"",
+    "purpose": "Inspect only our test directory after rmdir returned -1.",
+    "classification": "reviewed-ram-filesystem-query"
+  },
+  {
+    "command": "udws \"ustd.ls /ram;\"",
+    "purpose": "Determine whether our directory is still linked.",
+    "classification": "reviewed-ram-filesystem-query"
+  }
+]

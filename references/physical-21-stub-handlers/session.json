@@ -1,0 +1,4812 @@
+{
+  "started_utc": "2026-10-29T19:20:50.240425+00:00",
+  "port": "COM16",
+  "baud": 115200,
+  "data_bits": 8,
+  "parity": "N",
+  "stop_bits": 1,
+  "line_ending": "CRLF",
+  "source": "physical UART",
+  "rts": false,
+  "dtr": false,
+  "tx_character_delay_seconds": 0.003,
+  "requested_rx_buffer_bytes": 1048576,
+  "requested_tx_buffer_bytes": 65536,
+  "initial_prompt_seen": true,
+  "stop_reason": "batch-complete",
+  "ended_utc": "2026-10-29T19:21:51.501417+00:00",
+  "commands": [
+    {
+      "name": "clocksys.larry_clk_low_power_init",
+      "command": "udws \"clocksys.larry_clk_low_power_init;\"",
+      "handler": "0xa016e251",
+      "descriptor_addresses": [
+        "0xa053ce04"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa016e250",
+            "image_file_offset": 1499728,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 1,
+      "started_utc": "2026-10-29T19:20:50.921494+00:00",
+      "response_file": "0001-udws_clocksys_larry_clk_low_power_init.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:20:51.497435+00:00",
+      "elapsed_seconds": 0.575,
+      "response_bytes": 77,
+      "response_sha256": "8fc06add480c72458965c0bdd248083b3bca47e3607f3da4f7374420b338b62f",
+      "prompt_returned": true
+    },
+    {
+      "name": "clocksys.larry_clk_restore",
+      "command": "udws \"clocksys.larry_clk_restore;\"",
+      "handler": "0xa016e255",
+      "descriptor_addresses": [
+        "0xa053cdf8"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa016e254",
+            "image_file_offset": 1499732,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 2,
+      "started_utc": "2026-10-29T19:20:51.498826+00:00",
+      "response_file": "0002-udws_clocksys_larry_clk_restore.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:20:52.025969+00:00",
+      "elapsed_seconds": 0.526,
+      "response_bytes": 70,
+      "response_sha256": "45659ae1c5fdc5045d2f23b6783c103cd44d845ca3eed10411be8003d886012e",
+      "prompt_returned": true
+    },
+    {
+      "name": "clocksys.larry_clk_slowdown",
+      "command": "udws \"clocksys.larry_clk_slowdown;\"",
+      "handler": "0xa016e253",
+      "descriptor_addresses": [
+        "0xa053cdec"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa016e252",
+            "image_file_offset": 1499730,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 3,
+      "started_utc": "2026-10-29T19:20:52.027257+00:00",
+      "response_file": "0003-udws_clocksys_larry_clk_slowdown.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:20:52.552050+00:00",
+      "elapsed_seconds": 0.524,
+      "response_bytes": 71,
+      "response_sha256": "46e1d0ff60484fc667ee0ecff3fea1d79108cce9826073bf198ed3c12f33b62f",
+      "prompt_returned": true
+    },
+    {
+      "name": "clocksys.merlin_frequencyrestore",
+      "command": "udws \"clocksys.merlin_frequencyrestore;\"",
+      "handler": "0xa016e2b3",
+      "descriptor_addresses": [
+        "0xa053ceac"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa016e2b2",
+            "image_file_offset": 1499826,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 4,
+      "started_utc": "2026-10-29T19:20:52.553327+00:00",
+      "response_file": "0004-udws_clocksys_merlin_frequencyrestore.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:20:53.090586+00:00",
+      "elapsed_seconds": 0.537,
+      "response_bytes": 76,
+      "response_sha256": "e781230c99193809b78ad33553e0d3b159b3756976962841d5b4a50aaa4e8cea",
+      "prompt_returned": true
+    },
+    {
+      "name": "clocksys.merlin_frequencyscaling",
+      "command": "udws \"clocksys.merlin_frequencyscaling;\"",
+      "handler": "0xa016e2b1",
+      "descriptor_addresses": [
+        "0xa053cea0"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa016e2b0",
+            "image_file_offset": 1499824,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 5,
+      "started_utc": "2026-10-29T19:20:53.092117+00:00",
+      "response_file": "0005-udws_clocksys_merlin_frequencyscaling.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:20:53.662266+00:00",
+      "elapsed_seconds": 0.569,
+      "response_bytes": 76,
+      "response_sha256": "c949eed2a93eb5969b13ff32d1c05b999c9c3e5fdc033ebe627a5d8118308f70",
+      "prompt_returned": true
+    },
+    {
+      "name": "clocksys.merlin_set_ba_divider",
+      "command": "udws \"clocksys.merlin_set_ba_divider;\"",
+      "handler": "0xa016e2b5",
+      "descriptor_addresses": [
+        "0xa053ceb8"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa016e2b4",
+            "image_file_offset": 1499828,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 6,
+      "started_utc": "2026-10-29T19:20:53.663817+00:00",
+      "response_file": "0006-udws_clocksys_merlin_set_ba_divider.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:20:54.236631+00:00",
+      "elapsed_seconds": 0.572,
+      "response_bytes": 74,
+      "response_sha256": "3a9cf4324f03946bafccc17dbab790d1ee6500289c2e280fff9e8e8995258bc3",
+      "prompt_returned": true
+    },
+    {
+      "name": "clocksys.neuron_R4_frequencyrestore",
+      "command": "udws \"clocksys.neuron_R4_frequencyrestore;\"",
+      "handler": "0xa016e2ad",
+      "descriptor_addresses": [
+        "0xa053ce88"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa016e2ac",
+            "image_file_offset": 1499820,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 7,
+      "started_utc": "2026-10-29T19:20:54.238217+00:00",
+      "response_file": "0007-udws_clocksys_neuron_R4_frequencyrestore.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:20:54.794118+00:00",
+      "elapsed_seconds": 0.555,
+      "response_bytes": 79,
+      "response_sha256": "e1c008a90d5837086a2302f9b842f9b2f7a3977b9ff5c21327e613953aac6f41",
+      "prompt_returned": true
+    },
+    {
+      "name": "clocksys.neuron_R4_frequencyscaling",
+      "command": "udws \"clocksys.neuron_R4_frequencyscaling;\"",
+      "handler": "0xa016e2ab",
+      "descriptor_addresses": [
+        "0xa053ce7c"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa016e2aa",
+            "image_file_offset": 1499818,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 8,
+      "started_utc": "2026-10-29T19:20:54.795659+00:00",
+      "response_file": "0008-udws_clocksys_neuron_R4_frequencyscaling.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:20:55.354282+00:00",
+      "elapsed_seconds": 0.558,
+      "response_bytes": 79,
+      "response_sha256": "397629f314feef049954f2eedbd1285e38276d1bcfa40bf291d066922bb27e39",
+      "prompt_returned": true
+    },
+    {
+      "name": "clocksys.neuron_vcore_trimming",
+      "command": "udws \"clocksys.neuron_vcore_trimming;\"",
+      "handler": "0xa016e2af",
+      "descriptor_addresses": [
+        "0xa053ce94"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa016e2ae",
+            "image_file_offset": 1499822,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 9,
+      "started_utc": "2026-10-29T19:20:55.356037+00:00",
+      "response_file": "0009-udws_clocksys_neuron_vcore_trimming.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:20:55.892148+00:00",
+      "elapsed_seconds": 0.535,
+      "response_bytes": 74,
+      "response_sha256": "20c1398ff92b7cc2dcf121e7162c2b8208629f29377d51998ef32925d74b1f47",
+      "prompt_returned": true
+    },
+    {
+      "name": "clocksys.shemp_clk_client_denotify",
+      "command": "udws \"clocksys.shemp_clk_client_denotify;\"",
+      "handler": "0xa016e257",
+      "descriptor_addresses": [
+        "0xa053ce10"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa016e256",
+            "image_file_offset": 1499734,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 10,
+      "started_utc": "2026-10-29T19:20:55.893856+00:00",
+      "response_file": "0010-udws_clocksys_shemp_clk_client_denotify.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:20:56.462264+00:00",
+      "elapsed_seconds": 0.567,
+      "response_bytes": 78,
+      "response_sha256": "0d6ae5bdb14b1b3de097fed71cd05bf2b49eaf101851b8efeea758cddfec87dc",
+      "prompt_returned": true
+    },
+    {
+      "name": "clocksys.shemp_clk_state",
+      "command": "udws \"clocksys.shemp_clk_state;\"",
+      "handler": "0xa016e259",
+      "descriptor_addresses": [
+        "0xa053ce1c"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa016e258",
+            "image_file_offset": 1499736,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 11,
+      "started_utc": "2026-10-29T19:20:56.463836+00:00",
+      "response_file": "0011-udws_clocksys_shemp_clk_state.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:20:56.988377+00:00",
+      "elapsed_seconds": 0.524,
+      "response_bytes": 68,
+      "response_sha256": "c38e9949921a9409b3a378f4766088f0d58798125d919f4bcc621c175ad9b180",
+      "prompt_returned": true
+    },
+    {
+      "name": "clocksys.shemp_get_clk_rate",
+      "command": "udws \"clocksys.shemp_get_clk_rate;\"",
+      "handler": "0xa016e25d",
+      "descriptor_addresses": [
+        "0xa053ce34"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa016e25c",
+            "image_file_offset": 1499740,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 12,
+      "started_utc": "2026-10-29T19:20:56.990272+00:00",
+      "response_file": "0012-udws_clocksys_shemp_get_clk_rate.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:20:57.529835+00:00",
+      "elapsed_seconds": 0.538,
+      "response_bytes": 71,
+      "response_sha256": "a6a2782c1ab0e5a1ec984d2f835301d16e807dd4650535ef08f8756f4283c89c",
+      "prompt_returned": true
+    },
+    {
+      "name": "clocksys.shemp_set_clk_rate",
+      "command": "udws \"clocksys.shemp_set_clk_rate;\"",
+      "handler": "0xa016e25b",
+      "descriptor_addresses": [
+        "0xa053ce28"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa016e25a",
+            "image_file_offset": 1499738,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 13,
+      "started_utc": "2026-10-29T19:20:57.531932+00:00",
+      "response_file": "0013-udws_clocksys_shemp_set_clk_rate.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:20:58.054959+00:00",
+      "elapsed_seconds": 0.522,
+      "response_bytes": 71,
+      "response_sha256": "ebf076f4f53408c2f709515aaefb3e4b97d79000ebbf7e9884b39eaaa2f7f633",
+      "prompt_returned": true
+    },
+    {
+      "name": "clocksys.shemp_set_vcore_trim",
+      "command": "udws \"clocksys.shemp_set_vcore_trim;\"",
+      "handler": "0xa016e25f",
+      "descriptor_addresses": [
+        "0xa053ce40"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa016e25e",
+            "image_file_offset": 1499742,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 14,
+      "started_utc": "2026-10-29T19:20:58.056559+00:00",
+      "response_file": "0014-udws_clocksys_shemp_set_vcore_trim.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:20:58.596339+00:00",
+      "elapsed_seconds": 0.539,
+      "response_bytes": 73,
+      "response_sha256": "0b66637446609a7ae259b2a9b5b6f452c1309a6363faf13f9ad825ebcce6d86f",
+      "prompt_returned": true
+    },
+    {
+      "name": "cloud_data.sal_test",
+      "command": "udws \"cloud_data.sal_test;\"",
+      "handler": "0xa002b263",
+      "descriptor_addresses": [
+        "0xa05095cc"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa002b262",
+            "image_file_offset": 176738,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 15,
+      "started_utc": "2026-10-29T19:20:58.598283+00:00",
+      "response_file": "0015-udws_cloud_data_sal_test.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:20:59.092058+00:00",
+      "elapsed_seconds": 0.493,
+      "response_bytes": 63,
+      "response_sha256": "99f2105142ee5ff14d2aa5cc5787eda3714f77abf525188e84b15cc330c7c5a7",
+      "prompt_returned": true
+    },
+    {
+      "name": "db.select.list_set_edits",
+      "command": "udws \"db.select.list_set_edits;\"",
+      "handler": "0xa00466bd",
+      "descriptor_addresses": [
+        "0xa05134a0"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa00466bc",
+            "image_file_offset": 288444,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 16,
+      "started_utc": "2026-10-29T19:20:59.093778+00:00",
+      "response_file": "0016-udws_db_select_list_set_edits.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:20:59.620679+00:00",
+      "elapsed_seconds": 0.526,
+      "response_bytes": 68,
+      "response_sha256": "b230af16d5443613aef26a979244f06bb0acf6372fd6d7b24906313de3a09312",
+      "prompt_returned": true
+    },
+    {
+      "name": "dc_print.print_demo_page",
+      "command": "udws \"dc_print.print_demo_page;\"",
+      "handler": "0xa0213357",
+      "descriptor_addresses": [
+        "0xa055ba08"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa0213356",
+            "image_file_offset": 2175830,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 17,
+      "started_utc": "2026-10-29T19:20:59.622466+00:00",
+      "response_file": "0017-udws_dc_print_print_demo_page.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:00.133029+00:00",
+      "elapsed_seconds": 0.509,
+      "response_bytes": 68,
+      "response_sha256": "0867c4684364a52de3e670686aca48eefcc2549423157e1ae2be8202b7a3ca7a",
+      "prompt_returned": true
+    },
+    {
+      "name": "dsd_ols_pen.set_low_threshold",
+      "command": "udws \"dsd_ols_pen.set_low_threshold;\"",
+      "handler": "0xa006fe59",
+      "descriptor_addresses": [
+        "0xa051a028"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa006fe58",
+            "image_file_offset": 458328,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 18,
+      "started_utc": "2026-10-29T19:21:00.134823+00:00",
+      "response_file": "0018-udws_dsd_ols_pen_set_low_threshold.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:00.690527+00:00",
+      "elapsed_seconds": 0.555,
+      "response_bytes": 73,
+      "response_sha256": "ee094c79ccabe7bfc59bae3fc30a2f96967519843a9ebf429230943bebf7795b",
+      "prompt_returned": true
+    },
+    {
+      "name": "escl.generate_alert_ack",
+      "command": "udws \"escl.generate_alert_ack;\"",
+      "handler": "0xa0373f73",
+      "descriptor_addresses": [
+        "0xa05ee004"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa0373f72",
+            "image_file_offset": 3620722,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 19,
+      "started_utc": "2026-10-29T19:21:00.692382+00:00",
+      "response_file": "0019-udws_escl_generate_alert_ack.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:01.220542+00:00",
+      "elapsed_seconds": 0.527,
+      "response_bytes": 67,
+      "response_sha256": "d5f1cf61eda8828589b91a928e69b6063d5601842332b8213570b84a6832ebd3",
+      "prompt_returned": true
+    },
+    {
+      "name": "escl.get_last_completed_job_info",
+      "command": "udws \"escl.get_last_completed_job_info;\"",
+      "handler": "0xa0373f75",
+      "descriptor_addresses": [
+        "0xa05ee010"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa0373f74",
+            "image_file_offset": 3620724,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 20,
+      "started_utc": "2026-10-29T19:21:01.222681+00:00",
+      "response_file": "0020-udws_escl_get_last_completed_job_info.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:01.703681+00:00",
+      "elapsed_seconds": 0.48,
+      "response_bytes": 76,
+      "response_sha256": "c651f322494cb573a8ce12e857abc38e7f62968dfe8cafcfcd1641d57617db87",
+      "prompt_returned": true
+    },
+    {
+      "name": "event_log.get_event_log",
+      "command": "udws \"event_log.get_event_log;\"",
+      "handler": "0xa00c3f2d",
+      "descriptor_addresses": [
+        "0xa0522b4c"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa00c3f2c",
+            "image_file_offset": 802604,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 21,
+      "started_utc": "2026-10-29T19:21:01.705902+00:00",
+      "response_file": "0021-udws_event_log_get_event_log.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:02.225061+00:00",
+      "elapsed_seconds": 0.518,
+      "response_bytes": 67,
+      "response_sha256": "3a892b72b0bdbd75c0fbb99b4cc69622be56f61156a75a8734c0e8b9ca4d7569",
+      "prompt_returned": true
+    },
+    {
+      "name": "fp.gbs_walkabit",
+      "command": "udws \"fp.gbs_walkabit;\"",
+      "handler": "0xa00e936b",
+      "descriptor_addresses": [
+        "0xa0533870"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa00e936a",
+            "image_file_offset": 955242,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 22,
+      "started_utc": "2026-10-29T19:21:02.227010+00:00",
+      "response_file": "0022-udws_fp_gbs_walkabit.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:02.662136+00:00",
+      "elapsed_seconds": 0.434,
+      "response_bytes": 59,
+      "response_sha256": "d0518564ba50a4a5c600cce5458be9e783e2ccbcdbda312d993271207038dcd2",
+      "prompt_returned": true
+    },
+    {
+      "name": "fp.polling_off",
+      "command": "udws \"fp.polling_off;\"",
+      "handler": "0xa00e935b",
+      "descriptor_addresses": [
+        "0xa0533888"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa00e935a",
+            "image_file_offset": 955226,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 23,
+      "started_utc": "2026-10-29T19:21:02.663983+00:00",
+      "response_file": "0023-udws_fp_polling_off.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:03.158816+00:00",
+      "elapsed_seconds": 0.493,
+      "response_bytes": 58,
+      "response_sha256": "7977d84424ea0bc57686928e106265ef3de929ddaa92a3d43780fd99f201debe",
+      "prompt_returned": true
+    },
+    {
+      "name": "fp.polling_on",
+      "command": "udws \"fp.polling_on;\"",
+      "handler": "0xa00e9359",
+      "descriptor_addresses": [
+        "0xa053387c"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa00e9358",
+            "image_file_offset": 955224,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 24,
+      "started_utc": "2026-10-29T19:21:03.160903+00:00",
+      "response_file": "0024-udws_fp_polling_on.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:03.622631+00:00",
+      "elapsed_seconds": 0.46,
+      "response_bytes": 57,
+      "response_sha256": "8818d0e240216c33d4afa7c1febaac58f67668cea044f3dbf115f6967f485b1f",
+      "prompt_returned": true
+    },
+    {
+      "name": "htmg.print_dbg_str",
+      "command": "udws \"htmg.print_dbg_str;\"",
+      "handler": "0xa016d5e7",
+      "descriptor_addresses": [
+        "0xa053cbe8"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa016d5e6",
+            "image_file_offset": 1496550,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 25,
+      "started_utc": "2026-10-29T19:21:03.624877+00:00",
+      "response_file": "0025-udws_htmg_print_dbg_str.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:04.133014+00:00",
+      "elapsed_seconds": 0.507,
+      "response_bytes": 62,
+      "response_sha256": "95f01445dba6798078529a2dabdb37faba5713f19d658fd40258c3b98cbf9945",
+      "prompt_returned": true
+    },
+    {
+      "name": "htmg.reset_dbg_str",
+      "command": "udws \"htmg.reset_dbg_str;\"",
+      "handler": "0xa016d5e5",
+      "descriptor_addresses": [
+        "0xa053cbdc"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa016d5e4",
+            "image_file_offset": 1496548,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 26,
+      "started_utc": "2026-10-29T19:21:04.135101+00:00",
+      "response_file": "0026-udws_htmg_reset_dbg_str.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:04.626404+00:00",
+      "elapsed_seconds": 0.49,
+      "response_bytes": 62,
+      "response_sha256": "98c6d55432695652157a0170d459244597b172f978b0252055988e3a92c63077",
+      "prompt_returned": true
+    },
+    {
+      "name": "hw.interrupt_timelog_control",
+      "command": "udws \"hw.interrupt_timelog_control;\"",
+      "handler": "0xa0259a91",
+      "descriptor_addresses": [
+        "0xa058177c"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa0259a90",
+            "image_file_offset": 2464400,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 27,
+      "started_utc": "2026-10-29T19:21:04.628431+00:00",
+      "response_file": "0027-udws_hw_interrupt_timelog_control.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:05.153028+00:00",
+      "elapsed_seconds": 0.523,
+      "response_bytes": 72,
+      "response_sha256": "69db764029933917d74b2baaee45a817ab6142ba4a926ff914ea60a3350ff8b2",
+      "prompt_returned": true
+    },
+    {
+      "name": "hw.interrupt_timelog_get",
+      "command": "udws \"hw.interrupt_timelog_get;\"",
+      "handler": "0xa0259a93",
+      "descriptor_addresses": [
+        "0xa0581788"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa0259a92",
+            "image_file_offset": 2464402,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 28,
+      "started_utc": "2026-10-29T19:21:05.155231+00:00",
+      "response_file": "0028-udws_hw_interrupt_timelog_get.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:05.682599+00:00",
+      "elapsed_seconds": 0.526,
+      "response_bytes": 68,
+      "response_sha256": "35ac03ee186ff02b16ff8c034c6498673867fea94a28f7dd50fb54ee137e35db",
+      "prompt_returned": true
+    },
+    {
+      "name": "i2c.read",
+      "command": "udws \"i2c.read;\"",
+      "handler": "0xa016ea4d",
+      "descriptor_addresses": [
+        "0xa053d390"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa016ea4c",
+            "image_file_offset": 1501772,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 29,
+      "started_utc": "2026-10-29T19:21:05.684561+00:00",
+      "response_file": "0029-udws_i2c_read.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:06.104814+00:00",
+      "elapsed_seconds": 0.419,
+      "response_bytes": 52,
+      "response_sha256": "78888669020119242aa14c558d5ee47814ba39a948cde7c35215d4f68edd4934",
+      "prompt_returned": true
+    },
+    {
+      "name": "i2c.write",
+      "command": "udws \"i2c.write;\"",
+      "handler": "0xa016ea4f",
+      "descriptor_addresses": [
+        "0xa053d39c"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa016ea4e",
+            "image_file_offset": 1501774,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 30,
+      "started_utc": "2026-10-29T19:21:06.107043+00:00",
+      "response_file": "0030-udws_i2c_write.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:06.557558+00:00",
+      "elapsed_seconds": 0.449,
+      "response_bytes": 53,
+      "response_sha256": "dbab0d30d430fb84fcc84a0eae0e1ec26f2325aef9d1ba9787e66beece040199",
+      "prompt_returned": true
+    },
+    {
+      "name": "im.run_grafit",
+      "command": "udws \"im.run_grafit;\"",
+      "handler": "0xa018054b",
+      "descriptor_addresses": [
+        "0xa0543d5c"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa018054a",
+            "image_file_offset": 1574218,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 31,
+      "started_utc": "2026-10-29T19:21:06.559698+00:00",
+      "response_file": "0031-udws_im_run_grafit.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:07.020628+00:00",
+      "elapsed_seconds": 0.459,
+      "response_bytes": 57,
+      "response_sha256": "9d53f2cefa16c78b62db052157eb2e1df641440c56d8342477ed4bf73061fc40",
+      "prompt_returned": true
+    },
+    {
+      "name": "im.run_pclm",
+      "command": "udws \"im.run_pclm;\"",
+      "handler": "0xa0180549",
+      "descriptor_addresses": [
+        "0xa0543d68"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa0180548",
+            "image_file_offset": 1574216,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 32,
+      "started_utc": "2026-10-29T19:21:07.022742+00:00",
+      "response_file": "0032-udws_im_run_pclm.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:07.485545+00:00",
+      "elapsed_seconds": 0.461,
+      "response_bytes": 55,
+      "response_sha256": "18f07ac0bd301e5a222df9c2c0f89f1ba11a269b3ebe5e6ec2a23de5d8b36d83",
+      "prompt_returned": true
+    },
+    {
+      "name": "jm_ph_prt.print_demo_page",
+      "command": "udws \"jm_ph_prt.print_demo_page;\"",
+      "handler": "0xa0213357",
+      "descriptor_addresses": [
+        "0xa055b9fc"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa0213356",
+            "image_file_offset": 2175830,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 33,
+      "started_utc": "2026-10-29T19:21:07.487611+00:00",
+      "response_file": "0033-udws_jm_ph_prt_print_demo_page.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:08.029608+00:00",
+      "elapsed_seconds": 0.541,
+      "response_bytes": 69,
+      "response_sha256": "36b2129d1eb2a2c1c7d9f6b25d1cfd4fe7d65837d0085bfbf341d8ab89442075",
+      "prompt_returned": true
+    },
+    {
+      "name": "l10n.get_bl_media_sizes",
+      "command": "udws \"l10n.get_bl_media_sizes;\"",
+      "handler": "0xa02cc417",
+      "descriptor_addresses": [
+        "0xa05bd5a8"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa02cc416",
+            "image_file_offset": 2933782,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 34,
+      "started_utc": "2026-10-29T19:21:08.031824+00:00",
+      "response_file": "0034-udws_l10n_get_bl_media_sizes.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:08.555840+00:00",
+      "elapsed_seconds": 0.522,
+      "response_bytes": 67,
+      "response_sha256": "40c6952837caa920605e735987f629378a7de46a4b595b3304840ad7710814b3",
+      "prompt_returned": true
+    },
+    {
+      "name": "l10n.get_dim_image_size",
+      "command": "udws \"l10n.get_dim_image_size;\"",
+      "handler": "0xa02cc413",
+      "descriptor_addresses": [
+        "0xa05bd590"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa02cc412",
+            "image_file_offset": 2933778,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 35,
+      "started_utc": "2026-10-29T19:21:08.558334+00:00",
+      "response_file": "0035-udws_l10n_get_dim_image_size.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:09.101643+00:00",
+      "elapsed_seconds": 0.542,
+      "response_bytes": 67,
+      "response_sha256": "a6a904c08fb8363bcb4959dffa0dd37ffcb34f239dc98a2ea774a104751ec51a",
+      "prompt_returned": true
+    },
+    {
+      "name": "l10n.get_dim_media_size",
+      "command": "udws \"l10n.get_dim_media_size;\"",
+      "handler": "0xa02cc411",
+      "descriptor_addresses": [
+        "0xa05bd584"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa02cc410",
+            "image_file_offset": 2933776,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 36,
+      "started_utc": "2026-10-29T19:21:09.104376+00:00",
+      "response_file": "0036-udws_l10n_get_dim_media_size.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:09.629008+00:00",
+      "elapsed_seconds": 0.523,
+      "response_bytes": 67,
+      "response_sha256": "6107163fca670636d8274bc403c1d0f8c02dbad4ac12ef7e73a3c0a8c8af63cf",
+      "prompt_returned": true
+    },
+    {
+      "name": "l10n.get_im_size_string",
+      "command": "udws \"l10n.get_im_size_string;\"",
+      "handler": "0xa02cc41b",
+      "descriptor_addresses": [
+        "0xa05bd5c0"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa02cc41a",
+            "image_file_offset": 2933786,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 37,
+      "started_utc": "2026-10-29T19:21:09.631233+00:00",
+      "response_file": "0037-udws_l10n_get_im_size_string.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:10.159429+00:00",
+      "elapsed_seconds": 0.527,
+      "response_bytes": 67,
+      "response_sha256": "91df5aad44d00ce787785f136dabe4d4352d6874ffeca0c444e32dc484c2453d",
+      "prompt_returned": true
+    },
+    {
+      "name": "l10n.get_image_sizes",
+      "command": "udws \"l10n.get_image_sizes;\"",
+      "handler": "0xa02cc40f",
+      "descriptor_addresses": [
+        "0xa05bd578"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa02cc40e",
+            "image_file_offset": 2933774,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 38,
+      "started_utc": "2026-10-29T19:21:10.162095+00:00",
+      "response_file": "0038-udws_l10n_get_image_sizes.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:10.655043+00:00",
+      "elapsed_seconds": 0.491,
+      "response_bytes": 64,
+      "response_sha256": "133bb9192498291ae3fdd1e3936e7f7b618d28ac2c99ee022611ab9e97c43eab",
+      "prompt_returned": true
+    },
+    {
+      "name": "l10n.get_m_size_string",
+      "command": "udws \"l10n.get_m_size_string;\"",
+      "handler": "0xa02cc419",
+      "descriptor_addresses": [
+        "0xa05bd5b4"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa02cc418",
+            "image_file_offset": 2933784,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 39,
+      "started_utc": "2026-10-29T19:21:10.657366+00:00",
+      "response_file": "0039-udws_l10n_get_m_size_string.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:11.168535+00:00",
+      "elapsed_seconds": 0.509,
+      "response_bytes": 66,
+      "response_sha256": "7071a8135756fae01bc6608605df4193b5724905fbab987e88039cae6e1a9e9a",
+      "prompt_returned": true
+    },
+    {
+      "name": "l10n.get_m_sizes_m_type",
+      "command": "udws \"l10n.get_m_sizes_m_type;\"",
+      "handler": "0xa02cc415",
+      "descriptor_addresses": [
+        "0xa05bd59c"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa02cc414",
+            "image_file_offset": 2933780,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 40,
+      "started_utc": "2026-10-29T19:21:11.171290+00:00",
+      "response_file": "0040-udws_l10n_get_m_sizes_m_type.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:11.693700+00:00",
+      "elapsed_seconds": 0.521,
+      "response_bytes": 67,
+      "response_sha256": "b94cd6e605e786f271255a3b176ee503cd93303b9e7c95d51180ef4091067822",
+      "prompt_returned": true
+    },
+    {
+      "name": "l10n.get_m_type_string",
+      "command": "udws \"l10n.get_m_type_string;\"",
+      "handler": "0xa02cc41d",
+      "descriptor_addresses": [
+        "0xa05bd5cc"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa02cc41c",
+            "image_file_offset": 2933788,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 41,
+      "started_utc": "2026-10-29T19:21:11.696205+00:00",
+      "response_file": "0041-udws_l10n_get_m_type_string.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:12.188534+00:00",
+      "elapsed_seconds": 0.491,
+      "response_bytes": 66,
+      "response_sha256": "fbf76733d7c667df75418f8c05bfed149e4f61f121e10ff27112ec9e6e4bf2c5",
+      "prompt_returned": true
+    },
+    {
+      "name": "l10n.set_firm_str",
+      "command": "udws \"l10n.set_firm_str;\"",
+      "handler": "0xa02cc5af",
+      "descriptor_addresses": [
+        "0xa05bd614"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa02cc5ae",
+            "image_file_offset": 2934190,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 42,
+      "started_utc": "2026-10-29T19:21:12.190858+00:00",
+      "response_file": "0042-udws_l10n_set_firm_str.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:12.626496+00:00",
+      "elapsed_seconds": 0.434,
+      "response_bytes": 61,
+      "response_sha256": "a7b58cfbd68eeaa785ca07ced743bf6a2b7bfbdf28d7620d923abe545825d9ae",
+      "prompt_returned": true
+    },
+    {
+      "name": "ledm_utilities.disable_icc_testing",
+      "command": "udws \"ledm_utilities.disable_icc_testing;\"",
+      "handler": "0xa0392277",
+      "descriptor_addresses": [
+        "0xa05f3764"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa0392276",
+            "image_file_offset": 3744374,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 43,
+      "started_utc": "2026-10-29T19:21:12.629084+00:00",
+      "response_file": "0043-udws_ledm_utilities_disable_icc_testing.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:13.193480+00:00",
+      "elapsed_seconds": 0.562,
+      "response_bytes": 78,
+      "response_sha256": "0638b816b9215f3eec4a0f4b7633421e7b5da5e0259e580403acb504fd64099d",
+      "prompt_returned": true
+    },
+    {
+      "name": "ledm_utilities.enable_icc_testing",
+      "command": "udws \"ledm_utilities.enable_icc_testing;\"",
+      "handler": "0xa0392275",
+      "descriptor_addresses": [
+        "0xa05f374c"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa0392274",
+            "image_file_offset": 3744372,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 44,
+      "started_utc": "2026-10-29T19:21:13.196788+00:00",
+      "response_file": "0044-udws_ledm_utilities_enable_icc_testing.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:13.751094+00:00",
+      "elapsed_seconds": 0.552,
+      "response_bytes": 77,
+      "response_sha256": "c5900b08485f43cd48f18dfb6404a30d7290215a97577ea76c5924d1d7da4ddb",
+      "prompt_returned": true
+    },
+    {
+      "name": "ledm_utilities.getICCErrorCode",
+      "command": "udws \"ledm_utilities.getICCErrorCode;\"",
+      "handler": "0xa039227f",
+      "descriptor_addresses": [
+        "0xa05f3740"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa039227e",
+            "image_file_offset": 3744382,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 45,
+      "started_utc": "2026-10-29T19:21:13.753686+00:00",
+      "response_file": "0045-udws_ledm_utilities_getICCErrorCode.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:14.291667+00:00",
+      "elapsed_seconds": 0.536,
+      "response_bytes": 74,
+      "response_sha256": "79b7408dce8251a7807483247aee7b1d41fc7380837d089e55001d0991e576e6",
+      "prompt_returned": true
+    },
+    {
+      "name": "ledm_utilities.getIccStatus",
+      "command": "udws \"ledm_utilities.getIccStatus;\"",
+      "handler": "0xa039227b",
+      "descriptor_addresses": [
+        "0xa05f3728"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa039227a",
+            "image_file_offset": 3744378,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 46,
+      "started_utc": "2026-10-29T19:21:14.294167+00:00",
+      "response_file": "0046-udws_ledm_utilities_getIccStatus.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:14.818029+00:00",
+      "elapsed_seconds": 0.522,
+      "response_bytes": 71,
+      "response_sha256": "eda1eb4bd8f872120c18e30c081794b27ac1898d594eec5e13df6d23ca2c028d",
+      "prompt_returned": true
+    },
+    {
+      "name": "ledm_utilities.setICCErrorCode",
+      "command": "udws \"ledm_utilities.setICCErrorCode;\"",
+      "handler": "0xa039227d",
+      "descriptor_addresses": [
+        "0xa05f3734"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa039227c",
+            "image_file_offset": 3744380,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 47,
+      "started_utc": "2026-10-29T19:21:14.820450+00:00",
+      "response_file": "0047-udws_ledm_utilities_setICCErrorCode.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:15.301734+00:00",
+      "elapsed_seconds": 0.479,
+      "response_bytes": 74,
+      "response_sha256": "062a5ea5733169c12e77c5ae29bedd60bad97415c35294178002c9c3b7aa695d",
+      "prompt_returned": true
+    },
+    {
+      "name": "ledm_utilities.setICCStatus",
+      "command": "udws \"ledm_utilities.setICCStatus;\"",
+      "handler": "0xa0392279",
+      "descriptor_addresses": [
+        "0xa05f371c"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa0392278",
+            "image_file_offset": 3744376,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 48,
+      "started_utc": "2026-10-29T19:21:15.304559+00:00",
+      "response_file": "0048-udws_ledm_utilities_setICCStatus.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:15.827368+00:00",
+      "elapsed_seconds": 0.521,
+      "response_bytes": 71,
+      "response_sha256": "75fdcc6930ddc0209f59b07ddc580ef71ead1a069cd016ade72d6abb6c181a6f",
+      "prompt_returned": true
+    },
+    {
+      "name": "ledm_utilities.set_icc_start_check_status",
+      "command": "udws \"ledm_utilities.set_icc_start_check_status;\"",
+      "handler": "0xa0392281",
+      "descriptor_addresses": [
+        "0xa05f3758"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa0392280",
+            "image_file_offset": 3744384,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 49,
+      "started_utc": "2026-10-29T19:21:15.830322+00:00",
+      "response_file": "0049-udws_ledm_utilities_set_icc_start_check_status.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:16.429458+00:00",
+      "elapsed_seconds": 0.597,
+      "response_bytes": 85,
+      "response_sha256": "d7b3d8f8705ae23fa1c2823d25271f6df17650645084045d1e8cb20d5a7b22f0",
+      "prompt_returned": true
+    },
+    {
+      "name": "lib_servo.isrdump",
+      "command": "udws \"lib_servo.isrdump;\"",
+      "handler": "0xa02be2bd",
+      "descriptor_addresses": [
+        "0xa05b6940"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa02be2bc",
+            "image_file_offset": 2876092,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 50,
+      "started_utc": "2026-10-29T19:21:16.432140+00:00",
+      "response_file": "0050-udws_lib_servo_isrdump.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:16.924586+00:00",
+      "elapsed_seconds": 0.49,
+      "response_bytes": 61,
+      "response_sha256": "80f9a12e627eaae991302e84419de0df904995949535e7e2abec5e1cad3e4a60",
+      "prompt_returned": true
+    },
+    {
+      "name": "mergeout mergeout display",
+      "command": "udws \"mergeout mergeout display;\"",
+      "handler": "0xa02d0f15",
+      "descriptor_addresses": [
+        "0xa05c4d20"
+      ],
+      "registration_calls": [
+        "0xa02d1310"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa02d0f14",
+            "image_file_offset": 2952980,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 51,
+      "started_utc": "2026-10-29T19:21:16.926932+00:00",
+      "response_file": "0051-udws_mergeout_mergeout_display.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:17.451732+00:00",
+      "elapsed_seconds": 0.523,
+      "response_bytes": 69,
+      "response_sha256": "78d19b752e8698191a7a84339bd04a6b68677e22a1635e8f18e8eb0cb1fa9190",
+      "prompt_returned": true
+    },
+    {
+      "name": "mergeout mergeout test",
+      "command": "udws \"mergeout mergeout test;\"",
+      "handler": "0xa02d0f79",
+      "descriptor_addresses": [
+        "0xa05c4d60"
+      ],
+      "registration_calls": [
+        "0xa02d1310"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa02d0f78",
+            "image_file_offset": 2953080,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 52,
+      "started_utc": "2026-10-29T19:21:17.454653+00:00",
+      "response_file": "0052-udws_mergeout_mergeout_test.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:17.963655+00:00",
+      "elapsed_seconds": 0.507,
+      "response_bytes": 66,
+      "response_sha256": "9695f5bcabba53c65d9dd9d46094fe9621562cd2118726443d1d0df81d40e481",
+      "prompt_returned": true
+    },
+    {
+      "name": "nca.set_admin_wifi_radio_state",
+      "command": "udws \"nca.set_admin_wifi_radio_state;\"",
+      "handler": "0xa02e1e0b",
+      "descriptor_addresses": [
+        "0xa05c7380"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa02e1e0a",
+            "image_file_offset": 3022346,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 53,
+      "started_utc": "2026-10-29T19:21:17.965623+00:00",
+      "response_file": "0053-udws_nca_set_admin_wifi_radio_state.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:18.520984+00:00",
+      "elapsed_seconds": 0.553,
+      "response_bytes": 74,
+      "response_sha256": "d0d6fe439c281956f5b50b68b7b67ed1af75a485a7a1e0e398248e7901119388",
+      "prompt_returned": true
+    },
+    {
+      "name": "nvm2.report2file",
+      "command": "udws \"nvm2.report2file;\"",
+      "handler": "0xa02f4793",
+      "descriptor_addresses": [
+        "0xa05c92d8"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa02f4792",
+            "image_file_offset": 3098514,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 54,
+      "started_utc": "2026-10-29T19:21:18.523692+00:00",
+      "response_file": "0054-udws_nvm2_report2file.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:19.014134+00:00",
+      "elapsed_seconds": 0.488,
+      "response_bytes": 60,
+      "response_sha256": "e5459b2ba3e63accbde0a486bd58d2b7da508fd507d457cf406998178f54019e",
+      "prompt_returned": true
+    },
+    {
+      "name": "paper.get_lf_cal_error",
+      "command": "udws \"paper.get_lf_cal_error;\"",
+      "handler": "0xa02fa57f",
+      "descriptor_addresses": [
+        "0xa05cafa8"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa02fa57e",
+            "image_file_offset": 3122558,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 55,
+      "started_utc": "2026-10-29T19:21:19.016703+00:00",
+      "response_file": "0055-udws_paper_get_lf_cal_error.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:19.526564+00:00",
+      "elapsed_seconds": 0.508,
+      "response_bytes": 66,
+      "response_sha256": "7041d5393eccec652acba4a2a58ad2dd8f13df712c56e7d4be5015a31ca57ce6",
+      "prompt_returned": true
+    },
+    {
+      "name": "pen.tij4_resistor_test",
+      "command": "udws \"pen.tij4_resistor_test;\"",
+      "handler": "0xa032a6d3",
+      "descriptor_addresses": [
+        "0xa05df084"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa032a6d2",
+            "image_file_offset": 3319506,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 56,
+      "started_utc": "2026-10-29T19:21:19.529945+00:00",
+      "response_file": "0056-udws_pen_tij4_resistor_test.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:20.052985+00:00",
+      "elapsed_seconds": 0.521,
+      "response_bytes": 66,
+      "response_sha256": "b551f36bcc57e48186d8663fe14aa847ae525dd0261eda58d643232763dda5d1",
+      "prompt_returned": true
+    },
+    {
+      "name": "rci_pal.test",
+      "command": "udws \"rci_pal.test;\"",
+      "handler": "0xa0250ef1",
+      "descriptor_addresses": [
+        "0xa056ab30"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa0250ef0",
+            "image_file_offset": 2428656,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 57,
+      "started_utc": "2026-10-29T19:21:20.055830+00:00",
+      "response_file": "0057-udws_rci_pal_test.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:20.516313+00:00",
+      "elapsed_seconds": 0.458,
+      "response_bytes": 56,
+      "response_sha256": "f938171660600bd68dc53d3e1bd485c75cc0c305fab28c2cc9ef4723ae6f7b5c",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan barcode db",
+      "command": "udws \"scan barcode db;\"",
+      "handler": "0xa03a160f",
+      "descriptor_addresses": [
+        "0xa05f6fe4"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03a160e",
+            "image_file_offset": 3806734,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 58,
+      "started_utc": "2026-10-29T19:21:20.519330+00:00",
+      "response_file": "0058-udws_scan_barcode_db.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:20.995333+00:00",
+      "elapsed_seconds": 0.474,
+      "response_bytes": 59,
+      "response_sha256": "2ac3ee75bdd0e55a49272f890e1defe56bf7b88c18a87d0c3316eec58b801480",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan barcode prnu",
+      "command": "udws \"scan barcode prnu;\"",
+      "handler": "0xa03a165b",
+      "descriptor_addresses": [
+        "0xa05f6ff4"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03a165a",
+            "image_file_offset": 3806810,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 59,
+      "started_utc": "2026-10-29T19:21:20.998510+00:00",
+      "response_file": "0059-udws_scan_barcode_prnu.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:21.495245+00:00",
+      "elapsed_seconds": 0.495,
+      "response_bytes": 61,
+      "response_sha256": "2e7ec6d5c452b81da2390409b1fc13c6ef27b6b3b56b54041b53f20ccc19e109",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan bolt nlvds",
+      "command": "udws \"scan bolt nlvds;\"",
+      "handler": "0xa03a2ea3",
+      "descriptor_addresses": [
+        "0xa05fc3b4"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03a2ea2",
+            "image_file_offset": 3813026,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 60,
+      "started_utc": "2026-10-29T19:21:21.498380+00:00",
+      "response_file": "0060-udws_scan_bolt_nlvds.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:21.991437+00:00",
+      "elapsed_seconds": 0.491,
+      "response_bytes": 59,
+      "response_sha256": "f045b848a609823e6fd1e66d0b2a6ecc7ce54f2f478976b00b5095a2059281e1",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan cissm lacws",
+      "command": "udws \"scan cissm lacws;\"",
+      "handler": "0xa03a6cdd",
+      "descriptor_addresses": [
+        "0xa05ff8d0"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03a6cdc",
+            "image_file_offset": 3828956,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 61,
+      "started_utc": "2026-10-29T19:21:21.994433+00:00",
+      "response_file": "0061-udws_scan_cissm_lacws.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:22.486061+00:00",
+      "elapsed_seconds": 0.49,
+      "response_bytes": 60,
+      "response_sha256": "718ed092153dd2f844851378398679a887b03b560956e0d6de4e1d0a24f517c6",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan cissm mingaincal",
+      "command": "udws \"scan cissm mingaincal;\"",
+      "handler": "0xa03a9d71",
+      "descriptor_addresses": [
+        "0xa05ff890"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03a9d70",
+            "image_file_offset": 3841392,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 62,
+      "started_utc": "2026-10-29T19:21:22.489106+00:00",
+      "response_file": "0062-udws_scan_cissm_mingaincal.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:22.997030+00:00",
+      "elapsed_seconds": 0.505,
+      "response_bytes": 65,
+      "response_sha256": "96589bc7664b6ddefefc4c6b2a2fd03121b8251a522bdab8a3c9f5af718b35a0",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan cissm notch",
+      "command": "udws \"scan cissm notch;\"",
+      "handler": "0xa03a6cdf",
+      "descriptor_addresses": [
+        "0xa05ff8f0"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03a6cde",
+            "image_file_offset": 3828958,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 63,
+      "started_utc": "2026-10-29T19:21:23.000347+00:00",
+      "response_file": "0063-udws_scan_cissm_notch.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:23.494614+00:00",
+      "elapsed_seconds": 0.492,
+      "response_bytes": 60,
+      "response_sha256": "c3928ddbd790af0b19cef3dbce42667376ee58cb9ee9217c343a45dacc46e966",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan cissm pittcd",
+      "command": "udws \"scan cissm pittcd;\"",
+      "handler": "0xa03a6cdb",
+      "descriptor_addresses": [
+        "0xa05ff8c0"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03a6cda",
+            "image_file_offset": 3828954,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 64,
+      "started_utc": "2026-10-29T19:21:23.497577+00:00",
+      "response_file": "0064-udws_scan_cissm_pittcd.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:23.989195+00:00",
+      "elapsed_seconds": 0.489,
+      "response_bytes": 61,
+      "response_sha256": "acb422737d02a073e936a17c3551b65418491a16a73ded04cd29e781e0bf736d",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan cissm rrca",
+      "command": "udws \"scan cissm rrca;\"",
+      "handler": "0xa03a6ce1",
+      "descriptor_addresses": [
+        "0xa05ff8e0"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03a6ce0",
+            "image_file_offset": 3828960,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 65,
+      "started_utc": "2026-10-29T19:21:23.992377+00:00",
+      "response_file": "0065-udws_scan_cissm_rrca.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:24.482186+00:00",
+      "elapsed_seconds": 0.487,
+      "response_bytes": 59,
+      "response_sha256": "6fa564fd7600743443a47777e15cd432550c168e49453273c2a34e6fd75a1d9f",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan dasher nlvds",
+      "command": "udws \"scan dasher nlvds;\"",
+      "handler": "0xa03a2ea3",
+      "descriptor_addresses": [
+        "0xa05fc3b4"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03a2ea2",
+            "image_file_offset": 3813026,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 66,
+      "started_utc": "2026-10-29T19:21:24.485590+00:00",
+      "response_file": "0066-udws_scan_dasher_nlvds.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:24.991181+00:00",
+      "elapsed_seconds": 0.504,
+      "response_bytes": 61,
+      "response_sha256": "aa4c855d9c22e3ab6b140ff0b16e46bf4110d8196bd3e1f71293b812481387f3",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan debug assert",
+      "command": "udws \"scan debug assert;\"",
+      "handler": "0xa03a302f",
+      "descriptor_addresses": [
+        "0xa05fc464"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03a302e",
+            "image_file_offset": 3813422,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 67,
+      "started_utc": "2026-10-29T19:21:24.993957+00:00",
+      "response_file": "0067-udws_scan_debug_assert.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:25.491440+00:00",
+      "elapsed_seconds": 0.496,
+      "response_bytes": 61,
+      "response_sha256": "f90694e248f3f296672db84cbc59c221f798f596ca98db005511341b15ad692c",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan ds adfcheck",
+      "command": "udws \"scan ds adfcheck;\"",
+      "handler": "0xa03a3939",
+      "descriptor_addresses": [
+        "0xa05fcd94"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03a3938",
+            "image_file_offset": 3815736,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 68,
+      "started_utc": "2026-10-29T19:21:25.494738+00:00",
+      "response_file": "0068-udws_scan_ds_adfcheck.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:25.987828+00:00",
+      "elapsed_seconds": 0.49,
+      "response_bytes": 60,
+      "response_sha256": "f3bb2cc54d784b8d1cd139996f1a1e1d662b48e6573a75b48540cea641550acf",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan ds prnutar",
+      "command": "udws \"scan ds prnutar;\"",
+      "handler": "0xa03a4129",
+      "descriptor_addresses": [
+        "0xa05fcdc4"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03a4128",
+            "image_file_offset": 3817768,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 69,
+      "started_utc": "2026-10-29T19:21:25.990616+00:00",
+      "response_file": "0069-udws_scan_ds_prnutar.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:26.449981+00:00",
+      "elapsed_seconds": 0.457,
+      "response_bytes": 59,
+      "response_sha256": "3ab21fca3f4ab31b990db16448b8eaff820d104b6d5f2aefed689c394467508e",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan ifc back",
+      "command": "udws \"scan ifc back;\"",
+      "handler": "0xa03bf94d",
+      "descriptor_addresses": [
+        "0xa0605210"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03bf94c",
+            "image_file_offset": 3930444,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 70,
+      "started_utc": "2026-10-29T19:21:26.452987+00:00",
+      "response_file": "0070-udws_scan_ifc_back.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:26.929884+00:00",
+      "elapsed_seconds": 0.475,
+      "response_bytes": 57,
+      "response_sha256": "90ec9c749f9e6f68aa006be891fe703bbbc544fd88daf7f190ac1f34d0c1ffa3",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan ifc calsize",
+      "command": "udws \"scan ifc calsize;\"",
+      "handler": "0xa03bfc01",
+      "descriptor_addresses": [
+        "0xa06052e0"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03bfc00",
+            "image_file_offset": 3931136,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 71,
+      "started_utc": "2026-10-29T19:21:26.933143+00:00",
+      "response_file": "0071-udws_scan_ifc_calsize.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:27.427939+00:00",
+      "elapsed_seconds": 0.492,
+      "response_bytes": 60,
+      "response_sha256": "8b1510dda0f8989d843092be0ec7f9d35a52bb35ba8dd88bc91074111f3aa766",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan ifc ep",
+      "command": "udws \"scan ifc ep;\"",
+      "handler": "0xa03bfbff",
+      "descriptor_addresses": [
+        "0xa06052d0"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03bfbfe",
+            "image_file_offset": 3931134,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 72,
+      "started_utc": "2026-10-29T19:21:27.430698+00:00",
+      "response_file": "0072-udws_scan_ifc_ep.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:27.834304+00:00",
+      "elapsed_seconds": 0.401,
+      "response_bytes": 55,
+      "response_sha256": "d4ed6dad34cfc44103471f6ce8a70029629c67dbb99fa37e8a3381455f265ac9",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan ifc holdoff",
+      "command": "udws \"scan ifc holdoff;\"",
+      "handler": "0xa03bfbf3",
+      "descriptor_addresses": [
+        "0xa0605280"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03bfbf2",
+            "image_file_offset": 3931122,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 73,
+      "started_utc": "2026-10-29T19:21:27.836978+00:00",
+      "response_file": "0073-udws_scan_ifc_holdoff.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:28.327654+00:00",
+      "elapsed_seconds": 0.488,
+      "response_bytes": 60,
+      "response_sha256": "d618847e1ce7a7b0a8f8b358a8c89a135277f6c296abfb69ac510889a6d95697",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan ifc vback",
+      "command": "udws \"scan ifc vback;\"",
+      "handler": "0xa03bf94f",
+      "descriptor_addresses": [
+        "0xa0605220"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03bf94e",
+            "image_file_offset": 3930446,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 74,
+      "started_utc": "2026-10-29T19:21:28.330364+00:00",
+      "response_file": "0074-udws_scan_ifc_vback.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:28.817655+00:00",
+      "elapsed_seconds": 0.484,
+      "response_bytes": 58,
+      "response_sha256": "64155a8f8822e158bae5761b56cb068e4a066ff4b57c4ff8e017cb653609b6b2",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan ifc yy",
+      "command": "udws \"scan ifc yy;\"",
+      "handler": "0xa03bfd0d",
+      "descriptor_addresses": [
+        "0xa0605370"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03bfd0c",
+            "image_file_offset": 3931404,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 75,
+      "started_utc": "2026-10-29T19:21:28.821261+00:00",
+      "response_file": "0075-udws_scan_ifc_yy.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:29.293664+00:00",
+      "elapsed_seconds": 0.469,
+      "response_bytes": 55,
+      "response_sha256": "52a25666eb897ef2fa29e2795743b3a567b31ed602c2c75322de18b8bad7bbe5",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan iplmb dsp",
+      "command": "udws \"scan iplmb dsp;\"",
+      "handler": "0xa03a7af1",
+      "descriptor_addresses": [
+        "0xa05ffbdc"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03a7af0",
+            "image_file_offset": 3832560,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 76,
+      "started_utc": "2026-10-29T19:21:29.297210+00:00",
+      "response_file": "0076-udws_scan_iplmb_dsp.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:29.782034+00:00",
+      "elapsed_seconds": 0.482,
+      "response_bytes": 58,
+      "response_sha256": "5c0a0d982fe8d2610f95e475eae0b8597b385a64b1d484a7d76aa0877d1206b5",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan isr db",
+      "command": "udws \"scan isr db;\"",
+      "handler": "0xa03acf4b",
+      "descriptor_addresses": [
+        "0xa0600174"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03acf4a",
+            "image_file_offset": 3854154,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 77,
+      "started_utc": "2026-10-29T19:21:29.785365+00:00",
+      "response_file": "0077-udws_scan_isr_db.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:30.260236+00:00",
+      "elapsed_seconds": 0.473,
+      "response_bytes": 55,
+      "response_sha256": "8eab74ce3624f7fe8a8fa132b5b6f8d28c405ac09822ff50e50c75ad7cc63def",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan isr dumplog",
+      "command": "udws \"scan isr dumplog;\"",
+      "handler": "0xa03ad357",
+      "descriptor_addresses": [
+        "0xa0600224"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03ad356",
+            "image_file_offset": 3855190,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 78,
+      "started_utc": "2026-10-29T19:21:30.263581+00:00",
+      "response_file": "0078-udws_scan_isr_dumplog.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:30.758756+00:00",
+      "elapsed_seconds": 0.493,
+      "response_bytes": 60,
+      "response_sha256": "c6e3a972f53d0e0a4e9cb9d2d4e0bdcf5f65fa1c157a400a1d1a77e8be5703e9",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan keep s1cmt",
+      "command": "udws \"scan keep s1cmt;\"",
+      "handler": "0xa03a7e55",
+      "descriptor_addresses": [
+        "0xa05ffc34"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03a7e54",
+            "image_file_offset": 3833428,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 79,
+      "started_utc": "2026-10-29T19:21:30.762434+00:00",
+      "response_file": "0079-udws_scan_keep_s1cmt.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:31.195278+00:00",
+      "elapsed_seconds": 0.43,
+      "response_bytes": 59,
+      "response_sha256": "ab28c4195a0429332f72aac8ee1874874971fc3345b0be03fba76f450ebdc530",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan led bccc",
+      "command": "udws \"scan led bccc;\"",
+      "handler": "0xa03a9dcf",
+      "descriptor_addresses": [
+        "0xa05ffd7c"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03a9dce",
+            "image_file_offset": 3841486,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 80,
+      "started_utc": "2026-10-29T19:21:31.198698+00:00",
+      "response_file": "0080-udws_scan_led_bccc.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:31.691008+00:00",
+      "elapsed_seconds": 0.49,
+      "response_bytes": 57,
+      "response_sha256": "8a271415dcce5ef5fcc7a3fba41a6aaaba84095e9b9bbd5a762474979a9a0a22",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan led ccsum",
+      "command": "udws \"scan led ccsum;\"",
+      "handler": "0xa03a9dd1",
+      "descriptor_addresses": [
+        "0xa05ffd8c"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03a9dd0",
+            "image_file_offset": 3841488,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 81,
+      "started_utc": "2026-10-29T19:21:31.694408+00:00",
+      "response_file": "0081-udws_scan_led_ccsum.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:32.187093+00:00",
+      "elapsed_seconds": 0.49,
+      "response_bytes": 58,
+      "response_sha256": "d7224f1b87437d6f9ee54cc95830e893a1831087b320c78f74c5650f6976c4c6",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan led mingaincal",
+      "command": "udws \"scan led mingaincal;\"",
+      "handler": "0xa03a9d71",
+      "descriptor_addresses": [
+        "0xa05ffd2c"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03a9d70",
+            "image_file_offset": 3841392,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 82,
+      "started_utc": "2026-10-29T19:21:32.190721+00:00",
+      "response_file": "0082-udws_scan_led_mingaincal.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:32.700193+00:00",
+      "elapsed_seconds": 0.506,
+      "response_bytes": 63,
+      "response_sha256": "e5bcbffc2dbbdf1f0cd2ff2c6765a4b28e491b6271ad749c48375574563a7bf4",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan line done",
+      "command": "udws \"scan line done;\"",
+      "handler": "0xa03aa0e1",
+      "descriptor_addresses": [
+        "0xa05fff34"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03aa0e0",
+            "image_file_offset": 3842272,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 83,
+      "started_utc": "2026-10-29T19:21:32.704142+00:00",
+      "response_file": "0083-udws_scan_line_done.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:33.196308+00:00",
+      "elapsed_seconds": 0.489,
+      "response_bytes": 58,
+      "response_sha256": "9255a104db6871b8944af2887a2f525e1bde397b246efb03f85ab157eb115df7",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan mem scandrv",
+      "command": "udws \"scan mem scandrv;\"",
+      "handler": "0xa03ab895",
+      "descriptor_addresses": [
+        "0xa06000dc"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03ab894",
+            "image_file_offset": 3848340,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 84,
+      "started_utc": "2026-10-29T19:21:33.200095+00:00",
+      "response_file": "0084-udws_scan_mem_scandrv.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:33.690813+00:00",
+      "elapsed_seconds": 0.487,
+      "response_bytes": 60,
+      "response_sha256": "91ac72dddf396de4f40caa0b5ff28685b0949d81f16f9c68a8263031e7c5d032",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan mergeout adfstop",
+      "command": "udws \"scan mergeout adfstop;\"",
+      "handler": "0xa03ad823",
+      "descriptor_addresses": [
+        "0xa06002c0"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03ad822",
+            "image_file_offset": 3856418,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 85,
+      "started_utc": "2026-10-29T19:21:33.694154+00:00",
+      "response_file": "0085-udws_scan_mergeout_adfstop.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:34.128395+00:00",
+      "elapsed_seconds": 0.432,
+      "response_bytes": 65,
+      "response_sha256": "6b2e955237d1f3fa23f5dcc997b91663a78e9fc7e669fff7c4189fe39ac37093",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan mergeout dbAdf",
+      "command": "udws \"scan mergeout dbAdf;\"",
+      "handler": "0xa03ad825",
+      "descriptor_addresses": [
+        "0xa06002d0"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03ad824",
+            "image_file_offset": 3856420,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 86,
+      "started_utc": "2026-10-29T19:21:34.132565+00:00",
+      "response_file": "0086-udws_scan_mergeout_dbAdf.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:34.624219+00:00",
+      "elapsed_seconds": 0.489,
+      "response_bytes": 63,
+      "response_sha256": "fc637c6c7d6a9a44971d7681f681dd8939145da7886fa3bba0ecc025d83a626e",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan orig dbNotch",
+      "command": "udws \"scan orig dbNotch;\"",
+      "handler": "0xa03ae787",
+      "descriptor_addresses": [
+        "0xa0600550"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03ae786",
+            "image_file_offset": 3860358,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 87,
+      "started_utc": "2026-10-29T19:21:34.627714+00:00",
+      "response_file": "0087-udws_scan_orig_dbNotch.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:35.118428+00:00",
+      "elapsed_seconds": 0.488,
+      "response_bytes": 61,
+      "response_sha256": "3da0b61626e48606f3f14d93340386ceaa19a76e799bd610da2826e151960f3d",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan prnu SMOOTH",
+      "command": "udws \"scan prnu SMOOTH;\"",
+      "handler": "0xa03b2507",
+      "descriptor_addresses": [
+        "0xa0600edc"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03b2506",
+            "image_file_offset": 3876102,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 88,
+      "started_utc": "2026-10-29T19:21:35.122720+00:00",
+      "response_file": "0088-udws_scan_prnu_SMOOTH.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:35.626839+00:00",
+      "elapsed_seconds": 0.5,
+      "response_bytes": 60,
+      "response_sha256": "8ae2ba8b693fcf441fd24c5bcb63df8c110a816ad5bbcb9cddcfbc6a00b3433a",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan prnu dDs",
+      "command": "udws \"scan prnu dDs;\"",
+      "handler": "0xa03b28d7",
+      "descriptor_addresses": [
+        "0xa0600f5c"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03b28d6",
+            "image_file_offset": 3877078,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 89,
+      "started_utc": "2026-10-29T19:21:35.630520+00:00",
+      "response_file": "0089-udws_scan_prnu_dDs.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:36.062788+00:00",
+      "elapsed_seconds": 0.429,
+      "response_bytes": 57,
+      "response_sha256": "1cbf58b14bb2590151ae085cc615af5cf40198216681adc0a3beb70f10989fb1",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan prnu dLmw",
+      "command": "udws \"scan prnu dLmw;\"",
+      "handler": "0xa03b28d5",
+      "descriptor_addresses": [
+        "0xa0600f4c"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03b28d4",
+            "image_file_offset": 3877076,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 90,
+      "started_utc": "2026-10-29T19:21:36.066922+00:00",
+      "response_file": "0090-udws_scan_prnu_dLmw.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:36.559172+00:00",
+      "elapsed_seconds": 0.49,
+      "response_bytes": 58,
+      "response_sha256": "8819bedc81155055d107623cba6768392548b3f2589179080817f0298f40f35b",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan prnu dmode",
+      "command": "udws \"scan prnu dmode;\"",
+      "handler": "0xa03b25ab",
+      "descriptor_addresses": [
+        "0xa0600cec"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03b25aa",
+            "image_file_offset": 3876266,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 91,
+      "started_utc": "2026-10-29T19:21:36.562750+00:00",
+      "response_file": "0091-udws_scan_prnu_dmode.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:37.052566+00:00",
+      "elapsed_seconds": 0.487,
+      "response_bytes": 59,
+      "response_sha256": "349826d391db1801dbbe1806eb5a69001ad54af61b2b3ff566030a211c2bc91b",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan prnu pdata",
+      "command": "udws \"scan prnu pdata;\"",
+      "handler": "0xa03b25ad",
+      "descriptor_addresses": [
+        "0xa0600f2c"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03b25ac",
+            "image_file_offset": 3876268,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 92,
+      "started_utc": "2026-10-29T19:21:37.056588+00:00",
+      "response_file": "0092-udws_scan_prnu_pdata.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:37.563947+00:00",
+      "elapsed_seconds": 0.504,
+      "response_bytes": 59,
+      "response_sha256": "c1a55f54c700f52fc41544ce235deede9b4e08b0ca28f27dd0e78806ff88d623",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan prnu plmw",
+      "command": "udws \"scan prnu plmw;\"",
+      "handler": "0xa03b25af",
+      "descriptor_addresses": [
+        "0xa0600f1c"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03b25ae",
+            "image_file_offset": 3876270,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 93,
+      "started_utc": "2026-10-29T19:21:37.567108+00:00",
+      "response_file": "0093-udws_scan_prnu_plmw.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:38.058057+00:00",
+      "elapsed_seconds": 0.486,
+      "response_bytes": 58,
+      "response_sha256": "7e6b4663ac48ad77344325fd91e2a7cfe62b7461abc4b21127e6831ee6c31f11",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan prnu store",
+      "command": "udws \"scan prnu store;\"",
+      "handler": "0xa03b28d9",
+      "descriptor_addresses": [
+        "0xa0600f6c"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03b28d8",
+            "image_file_offset": 3877080,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 94,
+      "started_utc": "2026-10-29T19:21:38.061261+00:00",
+      "response_file": "0094-udws_scan_prnu_store.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:38.554967+00:00",
+      "elapsed_seconds": 0.49,
+      "response_bytes": 59,
+      "response_sha256": "8c052f73cd3ace303d7f64b7b404da418e5179194bffe6803f75dd522b1a26cd",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan prnu weak",
+      "command": "udws \"scan prnu weak;\"",
+      "handler": "0xa03b2509",
+      "descriptor_addresses": [
+        "0xa0600eec"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03b2508",
+            "image_file_offset": 3876104,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 95,
+      "started_utc": "2026-10-29T19:21:38.559576+00:00",
+      "response_file": "0095-udws_scan_prnu_weak.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:39.050821+00:00",
+      "elapsed_seconds": 0.488,
+      "response_bytes": 58,
+      "response_sha256": "77a8da0d14471ad81ebe117194acbbeb95167a1ef12516dc1f52cde3a03e940e",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan reg CPA",
+      "command": "udws \"scan reg CPA;\"",
+      "handler": "0xa03ba951",
+      "descriptor_addresses": [
+        "0xa0602e64"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03ba950",
+            "image_file_offset": 3909968,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 96,
+      "started_utc": "2026-10-29T19:21:39.054763+00:00",
+      "response_file": "0096-udws_scan_reg_CPA.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:39.532436+00:00",
+      "elapsed_seconds": 0.475,
+      "response_bytes": 56,
+      "response_sha256": "0d952e9a9c8a756f4db89f2c458ecc40097e32f13d9dd4202d6522527881fdee",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan reg cpa",
+      "command": "udws \"scan reg cpa;\"",
+      "handler": "0xa03ba953",
+      "descriptor_addresses": [
+        "0xa0602e74"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03ba952",
+            "image_file_offset": 3909970,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 97,
+      "started_utc": "2026-10-29T19:21:39.536801+00:00",
+      "response_file": "0097-udws_scan_reg_cpa.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:39.967677+00:00",
+      "elapsed_seconds": 0.427,
+      "response_bytes": 56,
+      "response_sha256": "287837a39f8da3162ed17b60c2571e9db1c3526af3ef16f0f66a70b41cdfe03b",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan reg idacsr",
+      "command": "udws \"scan reg idacsr;\"",
+      "handler": "0xa03ba959",
+      "descriptor_addresses": [
+        "0xa0602ea4"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03ba958",
+            "image_file_offset": 3909976,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 98,
+      "started_utc": "2026-10-29T19:21:39.971490+00:00",
+      "response_file": "0098-udws_scan_reg_idacsr.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:40.461203+00:00",
+      "elapsed_seconds": 0.486,
+      "response_bytes": 59,
+      "response_sha256": "185613b6b232f06adeb03ac3a97896fbf00cedddb40f29ecdea517b9702b50fb",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan reg pixelmargin",
+      "command": "udws \"scan reg pixelmargin;\"",
+      "handler": "0xa03ba957",
+      "descriptor_addresses": [
+        "0xa0602e94"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03ba956",
+            "image_file_offset": 3909974,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 99,
+      "started_utc": "2026-10-29T19:21:40.465522+00:00",
+      "response_file": "0099-udws_scan_reg_pixelmargin.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:40.958111+00:00",
+      "elapsed_seconds": 0.489,
+      "response_bytes": 64,
+      "response_sha256": "39dd4122d1269931bfa401362f369227fc0e0fa09c7eede120118de5883798c2",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan reg qprnu",
+      "command": "udws \"scan reg qprnu;\"",
+      "handler": "0xa03ba955",
+      "descriptor_addresses": [
+        "0xa0602e84"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03ba954",
+            "image_file_offset": 3909972,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 100,
+      "started_utc": "2026-10-29T19:21:40.961984+00:00",
+      "response_file": "0100-udws_scan_reg_qprnu.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:41.456402+00:00",
+      "elapsed_seconds": 0.492,
+      "response_bytes": 58,
+      "response_sha256": "9a3b237c318e4c1c44ddaa64f102a4e137bfb81c4af12a009d8a7cd55ff62d45",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan reg sciffilter",
+      "command": "udws \"scan reg sciffilter;\"",
+      "handler": "0xa03ba5f7",
+      "descriptor_addresses": [
+        "0xa0602cb4"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03ba5f6",
+            "image_file_offset": 3909110,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 101,
+      "started_utc": "2026-10-29T19:21:41.461327+00:00",
+      "response_file": "0101-udws_scan_reg_sciffilter.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:41.950284+00:00",
+      "elapsed_seconds": 0.485,
+      "response_bytes": 63,
+      "response_sha256": "e8febe2aebef694b3770e8ff96d836a7717d4471972f187a309433f0b0a4d83c",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan reg tgexptbl",
+      "command": "udws \"scan reg tgexptbl;\"",
+      "handler": "0xa03ba571",
+      "descriptor_addresses": [
+        "0xa0602d54"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03ba570",
+            "image_file_offset": 3908976,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 102,
+      "started_utc": "2026-10-29T19:21:41.954693+00:00",
+      "response_file": "0102-udws_scan_reg_tgexptbl.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:42.461774+00:00",
+      "elapsed_seconds": 0.503,
+      "response_bytes": 61,
+      "response_sha256": "cbe2a89eacef3721e2fbeecee57980c0095253504cac70b68eb94e8974045c9a",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan reg third",
+      "command": "udws \"scan reg third;\"",
+      "handler": "0xa03ba57f",
+      "descriptor_addresses": [
+        "0xa0602d64"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03ba57e",
+            "image_file_offset": 3908990,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 103,
+      "started_utc": "2026-10-29T19:21:42.466754+00:00",
+      "response_file": "0103-udws_scan_reg_third.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:42.957969+00:00",
+      "elapsed_seconds": 0.487,
+      "response_bytes": 58,
+      "response_sha256": "e533785ecaee4cf7d4185a69a4b49aaf93a315c8a5cc1cbbbcfb95b260995af0",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan scansm adfssd",
+      "command": "udws \"scan scansm adfssd;\"",
+      "handler": "0xa03bd255",
+      "descriptor_addresses": [
+        "0xa060363c"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03bd254",
+            "image_file_offset": 3920468,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 104,
+      "started_utc": "2026-10-29T19:21:42.961747+00:00",
+      "response_file": "0104-udws_scan_scansm_adfssd.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:43.454283+00:00",
+      "elapsed_seconds": 0.49,
+      "response_bytes": 62,
+      "response_sha256": "877aab308e7bfa37e7e4424819809461410d1210a08d3885c2225fc8d8ea61ad",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan scansm black",
+      "command": "udws \"scan scansm black;\"",
+      "handler": "0xa03bd253",
+      "descriptor_addresses": [
+        "0xa060330c"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03bd252",
+            "image_file_offset": 3920466,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 105,
+      "started_utc": "2026-10-29T19:21:43.460456+00:00",
+      "response_file": "0105-udws_scan_scansm_black.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:43.968607+00:00",
+      "elapsed_seconds": 0.504,
+      "response_bytes": 61,
+      "response_sha256": "d85b63cda04a1f64fbc9f0d25ce42b1b2aea7551f70726d24048445cc291563e",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan scansm efdb",
+      "command": "udws \"scan scansm efdb;\"",
+      "handler": "0xa03bce5f",
+      "descriptor_addresses": [
+        "0xa06033dc"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03bce5e",
+            "image_file_offset": 3919454,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 106,
+      "started_utc": "2026-10-29T19:21:43.972972+00:00",
+      "response_file": "0106-udws_scan_scansm_efdb.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:44.462910+00:00",
+      "elapsed_seconds": 0.487,
+      "response_bytes": 60,
+      "response_sha256": "3f4144ee20a413b54e4a7114ff070b8dd084f23c60bb6bac8614f95110888914",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan scansm hiq",
+      "command": "udws \"scan scansm hiq;\"",
+      "handler": "0xa03bd243",
+      "descriptor_addresses": [
+        "0xa060350c"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03bd242",
+            "image_file_offset": 3920450,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 107,
+      "started_utc": "2026-10-29T19:21:44.467899+00:00",
+      "response_file": "0107-udws_scan_scansm_hiq.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:44.959238+00:00",
+      "elapsed_seconds": 0.488,
+      "response_bytes": 59,
+      "response_sha256": "11e03327c4f0276f08659e380987728645ae583ea5e13fce78da09d45895c20a",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan scansm lga",
+      "command": "udws \"scan scansm lga;\"",
+      "handler": "0xa03bd251",
+      "descriptor_addresses": [
+        "0xa060351c"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03bd250",
+            "image_file_offset": 3920464,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 108,
+      "started_utc": "2026-10-29T19:21:44.962542+00:00",
+      "response_file": "0108-udws_scan_scansm_lga.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:45.452568+00:00",
+      "elapsed_seconds": 0.486,
+      "response_bytes": 59,
+      "response_sha256": "82bf4006466b2af81e6b0d576ed7751ed079b91360553f7eb7cc2bae38cf80e5",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan scansm quiet",
+      "command": "udws \"scan scansm quiet;\"",
+      "handler": "0xa03bd257",
+      "descriptor_addresses": [
+        "0xa060364c"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03bd256",
+            "image_file_offset": 3920470,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 109,
+      "started_utc": "2026-10-29T19:21:45.456082+00:00",
+      "response_file": "0109-udws_scan_scansm_quiet.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:45.965365+00:00",
+      "elapsed_seconds": 0.506,
+      "response_bytes": 61,
+      "response_sha256": "0f6b6f551075da29967876a019f42404c1c203682b3a28104185ef9b3530252f",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan scansm talign",
+      "command": "udws \"scan scansm talign;\"",
+      "handler": "0xa03bd205",
+      "descriptor_addresses": [
+        "0xa06034ec"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03bd204",
+            "image_file_offset": 3920388,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 110,
+      "started_utc": "2026-10-29T19:21:45.971507+00:00",
+      "response_file": "0110-udws_scan_scansm_talign.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:46.458680+00:00",
+      "elapsed_seconds": 0.484,
+      "response_bytes": 62,
+      "response_sha256": "bc6e9837d47b05cac1f0d1abefc746e028b7cddcc8b5dc058c7d04c43d779e67",
+      "prompt_returned": true
+    },
+    {
+      "name": "scan sensor tweak2",
+      "command": "udws \"scan sensor tweak2;\"",
+      "handler": "0xa03bedd5",
+      "descriptor_addresses": [
+        "0xa0604440"
+      ],
+      "registration_calls": [
+        "0xa03bf0b8"
+      ],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03bedd4",
+            "image_file_offset": 3927508,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 111,
+      "started_utc": "2026-10-29T19:21:46.463688+00:00",
+      "response_file": "0111-udws_scan_sensor_tweak2.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:46.953195+00:00",
+      "elapsed_seconds": 0.486,
+      "response_bytes": 62,
+      "response_sha256": "837c73798cbd29b6cc83ae1f5b9ed9d5d2ee5f7720fe2edf40649fcb933b8e77",
+      "prompt_returned": true
+    },
+    {
+      "name": "snmp.write_default",
+      "command": "udws \"snmp.write_default;\"",
+      "handler": "0xa03fa0e5",
+      "descriptor_addresses": [
+        "0xa0618498"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa03fa0e4",
+            "image_file_offset": 4169956,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 112,
+      "started_utc": "2026-10-29T19:21:46.958568+00:00",
+      "response_file": "0112-udws_snmp_write_default.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:47.461592+00:00",
+      "elapsed_seconds": 0.499,
+      "response_bytes": 62,
+      "response_sha256": "6759ad5a08f4247dc4b9c807bb093c57c82aebf37815da8522b219b0039793a5",
+      "prompt_returned": true
+    },
+    {
+      "name": "sweep_mgr.force_reset_align",
+      "command": "udws \"sweep_mgr.force_reset_align;\"",
+      "handler": "0xa0403fbf",
+      "descriptor_addresses": [
+        "0xa0619fa8"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa0403fbe",
+            "image_file_offset": 4210622,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 113,
+      "started_utc": "2026-10-29T19:21:47.466105+00:00",
+      "response_file": "0113-udws_sweep_mgr_force_reset_align.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:47.988896+00:00",
+      "elapsed_seconds": 0.52,
+      "response_bytes": 71,
+      "response_sha256": "c65122bc3a96763243049ecf15644d6bb6bd6eb27b9e35bbeafe205cae5fca3d",
+      "prompt_returned": true
+    },
+    {
+      "name": "sweep_mgr.override_vrt_align",
+      "command": "udws \"sweep_mgr.override_vrt_align;\"",
+      "handler": "0xa0403fbb",
+      "descriptor_addresses": [
+        "0xa0619f90"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa0403fba",
+            "image_file_offset": 4210618,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 114,
+      "started_utc": "2026-10-29T19:21:47.993775+00:00",
+      "response_file": "0114-udws_sweep_mgr_override_vrt_align.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:48.534315+00:00",
+      "elapsed_seconds": 0.536,
+      "response_bytes": 72,
+      "response_sha256": "ee3888d1b1ac200eb57de63fad95d09a021d2326ab78f2d33bb14b1303a4d057",
+      "prompt_returned": true
+    },
+    {
+      "name": "sweep_mgr.restore_vrt_align",
+      "command": "udws \"sweep_mgr.restore_vrt_align;\"",
+      "handler": "0xa0403fbd",
+      "descriptor_addresses": [
+        "0xa0619f9c"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa0403fbc",
+            "image_file_offset": 4210620,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 115,
+      "started_utc": "2026-10-29T19:21:48.539003+00:00",
+      "response_file": "0115-udws_sweep_mgr_restore_vrt_align.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:49.063048+00:00",
+      "elapsed_seconds": 0.52,
+      "response_bytes": 71,
+      "response_sha256": "4b140704728d391b50a5e8e75c7f94006a551f5b0fabae272c8d990c4b64b481",
+      "prompt_returned": true
+    },
+    {
+      "name": "sweep_mgr.swpm_start_job",
+      "command": "udws \"sweep_mgr.swpm_start_job;\"",
+      "handler": "0xa0403c55",
+      "descriptor_addresses": [
+        "0xa0619e1c"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa0403c54",
+            "image_file_offset": 4209748,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 116,
+      "started_utc": "2026-10-29T19:21:49.067739+00:00",
+      "response_file": "0116-udws_sweep_mgr_swpm_start_job.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:49.591732+00:00",
+      "elapsed_seconds": 0.52,
+      "response_bytes": 68,
+      "response_sha256": "d51eeae9fff9652f139fac4841f5156dc99a35ccf85b71729da1f2ba0ce98ebc",
+      "prompt_returned": true
+    },
+    {
+      "name": "udw.assert",
+      "command": "udws \"udw.assert;\"",
+      "handler": "0xa02c403d",
+      "descriptor_addresses": [
+        "0xa05bc73c"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa02c403c",
+            "image_file_offset": 2900028,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 117,
+      "started_utc": "2026-10-29T19:21:49.596806+00:00",
+      "response_file": "0117-udws_udw_assert.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:50.059313+00:00",
+      "elapsed_seconds": 0.458,
+      "response_bytes": 54,
+      "response_sha256": "c16c21a30dbb905d881cf7f855819bbeb9115eb9c4d5840f94fb37eb6c377f1e",
+      "prompt_returned": true
+    },
+    {
+      "name": "udw.os_timeout",
+      "command": "udws \"udw.os_timeout;\"",
+      "handler": "0xa02c4305",
+      "descriptor_addresses": [
+        "0xa05bc79c"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa02c4304",
+            "image_file_offset": 2900740,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 118,
+      "started_utc": "2026-10-29T19:21:50.064021+00:00",
+      "response_file": "0118-udws_udw_os_timeout.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:50.555882+00:00",
+      "elapsed_seconds": 0.488,
+      "response_bytes": 58,
+      "response_sha256": "15e032b3489042934d025605c862580014ac6a4faa31cbc5b039c2ce2d6a6f3f",
+      "prompt_returned": true
+    },
+    {
+      "name": "ui_lite.test",
+      "command": "udws \"ui_lite.test;\"",
+      "handler": "0xa044dd95",
+      "descriptor_addresses": [
+        "0xa06217ec"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa044dd94",
+            "image_file_offset": 4513172,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 119,
+      "started_utc": "2026-10-29T19:21:50.561433+00:00",
+      "response_file": "0119-udws_ui_lite_test.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:51.016678+00:00",
+      "elapsed_seconds": 0.451,
+      "response_bytes": 56,
+      "response_sha256": "b184c8cee2476371b63f3d7164c6ba3bfd42026ad2a43dd668a821d03b4d7189",
+      "prompt_returned": true
+    },
+    {
+      "name": "usb_hs.sal_test",
+      "command": "udws \"usb_hs.sal_test;\"",
+      "handler": "0xa0199a3b",
+      "descriptor_addresses": [
+        "0xa0545e50"
+      ],
+      "registration_calls": [],
+      "classification": "proven-compiled-out-handler",
+      "purpose": "Record the real physical response for a handler compiled to immediate return in this firmware.",
+      "runtime_registered": true,
+      "static_effect": "No-op: only BX LR. No argument parsing, calls, memory accesses, writes, or MMIO.",
+      "output_expectation": "Handler emits no payload; ordinary shell return/prompt is expected. Actual output still requires physical capture.",
+      "proof": {
+        "instruction_path": [
+          {
+            "address": "0xa0199a3a",
+            "image_file_offset": 1677882,
+            "bytes_hex": "4770",
+            "instruction": "bx lr",
+            "mode": "thumb"
+          }
+        ],
+        "return_r0_constant": null,
+        "tail_branch_depth": 0
+      },
+      "prior_prompt_returned_tests": [],
+      "already_prompt_returned": false,
+      "timeout": 15,
+      "index": 120,
+      "started_utc": "2026-10-29T19:21:51.020720+00:00",
+      "response_file": "0120-udws_usb_hs_sal_test.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:21:51.497496+00:00",
+      "elapsed_seconds": 0.474,
+      "response_bytes": 59,
+      "response_sha256": "eae172bc6cb72f9f6fd2ff1418b940da26c99827465db0b199aa5423b5edf649",
+      "prompt_returned": true
+    }
+  ]
+}

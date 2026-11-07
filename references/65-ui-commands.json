@@ -1,0 +1,209 @@
+[
+  {
+    "name": "smgr_pe.get_current_setting",
+    "command": "udws \"smgr_pe.get_current_setting 1;\"",
+    "handler": "0xa03db901",
+    "descriptor_address": "0xa060a338",
+    "classification": "reviewed-information-query",
+    "argument_syntax": "1",
+    "purpose": "Read cached current setting for ColorLok.",
+    "control_flow_proof": "Physical60 identifies settings object2084A0B4 and vtableA06073EC. Physical64 proves header(table2084A0C0,count51). Exact indices1,3,4 are bounded. Slot0 targetA03CE8C8 computes record12*index and reads only current field+4; no setter or storage callback. ROM record DSIDs at+0 map these positions to0x12BE9 COLORLOK,0x12C28 DRY_TIME_SETTING and0x12C29 EJECT_SETTING. CLI formats a single scalar. It has a three-byte output buffer; any unexpectedly multi-digit result requires truncation assessment.",
+    "timeout": 20,
+    "hardware_access": false,
+    "persistent_writes": false,
+    "side_effects": "Local formatting buffers, UART output and parser state only.",
+    "prior_invocation_status": "not-invoked",
+    "runtime_registered": true,
+    "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+    "setting_index": 1,
+    "static_descriptor_dsid": 76777,
+    "live_bounds_evidence": {
+      "label": "settings_provider_header",
+      "address": "0x2084a0b4",
+      "count": 12,
+      "hex": "a06073ec2084a0c000000033",
+      "words_be": [
+        "0xa06073ec",
+        "0x2084a0c0",
+        "0x33"
+      ],
+      "response_file": "0006-udws_ustd_read_file_0_12.bin",
+      "response_sha256": "94c9848fee20411d2693aca802a2853cd99a6572e3c41fd38d22adb6a15cb01a",
+      "artifact": "references/physical-64-ui-fields/provider-pointers.json"
+    }
+  },
+  {
+    "name": "smgr_pe.get_current_setting",
+    "command": "udws \"smgr_pe.get_current_setting 3;\"",
+    "handler": "0xa03db901",
+    "descriptor_address": "0xa060a338",
+    "classification": "reviewed-information-query",
+    "argument_syntax": "3",
+    "purpose": "Read cached current setting for dry time.",
+    "control_flow_proof": "Physical60 identifies settings object2084A0B4 and vtableA06073EC. Physical64 proves header(table2084A0C0,count51). Exact indices1,3,4 are bounded. Slot0 targetA03CE8C8 computes record12*index and reads only current field+4; no setter or storage callback. ROM record DSIDs at+0 map these positions to0x12BE9 COLORLOK,0x12C28 DRY_TIME_SETTING and0x12C29 EJECT_SETTING. CLI formats a single scalar. It has a three-byte output buffer; any unexpectedly multi-digit result requires truncation assessment.",
+    "timeout": 20,
+    "hardware_access": false,
+    "persistent_writes": false,
+    "side_effects": "Local formatting buffers, UART output and parser state only.",
+    "prior_invocation_status": "not-invoked",
+    "runtime_registered": true,
+    "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+    "setting_index": 3,
+    "static_descriptor_dsid": 76840,
+    "live_bounds_evidence": {
+      "label": "settings_provider_header",
+      "address": "0x2084a0b4",
+      "count": 12,
+      "hex": "a06073ec2084a0c000000033",
+      "words_be": [
+        "0xa06073ec",
+        "0x2084a0c0",
+        "0x33"
+      ],
+      "response_file": "0006-udws_ustd_read_file_0_12.bin",
+      "response_sha256": "94c9848fee20411d2693aca802a2853cd99a6572e3c41fd38d22adb6a15cb01a",
+      "artifact": "references/physical-64-ui-fields/provider-pointers.json"
+    }
+  },
+  {
+    "name": "smgr_pe.get_current_setting",
+    "command": "udws \"smgr_pe.get_current_setting 4;\"",
+    "handler": "0xa03db901",
+    "descriptor_address": "0xa060a338",
+    "classification": "reviewed-information-query",
+    "argument_syntax": "4",
+    "purpose": "Read cached current setting for eject behavior.",
+    "control_flow_proof": "Physical60 identifies settings object2084A0B4 and vtableA06073EC. Physical64 proves header(table2084A0C0,count51). Exact indices1,3,4 are bounded. Slot0 targetA03CE8C8 computes record12*index and reads only current field+4; no setter or storage callback. ROM record DSIDs at+0 map these positions to0x12BE9 COLORLOK,0x12C28 DRY_TIME_SETTING and0x12C29 EJECT_SETTING. CLI formats a single scalar. It has a three-byte output buffer; any unexpectedly multi-digit result requires truncation assessment.",
+    "timeout": 20,
+    "hardware_access": false,
+    "persistent_writes": false,
+    "side_effects": "Local formatting buffers, UART output and parser state only.",
+    "prior_invocation_status": "not-invoked",
+    "runtime_registered": true,
+    "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+    "setting_index": 4,
+    "static_descriptor_dsid": 76841,
+    "live_bounds_evidence": {
+      "label": "settings_provider_header",
+      "address": "0x2084a0b4",
+      "count": 12,
+      "hex": "a06073ec2084a0c000000033",
+      "words_be": [
+        "0xa06073ec",
+        "0x2084a0c0",
+        "0x33"
+      ],
+      "response_file": "0006-udws_ustd_read_file_0_12.bin",
+      "response_sha256": "94c9848fee20411d2693aca802a2853cd99a6572e3c41fd38d22adb6a15cb01a",
+      "artifact": "references/physical-64-ui-fields/provider-pointers.json"
+    }
+  },
+  {
+    "name": "pe.cover_open_query",
+    "command": "udws \"pe.cover_open_query;\"",
+    "handler": "0xa03059f9",
+    "descriptor_address": "0xa05ccc9c",
+    "classification": "reviewed-information-query",
+    "argument_syntax": "",
+    "purpose": "Read the cached raw cover state.",
+    "control_flow_proof": "Physical64 proves cover descriptor20848C74=[0,2,1,0,1]. A03060F0 findsID0 in its five-entry table. A0306454 checks descriptor+8==1 then+4==1; actual+4==2 skipsGPIO helperA02555E4 and its cache refresh entirely. The remaining path reads the override flag20CE33B4[0] and either cached override20CE33BC[0] or cached state20CE33E4[0]. No hardware read/write or event dispatch on this exact observed descriptor path.",
+    "timeout": 20,
+    "hardware_access": false,
+    "persistent_writes": false,
+    "side_effects": "Local formatting buffers, UART output and parser state only.",
+    "prior_invocation_status": "not-invoked",
+    "runtime_registered": true,
+    "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+    "live_cover_evidence": {
+      "label": "cover_cached_descriptor",
+      "address": "0x20848c74",
+      "count": 20,
+      "hex": "0000000000000002000000010000000000000001",
+      "words_be": [
+        "0x0",
+        "0x2",
+        "0x1",
+        "0x0",
+        "0x1"
+      ],
+      "response_file": "0024-udws_ustd_read_file_0_20.bin",
+      "response_sha256": "a896c3e5079507c290ff3d3495efb002cd80041a28a74ffe7c738f6998e22e6c",
+      "artifact": "references/physical-64-ui-fields/provider-pointers.json"
+    }
+  },
+  {
+    "name": "smgr_pe.cover_open_query",
+    "command": "udws \"smgr_pe.cover_open_query;\"",
+    "handler": "0xa03dba4b",
+    "descriptor_address": "0xa060a320",
+    "classification": "reviewed-information-query",
+    "argument_syntax": "",
+    "purpose": "Read the state-manager cover-open Boolean.",
+    "control_flow_proof": "Physical60/64 resolve cover provider vtable20848770+0x124 toA0304334. It callsA0306454 forID0 and mapsrawzero/nonzero to1/2. CLI maps returned2 toBoolean1, else0. Physical64 proves cover descriptor20848C74=[0,2,1,0,1]. A03060F0 findsID0 in its five-entry table. A0306454 checks descriptor+8==1 then+4==1; actual+4==2 skipsGPIO helperA02555E4 and its cache refresh entirely. The remaining path reads the override flag20CE33B4[0] and either cached override20CE33BC[0] or cached state20CE33E4[0]. No hardware read/write or event dispatch on this exact observed descriptor path.",
+    "timeout": 20,
+    "hardware_access": false,
+    "persistent_writes": false,
+    "side_effects": "Local formatting buffers, UART output and parser state only.",
+    "prior_invocation_status": "not-invoked",
+    "runtime_registered": true,
+    "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+    "live_method_evidence": {
+      "label": "cover_provider_method",
+      "address": "0x20848894",
+      "count": 4,
+      "hex": "a0304335",
+      "words_be": [
+        "0xa0304335"
+      ],
+      "response_file": "0015-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "eb4db51acd4d25fd39b3662534f7d2d5b27eddeb33ca0cbbeadee72cce8442b8",
+      "artifact": "references/physical-64-ui-fields/provider-pointers.json"
+    },
+    "live_cover_evidence": {
+      "label": "cover_cached_descriptor",
+      "address": "0x20848c74",
+      "count": 20,
+      "hex": "0000000000000002000000010000000000000001",
+      "words_be": [
+        "0x0",
+        "0x2",
+        "0x1",
+        "0x0",
+        "0x1"
+      ],
+      "response_file": "0024-udws_ustd_read_file_0_20.bin",
+      "response_sha256": "a896c3e5079507c290ff3d3495efb002cd80041a28a74ffe7c738f6998e22e6c",
+      "artifact": "references/physical-64-ui-fields/provider-pointers.json"
+    }
+  },
+  {
+    "name": "smgr_pe.user_power_on_query",
+    "command": "udws \"smgr_pe.user_power_on_query;\"",
+    "handler": "0xa03dba89",
+    "descriptor_address": "0xa060a380",
+    "classification": "reviewed-information-query",
+    "argument_syntax": "",
+    "purpose": "Read the stored power-state classification exposed by the state manager.",
+    "control_flow_proof": "Physical60 resolves20DAF888 to storage objectA0517544, vtableA0517548. Slot8 is previously reviewed scalar getterA005C38C. Handler passes fixedDSID0x10005 (power state) and mapsvalues0,1,2 toBoolean0, other values to1. No power transition or state write.",
+    "timeout": 20,
+    "hardware_access": false,
+    "persistent_writes": false,
+    "side_effects": "Local formatting buffers, UART output and parser state only.",
+    "prior_invocation_status": "not-invoked",
+    "runtime_registered": true,
+    "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+    "live_provider_evidence": {
+      "label": "ui_interface_3",
+      "address": "0x20daf888",
+      "count": 4,
+      "hex": "a0517544",
+      "words_be": [
+        "0xa0517544"
+      ],
+      "response_file": "0087-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "673fac89ba341afb16238aa450af37252d6f5cf5e971fef4a93964fe4fc8b4f0",
+      "artifact": "references/physical-60-ui-metadata/provider-pointers.json"
+    },
+    "interpretation": "Firmware Boolean derived from stored power state, not a direct voltage or power-button measurement."
+  }
+]

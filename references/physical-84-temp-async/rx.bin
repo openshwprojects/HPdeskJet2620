@@ -1,0 +1,7 @@
+
+-> 
+-> udws "temp.async;"
+async_call(parm = hello world) : OK
+;udws() returns 0 (0x0)
+-> 
+-> 

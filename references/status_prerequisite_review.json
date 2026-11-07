@@ -1,0 +1,515 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-10-29T19:41:11.124188+00:00",
+  "provenance": {
+    "kind": "offline_review_for_conditional_physical_capture",
+    "image": "artifacts/ghs/dram.bin",
+    "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+    "serial_access": "none",
+    "runtime_registry_complete": true
+  },
+  "summary": {
+    "plan27_commands": 19,
+    "scanner_record_metadata_queries": 14,
+    "scan_state_queries": 4,
+    "explicit_read_and_clear_queries": 1,
+    "conditionally_eligible_downstream_names": 8
+  },
+  "plan27_file": "references/27-status-prerequisites-commands.json",
+  "plan27_commands": [
+    {
+      "command": "udws \"ds2.get_num_elem 76898;\"",
+      "name": "ds2.get_num_elem",
+      "handler": "0xa005d221",
+      "classification": "reviewed-information-query",
+      "purpose": "Read live scanner-record element count; does not read its content.",
+      "control_flow_proof": "A005D220 uses bounded simple/record registry lookup, calls count getter only if recognized, else returns0.",
+      "timeout": 25,
+      "hardware_access": false,
+      "dsid": 76898,
+      "metadata_field": "record_count"
+    },
+    {
+      "command": "udws \"ds2.get_elem_size 76898;\"",
+      "name": "ds2.get_elem_size",
+      "handler": "0xa005d275",
+      "classification": "reviewed-information-query",
+      "purpose": "Establish record-array type and live byte length.",
+      "control_flow_proof": "A005D274 uses bounded record-registry lookup; returns byte size only for record arrays, otherwise0.",
+      "timeout": 25,
+      "hardware_access": false,
+      "dsid": 76898,
+      "metadata_field": "record_size_bytes"
+    },
+    {
+      "command": "udws \"ds2.get_num_elem 77531;\"",
+      "name": "ds2.get_num_elem",
+      "handler": "0xa005d221",
+      "classification": "reviewed-information-query",
+      "purpose": "Read live scanner-record element count; does not read its content.",
+      "control_flow_proof": "A005D220 uses bounded simple/record registry lookup, calls count getter only if recognized, else returns0.",
+      "timeout": 25,
+      "hardware_access": false,
+      "dsid": 77531,
+      "metadata_field": "record_count"
+    },
+    {
+      "command": "udws \"ds2.get_elem_size 77531;\"",
+      "name": "ds2.get_elem_size",
+      "handler": "0xa005d275",
+      "classification": "reviewed-information-query",
+      "purpose": "Establish record-array type and live byte length.",
+      "control_flow_proof": "A005D274 uses bounded record-registry lookup; returns byte size only for record arrays, otherwise0.",
+      "timeout": 25,
+      "hardware_access": false,
+      "dsid": 77531,
+      "metadata_field": "record_size_bytes"
+    },
+    {
+      "command": "udws \"ds2.get_num_elem 77552;\"",
+      "name": "ds2.get_num_elem",
+      "handler": "0xa005d221",
+      "classification": "reviewed-information-query",
+      "purpose": "Read live scanner-record element count; does not read its content.",
+      "control_flow_proof": "A005D220 uses bounded simple/record registry lookup, calls count getter only if recognized, else returns0.",
+      "timeout": 25,
+      "hardware_access": false,
+      "dsid": 77552,
+      "metadata_field": "record_count"
+    },
+    {
+      "command": "udws \"ds2.get_elem_size 77552;\"",
+      "name": "ds2.get_elem_size",
+      "handler": "0xa005d275",
+      "classification": "reviewed-information-query",
+      "purpose": "Establish record-array type and live byte length.",
+      "control_flow_proof": "A005D274 uses bounded record-registry lookup; returns byte size only for record arrays, otherwise0.",
+      "timeout": 25,
+      "hardware_access": false,
+      "dsid": 77552,
+      "metadata_field": "record_size_bytes"
+    },
+    {
+      "command": "udws \"ds2.get_num_elem 77553;\"",
+      "name": "ds2.get_num_elem",
+      "handler": "0xa005d221",
+      "classification": "reviewed-information-query",
+      "purpose": "Read live scanner-record element count; does not read its content.",
+      "control_flow_proof": "A005D220 uses bounded simple/record registry lookup, calls count getter only if recognized, else returns0.",
+      "timeout": 25,
+      "hardware_access": false,
+      "dsid": 77553,
+      "metadata_field": "record_count"
+    },
+    {
+      "command": "udws \"ds2.get_elem_size 77553;\"",
+      "name": "ds2.get_elem_size",
+      "handler": "0xa005d275",
+      "classification": "reviewed-information-query",
+      "purpose": "Establish record-array type and live byte length.",
+      "control_flow_proof": "A005D274 uses bounded record-registry lookup; returns byte size only for record arrays, otherwise0.",
+      "timeout": 25,
+      "hardware_access": false,
+      "dsid": 77553,
+      "metadata_field": "record_size_bytes"
+    },
+    {
+      "command": "udws \"ds2.get_num_elem 77555;\"",
+      "name": "ds2.get_num_elem",
+      "handler": "0xa005d221",
+      "classification": "reviewed-information-query",
+      "purpose": "Read live scanner-record element count; does not read its content.",
+      "control_flow_proof": "A005D220 uses bounded simple/record registry lookup, calls count getter only if recognized, else returns0.",
+      "timeout": 25,
+      "hardware_access": false,
+      "dsid": 77555,
+      "metadata_field": "record_count"
+    },
+    {
+      "command": "udws \"ds2.get_elem_size 77555;\"",
+      "name": "ds2.get_elem_size",
+      "handler": "0xa005d275",
+      "classification": "reviewed-information-query",
+      "purpose": "Establish record-array type and live byte length.",
+      "control_flow_proof": "A005D274 uses bounded record-registry lookup; returns byte size only for record arrays, otherwise0.",
+      "timeout": 25,
+      "hardware_access": false,
+      "dsid": 77555,
+      "metadata_field": "record_size_bytes"
+    },
+    {
+      "command": "udws \"ds2.get_num_elem 77556;\"",
+      "name": "ds2.get_num_elem",
+      "handler": "0xa005d221",
+      "classification": "reviewed-information-query",
+      "purpose": "Read live scanner-record element count; does not read its content.",
+      "control_flow_proof": "A005D220 uses bounded simple/record registry lookup, calls count getter only if recognized, else returns0.",
+      "timeout": 25,
+      "hardware_access": false,
+      "dsid": 77556,
+      "metadata_field": "record_count"
+    },
+    {
+      "command": "udws \"ds2.get_elem_size 77556;\"",
+      "name": "ds2.get_elem_size",
+      "handler": "0xa005d275",
+      "classification": "reviewed-information-query",
+      "purpose": "Establish record-array type and live byte length.",
+      "control_flow_proof": "A005D274 uses bounded record-registry lookup; returns byte size only for record arrays, otherwise0.",
+      "timeout": 25,
+      "hardware_access": false,
+      "dsid": 77556,
+      "metadata_field": "record_size_bytes"
+    },
+    {
+      "command": "udws \"ds2.get_num_elem 77445;\"",
+      "name": "ds2.get_num_elem",
+      "handler": "0xa005d221",
+      "classification": "reviewed-information-query",
+      "purpose": "Read live scanner-record element count; does not read its content.",
+      "control_flow_proof": "A005D220 uses bounded simple/record registry lookup, calls count getter only if recognized, else returns0.",
+      "timeout": 25,
+      "hardware_access": false,
+      "dsid": 77445,
+      "metadata_field": "record_count"
+    },
+    {
+      "command": "udws \"ds2.get_elem_size 77445;\"",
+      "name": "ds2.get_elem_size",
+      "handler": "0xa005d275",
+      "classification": "reviewed-information-query",
+      "purpose": "Establish record-array type and live byte length.",
+      "control_flow_proof": "A005D274 uses bounded record-registry lookup; returns byte size only for record arrays, otherwise0.",
+      "timeout": 25,
+      "hardware_access": false,
+      "dsid": 77445,
+      "metadata_field": "record_size_bytes"
+    },
+    {
+      "command": "udws \"ds2.get_name 78788;\"",
+      "name": "ds2.get_name",
+      "handler": "0xa005d93f",
+      "classification": "reviewed-information-query",
+      "purpose": "Confirm the live name for the remote-scan state DSID.",
+      "control_flow_proof": "A005D93E searches all typed registries with bounded lookup; unknown ID yieldsNULL.",
+      "timeout": 25,
+      "hardware_access": false,
+      "dsid": 78788,
+      "metadata_field": "name"
+    },
+    {
+      "command": "udws \"ds2.get_num_elem 78788;\"",
+      "name": "ds2.get_num_elem",
+      "handler": "0xa005d221",
+      "classification": "reviewed-information-query",
+      "purpose": "Confirm no live array element count for the statically scalar scan-state ID.",
+      "control_flow_proof": "A005D220 returns0 for registered scalar or unknown ID; interpret with get_name and static descriptor.",
+      "timeout": 25,
+      "hardware_access": false,
+      "dsid": 78788,
+      "metadata_field": "element_count"
+    },
+    {
+      "command": "udws \"ds2.get_elem_size 78788;\"",
+      "name": "ds2.get_elem_size",
+      "handler": "0xa005d275",
+      "classification": "reviewed-information-query",
+      "purpose": "Confirm no live record byte length for the statically scalar scan-state ID.",
+      "control_flow_proof": "A005D274 returns0 for non-record IDs; interpret with get_name and static scalar descriptor.",
+      "timeout": 25,
+      "hardware_access": false,
+      "dsid": 78788,
+      "metadata_field": "record_size_bytes"
+    },
+    {
+      "command": "udws \"ds2.get 78788;\"",
+      "name": "ds2.get",
+      "handler": "0xa005ca4b",
+      "classification": "reviewed-information-query",
+      "purpose": "Read existing remote-scan state without requesting a scan.",
+      "control_flow_proof": "A005CA4A checks scalar-registry lookup A005C788 before data-store vtable+8. Missing/non-scalar returns0, so name/type checks are required.",
+      "timeout": 25,
+      "hardware_access": "Data-store scalar read callback; no scan event.",
+      "dsid": 78788,
+      "metadata_field": "value"
+    },
+    {
+      "command": "udws \"jm_urf.get_perf_timers;\"",
+      "name": "jm_urf.get_perf_timers",
+      "handler": "0xa024051b",
+      "classification": "reviewed-read-and-clear-volatile-counters",
+      "purpose": "Capture four existing performance counters, then clear those volatile counters.",
+      "control_flow_proof": "A024051A loads four words from RAM0x20A44774, formats total job/decompression/refill/I/O times, writes output. A024054E..A0240556 then stores four zero words to the same16-byte RAM block. No persistent storage, network, firmware update, scan, or motor calls.",
+      "timeout": 25,
+      "hardware_access": false,
+      "side_effect": {
+        "kind": "clear_volatile_timing_counters",
+        "ram_address": "0x20a44774",
+        "byte_count": 16,
+        "clear_occurs": "After UART payload emission inside handler",
+        "counter_labels": [
+          "Total job time",
+          "Total decomp time",
+          "Total refill time",
+          "Total io time"
+        ]
+      },
+      "capture_requirement": "Keep exact first response as evidence of the pre-clear values. Do not retry after a valid prompt-returned capture merely to repeat output.",
+      "authorization_basis": "User requested complete real command testing; parent explicitly authorized this low-impact read-and-clear operation."
+    }
+  ],
+  "plan28_generation_rules": {
+    "record_getters": [
+      {
+        "name": "scan scansm getSerial",
+        "command": "udws \"scan scansm getSerial;\"",
+        "handler": "0xa03bab15",
+        "classification": "reviewed-information-query-after-live-metadata",
+        "dsid": 76898,
+        "dsid_hex": "0x12c62",
+        "record_index": 0,
+        "requested_bytes": 15,
+        "read_helper": "0xa03a37c2",
+        "prerequisite_commands": [
+          "udws \"ds2.get_num_elem 76898;\"",
+          "udws \"ds2.get_elem_size 76898;\""
+        ],
+        "accept_if": {
+          "both_prompt_returned": true,
+          "both_responses_valid_single_numeric_payloads": true,
+          "record_count_min": 1,
+          "record_count_max": 65535,
+          "record_size_bytes_min": 15,
+          "record_size_bytes_max": 65535
+        },
+        "hold_if": "Any response missing/timeout/malformed, count0, element-size0, count>65535 or element-size outside requested_bytes..65535. Never infer existence from NVM type alone.",
+        "control_flow_proof": "0xa03a37c2 passes fixed DSID76898, record_index0 and byte_count15 to data-store vtable+0x20 using caller stack buffer. Handler adds a NUL within allocated buffer and formats via A03BEF18. No scan job or motor path.",
+        "argument_note": "No command input consumed.",
+        "hardware_access": "Only registered data-store read callback; no scanner hardware control requested.",
+        "timeout": 25,
+        "static_descriptor_name": "DSID_SCAN_MODULE_SERIAL",
+        "static_descriptor_address": "0xa05fc50c",
+        "static_descriptor_count": 1,
+        "static_descriptor_bytes": 15
+      },
+      {
+        "name": "scan scansm getLongSerial",
+        "command": "udws \"scan scansm getLongSerial 0;\"",
+        "handler": "0xa03bab69",
+        "classification": "reviewed-information-query-after-live-metadata",
+        "dsid": 77531,
+        "dsid_hex": "0x12edb",
+        "record_index": 0,
+        "requested_bytes": 20,
+        "read_helper": "0xa03a37fa",
+        "prerequisite_commands": [
+          "udws \"ds2.get_num_elem 77531;\"",
+          "udws \"ds2.get_elem_size 77531;\""
+        ],
+        "accept_if": {
+          "both_prompt_returned": true,
+          "both_responses_valid_single_numeric_payloads": true,
+          "record_count_min": 1,
+          "record_count_max": 65535,
+          "record_size_bytes_min": 20,
+          "record_size_bytes_max": 65535
+        },
+        "hold_if": "Any response missing/timeout/malformed, count0, element-size0, count>65535 or element-size outside requested_bytes..65535. Never infer existence from NVM type alone.",
+        "control_flow_proof": "0xa03a37fa passes fixed DSID77531, record_index0 and byte_count20 to data-store vtable+0x20 using caller stack buffer. Handler adds a NUL within allocated buffer and formats via A03BEF18. No scan job or motor path.",
+        "argument_note": "Explicit0 is consumed by A03BEF76 and discarded before fixed record read.",
+        "hardware_access": "Only registered data-store read callback; no scanner hardware control requested.",
+        "timeout": 25
+      },
+      {
+        "name": "scan scansm getTimestamp",
+        "command": "udws \"scan scansm getTimestamp 0;\"",
+        "handler": "0xa03baba5",
+        "classification": "reviewed-information-query-after-live-metadata",
+        "dsid": 77552,
+        "dsid_hex": "0x12ef0",
+        "record_index": 0,
+        "requested_bytes": 20,
+        "read_helper": "0xa03a3868",
+        "prerequisite_commands": [
+          "udws \"ds2.get_num_elem 77552;\"",
+          "udws \"ds2.get_elem_size 77552;\""
+        ],
+        "accept_if": {
+          "both_prompt_returned": true,
+          "both_responses_valid_single_numeric_payloads": true,
+          "record_count_min": 1,
+          "record_count_max": 65535,
+          "record_size_bytes_min": 20,
+          "record_size_bytes_max": 65535
+        },
+        "hold_if": "Any response missing/timeout/malformed, count0, element-size0, count>65535 or element-size outside requested_bytes..65535. Never infer existence from NVM type alone.",
+        "control_flow_proof": "0xa03a3868 passes fixed DSID77552, record_index0 and byte_count20 to data-store vtable+0x20 using caller stack buffer. Handler adds a NUL within allocated buffer and formats via A03BEF18. No scan job or motor path.",
+        "argument_note": "Explicit0 is consumed by A03BEF76 and discarded before fixed record read.",
+        "hardware_access": "Only registered data-store read callback; no scanner hardware control requested.",
+        "timeout": 25
+      },
+      {
+        "name": "scan scansm getBacksideTimestamp",
+        "command": "udws \"scan scansm getBacksideTimestamp;\"",
+        "handler": "0xa03babe1",
+        "classification": "reviewed-information-query-after-live-metadata",
+        "dsid": 77553,
+        "dsid_hex": "0x12ef1",
+        "record_index": 0,
+        "requested_bytes": 20,
+        "read_helper": "0xa03a38a0",
+        "prerequisite_commands": [
+          "udws \"ds2.get_num_elem 77553;\"",
+          "udws \"ds2.get_elem_size 77553;\""
+        ],
+        "accept_if": {
+          "both_prompt_returned": true,
+          "both_responses_valid_single_numeric_payloads": true,
+          "record_count_min": 1,
+          "record_count_max": 65535,
+          "record_size_bytes_min": 20,
+          "record_size_bytes_max": 65535
+        },
+        "hold_if": "Any response missing/timeout/malformed, count0, element-size0, count>65535 or element-size outside requested_bytes..65535. Never infer existence from NVM type alone.",
+        "control_flow_proof": "0xa03a38a0 passes fixed DSID77553, record_index0 and byte_count20 to data-store vtable+0x20 using caller stack buffer. Handler adds a NUL within allocated buffer and formats via A03BEF18. No scan job or motor path.",
+        "argument_note": "No command input consumed.",
+        "hardware_access": "Only registered data-store read callback; no scanner hardware control requested.",
+        "timeout": 25
+      },
+      {
+        "name": "scan scansm getName",
+        "command": "udws \"scan scansm getName;\"",
+        "handler": "0xa03bac19",
+        "classification": "reviewed-information-query-after-live-metadata",
+        "dsid": 77555,
+        "dsid_hex": "0x12ef3",
+        "record_index": 0,
+        "requested_bytes": 6,
+        "read_helper": "0xa03a38d8",
+        "prerequisite_commands": [
+          "udws \"ds2.get_num_elem 77555;\"",
+          "udws \"ds2.get_elem_size 77555;\""
+        ],
+        "accept_if": {
+          "both_prompt_returned": true,
+          "both_responses_valid_single_numeric_payloads": true,
+          "record_count_min": 1,
+          "record_count_max": 65535,
+          "record_size_bytes_min": 6,
+          "record_size_bytes_max": 65535
+        },
+        "hold_if": "Any response missing/timeout/malformed, count0, element-size0, count>65535 or element-size outside requested_bytes..65535. Never infer existence from NVM type alone.",
+        "control_flow_proof": "0xa03a38d8 passes fixed DSID77555, record_index0 and byte_count6 to data-store vtable+0x20 using caller stack buffer. Handler adds a NUL within allocated buffer and formats via A03BEF18. No scan job or motor path.",
+        "argument_note": "No command input consumed.",
+        "hardware_access": "Only registered data-store read callback; no scanner hardware control requested.",
+        "timeout": 25
+      },
+      {
+        "name": "scan scansm getBacksideName",
+        "command": "udws \"scan scansm getBacksideName;\"",
+        "handler": "0xa03bac51",
+        "classification": "reviewed-information-query-after-live-metadata",
+        "dsid": 77556,
+        "dsid_hex": "0x12ef4",
+        "record_index": 0,
+        "requested_bytes": 6,
+        "read_helper": "0xa03a3910",
+        "prerequisite_commands": [
+          "udws \"ds2.get_num_elem 77556;\"",
+          "udws \"ds2.get_elem_size 77556;\""
+        ],
+        "accept_if": {
+          "both_prompt_returned": true,
+          "both_responses_valid_single_numeric_payloads": true,
+          "record_count_min": 1,
+          "record_count_max": 65535,
+          "record_size_bytes_min": 6,
+          "record_size_bytes_max": 65535
+        },
+        "hold_if": "Any response missing/timeout/malformed, count0, element-size0, count>65535 or element-size outside requested_bytes..65535. Never infer existence from NVM type alone.",
+        "control_flow_proof": "0xa03a3910 passes fixed DSID77556, record_index0 and byte_count6 to data-store vtable+0x20 using caller stack buffer. Handler adds a NUL within allocated buffer and formats via A03BEF18. No scan job or motor path.",
+        "argument_note": "No command input consumed.",
+        "hardware_access": "Only registered data-store read callback; no scanner hardware control requested.",
+        "timeout": 25
+      },
+      {
+        "name": "scan scansm getCorrectionMatrixBarcode",
+        "command": "udws \"scan scansm getCorrectionMatrixBarcode 0;\"",
+        "handler": "0xa03bac6d",
+        "classification": "reviewed-information-query-after-live-metadata",
+        "dsid": 77445,
+        "dsid_hex": "0x12e85",
+        "record_index": 0,
+        "requested_bytes": 10,
+        "read_helper": "0xa03a3714",
+        "prerequisite_commands": [
+          "udws \"ds2.get_num_elem 77445;\"",
+          "udws \"ds2.get_elem_size 77445;\""
+        ],
+        "accept_if": {
+          "both_prompt_returned": true,
+          "both_responses_valid_single_numeric_payloads": true,
+          "record_count_min": 1,
+          "record_count_max": 65535,
+          "record_size_bytes_min": 10,
+          "record_size_bytes_max": 65535
+        },
+        "hold_if": "Any response missing/timeout/malformed, count0, element-size0, count>65535 or element-size outside requested_bytes..65535. Never infer existence from NVM type alone.",
+        "control_flow_proof": "0xa03a3714 passes fixed DSID77445, record_index0 and byte_count10 to data-store vtable+0x20 using caller stack buffer. Handler adds a NUL within allocated buffer and formats via A03BEF18. No scan job or motor path.",
+        "argument_note": "Explicit0 is consumed by A03BEF76 and discarded before fixed record read.",
+        "hardware_access": "Only registered data-store read callback; no scanner hardware control requested.",
+        "timeout": 25,
+        "static_descriptor_name": "DSID_IP_CORRECTION_MATRIX_BARCODE",
+        "static_descriptor_address": "0xa05fc548",
+        "static_descriptor_count": 1,
+        "static_descriptor_bytes": 10
+      }
+    ],
+    "remote_scan_state_getter": {
+      "name": "escl.get_remote_scan_state",
+      "command": "udws \"escl.get_remote_scan_state;\"",
+      "handler": "0xa0373f31",
+      "dsid": 78788,
+      "dsid_hex": "0x133c4",
+      "static_descriptor_address": "0xa05ee1d0",
+      "static_descriptor_name": "DSID_REMOTELY_INITIATED_SCAN",
+      "static_descriptor_words": [
+        "0x000133c4",
+        "0xa05ee230",
+        "0x00000001",
+        "0xffffffff",
+        "0x00000000",
+        "0x00000000"
+      ],
+      "prerequisite_commands": [
+        "udws \"ds2.get_name 78788;\"",
+        "udws \"ds2.get_num_elem 78788;\"",
+        "udws \"ds2.get_elem_size 78788;\"",
+        "udws \"ds2.get 78788;\""
+      ],
+      "accept_if": {
+        "all_prompt_returned": true,
+        "name_exact": "DSID_REMOTELY_INITIATED_SCAN",
+        "element_count_equals": 0,
+        "record_size_bytes_equals": 0,
+        "value_in": [
+          0,
+          1
+        ]
+      },
+      "hold_if": "Missing/malformed response, wrong/NULL name, nonzero array metadata, or value outside0/1. A raw ds2.get zero alone is not proof that the ID exists.",
+      "control_flow_proof": "A0373F30 reads DSID0x133c4 through data-store vtable+8. For0/1 it formats state into local10-byte buffer and writes returned formatted length; all other values leave length-1. Live scalar checks and static width1 descriptor establish the admitted branch. No scan request is emitted.",
+      "timeout": 25,
+      "hardware_access": "Data-store state read only."
+    }
+  },
+  "generation_instructions": [
+    "Capture plan27 first, retaining raw response and prompt status for each exact command.",
+    "Parse numeric responses as integers and reject parser-error text, missing fields and extra unrelated fields.",
+    "Join each actual response to its DSID and metadata field, then apply every rule literally.",
+    "Create plan28 only from passing rules; keep failed/missing/zero metadata cases held with actual reason.",
+    "Do not infer record existence from an unregistered/unknown ID returning0.",
+    "Read-and-clear timing query is an independent authorized operation at end of plan27; preserve its first output and annotate the subsequent clearing."
+  ],
+  "held_scope": "No additional firmware writes, network requests, scan jobs, motor operations, or transport settings are included."
+}

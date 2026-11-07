@@ -1,0 +1,2434 @@
+{
+  "generated_utc": "2026-10-29T21:37:44.267932+00:00",
+  "source_reports": [
+    {
+      "file": "round5_system_results.json",
+      "sha256": "c9fe10617aae55049acb2356973dc54ef6afcbb9576b88dc175e066638d58477"
+    },
+    {
+      "file": "round5_heap_results.json",
+      "sha256": "c9a232fcea60f37578fa035b33655c481ea90fef7a2648832fdc9ecf0408c0a6"
+    },
+    {
+      "file": "round5_system_extra_results.json",
+      "sha256": "eda840555bb3cfd03057bef49b8c0ebcd0c741e3ad783535c9bdd43791d56e50"
+    },
+    {
+      "file": "round5_product_results.json",
+      "sha256": "64bf248d2e1a953513c8ea2b4762d567257f6d0ca6ce79d93107ede59af71b57"
+    },
+    {
+      "file": "round5_hardware_results.json",
+      "sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "file": "round5_misc_results.json",
+      "sha256": "8b67459e166f499204b58646e5ba846010383ca255627f6fde55765f668f7e74"
+    },
+    {
+      "file": "round5_misc_followup_results.json",
+      "sha256": "d843ee992c1755ea432ba94ff2265fae9898eec9037040b0823c9af0dedcd126"
+    },
+    {
+      "file": "round5_metadata_results.json",
+      "sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    }
+  ],
+  "response_revalidations": [
+    {
+      "response_file": "physical-54-system-services/0001-udws_sm_module_conn.bin",
+      "response_sha256": "89cc83dc1f48debde7e8e9c3b6dc0b3927c06f66bf212e36ef00723a7df02f5c",
+      "valid": true,
+      "assessment": "validated-module-connection-or-job-state",
+      "note": "Provider/requirement/event rows independently match compiled descriptors. All1900connection requester tuples match;1880provider tuples match the advertised providers.20unknown-provider enum fields are unresolved and must not be treated as valid bindings. Adjacency text exactly reconstructs1900connections and364modules.",
+      "analysis_report": "round5_system_results.json",
+      "analysis_report_sha256": "c9fe10617aae55049acb2356973dc54ef6afcbb9576b88dc175e066638d58477"
+    },
+    {
+      "response_file": "physical-54-system-services/0002-udws_sm_module_prov.bin",
+      "response_sha256": "0a2c8747aaf92008e522bf8edbb85399df68a3e80346d774ba8cc06910e99589",
+      "valid": true,
+      "assessment": "validated-module-connection-or-job-state",
+      "note": "Provider/requirement/event rows independently match compiled descriptors. All1900connection requester tuples match;1880provider tuples match the advertised providers.20unknown-provider enum fields are unresolved and must not be treated as valid bindings. Adjacency text exactly reconstructs1900connections and364modules.",
+      "analysis_report": "round5_system_results.json",
+      "analysis_report_sha256": "c9fe10617aae55049acb2356973dc54ef6afcbb9576b88dc175e066638d58477"
+    },
+    {
+      "response_file": "physical-54-system-services/0003-udws_sm_module_req.bin",
+      "response_sha256": "226492817f643ae2121e904e182cbd82e255d0fa9d737469330400c958c102a0",
+      "valid": true,
+      "assessment": "validated-module-connection-or-job-state",
+      "note": "Provider/requirement/event rows independently match compiled descriptors. All1900connection requester tuples match;1880provider tuples match the advertised providers.20unknown-provider enum fields are unresolved and must not be treated as valid bindings. Adjacency text exactly reconstructs1900connections and364modules.",
+      "analysis_report": "round5_system_results.json",
+      "analysis_report_sha256": "c9fe10617aae55049acb2356973dc54ef6afcbb9576b88dc175e066638d58477"
+    },
+    {
+      "response_file": "physical-54-system-services/0004-udws_sm_module_tabl.bin",
+      "response_sha256": "34be1eb79bc1fcd60a7fc811c6f08fe0fd30945a0a5b59ab901d38c639b03621",
+      "valid": true,
+      "assessment": "validated-module-connection-or-job-state",
+      "note": "Provider/requirement/event rows independently match compiled descriptors. All1900connection requester tuples match;1880provider tuples match the advertised providers.20unknown-provider enum fields are unresolved and must not be treated as valid bindings. Adjacency text exactly reconstructs1900connections and364modules.",
+      "analysis_report": "round5_system_results.json",
+      "analysis_report_sha256": "c9fe10617aae55049acb2356973dc54ef6afcbb9576b88dc175e066638d58477"
+    },
+    {
+      "response_file": "physical-54-system-services/0005-udws_sm_module_pevent.bin",
+      "response_sha256": "021934888b2407fc47f2579594c331c1164ae5771674d00f10e81067847b9250",
+      "valid": true,
+      "assessment": "validated-module-connection-or-job-state",
+      "note": "Provider/requirement/event rows independently match compiled descriptors. All1900connection requester tuples match;1880provider tuples match the advertised providers.20unknown-provider enum fields are unresolved and must not be treated as valid bindings. Adjacency text exactly reconstructs1900connections and364modules.",
+      "analysis_report": "round5_system_results.json",
+      "analysis_report_sha256": "c9fe10617aae55049acb2356973dc54ef6afcbb9576b88dc175e066638d58477"
+    },
+    {
+      "response_file": "physical-54-system-services/0006-udws_sm_module_revent.bin",
+      "response_sha256": "6adae29e91a891e6b7bc970fed7fe8b10502934518df814e383b9f1e35c6106e",
+      "valid": true,
+      "assessment": "validated-module-connection-or-job-state",
+      "note": "Provider/requirement/event rows independently match compiled descriptors. All1900connection requester tuples match;1880provider tuples match the advertised providers.20unknown-provider enum fields are unresolved and must not be treated as valid bindings. Adjacency text exactly reconstructs1900connections and364modules.",
+      "analysis_report": "round5_system_results.json",
+      "analysis_report_sha256": "c9fe10617aae55049acb2356973dc54ef6afcbb9576b88dc175e066638d58477"
+    },
+    {
+      "response_file": "physical-54-system-services/0007-udws_smjob_job.bin",
+      "response_sha256": "08d4ebf718f06022d62ac2fce26776ce19742cf11c1afd8543e71ee0ba22a9a0",
+      "valid": true,
+      "assessment": "validated-module-connection-or-job-state",
+      "note": "Framing valid. Job types and filter lists contain identical29unique SUIDs in matching order. Empty active-job and blocker replies reflect current idle-state traversal, not a disabled handler; no jobs created.",
+      "analysis_report": "round5_system_results.json",
+      "analysis_report_sha256": "c9fe10617aae55049acb2356973dc54ef6afcbb9576b88dc175e066638d58477"
+    },
+    {
+      "response_file": "physical-54-system-services/0008-udws_smjob_types.bin",
+      "response_sha256": "1cd8dff328b0a2e66fa34c43675a71ad9477ae9751676af1e6608194578d0c40",
+      "valid": true,
+      "assessment": "validated-module-connection-or-job-state",
+      "note": "Framing valid. Job types and filter lists contain identical29unique SUIDs in matching order. Empty active-job and blocker replies reflect current idle-state traversal, not a disabled handler; no jobs created.",
+      "analysis_report": "round5_system_results.json",
+      "analysis_report_sha256": "c9fe10617aae55049acb2356973dc54ef6afcbb9576b88dc175e066638d58477"
+    },
+    {
+      "response_file": "physical-54-system-services/0009-udws_smjob_blk.bin",
+      "response_sha256": "f0b29a43fd0d1395d013e3e506a2b587243e4ef3eca4cb67ddbe4541150ce0b5",
+      "valid": true,
+      "assessment": "validated-module-connection-or-job-state",
+      "note": "Framing valid. Job types and filter lists contain identical29unique SUIDs in matching order. Empty active-job and blocker replies reflect current idle-state traversal, not a disabled handler; no jobs created.",
+      "analysis_report": "round5_system_results.json",
+      "analysis_report_sha256": "c9fe10617aae55049acb2356973dc54ef6afcbb9576b88dc175e066638d58477"
+    },
+    {
+      "response_file": "physical-54-system-services/0010-udws_smjob_filter_show_0.bin",
+      "response_sha256": "87f73770b7ddcf7e36adfa15b87b4af56ec84c298e9955395762be2c8b0ea46f",
+      "valid": true,
+      "assessment": "validated-module-connection-or-job-state",
+      "note": "Framing valid. Job types and filter lists contain identical29unique SUIDs in matching order. Empty active-job and blocker replies reflect current idle-state traversal, not a disabled handler; no jobs created.",
+      "analysis_report": "round5_system_results.json",
+      "analysis_report_sha256": "c9fe10617aae55049acb2356973dc54ef6afcbb9576b88dc175e066638d58477"
+    },
+    {
+      "response_file": "physical-58-heap-diagnostics/0001-udws_heapmgr_client_prt.bin",
+      "response_sha256": "6b9fed0672b080ca7ef1cf5983e97b96bbec99a592f5b3c351b5a8c95c195eba",
+      "valid": true,
+      "assessment": "validated-heap-or-partition-diagnostic",
+      "note": "Two client-to-major-number mappings plus one zero sentinel were returned. This command prints major_number, not compaction priority; prior purpose wording is corrected here.",
+      "analysis_report": "round5_heap_results.json",
+      "analysis_report_sha256": "c9a232fcea60f37578fa035b33655c481ea90fef7a2648832fdc9ecf0408c0a6"
+    },
+    {
+      "response_file": "physical-58-heap-diagnostics/0002-udws_heapmgr_free_prt.bin",
+      "response_sha256": "a0de9bbed643b3541e4518e784248f09cd693bf3d6889bf55f4683d666596001",
+      "valid": true,
+      "assessment": "validated-heap-or-partition-diagnostic",
+      "note": "Single reported free block; hexadecimal and decimal sizes match, and start+size=end exactly. Other pool/free counters are distinct in scope and sampled at different times.",
+      "analysis_report": "round5_heap_results.json",
+      "analysis_report_sha256": "c9a232fcea60f37578fa035b33655c481ea90fef7a2648832fdc9ecf0408c0a6"
+    },
+    {
+      "response_file": "physical-58-heap-diagnostics/0003-udws_heapmgr_hash_load.bin",
+      "response_sha256": "673b866130b92090c44ff246c2f591e0df3b32062344d1b3ee7b95fe370dd9d5",
+      "valid": true,
+      "assessment": "validated-heap-or-partition-diagnostic",
+      "note": "211 buckets and8entries; count independently agrees with hash prt and name prt.",
+      "analysis_report": "round5_heap_results.json",
+      "analysis_report_sha256": "c9a232fcea60f37578fa035b33655c481ea90fef7a2648832fdc9ecf0408c0a6"
+    },
+    {
+      "response_file": "physical-58-heap-diagnostics/0004-udws_heapmgr_hash_prt.bin",
+      "response_sha256": "0450514d8ca66b2a8b78443d4c264edc9293a075d4f77ee7ca1bbf8f2a6fc6a7",
+      "valid": true,
+      "assessment": "validated-heap-or-partition-diagnostic",
+      "note": "Eight unique indices in eight nonempty valid buckets; same eight indices appear in name prt.",
+      "analysis_report": "round5_heap_results.json",
+      "analysis_report_sha256": "c9a232fcea60f37578fa035b33655c481ea90fef7a2648832fdc9ecf0408c0a6"
+    },
+    {
+      "response_file": "physical-58-heap-diagnostics/0005-udws_heapmgr_name_prt.bin",
+      "response_sha256": "134b9c8ace4ea69c28c9a05043978cd9f07a806873762efcee58c13007c25cd4",
+      "valid": true,
+      "assessment": "validated-heap-or-partition-diagnostic",
+      "note": "Eight named block entries with reference counts and header addresses; matches hash-table enumeration.",
+      "analysis_report": "round5_heap_results.json",
+      "analysis_report_sha256": "c9a232fcea60f37578fa035b33655c481ea90fef7a2648832fdc9ecf0408c0a6"
+    },
+    {
+      "response_file": "physical-58-heap-diagnostics/0006-udws_heapmgr_heap_prt.bin",
+      "response_sha256": "32ecaf178bcba941d31b4a2bf23e979c798d0ff9cc6cf7ed65d771dea64b2d59",
+      "valid": true,
+      "assessment": "validated-heap-or-partition-diagnostic",
+      "note": "Relocation-tree root is empty. Existing named blocks/free memory are reported separately; this does not mean the global allocator has no allocations.",
+      "analysis_report": "round5_heap_results.json",
+      "analysis_report_sha256": "c9a232fcea60f37578fa035b33655c481ea90fef7a2648832fdc9ecf0408c0a6"
+    },
+    {
+      "response_file": "physical-58-heap-diagnostics/0007-udws_heapmgr_heap_ls.bin",
+      "response_sha256": "c6ab93072844ec9a7bd9b0db57516a4c0fe5c3ffe5c6b6b3bd5264688a72f2fd",
+      "valid": true,
+      "assessment": "validated-heap-or-partition-diagnostic",
+      "note": "Relocation-tree root is empty. This exercises a valid empty query state; block-row formatting is unexercised.",
+      "analysis_report": "round5_heap_results.json",
+      "analysis_report_sha256": "c9a232fcea60f37578fa035b33655c481ea90fef7a2648832fdc9ecf0408c0a6"
+    },
+    {
+      "response_file": "physical-58-heap-diagnostics/0008-udws_heapmgr_heap_mem_100.bin",
+      "response_sha256": "0e2e5f46df9a39616e324c886c10216b2a4052b97c313cdaa6c84aabffb0c67b",
+      "valid": true,
+      "assessment": "validated-heap-or-partition-diagnostic",
+      "note": "Priority-filtered sum0 agrees with empty relocation-tree state; does not measure total installed or used RAM.",
+      "analysis_report": "round5_heap_results.json",
+      "analysis_report_sha256": "c9a232fcea60f37578fa035b33655c481ea90fef7a2648832fdc9ecf0408c0a6"
+    },
+    {
+      "response_file": "physical-58-heap-diagnostics/0009-udws_ram_part_info_0.bin",
+      "response_sha256": "89c0fea96f8176305fe816d9a7ac1aac6c47d97de03caee5836e95c99352563a",
+      "valid": true,
+      "assessment": "validated-heap-or-partition-diagnostic",
+      "note": "Partition0 root /,heap type,16KiBblocksize,current_size105404,available_memory46556576; successful0return. current_size retains firmware-native units until independently established.",
+      "analysis_report": "round5_heap_results.json",
+      "analysis_report_sha256": "c9a232fcea60f37578fa035b33655c481ea90fef7a2648832fdc9ecf0408c0a6"
+    },
+    {
+      "response_file": "physical-61-block-metadata/0001-udws_ram_block_info_1_1_0.bin",
+      "response_sha256": "7cb799cc9d5be8eab40de3fd48e600a6a2fc8395fbb8fe1bd56a8a2665515a76",
+      "valid": true,
+      "assessment": "validated-live-directory-block-metadata",
+      "note": "Actual DIR inode1 block0 query; identity,size,priority,purgeable fields exactly match independently captured live32-byte header. Reference count is separately compared as a time-dependent field.",
+      "analysis_report": "round5_system_extra_results.json",
+      "analysis_report_sha256": "eda840555bb3cfd03057bef49b8c0ebcd0c741e3ad783535c9bdd43791d56e50"
+    },
+    {
+      "response_file": "references/physical-55-media-capabilities/0001-udws_mhdlg_get_mhdlgcap_supported_trays.bin",
+      "response_sha256": "5ff97b5417659b0c5ed89637eb2b469c3ab5ec9bbedd947a9da2ff5e7f3d8feb",
+      "assessment": "complete-input-tray-capability",
+      "note": "Physical status200, full declared count and all IDs agree with the reviewed ROM capability implementation.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_product_results.json",
+      "analysis_report_sha256": "64bf248d2e1a953513c8ea2b4762d567257f6d0ca6ce79d93107ede59af71b57"
+    },
+    {
+      "response_file": "references/physical-55-media-capabilities/0002-udws_mhdlg_get_mhdlgcap_supported_bins.bin",
+      "response_sha256": "21b1711b55f58088d928993b93ddd70e24c1aed759cd0b6c2bd0fe33375e312d",
+      "assessment": "complete-output-bin-capability",
+      "note": "Physical status200, full declared count and all IDs agree with the reviewed ROM capability implementation.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_product_results.json",
+      "analysis_report_sha256": "64bf248d2e1a953513c8ea2b4762d567257f6d0ca6ce79d93107ede59af71b57"
+    },
+    {
+      "response_file": "references/physical-55-media-capabilities/0003-udws_mhdlg_get_mhdlgcap_media_type_size_list_0_1.bin",
+      "response_sha256": "42804d99165865619912ffaaf81fa7eb15344ca341151e534301cb84195c3e2c",
+      "assessment": "complete-media-size-capability",
+      "note": "Physical status200, full declared count and all IDs agree with the reviewed ROM capability implementation.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_product_results.json",
+      "analysis_report_sha256": "64bf248d2e1a953513c8ea2b4762d567257f6d0ca6ce79d93107ede59af71b57"
+    },
+    {
+      "response_file": "references/physical-55-media-capabilities/0004-udws_mhdlg_get_mhdlgcap_media_type_size_list_1_1.bin",
+      "response_sha256": "eedc5330f2292a7181e6a141559260485fcbdb72dacd6f328138cc63c1655488",
+      "assessment": "complete-media-type-capability",
+      "note": "Physical status200, full declared count and all IDs agree with the reviewed ROM capability implementation.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_product_results.json",
+      "analysis_report_sha256": "64bf248d2e1a953513c8ea2b4762d567257f6d0ca6ce79d93107ede59af71b57"
+    },
+    {
+      "response_file": "references/physical-55-media-capabilities/0005-udws_mhdlg_get_supported_df_groups.bin",
+      "response_sha256": "858c7443992fd19cf709e0757f5775364618bdd456382d82e2ae58399588aa77",
+      "assessment": "complete-zero-group-capability",
+      "note": "Physical status200, full declared count and all IDs agree with the reviewed ROM capability implementation. This is a successful empty-capability response, not an invalid-group/404 guard.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_product_results.json",
+      "analysis_report_sha256": "64bf248d2e1a953513c8ea2b4762d567257f6d0ca6ce79d93107ede59af71b57"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0001-udws_cal_val_get_pa_value_P2PX_FIRST_CMY_0_FWD.bin",
+      "response_sha256": "62edc3151badfbe960794cf905964658cec43ceb9c8a9a7416351e9525b7e3c9",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0002-udws_cal_val_get_pa_value_P2PY_FIRST_CMY_0_FWD.bin",
+      "response_sha256": "cf16614a4481aaf24597f7f4e322ad6c35cdc1f2a4358fc6e8db2c47eae04b0b",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0003-udws_cal_val_get_pa_value_BIDI_FIRST_K_0_FWD.bin",
+      "response_sha256": "8cad2e14b606e0d9935627c886568cd9fc846926ace14455fab98616f5939bd2",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0004-udws_cal_val_get_pa_value_THETAZ_FIRST_K_0_FWD.bin",
+      "response_sha256": "dd20137fa0d7ca4c14ed52bda09e9d782d8cf8df1aa49852cf9fc76d7b3136ba",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0005-udws_cal_val_get_pa_value_status_P2PX_FIRST_CMY_0_FWD.bin",
+      "response_sha256": "ba6e77b7cb1c94c898e3acd7d7f0f0382e08f16adf0968f47330b43ab23ac617",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0006-udws_cal_val_get_pa_value_status_P2PY_FIRST_CMY_0_FWD.bin",
+      "response_sha256": "443049a9c95d1771379e2c23adbcbd6de9efe5a2a64c4ed6852f9aed9433db30",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0007-udws_cal_val_get_pa_value_status_BIDI_FIRST_K_0_FWD.bin",
+      "response_sha256": "149992400e9fd11c22387adb262f47bb04e5a48f2c46482497287ef554b73e17",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0008-udws_cal_val_get_pa_value_status_THETAZ_FIRST_K_0_FWD.bin",
+      "response_sha256": "cef774388eba1f35dd74fcdce165858e924f78eeaa907cb978b0f3f72ec20502",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0009-udws_cal_val_get_unused_pa_value_P2PX_FIRST_CMY_0_FWD.bin",
+      "response_sha256": "0de5d3deecaa3799e7a96e442fc5f1c0a2ade98f93a16f1850df7699756b575d",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0010-udws_cal_val_get_unused_pa_value_P2PY_FIRST_CMY_0_FWD.bin",
+      "response_sha256": "2741d30156a0ae310ddc72564642cb25e6575815491b1a3b4ae353f9ddd7a36e",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0011-udws_cal_val_get_unused_pa_value_BIDI_FIRST_K_0_FWD.bin",
+      "response_sha256": "51119a17a12f95884bcfedbc3b82a9852847977384cf565d77cc346b48302d0e",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0012-udws_cal_val_get_unused_pa_value_THETAZ_FIRST_K_0_FWD.bin",
+      "response_sha256": "d842f20cbe2a3370a0c5733038bbc20fbbc6e72b755b0315defe6edec299c390",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0013-udws_cal_val_get_unused_pa_status_P2PX_FIRST_CMY_0_FWD.bin",
+      "response_sha256": "df35e6e6ca74be2bb423c8927044259cf612680717c2a8dce4c3e062c6dce194",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0014-udws_cal_val_get_unused_pa_status_P2PY_FIRST_CMY_0_FWD.bin",
+      "response_sha256": "03c51bf925b2caf3842629bdc8a6ff3a87dca213da56bcfbd42436a58db528a2",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0015-udws_cal_val_get_unused_pa_status_BIDI_FIRST_K_0_FWD.bin",
+      "response_sha256": "a6775dd02526fe5913a1af7ec1534517b2e28ec67b4a799ecbfc60e6c1f6ca8e",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0016-udws_cal_val_get_unused_pa_status_THETAZ_FIRST_K_0_FWD.bin",
+      "response_sha256": "998e1b197d65444f296c53b274ee2f95d1fc05aac55d267976bd41d8680caf38",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0017-udws_cal_val_get_linefeed_err_1_1_K.bin",
+      "response_sha256": "4400d0a51258d3f08a101ee321efbbf94664efa1ea837a78492870d69f4bd04a",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0018-udws_cal_val_get_linefeed_err_status_1_1_K.bin",
+      "response_sha256": "21e12ef6f3e0904d6d00aace71d809cede08ff7fe8e6bdb65da17fb3ea6758c5",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0019-udws_cal_val_get_edge_err_1.bin",
+      "response_sha256": "f23246c13e5435bb6955fc408782dd502964dca745126d664d3f5e17664e0ec5",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0020-udws_cal_val_get_edge_err_status_1.bin",
+      "response_sha256": "082b662a964ff90fcddcc11b78ee55d1d59a31746853a6abca0a514231de875a",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0021-udws_pen_get_ttoe_ad_range.bin",
+      "response_sha256": "7b19609c8a505e84033c31b8358ff967cd942486294d57a1e0c9e22d852e10e5",
+      "assessment": "complete-bounded-pen-calibration-table",
+      "note": "Count63 and exactly63 unsigned halfwords are present. All are zero in this capture; these cached table values do not demonstrate calibration or hardware health.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0022-udws_pen_get_ttoe_test_range.bin",
+      "response_sha256": "e5ec1b84a986c37a244a21940db2c836f656fc555add36126ea2bbcd68cc390d",
+      "assessment": "complete-bounded-pen-calibration-table",
+      "note": "Count63 and exactly63 unsigned halfwords are present. All are zero in this capture; these cached table values do not demonstrate calibration or hardware health.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0023-udws_pen_is_ttoed_0.bin",
+      "response_sha256": "a18d05404659f32d325f92b05a48dbcf4f7269aa2a1f53cbe6ada861c5276e98",
+      "assessment": "complete-cached-pen-state",
+      "note": "One bounded Boolean value returned for the requested chute. It is a stored calibration-state query, not a live electrical test.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0024-udws_pen_is_ttoed_1.bin",
+      "response_sha256": "6dc96bf4237f9343e1fc435787ba525bd51fe448605a81f6042460a09e535fae",
+      "assessment": "complete-cached-pen-state",
+      "note": "One bounded Boolean value returned for the requested chute. It is a stored calibration-state query, not a live electrical test.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0025-udws_pen_is_ldw_ttoed_0.bin",
+      "response_sha256": "ad7d5412c36a52d18822e99e2bd65e4d93ca87d9f58147ed3e1775e0d30509fd",
+      "assessment": "complete-cached-pen-state",
+      "note": "One bounded Boolean value returned for the requested chute. It is a stored calibration-state query, not a live electrical test.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0026-udws_pen_is_ldw_ttoed_1.bin",
+      "response_sha256": "a2cf3ddb01b334ba760d98c0efce74f4ff7184dfb6738d596fb97e969f8cc9cd",
+      "assessment": "complete-cached-pen-state",
+      "note": "One bounded Boolean value returned for the requested chute. It is a stored calibration-state query, not a live electrical test.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0027-udws_pen_get_dotcount_0_0_0.bin",
+      "response_sha256": "be4c9559c4b1444c4d6b981f38634d7965b90697ac302e516de39821903e860c",
+      "assessment": "complete-dot-counter-matching-storage",
+      "note": "The full scalar matches both earlier direct NVM and DS2 observations for the ROM-mapped DSID. Catalog names identify the last argument as a history-slot index; the original plan used the generic word channel. These are stored raw dot counts, not page counts or live nozzle tests.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0028-udws_pen_get_dotcount_1_0_0.bin",
+      "response_sha256": "b92d3e7fe4bca169cd50052dc6964f8011eb4f970bf64e536a925bcfbda00f80",
+      "assessment": "complete-dot-counter-matching-storage",
+      "note": "The full scalar matches both earlier direct NVM and DS2 observations for the ROM-mapped DSID. Catalog names identify the last argument as a history-slot index; the original plan used the generic word channel. These are stored raw dot counts, not page counts or live nozzle tests.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0029-udws_pen_get_dotcount_0_0_1.bin",
+      "response_sha256": "8f777ce247405afb6f157e91387265f07596203ee344822f6214a8f8f9e9ca3f",
+      "assessment": "complete-dot-counter-matching-storage",
+      "note": "The full scalar matches both earlier direct NVM and DS2 observations for the ROM-mapped DSID. Catalog names identify the last argument as a history-slot index; the original plan used the generic word channel. These are stored raw dot counts, not page counts or live nozzle tests.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0030-udws_pen_get_dotcount_1_0_1.bin",
+      "response_sha256": "461c7401fbcec3355236cf270c7ecacf8192d54f0fafc98486a37fcdb268727f",
+      "assessment": "complete-dot-counter-matching-storage",
+      "note": "The full scalar matches both earlier direct NVM and DS2 observations for the ROM-mapped DSID. Catalog names identify the last argument as a history-slot index; the original plan used the generic word channel. These are stored raw dot counts, not page counts or live nozzle tests.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0031-udws_pen_get_drfs.bin",
+      "response_sha256": "43ded4c0dee6e55b639b8405205aa591daccf1a2c975342e2989719ec3133df7",
+      "assessment": "complete-dynamic-refresh-status",
+      "note": "Value2 matches the earlier indexed DS2 read of DSID_PEN_DYNAMIC_REFRESH_STATUS[0].",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56b-led-metadata/0001-udws_led_color_cal_get_default_matrix_0.bin",
+      "response_sha256": "ace60dd320e734f333262e5b2be746cafff034308ac59e5de7a92f29548465b4",
+      "assessment": "complete-default-matrix-matching-rom",
+      "note": "All nine signed fields and all three rows match the selected compiled ROM matrix. This is a default matrix, not measured or current calibration.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56b-led-metadata/0002-udws_led_color_cal_get_golden_peaks_widths_0.bin",
+      "response_sha256": "c3b62221de71680d248792b3e064e845b43649d9f59fb3f44aaa3e6a2de5138e",
+      "assessment": "complete-golden-reference-matching-rom",
+      "note": "Three labelled RGB pairs match all six compiled ROM values. Index0 is620/14,521/34,452/22; index1 iszero. No light measurement took place.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56b-led-metadata/0003-udws_led_color_cal_get_default_matrix_1.bin",
+      "response_sha256": "3f68661e9fd7a64c4528cef2dbcf0ae741e448d58befda72dee99bd45737a8a8",
+      "assessment": "complete-default-matrix-matching-rom",
+      "note": "All nine signed fields and all three rows match the selected compiled ROM matrix. This is a default matrix, not measured or current calibration.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56b-led-metadata/0004-udws_led_color_cal_get_golden_peaks_widths_1.bin",
+      "response_sha256": "c151cdd78f30cbeaa243bafadca73270528a91e267f94be29e2047c88d1a6e88",
+      "assessment": "complete-golden-reference-matching-rom",
+      "note": "Three labelled RGB pairs match all six compiled ROM values. Index0 is620/14,521/34,452/22; index1 iszero. No light measurement took place.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56b-led-metadata/0005-udws_led_color_cal_get_barcode_0.bin",
+      "response_sha256": "4c4fd3dd2752839f6f15d76f94a395faf09918705353d787b52f77da6b69782b",
+      "assessment": "complete-empty-barcode-result",
+      "note": "The getter returned an empty stored barcode and explicitly rejected it as invalid. Capture is complete, but no valid LED barcode or derived calibration values were obtained.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56c-ui-status/0001-udws_ui_lite_display_status.bin",
+      "response_sha256": "1852b41999ebe393e5e3d46199f851fcd952339544bd664ba5b6bbb7a51bcb81",
+      "assessment": "complete-cached-ui-display-state",
+      "note": "Four complete labelled lines contain fourteen cached fields. Active0 is consistent with no per-error rows. Auto_E is1 and other captured fields are0; labels are retained without assuming undocumented flag meanings.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-62-current-matrices/0001-udws_led_color_cal_get_matrix_0.bin",
+      "response_sha256": "d6619eda6a12e4d9cf72ea480f24b091ef7a4380d046102dfd33945f41e9866b",
+      "assessment": "complete-current-matrix-matching-default",
+      "note": "All nine current cached coefficients match the independently captured default matrix for this index. Both live-valid indices0/1 were tested; this does not prove physical LED calibration or health.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-62-current-matrices/0002-udws_led_color_cal_get_matrix_1.bin",
+      "response_sha256": "2971824c4fddc9e38a5ec0d95d554374b47f32e86b16c0c2fe8875e94e1c58a8",
+      "assessment": "complete-current-matrix-matching-default",
+      "note": "All nine current cached coefficients match the independently captured default matrix for this index. Both live-valid indices0/1 were tested; this does not prove physical LED calibration or health.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-65-frontpanel-settings/0001-udws_smgr_pe_get_current_setting_1.bin",
+      "response_sha256": "229fdba02f33aad8124bfa1bccbf4bbe46c32c2a35f85f5a4592c3ca80048578",
+      "assessment": "complete-current-setting-matching-storage",
+      "note": "The one-digit cached setting fits the tiny CLI buffer completely and matches earlier DS2. Indices1/3/4 map to ColorLok1,dry-time2,eject1; no setting was changed.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-65-frontpanel-settings/0002-udws_smgr_pe_get_current_setting_3.bin",
+      "response_sha256": "edefe96291bf59d96f9a39ff993d61bdd2aa44a273c2cb01067db2500fd2c404",
+      "assessment": "complete-current-setting-matching-storage",
+      "note": "The one-digit cached setting fits the tiny CLI buffer completely and matches earlier DS2. Indices1/3/4 map to ColorLok1,dry-time2,eject1; no setting was changed.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-65-frontpanel-settings/0003-udws_smgr_pe_get_current_setting_4.bin",
+      "response_sha256": "8d259b4d4f6e611a6446d0c28f86d50f90de233e7eaee9c20ce1e5c9889e83cc",
+      "assessment": "complete-current-setting-matching-storage",
+      "note": "The one-digit cached setting fits the tiny CLI buffer completely and matches earlier DS2. Indices1/3/4 map to ColorLok1,dry-time2,eject1; no setting was changed.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-65-frontpanel-settings/0004-udws_pe_cover_open_query.bin",
+      "response_sha256": "bc954935403188c66f9613e31bbf74ab9638eee4ca1329afcf73b6692eaec736",
+      "assessment": "complete-cached-cover-state",
+      "note": "Raw-cover and state-manager Boolean queries both returned0, consistent with their reviewed mapping and a cached closed state. The physically verified descriptor selected the cached branch; this did not poll GPIO or change cover handling.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-65-frontpanel-settings/0005-udws_smgr_pe_cover_open_query.bin",
+      "response_sha256": "c4aa628422567d293140a9256a86c4a0bc88a432959fe2202a3ebaaeed57ccfa",
+      "assessment": "complete-cached-cover-state",
+      "note": "Raw-cover and state-manager Boolean queries both returned0, consistent with their reviewed mapping and a cached closed state. The physically verified descriptor selected the cached branch; this did not poll GPIO or change cover handling.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-65-frontpanel-settings/0006-udws_smgr_pe_user_power_on_query.bin",
+      "response_sha256": "9ab06241e2729963ca4ac0895a9a24947915ec8af1770504336640b3008dc6db",
+      "assessment": "complete-stored-power-state-classification",
+      "note": "Boolean1 returned completely. Handler derives it from fixed storage DSID0x10005 using predicate value not in{0,1,2}; no power transition or electrical measurement occurred.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "physical-63-misc-queries/0001-udws_undercroft_get_rev.bin",
+      "response_sha256": "09201335bfc1d051b63760e6b28747a1d9fd9d4895df6aa127bd25b5e5810155",
+      "valid": true,
+      "complete": true,
+      "assessment": "validated-miscellaneous-query-payload",
+      "note": "Cached revision nibble2; not a chip-model identification.",
+      "analysis_report": "round5_misc_results.json",
+      "analysis_report_sha256": "8b67459e166f499204b58646e5ba846010383ca255627f6fde55765f668f7e74"
+    },
+    {
+      "response_file": "physical-63-misc-queries/0002-udws_crypto_svc_is_secure.bin",
+      "response_sha256": "7695918be73341e0afa9468e672d4f143729236d2dcf39eb3693da7c5caf893d",
+      "valid": true,
+      "complete": true,
+      "assessment": "validated-miscellaneous-query-payload",
+      "note": "Firmware security predicate1; does not establish secure boot enforcement.",
+      "analysis_report": "round5_misc_results.json",
+      "analysis_report_sha256": "8b67459e166f499204b58646e5ba846010383ca255627f6fde55765f668f7e74"
+    },
+    {
+      "response_file": "physical-63-misc-queries/0004-udws_crypto_svc_get_rand_seq_4.bin",
+      "response_sha256": "6153c700d21e862f824461bf0f9652d4901e49af815119ccc0e40d61b1e1f12f",
+      "valid": true,
+      "complete": true,
+      "assessment": "validated-miscellaneous-query-payload",
+      "note": "Exactly four processed32-bit random samples. PRNG state advances; no randomness-quality claim.",
+      "analysis_report": "round5_misc_results.json",
+      "analysis_report_sha256": "8b67459e166f499204b58646e5ba846010383ca255627f6fde55765f668f7e74"
+    },
+    {
+      "response_file": "physical-63-misc-queries/0005-udws_mfg_info_calc_mfg_date_AA711_2017.bin",
+      "response_sha256": "9cbcb8308f22cb69c111d99fea11859011183334aa77f5b1ed7cb76d801cfd6c",
+      "valid": true,
+      "complete": true,
+      "assessment": "validated-miscellaneous-query-payload",
+      "note": "Synthetic serial-code fixture decoded exactly; not the printer manufacturing date.",
+      "analysis_report": "round5_misc_results.json",
+      "analysis_report_sha256": "8b67459e166f499204b58646e5ba846010383ca255627f6fde55765f668f7e74"
+    },
+    {
+      "response_file": "physical-63-misc-queries/0006-udws_mfg_info_calc_mfg_date_AA7CV_2017.bin",
+      "response_sha256": "3ece480c427d1582d8f7a1ad499b4d3289d776251fe78cd66ecfdb7005a3dc5e",
+      "valid": true,
+      "complete": true,
+      "assessment": "validated-miscellaneous-query-payload",
+      "note": "Synthetic serial-code fixture decoded exactly; not the printer manufacturing date.",
+      "analysis_report": "round5_misc_results.json",
+      "analysis_report_sha256": "8b67459e166f499204b58646e5ba846010383ca255627f6fde55765f668f7e74"
+    },
+    {
+      "response_file": "physical-63-misc-queries/0007-udws_mfg_info_calc_mfg_date_AA811_2018.bin",
+      "response_sha256": "a365744b4267d2053b36bf4d9684717206c2851c4cbfd838c622c10abe7b8230",
+      "valid": true,
+      "complete": true,
+      "assessment": "validated-miscellaneous-query-payload",
+      "note": "Synthetic serial-code fixture decoded exactly; not the printer manufacturing date.",
+      "analysis_report": "round5_misc_results.json",
+      "analysis_report_sha256": "8b67459e166f499204b58646e5ba846010383ca255627f6fde55765f668f7e74"
+    },
+    {
+      "response_file": "physical-63-misc-queries/0009-udws_errlog_get_assert_entry_0.bin",
+      "response_sha256": "6e610fb5bdfa8a98425b155058cd74a3e7cde19ccd8cb04131d9310f37396f19",
+      "valid": true,
+      "complete": true,
+      "assessment": "validated-miscellaneous-query-payload",
+      "note": "Retained historical carriage-companion assertion, matching the prior fault code/source/line; record reports page count775. Not a new assertion.",
+      "analysis_report": "round5_misc_results.json",
+      "analysis_report_sha256": "8b67459e166f499204b58646e5ba846010383ca255627f6fde55765f668f7e74"
+    },
+    {
+      "response_file": "references/physical-63-misc-queries/0003-udws_crypto_svc_get_rand_num_16.bin",
+      "response_sha256": "87b6d5b4612b2717600e665558bd3c35a6044b22edf5df3996d32a2f4fd69596",
+      "assessment": "unexpected-empty-filename-file-branch",
+      "note": "Historical proof was false: the inner semicolon is parsed as an empty second string, scanf returns2, and the handler attempts unlink/open of the empty pathname. No random bytes were captured. The write message is unconditional after open and cannot establish successful creation or a16-byte write. Follow-up mount snapshot has no empty prefix: empty-path calls cannot reach a filesystem backend under the captured configuration, so no actual file mutation is supported. Snapshot timing is retained as a limitation.",
+      "valid": true,
+      "complete": false,
+      "analysis_report": "round5_misc_followup_results.json",
+      "analysis_report_sha256": "d843ee992c1755ea432ba94ff2265fae9898eec9037040b0823c9af0dedcd126"
+    },
+    {
+      "response_file": "references/physical-63-misc-queries/0008-udws_nos_nvm_sirius_get_18.bin",
+      "response_sha256": "87ac50528dd844d7fb80248c65d049dfc392672794e316b5c25b02b052f8b7cd",
+      "assessment": "complete-signed-full-width-nos-nvm-scalar",
+      "note": "The payload -1 is signed formatting of the full32-bit data0xffffffff. It is not dispatch failure: A02EC152..162 uses %d%c only when lookup/get returns0; dispatch error emits a semicolon alone. Entry18 maps to item12, full-width32 mask, shift0, DSID0, and the special path calls A000CB8C(12). Default bytes are00000000, so this output is not that default. Lower NVM validation status is discarded by A000CB8C; no claim of independent EEPROM integrity follows.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_misc_followup_results.json",
+      "analysis_report_sha256": "d843ee992c1755ea432ba94ff2265fae9898eec9037040b0823c9af0dedcd126"
+    },
+    {
+      "response_file": "references/physical-66-rng-uart/0001-udws_crypto_svc_get_rand_num_16.bin",
+      "response_sha256": "235951f5205008824e2325a5651c5177faaac13980774d7de7c5acf1b4e2f0b0",
+      "assessment": "complete-random-byte-sample-uart-path",
+      "note": "Exact EOF syntax without an inner semicolon selected the reviewed UART branch. Exactly32 lowercase hexadecimal characters encode16 bytes; no file-output message appeared. This validates output format and execution, not randomness quality.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "round5_misc_followup_results.json",
+      "analysis_report_sha256": "d843ee992c1755ea432ba94ff2265fae9898eec9037040b0823c9af0dedcd126"
+    },
+    {
+      "response_file": "physical-57-provider-pointers/0006-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "d9e28605ecd6861603e7359a1da2d3aee99880cd5406d4a73019025d6f78e8ff",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-57-provider-pointers/0015-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "1610aac7933c5e6dfa5b788ed48a78909c40dae19b1b7fe6ca81ff390447e5fc",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-57-provider-pointers/0024-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "b48b10f1e703c87a6e605a003b0b7fe52d5dda87a017db21769ee5d08a4d9faa",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-57-provider-pointers/0033-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "21ae7cee77d0efb9545ac1d95fe5827216f4e06608d6495ebe32d9339799224b",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-57-provider-pointers/0042-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "f32a1deca793cb426be018a6129409c1a641659f4760714b5755616548e09a95",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-57-provider-pointers/0051-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "dc46789a2ec81e6b80bcd807bdf49612c9611b2ac66fa0710c298d5d6433cc81",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0006-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "d9e28605ecd6861603e7359a1da2d3aee99880cd5406d4a73019025d6f78e8ff",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0015-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "1610aac7933c5e6dfa5b788ed48a78909c40dae19b1b7fe6ca81ff390447e5fc",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0024-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "b48b10f1e703c87a6e605a003b0b7fe52d5dda87a017db21769ee5d08a4d9faa",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0033-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "673fac89ba341afb16238aa450af37252d6f5cf5e971fef4a93964fe4fc8b4f0",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0042-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "95818bf79cdc5ce18d720f2a8486e3b39b8379f95a83c58d930491639ead5d16",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0051-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "bd6855f97b58aea9e90f3e7146b89d9f4fbc6bcc41ca62244c00d20e2fbbc09b",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0060-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "4f4b209d52a6b909595773526f042c14ddf0e3be966cedbe9be4dfa8992a8162",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0069-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "bd1b240d3e59a938386197c9e9164d69193bd5e4f01f7fce3afa4d8c171acf2a",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0078-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "ef0217b25daf6a108620756b16f5b58948858420e940125050b5e7cdb61b96a8",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0087-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "9de19ecb22f1bfc0493fa45e44091f190ba8099e02c8284112b42359d4c790cc",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0096-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "80951c3c86597b588a4a4ea597be5535e103323d340f94a91232d7ea506fa2a3",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0105-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "2712edb9fbc279148a77b8b21d8666000f53baba125c74c49d3158e736bdc551",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0114-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "f328fa2df378640aedfc9df78152226cb0db5cbe459ebd0d98afe8bbc97ba1a5",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0123-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "d20bbf64eb3e4c2d80035e369d25c3eeecb86243dd210ef318c59974bcdce998",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0132-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "f2aed857a26e9b7ceac2ffa6da5f94934a65b93b77e7031aaa55683c719bc85e",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0141-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "f7f46897c38221945be527850c499258fc1424c3077c603bf9932216f7aa0a88",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0150-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "7dc09f1c965e78033f513c56b51eadfb3721c311d0ce75a3b1d4090dccd9fd5c",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0159-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "3f4baf15bcbbb940feb97b620fc2cd7b3c92509e93db485f127657d668b831e1",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0168-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "36ef9f3f3eaaecc2e7c06f22c34f81ffa6063531a354cb98447ec50fe46ebfbd",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0177-udws_ustd_read_file_0_420.bin",
+      "response_sha256": "53005f1d0904aaf28e01859292be5f78df809d0954afbcb769628ef488dcb535",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots. Historical label describes requested420-byte span only:21 registered string groups have NOT been established; much of this span is zero and later words may be adjacent data.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0186-udws_ustd_read_file_0_24.bin",
+      "response_sha256": "f005c1c60a2c22c0afc05b199d8dff2705c44dff21587af639b260b5005c7a87",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0006-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "d9e28605ecd6861603e7359a1da2d3aee99880cd5406d4a73019025d6f78e8ff",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0015-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "1610aac7933c5e6dfa5b788ed48a78909c40dae19b1b7fe6ca81ff390447e5fc",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0024-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "b48b10f1e703c87a6e605a003b0b7fe52d5dda87a017db21769ee5d08a4d9faa",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0033-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "a376916e776d68fc265b1aa72d2ff50b149f9fb91505cede76164bfb92bf3787",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0042-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "e432bc68206bfce1979d5538a661356988c85dbcab7bf2e1c562ed98fc871303",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0051-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "f31d164a4d297877fe10addfd3d291965f220ec5da46c4b9a41ed3c7759033f3",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0060-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "64d5edb28e76aa12da4e4ab010f6a4bdc031609f7487452d3302c6cb350c66e4",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0069-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "f5e66807bc1daff6b3b4b026016502ca04d8f196c59179bfb0ad3318a08589e8",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0078-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "d84d2b3efb9689c3dbca027398aaeb79020c622a23c9eebb0fb739f250433cf8",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0087-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "673fac89ba341afb16238aa450af37252d6f5cf5e971fef4a93964fe4fc8b4f0",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0096-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "95818bf79cdc5ce18d720f2a8486e3b39b8379f95a83c58d930491639ead5d16",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0105-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "bd6855f97b58aea9e90f3e7146b89d9f4fbc6bcc41ca62244c00d20e2fbbc09b",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0114-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "428cce826e97bfa6a25193847812684d07b44ec3e01a107faf331c2d738ad4ab",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0123-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "72e98e6bcdb0fad8714410b2101be6738c5084ac621a1da1fb757ab780418356",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0132-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "41e1245595cef817f98e601b2690021b07640c87f4a496a2046a309adf6e45bf",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0141-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "26a885e8a36daaeb1cca175ed56b4842b627098c6ddc37200c00a15e2ea2e94b",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0150-udws_ustd_read_file_0_32.bin",
+      "response_sha256": "b116b4bc362319f352c881b9c54d23b099699a3a0ec3d5a2378d444390ec5e87",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0159-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "2efa0a73245bb096624260e30ce2ab7da8fbbe34187dc3e1149412323afc9a17",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0168-udws_ustd_read_file_0_8.bin",
+      "response_sha256": "6af7e0cf61719d3fab00640fa2c89a8920cb303620bd4b8e687d1973c50cdc16",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-64-ui-fields/0006-udws_ustd_read_file_0_12.bin",
+      "response_sha256": "94c9848fee20411d2693aca802a2853cd99a6572e3c41fd38d22adb6a15cb01a",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-64-ui-fields/0015-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "eb4db51acd4d25fd39b3662534f7d2d5b27eddeb33ca0cbbeadee72cce8442b8",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-64-ui-fields/0024-udws_ustd_read_file_0_20.bin",
+      "response_sha256": "a896c3e5079507c290ff3d3495efb002cd80041a28a74ffe7c738f6998e22e6c",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-67-mount-metadata/0006-udws_ustd_read_file_0_448.bin",
+      "response_sha256": "c2a522cc1a6be7b930dd1f7b70de4db45ae1b6e487c89a5496888de01ba6ade6",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-67-mount-metadata/0015-udws_ustd_read_file_0_448.bin",
+      "response_sha256": "b5319619564990bc1da3c5ce814bac30ab537eb791d52a5a59dca5109af86169",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    }
+  ],
+  "data_quality": [
+    {
+      "response_file": "physical-54-system-services/0001-udws_sm_module_conn.bin",
+      "response_sha256": "89cc83dc1f48debde7e8e9c3b6dc0b3927c06f66bf212e36ef00723a7df02f5c",
+      "complete": true,
+      "issue": "unknown-provider-enumerations",
+      "note": "All1900rows are present.20rows print<unknown> provider and enum fields that cannot be validated as bindings; several equal0x5A5A5A5A. Preserve raw values but exclude those20provider enums from emulator bindings.",
+      "analysis_report": "round5_system_results.json",
+      "analysis_report_sha256": "c9fe10617aae55049acb2356973dc54ef6afcbb9576b88dc175e066638d58477"
+    },
+    {
+      "response_file": "references/physical-55-media-capabilities/0001-udws_mhdlg_get_mhdlgcap_supported_trays.bin",
+      "response_sha256": "5ff97b5417659b0c5ed89637eb2b469c3ab5ec9bbedd947a9da2ff5e7f3d8feb",
+      "assessment": "complete-input-tray-capability",
+      "note": "Physical status200, full declared count and all IDs agree with the reviewed ROM capability implementation.",
+      "complete": true,
+      "analysis_report": "round5_product_results.json",
+      "analysis_report_sha256": "64bf248d2e1a953513c8ea2b4762d567257f6d0ca6ce79d93107ede59af71b57"
+    },
+    {
+      "response_file": "references/physical-55-media-capabilities/0002-udws_mhdlg_get_mhdlgcap_supported_bins.bin",
+      "response_sha256": "21b1711b55f58088d928993b93ddd70e24c1aed759cd0b6c2bd0fe33375e312d",
+      "assessment": "complete-output-bin-capability",
+      "note": "Physical status200, full declared count and all IDs agree with the reviewed ROM capability implementation.",
+      "complete": true,
+      "analysis_report": "round5_product_results.json",
+      "analysis_report_sha256": "64bf248d2e1a953513c8ea2b4762d567257f6d0ca6ce79d93107ede59af71b57"
+    },
+    {
+      "response_file": "references/physical-55-media-capabilities/0003-udws_mhdlg_get_mhdlgcap_media_type_size_list_0_1.bin",
+      "response_sha256": "42804d99165865619912ffaaf81fa7eb15344ca341151e534301cb84195c3e2c",
+      "assessment": "complete-media-size-capability",
+      "note": "Physical status200, full declared count and all IDs agree with the reviewed ROM capability implementation.",
+      "complete": true,
+      "analysis_report": "round5_product_results.json",
+      "analysis_report_sha256": "64bf248d2e1a953513c8ea2b4762d567257f6d0ca6ce79d93107ede59af71b57"
+    },
+    {
+      "response_file": "references/physical-55-media-capabilities/0004-udws_mhdlg_get_mhdlgcap_media_type_size_list_1_1.bin",
+      "response_sha256": "eedc5330f2292a7181e6a141559260485fcbdb72dacd6f328138cc63c1655488",
+      "assessment": "complete-media-type-capability",
+      "note": "Physical status200, full declared count and all IDs agree with the reviewed ROM capability implementation.",
+      "complete": true,
+      "analysis_report": "round5_product_results.json",
+      "analysis_report_sha256": "64bf248d2e1a953513c8ea2b4762d567257f6d0ca6ce79d93107ede59af71b57"
+    },
+    {
+      "response_file": "references/physical-55-media-capabilities/0005-udws_mhdlg_get_supported_df_groups.bin",
+      "response_sha256": "858c7443992fd19cf709e0757f5775364618bdd456382d82e2ae58399588aa77",
+      "assessment": "complete-zero-group-capability",
+      "note": "Physical status200, full declared count and all IDs agree with the reviewed ROM capability implementation. This is a successful empty-capability response, not an invalid-group/404 guard.",
+      "complete": true,
+      "analysis_report": "round5_product_results.json",
+      "analysis_report_sha256": "64bf248d2e1a953513c8ea2b4762d567257f6d0ca6ce79d93107ede59af71b57"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0001-udws_cal_val_get_pa_value_P2PX_FIRST_CMY_0_FWD.bin",
+      "response_sha256": "62edc3151badfbe960794cf905964658cec43ceb9c8a9a7416351e9525b7e3c9",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0002-udws_cal_val_get_pa_value_P2PY_FIRST_CMY_0_FWD.bin",
+      "response_sha256": "cf16614a4481aaf24597f7f4e322ad6c35cdc1f2a4358fc6e8db2c47eae04b0b",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0003-udws_cal_val_get_pa_value_BIDI_FIRST_K_0_FWD.bin",
+      "response_sha256": "8cad2e14b606e0d9935627c886568cd9fc846926ace14455fab98616f5939bd2",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0004-udws_cal_val_get_pa_value_THETAZ_FIRST_K_0_FWD.bin",
+      "response_sha256": "dd20137fa0d7ca4c14ed52bda09e9d782d8cf8df1aa49852cf9fc76d7b3136ba",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0005-udws_cal_val_get_pa_value_status_P2PX_FIRST_CMY_0_FWD.bin",
+      "response_sha256": "ba6e77b7cb1c94c898e3acd7d7f0f0382e08f16adf0968f47330b43ab23ac617",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0006-udws_cal_val_get_pa_value_status_P2PY_FIRST_CMY_0_FWD.bin",
+      "response_sha256": "443049a9c95d1771379e2c23adbcbd6de9efe5a2a64c4ed6852f9aed9433db30",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0007-udws_cal_val_get_pa_value_status_BIDI_FIRST_K_0_FWD.bin",
+      "response_sha256": "149992400e9fd11c22387adb262f47bb04e5a48f2c46482497287ef554b73e17",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0008-udws_cal_val_get_pa_value_status_THETAZ_FIRST_K_0_FWD.bin",
+      "response_sha256": "cef774388eba1f35dd74fcdce165858e924f78eeaa907cb978b0f3f72ec20502",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0009-udws_cal_val_get_unused_pa_value_P2PX_FIRST_CMY_0_FWD.bin",
+      "response_sha256": "0de5d3deecaa3799e7a96e442fc5f1c0a2ade98f93a16f1850df7699756b575d",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0010-udws_cal_val_get_unused_pa_value_P2PY_FIRST_CMY_0_FWD.bin",
+      "response_sha256": "2741d30156a0ae310ddc72564642cb25e6575815491b1a3b4ae353f9ddd7a36e",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0011-udws_cal_val_get_unused_pa_value_BIDI_FIRST_K_0_FWD.bin",
+      "response_sha256": "51119a17a12f95884bcfedbc3b82a9852847977384cf565d77cc346b48302d0e",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0012-udws_cal_val_get_unused_pa_value_THETAZ_FIRST_K_0_FWD.bin",
+      "response_sha256": "d842f20cbe2a3370a0c5733038bbc20fbbc6e72b755b0315defe6edec299c390",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0013-udws_cal_val_get_unused_pa_status_P2PX_FIRST_CMY_0_FWD.bin",
+      "response_sha256": "df35e6e6ca74be2bb423c8927044259cf612680717c2a8dce4c3e062c6dce194",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0014-udws_cal_val_get_unused_pa_status_P2PY_FIRST_CMY_0_FWD.bin",
+      "response_sha256": "03c51bf925b2caf3842629bdc8a6ff3a87dca213da56bcfbd42436a58db528a2",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0015-udws_cal_val_get_unused_pa_status_BIDI_FIRST_K_0_FWD.bin",
+      "response_sha256": "a6775dd02526fe5913a1af7ec1534517b2e28ec67b4a799ecbfc60e6c1f6ca8e",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0016-udws_cal_val_get_unused_pa_status_THETAZ_FIRST_K_0_FWD.bin",
+      "response_sha256": "998e1b197d65444f296c53b274ee2f95d1fc05aac55d267976bd41d8680caf38",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0017-udws_cal_val_get_linefeed_err_1_1_K.bin",
+      "response_sha256": "4400d0a51258d3f08a101ee321efbbf94664efa1ea837a78492870d69f4bd04a",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0018-udws_cal_val_get_linefeed_err_status_1_1_K.bin",
+      "response_sha256": "21e12ef6f3e0904d6d00aace71d809cede08ff7fe8e6bdb65da17fb3ea6758c5",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0019-udws_cal_val_get_edge_err_1.bin",
+      "response_sha256": "f23246c13e5435bb6955fc408782dd502964dca745126d664d3f5e17664e0ec5",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0020-udws_cal_val_get_edge_err_status_1.bin",
+      "response_sha256": "082b662a964ff90fcddcc11b78ee55d1d59a31746853a6abca0a514231de875a",
+      "assessment": "complete-cached-calibration-scalar",
+      "note": "One signed integer returned from a matching compiled calibration descriptor. Status values are retained as raw codes; -1 is not interpreted as physical hardware failure or successful calibration.",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0021-udws_pen_get_ttoe_ad_range.bin",
+      "response_sha256": "7b19609c8a505e84033c31b8358ff967cd942486294d57a1e0c9e22d852e10e5",
+      "assessment": "complete-bounded-pen-calibration-table",
+      "note": "Count63 and exactly63 unsigned halfwords are present. All are zero in this capture; these cached table values do not demonstrate calibration or hardware health.",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0022-udws_pen_get_ttoe_test_range.bin",
+      "response_sha256": "e5ec1b84a986c37a244a21940db2c836f656fc555add36126ea2bbcd68cc390d",
+      "assessment": "complete-bounded-pen-calibration-table",
+      "note": "Count63 and exactly63 unsigned halfwords are present. All are zero in this capture; these cached table values do not demonstrate calibration or hardware health.",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0023-udws_pen_is_ttoed_0.bin",
+      "response_sha256": "a18d05404659f32d325f92b05a48dbcf4f7269aa2a1f53cbe6ada861c5276e98",
+      "assessment": "complete-cached-pen-state",
+      "note": "One bounded Boolean value returned for the requested chute. It is a stored calibration-state query, not a live electrical test.",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0024-udws_pen_is_ttoed_1.bin",
+      "response_sha256": "6dc96bf4237f9343e1fc435787ba525bd51fe448605a81f6042460a09e535fae",
+      "assessment": "complete-cached-pen-state",
+      "note": "One bounded Boolean value returned for the requested chute. It is a stored calibration-state query, not a live electrical test.",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0025-udws_pen_is_ldw_ttoed_0.bin",
+      "response_sha256": "ad7d5412c36a52d18822e99e2bd65e4d93ca87d9f58147ed3e1775e0d30509fd",
+      "assessment": "complete-cached-pen-state",
+      "note": "One bounded Boolean value returned for the requested chute. It is a stored calibration-state query, not a live electrical test.",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0026-udws_pen_is_ldw_ttoed_1.bin",
+      "response_sha256": "a2cf3ddb01b334ba760d98c0efce74f4ff7184dfb6738d596fb97e969f8cc9cd",
+      "assessment": "complete-cached-pen-state",
+      "note": "One bounded Boolean value returned for the requested chute. It is a stored calibration-state query, not a live electrical test.",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0027-udws_pen_get_dotcount_0_0_0.bin",
+      "response_sha256": "be4c9559c4b1444c4d6b981f38634d7965b90697ac302e516de39821903e860c",
+      "assessment": "complete-dot-counter-matching-storage",
+      "note": "The full scalar matches both earlier direct NVM and DS2 observations for the ROM-mapped DSID. Catalog names identify the last argument as a history-slot index; the original plan used the generic word channel. These are stored raw dot counts, not page counts or live nozzle tests.",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0028-udws_pen_get_dotcount_1_0_0.bin",
+      "response_sha256": "b92d3e7fe4bca169cd50052dc6964f8011eb4f970bf64e536a925bcfbda00f80",
+      "assessment": "complete-dot-counter-matching-storage",
+      "note": "The full scalar matches both earlier direct NVM and DS2 observations for the ROM-mapped DSID. Catalog names identify the last argument as a history-slot index; the original plan used the generic word channel. These are stored raw dot counts, not page counts or live nozzle tests.",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0029-udws_pen_get_dotcount_0_0_1.bin",
+      "response_sha256": "8f777ce247405afb6f157e91387265f07596203ee344822f6214a8f8f9e9ca3f",
+      "assessment": "complete-dot-counter-matching-storage",
+      "note": "The full scalar matches both earlier direct NVM and DS2 observations for the ROM-mapped DSID. Catalog names identify the last argument as a history-slot index; the original plan used the generic word channel. These are stored raw dot counts, not page counts or live nozzle tests.",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0030-udws_pen_get_dotcount_1_0_1.bin",
+      "response_sha256": "461c7401fbcec3355236cf270c7ecacf8192d54f0fafc98486a37fcdb268727f",
+      "assessment": "complete-dot-counter-matching-storage",
+      "note": "The full scalar matches both earlier direct NVM and DS2 observations for the ROM-mapped DSID. Catalog names identify the last argument as a history-slot index; the original plan used the generic word channel. These are stored raw dot counts, not page counts or live nozzle tests.",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56-calibration-pen/0031-udws_pen_get_drfs.bin",
+      "response_sha256": "43ded4c0dee6e55b639b8405205aa591daccf1a2c975342e2989719ec3133df7",
+      "assessment": "complete-dynamic-refresh-status",
+      "note": "Value2 matches the earlier indexed DS2 read of DSID_PEN_DYNAMIC_REFRESH_STATUS[0].",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56b-led-metadata/0001-udws_led_color_cal_get_default_matrix_0.bin",
+      "response_sha256": "ace60dd320e734f333262e5b2be746cafff034308ac59e5de7a92f29548465b4",
+      "assessment": "complete-default-matrix-matching-rom",
+      "note": "All nine signed fields and all three rows match the selected compiled ROM matrix. This is a default matrix, not measured or current calibration.",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56b-led-metadata/0002-udws_led_color_cal_get_golden_peaks_widths_0.bin",
+      "response_sha256": "c3b62221de71680d248792b3e064e845b43649d9f59fb3f44aaa3e6a2de5138e",
+      "assessment": "complete-golden-reference-matching-rom",
+      "note": "Three labelled RGB pairs match all six compiled ROM values. Index0 is620/14,521/34,452/22; index1 iszero. No light measurement took place.",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56b-led-metadata/0003-udws_led_color_cal_get_default_matrix_1.bin",
+      "response_sha256": "3f68661e9fd7a64c4528cef2dbcf0ae741e448d58befda72dee99bd45737a8a8",
+      "assessment": "complete-default-matrix-matching-rom",
+      "note": "All nine signed fields and all three rows match the selected compiled ROM matrix. This is a default matrix, not measured or current calibration.",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56b-led-metadata/0004-udws_led_color_cal_get_golden_peaks_widths_1.bin",
+      "response_sha256": "c151cdd78f30cbeaa243bafadca73270528a91e267f94be29e2047c88d1a6e88",
+      "assessment": "complete-golden-reference-matching-rom",
+      "note": "Three labelled RGB pairs match all six compiled ROM values. Index0 is620/14,521/34,452/22; index1 iszero. No light measurement took place.",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56b-led-metadata/0005-udws_led_color_cal_get_barcode_0.bin",
+      "response_sha256": "4c4fd3dd2752839f6f15d76f94a395faf09918705353d787b52f77da6b69782b",
+      "assessment": "complete-empty-barcode-result",
+      "note": "The getter returned an empty stored barcode and explicitly rejected it as invalid. Capture is complete, but no valid LED barcode or derived calibration values were obtained.",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-56c-ui-status/0001-udws_ui_lite_display_status.bin",
+      "response_sha256": "1852b41999ebe393e5e3d46199f851fcd952339544bd664ba5b6bbb7a51bcb81",
+      "assessment": "complete-cached-ui-display-state",
+      "note": "Four complete labelled lines contain fourteen cached fields. Active0 is consistent with no per-error rows. Auto_E is1 and other captured fields are0; labels are retained without assuming undocumented flag meanings.",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-62-current-matrices/0001-udws_led_color_cal_get_matrix_0.bin",
+      "response_sha256": "d6619eda6a12e4d9cf72ea480f24b091ef7a4380d046102dfd33945f41e9866b",
+      "assessment": "complete-current-matrix-matching-default",
+      "note": "All nine current cached coefficients match the independently captured default matrix for this index. Both live-valid indices0/1 were tested; this does not prove physical LED calibration or health.",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-62-current-matrices/0002-udws_led_color_cal_get_matrix_1.bin",
+      "response_sha256": "2971824c4fddc9e38a5ec0d95d554374b47f32e86b16c0c2fe8875e94e1c58a8",
+      "assessment": "complete-current-matrix-matching-default",
+      "note": "All nine current cached coefficients match the independently captured default matrix for this index. Both live-valid indices0/1 were tested; this does not prove physical LED calibration or health.",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-65-frontpanel-settings/0001-udws_smgr_pe_get_current_setting_1.bin",
+      "response_sha256": "229fdba02f33aad8124bfa1bccbf4bbe46c32c2a35f85f5a4592c3ca80048578",
+      "assessment": "complete-current-setting-matching-storage",
+      "note": "The one-digit cached setting fits the tiny CLI buffer completely and matches earlier DS2. Indices1/3/4 map to ColorLok1,dry-time2,eject1; no setting was changed.",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-65-frontpanel-settings/0002-udws_smgr_pe_get_current_setting_3.bin",
+      "response_sha256": "edefe96291bf59d96f9a39ff993d61bdd2aa44a273c2cb01067db2500fd2c404",
+      "assessment": "complete-current-setting-matching-storage",
+      "note": "The one-digit cached setting fits the tiny CLI buffer completely and matches earlier DS2. Indices1/3/4 map to ColorLok1,dry-time2,eject1; no setting was changed.",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-65-frontpanel-settings/0003-udws_smgr_pe_get_current_setting_4.bin",
+      "response_sha256": "8d259b4d4f6e611a6446d0c28f86d50f90de233e7eaee9c20ce1e5c9889e83cc",
+      "assessment": "complete-current-setting-matching-storage",
+      "note": "The one-digit cached setting fits the tiny CLI buffer completely and matches earlier DS2. Indices1/3/4 map to ColorLok1,dry-time2,eject1; no setting was changed.",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-65-frontpanel-settings/0004-udws_pe_cover_open_query.bin",
+      "response_sha256": "bc954935403188c66f9613e31bbf74ab9638eee4ca1329afcf73b6692eaec736",
+      "assessment": "complete-cached-cover-state",
+      "note": "Raw-cover and state-manager Boolean queries both returned0, consistent with their reviewed mapping and a cached closed state. The physically verified descriptor selected the cached branch; this did not poll GPIO or change cover handling.",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-65-frontpanel-settings/0005-udws_smgr_pe_cover_open_query.bin",
+      "response_sha256": "c4aa628422567d293140a9256a86c4a0bc88a432959fe2202a3ebaaeed57ccfa",
+      "assessment": "complete-cached-cover-state",
+      "note": "Raw-cover and state-manager Boolean queries both returned0, consistent with their reviewed mapping and a cached closed state. The physically verified descriptor selected the cached branch; this did not poll GPIO or change cover handling.",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "references/physical-65-frontpanel-settings/0006-udws_smgr_pe_user_power_on_query.bin",
+      "response_sha256": "9ab06241e2729963ca4ac0895a9a24947915ec8af1770504336640b3008dc6db",
+      "assessment": "complete-stored-power-state-classification",
+      "note": "Boolean1 returned completely. Handler derives it from fixed storage DSID0x10005 using predicate value not in{0,1,2}; no power transition or electrical measurement occurred.",
+      "complete": true,
+      "analysis_report": "round5_hardware_results.json",
+      "analysis_report_sha256": "a2aabc2395db5030160d1f3b5e787b826cf71fc0ea433a952bcf19c0b2f365f9"
+    },
+    {
+      "response_file": "physical-63-misc-queries/0001-udws_undercroft_get_rev.bin",
+      "response_sha256": "09201335bfc1d051b63760e6b28747a1d9fd9d4895df6aa127bd25b5e5810155",
+      "complete": true,
+      "assessment": "Cached revision nibble2; not a chip-model identification.",
+      "analysis_report": "round5_misc_results.json",
+      "analysis_report_sha256": "8b67459e166f499204b58646e5ba846010383ca255627f6fde55765f668f7e74"
+    },
+    {
+      "response_file": "physical-63-misc-queries/0002-udws_crypto_svc_is_secure.bin",
+      "response_sha256": "7695918be73341e0afa9468e672d4f143729236d2dcf39eb3693da7c5caf893d",
+      "complete": true,
+      "assessment": "Firmware security predicate1; does not establish secure boot enforcement.",
+      "analysis_report": "round5_misc_results.json",
+      "analysis_report_sha256": "8b67459e166f499204b58646e5ba846010383ca255627f6fde55765f668f7e74"
+    },
+    {
+      "response_file": "physical-63-misc-queries/0004-udws_crypto_svc_get_rand_seq_4.bin",
+      "response_sha256": "6153c700d21e862f824461bf0f9652d4901e49af815119ccc0e40d61b1e1f12f",
+      "complete": true,
+      "assessment": "Exactly four processed32-bit random samples. PRNG state advances; no randomness-quality claim.",
+      "analysis_report": "round5_misc_results.json",
+      "analysis_report_sha256": "8b67459e166f499204b58646e5ba846010383ca255627f6fde55765f668f7e74"
+    },
+    {
+      "response_file": "physical-63-misc-queries/0005-udws_mfg_info_calc_mfg_date_AA711_2017.bin",
+      "response_sha256": "9cbcb8308f22cb69c111d99fea11859011183334aa77f5b1ed7cb76d801cfd6c",
+      "complete": true,
+      "assessment": "Synthetic serial-code fixture decoded exactly; not the printer manufacturing date.",
+      "analysis_report": "round5_misc_results.json",
+      "analysis_report_sha256": "8b67459e166f499204b58646e5ba846010383ca255627f6fde55765f668f7e74"
+    },
+    {
+      "response_file": "physical-63-misc-queries/0006-udws_mfg_info_calc_mfg_date_AA7CV_2017.bin",
+      "response_sha256": "3ece480c427d1582d8f7a1ad499b4d3289d776251fe78cd66ecfdb7005a3dc5e",
+      "complete": true,
+      "assessment": "Synthetic serial-code fixture decoded exactly; not the printer manufacturing date.",
+      "analysis_report": "round5_misc_results.json",
+      "analysis_report_sha256": "8b67459e166f499204b58646e5ba846010383ca255627f6fde55765f668f7e74"
+    },
+    {
+      "response_file": "physical-63-misc-queries/0007-udws_mfg_info_calc_mfg_date_AA811_2018.bin",
+      "response_sha256": "a365744b4267d2053b36bf4d9684717206c2851c4cbfd838c622c10abe7b8230",
+      "complete": true,
+      "assessment": "Synthetic serial-code fixture decoded exactly; not the printer manufacturing date.",
+      "analysis_report": "round5_misc_results.json",
+      "analysis_report_sha256": "8b67459e166f499204b58646e5ba846010383ca255627f6fde55765f668f7e74"
+    },
+    {
+      "response_file": "physical-63-misc-queries/0009-udws_errlog_get_assert_entry_0.bin",
+      "response_sha256": "6e610fb5bdfa8a98425b155058cd74a3e7cde19ccd8cb04131d9310f37396f19",
+      "complete": true,
+      "assessment": "Retained historical carriage-companion assertion, matching the prior fault code/source/line; record reports page count775. Not a new assertion.",
+      "analysis_report": "round5_misc_results.json",
+      "analysis_report_sha256": "8b67459e166f499204b58646e5ba846010383ca255627f6fde55765f668f7e74"
+    },
+    {
+      "response_file": "references/physical-63-misc-queries/0003-udws_crypto_svc_get_rand_num_16.bin",
+      "response_sha256": "87b6d5b4612b2717600e665558bd3c35a6044b22edf5df3996d32a2f4fd69596",
+      "assessment": "unexpected-empty-filename-file-branch",
+      "note": "Historical proof was false: the inner semicolon is parsed as an empty second string, scanf returns2, and the handler attempts unlink/open of the empty pathname. No random bytes were captured. The write message is unconditional after open and cannot establish successful creation or a16-byte write. Follow-up mount snapshot has no empty prefix: empty-path calls cannot reach a filesystem backend under the captured configuration, so no actual file mutation is supported. Snapshot timing is retained as a limitation.",
+      "complete": false,
+      "analysis_report": "round5_misc_followup_results.json",
+      "analysis_report_sha256": "d843ee992c1755ea432ba94ff2265fae9898eec9037040b0823c9af0dedcd126"
+    },
+    {
+      "response_file": "references/physical-63-misc-queries/0008-udws_nos_nvm_sirius_get_18.bin",
+      "response_sha256": "87ac50528dd844d7fb80248c65d049dfc392672794e316b5c25b02b052f8b7cd",
+      "assessment": "complete-signed-full-width-nos-nvm-scalar",
+      "note": "The payload -1 is signed formatting of the full32-bit data0xffffffff. It is not dispatch failure: A02EC152..162 uses %d%c only when lookup/get returns0; dispatch error emits a semicolon alone. Entry18 maps to item12, full-width32 mask, shift0, DSID0, and the special path calls A000CB8C(12). Default bytes are00000000, so this output is not that default. Lower NVM validation status is discarded by A000CB8C; no claim of independent EEPROM integrity follows.",
+      "complete": true,
+      "analysis_report": "round5_misc_followup_results.json",
+      "analysis_report_sha256": "d843ee992c1755ea432ba94ff2265fae9898eec9037040b0823c9af0dedcd126"
+    },
+    {
+      "response_file": "references/physical-66-rng-uart/0001-udws_crypto_svc_get_rand_num_16.bin",
+      "response_sha256": "235951f5205008824e2325a5651c5177faaac13980774d7de7c5acf1b4e2f0b0",
+      "assessment": "complete-random-byte-sample-uart-path",
+      "note": "Exact EOF syntax without an inner semicolon selected the reviewed UART branch. Exactly32 lowercase hexadecimal characters encode16 bytes; no file-output message appeared. This validates output format and execution, not randomness quality.",
+      "complete": true,
+      "analysis_report": "round5_misc_followup_results.json",
+      "analysis_report_sha256": "d843ee992c1755ea432ba94ff2265fae9898eec9037040b0823c9af0dedcd126"
+    },
+    {
+      "response_file": "physical-57-provider-pointers/0006-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "d9e28605ecd6861603e7359a1da2d3aee99880cd5406d4a73019025d6f78e8ff",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x20943a40",
+      "bytes": 4,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-57-provider-pointers/0015-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "1610aac7933c5e6dfa5b788ed48a78909c40dae19b1b7fe6ca81ff390447e5fc",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa061f594",
+      "bytes": 4,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-57-provider-pointers/0024-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "b48b10f1e703c87a6e605a003b0b7fe52d5dda87a017db21769ee5d08a4d9faa",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa061f598",
+      "bytes": 64,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-57-provider-pointers/0033-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "21ae7cee77d0efb9545ac1d95fe5827216f4e06608d6495ebe32d9339799224b",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x20d23b24",
+      "bytes": 4,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-57-provider-pointers/0042-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "f32a1deca793cb426be018a6129409c1a641659f4760714b5755616548e09a95",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa053bb24",
+      "bytes": 4,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-57-provider-pointers/0051-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "dc46789a2ec81e6b80bcd807bdf49612c9611b2ac66fa0710c298d5d6433cc81",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa053bb48",
+      "bytes": 64,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0006-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "d9e28605ecd6861603e7359a1da2d3aee99880cd5406d4a73019025d6f78e8ff",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x20ab0148",
+      "bytes": 4,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0015-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "1610aac7933c5e6dfa5b788ed48a78909c40dae19b1b7fe6ca81ff390447e5fc",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa061f594",
+      "bytes": 4,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0024-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "b48b10f1e703c87a6e605a003b0b7fe52d5dda87a017db21769ee5d08a4d9faa",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa061f598",
+      "bytes": 64,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0033-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "673fac89ba341afb16238aa450af37252d6f5cf5e971fef4a93964fe4fc8b4f0",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x20ab014c",
+      "bytes": 4,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0042-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "95818bf79cdc5ce18d720f2a8486e3b39b8379f95a83c58d930491639ead5d16",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa0517544",
+      "bytes": 4,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0051-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "bd6855f97b58aea9e90f3e7146b89d9f4fbc6bcc41ca62244c00d20e2fbbc09b",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa0517548",
+      "bytes": 64,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0060-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "4f4b209d52a6b909595773526f042c14ddf0e3be966cedbe9be4dfa8992a8162",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x20ab0150",
+      "bytes": 4,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0069-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "bd1b240d3e59a938386197c9e9164d69193bd5e4f01f7fce3afa4d8c171acf2a",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa061e1e4",
+      "bytes": 4,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0078-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "ef0217b25daf6a108620756b16f5b58948858420e940125050b5e7cdb61b96a8",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa061e1e8",
+      "bytes": 64,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0087-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "9de19ecb22f1bfc0493fa45e44091f190ba8099e02c8284112b42359d4c790cc",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x20ab0154",
+      "bytes": 4,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0096-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "80951c3c86597b588a4a4ea597be5535e103323d340f94a91232d7ea506fa2a3",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa05c35a8",
+      "bytes": 4,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0105-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "2712edb9fbc279148a77b8b21d8666000f53baba125c74c49d3158e736bdc551",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa05c35ac",
+      "bytes": 64,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0114-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "f328fa2df378640aedfc9df78152226cb0db5cbe459ebd0d98afe8bbc97ba1a5",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x20ab0158",
+      "bytes": 4,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0123-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "d20bbf64eb3e4c2d80035e369d25c3eeecb86243dd210ef318c59974bcdce998",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa06053c0",
+      "bytes": 4,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0132-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "f2aed857a26e9b7ceac2ffa6da5f94934a65b93b77e7031aaa55683c719bc85e",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa06054b4",
+      "bytes": 64,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0141-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "f7f46897c38221945be527850c499258fc1424c3077c603bf9932216f7aa0a88",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x2083e248",
+      "bytes": 4,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0150-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "7dc09f1c965e78033f513c56b51eadfb3721c311d0ce75a3b1d4090dccd9fd5c",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa0567abc",
+      "bytes": 4,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0159-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "3f4baf15bcbbb940feb97b620fc2cd7b3c92509e93db485f127657d668b831e1",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa0567ac0",
+      "bytes": 64,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0168-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "36ef9f3f3eaaecc2e7c06f22c34f81ffa6063531a354cb98447ec50fe46ebfbd",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x2089e40c",
+      "bytes": 4,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0177-udws_ustd_read_file_0_420.bin",
+      "response_sha256": "53005f1d0904aaf28e01859292be5f78df809d0954afbcb769628ef488dcb535",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots. Historical label describes requested420-byte span only:21 registered string groups have NOT been established; much of this span is zero and later words may be adjacent data.",
+      "address": "0x2091f7a4",
+      "bytes": 420,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0186-udws_ustd_read_file_0_24.bin",
+      "response_sha256": "f005c1c60a2c22c0afc05b199d8dff2705c44dff21587af639b260b5005c7a87",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x20004158",
+      "bytes": 24,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0006-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "d9e28605ecd6861603e7359a1da2d3aee99880cd5406d4a73019025d6f78e8ff",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x20daf87c",
+      "bytes": 4,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0015-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "1610aac7933c5e6dfa5b788ed48a78909c40dae19b1b7fe6ca81ff390447e5fc",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa061f594",
+      "bytes": 4,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0024-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "b48b10f1e703c87a6e605a003b0b7fe52d5dda87a017db21769ee5d08a4d9faa",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa061f598",
+      "bytes": 64,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0033-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "a376916e776d68fc265b1aa72d2ff50b149f9fb91505cede76164bfb92bf3787",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x20daf880",
+      "bytes": 4,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0042-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "e432bc68206bfce1979d5538a661356988c85dbcab7bf2e1c562ed98fc871303",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x2084a0b4",
+      "bytes": 4,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0051-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "f31d164a4d297877fe10addfd3d291965f220ec5da46c4b9a41ed3c7759033f3",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa06073ec",
+      "bytes": 64,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0060-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "64d5edb28e76aa12da4e4ab010f6a4bdc031609f7487452d3302c6cb350c66e4",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x20daf884",
+      "bytes": 4,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0069-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "f5e66807bc1daff6b3b4b026016502ca04d8f196c59179bfb0ad3318a08589e8",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa05e9e48",
+      "bytes": 4,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0078-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "d84d2b3efb9689c3dbca027398aaeb79020c622a23c9eebb0fb739f250433cf8",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa05e9e4c",
+      "bytes": 64,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0087-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "673fac89ba341afb16238aa450af37252d6f5cf5e971fef4a93964fe4fc8b4f0",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x20daf888",
+      "bytes": 4,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0096-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "95818bf79cdc5ce18d720f2a8486e3b39b8379f95a83c58d930491639ead5d16",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa0517544",
+      "bytes": 4,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0105-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "bd6855f97b58aea9e90f3e7146b89d9f4fbc6bcc41ca62244c00d20e2fbbc09b",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa0517548",
+      "bytes": 64,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0114-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "428cce826e97bfa6a25193847812684d07b44ec3e01a107faf331c2d738ad4ab",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x20daf228",
+      "bytes": 4,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0123-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "72e98e6bcdb0fad8714410b2101be6738c5084ac621a1da1fb757ab780418356",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa05cc04c",
+      "bytes": 4,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0132-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "41e1245595cef817f98e601b2690021b07640c87f4a496a2046a309adf6e45bf",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x20848770",
+      "bytes": 64,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0141-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "26a885e8a36daaeb1cca175ed56b4842b627098c6ddc37200c00a15e2ea2e94b",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x2083e244",
+      "bytes": 4,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0150-udws_ustd_read_file_0_32.bin",
+      "response_sha256": "b116b4bc362319f352c881b9c54d23b099699a3a0ec3d5a2378d444390ec5e87",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x21376ac0",
+      "bytes": 32,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0159-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "2efa0a73245bb096624260e30ce2ab7da8fbbe34187dc3e1149412323afc9a17",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x20969c00",
+      "bytes": 4,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0168-udws_ustd_read_file_0_8.bin",
+      "response_sha256": "6af7e0cf61719d3fab00640fa2c89a8920cb303620bd4b8e687d1973c50cdc16",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x20004894",
+      "bytes": 8,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-64-ui-fields/0006-udws_ustd_read_file_0_12.bin",
+      "response_sha256": "94c9848fee20411d2693aca802a2853cd99a6572e3c41fd38d22adb6a15cb01a",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x2084a0b4",
+      "bytes": 12,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-64-ui-fields/0015-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "eb4db51acd4d25fd39b3662534f7d2d5b27eddeb33ca0cbbeadee72cce8442b8",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x20848894",
+      "bytes": 4,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-64-ui-fields/0024-udws_ustd_read_file_0_20.bin",
+      "response_sha256": "a896c3e5079507c290ff3d3495efb002cd80041a28a74ffe7c738f6998e22e6c",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x20848c74",
+      "bytes": 20,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-67-mount-metadata/0006-udws_ustd_read_file_0_448.bin",
+      "response_sha256": "c2a522cc1a6be7b930dd1f7b70de4db45ae1b6e487c89a5496888de01ba6ade6",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x20dfe054",
+      "bytes": 448,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    },
+    {
+      "response_file": "physical-67-mount-metadata/0015-udws_ustd_read_file_0_448.bin",
+      "response_sha256": "b5319619564990bc1da3c5ce814bac30ab537eb791d52a5a59dca5109af86169",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x20dfe214",
+      "bytes": 448,
+      "analysis_report": "round5_metadata_results.json",
+      "analysis_report_sha256": "50a23aa1bbefee1c4e817304c5ee60d0ee3102e100721ecaa162dd6080faf1e0"
+    }
+  ]
+}

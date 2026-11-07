@@ -1,0 +1,128 @@
+[
+  {
+    "name": "fm.version_query",
+    "command": "udws \"fm.version_query;\"",
+    "argument_syntax": "",
+    "classification": "read-only-name query, no arguments (round 8)"
+  },
+  {
+    "name": "fm.limits_query",
+    "command": "udws \"fm.limits_query;\"",
+    "argument_syntax": "",
+    "classification": "read-only-name query, no arguments (round 8)"
+  },
+  {
+    "name": "fm.get_euid",
+    "command": "udws \"fm.get_euid;\"",
+    "argument_syntax": "",
+    "classification": "read-only-name query, no arguments (round 8)"
+  },
+  {
+    "name": "constat.get_system_info",
+    "command": "udws \"constat.get_system_info;\"",
+    "argument_syntax": "",
+    "classification": "read-only-name query, no arguments (round 8)"
+  },
+  {
+    "name": "is.info",
+    "command": "udws \"is.info;\"",
+    "argument_syntax": "",
+    "classification": "read-only-name query, no arguments (round 8)"
+  },
+  {
+    "name": "therm_mdl.list_values",
+    "command": "udws \"therm_mdl.list_values;\"",
+    "argument_syntax": "",
+    "classification": "read-only-name query, no arguments (round 8)"
+  },
+  {
+    "name": "ustd.sstat",
+    "command": "udws \"ustd.sstat;\"",
+    "argument_syntax": "",
+    "classification": "read-only-name query, no arguments (round 8)"
+  },
+  {
+    "name": "jmis.mem_show",
+    "command": "udws \"jmis.mem_show;\"",
+    "argument_syntax": "",
+    "classification": "read-only-name query, no arguments (round 8)"
+  },
+  {
+    "name": "smjob show",
+    "command": "udws \"smjob show;\"",
+    "argument_syntax": "",
+    "classification": "read-only-name query, no arguments (round 8)"
+  },
+  {
+    "name": "sm_dispatch_job types",
+    "command": "udws \"sm_dispatch_job types;\"",
+    "argument_syntax": "",
+    "classification": "read-only-name query, no arguments (round 8)"
+  },
+  {
+    "name": "sm_dispatch_job filter show",
+    "command": "udws \"sm_dispatch_job filter show;\"",
+    "argument_syntax": "",
+    "classification": "read-only-name query, no arguments (round 8)"
+  },
+  {
+    "name": "pixel_gen.show_pxg_color_order",
+    "command": "udws \"pixel_gen.show_pxg_color_order;\"",
+    "argument_syntax": "",
+    "classification": "read-only-name query, no arguments (round 8)"
+  },
+  {
+    "name": "udw.get_eridani_info",
+    "command": "udws \"udw.get_eridani_info;\"",
+    "argument_syntax": "",
+    "classification": "read-only-name query, no arguments (round 8)"
+  },
+  {
+    "name": "db.image.get_num_images",
+    "command": "udws \"db.image.get_num_images;\"",
+    "argument_syntax": "",
+    "classification": "read-only-name query, no arguments (round 8)"
+  },
+  {
+    "name": "pam.print_status",
+    "command": "udws \"pam.print_status;\"",
+    "argument_syntax": "",
+    "classification": "read-only-name query, no arguments (round 8)"
+  },
+  {
+    "name": "rest_udw status",
+    "command": "udws \"rest_udw status;\"",
+    "argument_syntax": "",
+    "classification": "read-only-name query, no arguments (round 8)"
+  },
+  {
+    "name": "heapmgr log show",
+    "command": "udws \"heapmgr log show;\"",
+    "argument_syntax": "",
+    "classification": "read-only-name query, no arguments (round 8)"
+  },
+  {
+    "name": "ip.show",
+    "command": "udws \"ip.show;\"",
+    "argument_syntax": "",
+    "classification": "read-only-name query, no arguments (round 8)"
+  },
+  {
+    "name": "jm_copy.show",
+    "command": "udws \"jm_copy.show;\"",
+    "argument_syntax": "",
+    "classification": "read-only-name query, no arguments (round 8)"
+  },
+  {
+    "name": "scan timing show",
+    "command": "udws \"scan timing show;\"",
+    "argument_syntax": "",
+    "classification": "read-only-name query, no arguments (round 8)"
+  },
+  {
+    "name": "scan_semiauto_align.mem_show",
+    "command": "udws \"scan_semiauto_align.mem_show;\"",
+    "argument_syntax": "",
+    "classification": "read-only-name query, no arguments (round 8)"
+  }
+]

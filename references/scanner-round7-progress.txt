@@ -1,0 +1,2 @@
+{"index": 1, "command": "udws \"scan orig locget;\"", "bytes": 149, "prompt": true, "validated": null, "preview": "\r\n-> udws \"scan orig locget;\"\r\ncover location: 3534\r\npark location:  2264\r\nwhite location: 2709\r\nblack location: 2709\r\n;udws() returns 0 (0x0)\r\n-> "}
+{"index": 2, "command": "udws \"scan mtr getpos;\"", "bytes": 82, "prompt": true, "validated": null, "preview": "\r\n-> udws \"scan mtr getpos;\"\r\nMotor Position: 2264\r\n;udws() returns 0 (0x0)\r\n-> "}

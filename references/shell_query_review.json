@@ -1,0 +1,1323 @@
+{
+  "schema_version": 1,
+  "status": "review_complete_static_evidence; physical execution belongs to parent capture",
+  "provenance": {
+    "image": "artifacts/ghs/dram.bin",
+    "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+    "kind": "offline_shell_registration_review_not_physical_output",
+    "cpu": "ARM/Thumb big-endian",
+    "scope": "Top-level UART shell symbols, distinct from UDW command registry. 57 Thumb BL sites plus 3 ARM BLX sites to variable/function registrars. No claim that every static site is present in the physical runtime.",
+    "review_limit": "Bounded disassembly and call-site/dataflow review, not formal proof. Live object handles and registration availability must be verified before dependent queries."
+  },
+  "list_head": "0x20da30e8",
+  "static_registration_calls": [
+    {
+      "registration_call": "0xa00d1d08",
+      "registrar": "0xa03cea5c",
+      "instruction_set": "arm",
+      "kind": "variable",
+      "name": "dbug_fade_histo",
+      "raw_name": "dbug_fade_histo",
+      "name_pointer": "0xa00d1d60",
+      "target": "0x2091ee0c",
+      "description": "",
+      "description_pointer": null,
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa00d1d18",
+      "registrar": "0xa03cea5c",
+      "instruction_set": "arm",
+      "kind": "variable",
+      "name": "dbug_fade_maps",
+      "raw_name": "dbug_fade_maps",
+      "name_pointer": "0xa00d1d74",
+      "target": "0x2091ee10",
+      "description": "",
+      "description_pointer": null,
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa01939c4",
+      "registrar": "0xa03cea5c",
+      "instruction_set": "thumb",
+      "kind": "variable",
+      "name": "dbug_img_compact",
+      "raw_name": "dbug_img_compact",
+      "name_pointer": "0xa0193cb4",
+      "target": "0x20987b0c",
+      "description": "",
+      "description_pointer": null,
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa01939ce",
+      "registrar": "0xa03cea5c",
+      "kind": "variable",
+      "name": "img_compact_embedded",
+      "raw_name": "img_compact_embedded",
+      "name_pointer": "0xa0193cc8",
+      "target": "0x20838fbc",
+      "description": "",
+      "description_pointer": null,
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa01939d8",
+      "registrar": "0xa03cea5c",
+      "kind": "variable",
+      "name": "img_compact_copy",
+      "raw_name": "img_compact_copy",
+      "name_pointer": "0xa0193ce4",
+      "target": "0x20838fb8",
+      "description": "",
+      "description_pointer": null,
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa01c6d36",
+      "registrar": "0xa03cea66",
+      "kind": "function",
+      "name": "CIRBUF_debug",
+      "raw_name": "CIRBUF_debug",
+      "name_pointer": "0xa01c6eb4",
+      "target": "0xa01c6d01",
+      "description": "",
+      "description_pointer": null,
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list",
+      "registration_condition": "registered lazily at A01C6D2A when the CIRBUF initializer runs; not necessarily present"
+    },
+    {
+      "registration_call": "0xa01ceb14",
+      "registrar": "0xa03cea5c",
+      "kind": "variable",
+      "name": "dbug_mergein",
+      "raw_name": "dbug_mergein",
+      "name_pointer": "0xa01ceb70",
+      "target": "0x209e4104",
+      "description": "",
+      "description_pointer": null,
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa01cf0b0",
+      "registrar": "0xa03cea5c",
+      "kind": "variable",
+      "name": "dbug_ip",
+      "raw_name": "dbug_ip",
+      "name_pointer": "0xa01cf19c",
+      "target": "0x209dec08",
+      "description": "",
+      "description_pointer": null,
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa01cf0ba",
+      "registrar": "0xa03cea5c",
+      "kind": "variable",
+      "name": "dbug_ip_mem",
+      "raw_name": "dbug_ip_mem",
+      "name_pointer": "0xa01cf1a4",
+      "target": "0x209e4100",
+      "description": "",
+      "description_pointer": null,
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa01cf0c4",
+      "registrar": "0xa03cea5c",
+      "kind": "variable",
+      "name": "dbug_ip_buf",
+      "raw_name": "dbug_ip_buf",
+      "name_pointer": "0xa01cf1b0",
+      "target": "0x209e2a18",
+      "description": "",
+      "description_pointer": null,
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa01cf0ce",
+      "registrar": "0xa03cea5c",
+      "kind": "variable",
+      "name": "dbug_ip_colormap",
+      "raw_name": "dbug_ip_colormap",
+      "name_pointer": "0xa01cf1bc",
+      "target": "0x209e2ffc",
+      "description": "",
+      "description_pointer": null,
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa01cf0d8",
+      "registrar": "0xa03cea5c",
+      "kind": "variable",
+      "name": "dbug_ip_tenh",
+      "raw_name": "dbug_ip_tenh",
+      "name_pointer": "0xa01cf1d0",
+      "target": "0x209e4210",
+      "description": "",
+      "description_pointer": null,
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa01cf0e2",
+      "registrar": "0xa03cea5c",
+      "kind": "variable",
+      "name": "dbug_ip_lhcfifo",
+      "raw_name": "dbug_ip_lhcfifo",
+      "name_pointer": "0xa01cf1e0",
+      "target": "0x209e4078",
+      "description": "",
+      "description_pointer": null,
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa01cf0ec",
+      "registrar": "0xa03cea5c",
+      "kind": "variable",
+      "name": "dbug_ip_tenh_block_disable",
+      "raw_name": "dbug_ip_tenh_block_disable",
+      "name_pointer": "0xa01cf1f0",
+      "target": "0x209e4214",
+      "description": "",
+      "description_pointer": null,
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa01cf0f6",
+      "registrar": "0xa03cea5c",
+      "kind": "variable",
+      "name": "dbug_ip_gobble",
+      "raw_name": "dbug_ip_gobble",
+      "name_pointer": "0xa01cf210",
+      "target": "0x209e28d8",
+      "description": "",
+      "description_pointer": null,
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa01cf100",
+      "registrar": "0xa03cea66",
+      "kind": "function",
+      "name": "ip_buf_debug",
+      "raw_name": "ip_buf_debug",
+      "name_pointer": "0xa01cf224",
+      "target": "0xa01c66a7",
+      "description": "",
+      "description_pointer": null,
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa01cf10a",
+      "registrar": "0xa03cea66",
+      "kind": "function",
+      "name": "ip_lhcfifo_debug",
+      "raw_name": "ip_lhcfifo_debug",
+      "name_pointer": "0xa01cf238",
+      "target": "0xa01cdbf9",
+      "description": "",
+      "description_pointer": null,
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa01cf114",
+      "registrar": "0xa03cea66",
+      "kind": "function",
+      "name": "ip_lhcfifo_reg",
+      "raw_name": "ip_lhcfifo_reg",
+      "name_pointer": "0xa01cf250",
+      "target": "0xa01c5bc5",
+      "description": "",
+      "description_pointer": null,
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa01cf11e",
+      "registrar": "0xa03cea66",
+      "kind": "function",
+      "name": "ip_show",
+      "raw_name": "ip_show",
+      "name_pointer": "0xa01cf264",
+      "target": "0xa01c9631",
+      "description": "",
+      "description_pointer": null,
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa01d3374",
+      "registrar": "0xa03cea5c",
+      "kind": "variable",
+      "name": "dbug_vscale",
+      "raw_name": "dbug_vscale",
+      "name_pointer": "0xa01d34e8",
+      "target": "0x209e4bec",
+      "description": "show vscale configuration",
+      "description_pointer": "0xa01d34cc",
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa01d337e",
+      "registrar": "0xa03cea5c",
+      "kind": "variable",
+      "name": "dbug_vscale_factor",
+      "raw_name": "dbug_vscale_factor",
+      "name_pointer": "0xa01d350c",
+      "target": "0x209e4be8",
+      "description": "override vscale factor",
+      "description_pointer": "0xa01d34f4",
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa01d4a98",
+      "registrar": "0xa03cea5c",
+      "kind": "variable",
+      "name": "dbug_ip2sp",
+      "raw_name": "dbug_ip2sp",
+      "name_pointer": "0xa01d4ae4",
+      "target": "0x209e508c",
+      "description": "",
+      "description_pointer": null,
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa01d6cec",
+      "registrar": "0xa03cea66",
+      "instruction_set": "arm",
+      "kind": "function",
+      "name": "ip_lmb_debug",
+      "raw_name": "ip_lmb_debug",
+      "name_pointer": "0xa01d6d38",
+      "target": "0xa01d6750",
+      "description": "",
+      "description_pointer": null,
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa0204bbc",
+      "registrar": "0xa03cea5c",
+      "instruction_set": "thumb",
+      "kind": "variable",
+      "name": "dbug_cjm_event",
+      "raw_name": "dbug_cjm_event",
+      "name_pointer": "0xa0204ce4",
+      "target": "0x20a2e6c0",
+      "description": "",
+      "description_pointer": null,
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa020d6f0",
+      "registrar": "0xa03cea5c",
+      "kind": "variable",
+      "name": "dbug_jm_jpeg_demo_hold_task",
+      "raw_name": "dbug_jm_jpeg_demo_hold_task",
+      "name_pointer": "0xa020d74c",
+      "target": "0x20a3134c",
+      "description": "",
+      "description_pointer": null,
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa02131e0",
+      "registrar": "0xa03cea66",
+      "kind": "function",
+      "name": "jmpp_verbose",
+      "raw_name": "jmpp_verbose",
+      "name_pointer": "0xa02132a0",
+      "target": "0xa0215715",
+      "description": "Show processing stripe messages",
+      "description_pointer": "0xa0213280",
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa02131ea",
+      "registrar": "0xa03cea66",
+      "kind": "function",
+      "name": "jmpp_terse",
+      "raw_name": "jmpp_terse",
+      "name_pointer": "0xa02132d4",
+      "target": "0xa0215719",
+      "description": "Only show photo print errors",
+      "description_pointer": "0xa02132b4",
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa02c1616",
+      "registrar": "0xa03cea5c",
+      "kind": "variable",
+      "name": "dbug_dump_matrix_regs",
+      "raw_name": "dbug_dump_matrix_regs",
+      "name_pointer": "0xa02c16f8",
+      "target": "0x20b83d98",
+      "description": "dump matrix registers to the shell",
+      "description_pointer": "0xa02c16d4",
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa02c1ab2",
+      "registrar": "0xa03cea5c",
+      "kind": "variable",
+      "name": "dbug_tier1_mergein",
+      "raw_name": "dbug_tier1_mergein",
+      "name_pointer": "0xa02c1c80",
+      "target": "0x20b83de0",
+      "description": "dbug variable for lib_tier1 mergein",
+      "description_pointer": "0xa02c1c5c",
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa02c1abc",
+      "registrar": "0xa03cea5c",
+      "kind": "variable",
+      "name": "dbug_dump_mergein_regs",
+      "raw_name": "dbug_dump_mergein_regs",
+      "name_pointer": "0xa02c1cb8",
+      "target": "0x20b83ddc",
+      "description": "dump mergein registers to the shell",
+      "description_pointer": "0xa02c1c94",
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa02c2430",
+      "registrar": "0xa03cea5c",
+      "kind": "variable",
+      "name": "dbug_dump_vscale_regs",
+      "raw_name": "dbug_dump_vscale_regs",
+      "name_pointer": "0xa02c2598",
+      "target": "0x20b83e58",
+      "description": "dump vscale registers to the shell",
+      "description_pointer": "0xa02c2574",
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa02c27e2",
+      "registrar": "0xa03cea5c",
+      "kind": "variable",
+      "name": "dbug_udw",
+      "raw_name": "dbug_udw",
+      "name_pointer": "0xa02c2ac4",
+      "target": "0x20b83e5c",
+      "description": "Set this var to 1 for debug",
+      "description_pointer": "0xa02c2aa8",
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa02ebdc0",
+      "registrar": "0xa03cea66",
+      "kind": "function",
+      "name": "netstat",
+      "raw_name": "netstat",
+      "name_pointer": "0xa02ebf6c",
+      "target": "0xa02ebac1",
+      "description": "netstat \"cmd_num\"",
+      "description_pointer": "0xa02ebf58",
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa02f673c",
+      "registrar": "0xa03cea66",
+      "kind": "function",
+      "name": "i",
+      "raw_name": "i",
+      "name_pointer": "0xa02f695c",
+      "target": "0xa02f63cb",
+      "description": "Summary of task[s]'s TCB[s]",
+      "description_pointer": "0xa02f6940",
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa02f698c",
+      "registrar": "0xa03cea66",
+      "kind": "function",
+      "name": "tps",
+      "raw_name": "tps",
+      "name_pointer": "0xa02f69b0",
+      "target": "0xa02f66af",
+      "description": "",
+      "description_pointer": null,
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa02f6996",
+      "registrar": "0xa03cea66",
+      "kind": "function",
+      "name": "semShow",
+      "raw_name": "semShow",
+      "name_pointer": "0xa02f69c8",
+      "target": "0xa02f66f9",
+      "description": "semShow SEM_ID",
+      "description_pointer": "0xa02f69b8",
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa02f69a0",
+      "registrar": "0xa03cea66",
+      "kind": "function",
+      "name": "efShow",
+      "raw_name": "efShow",
+      "name_pointer": "0xa02f69ec",
+      "target": "0xa02f6715",
+      "description": "efShow EVENT_FLAG_ID",
+      "description_pointer": "0xa02f69d4",
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa02f69aa",
+      "registrar": "0xa03cea66",
+      "kind": "function",
+      "name": "taskLatency",
+      "raw_name": "taskLatency",
+      "name_pointer": "0xa02f6a20",
+      "target": "0xa02f6731",
+      "description": "Maximum latency of top priority tasks",
+      "description_pointer": "0xa02f69f8",
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa03ceb60",
+      "registrar": "0xa03cea66",
+      "kind": "function",
+      "name": "udw_tags",
+      "raw_name": "udw_tags",
+      "name_pointer": "0xa03cec14",
+      "target": "0xa03ceb19",
+      "description": "Wrap UDW output with tags (usage: udw_tags <on|off>)",
+      "description_pointer": "0xa03cebdc",
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa03cefc6",
+      "registrar": "0xa03cea66",
+      "kind": "function",
+      "name": "d",
+      "raw_name": "d",
+      "name_pointer": "0xa03cf038",
+      "target": "0xa03cec25",
+      "description": "Display memory. d([addr],[num],[width]) - see the vxWorks user guide for more details.",
+      "description_pointer": "0xa03cefe0",
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list",
+      "registration_condition": "debug access gate via A03D03E8 -> A00089DF must return zero"
+    },
+    {
+      "registration_call": "0xa03cefd0",
+      "registrar": "0xa03cea66",
+      "kind": "function",
+      "name": "m",
+      "raw_name": "m",
+      "name_pointer": "0xa03cf0a0",
+      "target": "0xa03cecef",
+      "description": "Interactively modify memory. m([addr], [width]) -  see the vxWorks user guide for more details.",
+      "description_pointer": "0xa03cf040",
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list",
+      "registration_condition": "debug access gate via A03D03E8 -> A00089DF must return zero"
+    },
+    {
+      "registration_call": "0xa03cefda",
+      "registrar": "0xa03cea66",
+      "kind": "function",
+      "name": "func_call",
+      "raw_name": "func_call",
+      "name_pointer": "0xa03cf0f4",
+      "target": "0xa03cee53",
+      "description": "Make a function call with arguments usage: func_call <address> [<args> ...]",
+      "description_pointer": "0xa03cf0a8",
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list",
+      "registration_condition": "debug access gate via A03D03E8 -> A00089DF must return zero"
+    },
+    {
+      "registration_call": "0xa03d0060",
+      "registrar": "0xa03cea66",
+      "kind": "function",
+      "name": "help",
+      "raw_name": "help",
+      "name_pointer": "0xa03d01f4",
+      "target": "0xa03cff9f",
+      "description": "Print a list of commands",
+      "description_pointer": "0xa03d01d8",
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list",
+      "registration_condition": "debug access gate via A03D03E8 -> A00089DF must return zero"
+    },
+    {
+      "registration_call": "0xa03d006a",
+      "registrar": "0xa03cea66",
+      "kind": "function",
+      "name": "lkup",
+      "raw_name": "anZ#O6n",
+      "name_pointer": "0xa03d0218",
+      "target": "0xa03cff9f",
+      "description": "Lookup shell funcs and vars",
+      "description_pointer": "0xa03d01fc",
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list",
+      "registration_condition": "debug access gate via A03D03E8 -> A00089DF must return zero"
+    },
+    {
+      "registration_call": "0xa03d02f4",
+      "registrar": "0xa03cea66",
+      "kind": "function",
+      "name": "udws",
+      "raw_name": "udws",
+      "name_pointer": "0xa03d03a8",
+      "target": "0xa03d02b1",
+      "description": "udws \"<udw cmd1>\" [\"<udw cmd2>\"] ...",
+      "description_pointer": "0xa03d0380",
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa03d02fe",
+      "registrar": "0xa03cea66",
+      "kind": "function",
+      "name": "ludw",
+      "raw_name": "ludw",
+      "name_pointer": "0xa03d03dc",
+      "target": "0xa03d02cf",
+      "description": "ludw \"<udw cmd1>\" [\"<udw cmd2>\"] ...",
+      "description_pointer": "0xa03d03b4",
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa03e02d8",
+      "registrar": "0xa03cea5c",
+      "instruction_set": "thumb",
+      "kind": "variable",
+      "name": "smtr_interface_dbug",
+      "raw_name": "smtr_interface_dbug",
+      "name_pointer": "0xa03e04ac",
+      "target": "0x20db0154",
+      "description": "",
+      "description_pointer": null,
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa03e02e4",
+      "registrar": "0xa03cea5c",
+      "instruction_set": "thumb",
+      "kind": "variable",
+      "name": "smtr_dcScanInit",
+      "raw_name": "smtr_dcScanInit",
+      "name_pointer": "0xa03e04c0",
+      "target": "0x20db0140",
+      "description": "",
+      "description_pointer": null,
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa03e02f0",
+      "registrar": "0xa03cea5c",
+      "instruction_set": "thumb",
+      "kind": "variable",
+      "name": "smtr_dcScanAt",
+      "raw_name": "smtr_dcScanAt",
+      "name_pointer": "0xa03e04d0",
+      "target": "0x20db0144",
+      "description": "",
+      "description_pointer": null,
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa03e02fc",
+      "registrar": "0xa03cea5c",
+      "instruction_set": "thumb",
+      "kind": "variable",
+      "name": "smtr_dcMotorMove",
+      "raw_name": "smtr_dcMotorMove",
+      "name_pointer": "0xa03e04e0",
+      "target": "0x20db0148",
+      "description": "",
+      "description_pointer": null,
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa03e0308",
+      "registrar": "0xa03cea5c",
+      "instruction_set": "thumb",
+      "kind": "variable",
+      "name": "smtr_dcIsrPrint",
+      "raw_name": "smtr_dcIsrPrint",
+      "name_pointer": "0xa03e04f4",
+      "target": "0x20db014c",
+      "description": "",
+      "description_pointer": null,
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa03e0314",
+      "registrar": "0xa03cea5c",
+      "instruction_set": "thumb",
+      "kind": "variable",
+      "name": "smtr_dcHome",
+      "raw_name": "smtr_dcHome",
+      "name_pointer": "0xa03e0504",
+      "target": "0x20db0150",
+      "description": "",
+      "description_pointer": null,
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa03e0320",
+      "registrar": "0xa03cea5c",
+      "instruction_set": "thumb",
+      "kind": "variable",
+      "name": "smtr_dcEndpoint",
+      "raw_name": "smtr_dcEndpoint",
+      "name_pointer": "0xa03e0510",
+      "target": "0x20db0158",
+      "description": "",
+      "description_pointer": null,
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa03e032c",
+      "registrar": "0xa03cea5c",
+      "instruction_set": "thumb",
+      "kind": "variable",
+      "name": "smtr_dcMotorPwr",
+      "raw_name": "smtr_dcMotorPwr",
+      "name_pointer": "0xa03e0520",
+      "target": "0x20db015c",
+      "description": "",
+      "description_pointer": null,
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa042bccc",
+      "registrar": "0xa03cea66",
+      "kind": "function",
+      "name": "uart_reset",
+      "raw_name": "uart_reset",
+      "name_pointer": "0xa042bd70",
+      "target": "0xa042bc2d",
+      "description": "Reset the text formatting of the uart",
+      "description_pointer": "0xa042bd48",
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa046c882",
+      "registrar": "0xa03cea66",
+      "kind": "function",
+      "name": "ls",
+      "raw_name": "ls",
+      "name_pointer": "0xa046ca98",
+      "target": "0xa046cc59",
+      "description": "ls <DIR_NAME> : list the contents of DIR",
+      "description_pointer": "0xa046ca6c",
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa046c88c",
+      "registrar": "0xa03cea66",
+      "kind": "function",
+      "name": "ll",
+      "raw_name": "ll",
+      "name_pointer": "0xa046cad4",
+      "target": "0xa046cc71",
+      "description": "ll <DIR_NAME> : recursively list contents of DIR",
+      "description_pointer": "0xa046caa0",
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa046c896",
+      "registrar": "0xa03cea66",
+      "kind": "function",
+      "name": "dskcpy",
+      "raw_name": "dskcpy",
+      "name_pointer": "0xa046cb14",
+      "target": "0xa046cc89",
+      "description": "dskcpy <SRC_DIR> <DST_DIR> : recursive directory copy",
+      "description_pointer": "0xa046cadc",
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa046c8a0",
+      "registrar": "0xa03cea66",
+      "kind": "function",
+      "name": "cp",
+      "raw_name": "cp",
+      "name_pointer": "0xa046cb44",
+      "target": "0xa046ccb5",
+      "description": "cp <SRC> <DST> : copy single file",
+      "description_pointer": "0xa046cb20",
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    },
+    {
+      "registration_call": "0xa046e8aa",
+      "registrar": "0xa03cea5c",
+      "kind": "variable",
+      "name": "traceStore",
+      "raw_name": "traceStore",
+      "name_pointer": "0xa046e9c0",
+      "target": "0x20e081f8",
+      "description": "traceStore=1 enables output of circular traceStore buffer when CPU idle",
+      "description_pointer": "0xa046e978",
+      "instruction_set": "thumb",
+      "registration_status": "static_call_site_only; runtime presence requires physical shell list"
+    }
+  ],
+  "queries": [
+    {
+      "command": "dbug_fade_histo",
+      "kind": "shell_variable_read",
+      "target": "0x2091ee0c",
+      "registration_call": "0xa00d1d08",
+      "hardware_read": false,
+      "readiness": "reviewed; requires runtime registration",
+      "purpose": "Read current 32-bit RAM value without changing flag or behavior."
+    },
+    {
+      "command": "dbug_fade_maps",
+      "kind": "shell_variable_read",
+      "target": "0x2091ee10",
+      "registration_call": "0xa00d1d18",
+      "hardware_read": false,
+      "readiness": "reviewed; requires runtime registration",
+      "purpose": "Read current 32-bit RAM value without changing flag or behavior."
+    },
+    {
+      "command": "dbug_img_compact",
+      "kind": "shell_variable_read",
+      "target": "0x20987b0c",
+      "registration_call": "0xa01939c4",
+      "hardware_read": false,
+      "readiness": "reviewed; requires runtime registration",
+      "purpose": "Read current 32-bit RAM value without changing flag or behavior."
+    },
+    {
+      "command": "img_compact_embedded",
+      "kind": "shell_variable_read",
+      "target": "0x20838fbc",
+      "registration_call": "0xa01939ce",
+      "hardware_read": false,
+      "readiness": "reviewed; requires runtime registration",
+      "purpose": "Read current 32-bit RAM value without changing flag or behavior."
+    },
+    {
+      "command": "img_compact_copy",
+      "kind": "shell_variable_read",
+      "target": "0x20838fb8",
+      "registration_call": "0xa01939d8",
+      "hardware_read": false,
+      "readiness": "reviewed; requires runtime registration",
+      "purpose": "Read current 32-bit RAM value without changing flag or behavior."
+    },
+    {
+      "command": "dbug_mergein",
+      "kind": "shell_variable_read",
+      "target": "0x209e4104",
+      "registration_call": "0xa01ceb14",
+      "hardware_read": false,
+      "readiness": "reviewed; requires runtime registration",
+      "purpose": "Read current 32-bit RAM value without changing flag or behavior."
+    },
+    {
+      "command": "dbug_ip",
+      "kind": "shell_variable_read",
+      "target": "0x209dec08",
+      "registration_call": "0xa01cf0b0",
+      "hardware_read": false,
+      "readiness": "reviewed; requires runtime registration",
+      "purpose": "Read current 32-bit RAM value without changing flag or behavior."
+    },
+    {
+      "command": "dbug_ip_mem",
+      "kind": "shell_variable_read",
+      "target": "0x209e4100",
+      "registration_call": "0xa01cf0ba",
+      "hardware_read": false,
+      "readiness": "reviewed; requires runtime registration",
+      "purpose": "Read current 32-bit RAM value without changing flag or behavior."
+    },
+    {
+      "command": "dbug_ip_buf",
+      "kind": "shell_variable_read",
+      "target": "0x209e2a18",
+      "registration_call": "0xa01cf0c4",
+      "hardware_read": false,
+      "readiness": "reviewed; requires runtime registration",
+      "purpose": "Read current 32-bit RAM value without changing flag or behavior."
+    },
+    {
+      "command": "dbug_ip_colormap",
+      "kind": "shell_variable_read",
+      "target": "0x209e2ffc",
+      "registration_call": "0xa01cf0ce",
+      "hardware_read": false,
+      "readiness": "reviewed; requires runtime registration",
+      "purpose": "Read current 32-bit RAM value without changing flag or behavior."
+    },
+    {
+      "command": "dbug_ip_tenh",
+      "kind": "shell_variable_read",
+      "target": "0x209e4210",
+      "registration_call": "0xa01cf0d8",
+      "hardware_read": false,
+      "readiness": "reviewed; requires runtime registration",
+      "purpose": "Read current 32-bit RAM value without changing flag or behavior."
+    },
+    {
+      "command": "dbug_ip_lhcfifo",
+      "kind": "shell_variable_read",
+      "target": "0x209e4078",
+      "registration_call": "0xa01cf0e2",
+      "hardware_read": false,
+      "readiness": "reviewed; requires runtime registration",
+      "purpose": "Read current 32-bit RAM value without changing flag or behavior."
+    },
+    {
+      "command": "dbug_ip_tenh_block_disable",
+      "kind": "shell_variable_read",
+      "target": "0x209e4214",
+      "registration_call": "0xa01cf0ec",
+      "hardware_read": false,
+      "readiness": "reviewed; requires runtime registration",
+      "purpose": "Read current 32-bit RAM value without changing flag or behavior."
+    },
+    {
+      "command": "dbug_ip_gobble",
+      "kind": "shell_variable_read",
+      "target": "0x209e28d8",
+      "registration_call": "0xa01cf0f6",
+      "hardware_read": false,
+      "readiness": "reviewed; requires runtime registration",
+      "purpose": "Read current 32-bit RAM value without changing flag or behavior."
+    },
+    {
+      "command": "dbug_vscale",
+      "kind": "shell_variable_read",
+      "target": "0x209e4bec",
+      "registration_call": "0xa01d3374",
+      "hardware_read": false,
+      "readiness": "reviewed; requires runtime registration",
+      "purpose": "Read current 32-bit RAM value without changing flag or behavior."
+    },
+    {
+      "command": "dbug_vscale_factor",
+      "kind": "shell_variable_read",
+      "target": "0x209e4be8",
+      "registration_call": "0xa01d337e",
+      "hardware_read": false,
+      "readiness": "reviewed; requires runtime registration",
+      "purpose": "Read current 32-bit RAM value without changing flag or behavior."
+    },
+    {
+      "command": "dbug_ip2sp",
+      "kind": "shell_variable_read",
+      "target": "0x209e508c",
+      "registration_call": "0xa01d4a98",
+      "hardware_read": false,
+      "readiness": "reviewed; requires runtime registration",
+      "purpose": "Read current 32-bit RAM value without changing flag or behavior."
+    },
+    {
+      "command": "dbug_cjm_event",
+      "kind": "shell_variable_read",
+      "target": "0x20a2e6c0",
+      "registration_call": "0xa0204bbc",
+      "hardware_read": false,
+      "readiness": "reviewed; requires runtime registration",
+      "purpose": "Read current 32-bit RAM value without changing flag or behavior."
+    },
+    {
+      "command": "dbug_jm_jpeg_demo_hold_task",
+      "kind": "shell_variable_read",
+      "target": "0x20a3134c",
+      "registration_call": "0xa020d6f0",
+      "hardware_read": false,
+      "readiness": "reviewed; requires runtime registration",
+      "purpose": "Read current 32-bit RAM value without changing flag or behavior."
+    },
+    {
+      "command": "dbug_dump_matrix_regs",
+      "kind": "shell_variable_read",
+      "target": "0x20b83d98",
+      "registration_call": "0xa02c1616",
+      "hardware_read": false,
+      "readiness": "reviewed; requires runtime registration",
+      "purpose": "Read current 32-bit RAM value without changing flag or behavior."
+    },
+    {
+      "command": "dbug_tier1_mergein",
+      "kind": "shell_variable_read",
+      "target": "0x20b83de0",
+      "registration_call": "0xa02c1ab2",
+      "hardware_read": false,
+      "readiness": "reviewed; requires runtime registration",
+      "purpose": "Read current 32-bit RAM value without changing flag or behavior."
+    },
+    {
+      "command": "dbug_dump_mergein_regs",
+      "kind": "shell_variable_read",
+      "target": "0x20b83ddc",
+      "registration_call": "0xa02c1abc",
+      "hardware_read": false,
+      "readiness": "reviewed; requires runtime registration",
+      "purpose": "Read current 32-bit RAM value without changing flag or behavior."
+    },
+    {
+      "command": "dbug_dump_vscale_regs",
+      "kind": "shell_variable_read",
+      "target": "0x20b83e58",
+      "registration_call": "0xa02c2430",
+      "hardware_read": false,
+      "readiness": "reviewed; requires runtime registration",
+      "purpose": "Read current 32-bit RAM value without changing flag or behavior."
+    },
+    {
+      "command": "dbug_udw",
+      "kind": "shell_variable_read",
+      "target": "0x20b83e5c",
+      "registration_call": "0xa02c27e2",
+      "hardware_read": false,
+      "readiness": "reviewed; requires runtime registration",
+      "purpose": "Read current 32-bit RAM value without changing flag or behavior."
+    },
+    {
+      "command": "smtr_interface_dbug",
+      "kind": "shell_variable_read",
+      "target": "0x20db0154",
+      "registration_call": "0xa03e02d8",
+      "hardware_read": false,
+      "readiness": "reviewed; requires runtime registration",
+      "purpose": "Read current 32-bit RAM value without changing flag or behavior."
+    },
+    {
+      "command": "smtr_dcScanInit",
+      "kind": "shell_variable_read",
+      "target": "0x20db0140",
+      "registration_call": "0xa03e02e4",
+      "hardware_read": false,
+      "readiness": "reviewed; requires runtime registration",
+      "purpose": "Read current 32-bit RAM value without changing flag or behavior."
+    },
+    {
+      "command": "smtr_dcScanAt",
+      "kind": "shell_variable_read",
+      "target": "0x20db0144",
+      "registration_call": "0xa03e02f0",
+      "hardware_read": false,
+      "readiness": "reviewed; requires runtime registration",
+      "purpose": "Read current 32-bit RAM value without changing flag or behavior."
+    },
+    {
+      "command": "smtr_dcMotorMove",
+      "kind": "shell_variable_read",
+      "target": "0x20db0148",
+      "registration_call": "0xa03e02fc",
+      "hardware_read": false,
+      "readiness": "reviewed; requires runtime registration",
+      "purpose": "Read current 32-bit RAM value without changing flag or behavior."
+    },
+    {
+      "command": "smtr_dcIsrPrint",
+      "kind": "shell_variable_read",
+      "target": "0x20db014c",
+      "registration_call": "0xa03e0308",
+      "hardware_read": false,
+      "readiness": "reviewed; requires runtime registration",
+      "purpose": "Read current 32-bit RAM value without changing flag or behavior."
+    },
+    {
+      "command": "smtr_dcHome",
+      "kind": "shell_variable_read",
+      "target": "0x20db0150",
+      "registration_call": "0xa03e0314",
+      "hardware_read": false,
+      "readiness": "reviewed; requires runtime registration",
+      "purpose": "Read current 32-bit RAM value without changing flag or behavior."
+    },
+    {
+      "command": "smtr_dcEndpoint",
+      "kind": "shell_variable_read",
+      "target": "0x20db0158",
+      "registration_call": "0xa03e0320",
+      "hardware_read": false,
+      "readiness": "reviewed; requires runtime registration",
+      "purpose": "Read current 32-bit RAM value without changing flag or behavior."
+    },
+    {
+      "command": "smtr_dcMotorPwr",
+      "kind": "shell_variable_read",
+      "target": "0x20db015c",
+      "registration_call": "0xa03e032c",
+      "hardware_read": false,
+      "readiness": "reviewed; requires runtime registration",
+      "purpose": "Read current 32-bit RAM value without changing flag or behavior."
+    },
+    {
+      "command": "traceStore",
+      "kind": "shell_variable_read",
+      "target": "0x20e081f8",
+      "registration_call": "0xa046e8aa",
+      "hardware_read": false,
+      "readiness": "reviewed; requires runtime registration",
+      "purpose": "Read current 32-bit RAM value without changing flag or behavior."
+    },
+    {
+      "command": "i",
+      "kind": "shell_function",
+      "handler": "0xa02f63cb",
+      "hardware_read": false,
+      "readiness": "reviewed",
+      "purpose": "Task list with priorities, status and stack usage.",
+      "review": "No argument enumerates OS tasks. A02F621C builds/sorts a bounded 149-entry scratch task-pointer table at 20BDD678; A02F6274 scans stack sentinel words. A02F629A updates display totals at 20BDD8D0/4. No task-priority/state setter calls. Display counters/scratch are written, live task configuration is not."
+    },
+    {
+      "command": "taskLatency",
+      "kind": "shell_function",
+      "handler": "0xa02f6731",
+      "hardware_read": false,
+      "readiness": "reviewed",
+      "purpose": "Probe advertised task-latency command; expected return 0 only.",
+      "review": "Exact handler is MOVS r0,#0; BX LR. No arguments used and no measurements emitted."
+    },
+    {
+      "command": "ip_show",
+      "kind": "shell_function",
+      "handler": "0xa01c9631",
+      "hardware_read": false,
+      "readiness": "reviewed",
+      "purpose": "Show image-pipeline history; retail per-record formatting is compiled out.",
+      "review": "No args supplies zero to A01C95FC, which defaults to 200 records. Reads 209E3038 history index, does modulo arithmetic and calls A01C964C (BX LR) for each slot; no target mutation. Optional numeric count uses strtol but large counts are unnecessary; use no args only."
+    },
+    {
+      "command": "ip_buf_debug",
+      "kind": "shell_function",
+      "handler": "0xa01c66a7",
+      "hardware_read": false,
+      "readiness": "reviewed",
+      "purpose": "Probe current buffer debug view; expected return 0 only.",
+      "review": "Reads buffer pointer at 209E28DC+54 and, when nonzero, calls A01C6E7E. That helper only performs bounded pointer/count loops; no print call or target dereference/store remains in this retail image."
+    },
+    {
+      "command": "CIRBUF_debug",
+      "kind": "shell_function",
+      "handler": "0xa01c6d01",
+      "hardware_read": false,
+      "readiness": "reviewed; lazy registration may be absent",
+      "purpose": "Probe advertised circular-buffer diagnostic if dynamically registered.",
+      "review": "No args passes zero to A01C6E7E. The helper walks addresses in [209E2A50,209E2F90) with stride A8 and has no print call or target memory read/store. Optional numeric address is unnecessary; use no args."
+    },
+    {
+      "command": "ip_lmb_debug",
+      "kind": "shell_function",
+      "handler": "0xa01d6750",
+      "hardware_read": false,
+      "readiness": "reviewed",
+      "purpose": "Print image-pipeline LMB state and counters.",
+      "review": "119 reachable ARM instructions reviewed; accesses RAM state rooted at 209E50D8 and formats fields through A03CEA16. Only stores are to stack; all calls are UART formatting (including ARM interworking veneer A03CEA0C). No MMIO or configuration mutation in reviewed handler."
+    }
+  ],
+  "counts": {
+    "static_call_sites": 60,
+    "variable_sites": 33,
+    "function_sites": 27
+  },
+  "discovery": {
+    "preferred_commands": [
+      "help",
+      "lkup"
+    ],
+    "optional_prefix_examples": [
+      "help dbug_",
+      "lkup ip_"
+    ],
+    "handler": "0xa03cff9f",
+    "signature": "help [prefix] / lkup [prefix]; argc 1 or 2 only",
+    "analysis": "Traverses shell linked list and formats FUNC/VAR, name, target and optional description. Prefix matching only. Writes its stack/print buffers, not registry objects.",
+    "gate": "Both registered at A03D0060/A03D006A only if A03D03E8 -> A00089DF returns zero. No supported read-only command identified that enables omitted registrations. Do not patch RAM or call handlers through func_call.",
+    "fallback_head_read": "udws \"udw.mem_read 2 551170280;\"",
+    "head_address": "0x20da30e8",
+    "head_provenance": "A03D002A initializer and A03D0092 registrar use 20DA30E8; A03D0092 prepends each allocated 20-byte record.",
+    "record_layout": {
+      "size": 20,
+      "target_offset": 0,
+      "name_pointer_offset": 4,
+      "description_pointer_offset": 8,
+      "is_func_offset": 12,
+      "next_offset": 16
+    },
+    "memory_read_signature": "udw.mem_read <width_selector> <decimal_address>; width 0 byte, 1 halfword, 2 word. Handler A02613A5 parses %d %d. Exact command above is one aligned DDR word read.",
+    "read_walk_constraints": [
+      "Read-only DDR list traversal with cycle and node-count bounds; stop on null, invalid alignment/range or malformed node.",
+      "Resolve name/description pointers against verified offline image when their read-only image address and firmware identity match, rather than reading unrelated live ranges.",
+      "Do not transplant 2017 head 20DA71AC or old emulator object handles.",
+      "No runtime memory writes are needed."
+    ],
+    "safe_ddr_node_pool": "Initializer reserves 4000 bytes starting 0x20DA30F8, end-exclusive 0x20DA4098; 20-byte nodes allocated by A03D0070."
+  },
+  "variable_read_semantics": {
+    "signature": "<exact variable name> with no arguments and no equals sign",
+    "dispatcher": "0xa03cf894",
+    "provenance": "A03CFC90 looks up the name; A03CFCB2 selects kind=0; A03CFCBE requires argc=1; A03CFCC2/A03CFCC4 dereference the registered target word and print it. The target-store instruction A03CFB62 belongs to the separate assignment path.",
+    "hardware_read": false,
+    "side_effects": "Shell parsing/printing buffers only; variable target itself is read."
+  },
+  "conditional_queries": [
+    {
+      "command_template": "i <exact task name copied from the preceding live i output>",
+      "handler": "0xa02f63cb",
+      "hardware_read": false,
+      "precondition": "The name is present in current live task list.",
+      "review": "A02F6382 looks up by exact task name (strcmp at A02F63AE); no match returns -1. It does not accept a raw TCB address as a substitute for the name."
+    },
+    {
+      "command_template": "semShow 0x<LIVE_SHELL_MUTEX_HANDLE>",
+      "handler": "0xa02f66f9",
+      "hardware_read": false,
+      "precondition": "Read word at 0x20DA30F4 (udws \"udw.mem_read 2 551170292;\"). It must be a valid aligned DDR pointer. Read its first word; expected vtable 0xA05C9B90. Only then use that live pointer.",
+      "review": "A03D004A creates this mutex via A02F5ED0 and stores its handle at head+0xC. A02F5ED0 sets vtable A05C9B90. semShow requires argc=2; A03CEB8E parses hexadecimal with optional 0x; A02F5FFE calls object vtable+0xC to obtain status. The virtual call occurs before vtable classification, so guessed handles are unsafe. A valid shell mutex remains allocated for shell life."
+    },
+    {
+      "command_template": "efShow 0x<VERIFIED_LIVE_EVENT_FLAG_HANDLE>",
+      "handler": "0xa02f6715",
+      "hardware_read": false,
+      "precondition": "No verified event handle supplied by this static review. Exclude from automatic batch until a live handle and type are verified.",
+      "review": "Requires argc=2 and nonzero hex handle, then A02F61E6 ultimately enters semaphore-status logic. Event vtable is A05C9B70; do not reuse old emulator addresses."
+    }
+  ],
+  "hardware_diagnostics": [
+    {
+      "command": "ip_lhcfifo_reg",
+      "handler": "0xa01c5bc5",
+      "hardware_read": true,
+      "automatic_batch": "separate explicitly flagged hardware diagnostic, not pure RAM query",
+      "review": "Reads 16-bit MMIO BD071C18/1A, BD066404/408/402, BD073416/12/14, formats status/counters. A00292A8 briefly masks/restores interrupts around snapshot. No MMIO write or motor start call in this handler; peripheral read effects are hardware-specific."
+    },
+    {
+      "command": "ip_lhcfifo_debug",
+      "handler": "0xa01cdbf9",
+      "hardware_read": true,
+      "automatic_batch": "requires initialized pipeline context; defer pending current state validation",
+      "review": "Reads RAM rooted at 209E3F70 and 209E4074 and cached fields; also reads MMIO BD071C18/1A, BD072002/4, BD073000/2. Dereferences context at 209E3FD4 before checking null. A01CE980 is a RAM getter for 209E410C. No writes except stack in reviewed handler, but missing pipeline context can fault."
+    }
+  ],
+  "other_functions": [
+    {
+      "names": [
+        "netstat"
+      ],
+      "status": "already covered by root baseline soc/tcp/udp/arp/rte/dev queries; no new command required",
+      "handler": "0xa02ebac1"
+    },
+    {
+      "names": [
+        "ls",
+        "ll"
+      ],
+      "status": "directory listing functions; root already covers supported paths. Not additionally reviewed here."
+    },
+    {
+      "names": [
+        "udws",
+        "ludw"
+      ],
+      "status": "UDW dispatch wrappers, behavior depends on supplied commands; keep existing reviewed UDW batches."
+    },
+    {
+      "names": [
+        "help",
+        "lkup"
+      ],
+      "status": "read-only conditional listing; see discovery."
+    },
+    {
+      "names": [
+        "d"
+      ],
+      "status": "conditional memory-display function. Prefer exact one-word udw.mem_read signature above for registry extraction. d also advances its own display cursor."
+    }
+  ],
+  "excluded_from_metadata_batch": [
+    {
+      "names": [
+        "m",
+        "func_call"
+      ],
+      "reason": "Memory modification / arbitrary function dispatch; unnecessary for enumeration."
+    },
+    {
+      "names": [
+        "tps"
+      ],
+      "reason": "Sets task priority. A02F66AE requires task_name and new_priority; setter A02F6D90 is called at A02F66DC."
+    },
+    {
+      "names": [
+        "cp",
+        "dskcpy"
+      ],
+      "reason": "Copies files or directory trees; storage mutation."
+    },
+    {
+      "names": [
+        "jmpp_verbose",
+        "jmpp_terse"
+      ],
+      "reason": "Changes photo-print verbosity; not a status getter."
+    },
+    {
+      "names": [
+        "udw_tags",
+        "uart_reset"
+      ],
+      "reason": "Changes UART formatting; not a metadata getter."
+    },
+    {
+      "names": [
+        "variable = value"
+      ],
+      "reason": "Changes debug/control flags. Only bare variable names are included."
+    },
+    {
+      "names": [
+        "semShow <guessed address>",
+        "efShow <guessed address>"
+      ],
+      "reason": "Status helper makes a virtual call through the supplied object before validating object class."
+    }
+  ]
+}

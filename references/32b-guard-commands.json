@@ -1,0 +1,1246 @@
+[
+  {
+    "name": "lib_digital_sensor.clr",
+    "command": "udws \"lib_digital_sensor.clr;\"",
+    "handler": "0xa0251fdd",
+    "descriptor_address": "0xa056e91c",
+    "classification": "reviewed-empty-argument-path",
+    "purpose": "Capture the proved empty-argument path only; no operational argument coverage claimed.",
+    "side_effects_assessment": "Only stack-local computation, parser/output bookkeeping, and known-argument output. ARM/Thumb helper instructions executed with conservative tracking; no global/peripheral reads or writes, unknown calls, or unknown-state decisions admitted.",
+    "evidence": {
+      "checker": "references/check_guard_round2b.py",
+      "paths": [
+        {
+          "parser_return": 0,
+          "instructions": [
+            "0xa0251fdc: push {r4, lr}",
+            "0xa0251fde: bl #0xa0251e5e",
+            "0xa0251e5e: push {r4, lr}",
+            "0xa0251e60: sub sp, #0x2c",
+            "0xa0251e62: movs r3, #0",
+            "0xa0251e64: mvns r4, r3",
+            "0xa0251e66: str r4, [sp]",
+            "0xa0251e68: mov r2, sp",
+            "0xa0251e6a: adr r1, #0x58",
+            "0xa0251e6c: adds r0, r4, #0",
+            "0xa0251e6e: bl #0xa02c3de2",
+            "0xa0251e72: cmp r0, #1",
+            "0xa0251e74: beq #0xa0251e92",
+            "0xa0251e76: add r2, sp, #4",
+            "0xa0251e78: adr r1, #0x4c",
+            "0xa0251e7a: movs r3, #0",
+            "0xa0251e7c: mvns r0, r3",
+            "0xa0251e7e: bl #0xa02c3de2",
+            "0xa0251e82: cmp r0, #1",
+            "0xa0251e84: bne #0xa0251ed0",
+            "0xa0251ed0: adds r0, r4, #0",
+            "0xa0251ed2: add sp, #0x2c",
+            "0xa0251ed4: pop {r4, pc}",
+            "0xa0251fe2: adds r4, r0, #0",
+            "0xa0251fe4: adr r1, #0x7c",
+            "0xa0251fe6: movs r2, #0",
+            "0xa0251fe8: mvns r0, r2",
+            "0xa0251fea: bl #0xa02c3de2",
+            "0xa0251fee: adds r0, r4, #1",
+            "0xa0251ff0: beq #0xa0251ffc",
+            "0xa0251ffc: pop {r4, pc}"
+          ],
+          "calls": [
+            {
+              "at": "0xa0251fde",
+              "target": "0xa0251e5e",
+              "method": "execute helper instructions with conservative tracking"
+            },
+            {
+              "at": "0xa0251e6e",
+              "target": "0xa02c3de2"
+            },
+            {
+              "at": "0xa0251e7e",
+              "target": "0xa02c3de2"
+            },
+            {
+              "at": "0xa0251fea",
+              "target": "0xa02c3de2",
+              "method": "reviewed no-destination suppressed conversion or literal match"
+            }
+          ],
+          "outputs": [],
+          "parser_count": 3,
+          "parser_formats": [
+            "%d",
+            "%39S",
+            "%*;"
+          ],
+          "returned": true,
+          "failure": null,
+          "parser_destinations": [
+            {
+              "address": "0x7100fec8",
+              "format": "%39S",
+              "maximum_extent": 40
+            }
+          ],
+          "suppressed_conversion_evidence": [
+            {
+              "at": "0xa0251fea",
+              "format_address": "0xa0252064",
+              "format": "%*;",
+              "literal_only_branch": [
+                "0xa02c3a30",
+                "0xa02c3a34",
+                "0xa02c3a36",
+                "0xa02c3a58"
+              ],
+              "note": "*; has no percent sign: it is literal matching, not a conversion. No destination is consumed or written.",
+              "suppression_flag_set": "0xa02c3abe",
+              "conversion_selector": "0xa02c3b1c",
+              "destination_suppressed": [
+                "0xa02c3bc4",
+                "0xa02c3bc8",
+                "0xa02c3bd2"
+              ],
+              "destination_stores_skipped": [
+                "0xa02c3c58",
+                "0xa02c3c5c",
+                "0xa02c3c68",
+                "0xa02c3c6e"
+              ]
+            }
+          ]
+        },
+        {
+          "parser_return": -1,
+          "instructions": [
+            "0xa0251fdc: push {r4, lr}",
+            "0xa0251fde: bl #0xa0251e5e",
+            "0xa0251e5e: push {r4, lr}",
+            "0xa0251e60: sub sp, #0x2c",
+            "0xa0251e62: movs r3, #0",
+            "0xa0251e64: mvns r4, r3",
+            "0xa0251e66: str r4, [sp]",
+            "0xa0251e68: mov r2, sp",
+            "0xa0251e6a: adr r1, #0x58",
+            "0xa0251e6c: adds r0, r4, #0",
+            "0xa0251e6e: bl #0xa02c3de2",
+            "0xa0251e72: cmp r0, #1",
+            "0xa0251e74: beq #0xa0251e92",
+            "0xa0251e76: add r2, sp, #4",
+            "0xa0251e78: adr r1, #0x4c",
+            "0xa0251e7a: movs r3, #0",
+            "0xa0251e7c: mvns r0, r3",
+            "0xa0251e7e: bl #0xa02c3de2",
+            "0xa0251e82: cmp r0, #1",
+            "0xa0251e84: bne #0xa0251ed0",
+            "0xa0251ed0: adds r0, r4, #0",
+            "0xa0251ed2: add sp, #0x2c",
+            "0xa0251ed4: pop {r4, pc}",
+            "0xa0251fe2: adds r4, r0, #0",
+            "0xa0251fe4: adr r1, #0x7c",
+            "0xa0251fe6: movs r2, #0",
+            "0xa0251fe8: mvns r0, r2",
+            "0xa0251fea: bl #0xa02c3de2",
+            "0xa0251fee: adds r0, r4, #1",
+            "0xa0251ff0: beq #0xa0251ffc",
+            "0xa0251ffc: pop {r4, pc}"
+          ],
+          "calls": [
+            {
+              "at": "0xa0251fde",
+              "target": "0xa0251e5e",
+              "method": "execute helper instructions with conservative tracking"
+            },
+            {
+              "at": "0xa0251e6e",
+              "target": "0xa02c3de2"
+            },
+            {
+              "at": "0xa0251e7e",
+              "target": "0xa02c3de2"
+            },
+            {
+              "at": "0xa0251fea",
+              "target": "0xa02c3de2",
+              "method": "reviewed no-destination suppressed conversion or literal match"
+            }
+          ],
+          "outputs": [],
+          "parser_count": 3,
+          "parser_formats": [
+            "%d",
+            "%39S",
+            "%*;"
+          ],
+          "returned": true,
+          "failure": null,
+          "parser_destinations": [
+            {
+              "address": "0x7100fec8",
+              "format": "%39S",
+              "maximum_extent": 40
+            }
+          ],
+          "suppressed_conversion_evidence": [
+            {
+              "at": "0xa0251fea",
+              "format_address": "0xa0252064",
+              "format": "%*;",
+              "literal_only_branch": [
+                "0xa02c3a30",
+                "0xa02c3a34",
+                "0xa02c3a36",
+                "0xa02c3a58"
+              ],
+              "note": "*; has no percent sign: it is literal matching, not a conversion. No destination is consumed or written.",
+              "suppression_flag_set": "0xa02c3abe",
+              "conversion_selector": "0xa02c3b1c",
+              "destination_suppressed": [
+                "0xa02c3bc4",
+                "0xa02c3bc8",
+                "0xa02c3bd2"
+              ],
+              "destination_stores_skipped": [
+                "0xa02c3c58",
+                "0xa02c3c5c",
+                "0xa02c3c68",
+                "0xa02c3c6e"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "timeout": 20,
+    "hardware_access": false,
+    "physically_tested_by_this_review": false
+  },
+  {
+    "name": "lib_digital_sensor.set",
+    "command": "udws \"lib_digital_sensor.set;\"",
+    "handler": "0xa0251f97",
+    "descriptor_address": "0xa056e910",
+    "classification": "reviewed-empty-argument-path",
+    "purpose": "Capture the proved empty-argument path only; no operational argument coverage claimed.",
+    "side_effects_assessment": "Only stack-local computation, parser/output bookkeeping, and known-argument output. ARM/Thumb helper instructions executed with conservative tracking; no global/peripheral reads or writes, unknown calls, or unknown-state decisions admitted.",
+    "evidence": {
+      "checker": "references/check_guard_round2b.py",
+      "paths": [
+        {
+          "parser_return": 0,
+          "instructions": [
+            "0xa0251f96: push {r4, r5, lr}",
+            "0xa0251f98: sub sp, #4",
+            "0xa0251f9a: ldr r5, [pc, #0xb4]",
+            "0xa0251f9c: bl #0xa0251e5e",
+            "0xa0251e5e: push {r4, lr}",
+            "0xa0251e60: sub sp, #0x2c",
+            "0xa0251e62: movs r3, #0",
+            "0xa0251e64: mvns r4, r3",
+            "0xa0251e66: str r4, [sp]",
+            "0xa0251e68: mov r2, sp",
+            "0xa0251e6a: adr r1, #0x58",
+            "0xa0251e6c: adds r0, r4, #0",
+            "0xa0251e6e: bl #0xa02c3de2",
+            "0xa0251e72: cmp r0, #1",
+            "0xa0251e74: beq #0xa0251e92",
+            "0xa0251e76: add r2, sp, #4",
+            "0xa0251e78: adr r1, #0x4c",
+            "0xa0251e7a: movs r3, #0",
+            "0xa0251e7c: mvns r0, r3",
+            "0xa0251e7e: bl #0xa02c3de2",
+            "0xa0251e82: cmp r0, #1",
+            "0xa0251e84: bne #0xa0251ed0",
+            "0xa0251ed0: adds r0, r4, #0",
+            "0xa0251ed2: add sp, #0x2c",
+            "0xa0251ed4: pop {r4, pc}",
+            "0xa0251fa0: adds r4, r0, #0",
+            "0xa0251fa2: adds r0, r4, #1",
+            "0xa0251fa4: beq #0xa0251fce",
+            "0xa0251fce: adr r1, #0x94",
+            "0xa0251fd0: movs r2, #0",
+            "0xa0251fd2: mvns r0, r2",
+            "0xa0251fd4: bl #0xa02c3de2",
+            "0xa0251fd8: add sp, #4",
+            "0xa0251fda: pop {r4, r5, pc}"
+          ],
+          "calls": [
+            {
+              "at": "0xa0251f9c",
+              "target": "0xa0251e5e",
+              "method": "execute helper instructions with conservative tracking"
+            },
+            {
+              "at": "0xa0251e6e",
+              "target": "0xa02c3de2"
+            },
+            {
+              "at": "0xa0251e7e",
+              "target": "0xa02c3de2"
+            },
+            {
+              "at": "0xa0251fd4",
+              "target": "0xa02c3de2",
+              "method": "reviewed no-destination suppressed conversion or literal match"
+            }
+          ],
+          "outputs": [],
+          "parser_count": 3,
+          "parser_formats": [
+            "%d",
+            "%39S",
+            "%*;"
+          ],
+          "returned": true,
+          "failure": null,
+          "parser_destinations": [
+            {
+              "address": "0x7100fec0",
+              "format": "%39S",
+              "maximum_extent": 40
+            }
+          ],
+          "suppressed_conversion_evidence": [
+            {
+              "at": "0xa0251fd4",
+              "format_address": "0xa0252064",
+              "format": "%*;",
+              "literal_only_branch": [
+                "0xa02c3a30",
+                "0xa02c3a34",
+                "0xa02c3a36",
+                "0xa02c3a58"
+              ],
+              "note": "*; has no percent sign: it is literal matching, not a conversion. No destination is consumed or written.",
+              "suppression_flag_set": "0xa02c3abe",
+              "conversion_selector": "0xa02c3b1c",
+              "destination_suppressed": [
+                "0xa02c3bc4",
+                "0xa02c3bc8",
+                "0xa02c3bd2"
+              ],
+              "destination_stores_skipped": [
+                "0xa02c3c58",
+                "0xa02c3c5c",
+                "0xa02c3c68",
+                "0xa02c3c6e"
+              ]
+            }
+          ]
+        },
+        {
+          "parser_return": -1,
+          "instructions": [
+            "0xa0251f96: push {r4, r5, lr}",
+            "0xa0251f98: sub sp, #4",
+            "0xa0251f9a: ldr r5, [pc, #0xb4]",
+            "0xa0251f9c: bl #0xa0251e5e",
+            "0xa0251e5e: push {r4, lr}",
+            "0xa0251e60: sub sp, #0x2c",
+            "0xa0251e62: movs r3, #0",
+            "0xa0251e64: mvns r4, r3",
+            "0xa0251e66: str r4, [sp]",
+            "0xa0251e68: mov r2, sp",
+            "0xa0251e6a: adr r1, #0x58",
+            "0xa0251e6c: adds r0, r4, #0",
+            "0xa0251e6e: bl #0xa02c3de2",
+            "0xa0251e72: cmp r0, #1",
+            "0xa0251e74: beq #0xa0251e92",
+            "0xa0251e76: add r2, sp, #4",
+            "0xa0251e78: adr r1, #0x4c",
+            "0xa0251e7a: movs r3, #0",
+            "0xa0251e7c: mvns r0, r3",
+            "0xa0251e7e: bl #0xa02c3de2",
+            "0xa0251e82: cmp r0, #1",
+            "0xa0251e84: bne #0xa0251ed0",
+            "0xa0251ed0: adds r0, r4, #0",
+            "0xa0251ed2: add sp, #0x2c",
+            "0xa0251ed4: pop {r4, pc}",
+            "0xa0251fa0: adds r4, r0, #0",
+            "0xa0251fa2: adds r0, r4, #1",
+            "0xa0251fa4: beq #0xa0251fce",
+            "0xa0251fce: adr r1, #0x94",
+            "0xa0251fd0: movs r2, #0",
+            "0xa0251fd2: mvns r0, r2",
+            "0xa0251fd4: bl #0xa02c3de2",
+            "0xa0251fd8: add sp, #4",
+            "0xa0251fda: pop {r4, r5, pc}"
+          ],
+          "calls": [
+            {
+              "at": "0xa0251f9c",
+              "target": "0xa0251e5e",
+              "method": "execute helper instructions with conservative tracking"
+            },
+            {
+              "at": "0xa0251e6e",
+              "target": "0xa02c3de2"
+            },
+            {
+              "at": "0xa0251e7e",
+              "target": "0xa02c3de2"
+            },
+            {
+              "at": "0xa0251fd4",
+              "target": "0xa02c3de2",
+              "method": "reviewed no-destination suppressed conversion or literal match"
+            }
+          ],
+          "outputs": [],
+          "parser_count": 3,
+          "parser_formats": [
+            "%d",
+            "%39S",
+            "%*;"
+          ],
+          "returned": true,
+          "failure": null,
+          "parser_destinations": [
+            {
+              "address": "0x7100fec0",
+              "format": "%39S",
+              "maximum_extent": 40
+            }
+          ],
+          "suppressed_conversion_evidence": [
+            {
+              "at": "0xa0251fd4",
+              "format_address": "0xa0252064",
+              "format": "%*;",
+              "literal_only_branch": [
+                "0xa02c3a30",
+                "0xa02c3a34",
+                "0xa02c3a36",
+                "0xa02c3a58"
+              ],
+              "note": "*; has no percent sign: it is literal matching, not a conversion. No destination is consumed or written.",
+              "suppression_flag_set": "0xa02c3abe",
+              "conversion_selector": "0xa02c3b1c",
+              "destination_suppressed": [
+                "0xa02c3bc4",
+                "0xa02c3bc8",
+                "0xa02c3bd2"
+              ],
+              "destination_stores_skipped": [
+                "0xa02c3c58",
+                "0xa02c3c5c",
+                "0xa02c3c68",
+                "0xa02c3c6e"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "timeout": 20,
+    "hardware_access": false,
+    "physically_tested_by_this_review": false
+  },
+  {
+    "name": "pe_digital_sensor.clr",
+    "command": "udws \"pe_digital_sensor.clr;\"",
+    "handler": "0xa0306285",
+    "descriptor_address": "0xa05cd998",
+    "classification": "reviewed-empty-argument-path",
+    "purpose": "Capture the proved empty-argument path only; no operational argument coverage claimed.",
+    "side_effects_assessment": "Only stack-local computation, parser/output bookkeeping, and known-argument output. ARM/Thumb helper instructions executed with conservative tracking; no global/peripheral reads or writes, unknown calls, or unknown-state decisions admitted.",
+    "evidence": {
+      "checker": "references/check_guard_round2b.py",
+      "paths": [
+        {
+          "parser_return": 0,
+          "instructions": [
+            "0xa0306284: push {r4, lr}",
+            "0xa0306286: bl #0xa03061f2",
+            "0xa03061f2: push {r4, lr}",
+            "0xa03061f4: sub sp, #0x2c",
+            "0xa03061f6: movs r3, #0",
+            "0xa03061f8: mvns r4, r3",
+            "0xa03061fa: str r4, [sp]",
+            "0xa03061fc: mov r2, sp",
+            "0xa03061fe: adr r1, #0x208",
+            "0xa0306200: adds r0, r4, #0",
+            "0xa0306202: bl #0xa02c3de2",
+            "0xa0306206: cmp r0, #1",
+            "0xa0306208: beq #0xa0306226",
+            "0xa030620a: add r2, sp, #4",
+            "0xa030620c: adr r1, #0x1fc",
+            "0xa030620e: movs r3, #0",
+            "0xa0306210: mvns r0, r3",
+            "0xa0306212: bl #0xa02c3de2",
+            "0xa0306216: cmp r0, #1",
+            "0xa0306218: bne #0xa030622c",
+            "0xa030622c: adds r0, r4, #0",
+            "0xa030622e: add sp, #0x2c",
+            "0xa0306230: pop {r4, pc}",
+            "0xa030628a: adds r4, r0, #0",
+            "0xa030628c: adr r1, #0x18c",
+            "0xa030628e: movs r2, #0",
+            "0xa0306290: mvns r0, r2",
+            "0xa0306292: bl #0xa02c3de2",
+            "0xa0306296: adds r0, r4, #1",
+            "0xa0306298: beq #0xa03062b6",
+            "0xa03062b6: pop {r4, pc}"
+          ],
+          "calls": [
+            {
+              "at": "0xa0306286",
+              "target": "0xa03061f2",
+              "method": "execute helper instructions with conservative tracking"
+            },
+            {
+              "at": "0xa0306202",
+              "target": "0xa02c3de2"
+            },
+            {
+              "at": "0xa0306212",
+              "target": "0xa02c3de2"
+            },
+            {
+              "at": "0xa0306292",
+              "target": "0xa02c3de2",
+              "method": "reviewed no-destination suppressed conversion or literal match"
+            }
+          ],
+          "outputs": [],
+          "parser_count": 3,
+          "parser_formats": [
+            "%d",
+            "%39S",
+            "*;"
+          ],
+          "returned": true,
+          "failure": null,
+          "parser_destinations": [
+            {
+              "address": "0x7100fec8",
+              "format": "%39S",
+              "maximum_extent": 40
+            }
+          ],
+          "suppressed_conversion_evidence": [
+            {
+              "at": "0xa0306292",
+              "format_address": "0xa030641c",
+              "format": "*;",
+              "literal_only_branch": [
+                "0xa02c3a30",
+                "0xa02c3a34",
+                "0xa02c3a36",
+                "0xa02c3a58"
+              ],
+              "note": "*; has no percent sign: it is literal matching, not a conversion. No destination is consumed or written.",
+              "suppression_flag_set": "0xa02c3abe",
+              "conversion_selector": "0xa02c3b1c",
+              "destination_suppressed": [
+                "0xa02c3bc4",
+                "0xa02c3bc8",
+                "0xa02c3bd2"
+              ],
+              "destination_stores_skipped": [
+                "0xa02c3c58",
+                "0xa02c3c5c",
+                "0xa02c3c68",
+                "0xa02c3c6e"
+              ]
+            }
+          ]
+        },
+        {
+          "parser_return": -1,
+          "instructions": [
+            "0xa0306284: push {r4, lr}",
+            "0xa0306286: bl #0xa03061f2",
+            "0xa03061f2: push {r4, lr}",
+            "0xa03061f4: sub sp, #0x2c",
+            "0xa03061f6: movs r3, #0",
+            "0xa03061f8: mvns r4, r3",
+            "0xa03061fa: str r4, [sp]",
+            "0xa03061fc: mov r2, sp",
+            "0xa03061fe: adr r1, #0x208",
+            "0xa0306200: adds r0, r4, #0",
+            "0xa0306202: bl #0xa02c3de2",
+            "0xa0306206: cmp r0, #1",
+            "0xa0306208: beq #0xa0306226",
+            "0xa030620a: add r2, sp, #4",
+            "0xa030620c: adr r1, #0x1fc",
+            "0xa030620e: movs r3, #0",
+            "0xa0306210: mvns r0, r3",
+            "0xa0306212: bl #0xa02c3de2",
+            "0xa0306216: cmp r0, #1",
+            "0xa0306218: bne #0xa030622c",
+            "0xa030622c: adds r0, r4, #0",
+            "0xa030622e: add sp, #0x2c",
+            "0xa0306230: pop {r4, pc}",
+            "0xa030628a: adds r4, r0, #0",
+            "0xa030628c: adr r1, #0x18c",
+            "0xa030628e: movs r2, #0",
+            "0xa0306290: mvns r0, r2",
+            "0xa0306292: bl #0xa02c3de2",
+            "0xa0306296: adds r0, r4, #1",
+            "0xa0306298: beq #0xa03062b6",
+            "0xa03062b6: pop {r4, pc}"
+          ],
+          "calls": [
+            {
+              "at": "0xa0306286",
+              "target": "0xa03061f2",
+              "method": "execute helper instructions with conservative tracking"
+            },
+            {
+              "at": "0xa0306202",
+              "target": "0xa02c3de2"
+            },
+            {
+              "at": "0xa0306212",
+              "target": "0xa02c3de2"
+            },
+            {
+              "at": "0xa0306292",
+              "target": "0xa02c3de2",
+              "method": "reviewed no-destination suppressed conversion or literal match"
+            }
+          ],
+          "outputs": [],
+          "parser_count": 3,
+          "parser_formats": [
+            "%d",
+            "%39S",
+            "*;"
+          ],
+          "returned": true,
+          "failure": null,
+          "parser_destinations": [
+            {
+              "address": "0x7100fec8",
+              "format": "%39S",
+              "maximum_extent": 40
+            }
+          ],
+          "suppressed_conversion_evidence": [
+            {
+              "at": "0xa0306292",
+              "format_address": "0xa030641c",
+              "format": "*;",
+              "literal_only_branch": [
+                "0xa02c3a30",
+                "0xa02c3a34",
+                "0xa02c3a36",
+                "0xa02c3a58"
+              ],
+              "note": "*; has no percent sign: it is literal matching, not a conversion. No destination is consumed or written.",
+              "suppression_flag_set": "0xa02c3abe",
+              "conversion_selector": "0xa02c3b1c",
+              "destination_suppressed": [
+                "0xa02c3bc4",
+                "0xa02c3bc8",
+                "0xa02c3bd2"
+              ],
+              "destination_stores_skipped": [
+                "0xa02c3c58",
+                "0xa02c3c5c",
+                "0xa02c3c68",
+                "0xa02c3c6e"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "timeout": 20,
+    "hardware_access": false,
+    "physically_tested_by_this_review": false
+  },
+  {
+    "name": "pe_digital_sensor.get",
+    "command": "udws \"pe_digital_sensor.get;\"",
+    "handler": "0xa03062b9",
+    "descriptor_address": "0xa05cd9a4",
+    "classification": "reviewed-empty-argument-path",
+    "purpose": "Capture the proved empty-argument path only; no operational argument coverage claimed.",
+    "side_effects_assessment": "Only stack-local computation, parser/output bookkeeping, and known-argument output. ARM/Thumb helper instructions executed with conservative tracking; no global/peripheral reads or writes, unknown calls, or unknown-state decisions admitted.",
+    "evidence": {
+      "checker": "references/check_guard_round2b.py",
+      "paths": [
+        {
+          "parser_return": 0,
+          "instructions": [
+            "0xa03062b8: push {r4, r5, r6, lr}",
+            "0xa03062ba: ldr r4, [pc, #0x158]",
+            "0xa03062bc: bl #0xa03061f2",
+            "0xa03061f2: push {r4, lr}",
+            "0xa03061f4: sub sp, #0x2c",
+            "0xa03061f6: movs r3, #0",
+            "0xa03061f8: mvns r4, r3",
+            "0xa03061fa: str r4, [sp]",
+            "0xa03061fc: mov r2, sp",
+            "0xa03061fe: adr r1, #0x208",
+            "0xa0306200: adds r0, r4, #0",
+            "0xa0306202: bl #0xa02c3de2",
+            "0xa0306206: cmp r0, #1",
+            "0xa0306208: beq #0xa0306226",
+            "0xa030620a: add r2, sp, #4",
+            "0xa030620c: adr r1, #0x1fc",
+            "0xa030620e: movs r3, #0",
+            "0xa0306210: mvns r0, r3",
+            "0xa0306212: bl #0xa02c3de2",
+            "0xa0306216: cmp r0, #1",
+            "0xa0306218: bne #0xa030622c",
+            "0xa030622c: adds r0, r4, #0",
+            "0xa030622e: add sp, #0x2c",
+            "0xa0306230: pop {r4, pc}",
+            "0xa03062c0: adds r5, r0, #0",
+            "0xa03062c2: movs r2, #0",
+            "0xa03062c4: mvns r6, r2",
+            "0xa03062c6: adr r1, #0x154",
+            "0xa03062c8: adds r0, r6, #0",
+            "0xa03062ca: bl #0xa02c3de2",
+            "0xa03062ce: adds r0, r5, #1",
+            "0xa03062d0: beq #0xa03062e2",
+            "0xa03062e2: movs r3, #0x3b",
+            "0xa03062e4: adds r2, r6, #0",
+            "0xa03062e6: adr r1, #0x138",
+            "0xa03062e8: movs r5, #0",
+            "0xa03062ea: mvns r0, r5",
+            "0xa03062ec: bl #0xa02c37be",
+            "0xa03062f0: pop {r4, r5, r6, pc}"
+          ],
+          "calls": [
+            {
+              "at": "0xa03062bc",
+              "target": "0xa03061f2",
+              "method": "execute helper instructions with conservative tracking"
+            },
+            {
+              "at": "0xa0306202",
+              "target": "0xa02c3de2"
+            },
+            {
+              "at": "0xa0306212",
+              "target": "0xa02c3de2"
+            },
+            {
+              "at": "0xa03062ca",
+              "target": "0xa02c3de2",
+              "method": "reviewed no-destination suppressed conversion or literal match"
+            },
+            {
+              "at": "0xa03062ec",
+              "target": "0xa02c37be"
+            }
+          ],
+          "outputs": [
+            {
+              "at": "0xa03062ec",
+              "format_address": "0xa0306420",
+              "text": "%d%c"
+            }
+          ],
+          "parser_count": 3,
+          "parser_formats": [
+            "%d",
+            "%39S",
+            "*;"
+          ],
+          "returned": true,
+          "failure": null,
+          "parser_destinations": [
+            {
+              "address": "0x7100fec0",
+              "format": "%39S",
+              "maximum_extent": 40
+            }
+          ],
+          "suppressed_conversion_evidence": [
+            {
+              "at": "0xa03062ca",
+              "format_address": "0xa030641c",
+              "format": "*;",
+              "literal_only_branch": [
+                "0xa02c3a30",
+                "0xa02c3a34",
+                "0xa02c3a36",
+                "0xa02c3a58"
+              ],
+              "note": "*; has no percent sign: it is literal matching, not a conversion. No destination is consumed or written.",
+              "suppression_flag_set": "0xa02c3abe",
+              "conversion_selector": "0xa02c3b1c",
+              "destination_suppressed": [
+                "0xa02c3bc4",
+                "0xa02c3bc8",
+                "0xa02c3bd2"
+              ],
+              "destination_stores_skipped": [
+                "0xa02c3c58",
+                "0xa02c3c5c",
+                "0xa02c3c68",
+                "0xa02c3c6e"
+              ]
+            }
+          ]
+        },
+        {
+          "parser_return": -1,
+          "instructions": [
+            "0xa03062b8: push {r4, r5, r6, lr}",
+            "0xa03062ba: ldr r4, [pc, #0x158]",
+            "0xa03062bc: bl #0xa03061f2",
+            "0xa03061f2: push {r4, lr}",
+            "0xa03061f4: sub sp, #0x2c",
+            "0xa03061f6: movs r3, #0",
+            "0xa03061f8: mvns r4, r3",
+            "0xa03061fa: str r4, [sp]",
+            "0xa03061fc: mov r2, sp",
+            "0xa03061fe: adr r1, #0x208",
+            "0xa0306200: adds r0, r4, #0",
+            "0xa0306202: bl #0xa02c3de2",
+            "0xa0306206: cmp r0, #1",
+            "0xa0306208: beq #0xa0306226",
+            "0xa030620a: add r2, sp, #4",
+            "0xa030620c: adr r1, #0x1fc",
+            "0xa030620e: movs r3, #0",
+            "0xa0306210: mvns r0, r3",
+            "0xa0306212: bl #0xa02c3de2",
+            "0xa0306216: cmp r0, #1",
+            "0xa0306218: bne #0xa030622c",
+            "0xa030622c: adds r0, r4, #0",
+            "0xa030622e: add sp, #0x2c",
+            "0xa0306230: pop {r4, pc}",
+            "0xa03062c0: adds r5, r0, #0",
+            "0xa03062c2: movs r2, #0",
+            "0xa03062c4: mvns r6, r2",
+            "0xa03062c6: adr r1, #0x154",
+            "0xa03062c8: adds r0, r6, #0",
+            "0xa03062ca: bl #0xa02c3de2",
+            "0xa03062ce: adds r0, r5, #1",
+            "0xa03062d0: beq #0xa03062e2",
+            "0xa03062e2: movs r3, #0x3b",
+            "0xa03062e4: adds r2, r6, #0",
+            "0xa03062e6: adr r1, #0x138",
+            "0xa03062e8: movs r5, #0",
+            "0xa03062ea: mvns r0, r5",
+            "0xa03062ec: bl #0xa02c37be",
+            "0xa03062f0: pop {r4, r5, r6, pc}"
+          ],
+          "calls": [
+            {
+              "at": "0xa03062bc",
+              "target": "0xa03061f2",
+              "method": "execute helper instructions with conservative tracking"
+            },
+            {
+              "at": "0xa0306202",
+              "target": "0xa02c3de2"
+            },
+            {
+              "at": "0xa0306212",
+              "target": "0xa02c3de2"
+            },
+            {
+              "at": "0xa03062ca",
+              "target": "0xa02c3de2",
+              "method": "reviewed no-destination suppressed conversion or literal match"
+            },
+            {
+              "at": "0xa03062ec",
+              "target": "0xa02c37be"
+            }
+          ],
+          "outputs": [
+            {
+              "at": "0xa03062ec",
+              "format_address": "0xa0306420",
+              "text": "%d%c"
+            }
+          ],
+          "parser_count": 3,
+          "parser_formats": [
+            "%d",
+            "%39S",
+            "*;"
+          ],
+          "returned": true,
+          "failure": null,
+          "parser_destinations": [
+            {
+              "address": "0x7100fec0",
+              "format": "%39S",
+              "maximum_extent": 40
+            }
+          ],
+          "suppressed_conversion_evidence": [
+            {
+              "at": "0xa03062ca",
+              "format_address": "0xa030641c",
+              "format": "*;",
+              "literal_only_branch": [
+                "0xa02c3a30",
+                "0xa02c3a34",
+                "0xa02c3a36",
+                "0xa02c3a58"
+              ],
+              "note": "*; has no percent sign: it is literal matching, not a conversion. No destination is consumed or written.",
+              "suppression_flag_set": "0xa02c3abe",
+              "conversion_selector": "0xa02c3b1c",
+              "destination_suppressed": [
+                "0xa02c3bc4",
+                "0xa02c3bc8",
+                "0xa02c3bd2"
+              ],
+              "destination_stores_skipped": [
+                "0xa02c3c58",
+                "0xa02c3c5c",
+                "0xa02c3c68",
+                "0xa02c3c6e"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "timeout": 20,
+    "hardware_access": false,
+    "physically_tested_by_this_review": false
+  },
+  {
+    "name": "pe_digital_sensor.set",
+    "command": "udws \"pe_digital_sensor.set;\"",
+    "handler": "0xa0306233",
+    "descriptor_address": "0xa05cd98c",
+    "classification": "reviewed-empty-argument-path",
+    "purpose": "Capture the proved empty-argument path only; no operational argument coverage claimed.",
+    "side_effects_assessment": "Only stack-local computation, parser/output bookkeeping, and known-argument output. ARM/Thumb helper instructions executed with conservative tracking; no global/peripheral reads or writes, unknown calls, or unknown-state decisions admitted.",
+    "evidence": {
+      "checker": "references/check_guard_round2b.py",
+      "paths": [
+        {
+          "parser_return": 0,
+          "instructions": [
+            "0xa0306232: push {r4, r5, lr}",
+            "0xa0306234: sub sp, #4",
+            "0xa0306236: ldr r5, [pc, #0x1dc]",
+            "0xa0306238: bl #0xa03061f2",
+            "0xa03061f2: push {r4, lr}",
+            "0xa03061f4: sub sp, #0x2c",
+            "0xa03061f6: movs r3, #0",
+            "0xa03061f8: mvns r4, r3",
+            "0xa03061fa: str r4, [sp]",
+            "0xa03061fc: mov r2, sp",
+            "0xa03061fe: adr r1, #0x208",
+            "0xa0306200: adds r0, r4, #0",
+            "0xa0306202: bl #0xa02c3de2",
+            "0xa0306206: cmp r0, #1",
+            "0xa0306208: beq #0xa0306226",
+            "0xa030620a: add r2, sp, #4",
+            "0xa030620c: adr r1, #0x1fc",
+            "0xa030620e: movs r3, #0",
+            "0xa0306210: mvns r0, r3",
+            "0xa0306212: bl #0xa02c3de2",
+            "0xa0306216: cmp r0, #1",
+            "0xa0306218: bne #0xa030622c",
+            "0xa030622c: adds r0, r4, #0",
+            "0xa030622e: add sp, #0x2c",
+            "0xa0306230: pop {r4, pc}",
+            "0xa030623c: adds r4, r0, #0",
+            "0xa030623e: adds r0, r4, #1",
+            "0xa0306240: beq #0xa0306276",
+            "0xa0306276: adr r1, #0x1a4",
+            "0xa0306278: movs r2, #0",
+            "0xa030627a: mvns r0, r2",
+            "0xa030627c: bl #0xa02c3de2",
+            "0xa0306280: add sp, #4",
+            "0xa0306282: pop {r4, r5, pc}"
+          ],
+          "calls": [
+            {
+              "at": "0xa0306238",
+              "target": "0xa03061f2",
+              "method": "execute helper instructions with conservative tracking"
+            },
+            {
+              "at": "0xa0306202",
+              "target": "0xa02c3de2"
+            },
+            {
+              "at": "0xa0306212",
+              "target": "0xa02c3de2"
+            },
+            {
+              "at": "0xa030627c",
+              "target": "0xa02c3de2",
+              "method": "reviewed no-destination suppressed conversion or literal match"
+            }
+          ],
+          "outputs": [],
+          "parser_count": 3,
+          "parser_formats": [
+            "%d",
+            "%39S",
+            "*;"
+          ],
+          "returned": true,
+          "failure": null,
+          "parser_destinations": [
+            {
+              "address": "0x7100fec0",
+              "format": "%39S",
+              "maximum_extent": 40
+            }
+          ],
+          "suppressed_conversion_evidence": [
+            {
+              "at": "0xa030627c",
+              "format_address": "0xa030641c",
+              "format": "*;",
+              "literal_only_branch": [
+                "0xa02c3a30",
+                "0xa02c3a34",
+                "0xa02c3a36",
+                "0xa02c3a58"
+              ],
+              "note": "*; has no percent sign: it is literal matching, not a conversion. No destination is consumed or written.",
+              "suppression_flag_set": "0xa02c3abe",
+              "conversion_selector": "0xa02c3b1c",
+              "destination_suppressed": [
+                "0xa02c3bc4",
+                "0xa02c3bc8",
+                "0xa02c3bd2"
+              ],
+              "destination_stores_skipped": [
+                "0xa02c3c58",
+                "0xa02c3c5c",
+                "0xa02c3c68",
+                "0xa02c3c6e"
+              ]
+            }
+          ]
+        },
+        {
+          "parser_return": -1,
+          "instructions": [
+            "0xa0306232: push {r4, r5, lr}",
+            "0xa0306234: sub sp, #4",
+            "0xa0306236: ldr r5, [pc, #0x1dc]",
+            "0xa0306238: bl #0xa03061f2",
+            "0xa03061f2: push {r4, lr}",
+            "0xa03061f4: sub sp, #0x2c",
+            "0xa03061f6: movs r3, #0",
+            "0xa03061f8: mvns r4, r3",
+            "0xa03061fa: str r4, [sp]",
+            "0xa03061fc: mov r2, sp",
+            "0xa03061fe: adr r1, #0x208",
+            "0xa0306200: adds r0, r4, #0",
+            "0xa0306202: bl #0xa02c3de2",
+            "0xa0306206: cmp r0, #1",
+            "0xa0306208: beq #0xa0306226",
+            "0xa030620a: add r2, sp, #4",
+            "0xa030620c: adr r1, #0x1fc",
+            "0xa030620e: movs r3, #0",
+            "0xa0306210: mvns r0, r3",
+            "0xa0306212: bl #0xa02c3de2",
+            "0xa0306216: cmp r0, #1",
+            "0xa0306218: bne #0xa030622c",
+            "0xa030622c: adds r0, r4, #0",
+            "0xa030622e: add sp, #0x2c",
+            "0xa0306230: pop {r4, pc}",
+            "0xa030623c: adds r4, r0, #0",
+            "0xa030623e: adds r0, r4, #1",
+            "0xa0306240: beq #0xa0306276",
+            "0xa0306276: adr r1, #0x1a4",
+            "0xa0306278: movs r2, #0",
+            "0xa030627a: mvns r0, r2",
+            "0xa030627c: bl #0xa02c3de2",
+            "0xa0306280: add sp, #4",
+            "0xa0306282: pop {r4, r5, pc}"
+          ],
+          "calls": [
+            {
+              "at": "0xa0306238",
+              "target": "0xa03061f2",
+              "method": "execute helper instructions with conservative tracking"
+            },
+            {
+              "at": "0xa0306202",
+              "target": "0xa02c3de2"
+            },
+            {
+              "at": "0xa0306212",
+              "target": "0xa02c3de2"
+            },
+            {
+              "at": "0xa030627c",
+              "target": "0xa02c3de2",
+              "method": "reviewed no-destination suppressed conversion or literal match"
+            }
+          ],
+          "outputs": [],
+          "parser_count": 3,
+          "parser_formats": [
+            "%d",
+            "%39S",
+            "*;"
+          ],
+          "returned": true,
+          "failure": null,
+          "parser_destinations": [
+            {
+              "address": "0x7100fec0",
+              "format": "%39S",
+              "maximum_extent": 40
+            }
+          ],
+          "suppressed_conversion_evidence": [
+            {
+              "at": "0xa030627c",
+              "format_address": "0xa030641c",
+              "format": "*;",
+              "literal_only_branch": [
+                "0xa02c3a30",
+                "0xa02c3a34",
+                "0xa02c3a36",
+                "0xa02c3a58"
+              ],
+              "note": "*; has no percent sign: it is literal matching, not a conversion. No destination is consumed or written.",
+              "suppression_flag_set": "0xa02c3abe",
+              "conversion_selector": "0xa02c3b1c",
+              "destination_suppressed": [
+                "0xa02c3bc4",
+                "0xa02c3bc8",
+                "0xa02c3bd2"
+              ],
+              "destination_stores_skipped": [
+                "0xa02c3c58",
+                "0xa02c3c5c",
+                "0xa02c3c68",
+                "0xa02c3c6e"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "timeout": 20,
+    "hardware_access": false,
+    "physically_tested_by_this_review": false
+  },
+  {
+    "name": "udw.com",
+    "command": "udws \"udw.com;\"",
+    "handler": "0xa02c3f91",
+    "descriptor_address": "0xa05bc700",
+    "classification": "reviewed-empty-argument-path",
+    "purpose": "Capture the proved empty-argument path only; no operational argument coverage claimed.",
+    "side_effects_assessment": "Only stack-local computation, parser/output bookkeeping, and known-argument output. ARM/Thumb helper instructions executed with conservative tracking; no global/peripheral reads or writes, unknown calls, or unknown-state decisions admitted.",
+    "evidence": {
+      "checker": "references/check_guard_round2b.py",
+      "paths": [
+        {
+          "parser_return": 0,
+          "instructions": [
+            "0xa02c3f90: push {lr}",
+            "0xa02c3f92: adr r1, #0x1bc",
+            "0xa02c3f94: movs r2, #0",
+            "0xa02c3f96: mvns r0, r2",
+            "0xa02c3f98: bl #0xa02c3de2",
+            "0xa02c3f9c: pop {pc}"
+          ],
+          "calls": [
+            {
+              "at": "0xa02c3f98",
+              "target": "0xa02c3de2",
+              "method": "reviewed no-destination suppressed conversion or literal match"
+            }
+          ],
+          "outputs": [],
+          "parser_count": 1,
+          "parser_formats": [
+            "%*;"
+          ],
+          "returned": true,
+          "failure": null,
+          "suppressed_conversion_evidence": [
+            {
+              "at": "0xa02c3f98",
+              "format_address": "0xa02c4150",
+              "format": "%*;",
+              "literal_only_branch": [
+                "0xa02c3a30",
+                "0xa02c3a34",
+                "0xa02c3a36",
+                "0xa02c3a58"
+              ],
+              "note": "*; has no percent sign: it is literal matching, not a conversion. No destination is consumed or written.",
+              "suppression_flag_set": "0xa02c3abe",
+              "conversion_selector": "0xa02c3b1c",
+              "destination_suppressed": [
+                "0xa02c3bc4",
+                "0xa02c3bc8",
+                "0xa02c3bd2"
+              ],
+              "destination_stores_skipped": [
+                "0xa02c3c58",
+                "0xa02c3c5c",
+                "0xa02c3c68",
+                "0xa02c3c6e"
+              ]
+            }
+          ]
+        },
+        {
+          "parser_return": -1,
+          "instructions": [
+            "0xa02c3f90: push {lr}",
+            "0xa02c3f92: adr r1, #0x1bc",
+            "0xa02c3f94: movs r2, #0",
+            "0xa02c3f96: mvns r0, r2",
+            "0xa02c3f98: bl #0xa02c3de2",
+            "0xa02c3f9c: pop {pc}"
+          ],
+          "calls": [
+            {
+              "at": "0xa02c3f98",
+              "target": "0xa02c3de2",
+              "method": "reviewed no-destination suppressed conversion or literal match"
+            }
+          ],
+          "outputs": [],
+          "parser_count": 1,
+          "parser_formats": [
+            "%*;"
+          ],
+          "returned": true,
+          "failure": null,
+          "suppressed_conversion_evidence": [
+            {
+              "at": "0xa02c3f98",
+              "format_address": "0xa02c4150",
+              "format": "%*;",
+              "literal_only_branch": [
+                "0xa02c3a30",
+                "0xa02c3a34",
+                "0xa02c3a36",
+                "0xa02c3a58"
+              ],
+              "note": "*; has no percent sign: it is literal matching, not a conversion. No destination is consumed or written.",
+              "suppression_flag_set": "0xa02c3abe",
+              "conversion_selector": "0xa02c3b1c",
+              "destination_suppressed": [
+                "0xa02c3bc4",
+                "0xa02c3bc8",
+                "0xa02c3bd2"
+              ],
+              "destination_stores_skipped": [
+                "0xa02c3c58",
+                "0xa02c3c5c",
+                "0xa02c3c68",
+                "0xa02c3c6e"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "timeout": 20,
+    "hardware_access": false,
+    "physically_tested_by_this_review": false
+  }
+]

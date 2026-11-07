@@ -1,0 +1,911 @@
+{
+  "serial_access": false,
+  "response_revalidations": [
+    {
+      "response_file": "physical-57-provider-pointers/0006-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "d9e28605ecd6861603e7359a1da2d3aee99880cd5406d4a73019025d6f78e8ff",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-57-provider-pointers/0015-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "1610aac7933c5e6dfa5b788ed48a78909c40dae19b1b7fe6ca81ff390447e5fc",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-57-provider-pointers/0024-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "b48b10f1e703c87a6e605a003b0b7fe52d5dda87a017db21769ee5d08a4d9faa",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-57-provider-pointers/0033-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "21ae7cee77d0efb9545ac1d95fe5827216f4e06608d6495ebe32d9339799224b",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-57-provider-pointers/0042-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "f32a1deca793cb426be018a6129409c1a641659f4760714b5755616548e09a95",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-57-provider-pointers/0051-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "dc46789a2ec81e6b80bcd807bdf49612c9611b2ac66fa0710c298d5d6433cc81",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0006-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "d9e28605ecd6861603e7359a1da2d3aee99880cd5406d4a73019025d6f78e8ff",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0015-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "1610aac7933c5e6dfa5b788ed48a78909c40dae19b1b7fe6ca81ff390447e5fc",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0024-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "b48b10f1e703c87a6e605a003b0b7fe52d5dda87a017db21769ee5d08a4d9faa",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0033-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "673fac89ba341afb16238aa450af37252d6f5cf5e971fef4a93964fe4fc8b4f0",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0042-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "95818bf79cdc5ce18d720f2a8486e3b39b8379f95a83c58d930491639ead5d16",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0051-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "bd6855f97b58aea9e90f3e7146b89d9f4fbc6bcc41ca62244c00d20e2fbbc09b",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0060-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "4f4b209d52a6b909595773526f042c14ddf0e3be966cedbe9be4dfa8992a8162",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0069-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "bd1b240d3e59a938386197c9e9164d69193bd5e4f01f7fce3afa4d8c171acf2a",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0078-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "ef0217b25daf6a108620756b16f5b58948858420e940125050b5e7cdb61b96a8",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0087-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "9de19ecb22f1bfc0493fa45e44091f190ba8099e02c8284112b42359d4c790cc",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0096-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "80951c3c86597b588a4a4ea597be5535e103323d340f94a91232d7ea506fa2a3",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0105-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "2712edb9fbc279148a77b8b21d8666000f53baba125c74c49d3158e736bdc551",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0114-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "f328fa2df378640aedfc9df78152226cb0db5cbe459ebd0d98afe8bbc97ba1a5",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0123-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "d20bbf64eb3e4c2d80035e369d25c3eeecb86243dd210ef318c59974bcdce998",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0132-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "f2aed857a26e9b7ceac2ffa6da5f94934a65b93b77e7031aaa55683c719bc85e",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0141-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "f7f46897c38221945be527850c499258fc1424c3077c603bf9932216f7aa0a88",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0150-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "7dc09f1c965e78033f513c56b51eadfb3721c311d0ce75a3b1d4090dccd9fd5c",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0159-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "3f4baf15bcbbb940feb97b620fc2cd7b3c92509e93db485f127657d668b831e1",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0168-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "36ef9f3f3eaaecc2e7c06f22c34f81ffa6063531a354cb98447ec50fe46ebfbd",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0177-udws_ustd_read_file_0_420.bin",
+      "response_sha256": "53005f1d0904aaf28e01859292be5f78df809d0954afbcb769628ef488dcb535",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots. Historical label describes requested420-byte span only:21 registered string groups have NOT been established; much of this span is zero and later words may be adjacent data."
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0186-udws_ustd_read_file_0_24.bin",
+      "response_sha256": "f005c1c60a2c22c0afc05b199d8dff2705c44dff21587af639b260b5005c7a87",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0006-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "d9e28605ecd6861603e7359a1da2d3aee99880cd5406d4a73019025d6f78e8ff",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0015-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "1610aac7933c5e6dfa5b788ed48a78909c40dae19b1b7fe6ca81ff390447e5fc",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0024-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "b48b10f1e703c87a6e605a003b0b7fe52d5dda87a017db21769ee5d08a4d9faa",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0033-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "a376916e776d68fc265b1aa72d2ff50b149f9fb91505cede76164bfb92bf3787",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0042-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "e432bc68206bfce1979d5538a661356988c85dbcab7bf2e1c562ed98fc871303",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0051-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "f31d164a4d297877fe10addfd3d291965f220ec5da46c4b9a41ed3c7759033f3",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0060-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "64d5edb28e76aa12da4e4ab010f6a4bdc031609f7487452d3302c6cb350c66e4",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0069-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "f5e66807bc1daff6b3b4b026016502ca04d8f196c59179bfb0ad3318a08589e8",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0078-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "d84d2b3efb9689c3dbca027398aaeb79020c622a23c9eebb0fb739f250433cf8",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0087-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "673fac89ba341afb16238aa450af37252d6f5cf5e971fef4a93964fe4fc8b4f0",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0096-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "95818bf79cdc5ce18d720f2a8486e3b39b8379f95a83c58d930491639ead5d16",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0105-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "bd6855f97b58aea9e90f3e7146b89d9f4fbc6bcc41ca62244c00d20e2fbbc09b",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0114-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "428cce826e97bfa6a25193847812684d07b44ec3e01a107faf331c2d738ad4ab",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0123-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "72e98e6bcdb0fad8714410b2101be6738c5084ac621a1da1fb757ab780418356",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0132-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "41e1245595cef817f98e601b2690021b07640c87f4a496a2046a309adf6e45bf",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0141-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "26a885e8a36daaeb1cca175ed56b4842b627098c6ddc37200c00a15e2ea2e94b",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0150-udws_ustd_read_file_0_32.bin",
+      "response_sha256": "b116b4bc362319f352c881b9c54d23b099699a3a0ec3d5a2378d444390ec5e87",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0159-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "2efa0a73245bb096624260e30ce2ab7da8fbbe34187dc3e1149412323afc9a17",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0168-udws_ustd_read_file_0_8.bin",
+      "response_sha256": "6af7e0cf61719d3fab00640fa2c89a8920cb303620bd4b8e687d1973c50cdc16",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-64-ui-fields/0006-udws_ustd_read_file_0_12.bin",
+      "response_sha256": "94c9848fee20411d2693aca802a2853cd99a6572e3c41fd38d22adb6a15cb01a",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-64-ui-fields/0015-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "eb4db51acd4d25fd39b3662534f7d2d5b27eddeb33ca0cbbeadee72cce8442b8",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-64-ui-fields/0024-udws_ustd_read_file_0_20.bin",
+      "response_sha256": "a896c3e5079507c290ff3d3495efb002cd80041a28a74ffe7c738f6998e22e6c",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-67-mount-metadata/0006-udws_ustd_read_file_0_448.bin",
+      "response_sha256": "c2a522cc1a6be7b930dd1f7b70de4db45ae1b6e487c89a5496888de01ba6ade6",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    },
+    {
+      "response_file": "physical-67-mount-metadata/0015-udws_ustd_read_file_0_448.bin",
+      "response_sha256": "b5319619564990bc1da3c5ce814bac30ab537eb791d52a5a59dca5109af86169",
+      "valid": true,
+      "complete": true,
+      "assessment": "exact-metadata-span-replayed",
+      "note": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots."
+    }
+  ],
+  "data_quality": [
+    {
+      "response_file": "physical-57-provider-pointers/0006-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "d9e28605ecd6861603e7359a1da2d3aee99880cd5406d4a73019025d6f78e8ff",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x20943a40",
+      "bytes": 4
+    },
+    {
+      "response_file": "physical-57-provider-pointers/0015-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "1610aac7933c5e6dfa5b788ed48a78909c40dae19b1b7fe6ca81ff390447e5fc",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa061f594",
+      "bytes": 4
+    },
+    {
+      "response_file": "physical-57-provider-pointers/0024-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "b48b10f1e703c87a6e605a003b0b7fe52d5dda87a017db21769ee5d08a4d9faa",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa061f598",
+      "bytes": 64
+    },
+    {
+      "response_file": "physical-57-provider-pointers/0033-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "21ae7cee77d0efb9545ac1d95fe5827216f4e06608d6495ebe32d9339799224b",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x20d23b24",
+      "bytes": 4
+    },
+    {
+      "response_file": "physical-57-provider-pointers/0042-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "f32a1deca793cb426be018a6129409c1a641659f4760714b5755616548e09a95",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa053bb24",
+      "bytes": 4
+    },
+    {
+      "response_file": "physical-57-provider-pointers/0051-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "dc46789a2ec81e6b80bcd807bdf49612c9611b2ac66fa0710c298d5d6433cc81",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa053bb48",
+      "bytes": 64
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0006-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "d9e28605ecd6861603e7359a1da2d3aee99880cd5406d4a73019025d6f78e8ff",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x20ab0148",
+      "bytes": 4
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0015-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "1610aac7933c5e6dfa5b788ed48a78909c40dae19b1b7fe6ca81ff390447e5fc",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa061f594",
+      "bytes": 4
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0024-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "b48b10f1e703c87a6e605a003b0b7fe52d5dda87a017db21769ee5d08a4d9faa",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa061f598",
+      "bytes": 64
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0033-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "673fac89ba341afb16238aa450af37252d6f5cf5e971fef4a93964fe4fc8b4f0",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x20ab014c",
+      "bytes": 4
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0042-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "95818bf79cdc5ce18d720f2a8486e3b39b8379f95a83c58d930491639ead5d16",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa0517544",
+      "bytes": 4
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0051-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "bd6855f97b58aea9e90f3e7146b89d9f4fbc6bcc41ca62244c00d20e2fbbc09b",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa0517548",
+      "bytes": 64
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0060-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "4f4b209d52a6b909595773526f042c14ddf0e3be966cedbe9be4dfa8992a8162",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x20ab0150",
+      "bytes": 4
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0069-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "bd1b240d3e59a938386197c9e9164d69193bd5e4f01f7fce3afa4d8c171acf2a",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa061e1e4",
+      "bytes": 4
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0078-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "ef0217b25daf6a108620756b16f5b58948858420e940125050b5e7cdb61b96a8",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa061e1e8",
+      "bytes": 64
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0087-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "9de19ecb22f1bfc0493fa45e44091f190ba8099e02c8284112b42359d4c790cc",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x20ab0154",
+      "bytes": 4
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0096-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "80951c3c86597b588a4a4ea597be5535e103323d340f94a91232d7ea506fa2a3",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa05c35a8",
+      "bytes": 4
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0105-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "2712edb9fbc279148a77b8b21d8666000f53baba125c74c49d3158e736bdc551",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa05c35ac",
+      "bytes": 64
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0114-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "f328fa2df378640aedfc9df78152226cb0db5cbe459ebd0d98afe8bbc97ba1a5",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x20ab0158",
+      "bytes": 4
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0123-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "d20bbf64eb3e4c2d80035e369d25c3eeecb86243dd210ef318c59974bcdce998",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa06053c0",
+      "bytes": 4
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0132-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "f2aed857a26e9b7ceac2ffa6da5f94934a65b93b77e7031aaa55683c719bc85e",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa06054b4",
+      "bytes": 64
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0141-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "f7f46897c38221945be527850c499258fc1424c3077c603bf9932216f7aa0a88",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x2083e248",
+      "bytes": 4
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0150-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "7dc09f1c965e78033f513c56b51eadfb3721c311d0ce75a3b1d4090dccd9fd5c",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa0567abc",
+      "bytes": 4
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0159-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "3f4baf15bcbbb940feb97b620fc2cd7b3c92509e93db485f127657d668b831e1",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa0567ac0",
+      "bytes": 64
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0168-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "36ef9f3f3eaaecc2e7c06f22c34f81ffa6063531a354cb98447ec50fe46ebfbd",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x2089e40c",
+      "bytes": 4
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0177-udws_ustd_read_file_0_420.bin",
+      "response_sha256": "53005f1d0904aaf28e01859292be5f78df809d0954afbcb769628ef488dcb535",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots. Historical label describes requested420-byte span only:21 registered string groups have NOT been established; much of this span is zero and later words may be adjacent data.",
+      "address": "0x2091f7a4",
+      "bytes": 420
+    },
+    {
+      "response_file": "physical-59-metadata-pointers/0186-udws_ustd_read_file_0_24.bin",
+      "response_sha256": "f005c1c60a2c22c0afc05b199d8dff2705c44dff21587af639b260b5005c7a87",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x20004158",
+      "bytes": 24
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0006-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "d9e28605ecd6861603e7359a1da2d3aee99880cd5406d4a73019025d6f78e8ff",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x20daf87c",
+      "bytes": 4
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0015-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "1610aac7933c5e6dfa5b788ed48a78909c40dae19b1b7fe6ca81ff390447e5fc",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa061f594",
+      "bytes": 4
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0024-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "b48b10f1e703c87a6e605a003b0b7fe52d5dda87a017db21769ee5d08a4d9faa",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa061f598",
+      "bytes": 64
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0033-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "a376916e776d68fc265b1aa72d2ff50b149f9fb91505cede76164bfb92bf3787",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x20daf880",
+      "bytes": 4
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0042-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "e432bc68206bfce1979d5538a661356988c85dbcab7bf2e1c562ed98fc871303",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x2084a0b4",
+      "bytes": 4
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0051-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "f31d164a4d297877fe10addfd3d291965f220ec5da46c4b9a41ed3c7759033f3",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa06073ec",
+      "bytes": 64
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0060-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "64d5edb28e76aa12da4e4ab010f6a4bdc031609f7487452d3302c6cb350c66e4",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x20daf884",
+      "bytes": 4
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0069-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "f5e66807bc1daff6b3b4b026016502ca04d8f196c59179bfb0ad3318a08589e8",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa05e9e48",
+      "bytes": 4
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0078-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "d84d2b3efb9689c3dbca027398aaeb79020c622a23c9eebb0fb739f250433cf8",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa05e9e4c",
+      "bytes": 64
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0087-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "673fac89ba341afb16238aa450af37252d6f5cf5e971fef4a93964fe4fc8b4f0",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x20daf888",
+      "bytes": 4
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0096-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "95818bf79cdc5ce18d720f2a8486e3b39b8379f95a83c58d930491639ead5d16",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa0517544",
+      "bytes": 4
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0105-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "bd6855f97b58aea9e90f3e7146b89d9f4fbc6bcc41ca62244c00d20e2fbbc09b",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa0517548",
+      "bytes": 64
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0114-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "428cce826e97bfa6a25193847812684d07b44ec3e01a107faf331c2d738ad4ab",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x20daf228",
+      "bytes": 4
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0123-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "72e98e6bcdb0fad8714410b2101be6738c5084ac621a1da1fb757ab780418356",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0xa05cc04c",
+      "bytes": 4
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0132-udws_ustd_read_file_0_64.bin",
+      "response_sha256": "41e1245595cef817f98e601b2690021b07640c87f4a496a2046a309adf6e45bf",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x20848770",
+      "bytes": 64
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0141-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "26a885e8a36daaeb1cca175ed56b4842b627098c6ddc37200c00a15e2ea2e94b",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x2083e244",
+      "bytes": 4
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0150-udws_ustd_read_file_0_32.bin",
+      "response_sha256": "b116b4bc362319f352c881b9c54d23b099699a3a0ec3d5a2378d444390ec5e87",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x21376ac0",
+      "bytes": 32
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0159-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "2efa0a73245bb096624260e30ce2ab7da8fbbe34187dc3e1149412323afc9a17",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x20969c00",
+      "bytes": 4
+    },
+    {
+      "response_file": "physical-60-ui-metadata/0168-udws_ustd_read_file_0_8.bin",
+      "response_sha256": "6af7e0cf61719d3fab00640fa2c89a8920cb303620bd4b8e687d1973c50cdc16",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x20004894",
+      "bytes": 8
+    },
+    {
+      "response_file": "physical-64-ui-fields/0006-udws_ustd_read_file_0_12.bin",
+      "response_sha256": "94c9848fee20411d2693aca802a2853cd99a6572e3c41fd38d22adb6a15cb01a",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x2084a0b4",
+      "bytes": 12
+    },
+    {
+      "response_file": "physical-64-ui-fields/0015-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "eb4db51acd4d25fd39b3662534f7d2d5b27eddeb33ca0cbbeadee72cce8442b8",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x20848894",
+      "bytes": 4
+    },
+    {
+      "response_file": "physical-64-ui-fields/0024-udws_ustd_read_file_0_20.bin",
+      "response_sha256": "a896c3e5079507c290ff3d3495efb002cd80041a28a74ffe7c738f6998e22e6c",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x20848c74",
+      "bytes": 20
+    },
+    {
+      "response_file": "physical-67-mount-metadata/0006-udws_ustd_read_file_0_448.bin",
+      "response_sha256": "c2a522cc1a6be7b930dd1f7b70de4db45ae1b6e487c89a5496888de01ba6ade6",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x20dfe054",
+      "bytes": 448
+    },
+    {
+      "response_file": "physical-67-mount-metadata/0015-udws_ustd_read_file_0_448.bin",
+      "response_sha256": "b5319619564990bc1da3c5ce814bac30ab537eb791d52a5a59dca5109af86169",
+      "complete": true,
+      "payload_kind": "bounded-RAM-snapshot",
+      "assessment": "Exact bounded RAM bytes recovered through an owned temporary file, whose absence was verified before creation and after removal. Pointer/data interpretation is separate from byte completeness; memory may change between snapshots.",
+      "address": "0x20dfe214",
+      "bytes": 448
+    }
+  ],
+  "sessions": [
+    {
+      "directory": "physical-57-provider-pointers",
+      "validated_commands": 54,
+      "validated_spans": 6,
+      "cleanup_complete": true,
+      "report_sha256": "43aba7c1f6186012e8af7ba1c1d88c30b4aeb56e3d3f04c50b4caf46b5cc2dcd"
+    },
+    {
+      "directory": "physical-59-metadata-pointers",
+      "validated_commands": 189,
+      "validated_spans": 21,
+      "cleanup_complete": true,
+      "report_sha256": "ade621c3abc3fcba9cca093587077584674f57dafbc988ac7847519dcdc138c7"
+    },
+    {
+      "directory": "physical-60-ui-metadata",
+      "validated_commands": 171,
+      "validated_spans": 19,
+      "cleanup_complete": true,
+      "report_sha256": "a9aa629b60c6e8eeca237cef8ccfcfe6eb04ea94ba4e873a9c8fb0011eb42553"
+    },
+    {
+      "directory": "physical-64-ui-fields",
+      "validated_commands": 27,
+      "validated_spans": 3,
+      "cleanup_complete": true,
+      "report_sha256": "2d0c9101d33eb1e2e15e92c11a298f30580aef81cb778a7c62393c2456a3da4f"
+    },
+    {
+      "directory": "physical-67-mount-metadata",
+      "validated_commands": 18,
+      "validated_spans": 2,
+      "cleanup_complete": true,
+      "report_sha256": "ab088ab3dedbd7f26c1dab3a5ea7cefd597a7a20faf21ed4e7d093b661d424fd"
+    }
+  ]
+}

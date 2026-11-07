@@ -1,0 +1,90 @@
+[
+  {
+    "command": "udws \"ram.file_write /ram/codex_hex_test 8 3031323334353637;\"",
+    "classification": "reviewed-owned-ram-file-operation",
+    "purpose": "Upload eight bytes using sixteen inline hexadecimal digits. Both destination and firmware scratch path were absent in session40. Handler closes both descriptors and unlinks its scratch file.",
+    "timeout": 20,
+    "scope": [
+      "/ram/codex_hex_test",
+      "/ram/file_write.tmp"
+    ],
+    "review_source": "2018 disassembly: A0356164..62A8, A046D6C4, A046D7A0; raw input channel proof A03D0224..023A"
+  },
+  {
+    "command": "udws \"ustd.cat /ram/codex_hex_test 0;\"",
+    "classification": "reviewed-owned-ram-file-operation",
+    "purpose": "Read back the eight decoded ASCII bytes.",
+    "timeout": 20,
+    "scope": [
+      "/ram/codex_hex_test",
+      "/ram/file_write.tmp"
+    ],
+    "review_source": "2018 disassembly: A0356164..62A8, A046D6C4, A046D7A0; raw input channel proof A03D0224..023A"
+  },
+  {
+    "command": "udws \"ustd.sizeof /ram/codex_hex_test;\"",
+    "classification": "reviewed-owned-ram-file-operation",
+    "purpose": "Check the decoded file size.",
+    "timeout": 20,
+    "scope": [
+      "/ram/codex_hex_test",
+      "/ram/file_write.tmp"
+    ],
+    "review_source": "2018 disassembly: A0356164..62A8, A046D6C4, A046D7A0; raw input channel proof A03D0224..023A"
+  },
+  {
+    "command": "udws \"ustd.short_name /ram/codex_hex_test;\"",
+    "classification": "reviewed-owned-ram-file-operation",
+    "purpose": "Query short-name metadata of our test file through ioctl19.",
+    "timeout": 20,
+    "scope": [
+      "/ram/codex_hex_test",
+      "/ram/file_write.tmp"
+    ],
+    "review_source": "2018 disassembly: A0356164..62A8, A046D6C4, A046D7A0; raw input channel proof A03D0224..023A"
+  },
+  {
+    "command": "udws \"ustd.long_name /ram/codex_hex_test;\"",
+    "classification": "reviewed-owned-ram-file-operation",
+    "purpose": "Query long-name metadata of our test file through ioctl18.",
+    "timeout": 20,
+    "scope": [
+      "/ram/codex_hex_test",
+      "/ram/file_write.tmp"
+    ],
+    "review_source": "2018 disassembly: A0356164..62A8, A046D6C4, A046D7A0; raw input channel proof A03D0224..023A"
+  },
+  {
+    "command": "udws \"ustd.sizeof /ram/file_write.tmp;\"",
+    "classification": "reviewed-owned-ram-file-operation",
+    "purpose": "Verify firmware removed its temporary scratch file.",
+    "timeout": 20,
+    "scope": [
+      "/ram/codex_hex_test",
+      "/ram/file_write.tmp"
+    ],
+    "review_source": "2018 disassembly: A0356164..62A8, A046D6C4, A046D7A0; raw input channel proof A03D0224..023A"
+  },
+  {
+    "command": "udws \"ram.unlink /ram/codex_hex_test;\"",
+    "classification": "reviewed-owned-ram-file-operation",
+    "purpose": "Delete only the test file created by this batch.",
+    "timeout": 20,
+    "scope": [
+      "/ram/codex_hex_test",
+      "/ram/file_write.tmp"
+    ],
+    "review_source": "2018 disassembly: A0356164..62A8, A046D6C4, A046D7A0; raw input channel proof A03D0224..023A"
+  },
+  {
+    "command": "udws \"ustd.ls /ram;\"",
+    "classification": "reviewed-owned-ram-file-operation",
+    "purpose": "Verify no upload or scratch files remain in the RAM root.",
+    "timeout": 20,
+    "scope": [
+      "/ram/codex_hex_test",
+      "/ram/file_write.tmp"
+    ],
+    "review_source": "2018 disassembly: A0356164..62A8, A046D6C4, A046D7A0; raw input channel proof A03D0224..023A"
+  }
+]

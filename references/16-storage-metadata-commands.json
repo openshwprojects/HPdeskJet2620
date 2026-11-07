@@ -1,0 +1,18 @@
+[
+  {
+    "command": "udws \"nvm2.get_all;\"",
+    "purpose": "Read all registered NVM object metadata",
+    "classification": "reviewed-information-query",
+    "handler": "0xa02f4873",
+    "provenance": "2018 handler review by command_query_review",
+    "timeout": 180
+  },
+  {
+    "command": "udws \"nvm2.list_reset_group;\"",
+    "purpose": "List reset-group membership; does not reset groups",
+    "classification": "reviewed-information-query",
+    "handler": "0xa02f4ac7",
+    "provenance": "2018 handler review by command_query_review",
+    "timeout": 180
+  }
+]

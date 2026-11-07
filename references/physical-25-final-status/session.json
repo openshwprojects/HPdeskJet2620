@@ -1,0 +1,53 @@
+{
+  "started_utc": "2026-10-29T19:43:13.314680+00:00",
+  "port": "COM16",
+  "baud": 115200,
+  "data_bits": 8,
+  "parity": "N",
+  "stop_bits": 1,
+  "line_ending": "CRLF",
+  "source": "physical UART",
+  "rts": false,
+  "dtr": false,
+  "tx_character_delay_seconds": 0.003,
+  "capture_program_sha256": "685d8b07cd5afafeba32f37eb5722416458a08dafe09290576957e50b31bdb03",
+  "requested_rx_buffer_bytes": 1048576,
+  "requested_tx_buffer_bytes": 65536,
+  "initial_prompt_seen": true,
+  "stop_reason": "batch-complete",
+  "ended_utc": "2026-10-29T19:43:16.044544+00:00",
+  "commands": [
+    {
+      "command": "udws \"bio.rev_str; udw.get_board_id; shm.msecs;\"",
+      "classification": "reviewed-information-query",
+      "purpose": "Confirm firmware identity, board identity, and uptime after the physical command captures.",
+      "review_source": "references/query_review.json",
+      "timeout": 20,
+      "index": 1,
+      "started_utc": "2026-10-29T19:43:14.014288+00:00",
+      "response_file": "0001-udws_bio_rev_str_udw_get_board_id_shm_msecs.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:43:14.614011+00:00",
+      "elapsed_seconds": 0.599,
+      "response_bytes": 160,
+      "response_sha256": "276e2a277ad67e267b21183b541faa6229e43f34a021733c7d9727538ffeea10",
+      "prompt_returned": true
+    },
+    {
+      "command": "i",
+      "classification": "reviewed-information-query",
+      "purpose": "Capture final RTOS task state and verify the native shell still returns its prompt.",
+      "review_source": "references/shell_query_review.json",
+      "timeout": 20,
+      "index": 2,
+      "started_utc": "2026-10-29T19:43:14.615965+00:00",
+      "response_file": "0002-i.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:43:16.042052+00:00",
+      "elapsed_seconds": 1.425,
+      "response_bytes": 11996,
+      "response_sha256": "81c640b94583d225a2f20db9c2a2f9c3de05a5c07e3b26fd456469953a218236",
+      "prompt_returned": true
+    }
+  ]
+}

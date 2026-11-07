@@ -1,0 +1,16 @@
+[
+  {
+    "name": "firm.query_value_name_fmt",
+    "command": "udws \"firm.query_value_name_fmt;\"",
+    "handler": "0xa00d50f5",
+    "descriptor_address": "0xa052b490",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "List numeric firmware original values and names.",
+    "argument_syntax": "no arguments",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 15,
+    "review_source": "references/software_round2_review.json",
+    "output_completeness": "Full table listing may exceed the earlier reliable bulk UART size. Preserve raw bytes and verify reported counts before treating the listing as complete; one command per line.",
+    "capture_note": "First physical attempt of this reviewed formatter. Other full-table formatters showed malformed output; preserve this reply and validate its rows rather than claiming completeness from a prompt."
+  }
+]

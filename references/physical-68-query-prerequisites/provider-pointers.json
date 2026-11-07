@@ -1,0 +1,127 @@
+{
+  "observations": [
+    {
+      "label": "default_settings_storage_provider",
+      "address": "0x20da30dc",
+      "count": 4,
+      "hex": "a0517544",
+      "words_be": [
+        "0xa0517544"
+      ],
+      "response_file": "0006-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "673fac89ba341afb16238aa450af37252d6f5cf5e971fef4a93964fe4fc8b4f0"
+    },
+    {
+      "label": "build_date_fallback_provider",
+      "address": "0x20cfd33c",
+      "count": 4,
+      "hex": "a05c5154",
+      "words_be": [
+        "0xa05c5154"
+      ],
+      "response_file": "0015-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "4e37c37c5e2b88a9d9838b08af5ec21d02c98cb572a0e5985ee75ac4e302cd58"
+    },
+    {
+      "label": "cached_printer_build_date",
+      "address": "0x20d02d94",
+      "count": 4,
+      "hex": "0133ee90",
+      "words_be": [
+        "0x133ee90"
+      ],
+      "response_file": "0024-udws_ustd_read_file_0_4.bin",
+      "response_sha256": "a4bf9795a0643fe8c1179fd297352e35ff3ae09bce9a5211a1d7306105978147"
+    },
+    {
+      "label": "event_ring_metadata_and_providers",
+      "address": "0x2091e9d8",
+      "count": 20,
+      "hex": "07070000211bd944211bd97ca061f594a0517544",
+      "words_be": [
+        "0x7070000",
+        "0x211bd944",
+        "0x211bd97c",
+        "0xa061f594",
+        "0xa0517544"
+      ],
+      "response_file": "0033-udws_ustd_read_file_0_20.bin",
+      "response_sha256": "2a76bd80112634dd4a6666fd1157945761e63ed4bb258e207e5fb6ac93e8d3c3"
+    },
+    {
+      "label": "event_at_oldest_ring_index",
+      "address": "0x2091db50",
+      "count": 248,
+      "hex": "000004f200011a2a0946524f4d5f4e564d000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "words_be": [
+        "0x4f2",
+        "0x11a2a",
+        "0x946524f",
+        "0x4d5f4e56",
+        "0x4d000000",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0"
+      ],
+      "response_file": "0042-udws_ustd_read_file_0_248.bin",
+      "response_sha256": "7083b3317f6dc4dcfd1e00f18a65517176872b50a94ef7ba64386030f86d8978"
+    }
+  ],
+  "cleanup_complete": true,
+  "source_memory_written": false,
+  "scope": "Default-settings storage provider, printer build-date metadata, and bounded event-ring metadata only."
+}

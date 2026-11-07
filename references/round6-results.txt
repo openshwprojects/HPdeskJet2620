@@ -1,0 +1,57 @@
+HP DeskJet 2620 — next five commands, physically tested
+COM16, 115200 8N1. Registered names invoked: 698 -> 703 of 2,235.
+Eight focused invocations plus 90 metadata snapshot operations. All 98 returned prompts.
+
+Results:
+- Stored printer build date: 20180624 (2018-06-24), matching earlier NVM/DS2.
+- Default-setting interface: ColorLok/dry-time/eject = 1/2/1. These are DS2 values, not compiled factory defaults.
+- Root-directory heap block: 16,928 bytes, non-purgeable, unlocked, priority 1:0, sampled pin count 0.
+- Stored event sequence 1266: event ID 72234, payload FROM_NVM. No event was created or cleared.
+- Consumables: cached presence BLACK=1, CMY=0; chute mapping BLACK=1, CMY=0; channels BLACK and CYAN/MAGENTA/YELLOW.
+  This is cached firmware state, not a fresh electrical cartridge test or ink-volume measurement.
+
+Exact commands and complete replies follow. All UART output: all_uart_output.txt
+Hash-bound validation: physical-round6-assessments.json
+
+constat.get_consumable_info
+  udws "constat.get_consumable_info BLACK;"
+  OK,BLACK IPH, 1, 1, 1, 1, 1,BLACK
+  Source: physical-72-consumable-status/0001-udws_constat_get_consumable_info_BLACK.bin
+
+  udws "constat.get_consumable_info CMY;"
+  OK,CMY IPH, 0, 1, 1, 0, 3,CYAN,MAGENTA,YELLOW
+  Source: physical-72-consumable-status/0002-udws_constat_get_consumable_info_CMY.bin
+
+event_log.get_event
+  udws "event_log.get_event 1266;"
+  get_event for seq_num: 0
+  got event for seq_num: 1266
+  got event occurences: 1
+  got event: 72234 with buf: FROM_NVM
+  Source: physical-73-event-query/0001-udws_event_log_get_event_1266.bin
+
+heapmgr log block
+  udws "heapmgr log block 0 16777216 1;"
+  0x00000000 0x01000000 0x00000001  NOT PURGEABLE     priority 1:  0  pin=0  size = 16928
+  Source: physical-70-heap-block-flags/0001-udws_heapmgr_log_block_0_16777216_1.bin
+
+pen.get_printer_build_date
+  udws "pen.get_printer_build_date;"
+  20180624
+  Source: physical-71-settings-build-date/0004-udws_pen_get_printer_build_date.bin
+
+smgr_pe.get_default_setting
+  udws "smgr_pe.get_default_setting 1;"
+  1
+  Source: physical-71-settings-build-date/0001-udws_smgr_pe_get_default_setting_1.bin
+
+  udws "smgr_pe.get_default_setting 3;"
+  2
+  Source: physical-71-settings-build-date/0002-udws_smgr_pe_get_default_setting_3.bin
+
+  udws "smgr_pe.get_default_setting 4;"
+  1
+  Source: physical-71-settings-build-date/0003-udws_smgr_pe_get_default_setting_4.bin
+
+Event diagnostic caveat: its first sequence0 is printed before lookup; the actual result is1266.
+Its occurrences1 field is a presence flag, not an occurrence counter. Original bytes are unchanged.

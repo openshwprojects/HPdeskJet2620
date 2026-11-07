@@ -1,0 +1,38 @@
+{
+  "started_utc": "2026-10-29T23:37:50.837033+00:00",
+  "port": "COM16",
+  "baud": 115200,
+  "data_bits": 8,
+  "parity": "N",
+  "stop_bits": 1,
+  "line_ending": "CRLF",
+  "source": "physical UART",
+  "rts": false,
+  "dtr": false,
+  "tx_character_delay_seconds": 0.003,
+  "capture_program_sha256": "685d8b07cd5afafeba32f37eb5722416458a08dafe09290576957e50b31bdb03",
+  "requested_rx_buffer_bytes": 1048576,
+  "requested_tx_buffer_bytes": 65536,
+  "initial_prompt_seen": true,
+  "stop_reason": "batch-complete",
+  "ended_utc": "2026-10-29T23:37:52.012832+00:00",
+  "commands": [
+    {
+      "name": "temp.async",
+      "command": "udws \"temp.async;\"",
+      "argument_syntax": "",
+      "classification": "built-in hello-world async job test (round 8)",
+      "purpose": "Async variant of the firmware \"hello world\" job test. Handler 0xa042d11c, prints async_call(parm = %s) : result.",
+      "timeout": 30,
+      "index": 1,
+      "started_utc": "2026-10-29T23:37:51.528019+00:00",
+      "response_file": "0001-udws_temp_async.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T23:37:52.010946+00:00",
+      "elapsed_seconds": 0.482,
+      "response_bytes": 92,
+      "response_sha256": "6a02d598c151fdc550fde07c7c8babfcb1cc566a666b7933109e27ce0e5597fe",
+      "prompt_returned": true
+    }
+  ]
+}

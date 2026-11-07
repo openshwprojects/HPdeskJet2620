@@ -1,0 +1,2102 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-10-29T20:04:11.644975+00:00",
+  "provenance": {
+    "kind": "offline_review_for_physical_capture",
+    "serial_access": "none",
+    "image": "artifacts/ghs/dram.bin",
+    "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+    "runtime_registry": "references/physical-09-registry/runtime_inventory.json",
+    "runtime_registry_complete": true,
+    "coverage": "references/coverage.json",
+    "existing_plans_consulted": [
+      "references/01-identification-commands.json",
+      "references/02-information-commands.json",
+      "references/10-reviewed-query-commands.json",
+      "references/11-software-network-commands.json",
+      "references/12-storage-catalog-commands.json",
+      "references/14-help-validation-commands.json",
+      "references/15-nvm-header-commands.json",
+      "references/16-storage-metadata-commands.json",
+      "references/17-shell-commands.json",
+      "references/18-storage-details-commands.json",
+      "references/19-storage-values-commands.json",
+      "references/20-native-guard-commands.json",
+      "references/21-stub-commands.json",
+      "references/22-additional-commands.json",
+      "references/23-storage-array-commands.json",
+      "references/24-storage-family-commands.json",
+      "references/25-final-status-commands.json",
+      "references/26-storage-gap-commands.json",
+      "references/27-status-prerequisites-commands.json",
+      "references/28-status-commands.json",
+      "references/29-resume-commands.json",
+      "references/32-guard-commands.json",
+      "references/33-ram-preflight-commands.json"
+    ]
+  },
+  "summary": {
+    "ready_commands": 74,
+    "ready_unique_names": 54,
+    "ready_unique_handlers": 54,
+    "physical_mmio_command_variants": 3,
+    "excluded_exact_duplicates": 0,
+    "claims": "These are proposed invocations. Only root-owned physical captures can establish actual output or completion."
+  },
+  "queries": [
+    {
+      "command": "udws \"scan home HOMEFOUND;\"",
+      "name": "scan home HOMEFOUND",
+      "handler": "0xa03a5729",
+      "descriptor_address": "0xa05ff4d8",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "",
+      "control_flow_proof": "A03A5728 reads byte20D9CD45 and prints.",
+      "hardware_access": false,
+      "side_effects": "UART output; scanner formatter may update its output-throttle counter.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18"
+      ]
+    },
+    {
+      "command": "udws \"scan home prt;\"",
+      "name": "scan home prt",
+      "handler": "0xa03a5737",
+      "descriptor_address": "0xa05ff4f8",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "",
+      "control_flow_proof": "A03A5736 reads fixed RAM20D9CD44 fields and constants; formatting calls only.",
+      "hardware_access": false,
+      "side_effects": "UART output; scanner formatter may update its output-throttle counter.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18"
+      ]
+    },
+    {
+      "command": "udws \"scan orig DOCOFFX;\"",
+      "name": "scan orig DOCOFFX",
+      "handler": "0xa03ae6dd",
+      "descriptor_address": "0xa06004b0",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "",
+      "control_flow_proof": "A03AE6DC subtracts RAM20D9F274 from20D9F224 and prints.",
+      "hardware_access": false,
+      "side_effects": "UART output; scanner formatter may update its output-throttle counter.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18"
+      ]
+    },
+    {
+      "command": "udws \"scan orig MAG;\"",
+      "name": "scan orig MAG",
+      "handler": "0xa03ae71b",
+      "descriptor_address": "0xa06004c0",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "",
+      "control_flow_proof": "A03AE71A reads RAM208582C4 and prints.",
+      "hardware_access": false,
+      "side_effects": "UART output; scanner formatter may update its output-throttle counter.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18"
+      ]
+    },
+    {
+      "command": "udws \"scan orig NOTCHFOUND;\"",
+      "name": "scan orig NOTCHFOUND",
+      "handler": "0xa03ae729",
+      "descriptor_address": "0xa06004d0",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "",
+      "control_flow_proof": "A03AE728 reads byte20D9F290 and prints.",
+      "hardware_access": false,
+      "side_effects": "UART output; scanner formatter may update its output-throttle counter.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18"
+      ]
+    },
+    {
+      "command": "udws \"scan orig PIXELPOS;\"",
+      "name": "scan orig PIXELPOS",
+      "handler": "0xa03ae611",
+      "descriptor_address": "0xa06004e0",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "",
+      "control_flow_proof": "A03AE610 reads fixed RAM20D9F224,208582D0,20858308 and prints.",
+      "hardware_access": false,
+      "side_effects": "UART output; scanner formatter may update its output-throttle counter.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18"
+      ]
+    },
+    {
+      "command": "udws \"scan orig refmarkget;\"",
+      "name": "scan orig refmarkget",
+      "handler": "0xa03ae7b1",
+      "descriptor_address": "0xa0600510",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "",
+      "control_flow_proof": "A03AE7B0 reads fixed RAM20D9F28C..20D9F2AC and prints; no parser or device calls.",
+      "hardware_access": false,
+      "side_effects": "UART output; scanner formatter may update its output-throttle counter.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18"
+      ]
+    },
+    {
+      "command": "udws \"scan orig scores;\"",
+      "name": "scan orig scores",
+      "handler": "0xa03ae737",
+      "descriptor_address": "0xa06005a0",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "",
+      "control_flow_proof": "A03AE736 reads fixed RAM208582D0 and20D9F24C, prints.",
+      "hardware_access": false,
+      "side_effects": "UART output; scanner formatter may update its output-throttle counter.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18"
+      ]
+    },
+    {
+      "command": "udws \"scan prnu TABLERES;\"",
+      "name": "scan prnu TABLERES",
+      "handler": "0xa03b1f17",
+      "descriptor_address": "0xa0600eac",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "",
+      "control_flow_proof": "A03B1F16 reads two halfwords20D9FBC6/FBCA, prints.",
+      "hardware_access": false,
+      "side_effects": "UART output; scanner formatter may update its output-throttle counter.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18"
+      ]
+    },
+    {
+      "command": "udws \"scan prnu WSDONE;\"",
+      "name": "scan prnu WSDONE",
+      "handler": "0xa03b215d",
+      "descriptor_address": "0xa0600ebc",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "",
+      "control_flow_proof": "A03B215C reads byte20D9FBC5, prints.",
+      "hardware_access": false,
+      "side_effects": "UART output; scanner formatter may update its output-throttle counter.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18"
+      ]
+    },
+    {
+      "command": "udws \"scan mtr CARrefpos 0;\"",
+      "name": "scan mtr CARrefpos",
+      "handler": "0xa03adf49",
+      "descriptor_address": "0xa0600398",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "0",
+      "control_flow_proof": "A03ADF48 signed parser, only nonzero writes208582A8; explicit0 skips write and prints current RAM value.",
+      "hardware_access": false,
+      "side_effects": "UART output; scanner formatter may update its output-throttle counter.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18",
+        "0xa03befbe"
+      ]
+    },
+    {
+      "command": "udws \"scan mtr LBrefpos 0;\"",
+      "name": "scan mtr LBrefpos",
+      "handler": "0xa03adf61",
+      "descriptor_address": "0xa06003a8",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "0",
+      "control_flow_proof": "A03ADF60 signed parser, only nonzero writes208582A4; explicit0 skips write and prints current RAM value.",
+      "hardware_access": false,
+      "side_effects": "UART output; scanner formatter may update its output-throttle counter.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18",
+        "0xa03befbe"
+      ]
+    },
+    {
+      "command": "udws \"scan gain FIRSTPWM;\"",
+      "name": "scan gain FIRSTPWM",
+      "handler": "0xa03a5005",
+      "descriptor_address": "0xa05ff374",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "",
+      "control_flow_proof": "A03A5004 reads halfword20D9CBFA and prints.",
+      "hardware_access": false,
+      "side_effects": "UART output; scanner formatter may update its output-throttle counter.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18"
+      ]
+    },
+    {
+      "command": "udws \"scan gain LASTPWM;\"",
+      "name": "scan gain LASTPWM",
+      "handler": "0xa03a5013",
+      "descriptor_address": "0xa05ff384",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "",
+      "control_flow_proof": "A03A5012 reads halfword20D9CBF6 and prints.",
+      "hardware_access": false,
+      "side_effects": "UART output; scanner formatter may update its output-throttle counter.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18"
+      ]
+    },
+    {
+      "command": "udws \"scan cissm pwrcaldone;\"",
+      "name": "scan cissm pwrcaldone",
+      "handler": "0xa03a69f5",
+      "descriptor_address": "0xa05ff720",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "",
+      "control_flow_proof": "A03A69F4 reads byte20D9DC6C and prints.",
+      "hardware_access": false,
+      "side_effects": "UART output; scanner formatter may update its output-throttle counter.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18"
+      ]
+    },
+    {
+      "command": "udws \"scan cissm lenspitch 0;\"",
+      "name": "scan cissm lenspitch",
+      "handler": "0xa03a6c61",
+      "descriptor_address": "0xa05ff7d0",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "0",
+      "control_flow_proof": "A03A6C60 consumes and discards byte argument then prints RAM halfword208581D0.",
+      "hardware_access": false,
+      "side_effects": "UART output; scanner formatter may update its output-throttle counter.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18",
+        "0xa03bef76"
+      ]
+    },
+    {
+      "command": "udws \"scan cissm LEDONTIMEGET;\"",
+      "name": "scan cissm LEDONTIMEGET",
+      "handler": "0xa03a9cef",
+      "descriptor_address": "0xa05ff840",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "",
+      "control_flow_proof": "A03A9CEE reads three halfwords20D9DF84..88 and prints.",
+      "hardware_access": false,
+      "side_effects": "UART output; scanner formatter may update its output-throttle counter.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18"
+      ]
+    },
+    {
+      "command": "udws \"scan afe hw 0;\"",
+      "name": "scan afe hw",
+      "handler": "0xa03a14d5",
+      "descriptor_address": "0xa05f6f54",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "0",
+      "control_flow_proof": "A03A14D4 consumes and discards byte argument; switches on RAM20858104 and outputs constant hardware description.",
+      "hardware_access": false,
+      "side_effects": "UART output; scanner formatter may update its output-throttle counter.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18",
+        "0xa03bef76"
+      ]
+    },
+    {
+      "command": "udws \"scan afe revision 0;\"",
+      "name": "scan afe revision",
+      "handler": "0xa03a151f",
+      "descriptor_address": "0xa05f6f64",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "0",
+      "control_flow_proof": "A03A151E discards byte argument; A03A27CA loads halfword2085813E; prints revision via bounded6byte snprintf.",
+      "hardware_access": false,
+      "side_effects": "UART output; scanner formatter may update its output-throttle counter.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03a27ca",
+        "0xa03bef18",
+        "0xa03bef76",
+        "0xa04f0b50"
+      ]
+    },
+    {
+      "command": "udws \"scan sensor CCD 0;\"",
+      "name": "scan sensor CCD",
+      "handler": "0xa03bdc4d",
+      "descriptor_address": "0xa0604360",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "0",
+      "control_flow_proof": "A03BDC4C discards byte input; RAM2085841C/2085843C values map to constant strings via A03BDBD0/A03BDBF2; prints.",
+      "hardware_access": false,
+      "side_effects": "UART output; scanner formatter may update its output-throttle counter.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bdbd0",
+        "0xa03bdbf2",
+        "0xa03bef18",
+        "0xa03bef76"
+      ]
+    },
+    {
+      "command": "udws \"scan sensor hw 0;\"",
+      "name": "scan sensor hw",
+      "handler": "0xa03bde01",
+      "descriptor_address": "0xa06043b0",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "0",
+      "control_flow_proof": "A03BDE00 prints RAM20858440 signed halfword then invokes verified CCD0 formatter.",
+      "hardware_access": false,
+      "side_effects": "UART output; scanner formatter may update its output-throttle counter.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bdc4c",
+        "0xa03bef18"
+      ]
+    },
+    {
+      "command": "udws \"scan cissm LEDONTIMEINFO 300;\"",
+      "name": "scan cissm LEDONTIMEINFO",
+      "handler": "0xa03a9a9d",
+      "descriptor_address": "0xa05ff830",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "300",
+      "control_flow_proof": "A03A9A9C maps explicit resolution300 to index0 through A03A8230. Null-checks top-level RAM table pointer20D9DF38; prints existing configuration fields and calculates current; A03A247E is constant1. No hardware calls/writes.",
+      "hardware_access": false,
+      "side_effects": "UART output; scanner formatter may update its output-throttle counter.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa001944c",
+        "0xa03a247e",
+        "0xa03a8230",
+        "0xa03bef18",
+        "0xa03bef9a"
+      ]
+    },
+    {
+      "command": "udws \"scan led maxcurrent;\"",
+      "name": "scan led maxcurrent",
+      "handler": "0xa03a9d93",
+      "descriptor_address": "0xa05ffd6c",
+      "classification": "reviewed-compiled-status-reply",
+      "argument_syntax": "",
+      "control_flow_proof": "A03A9D92 formats constants; called A03A247E is MOVS r0,1/BX LR.",
+      "hardware_access": false,
+      "side_effects": "UART output; scanner formatter may update its output-throttle counter.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03a247e",
+        "0xa03bef18"
+      ]
+    },
+    {
+      "command": "udws \"pen.is_capped;\"",
+      "name": "pen.is_capped",
+      "handler": "0xa032b1b5",
+      "descriptor_address": "0xa05df204",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "",
+      "control_flow_proof": "A032B1B4 -> A031452E compares RAM20CFB098 with3, outputs boolean. No actuator calls.",
+      "hardware_access": false,
+      "side_effects": "UART output only.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa031452e"
+      ]
+    },
+    {
+      "command": "udws \"pen.get_pen_family_name_string;\"",
+      "name": "pen.get_pen_family_name_string",
+      "handler": "0xa032b1d3",
+      "descriptor_address": "0xa05df210",
+      "classification": "reviewed-compiled-status-reply",
+      "argument_syntax": "",
+      "control_flow_proof": "A032B1D2 chooses constant family string; A0323176/A032317A/A032317E constant0, A032318C constant1, A0323164/A0323182 only call these constants.",
+      "hardware_access": false,
+      "side_effects": "UART output only.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0323164",
+        "0xa0323176",
+        "0xa032317a",
+        "0xa032317e",
+        "0xa0323182"
+      ]
+    },
+    {
+      "command": "udws \"pen.get_id;\"",
+      "name": "pen.get_id",
+      "handler": "0xa0329bb3",
+      "descriptor_address": "0xa05df1c8",
+      "classification": "reviewed-compiled-status-reply",
+      "argument_syntax": "",
+      "control_flow_proof": "A0329BB2 prints literal 0bsolete function; via bounded30byte snprintf. Real handler coverage but not a hardware ID read.",
+      "hardware_access": false,
+      "side_effects": "UART output only.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa04f0b50"
+      ]
+    },
+    {
+      "command": "udws \"pen.get_mfg_data 0;\"",
+      "name": "pen.get_mfg_data",
+      "handler": "0xa032b241",
+      "descriptor_address": "0xa05df228",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "0",
+      "control_flow_proof": "A032B240 parses index, bounds index<20, reads word20D0895C+4*index and outputs signed numeric.",
+      "hardware_access": false,
+      "side_effects": "UART output only.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": []
+    },
+    {
+      "command": "udws \"pen.get_eureka_data 0 0 0;\"",
+      "name": "pen.get_eureka_data",
+      "handler": "0xa032ab5b",
+      "descriptor_address": "0xa05df138",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "0 0 0",
+      "control_flow_proof": "A032AB5A parses three indices and reads RAM20CFD018+4*(31*(3*pen+channel)+field). Explicit all-zero selects first valid resident scalar; no other helper except format/output.",
+      "hardware_access": false,
+      "side_effects": "UART output only.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa04f0b50"
+      ]
+    },
+    {
+      "command": "udws \"pen.get_fire_mode 0;\"",
+      "name": "pen.get_fire_mode",
+      "handler": "0xa032ad21",
+      "descriptor_address": "0xa05df168",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "0",
+      "control_flow_proof": "A032AD20 stacklocal argument wrapper->A0256800->A0176620 reads RAM20969BE8+4*pen. Explicitpen0 selects first fixed RAM scalar; no MMIO/movement.",
+      "hardware_access": false,
+      "side_effects": "UART output only.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0256800",
+        "0xa03299c0",
+        "0xa03299c4",
+        "0xa03299f0",
+        "0xa04f0b50"
+      ]
+    },
+    {
+      "command": "udws \"rev.id;\"",
+      "name": "rev.id",
+      "handler": "0xa046e35d",
+      "descriptor_address": "0xa06319c4",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "",
+      "control_flow_proof": "A046E35C -> A046E26A returns RAM20E074DC; A046E324 bounded128byte existing string output plus padding; no identification bus transactions. BLX ARM veneer A03D20C0 is LDR PC literalA0010538 (strlen), not Thumb code.",
+      "hardware_access": false,
+      "side_effects": "UART output only.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa046e26a",
+        "0xa046e324"
+      ]
+    },
+    {
+      "command": "udws \"scan scansm dumpinfo;\"",
+      "name": "scan scansm dumpinfo",
+      "handler": "0xa03bcb2d",
+      "descriptor_address": "0xa06033ac",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "",
+      "control_flow_proof": "A03BCB2C..A03BCE06 reads fixed RAM20DA0658,208583E4,20DA02A5..02D8; only print and integer-division helpers, no scanning calls.",
+      "hardware_access": false,
+      "side_effects": "UART output; scanner formatter may update its output-throttle counter.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa001944c",
+        "0xa03bef18"
+      ]
+    },
+    {
+      "command": "udws \"scan intrn show 1;\"",
+      "name": "scan intrn show",
+      "handler": "0xa03a7535",
+      "descriptor_address": "0xa05ffb20",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "1",
+      "control_flow_proof": "A03A7534 byte1 selects verbose RAM20D9DD04 status fields then prints three further RAM fields; no writes.",
+      "hardware_access": false,
+      "side_effects": "UART output; scanner formatter may update its output-throttle counter.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18",
+        "0xa03bef76"
+      ]
+    },
+    {
+      "command": "udws \"scan firms tables;\"",
+      "name": "scan firms tables",
+      "handler": "0xa03a4453",
+      "descriptor_address": "0xa05ff2fc",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "",
+      "control_flow_proof": "A03A4452 copies and prints197 constant20byte records fromA05FCE34. Bounded loop0..196; labels/defaults metadata, no device/firm writes.",
+      "hardware_access": false,
+      "side_effects": "UART output; scanner formatter may update its output-throttle counter.",
+      "timeout": 60,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa0019444",
+        "0xa03bef18"
+      ]
+    },
+    {
+      "command": "udws \"scan ifc lang;\"",
+      "name": "scan ifc lang",
+      "handler": "0xa03bf8ff",
+      "descriptor_address": "0xa0605250",
+      "classification": "reviewed-compiled-status-reply",
+      "argument_syntax": "",
+      "control_flow_proof": "A03BF8FE prints constant languages=4.",
+      "hardware_access": false,
+      "side_effects": "UART output; scanner formatter may update its output-throttle counter.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18"
+      ]
+    },
+    {
+      "command": "udws \"scan ifc extents 0 0 0 0 0 0;\"",
+      "name": "scan ifc extents",
+      "handler": "0xa03bf81f",
+      "descriptor_address": "0xa0605260",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "0 0 0 0 0 0",
+      "control_flow_proof": "A03BF81E parses six values; explicit all-zero follows A03BF856..88A bounded2x3 read/print loop overRAM20858460. Any nonzero would instead write extents; exact zeros are required.",
+      "hardware_access": false,
+      "side_effects": "UART output; scanner formatter may update its output-throttle counter.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18",
+        "0xa03bef76",
+        "0xa03befcc"
+      ]
+    },
+    {
+      "command": "udws \"scan cissm deferred -1 0 0;\"",
+      "name": "scan cissm deferred",
+      "handler": "0xa03a6c8b",
+      "descriptor_address": "0xa05ff760",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "-1 0 0",
+      "control_flow_proof": "A03A6C8A parses three signed values. Selector-1 takes A03A6CB0 print branch, enumerates three RAM208581B8 records. Selectors0..2 are setters and excluded.",
+      "hardware_access": false,
+      "side_effects": "UART output; scanner formatter may update its output-throttle counter.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18",
+        "0xa03befcc"
+      ]
+    },
+    {
+      "command": "udws \"scan led cometidac;\"",
+      "name": "scan led cometidac",
+      "handler": "0xa03a89a9",
+      "descriptor_address": "0xa05ffd5c",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "",
+      "control_flow_proof": "A03A89A8 reads RAM20D9DF8C halfword/byte and20D9DFD0 word, prints failure/ratio/count.",
+      "hardware_access": false,
+      "side_effects": "UART output; scanner formatter may update its output-throttle counter.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18"
+      ]
+    },
+    {
+      "command": "udws \"scan gain yy;\"",
+      "name": "scan gain yy",
+      "handler": "0xa03a525d",
+      "descriptor_address": "0xa05ff414",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "",
+      "control_flow_proof": "A03A525C reads fixed first/last gain arrays and debug state RAM20D9CBF8; formatter calls only.",
+      "hardware_access": false,
+      "side_effects": "UART output; scanner formatter may update its output-throttle counter.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18"
+      ]
+    },
+    {
+      "command": "udws \"scan prnu valid;\"",
+      "name": "scan prnu valid",
+      "handler": "0xa03b2559",
+      "descriptor_address": "0xa0600d7c",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "",
+      "control_flow_proof": "A03B2558 prints bounded6x2 validity bytes atRAM20D9FBB8.",
+      "hardware_access": false,
+      "side_effects": "UART output; scanner formatter may update its output-throttle counter.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18"
+      ]
+    },
+    {
+      "command": "udws \"scan prnu avg;\"",
+      "name": "scan prnu avg",
+      "handler": "0xa03b28db",
+      "descriptor_address": "0xa0600f7c",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "",
+      "control_flow_proof": "A03B28DA prints three RGB triples fromRAM20D9FC6C and20D9FBD0.",
+      "hardware_access": false,
+      "side_effects": "UART output; scanner formatter may update its output-throttle counter.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18"
+      ]
+    },
+    {
+      "command": "udws \"scan prnu target;\"",
+      "name": "scan prnu target",
+      "handler": "0xa03b28ff",
+      "descriptor_address": "0xa0600f8c",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "",
+      "control_flow_proof": "A03B28FE prints fixed halfword triples atRAM20D9FCCC and20D9FCD4.",
+      "hardware_access": false,
+      "side_effects": "UART output; scanner formatter may update its output-throttle counter.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18"
+      ]
+    },
+    {
+      "command": "udws \"scan orig rdoshift;\"",
+      "name": "scan orig rdoshift",
+      "handler": "0xa03aeadb",
+      "descriptor_address": "0xa0600570",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "",
+      "control_flow_proof": "A03AEADA reads two words20D9F278/27C and prints.",
+      "hardware_access": false,
+      "side_effects": "UART output; scanner formatter may update its output-throttle counter.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18"
+      ]
+    },
+    {
+      "command": "udws \"scan barcode BARMARGIN;\"",
+      "name": "scan barcode BARMARGIN",
+      "handler": "0xa03a1611",
+      "descriptor_address": "0xa05f6fb4",
+      "classification": "reviewed-compiled-status-reply",
+      "argument_syntax": "",
+      "control_flow_proof": "A03A1610 prints compiled constants0,0,5000; no barcode scan or mutation.",
+      "hardware_access": false,
+      "side_effects": "UART output; scanner formatter may update its output-throttle counter.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18"
+      ]
+    },
+    {
+      "command": "udws \"scan barcode get;\"",
+      "name": "scan barcode get",
+      "handler": "0xa03a1621",
+      "descriptor_address": "0xa05f6fc4",
+      "classification": "reviewed-compiled-status-reply",
+      "argument_syntax": "",
+      "control_flow_proof": "A03A1620 prints compiled status tuple populated with constants0 and5000; no barcode acquisition.",
+      "hardware_access": false,
+      "side_effects": "UART output; scanner formatter may update its output-throttle counter.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18"
+      ]
+    },
+    {
+      "command": "udws \"scan reg aferead;\"",
+      "name": "scan reg aferead",
+      "handler": "0xa03b7ce9",
+      "descriptor_address": "0xa0602ab4",
+      "classification": "reviewed-compiled-status-reply",
+      "argument_syntax": "",
+      "control_flow_proof": "A03B7CE8 prints literal afe read capability not yet supported; no actual register transaction.",
+      "hardware_access": false,
+      "side_effects": "UART output; scanner formatter may update its output-throttle counter.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18"
+      ]
+    },
+    {
+      "command": "udws \"scan reg latr;\"",
+      "name": "scan reg latr",
+      "handler": "0xa03ba4ad",
+      "descriptor_address": "0xa0602b54",
+      "classification": "reviewed-hardware-status-read",
+      "argument_syntax": "",
+      "control_flow_proof": "A03BA4AC reads one fixed halfword atMMIO BD06741E and prints startup latency. No write or helper call other than formatter.",
+      "hardware_access": true,
+      "side_effects": "UART output; scanner formatter may update its output-throttle counter.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18"
+      ]
+    },
+    {
+      "command": "udws \"scan scansm tbatinit;\"",
+      "name": "scan scansm tbatinit",
+      "handler": "0xa03bd459",
+      "descriptor_address": "0xa060366c",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "",
+      "control_flow_proof": "A03BD458 prints existing test-status string208583BC; despite name no initialization store/call.",
+      "hardware_access": false,
+      "side_effects": "UART output; scanner formatter may update its output-throttle counter.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18"
+      ]
+    },
+    {
+      "command": "udws \"scan dasher yy;\"",
+      "name": "scan dasher yy",
+      "handler": "0xa03a2ea5",
+      "descriptor_address": "0xa05fc3c4",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "",
+      "control_flow_proof": "A03A2EA4 reads cached detection byte20D9CBDC andchipIDhalfword20D9CBD8; no physical bus activity.",
+      "hardware_access": false,
+      "side_effects": "UART output; scanner formatter may update its output-throttle counter.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18"
+      ]
+    },
+    {
+      "command": "udws \"scan gain FIRSTGAIN;\"",
+      "name": "scan gain FIRSTGAIN",
+      "handler": "0xa03a4fc9",
+      "descriptor_address": "0xa05ff354",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "",
+      "control_flow_proof": "A03A4FC8 reads current gain-table indexRAM20D9CBFC and RGB triple from residentRAM20D9CC08+6*index; no writes/indirect calls. Firmware-maintained current index.",
+      "hardware_access": false,
+      "side_effects": "UART output; scanner formatter may update its output-throttle counter.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18"
+      ]
+    },
+    {
+      "command": "udws \"scan gain LASTGAIN;\"",
+      "name": "scan gain LASTGAIN",
+      "handler": "0xa03a4fe7",
+      "descriptor_address": "0xa05ff364",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "",
+      "control_flow_proof": "A03A4FE6 reads current gain-table indexRAM20D9CBF8 and RGB triple from residentRAM20D9CC38+6*index; no writes/indirect calls. Firmware-maintained current index.",
+      "hardware_access": false,
+      "side_effects": "UART output; scanner formatter may update its output-throttle counter.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18"
+      ]
+    },
+    {
+      "command": "udws \"scan scansm yy;\"",
+      "name": "scan scansm yy",
+      "handler": "0xa03bd259",
+      "descriptor_address": "0xa060365c",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "",
+      "control_flow_proof": "A03BD258 prints current scanner/message state values and corresponding ROM namesA06031A8/A06031BC plus fixedRAM flags; no writes/helpercalls except formatter. Indexes are firmware currentstate, not user supplied.",
+      "hardware_access": false,
+      "side_effects": "UART output; scanner formatter may update its output-throttle counter.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18"
+      ]
+    },
+    {
+      "command": "udws \"hw_mcasic.get_max_temps 1;\"",
+      "name": "hw_mcasic.get_max_temps",
+      "handler": "0xa0171395",
+      "descriptor_address": "0xa053e1b0",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "1",
+      "control_flow_proof": "A0171394 parses index1 and subtracts1; A016F5B0 reads two cached maximumADCvaluesRAM20968B20 and converts throughA016F5E2; A0005F90 only returns constant descriptor tablepointer. No ADC or MICCI transaction, no reset.",
+      "hardware_access": false,
+      "side_effects": "UART output only.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa016f5b0",
+        "0xa02c37be",
+        "0xa02c3de2"
+      ]
+    },
+    {
+      "command": "udws \"lib_servo.get_pos 1;\"",
+      "name": "lib_servo.get_pos",
+      "handler": "0xa02be11f",
+      "descriptor_address": "0xa05b68e0",
+      "classification": "reviewed-hardware-status-read",
+      "argument_syntax": "1",
+      "control_flow_proof": "A02BE11E parses selector1. ROM encoder tableA05B6B18 type0x1388 selects A02BE646. This reads compiled configuration208450B8=10 and callsA0177700(10), which directly reads32bitencoderpositionMMIO BD300038. No motor/PWM write. Config alternativechannels7/8 also only read MMIO BD302010/BD302410 and maintain RAM counter-extension values through pure helper A0177698; none of A0177700 branches writes hardware.",
+      "hardware_access": true,
+      "side_effects": "UART output; optional RAM encoder wrap-extension bookkeeping only.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa02be0d4",
+        "0xa02c37be",
+        "0xa02c3de2"
+      ]
+    },
+    {
+      "command": "udws \"lib_servo.getfreq 1;\"",
+      "name": "lib_servo.getfreq",
+      "handler": "0xa02be2d1",
+      "descriptor_address": "0xa05b694c",
+      "classification": "reviewed-hardware-status-read",
+      "argument_syntax": "1",
+      "control_flow_proof": "A02BE2D0 reads same verified encoder1 position twice viaA02BE0D4/A02BE646/A0177700(10), separated by1000000usec timer/scheduler delayA042EE2C; outputs delta. No motor/PWM command. Config alternativechannels7/8 also only read MMIO BD302010/BD302410 and maintain RAM counter-extension values through pure helper A0177698; none of A0177700 branches writes hardware.",
+      "hardware_access": true,
+      "side_effects": "UART output; optional RAM encoder wrap-extension bookkeeping only.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa02be0d4",
+        "0xa02c37be",
+        "0xa02c3de2",
+        "0xa042ee2c"
+      ]
+    },
+    {
+      "command": "udws \"pen.get_mfg_data 1;\"",
+      "name": "pen.get_mfg_data",
+      "handler": "0xa032b241",
+      "descriptor_address": "0xa05df228",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "1",
+      "control_flow_proof": "Same bounded resident manufacturing-data array path as selector0; A032B256 enforcesindex<20; exactindex1 reads20D0895C+4*index.",
+      "hardware_access": false,
+      "side_effects": "UART output only.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": []
+    },
+    {
+      "command": "udws \"pen.get_mfg_data 2;\"",
+      "name": "pen.get_mfg_data",
+      "handler": "0xa032b241",
+      "descriptor_address": "0xa05df228",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "2",
+      "control_flow_proof": "Same bounded resident manufacturing-data array path as selector0; A032B256 enforcesindex<20; exactindex2 reads20D0895C+4*index.",
+      "hardware_access": false,
+      "side_effects": "UART output only.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": []
+    },
+    {
+      "command": "udws \"pen.get_mfg_data 3;\"",
+      "name": "pen.get_mfg_data",
+      "handler": "0xa032b241",
+      "descriptor_address": "0xa05df228",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "3",
+      "control_flow_proof": "Same bounded resident manufacturing-data array path as selector0; A032B256 enforcesindex<20; exactindex3 reads20D0895C+4*index.",
+      "hardware_access": false,
+      "side_effects": "UART output only.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": []
+    },
+    {
+      "command": "udws \"pen.get_mfg_data 4;\"",
+      "name": "pen.get_mfg_data",
+      "handler": "0xa032b241",
+      "descriptor_address": "0xa05df228",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "4",
+      "control_flow_proof": "Same bounded resident manufacturing-data array path as selector0; A032B256 enforcesindex<20; exactindex4 reads20D0895C+4*index.",
+      "hardware_access": false,
+      "side_effects": "UART output only.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": []
+    },
+    {
+      "command": "udws \"pen.get_mfg_data 5;\"",
+      "name": "pen.get_mfg_data",
+      "handler": "0xa032b241",
+      "descriptor_address": "0xa05df228",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "5",
+      "control_flow_proof": "Same bounded resident manufacturing-data array path as selector0; A032B256 enforcesindex<20; exactindex5 reads20D0895C+4*index.",
+      "hardware_access": false,
+      "side_effects": "UART output only.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": []
+    },
+    {
+      "command": "udws \"pen.get_mfg_data 6;\"",
+      "name": "pen.get_mfg_data",
+      "handler": "0xa032b241",
+      "descriptor_address": "0xa05df228",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "6",
+      "control_flow_proof": "Same bounded resident manufacturing-data array path as selector0; A032B256 enforcesindex<20; exactindex6 reads20D0895C+4*index.",
+      "hardware_access": false,
+      "side_effects": "UART output only.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": []
+    },
+    {
+      "command": "udws \"pen.get_mfg_data 7;\"",
+      "name": "pen.get_mfg_data",
+      "handler": "0xa032b241",
+      "descriptor_address": "0xa05df228",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "7",
+      "control_flow_proof": "Same bounded resident manufacturing-data array path as selector0; A032B256 enforcesindex<20; exactindex7 reads20D0895C+4*index.",
+      "hardware_access": false,
+      "side_effects": "UART output only.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": []
+    },
+    {
+      "command": "udws \"pen.get_mfg_data 8;\"",
+      "name": "pen.get_mfg_data",
+      "handler": "0xa032b241",
+      "descriptor_address": "0xa05df228",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "8",
+      "control_flow_proof": "Same bounded resident manufacturing-data array path as selector0; A032B256 enforcesindex<20; exactindex8 reads20D0895C+4*index.",
+      "hardware_access": false,
+      "side_effects": "UART output only.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": []
+    },
+    {
+      "command": "udws \"pen.get_mfg_data 9;\"",
+      "name": "pen.get_mfg_data",
+      "handler": "0xa032b241",
+      "descriptor_address": "0xa05df228",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "9",
+      "control_flow_proof": "Same bounded resident manufacturing-data array path as selector0; A032B256 enforcesindex<20; exactindex9 reads20D0895C+4*index.",
+      "hardware_access": false,
+      "side_effects": "UART output only.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": []
+    },
+    {
+      "command": "udws \"pen.get_mfg_data 10;\"",
+      "name": "pen.get_mfg_data",
+      "handler": "0xa032b241",
+      "descriptor_address": "0xa05df228",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "10",
+      "control_flow_proof": "Same bounded resident manufacturing-data array path as selector0; A032B256 enforcesindex<20; exactindex10 reads20D0895C+4*index.",
+      "hardware_access": false,
+      "side_effects": "UART output only.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": []
+    },
+    {
+      "command": "udws \"pen.get_mfg_data 11;\"",
+      "name": "pen.get_mfg_data",
+      "handler": "0xa032b241",
+      "descriptor_address": "0xa05df228",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "11",
+      "control_flow_proof": "Same bounded resident manufacturing-data array path as selector0; A032B256 enforcesindex<20; exactindex11 reads20D0895C+4*index.",
+      "hardware_access": false,
+      "side_effects": "UART output only.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": []
+    },
+    {
+      "command": "udws \"pen.get_mfg_data 12;\"",
+      "name": "pen.get_mfg_data",
+      "handler": "0xa032b241",
+      "descriptor_address": "0xa05df228",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "12",
+      "control_flow_proof": "Same bounded resident manufacturing-data array path as selector0; A032B256 enforcesindex<20; exactindex12 reads20D0895C+4*index.",
+      "hardware_access": false,
+      "side_effects": "UART output only.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": []
+    },
+    {
+      "command": "udws \"pen.get_mfg_data 13;\"",
+      "name": "pen.get_mfg_data",
+      "handler": "0xa032b241",
+      "descriptor_address": "0xa05df228",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "13",
+      "control_flow_proof": "Same bounded resident manufacturing-data array path as selector0; A032B256 enforcesindex<20; exactindex13 reads20D0895C+4*index.",
+      "hardware_access": false,
+      "side_effects": "UART output only.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": []
+    },
+    {
+      "command": "udws \"pen.get_mfg_data 14;\"",
+      "name": "pen.get_mfg_data",
+      "handler": "0xa032b241",
+      "descriptor_address": "0xa05df228",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "14",
+      "control_flow_proof": "Same bounded resident manufacturing-data array path as selector0; A032B256 enforcesindex<20; exactindex14 reads20D0895C+4*index.",
+      "hardware_access": false,
+      "side_effects": "UART output only.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": []
+    },
+    {
+      "command": "udws \"pen.get_mfg_data 15;\"",
+      "name": "pen.get_mfg_data",
+      "handler": "0xa032b241",
+      "descriptor_address": "0xa05df228",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "15",
+      "control_flow_proof": "Same bounded resident manufacturing-data array path as selector0; A032B256 enforcesindex<20; exactindex15 reads20D0895C+4*index.",
+      "hardware_access": false,
+      "side_effects": "UART output only.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": []
+    },
+    {
+      "command": "udws \"pen.get_mfg_data 16;\"",
+      "name": "pen.get_mfg_data",
+      "handler": "0xa032b241",
+      "descriptor_address": "0xa05df228",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "16",
+      "control_flow_proof": "Same bounded resident manufacturing-data array path as selector0; A032B256 enforcesindex<20; exactindex16 reads20D0895C+4*index.",
+      "hardware_access": false,
+      "side_effects": "UART output only.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": []
+    },
+    {
+      "command": "udws \"pen.get_mfg_data 17;\"",
+      "name": "pen.get_mfg_data",
+      "handler": "0xa032b241",
+      "descriptor_address": "0xa05df228",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "17",
+      "control_flow_proof": "Same bounded resident manufacturing-data array path as selector0; A032B256 enforcesindex<20; exactindex17 reads20D0895C+4*index.",
+      "hardware_access": false,
+      "side_effects": "UART output only.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": []
+    },
+    {
+      "command": "udws \"pen.get_mfg_data 18;\"",
+      "name": "pen.get_mfg_data",
+      "handler": "0xa032b241",
+      "descriptor_address": "0xa05df228",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "18",
+      "control_flow_proof": "Same bounded resident manufacturing-data array path as selector0; A032B256 enforcesindex<20; exactindex18 reads20D0895C+4*index.",
+      "hardware_access": false,
+      "side_effects": "UART output only.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": []
+    },
+    {
+      "command": "udws \"pen.get_mfg_data 19;\"",
+      "name": "pen.get_mfg_data",
+      "handler": "0xa032b241",
+      "descriptor_address": "0xa05df228",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "19",
+      "control_flow_proof": "Same bounded resident manufacturing-data array path as selector0; A032B256 enforcesindex<20; exactindex19 reads20D0895C+4*index.",
+      "hardware_access": false,
+      "side_effects": "UART output only.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": []
+    },
+    {
+      "command": "udws \"pen.get_fire_mode 1;\"",
+      "name": "pen.get_fire_mode",
+      "handler": "0xa032ad21",
+      "descriptor_address": "0xa05df168",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "1",
+      "control_flow_proof": "Same verified RAM-only A0176620 lookup as pen0; pen1 reads20969BEC. Two physical pen slots; no MMIO/PWM action.",
+      "hardware_access": false,
+      "side_effects": "UART output only.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation and listed helper paths only; reviewed offline without serial access.",
+      "prior_invocation_status": "not-invoked",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0256800",
+        "0xa03299c0",
+        "0xa03299c4",
+        "0xa03299f0",
+        "0xa04f0b50"
+      ]
+    }
+  ],
+  "held_paths": [
+    {
+      "name": "scan home docwallfound",
+      "invocation_scope": "path described; other invocations may differ",
+      "reason": "A03A58CC parses byte then STRB20D9CD45; setter of home-found state, not a query.",
+      "decision": "defer-pending-specific-review",
+      "not_a_blanket_command_ban": true
+    },
+    {
+      "name": "scan home homefindloc",
+      "invocation_scope": "path described; other invocations may differ",
+      "reason": "A03A58D8 parses int then unconditionallySTR20D9CD54; changes home-search location.",
+      "decision": "defer-pending-specific-review",
+      "not_a_blanket_command_ban": true
+    },
+    {
+      "name": "scan orig refmarkfound",
+      "invocation_scope": "path described; other invocations may differ",
+      "reason": "A03AE818 parses boolean and callsA03AE22E setter.",
+      "decision": "defer-pending-specific-review",
+      "not_a_blanket_command_ban": true
+    },
+    {
+      "name": "scan prnu RUNNING",
+      "invocation_scope": "path described; other invocations may differ",
+      "reason": "A03B216A parses four values and invokes scan configuration/control helpersA03B5148,A03AF110,A03AF390; not a running-state getter.",
+      "decision": "defer-pending-specific-review",
+      "not_a_blanket_command_ban": true
+    },
+    {
+      "name": "scan sensor id",
+      "invocation_scope": "path described; other invocations may differ",
+      "reason": "A03BDE14 writes current sensorID2085841C and reconfiguresA03BDACC/A03B44C2 when0..2.",
+      "decision": "defer-pending-specific-review",
+      "not_a_blanket_command_ban": true
+    },
+    {
+      "name": "scan gain ISRGAIN",
+      "invocation_scope": "path described; other invocations may differ",
+      "reason": "A03A4FB0 parses byte and writes20D9CD3C.",
+      "decision": "defer-pending-specific-review",
+      "not_a_blanket_command_ban": true
+    },
+    {
+      "name": "scan gain NORMGAIN",
+      "invocation_scope": "path described; other invocations may differ",
+      "reason": "A03A4FBC parses byte and writes2085818D.",
+      "decision": "defer-pending-specific-review",
+      "not_a_blanket_command_ban": true
+    },
+    {
+      "name": "scan ifc calavail",
+      "invocation_scope": "path described; other invocations may differ",
+      "reason": "A03BFCE8 -> A03BF618 dispatches stored callback/event through A004AEFC when eventpair20DA0ACC is nonzero. This sends availability notification rather than reading a flag; callback effects not reviewed.",
+      "decision": "defer-pending-specific-review",
+      "not_a_blanket_command_ban": true
+    },
+    {
+      "name": "scan ifc calcomplete",
+      "invocation_scope": "path described; other invocations may differ",
+      "reason": "A03BFCF8 -> A03BF666 dispatches stored callback/eventA004AEFC from20DA0AD4. Not a completion-state getter.",
+      "decision": "defer-pending-specific-review",
+      "not_a_blanket_command_ban": true
+    },
+    {
+      "name": "scan ifc maxyres",
+      "invocation_scope": "path described; other invocations may differ",
+      "reason": "A03BFD0E parses and STRH writes20DA0AB8. It changes resolution override.",
+      "decision": "defer-pending-specific-review",
+      "not_a_blanket_command_ban": true
+    },
+    {
+      "name": "scan ifc caldr",
+      "invocation_scope": "path described; other invocations may differ",
+      "reason": "A03BFD00 parses and STRB writes20858451.",
+      "decision": "defer-pending-specific-review",
+      "not_a_blanket_command_ban": true
+    },
+    {
+      "name": "scan cissm trantimes",
+      "invocation_scope": "path described; other invocations may differ",
+      "reason": "A03A6A7E parses three values and writes transition timer settings20D9DC20/24/28.",
+      "decision": "defer-pending-specific-review",
+      "not_a_blanket_command_ban": true
+    },
+    {
+      "name": "scan line pline",
+      "invocation_scope": "path described; other invocations may differ",
+      "reason": "A03AB1EA writes requested currentline halfword20D9DFFA with clamping; not a line-data read.",
+      "decision": "defer-pending-specific-review",
+      "not_a_blanket_command_ban": true
+    },
+    {
+      "name": "fp_hwdefs ifc db",
+      "invocation_scope": "path described; other invocations may differ",
+      "reason": "A00E83C6 parses byte viaA00E843C thenSTRB20937120; debug configuration setter.",
+      "decision": "defer-pending-specific-review",
+      "not_a_blanket_command_ban": true
+    },
+    {
+      "name": "lib_servo.get_pos 0",
+      "invocation_scope": "path described; other invocations may differ",
+      "reason": "Encoder0 uses tabletype0x1389 and A02BD570/A02BDBAE, which can callA0172458 to alter hardware encoder capture state before reading. Needs separate operational review; encoder1 has a direct read path and is included.",
+      "decision": "defer-pending-specific-review",
+      "not_a_blanket_command_ban": true
+    },
+    {
+      "name": "lib_servo.encdump",
+      "invocation_scope": "path described; other invocations may differ",
+      "reason": "Unconditionally iterates encoders0 and1 throughA02BE0D4; encoder0 can alter hardware capture state. It also discards returned positions without printing.",
+      "decision": "defer-pending-specific-review",
+      "not_a_blanket_command_ban": true
+    },
+    {
+      "name": "power_supply.report_reset",
+      "invocation_scope": "path described; other invocations may differ",
+      "reason": "A0349210 calls optional functionpointerRAM20850060. Unresolved callback; name does not establish query semantics.",
+      "decision": "defer-pending-specific-review",
+      "not_a_blanket_command_ban": true
+    },
+    {
+      "name": "hw_mcasic.get_multiple_aasic 0",
+      "invocation_scope": "path described; other invocations may differ",
+      "reason": "A0171338 helperA016EAC6/A016EAF8 may read physical MICCI viaA01719C8 if cache is empty; no movement path found but pending bus/protocol review. Earlier rev.get_aasic assertion overlapped user unplugging, so not a proven deterministic bad command.",
+      "decision": "defer-pending-specific-review",
+      "not_a_blanket_command_ban": true
+    },
+    {
+      "name": "pen.get_id_new / pen.get_id_256 / pen.get_id_512",
+      "invocation_scope": "path described; other invocations may differ",
+      "reason": "Valid physical pen reads acquire pen subsystem and invokeA0320DE2/A0317910/A031F2C6, then release. Full power/firing effects of those helpers not yet established; hold pending operational review, not classified irreversible.",
+      "decision": "defer-pending-specific-review",
+      "not_a_blanket_command_ban": true
+    },
+    {
+      "name": "pen.get_ambient_ad / pen.get_tsr_ad / pen.get_voltage",
+      "invocation_scope": "path described; other invocations may differ",
+      "reason": "Handlers acquire pen subsystem and enter hardware ADC/power helpers. Reads are plausible but lower-level enable/restore path not fully reviewed; no claim of destructive operation.",
+      "decision": "defer-pending-specific-review",
+      "not_a_blanket_command_ban": true
+    },
+    {
+      "name": "pen.get_failed_resistor",
+      "invocation_scope": "path described; other invocations may differ",
+      "reason": "A032A6D4 maintains an internal iterator and can reset iterator state. Needs bounded iterator/array limits review before use.",
+      "decision": "defer-pending-specific-review",
+      "not_a_blanket_command_ban": true
+    },
+    {
+      "name": "scan dasher table",
+      "invocation_scope": "path described; other invocations may differ",
+      "reason": "A03A2A4C traverses dynamic20D9C538 table until sentinel359 without null/bounds guard. Need live table initialization/sentinel evidence before capture.",
+      "decision": "defer-pending-specific-review",
+      "not_a_blanket_command_ban": true
+    },
+    {
+      "name": "scan scansm startstops",
+      "invocation_scope": "path described; other invocations may differ",
+      "reason": "A03BCAEA iterates count20DA0744 over adjacent memory without local cap; malformed/livecount not known.",
+      "decision": "defer-pending-specific-review",
+      "not_a_blanket_command_ban": true
+    },
+    {
+      "name": "scan_semiauto_align ev sh",
+      "invocation_scope": "path described; other invocations may differ",
+      "reason": "A039E72E can stream a live event-memory range between RAM pointers without static output bound; requires live allocated-range evidence.",
+      "decision": "defer-pending-specific-review",
+      "not_a_blanket_command_ban": true
+    },
+    {
+      "name": "scan_semiauto_align.trace_show",
+      "invocation_scope": "path described; other invocations may differ",
+      "reason": "A039E36E potentially prints5100 rows across21trace arrays. Need live allocation/output budget; do not start broad trace dump in bounded initialbatch.",
+      "decision": "defer-pending-specific-review",
+      "not_a_blanket_command_ban": true
+    }
+  ],
+  "excluded_duplicates": [],
+  "common_review_notes": [
+    "Exact numeric arguments matter: scan ifc extents requires six zeros; scan cissm deferred requires selector -1; CARrefpos and LBrefpos require zero to skip their writes.",
+    "No scan acquisition, carriage command, ink firing, calibration, fuse write, firmware update, or persistent NVM write is in the ready plan.",
+    "Several compiled status replies report constants or unsupported capability; these are labeled separately from live hardware values.",
+    "RAM-based queries inspect firmware-maintained live objects. They do not accept user-selected raw pointers. Some normal firmware state indices select resident arrays/ROM names.",
+    "The earlier MICCI assertion coincided with the user unplugging the device. This ambiguity is preserved and is not a deterministic failure classification.",
+    "Review is bounded to this first concrete round, not a claim that all remaining hardware command families are prohibited or complete."
+  ],
+  "handler_proofs": {
+    "0xa03a5729": {
+      "name": "scan home HOMEFOUND",
+      "thumb_entry": "0xa03a5728",
+      "first_32_bytes_hex": "b5004a1d7811a02bf019fbf2bd00b5104c17491ba02bf019fbeb7821a032f019",
+      "bounded_handler_disassembly": "### scan home HOMEFOUND 0xa03a5728\na03a5728 push    {lr}\na03a572a ldr     r2, [pc, #0x74] =>0x20d9cd45 ''\na03a572c ldrb    r1, [r2]\na03a572e adr     r0, #0xac\na03a5730 bl      #0xa03bef18\na03a5734 pop     {pc}"
+    },
+    "0xa03a5737": {
+      "name": "scan home prt",
+      "thumb_entry": "0xa03a5736",
+      "first_32_bytes_hex": "b5104c17491ba02bf019fbeb7821a032f019fbe77861a039f019fbe3a0412100",
+      "bounded_handler_disassembly": "### scan home prt 0xa03a5736\na03a5736 push    {r4, lr}\na03a5738 ldr     r4, [pc, #0x5c] =>0x20d9cd44 ''\na03a573a ldr     r1, [pc, #0x6c] =>0x8d8 ''\na03a573c adr     r0, #0xac\na03a573e bl      #0xa03bef18\na03a5742 ldrb    r1, [r4]\na03a5744 adr     r0, #0xc8\na03a5746 bl      #0xa03bef18\na03a574a ldrb    r1, [r4, #1]\na03a574c adr     r0, #0xe4\na03a574e bl      #0xa03bef18\na03a5752 adr     r0, #0x104\na03a5754 movs    r1, #0\na03a5756 bl      #0xa03bef18\na03a575a movs    r1, #1\na03a575c ldrb    r0, [r4, #3]\na03a575e cmp     r0, #0\na03a5760 bne     #0xa03a5764\na03a5762 adds    r1, r0, #0\na03a5764 adr     r0, #0x114\na03a5766 bl      #0xa03bef18\na03a576a adr     r0, #0x134\na03a576c bl      #0xa03bef18\na03a5770 pop     {r4, pc}"
+    },
+    "0xa03ae6dd": {
+      "name": "scan orig DOCOFFX",
+      "thumb_entry": "0xa03ae6dc",
+      "first_32_bytes_hex": "b500485668016d001a09a055f010fc16bd00b5304c53f010fc6b6020f010fc68",
+      "bounded_handler_disassembly": "### scan orig DOCOFFX 0xa03ae6dc\na03ae6dc push    {lr}\na03ae6de ldr     r0, [pc, #0x158] =>0x20d9f224 ''\na03ae6e0 ldr     r1, [r0]\na03ae6e2 ldr     r0, [r0, #0x50]\na03ae6e4 subs    r1, r1, r0\na03ae6e6 adr     r0, #0x154\na03ae6e8 bl      #0xa03bef18\na03ae6ec pop     {pc}"
+    },
+    "0xa03ae71b": {
+      "name": "scan orig MAG",
+      "thumb_entry": "0xa03ae71a",
+      "first_32_bytes_hex": "b50048496801a049f010fbf9bd00b5004a4a7811a04af010fbf2bd00b5304c41",
+      "bounded_handler_disassembly": "### scan orig MAG 0xa03ae71a\na03ae71a push    {lr}\na03ae71c ldr     r0, [pc, #0x124] =>0x208582c4 ''\na03ae71e ldr     r1, [r0]\na03ae720 adr     r0, #0x124\na03ae722 bl      #0xa03bef18\na03ae726 pop     {pc}"
+    },
+    "0xa03ae729": {
+      "name": "scan orig NOTCHFOUND",
+      "thumb_entry": "0xa03ae728",
+      "first_32_bytes_hex": "b5004a4a7811a04af010fbf2bd00b5304c4169a368e268a1a04af010fbe96d23",
+      "bounded_handler_disassembly": "### scan orig NOTCHFOUND 0xa03ae728\na03ae728 push    {lr}\na03ae72a ldr     r2, [pc, #0x128] =>0x20d9f290 ''\na03ae72c ldrb    r1, [r2]\na03ae72e adr     r0, #0x128\na03ae730 bl      #0xa03bef18\na03ae734 pop     {pc}"
+    },
+    "0xa03ae611": {
+      "name": "scan orig PIXELPOS",
+      "thumb_entry": "0xa03ae610",
+      "first_32_bytes_hex": "b570b0834c0a4d1a491dcc0993029001c9489600cd06a01bf010fc766a626a21",
+      "bounded_handler_disassembly": "### scan orig PIXELPOS 0xa03ae610\na03ae610 push    {r4, r5, r6, lr}\na03ae612 sub     sp, #0xc\na03ae614 ldr     r4, [pc, #0x28] =>0x20d9f224 ''\na03ae616 ldr     r5, [pc, #0x68] =>0x208582d0 ''\na03ae618 ldr     r1, [pc, #0x74] =>0x20858308 ''\na03ae61a ldm     r4!, {r0, r3}\na03ae61c str     r3, [sp, #8]\na03ae61e str     r0, [sp, #4]\na03ae620 ldm     r1!, {r3, r6}\na03ae622 str     r6, [sp]\na03ae624 ldm     r5!, {r1, r2}\na03ae626 adr     r0, #0x6c\na03ae628 bl      #0xa03bef18\na03ae62c ldr     r2, [r4, #0x24]\na03ae62e ldr     r1, [r4, #0x20]\na03ae630 adr     r0, #0x98\na03ae632 bl      #0xa03bef18\na03ae636 add     sp, #0xc\na03ae638 pop     {r4, r5, r6, pc}"
+    },
+    "0xa03ae7b1": {
+      "name": "scan orig refmarkget",
+      "thumb_entry": "0xa03ae7b0",
+      "first_32_bytes_hex": "b510b083486e1d0421005e43930221025e409001201c5e209000201a5e235e62",
+      "bounded_handler_disassembly": "### scan orig refmarkget 0xa03ae7b0\na03ae7b0 push    {r4, lr}\na03ae7b2 sub     sp, #0xc\na03ae7b4 ldr     r0, [pc, #0x1b8] =>0x20d9f28c ''\na03ae7b6 adds    r4, r0, #4\na03ae7b8 movs    r1, #0\na03ae7ba ldrsh   r3, [r0, r1]\na03ae7bc str     r3, [sp, #8]\na03ae7be movs    r1, #2\na03ae7c0 ldrsh   r0, [r0, r1]\na03ae7c2 str     r0, [sp, #4]\na03ae7c4 movs    r0, #0x1c\na03ae7c6 ldrsh   r0, [r4, r0]\na03ae7c8 str     r0, [sp]\na03ae7ca movs    r0, #0x1a\na03ae7cc ldrsh   r3, [r4, r0]\na03ae7ce ldrsh   r2, [r4, r1]\na03ae7d0 ldrb    r1, [r4]\na03ae7d2 adr     r0, #0x1a0\na03ae7d4 bl      #0xa03bef18\na03ae7d8 movs    r0, #0x18\na03ae7da ldrsh   r3, [r4, r0]\na03ae7dc str     r3, [sp, #4]\na03ae7de movs    r0, #0x16\na03ae7e0 ldrsh   r0, [r4, r0]\na03ae7e2 str     r0, [sp]\na03ae7e4 movs    r0, #0x14\na03ae7e6 ldrsh   r3, [r4, r0]\na03ae7e8 movs    r0, #0x12\na03ae7ea ldrsh   r2, [r4, r0]\na03ae7ec movs    r0, #0x10\na03ae7ee ldrsh   r1, [r4, r0]\na03ae7f0 adr     r0, #0x1d4\na03ae7f2 bl      #0xa03bef18\na03ae7f6 ldrh    r3, [r4, #0xa]\na03ae7f8 str     r3, [sp]\na03ae7fa ldrh    r3, [r4, #8]\na03ae7fc ldrh    r2, [r4, #6]\na03ae7fe ldrh    r1, [r4, #4]\na03ae800 adr     r0, #0x234\na03ae802 bl      #0xa03bef18\na03ae806 movs    r3, #0xe\na03ae808 ldrsh   r2, [r4, r3]\na03ae80a movs    r0, #0xc\na03ae80c ldrsh   r1, [r4, r0]\na03ae80e adr     r0, #0x26c\na03ae810 bl      #0xa03bef18\na03ae814 add     sp, #0xc\na03ae816 pop     {r4, pc}"
+    },
+    "0xa03ae737": {
+      "name": "scan orig scores",
+      "thumb_entry": "0xa03ae736",
+      "first_32_bytes_hex": "b5304c4169a368e268a1a04af010fbe96d236c626c21a052f010fbe34d5c3508",
+      "bounded_handler_disassembly": "### scan orig scores 0xa03ae736\na03ae736 push    {r4, r5, lr}\na03ae738 ldr     r4, [pc, #0x104] =>0x208582d0 ''\na03ae73a ldr     r3, [r4, #0x18]\na03ae73c ldr     r2, [r4, #0xc]\na03ae73e ldr     r1, [r4, #8]\na03ae740 adr     r0, #0x128\na03ae742 bl      #0xa03bef18\na03ae746 ldr     r3, [r4, #0x50]\na03ae748 ldr     r2, [r4, #0x44]\na03ae74a ldr     r1, [r4, #0x40]\na03ae74c adr     r0, #0x148\na03ae74e bl      #0xa03bef18\na03ae752 ldr     r5, [pc, #0x170] =>0x20d9f24c ''\na03ae754 adds    r5, #8\na03ae756 ldm     r5!, {r1, r2, r3}\na03ae758 adr     r0, #0x16c\na03ae75a bl      #0xa03bef18\na03ae75e ldm     r5!, {r1, r2}\na03ae760 adr     r0, #0x190\na03ae762 bl      #0xa03bef18\na03ae766 ldr     r1, [r5]\na03ae768 adr     r0, #0x1b4\na03ae76a bl      #0xa03bef18\na03ae76e ldr     r2, [r5, #8]\na03ae770 ldr     r1, [r5, #4]\na03ae772 adr     r0, #0x1cc\na03ae774 bl      #0xa03bef18\na03ae778 pop     {r4, r5, pc}"
+    },
+    "0xa03b1f17": {
+      "name": "scan prnu TABLERES",
+      "thumb_entry": "0xa03b1f16",
+      "first_32_bytes_hex": "b500485688c28841a068f00cfffabd00b5f0b0834f6af7fcff739001f7fcff65",
+      "bounded_handler_disassembly": "### scan prnu TABLERES 0xa03b1f16\na03b1f16 push    {lr}\na03b1f18 ldr     r0, [pc, #0x158] =>0x20d9fbc4 ''\na03b1f1a ldrh    r2, [r0, #6]\na03b1f1c ldrh    r1, [r0, #2]\na03b1f1e adr     r0, #0x1a0\na03b1f20 bl      #0xa03bef18\na03b1f24 pop     {pc}"
+    },
+    "0xa03b215d": {
+      "name": "scan prnu WSDONE",
+      "thumb_entry": "0xa03b215c",
+      "first_32_bytes_hex": "b500489a7841a09af00cfed8bd00b5f0b0b2f00cff2d9005f00cff2a1c05f00c",
+      "bounded_handler_disassembly": "### scan prnu WSDONE 0xa03b215c\na03b215c push    {lr}\na03b215e ldr     r0, [pc, #0x268] =>0x20d9fbc4 ''\na03b2160 ldrb    r1, [r0, #1]\na03b2162 adr     r0, #0x268\na03b2164 bl      #0xa03bef18\na03b2168 pop     {pc}"
+    },
+    "0xa03adf49": {
+      "name": "scan mtr CARrefpos",
+      "thumb_entry": "0xa03adf48",
+      "first_32_bytes_hex": "b5104c34f011f8372800d00060206821a031f010ffddbd10b5104c37f011f82b",
+      "bounded_handler_disassembly": "### scan mtr CARrefpos 0xa03adf48\na03adf48 push    {r4, lr}\na03adf4a ldr     r4, [pc, #0xd0] =>0x208582a8 ''\na03adf4c bl      #0xa03befbe\na03adf50 cmp     r0, #0\na03adf52 beq     #0xa03adf56\na03adf54 str     r0, [r4]\na03adf56 ldr     r1, [r4]\na03adf58 adr     r0, #0xc4\na03adf5a bl      #0xa03bef18\na03adf5e pop     {r4, pc}"
+    },
+    "0xa03adf61": {
+      "name": "scan mtr LBrefpos",
+      "thumb_entry": "0xa03adf60",
+      "first_32_bytes_hex": "b5104c37f011f82b2800d00060206821a034f010ffd1bd10b500f010fffc4a3a",
+      "bounded_handler_disassembly": "### scan mtr LBrefpos 0xa03adf60\na03adf60 push    {r4, lr}\na03adf62 ldr     r4, [pc, #0xdc] =>0x208582a4 ''\na03adf64 bl      #0xa03befbe\na03adf68 cmp     r0, #0\na03adf6a beq     #0xa03adf6e\na03adf6c str     r0, [r4]\na03adf6e ldr     r1, [r4]\na03adf70 adr     r0, #0xd0\na03adf72 bl      #0xa03bef18\na03adf76 pop     {r4, pc}"
+    },
+    "0xa03a5005": {
+      "name": "scan gain FIRSTPWM",
+      "thumb_entry": "0xa03a5004",
+      "first_32_bytes_hex": "b5004a498811a049f019ff84bd00b5004a4b8811a04bf019ff7dbd00b5301c04",
+      "bounded_handler_disassembly": "### scan gain FIRSTPWM 0xa03a5004\na03a5004 push    {lr}\na03a5006 ldr     r2, [pc, #0x124] =>0x20d9cbfa ''\na03a5008 ldrh    r1, [r2]\na03a500a adr     r0, #0x124\na03a500c bl      #0xa03bef18\na03a5010 pop     {pc}"
+    },
+    "0xa03a5013": {
+      "name": "scan gain LASTPWM",
+      "thumb_entry": "0xa03a5012",
+      "first_32_bytes_hex": "b5004a4b8811a04bf019ff7dbd00b5301c04a54ccc0e1c28f019ff758d238ce2",
+      "bounded_handler_disassembly": "### scan gain LASTPWM 0xa03a5012\na03a5012 push    {lr}\na03a5014 ldr     r2, [pc, #0x12c] =>0x20d9cbf6 ''\na03a5016 ldrh    r1, [r2]\na03a5018 adr     r0, #0x12c\na03a501a bl      #0xa03bef18\na03a501e pop     {pc}"
+    },
+    "0xa03a69f5": {
+      "name": "scan cissm pwrcaldone",
+      "thumb_entry": "0xa03a69f4",
+      "first_32_bytes_hex": "b50048507801a05cf018fa8cbd00b5104c4ce0022003f750f9b178232b00d0f9",
+      "bounded_handler_disassembly": "### scan cissm pwrcaldone 0xa03a69f4\na03a69f4 push    {lr}\na03a69f6 ldr     r0, [pc, #0x140] =>0x20d9dc6c ''\na03a69f8 ldrb    r1, [r0]\na03a69fa adr     r0, #0x170\na03a69fc bl      #0xa03bef18\na03a6a00 pop     {pc}"
+    },
+    "0xa03a6c61": {
+      "name": "scan cissm lenspitch",
+      "thumb_entry": "0xa03a6c60",
+      "first_32_bytes_hex": "b5104c2ef018f9878821a02df018f954bd10b500f016ffd7f008f90fbd00b510",
+      "bounded_handler_disassembly": "### scan cissm lenspitch 0xa03a6c60\na03a6c60 push    {r4, lr}\na03a6c62 ldr     r4, [pc, #0xb8] =>0x208581d0 ''\na03a6c64 bl      #0xa03bef76\na03a6c68 ldrh    r1, [r4]\na03a6c6a adr     r0, #0xb4\na03a6c6c bl      #0xa03bef18\na03a6c70 pop     {r4, pc}"
+    },
+    "0xa03a9cef": {
+      "name": "scan cissm LEDONTIMEGET",
+      "thumb_entry": "0xa03a9cee",
+      "first_32_bytes_hex": "b5004858888388428801a057f015f90dbd00b5104c5cf015f9377060bd10b5f0",
+      "bounded_handler_disassembly": "### scan cissm LEDONTIMEGET 0xa03a9cee\na03a9cee push    {lr}\na03a9cf0 ldr     r0, [pc, #0x160] =>0x20d9df84 ''\na03a9cf2 ldrh    r3, [r0, #4]\na03a9cf4 ldrh    r2, [r0, #2]\na03a9cf6 ldrh    r1, [r0]\na03a9cf8 adr     r0, #0x15c\na03a9cfa bl      #0xa03bef18\na03a9cfe pop     {pc}"
+    },
+    "0xa03a14d5": {
+      "name": "scan afe hw",
+      "thumb_entry": "0xa03a14d4",
+      "first_32_bytes_hex": "b5104c29f01dfd4da02ff01dfd1b68202801d30cd0092803d30bd00c2805d30c",
+      "bounded_handler_disassembly": "### scan afe hw 0xa03a14d4\na03a14d4 push    {r4, lr}\na03a14d6 ldr     r4, [pc, #0xa4] =>0x20858104 ''\na03a14d8 bl      #0xa03bef76\na03a14dc adr     r0, #0xbc\na03a14de bl      #0xa03bef18\na03a14e2 ldr     r0, [r4]\na03a14e4 cmp     r0, #1\na03a14e6 blo     #0xa03a1502\na03a14e8 beq     #0xa03a14fe\na03a14ea cmp     r0, #3\na03a14ec blo     #0xa03a1506\na03a14ee beq     #0xa03a150a\na03a14f0 cmp     r0, #5\na03a14f2 blo     #0xa03a150e\na03a14f4 beq     #0xa03a1512\na03a14f6 cmp     r0, #6\na03a14f8 beq     #0xa03a1516\na03a14fa adr     r0, #0xa8\na03a14fc b       #0xa03a1518\na03a14fe adr     r0, #0xb4\na03a1500 b       #0xa03a1518\na03a1502 adr     r0, #0xb8\na03a1504 b       #0xa03a1518\na03a1506 adr     r0, #0xbc\na03a1508 b       #0xa03a1518\na03a150a adr     r0, #0xc0\na03a150c b       #0xa03a1518\na03a150e adr     r0, #0xc8\na03a1510 b       #0xa03a1518\na03a1512 adr     r0, #0xcc\na03a1514 b       #0xa03a1518\na03a1516 adr     r0, #0xd0\na03a1518 bl      #0xa03bef18\na03a151c pop     {r4, pc}"
+    },
+    "0xa03a151f": {
+      "name": "scan afe revision",
+      "thumb_entry": "0xa03a151e",
+      "first_32_bytes_hex": "b500b082f01dfd28a032f01dfcf6f001f94d1c03a23346682106f14ffb0a4668",
+      "bounded_handler_disassembly": "### scan afe revision 0xa03a151e\na03a151e push    {lr}\na03a1520 sub     sp, #8\na03a1522 bl      #0xa03bef76\na03a1526 adr     r0, #0xc8\na03a1528 bl      #0xa03bef18\na03a152c bl      #0xa03a27ca\na03a1530 adds    r3, r0, #0\na03a1532 adr     r2, #0xcc\na03a1534 mov     r0, sp\na03a1536 movs    r1, #6\na03a1538 bl      #0xa04f0b50\na03a153c mov     r0, sp\na03a153e bl      #0xa03bef18\na03a1542 add     sp, #8\na03a1544 pop     {pc}"
+    },
+    "0xa03bdc4d": {
+      "name": "scan sensor CCD",
+      "thumb_entry": "0xa03bdc4c",
+      "first_32_bytes_hex": "b5104c13f001f9916820f7ffffbb1c01a057f001f95b6a20f7ffffc51c01a05a",
+      "bounded_handler_disassembly": "### scan sensor CCD 0xa03bdc4c\na03bdc4c push    {r4, lr}\na03bdc4e ldr     r4, [pc, #0x4c] =>0x2085841c ''\na03bdc50 bl      #0xa03bef76\na03bdc54 ldr     r0, [r4]\na03bdc56 bl      #0xa03bdbd0\na03bdc5a adds    r1, r0, #0\na03bdc5c adr     r0, #0x15c\na03bdc5e bl      #0xa03bef18\na03bdc62 ldr     r0, [r4, #0x20]\na03bdc64 bl      #0xa03bdbf2\na03bdc68 adds    r1, r0, #0\na03bdc6a adr     r0, #0x168\na03bdc6c bl      #0xa03bef18\na03bdc70 pop     {r4, pc}"
+    },
+    "0xa03bde01": {
+      "name": "scan sensor hw",
+      "thumb_entry": "0xa03bde00",
+      "first_32_bytes_hex": "b500483322005e81a032f001f885f7ffff1dbd00b5104c33f001f8ad1c012903",
+      "bounded_handler_disassembly": "### scan sensor hw 0xa03bde00\na03bde00 push    {lr}\na03bde02 ldr     r0, [pc, #0xcc] =>0x20858440 ''\na03bde04 movs    r2, #0\na03bde06 ldrsh   r1, [r0, r2]\na03bde08 adr     r0, #0xc8\na03bde0a bl      #0xa03bef18\na03bde0e bl      #0xa03bdc4c\na03bde12 pop     {pc}"
+    },
+    "0xa03a9a9d": {
+      "name": "scan cissm LEDONTIMEINFO",
+      "thumb_entry": "0xa03a9a9c",
+      "first_32_bytes_hex": "b5f0b0864e2ff015fa7a1c04f7fefbc204050c2d1c3700ab59d82800d100e113",
+      "bounded_handler_disassembly": "### scan cissm LEDONTIMEINFO 0xa03a9a9c\na03a9a9c push    {r4, r5, r6, r7, lr}\na03a9a9e sub     sp, #0x18\na03a9aa0 ldr     r6, [pc, #0xbc] =>0x20d9df38 ''\na03a9aa2 bl      #0xa03bef9a\na03a9aa6 adds    r4, r0, #0\na03a9aa8 bl      #0xa03a8230\na03a9aac lsls    r5, r0, #0x10\na03a9aae lsrs    r5, r5, #0x10\na03a9ab0 adds    r7, r6, #0\na03a9ab2 lsls    r3, r5, #2\na03a9ab4 ldr     r0, [r3, r7]\na03a9ab6 cmp     r0, #0\na03a9ab8 bne     #0xa03a9abc\na03a9aba b       #0xa03a9ce4\na03a9abc adds    r1, r4, #0\na03a9abe adr     r0, #0xa4\na03a9ac0 bl      #0xa03bef18\na03a9ac4 lsls    r3, r5, #2\na03a9ac6 ldr     r0, [r3, r7]\na03a9ac8 ldr     r3, [r0, #4]\na03a9aca ldr     r0, [r3, #0x74]\na03a9acc ldrh    r3, [r0, #4]\na03a9ace ldrh    r2, [r0, #2]\na03a9ad0 ldrh    r1, [r0]\na03a9ad2 adr     r0, #0xa0\na03a9ad4 bl      #0xa03bef18\na03a9ad8 lsls    r3, r5, #2\na03a9ada ldr     r0, [r3, r7]\na03a9adc ldr     r3, [r0, #4]\na03a9ade ldr     r1, [r3, #0x74]\na03a9ae0 ldrh    r0, [r1, #0xe]\na03a9ae2 lsls    r3, r0, #0x1d\na03a9ae4 lsrs    r3, r3, #0x1f\na03a9ae6 lsls    r2, r0, #0x1e\na03a9ae8 lsrs    r2, r2, #0x1f\na03a9aea lsls    r1, r0, #0x1f\na03a9aec lsrs    r1, r1, #0x1f\na03a9aee adr     r0, #0xa0\na03a9af0 bl      #0xa03bef18\na03a9af4 ldr     r1, [pc, #0xb8] =>0x20d9dec8 ''\na03a9af6 movs    r0, #0xe\na03a9af8 muls    r0, r5, r0\na03a9afa adds    r2, r0, r1\na03a9afc ldrh    r3, [r2, #4]\na03a9afe ldrh    r2, [r2, #2]\na03a9b00 ldrh    r1, [r1, r0]\na03a9b02 adr     r0, #0xb0\na03a9b04 bl      #0xa03bef18\na03a9b08 adds    r3, r6, #0\na03a9b0a adds    r3, #0x40\na03a9b0c ldrb    r2, [r3, r5]\na03a9b0e lsls    r0, r5, #2\na03a9b10 ldr     r0, [r0, r7]\na03a9b12 ldr     r0, [r0, #4]\na03a9b14 ldr     r0, [r0, #0x74]\na03a9b16 ldrh    r1, [r0, #0x16]\na03a9b18 adr     r0, #0xb8\na03a9b1a bl      #0xa03bef18\na03a9b1e adds    r6, #0x18\na03a9b20 movs    r0, #6\na03a9b22 muls    r0, r5, r0\na03a9b24 adds    r2, r0, r6\na03a9b26 ldrh    r3, [r2, #4]\na03a9b28 ldrh    r2, [r2, #2]\na03a9b2a ldrh    r1, [r6, r0]\na03a9b2c adr     r0, #0xcc\na03a9b2e b       #0xa03a9c18\na03a9c18 bl      #0xa03bef18\na03a9c1c lsls    r3, r5, #2\na03a9c1e ldr     r0, [r3, r7]\na03a9c20 ldr     r3, [r0, #4]\na03a9c22 ldr     r0, [r3, #0x74]\na03a9c24 movs    r3, #0x14\na03a9c26 ldrsh   r2, [r0, r3]\na03a9c28 ldrh    r1, [r0, #0x12]\na03a9c2a adr     r0, #0x1e4\na03a9c2c bl      #0xa03bef18\na03a9c30 ldr     r6, [pc, #0x1f8] =>0x1ff ''\na03a9c32 str     r6, [sp, #0xc]\na03a9c34 bl      #0xa03a247e\na03a9c38 cmp     r0, #0\na03a9c3a bne     #0xa03a9c40\na03a9c3c movs    r1, #0xff\na03a9c3e str     r1, [sp, #0xc]\na03a9c40 str     r6, [sp]\na03a9c42 bl      #0xa03a247e\na03a9c46 cmp     r0, #0\na03a9c48 bne     #0xa03a9c4e\na03a9c4a movs    r1, #0xff\na03a9c4c str     r1, [sp]\na03a9c4e str     r6, [sp, #4]\na03a9c50 bl      #0xa03a247e\na03a9c54 cmp     r0, #0\na03a9c56 bne     #0xa03a9c5c\na03a9c58 movs    r1, #0xff\na03a9c5a str     r1, [sp, #4]\na03a9c5c str     r6, [sp, #8]\na03a9c5e bl      #0xa03a247e\na03a9c62 cmp     r0, #0\na03a9c64 bne     #0xa03a9c6a\na03a9c66 movs    r1, #0xff\na03a9c68 str     r1, [sp, #8]\na03a9c6a str     r6, [sp, #0x10]\na03a9c6c bl      #0xa03a247e\na03a9c70 cmp     r0, #0\na03a9c72 bne     #0xa03a9c78\na03a9c74 movs    r1, #0xff\na03a9c76 str     r1, [sp, #0x10]\na03a9c78 str     r6, [sp, #0x14]\na03a9c7a bl      #0xa03a247e\na03a9c7e cmp     r0, #0\na03a9c80 bne     #0xa03a9c86\na03a9c82 movs    r1, #0xff\na03a9c84 str     r1, [sp, #0x14]\na03a9c86 lsls    r3, r5, #2\na03a9c88 ldr     r0, [r3, r7]\na03a9c8a ldr     r3, [r0, #4]\na03a9c8c ldr     r4, [r3, #0x74]\na03a9c8e adds    r0, r6, #0\na03a9c90 adds    r0, #0x38\na03a9c92 ldrh    r1, [r4, #0x18]\na03a9c94 muls    r1, r0, r1\na03a9c96 ldr     r0, [sp, #0xc]\na03a9c98 lsrs    r2, r0, #0x1f\na03a9c9a adds    r0, r2, r0\na03a9c9c asrs    r0, r0, #1\na03a9c9e adds    r1, r0, r1\na03a9ca0 ldr     r0, [sp]\na03a9ca2 blx     #0xa001944c\na03a9ca6 adds    r5, r0, #0\na03a9ca8 adds    r0, r6, #0\na03a9caa adds    r0, #0x38\na03a9cac ldrh    r1, [r4, #0x1a]\na03a9cae muls    r1, r0, r1\na03a9cb0 ldr     r0, [sp, #4]\na03a9cb2 lsrs    r2, r0, #0x1f\na03a9cb4 adds    r0, r2, r0\na03a9cb6 asrs    r0, r0, #1\na03a9cb8 adds    r1, r0, r1\na03a9cba ldr     r0, [sp, #8]\na03a9cbc blx     #0xa001944c\na03a9cc0 adds    r7, r0, #0\na03a9cc2 adds    r6, #0x38\na03a9cc4 ldrh    r0, [r4, #0x1c]\na03a9cc6 muls    r6, r0, r6\na03a9cc8 ldr     r0, [sp, #0x10]\na03a9cca lsrs    r2, r0, #0x1f\na03a9ccc adds    r0, r2, r0\na03a9cce asrs    r0, r0, #1\na03a9cd0 adds    r1, r0, r6\na03a9cd2 ldr     r0, [sp, #0x14]\na03a9cd4 blx     #0xa001944c\na03a9cd8 adds    r3, r0, #0\na03a9cda adds    r2, r7, #0\na03a9cdc adds    r1, r5, #0\na03a9cde adr     r0, #0x150\na03a9ce0 bl      #0xa03bef18\na03a9ce4 adr     r0, #0x168\na03a9ce6 bl      #0xa03bef18\na03a9cea add     sp, #0x18\na03a9cec pop     {r4, r5, r6, r7, pc}"
+    },
+    "0xa03a9d93": {
+      "name": "scan led maxcurrent",
+      "thumb_entry": "0xa03a9d92",
+      "first_32_bytes_hex": "b5304c251c25f7f8fb712800d10025ff1c2232381c29a048f015f8b5f7f8fb66",
+      "bounded_handler_disassembly": "### scan led maxcurrent 0xa03a9d92\na03a9d92 push    {r4, r5, lr}\na03a9d94 ldr     r4, [pc, #0x94] =>0x1ff ''\na03a9d96 adds    r5, r4, #0\na03a9d98 bl      #0xa03a247e\na03a9d9c cmp     r0, #0\na03a9d9e bne     #0xa03a9da2\na03a9da0 movs    r5, #0xff\na03a9da2 adds    r2, r4, #0\na03a9da4 adds    r2, #0x38\na03a9da6 adds    r1, r5, #0\na03a9da8 adr     r0, #0x120\na03a9daa bl      #0xa03bef18\na03a9dae bl      #0xa03a247e\na03a9db2 cmp     r0, #0\na03a9db4 bne     #0xa03a9db8\na03a9db6 movs    r4, #0xff\na03a9db8 bl      #0xa03a247e\na03a9dbc movs    r1, #0\na03a9dbe cmp     r0, #0\na03a9dc0 bne     #0xa03a9dc4\na03a9dc2 movs    r1, #1\na03a9dc4 adds    r2, r4, #0\na03a9dc6 adr     r0, #0x13c\na03a9dc8 bl      #0xa03bef18\na03a9dcc pop     {r4, r5, pc}"
+    },
+    "0xa032b1b5": {
+      "name": "pen.is_capped",
+      "thumb_entry": "0xa032b1b4",
+      "first_32_bytes_hex": "b53048716804f7e9f9b86821694d2800d00020011c011c20220147a8bd30b530",
+      "bounded_handler_disassembly": "### pen.is_capped 0xa032b1b4\na032b1b4 push    {r4, r5, lr}\na032b1b6 ldr     r0, [pc, #0x1c4] =>0x20d03fa8 ''\na032b1b8 ldr     r4, [r0]\na032b1ba bl      #0xa031452e\na032b1be ldr     r1, [r4]\na032b1c0 ldr     r5, [r1, #0x14]\na032b1c2 cmp     r0, #0\na032b1c4 beq     #0xa032b1c8\na032b1c6 movs    r0, #1\na032b1c8 adds    r1, r0, #0\na032b1ca adds    r0, r4, #0\na032b1cc movs    r2, #1\na032b1ce blx     r5\na032b1d0 pop     {r4, r5, pc}"
+    },
+    "0xa032b1d3": {
+      "name": "pen.get_pen_family_name_string",
+      "thumb_entry": "0xa032b1d2",
+      "first_32_bytes_hex": "b530f7f7ffcf2800d001a46de017f7f7ffcb2800d001a46de011f7f7ffba2800",
+      "bounded_handler_disassembly": "### pen.get_pen_family_name_string 0xa032b1d2\na032b1d2 push    {r4, r5, lr}\na032b1d4 bl      #0xa0323176\na032b1d8 cmp     r0, #0\na032b1da beq     #0xa032b1e0\na032b1dc adr     r4, #0x1b4\na032b1de b       #0xa032b210\na032b1e0 bl      #0xa032317a\na032b1e4 cmp     r0, #0\na032b1e6 beq     #0xa032b1ec\na032b1e8 adr     r4, #0x1b4\na032b1ea b       #0xa032b210\na032b1ec bl      #0xa0323164\na032b1f0 cmp     r0, #0\na032b1f2 beq     #0xa032b1f8\na032b1f4 adr     r4, #0x1b4\na032b1f6 b       #0xa032b210\na032b1f8 bl      #0xa032317e\na032b1fc cmp     r0, #0\na032b1fe beq     #0xa032b204\na032b200 adr     r4, #0x1b0\na032b202 b       #0xa032b210\na032b204 adr     r4, #0x1b4\na032b206 bl      #0xa0323182\na032b20a cmp     r0, #0\na032b20c beq     #0xa032b210\na032b20e adr     r4, #0x1b8\na032b210 ldr     r0, [pc, #0x168] =>0x20d03fa8 ''\na032b212 ldr     r5, [r0]\na032b214 adds    r0, r4, #0\na032b216 blx     #0xa0010538\na032b21a ldr     r1, [r5]\na032b21c ldr     r3, [r1, #0x24]\na032b21e adds    r2, r0, #0\na032b220 adds    r1, r4, #0\na032b222 adds    r0, r5, #0\na032b224 blx     r3\na032b226 pop     {r4, r5, pc}"
+    },
+    "0xa0329bb3": {
+      "name": "pen.get_id",
+      "thumb_entry": "0xa0329bb2",
+      "first_32_bytes_hex": "b510b088a278211e4668f1c6ffc8486e68044668f4e6ecb868216a4b1c024669",
+      "bounded_handler_disassembly": "### pen.get_id 0xa0329bb2\na0329bb2 push    {r4, lr}\na0329bb4 sub     sp, #0x20\na0329bb6 adr     r2, #0x1e0\na0329bb8 movs    r1, #0x1e\na0329bba mov     r0, sp\na0329bbc bl      #0xa04f0b50\na0329bc0 ldr     r0, [pc, #0x1b8] =>0x20d03fa8 ''\na0329bc2 ldr     r4, [r0]\na0329bc4 mov     r0, sp\na0329bc6 blx     #0xa0010538\na0329bca ldr     r1, [r4]\na0329bcc ldr     r3, [r1, #0x24]\na0329bce adds    r2, r0, #0\na0329bd0 mov     r1, sp\na0329bd2 adds    r0, r4, #0\na0329bd4 blx     r3\na0329bd6 add     sp, #0x20\na0329bd8 pop     {r4, pc}"
+    },
+    "0xa032b241": {
+      "name": "pen.get_mfg_data",
+      "thumb_entry": "0xa032b240",
+      "first_32_bytes_hex": "b5304c4e68206801690947881c0168206802699422012914d204008b495d5859",
+      "bounded_handler_disassembly": "### pen.get_mfg_data 0xa032b240\na032b240 push    {r4, r5, lr}\na032b242 ldr     r4, [pc, #0x138] =>0x20d03fa8 ''\na032b244 ldr     r0, [r4]\na032b246 ldr     r1, [r0]\na032b248 ldr     r1, [r1, #0x10]\na032b24a blx     r1\na032b24c adds    r1, r0, #0\na032b24e ldr     r0, [r4]\na032b250 ldr     r2, [r0]\na032b252 ldr     r4, [r2, #0x18]\na032b254 movs    r2, #1\na032b256 cmp     r1, #0x14\na032b258 bhs     #0xa032b264\na032b25a lsls    r3, r1, #2\na032b25c ldr     r1, [pc, #0x174] =>0x20d0895c ''\na032b25e ldr     r1, [r3, r1]\na032b260 blx     r4\na032b262 b       #0xa032b26c\na032b264 adds    r3, r4, #0\na032b266 movs    r5, #0\na032b268 mvns    r1, r5\na032b26a blx     r3\na032b26c pop     {r4, r5, pc}"
+    },
+    "0xa032ab5b": {
+      "name": "pen.get_eureka_data",
+      "thumb_entry": "0xa032ab5a",
+      "first_32_bytes_hex": "b570b0834c4468206801690947881c0568206801690947881c06682068016909",
+      "bounded_handler_disassembly": "### pen.get_eureka_data 0xa032ab5a\na032ab5a push    {r4, r5, r6, lr}\na032ab5c sub     sp, #0xc\na032ab5e ldr     r4, [pc, #0x110] =>0x20d03fa8 ''\na032ab60 ldr     r0, [r4]\na032ab62 ldr     r1, [r0]\na032ab64 ldr     r1, [r1, #0x10]\na032ab66 blx     r1\na032ab68 adds    r5, r0, #0\na032ab6a ldr     r0, [r4]\na032ab6c ldr     r1, [r0]\na032ab6e ldr     r1, [r1, #0x10]\na032ab70 blx     r1\na032ab72 adds    r6, r0, #0\na032ab74 ldr     r0, [r4]\na032ab76 ldr     r1, [r0]\na032ab78 ldr     r1, [r1, #0x10]\na032ab7a blx     r1\na032ab7c lsls    r1, r5, #2\na032ab7e subs    r5, r1, r5\na032ab80 adds    r1, r6, r5\na032ab82 lsls    r2, r1, #5\na032ab84 subs    r1, r2, r1\na032ab86 adds    r0, r0, r1\na032ab88 lsls    r3, r0, #2\na032ab8a ldr     r0, [pc, #0x110] =>0x20cfd018 ''\na032ab8c ldr     r3, [r3, r0]\na032ab8e adr     r2, #0x110\na032ab90 movs    r1, #0xa\na032ab92 mov     r0, sp\na032ab94 bl      #0xa04f0b50\na032ab98 ldr     r4, [r4]\na032ab9a mov     r0, sp\na032ab9c blx     #0xa0010538\na032aba0 ldr     r1, [r4]\na032aba2 ldr     r3, [r1, #0x24]\na032aba4 adds    r2, r0, #0\na032aba6 mov     r1, sp\na032aba8 adds    r0, r4, #0\na032abaa blx     r3\na032abac add     sp, #0xc\na032abae pop     {r4, r5, r6, pc}"
+    },
+    "0xa032ad21": {
+      "name": "pen.get_fire_mode",
+      "thumb_entry": "0xa032ad20",
+      "first_32_bytes_hex": "b510b0844c9c4668f7fefe6268206801690947881c014668f7fefe444668f7fe",
+      "bounded_handler_disassembly": "### pen.get_fire_mode 0xa032ad20\na032ad20 push    {r4, lr}\na032ad22 sub     sp, #0x10\na032ad24 ldr     r4, [pc, #0x270] =>0x20d03fa8 ''\na032ad26 mov     r0, sp\na032ad28 bl      #0xa03299f0\na032ad2c ldr     r0, [r4]\na032ad2e ldr     r1, [r0]\na032ad30 ldr     r1, [r1, #0x10]\na032ad32 blx     r1\na032ad34 adds    r1, r0, #0\na032ad36 mov     r0, sp\na032ad38 bl      #0xa03299c4\na032ad3c mov     r0, sp\na032ad3e bl      #0xa03299c0\na032ad42 bl      #0xa0256800\na032ad46 adds    r3, r0, #0\na032ad48 adr     r2, #0x254\na032ad4a movs    r1, #0xa\na032ad4c add     r0, sp, #4\na032ad4e bl      #0xa04f0b50\na032ad52 ldr     r4, [r4]\na032ad54 add     r0, sp, #4\na032ad56 blx     #0xa0010538\na032ad5a ldr     r1, [r4]\na032ad5c ldr     r3, [r1, #0x24]\na032ad5e adds    r2, r0, #0\na032ad60 add     r1, sp, #4\na032ad62 adds    r0, r4, #0\na032ad64 blx     r3\na032ad66 add     sp, #0x10\na032ad68 pop     {r4, pc}"
+    },
+    "0xa046e35d": {
+      "name": "rev.id",
+      "thumb_entry": "0xa046e35c",
+      "first_32_bytes_hex": "b500f7ffff842180f7ffffdebd00b500f7ffff7d2150f7ffffd7bd00b500f7ff",
+      "bounded_handler_disassembly": "### rev.id 0xa046e35c\na046e35c push    {lr}\na046e35e bl      #0xa046e26a\na046e362 movs    r1, #0x80\na046e364 bl      #0xa046e324\na046e368 pop     {pc}"
+    },
+    "0xa03bcb2d": {
+      "name": "scan scansm dumpinfo",
+      "thumb_entry": "0xa03bcb2c",
+      "first_32_bytes_hex": "b5f04e274d276ba9a027f002f9ef4a2e6811a02ef002f9ea4a346811a034f002",
+      "bounded_handler_disassembly": "### scan scansm dumpinfo 0xa03bcb2c\na03bcb2c push    {r4, r5, r6, r7, lr}\na03bcb2e ldr     r6, [pc, #0x9c] =>0x208583e4 ''\na03bcb30 ldr     r5, [pc, #0x9c] =>0x20da0658 ''\na03bcb32 ldr     r1, [r5, #0x38]\na03bcb34 adr     r0, #0x9c\na03bcb36 bl      #0xa03bef18\na03bcb3a ldr     r2, [pc, #0xb8] =>0x20da02b0 ''\na03bcb3c ldr     r1, [r2]\na03bcb3e adr     r0, #0xb8\na03bcb40 bl      #0xa03bef18\na03bcb44 ldr     r2, [pc, #0xd0] =>0x20da02ac ''\na03bcb46 ldr     r1, [r2]\na03bcb48 adr     r0, #0xd0\na03bcb4a bl      #0xa03bef18\na03bcb4e ldr     r2, [pc, #0xec] =>0x20da02a6 ''\na03bcb50 ldrh    r1, [r2]\na03bcb52 adr     r0, #0xec\na03bcb54 bl      #0xa03bef18\na03bcb58 ldr     r2, [pc, #0x104] =>0x20da02b4 ''\na03bcb5a ldr     r1, [r2]\na03bcb5c adr     r0, #0x104\na03bcb5e bl      #0xa03bef18\na03bcb62 ldr     r2, [pc, #0x30] =>0x20da02a8 ''\na03bcb64 ldrh    r1, [r2]\na03bcb66 adr     r0, #0x11c\na03bcb68 bl      #0xa03bef18\na03bcb6c ldr     r2, [pc, #0x134] =>0x20da02aa ''\na03bcb6e ldrh    r1, [r2]\na03bcb70 adr     r0, #0x134\na03bcb72 bl      #0xa03bef18\na03bcb76 movs    r2, #0xdc\na03bcb78 ldrb    r1, [r2, r5]\na03bcb7a adr     r0, #0x14c\na03bcb7c bl      #0xa03bef18\na03bcb80 ldr     r2, [pc, #0x164] =>0x20da02a5 ''\na03bcb82 ldrb    r1, [r2]\na03bcb84 adr     r0, #0x164\na03bcb86 bl      #0xa03bef18\na03bcb8a ldr     r2, [pc, #0x180] =>0x20da02d8 ''\na03bcb8c ldr     r1, [r2]\na03bcb8e adr     r0, #0x180\na03bcb90 b       #0xa03bcd30\na03bcd30 bl      #0xa03bef18\na03bcd34 ldrb    r1, [r5]\na03bcd36 adr     r0, #0x148\na03bcd38 bl      #0xa03bef18\na03bcd3c ldr     r1, [r6]\na03bcd3e adr     r0, #0x160\na03bcd40 bl      #0xa03bef18\na03bcd44 ldr     r2, [pc, #0x178] =>0x20da02d0 ''\na03bcd46 ldrb    r1, [r2]\na03bcd48 adr     r0, #0x178\na03bcd4a bl      #0xa03bef18\na03bcd4e ldrh    r1, [r5, #0x32]\na03bcd50 adr     r0, #0x190\na03bcd52 bl      #0xa03bef18\na03bcd56 ldrh    r1, [r6, #0x14]\na03bcd58 adr     r0, #0x1a8\na03bcd5a bl      #0xa03bef18\na03bcd5e ldrh    r0, [r6, #0x14]\na03bcd60 ldrh    r1, [r5, #0x32]\na03bcd62 muls    r1, r0, r1\na03bcd64 movs    r0, #0x64\na03bcd66 blx     #0xa001944c\na03bcd6a adds    r1, r0, #0\na03bcd6c adr     r0, #0x1b4\na03bcd6e bl      #0xa03bef18\na03bcd72 movs    r4, #0\na03bcd74 movs    r7, #3\na03bcd76 ldrb    r3, [r6, #0x12]\na03bcd78 cmp     r3, #0\na03bcd7a bne     #0xa03bcd7e\na03bcd7c movs    r7, #1\na03bcd7e ldrh    r0, [r6, #0x14]\na03bcd80 ldrh    r1, [r5, #0x32]\na03bcd82 muls    r1, r0, r1\na03bcd84 movs    r0, #0x64\na03bcd86 blx     #0xa001944c\na03bcd8a muls    r0, r7, r0\na03bcd8c ldr     r2, [pc, #0x1b4] =>0x20da02a8 ''\na03bcd8e ldrh    r1, [r2]\na03bcd90 muls    r0, r1, r0\na03bcd92 cmp     r0, #0\na03bcd94 ble     #0xa03bcda2\na03bcd96 ldr     r1, [pc, #0x1b0] =>0x5f5e100 ''\na03bcd98 blx     #0xa001944c\na03bcd9c adds    r4, r0, #0\na03bcd9e bpl     #0xa03bcda2\na03bcda0 movs    r4, #0\na03bcda2 adds    r1, r4, #0\na03bcda4 movs    r0, #0x64\na03bcda6 blx     #0xa001944c\na03bcdaa adds    r2, r1, #0\na03bcdac adds    r1, r0, #0\na03bcdae adr     r0, #0x19c\na03bcdb0 bl      #0xa03bef18\na03bcdb4 ldr     r1, [r5, #0x10]\na03bcdb6 adr     r0, #0x1b8\na03bcdb8 bl      #0xa03bef18\na03bcdbc ldr     r1, [r5, #0x24]\na03bcdbe adr     r0, #0x1d0\na03bcdc0 bl      #0xa03bef18\na03bcdc4 ldr     r1, [r5, #0x3c]\na03bcdc6 adr     r0, #0x1e8\na03bcdc8 bl      #0xa03bef18\na03bcdcc ldr     r2, [pc, #0x204] =>0x20da02cc ''\na03bcdce ldr     r1, [r2]\na03bcdd0 adr     r0, #0x204\na03bcdd2 bl      #0xa03bef18\na03bcdd6 ldrb    r1, [r6, #0xe]\na03bcdd8 adr     r0, #0x21c\na03bcdda bl      #0xa03bef18\na03bcdde ldrh    r1, [r5, #0x30]\na03bcde0 adr     r0, #0x234\na03bcde2 bl      #0xa03bef18\na03bcde6 ldrb    r1, [r5, #0xb]\na03bcde8 adr     r0, #0x24c\na03bcdea bl      #0xa03bef18\na03bcdee ldrb    r1, [r6, #0x12]\na03bcdf0 adr     r0, #0x264\na03bcdf2 bl      #0xa03bef18\na03bcdf6 ldr     r1, [r5, #0x34]\na03bcdf8 adr     r0, #0x27c\na03bcdfa bl      #0xa03bef18\na03bcdfe ldrh    r1, [r5, #0xc]\na03bce00 adr     r0, #0x298\na03bce02 bl      #0xa03bef18\na03bce06 pop     {r4, r5, r6, r7, pc}"
+    },
+    "0xa03a7535": {
+      "name": "scan intrn show",
+      "thumb_entry": "0xa03a7534",
+      "first_32_bytes_hex": "b510f017fd1e4c8c68612800d00468a31c0a6821a089e000a093f017fce33418",
+      "bounded_handler_disassembly": "### scan intrn show 0xa03a7534\na03a7534 push    {r4, lr}\na03a7536 bl      #0xa03bef76\na03a753a ldr     r4, [pc, #0x230] =>0x20d9dd04 ''\na03a753c ldr     r1, [r4, #4]\na03a753e cmp     r0, #0\na03a7540 beq     #0xa03a754c\na03a7542 ldr     r3, [r4, #8]\na03a7544 adds    r2, r1, #0\na03a7546 ldr     r1, [r4]\na03a7548 adr     r0, #0x224\na03a754a b       #0xa03a754e\na03a754c adr     r0, #0x24c\na03a754e bl      #0xa03bef18\na03a7552 adds    r4, #0x18\na03a7554 ldm     r4!, {r1, r2, r3}\na03a7556 adr     r0, #0x258\na03a7558 bl      #0xa03bef18\na03a755c pop     {r4, pc}"
+    },
+    "0xa03a4453": {
+      "name": "scan firms tables",
+      "thumb_entry": "0xa03a4452",
+      "first_32_bytes_hex": "b5f0b089a04ef01afd5e240020144360493118412214a804f474efeca804c8e6",
+      "bounded_handler_disassembly": "### scan firms tables 0xa03a4452\na03a4452 push    {r4, r5, r6, r7, lr}\na03a4454 sub     sp, #0x24\na03a4456 adr     r0, #0x138\na03a4458 bl      #0xa03bef18\na03a445c movs    r4, #0\na03a445e movs    r0, #0x14\na03a4460 muls    r0, r4, r0\na03a4462 ldr     r1, [pc, #0xc4] =>0xa05fce34 ''\na03a4464 adds    r1, r0, r1\na03a4466 movs    r2, #0x14\na03a4468 add     r0, sp, #0x10\na03a446a blx     #0xa0019444\na03a446e add     r0, sp, #0x10\na03a4470 ldm     r0!, {r1, r2, r5, r6, r7}\na03a4472 ldr     r3, [pc, #0xb0] =>0xa05fce2c 'SCAN'\na03a4474 adds    r0, r6, #0\na03a4476 add     r6, sp, #4\na03a4478 stm     r6!, {r0, r3, r7}\na03a447a str     r5, [sp]\na03a447c adds    r3, r2, #0\na03a447e adds    r2, r1, #0\na03a4480 adds    r1, r4, #0\na03a4482 adr     r0, #0x11c\na03a4484 bl      #0xa03bef18\na03a4488 adds    r4, #1\na03a448a cmp     r4, #0xc5\na03a448c blo     #0xa03a445e\na03a448e add     sp, #0x24\na03a4490 pop     {r4, r5, r6, r7, pc}"
+    },
+    "0xa03bf8ff": {
+      "name": "scan ifc lang",
+      "thumb_entry": "0xa03bf8fe",
+      "first_32_bytes_hex": "b500a0452104f7fffb08bd00b5304d466869a046f7fffb012400e00700a36828",
+      "bounded_handler_disassembly": "### scan ifc lang 0xa03bf8fe\na03bf8fe push    {lr}\na03bf900 adr     r0, #0x114\na03bf902 movs    r1, #4\na03bf904 bl      #0xa03bef18\na03bf908 pop     {pc}"
+    },
+    "0xa03bf81f": {
+      "name": "scan ifc extents",
+      "thumb_entry": "0xa03bf81e",
+      "first_32_bytes_hex": "b5f0b084f7fffba81c04f7fffba59003f7fffbcd1c05f7fffbca1c06f7fffbc7",
+      "bounded_handler_disassembly": "### scan ifc extents 0xa03bf81e\na03bf81e push    {r4, r5, r6, r7, lr}\na03bf820 sub     sp, #0x10\na03bf822 bl      #0xa03bef76\na03bf826 adds    r4, r0, #0\na03bf828 bl      #0xa03bef76\na03bf82c str     r0, [sp, #0xc]\na03bf82e bl      #0xa03befcc\na03bf832 adds    r5, r0, #0\na03bf834 bl      #0xa03befcc\na03bf838 adds    r6, r0, #0\na03bf83a bl      #0xa03befcc\na03bf83e adds    r7, r0, #0\na03bf840 bl      #0xa03befcc\na03bf844 adds    r1, r5, #0\na03bf846 orrs    r1, r4\na03bf848 ldr     r2, [sp, #0xc]\na03bf84a orrs    r1, r2\na03bf84c orrs    r1, r6\na03bf84e bne     #0xa03bf88c\na03bf850 adds    r3, r0, #0\na03bf852 orrs    r3, r7\na03bf854 bne     #0xa03bf88c\na03bf856 adds    r4, r0, #0\na03bf858 movs    r5, #0\na03bf85a lsls    r0, r4, #2\na03bf85c subs    r3, r0, r4\na03bf85e adds    r0, r5, r3\na03bf860 lsls    r3, r0, #4\na03bf862 ldr     r0, [pc, #0x160] =>0x20858460 ''\na03bf864 adds    r0, r0, r3\na03bf866 ldr     r3, [r0, #0xc]\na03bf868 str     r3, [sp, #8]\na03bf86a ldr     r1, [r0, #8]\na03bf86c str     r1, [sp, #4]\na03bf86e ldr     r1, [r0, #4]\na03bf870 str     r1, [sp]\na03bf872 ldr     r3, [r0]\na03bf874 adds    r2, r5, #0\na03bf876 adds    r1, r4, #0\na03bf878 adr     r0, #0x14c\na03bf87a bl      #0xa03bef18\na03bf87e adds    r5, #1\na03bf880 cmp     r5, #3\na03bf882 blt     #0xa03bf85a\na03bf884 adds    r4, #1\na03bf886 cmp     r4, #2\na03bf888 blt     #0xa03bf858\na03bf88a b       #0xa03bf8a6\na03bf88c lsls    r1, r4, #2\na03bf88e subs    r3, r1, r4\na03bf890 ldr     r2, [sp, #0xc]\na03bf892 adds    r1, r2, r3\na03bf894 lsls    r3, r1, #4\na03bf896 ldr     r1, [pc, #0x12c] =>0x20858460 ''\na03bf898 str     r5, [r1, r3]\na03bf89a adds    r1, r1, r3\na03bf89c adds    r1, #4\na03bf89e adds    r2, r6, #0\na03bf8a0 adds    r3, r7, #0\na03bf8a2 adds    r4, r0, #0\na03bf8a4 stm     r1!, {r2, r3, r4}\na03bf8a6 add     sp, #0x10\na03bf8a8 pop     {r4, r5, r6, r7, pc}"
+    },
+    "0xa03a6c8b": {
+      "name": "scan cissm deferred",
+      "thumb_entry": "0xa03a6c8a",
+      "first_32_bytes_hex": "b5704d28f018f99d1c04f018f99a1c06f018f9972c00db062c03d20400e3535e",
+      "bounded_handler_disassembly": "### scan cissm deferred 0xa03a6c8a\na03a6c8a push    {r4, r5, r6, lr}\na03a6c8c ldr     r5, [pc, #0xa0] =>0x208581b8 ''\na03a6c8e bl      #0xa03befcc\na03a6c92 adds    r4, r0, #0\na03a6c94 bl      #0xa03befcc\na03a6c98 adds    r6, r0, #0\na03a6c9a bl      #0xa03befcc\na03a6c9e cmp     r4, #0\na03a6ca0 blt     #0xa03a6cb0\na03a6ca2 cmp     r4, #3\na03a6ca4 bhs     #0xa03a6cb0\na03a6ca6 lsls    r3, r4, #3\na03a6ca8 strh    r6, [r3, r5]\na03a6caa adds    r1, r5, r3\na03a6cac str     r0, [r1, #4]\na03a6cae b       #0xa03a6ccc\na03a6cb0 adr     r0, #0x80\na03a6cb2 bl      #0xa03bef18\na03a6cb6 movs    r4, #0\na03a6cb8 lsls    r3, r4, #3\na03a6cba adds    r0, r5, r3\na03a6cbc ldr     r2, [r0, #4]\na03a6cbe ldrh    r1, [r3, r5]\na03a6cc0 adr     r0, #0x84\na03a6cc2 bl      #0xa03bef18\na03a6cc6 adds    r4, #1\na03a6cc8 cmp     r4, #3\na03a6cca blo     #0xa03a6cb8\na03a6ccc pop     {r4, r5, r6, pc}"
+    },
+    "0xa03a89a9": {
+      "name": "scan led cometidac",
+      "thumb_entry": "0xa03a89a8",
+      "first_32_bytes_hex": "b50048b9788388026c41a0b8f016fab0bd00b5f0b0aa90114ebe2500a8208005",
+      "bounded_handler_disassembly": "### scan led cometidac 0xa03a89a8\na03a89a8 push    {lr}\na03a89aa ldr     r0, [pc, #0x2e4] =>0x20d9df8c ''\na03a89ac ldrb    r3, [r0, #2]\na03a89ae ldrh    r2, [r0]\na03a89b0 ldr     r1, [r0, #0x44]\na03a89b2 adr     r0, #0x2e0\na03a89b4 bl      #0xa03bef18\na03a89b8 pop     {pc}"
+    },
+    "0xa03a525d": {
+      "name": "scan gain yy",
+      "thumb_entry": "0xa03a525c",
+      "first_32_bytes_hex": "b510b0894c508861a050f019fe578ce393088ca191078c6191068c2191058be1",
+      "bounded_handler_disassembly": "### scan gain yy 0xa03a525c\na03a525c push    {r4, lr}\na03a525e sub     sp, #0x24\na03a5260 ldr     r4, [pc, #0x140] =>0x20d9cbf8 ''\na03a5262 ldrh    r1, [r4, #2]\na03a5264 adr     r0, #0x140\na03a5266 bl      #0xa03bef18\na03a526a ldrh    r3, [r4, #0x26]\na03a526c str     r3, [sp, #0x20]\na03a526e ldrh    r1, [r4, #0x24]\na03a5270 str     r1, [sp, #0x1c]\na03a5272 ldrh    r1, [r4, #0x22]\na03a5274 str     r1, [sp, #0x18]\na03a5276 ldrh    r1, [r4, #0x20]\na03a5278 str     r1, [sp, #0x14]\na03a527a ldrh    r1, [r4, #0x1e]\na03a527c str     r1, [sp, #0x10]\na03a527e ldrh    r1, [r4, #0x1c]\na03a5280 str     r1, [sp, #0xc]\na03a5282 ldrh    r1, [r4, #0x1a]\na03a5284 str     r1, [sp, #8]\na03a5286 ldrh    r1, [r4, #0x18]\na03a5288 str     r1, [sp, #4]\na03a528a ldrh    r1, [r4, #0x16]\na03a528c str     r1, [sp]\na03a528e ldrh    r3, [r4, #0x14]\na03a5290 ldrh    r2, [r4, #0x12]\na03a5292 ldrh    r1, [r4, #0x10]\na03a5294 adr     r0, #0x124\na03a5296 bl      #0xa03bef18\na03a529a ldrh    r3, [r4, #0x3e]\na03a529c str     r3, [sp, #0x20]\na03a529e ldrh    r1, [r4, #0x3c]\na03a52a0 str     r1, [sp, #0x1c]\na03a52a2 ldrh    r1, [r4, #0x3a]\na03a52a4 str     r1, [sp, #0x18]\na03a52a6 ldrh    r1, [r4, #0x38]\na03a52a8 str     r1, [sp, #0x14]\na03a52aa ldrh    r1, [r4, #0x36]\na03a52ac str     r1, [sp, #0x10]\na03a52ae ldrh    r1, [r4, #0x34]\na03a52b0 str     r1, [sp, #0xc]\na03a52b2 ldrh    r1, [r4, #0x32]\na03a52b4 str     r1, [sp, #8]\na03a52b6 ldrh    r1, [r4, #0x30]\na03a52b8 str     r1, [sp, #4]\na03a52ba ldrh    r1, [r4, #0x2e]\na03a52bc str     r1, [sp]\na03a52be ldrh    r3, [r4, #0x2c]\na03a52c0 ldrh    r2, [r4, #0x2a]\na03a52c2 ldrh    r1, [r4, #0x28]\na03a52c4 adr     r0, #0x184\na03a52c6 bl      #0xa03bef18\na03a52ca adds    r4, #0x58\na03a52cc ldm     r4!, {r1, r2, r3}\na03a52ce adr     r0, #0x208\na03a52d0 bl      #0xa03bef18\na03a52d4 adds    r4, #0x7c\na03a52d6 ldm     r4!, {r1, r2, r3}\na03a52d8 adr     r0, #0x220\na03a52da bl      #0xa03bef18\na03a52de ldm     r4!, {r1, r2, r3}\na03a52e0 adr     r0, #0x240\na03a52e2 bl      #0xa03bef18\na03a52e6 add     sp, #0x24\na03a52e8 pop     {r4, pc}"
+    },
+    "0xa03b2559": {
+      "name": "scan prnu valid",
+      "thumb_entry": "0xa03b2558",
+      "first_32_bytes_hex": "b5704e62a062f00cfcdb24002500006318e95c71a064f00cfcd335012d02dbf6",
+      "bounded_handler_disassembly": "### scan prnu valid 0xa03b2558\na03b2558 push    {r4, r5, r6, lr}\na03b255a ldr     r6, [pc, #0x188] =>0x20d9fbb8 ''\na03b255c adr     r0, #0x188\na03b255e bl      #0xa03bef18\na03b2562 movs    r4, #0\na03b2564 movs    r5, #0\na03b2566 lsls    r3, r4, #1\na03b2568 adds    r1, r5, r3\na03b256a ldrb    r1, [r6, r1]\na03b256c adr     r0, #0x190\na03b256e bl      #0xa03bef18\na03b2572 adds    r5, #1\na03b2574 cmp     r5, #2\na03b2576 blt     #0xa03b2566\na03b2578 adr     r0, #0x188\na03b257a bl      #0xa03bef18\na03b257e adds    r4, #1\na03b2580 cmp     r4, #6\na03b2582 blt     #0xa03b2564\na03b2584 adr     r0, #0x180\na03b2586 bl      #0xa03bef18\na03b258a pop     {r4, r5, r6, pc}"
+    },
+    "0xa03b28db": {
+      "name": "scan prnu avg",
+      "thumb_entry": "0xa03b28da",
+      "first_32_bytes_hex": "b5104c4f6963692268e1a04ef00cfb17cc0ea053f00cfb134859c80ea059f00c",
+      "bounded_handler_disassembly": "### scan prnu avg 0xa03b28da\na03b28da push    {r4, lr}\na03b28dc ldr     r4, [pc, #0x13c] =>0x20d9fc6c ''\na03b28de ldr     r3, [r4, #0x14]\na03b28e0 ldr     r2, [r4, #0x10]\na03b28e2 ldr     r1, [r4, #0xc]\na03b28e4 adr     r0, #0x138\na03b28e6 bl      #0xa03bef18\na03b28ea ldm     r4!, {r1, r2, r3}\na03b28ec adr     r0, #0x14c\na03b28ee bl      #0xa03bef18\na03b28f2 ldr     r0, [pc, #0x164] =>0x20d9fbd0 ''\na03b28f4 ldm     r0!, {r1, r2, r3}\na03b28f6 adr     r0, #0x164\na03b28f8 bl      #0xa03bef18\na03b28fc pop     {r4, pc}"
+    },
+    "0xa03b28ff": {
+      "name": "scan prnu target",
+      "thumb_entry": "0xa03b28fe",
+      "first_32_bytes_hex": "b5104c5d88a388628821a05cf00cfb0589a389628921a061f00cfaffbd10b5f0",
+      "bounded_handler_disassembly": "### scan prnu target 0xa03b28fe\na03b28fe push    {r4, lr}\na03b2900 ldr     r4, [pc, #0x174] =>0x20d9fccc ''\na03b2902 ldrh    r3, [r4, #4]\na03b2904 ldrh    r2, [r4, #2]\na03b2906 ldrh    r1, [r4]\na03b2908 adr     r0, #0x170\na03b290a bl      #0xa03bef18\na03b290e ldrh    r3, [r4, #0xc]\na03b2910 ldrh    r2, [r4, #0xa]\na03b2912 ldrh    r1, [r4, #8]\na03b2914 adr     r0, #0x184\na03b2916 bl      #0xa03bef18\na03b291a pop     {r4, pc}"
+    },
+    "0xa03aeadb": {
+      "name": "scan orig rdoshift",
+      "thumb_entry": "0xa03aeada",
+      "first_32_bytes_hex": "b5004831c806a031f010fa19bd00b500f7fffb6f1c01a03cf010fa11f7fffb73",
+      "bounded_handler_disassembly": "### scan orig rdoshift 0xa03aeada\na03aeada push    {lr}\na03aeadc ldr     r0, [pc, #0xc4] =>0x20d9f278 ''\na03aeade ldm     r0!, {r1, r2}\na03aeae0 adr     r0, #0xc4\na03aeae2 bl      #0xa03bef18\na03aeae6 pop     {pc}"
+    },
+    "0xa03a1611": {
+      "name": "scan barcode BARMARGIN",
+      "thumb_entry": "0xa03a1610",
+      "first_32_bytes_hex": "b5004b12a01222001c11f01dfc7dbd00b510b08523001c1a490c1c18ac01c40f",
+      "bounded_handler_disassembly": "### scan barcode BARMARGIN 0xa03a1610\na03a1610 push    {lr}\na03a1612 ldr     r3, [pc, #0x48] =>0x1388 ''\na03a1614 adr     r0, #0x48\na03a1616 movs    r2, #0\na03a1618 adds    r1, r2, #0\na03a161a bl      #0xa03bef18\na03a161e pop     {pc}"
+    },
+    "0xa03a1621": {
+      "name": "scan barcode get",
+      "thumb_entry": "0xa03a1620",
+      "first_32_bytes_hex": "b510b08523001c1a490c1c18ac01c40f9300a0141c19f01dfc6fb005bd10b510",
+      "bounded_handler_disassembly": "### scan barcode get 0xa03a1620\na03a1620 push    {r4, lr}\na03a1622 sub     sp, #0x14\na03a1624 movs    r3, #0\na03a1626 adds    r2, r3, #0\na03a1628 ldr     r1, [pc, #0x30] =>0x1388 ''\na03a162a adds    r0, r3, #0\na03a162c add     r4, sp, #4\na03a162e stm     r4!, {r0, r1, r2, r3}\na03a1630 str     r3, [sp]\na03a1632 adr     r0, #0x50\na03a1634 adds    r1, r3, #0\na03a1636 bl      #0xa03bef18\na03a163a add     sp, #0x14\na03a163c pop     {r4, pc}"
+    },
+    "0xa03b7ce9": {
+      "name": "scan reg aferead",
+      "thumb_entry": "0xa03b7ce8",
+      "first_32_bytes_hex": "b500a080f007f914bd00b510f007f95a1c04f007f957f007f95523ff1c221c21",
+      "bounded_handler_disassembly": "### scan reg aferead 0xa03b7ce8\na03b7ce8 push    {lr}\na03b7cea adr     r0, #0x200\na03b7cec bl      #0xa03bef18\na03b7cf0 pop     {pc}"
+    },
+    "0xa03ba4ad": {
+      "name": "scan reg latr",
+      "thumb_entry": "0xa03ba4ac",
+      "first_32_bytes_hex": "b5004a798811a079f004fd30bd00b500f004fd6d4b7480184a7a1c011c18f7f8",
+      "bounded_handler_disassembly": "### scan reg latr 0xa03ba4ac\na03ba4ac push    {lr}\na03ba4ae ldr     r2, [pc, #0x1e4] =>0xbd06741e ''\na03ba4b0 ldrh    r1, [r2]\na03ba4b2 adr     r0, #0x1e4\na03ba4b4 bl      #0xa03bef18\na03ba4b8 pop     {pc}"
+    },
+    "0xa03bd459": {
+      "name": "scan scansm tbatinit",
+      "thumb_entry": "0xa03bd458",
+      "first_32_bytes_hex": "b5004902a002f001fd5bbd00208583bc25730a0000000000214b00c94288d011",
+      "bounded_handler_disassembly": "### scan scansm tbatinit 0xa03bd458\na03bd458 push    {lr}\na03bd45a ldr     r1, [pc, #8] =>0x208583bc 'SCAN TBAT TEST STATUS INITED, INCOMPLETE'\na03bd45c adr     r0, #8\na03bd45e bl      #0xa03bef18\na03bd462 pop     {pc}"
+    },
+    "0xa03a2ea5": {
+      "name": "scan dasher yy",
+      "thumb_entry": "0xa03a2ea4",
+      "first_32_bytes_hex": "b5104c1a7921a01af01cf8348821a020f01cf830bd1046c0208581365b25645d",
+      "bounded_handler_disassembly": "### scan dasher yy 0xa03a2ea4\na03a2ea4 push    {r4, lr}\na03a2ea6 ldr     r4, [pc, #0x68] =>0x20d9cbd8 ''\na03a2ea8 ldrb    r1, [r4, #4]\na03a2eaa adr     r0, #0x68\na03a2eac bl      #0xa03bef18\na03a2eb0 ldrh    r1, [r4]\na03a2eb2 adr     r0, #0x80\na03a2eb4 bl      #0xa03bef18\na03a2eb8 pop     {r4, pc}"
+    },
+    "0xa03a4fc9": {
+      "name": "scan gain FIRSTGAIN",
+      "thumb_entry": "0xa03a4fc8",
+      "first_32_bytes_hex": "b50048481c01310c8803200643581842889388525a09a044f019ff9abd00b500",
+      "bounded_handler_disassembly": "### scan gain FIRSTGAIN 0xa03a4fc8\na03a4fc8 push    {lr}\na03a4fca ldr     r0, [pc, #0x120] =>0x20d9cbfc ''\na03a4fcc adds    r1, r0, #0\na03a4fce adds    r1, #0xc\na03a4fd0 ldrh    r3, [r0]\na03a4fd2 movs    r0, #6\na03a4fd4 muls    r0, r3, r0\na03a4fd6 adds    r2, r0, r1\na03a4fd8 ldrh    r3, [r2, #4]\na03a4fda ldrh    r2, [r2, #2]\na03a4fdc ldrh    r1, [r1, r0]\na03a4fde adr     r0, #0x110\na03a4fe0 bl      #0xa03bef18\na03a4fe4 pop     {pc}"
+    },
+    "0xa03a4fe7": {
+      "name": "scan gain LASTGAIN",
+      "thumb_entry": "0xa03a4fe6",
+      "first_32_bytes_hex": "b50048481c0131408803200643581842889388525a09a044f019ff8bbd00b500",
+      "bounded_handler_disassembly": "### scan gain LASTGAIN 0xa03a4fe6\na03a4fe6 push    {lr}\na03a4fe8 ldr     r0, [pc, #0x120] =>0x20d9cbf8 ''\na03a4fea adds    r1, r0, #0\na03a4fec adds    r1, #0x40\na03a4fee ldrh    r3, [r0]\na03a4ff0 movs    r0, #6\na03a4ff2 muls    r0, r3, r0\na03a4ff4 adds    r2, r0, r1\na03a4ff6 ldrh    r3, [r2, #4]\na03a4ff8 ldrh    r2, [r2, #2]\na03a4ffa ldrh    r1, [r1, r0]\na03a4ffc adr     r0, #0x110\na03a4ffe bl      #0xa03bef18\na03a5002 pop     {pc}"
+    },
+    "0xa03bd259": {
+      "name": "scan scansm yy",
+      "thumb_entry": "0xa03bd258",
+      "first_32_bytes_hex": "b530b0824d264c2768a168e3930100884a25588090001c0b6868008049235842",
+      "bounded_handler_disassembly": "### scan scansm yy 0xa03bd258\na03bd258 push    {r4, r5, lr}\na03bd25a sub     sp, #8\na03bd25c ldr     r5, [pc, #0x98] =>0x208583e8 ''\na03bd25e ldr     r4, [pc, #0x9c] =>0x20da02fc ''\na03bd260 ldr     r1, [r4, #8]\na03bd262 ldr     r3, [r4, #0xc]\na03bd264 str     r3, [sp, #4]\na03bd266 lsls    r0, r1, #2\na03bd268 ldr     r2, [pc, #0x94] =>0xa06031bc ''\na03bd26a ldr     r0, [r0, r2]\na03bd26c str     r0, [sp]\na03bd26e adds    r3, r1, #0\na03bd270 ldr     r0, [r5, #4]\na03bd272 lsls    r0, r0, #2\na03bd274 ldr     r1, [pc, #0x8c] =>0xa06031a8 ''\na03bd276 ldr     r2, [r0, r1]\na03bd278 ldr     r1, [r5, #4]\na03bd27a adr     r0, #0x8c\na03bd27c bl      #0xa03bef18\na03bd280 ldrb    r3, [r5]\na03bd282 str     r3, [sp]\na03bd284 ldrb    r3, [r4]\na03bd286 ldrb    r2, [r4, #2]\na03bd288 ldrb    r1, [r4, #1]\na03bd28a adr     r0, #0xe0\na03bd28c bl      #0xa03bef18\na03bd290 ldrb    r3, [r4, #4]\na03bd292 ldrb    r2, [r4, #3]\na03bd294 ldr     r0, [pc, #0x154] =>0x20da02d8 ''\na03bd296 ldr     r1, [r0]\na03bd298 adr     r0, #0x154\na03bd29a bl      #0xa03bef18\na03bd29e ldr     r0, [pc, #0x1b0] =>0x20da02d0 ''\na03bd2a0 ldrb    r1, [r0]\na03bd2a2 ldr     r0, [pc, #0x1b0] =>0xa03bcec4 '_adf_job               = %d\\n'\na03bd2a4 bl      #0xa03bef18\na03bd2a8 add     sp, #8\na03bd2aa pop     {r4, r5, pc}"
+    },
+    "0xa0171395": {
+      "name": "hw_mcasic.get_max_temps",
+      "thumb_entry": "0xa0171394",
+      "first_32_bytes_hex": "b530b083466aa131230043d8f152fd1fa90198003801f7fef901a445232c9a01",
+      "bounded_handler_disassembly": "### hw_mcasic.get_max_temps 0xa0171394\na0171394 push    {r4, r5, lr}\na0171396 sub     sp, #0xc\na0171398 mov     r2, sp\na017139a adr     r1, #0xc4\na017139c movs    r3, #0\na017139e mvns    r0, r3\na01713a0 bl      #0xa02c3de2\na01713a4 add     r1, sp, #4\na01713a6 ldr     r0, [sp]\na01713a8 subs    r0, #1\na01713aa bl      #0xa016f5b0\na01713ae adr     r4, #0x114\na01713b0 movs    r3, #0x2c\na01713b2 ldr     r2, [sp, #4]\na01713b4 adds    r1, r4, #0\na01713b6 movs    r5, #0\na01713b8 mvns    r0, r5\na01713ba bl      #0xa02c37be\na01713be movs    r3, #0x3b\na01713c0 ldr     r2, [sp, #8]\na01713c2 adds    r1, r4, #0\na01713c4 mvns    r0, r5\na01713c6 bl      #0xa02c37be\na01713ca add     sp, #0xc\na01713cc pop     {r4, r5, pc}"
+    },
+    "0xa02be11f": {
+      "name": "lib_servo.get_pos",
+      "thumb_entry": "0xa02be11e",
+      "first_32_bytes_hex": "b510b081466aa1aa240043e0f005fe5a9800f7ffffd0232c1c02a1a643e0f005",
+      "bounded_handler_disassembly": "### lib_servo.get_pos 0xa02be11e\na02be11e push    {r4, lr}\na02be120 sub     sp, #4\na02be122 mov     r2, sp\na02be124 adr     r1, #0x2a8\na02be126 movs    r4, #0\na02be128 mvns    r0, r4\na02be12a bl      #0xa02c3de2\na02be12e ldr     r0, [sp]\na02be130 bl      #0xa02be0d4\na02be134 movs    r3, #0x2c\na02be136 adds    r2, r0, #0\na02be138 adr     r1, #0x298\na02be13a mvns    r0, r4\na02be13c bl      #0xa02c37be\na02be140 add     sp, #4\na02be142 pop     {r4, pc}"
+    },
+    "0xa02be2d1": {
+      "name": "lib_servo.getfreq",
+      "thumb_entry": "0xa02be2d0",
+      "first_32_bytes_hex": "b530b081466aa13e250043e8f005fd819800f7fffef71c044841f170fd9f9800",
+      "bounded_handler_disassembly": "### lib_servo.getfreq 0xa02be2d0\na02be2d0 push    {r4, r5, lr}\na02be2d2 sub     sp, #4\na02be2d4 mov     r2, sp\na02be2d6 adr     r1, #0xf8\na02be2d8 movs    r5, #0\na02be2da mvns    r0, r5\na02be2dc bl      #0xa02c3de2\na02be2e0 ldr     r0, [sp]\na02be2e2 bl      #0xa02be0d4\na02be2e6 adds    r4, r0, #0\na02be2e8 ldr     r0, [pc, #0x104] =>0xf4240 ''\na02be2ea bl      #0xa042ee2c\na02be2ee ldr     r0, [sp]\na02be2f0 bl      #0xa02be0d4\na02be2f4 movs    r3, #0x2c\na02be2f6 subs    r2, r0, r4\na02be2f8 adr     r1, #0xd8\na02be2fa mvns    r0, r5\na02be2fc bl      #0xa02c37be\na02be300 add     sp, #4\na02be302 pop     {r4, r5, pc}"
+    }
+  },
+  "helper_proofs": {
+    "0xa03bef18": "### 2688282392 0xa03bef18\na03bef18 push    {r1, r2, r3}\na03bef1a push    {r4, r5, lr}\na03bef1c sub     sp, #0x100\na03bef1e ldr     r4, [pc, #0x1a0] =>0x20da0a5c ''\na03bef20 adds    r5, r0, #0\na03bef22 blx     #0xa0010538\na03bef26 add     r3, sp, #0x10c\na03bef28 adds    r2, r5, #0\na03bef2a movs    r1, #0xff\na03bef2c adds    r1, #1\na03bef2e mov     r0, sp\na03bef30 bl      #0xa04f0b76\na03bef34 ldrb    r3, [r4, #2]\na03bef36 cmp     r3, #0\na03bef38 bne     #0xa03bef50\na03bef3a ldr     r0, [pc, #0x188] =>0x20da0ae8 ''\na03bef3c ldr     r5, [r0]\na03bef3e mov     r0, sp\na03bef40 blx     #0xa0010538\na03bef44 ldr     r1, [r5]\na03bef46 ldr     r3, [r1, #0x24]\na03bef48 adds    r2, r0, #0\na03bef4a mov     r1, sp\na03bef4c adds    r0, r5, #0\na03bef4e blx     r3\na03bef50 ldrb    r0, [r4, #1]\na03bef52 cmp     r0, #0\na03bef54 beq     #0xa03bef6c\na03bef56 ldrb    r1, [r4, #3]\na03bef58 adds    r1, #1\na03bef5a strb    r1, [r4, #3]\na03bef5c ldrb    r1, [r4, #3]\na03bef5e ldrb    r3, [r4]\na03bef60 cmp     r1, r3\na03bef62 blo     #0xa03bef6c\na03bef64 movs    r3, #0\na03bef66 strb    r3, [r4, #3]\na03bef68 bl      #0xa02f6d70\na03bef6c add     sp, #0x100\na03bef6e pop     {r4, r5}\na03bef70 pop     {r3}\na03bef72 add     sp, #0xc\na03bef74 bx      r3",
+    "0xa03bef76": "### 2688282486 0xa03bef76\na03bef76 push    {lr}\na03bef78 ldr     r2, [pc, #0x148] =>0x20da0ae8 ''\na03bef7a ldr     r0, [r2]\na03bef7c ldr     r1, [r0]\na03bef7e ldr     r1, [r1, #0x10]\na03bef80 blx     r1\na03bef82 lsls    r0, r0, #0x18\na03bef84 lsrs    r0, r0, #0x18\na03bef86 pop     {pc}",
+    "0xa03bef9a": "### 2688282522 0xa03bef9a\na03bef9a push    {lr}\na03bef9c ldr     r2, [pc, #0x124] =>0x20da0ae8 ''\na03bef9e ldr     r0, [r2]\na03befa0 ldr     r1, [r0]\na03befa2 ldr     r1, [r1, #0x10]\na03befa4 blx     r1\na03befa6 lsls    r0, r0, #0x10\na03befa8 lsrs    r0, r0, #0x10\na03befaa pop     {pc}",
+    "0xa03befbe": "### 2688282558 0xa03befbe\na03befbe push    {lr}\na03befc0 ldr     r2, [pc, #0x100] =>0x20da0ae8 ''\na03befc2 ldr     r0, [r2]\na03befc4 ldr     r1, [r0]\na03befc6 ldr     r1, [r1, #0x10]\na03befc8 blx     r1\na03befca pop     {pc}",
+    "0xa03befcc": "### 2688282572 0xa03befcc\na03befcc push    {lr}\na03befce ldr     r2, [pc, #0xf4] =>0x20da0ae8 ''\na03befd0 ldr     r0, [r2]\na03befd2 ldr     r1, [r0]\na03befd4 ldr     r1, [r1, #0x10]\na03befd6 blx     r1\na03befd8 pop     {pc}",
+    "0xa03a247e": "### 2688164990 0xa03a247e\na03a247e movs    r0, #1\na03a2480 bx      lr",
+    "0xa03a8230": "### 2688188976 0xa03a8230\na03a8230 adds    r1, r0, #0\na03a8232 movs    r0, #0\na03a8234 movs    r2, #0xff\na03a8236 adds    r2, #0x2d\na03a8238 cmp     r1, r2\na03a823a beq     #0xa03a8266\na03a823c movs    r2, #0x4b\na03a823e lsls    r2, r2, #3\na03a8240 cmp     r1, r2\na03a8242 beq     #0xa03a8268\na03a8244 movs    r2, #0x4b\na03a8246 lsls    r2, r2, #4\na03a8248 cmp     r1, r2\na03a824a beq     #0xa03a826c\na03a824c movs    r2, #0x4b\na03a824e lsls    r2, r2, #5\na03a8250 cmp     r1, r2\na03a8252 beq     #0xa03a8270\na03a8254 movs    r2, #0x4b\na03a8256 lsls    r2, r2, #6\na03a8258 cmp     r1, r2\na03a825a beq     #0xa03a8274\na03a825c movs    r2, #0x4b\na03a825e lsls    r2, r2, #7\na03a8260 cmp     r1, r2\na03a8262 bne     #0xa03a827a\na03a8264 b       #0xa03a8278\na03a8266 b       #0xa03a827a\na03a8268 movs    r0, #1\na03a826a b       #0xa03a827a\na03a826c movs    r0, #2\na03a826e b       #0xa03a827a\na03a8270 movs    r0, #3\na03a8272 b       #0xa03a827a\na03a8274 movs    r0, #4\na03a8276 b       #0xa03a827a\na03a8278 movs    r0, #5\na03a827a bx      lr",
+    "0xa03a27ca": "### 2688165834 0xa03a27ca\na03a27ca ldr     r0, [pc, #0x19c] =>0x2085813c ''\na03a27cc ldrh    r0, [r0, #2]\na03a27ce bx      lr",
+    "0xa03bdbd0": "### 2688277456 0xa03bdbd0\na03bdbd0 cmp     r0, #1\na03bdbd2 blo     #0xa03bdbde\na03bdbd4 beq     #0xa03bdbe2\na03bdbd6 cmp     r0, #2\na03bdbd8 beq     #0xa03bdbe6\na03bdbda adr     r0, #0xd8\na03bdbdc b       #0xa03bdbe8\na03bdbde adr     r0, #0xf8\na03bdbe0 b       #0xa03bdbe8\na03bdbe2 adr     r0, #0x10c\na03bdbe4 b       #0xa03bdbe8\na03bdbe6 adr     r0, #0x11c\na03bdbe8 bx      lr",
+    "0xa03bdbf2": "### 2688277490 0xa03bdbf2\na03bdbf2 cmp     r0, #4\na03bdbf4 blo     #0xa03bdc22\na03bdbf6 beq     #0xa03bdc0a\na03bdbf8 cmp     r0, #6\na03bdbfa blo     #0xa03bdc0e\na03bdbfc beq     #0xa03bdc12\na03bdbfe cmp     r0, #8\na03bdc00 blo     #0xa03bdc16\na03bdc02 beq     #0xa03bdc1a\na03bdc04 cmp     r0, #9\na03bdc06 bne     #0xa03bdc22\na03bdc08 b       #0xa03bdc1e\na03bdc0a adr     r0, #0x114\na03bdc0c b       #0xa03bdc24\na03bdc0e adr     r0, #0x124\na03bdc10 b       #0xa03bdc24\na03bdc12 adr     r0, #0x134\na03bdc14 b       #0xa03bdc24\na03bdc16 adr     r0, #0x144\na03bdc18 b       #0xa03bdc24\na03bdc1a adr     r0, #0x154\na03bdc1c b       #0xa03bdc24\na03bdc1e adr     r0, #0x164\na03bdc20 b       #0xa03bdc24\na03bdc22 adr     r0, #0x174\na03bdc24 bx      lr",
+    "0xa031452e": "### 2687583534 0xa031452e\na031452e ldr     r1, [pc, #0x1c4] =>0x20cfb098 ''\na0314530 ldr     r3, [r1]\na0314532 movs    r0, #0\na0314534 cmp     r3, #3\na0314536 bne     #0xa031453a\na0314538 movs    r0, #1\na031453a bx      lr",
+    "0xa0323164": "### 2687644004 0xa0323164\na0323164 push    {lr}\na0323166 bl      #0xa032317a\na032316a bl      #0xa0323182\na032316e bl      #0xa032318c\na0323172 movs    r0, #1\na0323174 pop     {pc}",
+    "0xa0323176": "### 2687644022 0xa0323176\na0323176 movs    r0, #0\na0323178 bx      lr",
+    "0xa032317a": "### 2687644026 0xa032317a\na032317a movs    r0, #0\na032317c bx      lr",
+    "0xa032317e": "### 2687644030 0xa032317e\na032317e movs    r0, #0\na0323180 bx      lr",
+    "0xa0323182": "### 2687644034 0xa0323182\na0323182 push    {lr}\na0323184 bl      #0xa032318c\na0323188 movs    r0, #1\na032318a pop     {pc}",
+    "0xa032318c": "### 2687644044 0xa032318c\na032318c movs    r0, #1\na032318e bx      lr",
+    "0xa03299f0": "### 2687670768 0xa03299f0\na03299f0 push    {lr}\na03299f2 cmp     r0, #0\na03299f4 bne     #0xa0329a00\na03299f6 movs    r0, #4\na03299f8 bl      #0xa02cef8e\na03299fc cmp     r0, #0\na03299fe beq     #0xa0329a04\na0329a00 movs    r3, #0\na0329a02 str     r3, [r0]\na0329a04 pop     {pc}",
+    "0xa03299c4": "### 2687670724 0xa03299c4\na03299c4 str     r1, [r0]\na03299c6 bx      lr",
+    "0xa03299c0": "### 2687670720 0xa03299c0\na03299c0 ldr     r0, [r0]\na03299c2 bx      lr",
+    "0xa0256800": "### 2686806016 0xa0256800\na0256800 push    {lr}\na0256802 bl      #0xa0176620\na0256806 pop     {pc}",
+    "0xa0176620": "### 2685888032 0xa0176620\na0176620 lsls    r3, r0, #2\na0176622 ldr     r0, [pc, #0x80] =>0x20969be8 ''\na0176624 ldr     r0, [r3, r0]\na0176626 bx      lr",
+    "0xa046e26a": "### 2689000042 0xa046e26a\na046e26a ldr     r0, [pc, #0xac] =>0x20e074dc ''\na046e26c bx      lr",
+    "0xa046e324": "### 2689000228 0xa046e324\na046e324 push    {r4, r5, r6, lr}\na046e326 adds    r5, r1, #0\na046e328 adds    r6, r0, #0\na046e32a blx     #0xa03d20c0\na046e32e adds    r4, r0, #0\na046e330 adds    r2, r5, #0\na046e332 cmp     r4, r5\na046e334 bgt     #0xa046e338\na046e336 adds    r2, r4, #0\na046e338 adds    r1, r6, #0\na046e33a movs    r3, #0\na046e33c mvns    r0, r3\na046e33e bl      #0xa02c2a7a\na046e342 b       #0xa046e34c\na046e344 adds    r4, #1\na046e346 movs    r1, #0x20\na046e348 bl      #0xa02c2a6a\na046e34c movs    r1, #0\na046e34e mvns    r0, r1\na046e350 cmp     r4, r5\na046e352 blt     #0xa046e344\na046e354 movs    r1, #0x3b\na046e356 bl      #0xa02c2a6a\na046e35a pop     {r4, r5, r6, pc}",
+    "0xa016f5b0": "### 2685859248 0xa016f5b0\na016f5b0 push    {r4, r5, r6, lr}\na016f5b2 adds    r5, r0, #0\na016f5b4 adds    r6, r1, #0\na016f5b6 movs    r4, #0\na016f5b8 lsls    r3, r5, #1\na016f5ba adds    r0, r4, r3\na016f5bc lsls    r0, r0, #2\na016f5be ldr     r3, [pc, #0x128] =>0x20968b20 ''\na016f5c0 ldr     r1, [r0, r3]\na016f5c2 adds    r0, r5, #0\na016f5c4 bl      #0xa016f5e2\na016f5c8 lsls    r1, r4, #2\na016f5ca str     r0, [r1, r6]\na016f5cc adds    r4, #1\na016f5ce cmp     r4, #2\na016f5d0 blt     #0xa016f5b8\na016f5d2 pop     {r4, r5, r6, pc}",
+    "0xa016f5e2": "### 2685859298 0xa016f5e2\na016f5e2 push    {r4, r5, r6, lr}\na016f5e4 adds    r6, r1, #0\na016f5e6 ldr     r2, [pc, #0xdc] =>0xa053d54c ''\na016f5e8 ldr     r0, [r2]\na016f5ea movs    r4, #0xda\na016f5ec movs    r3, #0xf\na016f5ee lsls    r3, r3, #8\na016f5f0 ands    r3, r0\na016f5f2 beq     #0xa016f5f8\na016f5f4 movs    r5, #0xbd\na016f5f6 b       #0xa016f5fa\na016f5f8 movs    r5, #0x7f\na016f5fa adds    r5, #0xda\na016f5fc bl      #0xa0005f90\na016f600 adds    r0, r0, r4\na016f602 ldrb    r0, [r0, #4]\na016f604 ldr     r2, [pc, #0xe4] =>0xce4 ''\na016f606 muls    r2, r6, r2\na016f608 subs    r1, r0, #1\na016f60a movs    r3, #1\na016f60c lsls    r3, r1\na016f60e adds    r1, r3, r2\na016f610 movs    r2, #1\na016f612 lsls    r2, r0\na016f614 subs    r0, r2, #1\na016f616 blx     #0xa001944c\na016f61a movs    r1, #0x64\na016f61c muls    r1, r0, r1\na016f61e adds    r1, #0xcc\na016f620 adds    r0, r5, #0\na016f622 blx     #0xa001944c\na016f626 adds    r4, #0x37\na016f628 subs    r0, r0, r4\na016f62a pop     {r4, r5, r6, pc}",
+    "0xa0005f90": "### 2684379024 0xa0005f90\na0005f90 lsls    r3, r0, #0x14\na0005f92 lsrs    r3, r3, #0x1c\na0005f94 lsls    r3, r3, #2\na0005f96 ldr     r0, [pc, #0x2e4] =>0xa00108c8 ''\na0005f98 ldr     r0, [r3, r0]\na0005f9a bx      lr",
+    "0xa02be0d4": "### 2687230164 0xa02be0d4\na02be0d4 push    {r4, r5, r6, lr}\na02be0d6 sub     sp, #8\na02be0d8 adds    r4, r0, #0\na02be0da movs    r0, #0\na02be0dc cmp     r4, #2\na02be0de bge     #0xa02be11a\na02be0e0 lsls    r3, r4, #5\na02be0e2 ldr     r1, [pc, #0x2e4] =>0xa05b6af8 ''\na02be0e4 adds    r1, r1, r3\na02be0e6 ldr     r5, [r1, #4]\na02be0e8 ldr     r6, [pc, #0x2e0] =>0x1388 ''\na02be0ea cmp     r5, r6\na02be0ec bne     #0xa02be0f4\na02be0ee adds    r0, r4, #0\na02be0f0 bl      #0xa02be646\na02be0f4 adds    r3, r6, #1\na02be0f6 cmp     r5, r3\na02be0f8 bne     #0xa02be10e\na02be0fa adds    r0, r4, #0\na02be0fc bl      #0xa02bd570\na02be100 add     r2, sp, #4\na02be102 adds    r2, #2\na02be104 mov     r1, sp\na02be106 adds    r0, r4, #0\na02be108 movs    r3, #0\na02be10a bl      #0xa02bd586\na02be10e adds    r3, r6, #5\na02be110 cmp     r5, r3\na02be112 bne     #0xa02be11a\na02be114 adds    r0, r4, #0\na02be116 bl      #0xa02be53c\na02be11a add     sp, #8\na02be11c pop     {r4, r5, r6, pc}",
+    "0xa02be646": "### 2687231558 0xa02be646\na02be646 push    {r4, r5, lr}\na02be648 ldr     r4, [pc, #0x1c] =>0x208450b4 ''\na02be64a adds    r5, r4, #0\na02be64c ldr     r0, [r5, #4]\na02be64e bl      #0xa0177700\na02be652 ldrb    r3, [r5, #0x14]\na02be654 cmp     r3, #0\na02be656 beq     #0xa02be65c\na02be658 ldrb    r3, [r5, #0x15]\na02be65a lsls    r0, r3\na02be65c pop     {r4, r5, pc}",
+    "0xa0177700": "### 2685892352 0xa0177700\na0177700 push    {r4, lr}\na0177702 adds    r1, r0, #0\na0177704 ldr     r4, [pc, #0x80] =>0x209715c4 ''\na0177706 cmp     r1, #7\na0177708 beq     #0xa0177716\na017770a movs    r0, #0\na017770c cmp     r1, #8\na017770e beq     #0xa0177728\na0177710 cmp     r1, #0xa\na0177712 bne     #0xa017773e\na0177714 b       #0xa017773a\na0177716 ldr     r2, [pc, #0x74] =>0xbd302010 ''\na0177718 ldr     r3, [r2]\na017771a ldr     r1, [r4]\na017771c lsls    r0, r3, #0x10\na017771e lsrs    r0, r0, #0x10\na0177720 bl      #0xa0177698\na0177724 str     r0, [r4]\na0177726 b       #0xa017773e\na0177728 ldr     r2, [pc, #0x64] =>0xbd302410 ''\na017772a ldr     r3, [r2]\na017772c ldr     r1, [r4, #4]\na017772e lsls    r0, r3, #0x10\na0177730 lsrs    r0, r0, #0x10\na0177732 bl      #0xa0177698\na0177736 str     r0, [r4, #4]\na0177738 b       #0xa017773e\na017773a ldr     r1, [pc, #0x58] =>0xbd300038 ''\na017773c ldr     r0, [r1]\na017773e pop     {r4, pc}",
+    "0xa0177698": "### 2685892248 0xa0177698\na0177698 push    {r4, lr}\na017769a ldr     r4, [pc, #0xd4] =>0xffff ''\na017769c lsls    r2, r1, #0x10\na017769e lsrs    r2, r2, #0x10\na01776a0 ldr     r3, [pc, #0xd0] =>0xc000 ''\na01776a2 cmp     r2, r3\na01776a4 blo     #0xa01776b2\na01776a6 ldr     r3, [pc, #0xd0] =>0x3fff ''\na01776a8 cmp     r0, r3\na01776aa bhi     #0xa01776b2\na01776ac adds    r3, r4, r1\na01776ae adds    r1, r3, #1\na01776b0 b       #0xa01776c2\na01776b2 ldr     r3, [pc, #0xc4] =>0x3fff ''\na01776b4 cmp     r2, r3\na01776b6 bhi     #0xa01776c2\na01776b8 ldr     r3, [pc, #0xb8] =>0xc000 ''\na01776ba cmp     r0, r3\na01776bc blo     #0xa01776c2\na01776be adds    r3, r4, #1\na01776c0 subs    r1, r1, r3\na01776c2 lsrs    r3, r1, #0x10\na01776c4 lsls    r3, r3, #0x10\na01776c6 orrs    r0, r3\na01776c8 pop     {r4, pc}",
+    "0xa042ee2c": "### 2688740908 0xa042ee2c\na042ee2c push    {r4, r5, r6, r7, lr}\na042ee2e sub     sp, #4\na042ee30 adds    r4, r0, #0\na042ee32 ldr     r7, [pc, #0xb0] =>0x20ded0f4 ''\na042ee34 ldr     r5, [pc, #0x88] =>0xbd040800 ''\na042ee36 ldr     r6, [r5, #0x18]\na042ee38 ldrh    r3, [r7]\na042ee3a cmp     r4, r3\na042ee3c bhi     #0xa042ee56\na042ee3e ldrh    r0, [r5, #0xe]\na042ee40 muls    r4, r0, r4\na042ee42 ldr     r1, [pc, #0xa4] =>0x20decedc ''\na042ee44 ldr     r0, [r1]\na042ee46 cmp     r0, r4\na042ee48 bhs     #0xa042eea0\na042ee4a subs    r4, r4, r0\na042ee4c ldr     r0, [r5, #0x18]\na042ee4e subs    r0, r0, r6\na042ee50 cmp     r0, r4\na042ee52 blo     #0xa042ee4c\na042ee54 b       #0xa042eea0\na042ee56 ldr     r6, [r5, #0x14]\na042ee58 mov     r0, sp\na042ee5a bl      #0xa042f0dc\na042ee5e ldrh    r3, [r7]\na042ee60 cmp     r4, r3\na042ee62 bls     #0xa042ee68\na042ee64 cmp     r0, #0\na042ee66 bne     #0xa042ee74\na042ee68 adds    r4, #1\na042ee6a ldr     r1, [r5, #0x14]\na042ee6c subs    r1, r1, r6\na042ee6e cmp     r1, r4\na042ee70 blo     #0xa042ee6a\na042ee72 b       #0xa042ee96\na042ee74 ldr     r0, [r5, #0x14]\na042ee76 subs    r0, r0, r6\na042ee78 subs    r0, r4, r0\na042ee7a cmp     r0, r4\na042ee7c bhi     #0xa042ee9a\na042ee7e cmp     r0, #0\na042ee80 beq     #0xa042ee9a\na042ee82 ldr     r2, [sp]\na042ee84 ldr     r1, [pc, #0x64] =>0xa042ed31 ''\na042ee86 bl      #0xa042eef0\na042ee8a movs    r3, #0\na042ee8c mvns    r1, r3\na042ee8e ldr     r0, [sp]\na042ee90 bl      #0xa02f5fa2\na042ee94 b       #0xa042ee9a\na042ee96 cmp     r0, #0\na042ee98 beq     #0xa042eea0\na042ee9a ldr     r0, [sp]\na042ee9c bl      #0xa042f10e\na042eea0 add     sp, #4\na042eea2 pop     {r4, r5, r6, r7, pc}"
+  },
+  "literal_proofs": {
+    "A03D20C0_ARM_veneer": "e51ff004 a0010538 -> strlen",
+    "encoder_table_A05B6B18": [
+      "0x1",
+      "0x1388",
+      "0x1",
+      "0x4060000",
+      "0x2",
+      "0x0",
+      "0x0",
+      "0x0"
+    ],
+    "encoder_config_208450B4_initial": [
+      "0x1",
+      "0xa",
+      "0x1930000",
+      "0x0",
+      "0x0",
+      "0x0"
+    ]
+  }
+}

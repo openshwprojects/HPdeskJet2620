@@ -1,0 +1,49 @@
+{
+  "started_utc": "2026-10-29T20:05:33.346308+00:00",
+  "port": "COM16",
+  "baud": 115200,
+  "data_bits": 8,
+  "parity": "N",
+  "stop_bits": 1,
+  "line_ending": "CRLF",
+  "source": "physical UART",
+  "rts": false,
+  "dtr": false,
+  "tx_character_delay_seconds": 0.003,
+  "capture_program_sha256": "685d8b07cd5afafeba32f37eb5722416458a08dafe09290576957e50b31bdb03",
+  "requested_rx_buffer_bytes": 1048576,
+  "requested_tx_buffer_bytes": 65536,
+  "initial_prompt_seen": true,
+  "stop_reason": "batch-complete",
+  "ended_utc": "2026-10-29T20:05:35.128022+00:00",
+  "commands": [
+    {
+      "command": "udws \"ustd.ll /ram/codex_uart_20261029a;\"",
+      "purpose": "Inspect only our test directory after rmdir returned -1.",
+      "classification": "reviewed-ram-filesystem-query",
+      "index": 1,
+      "started_utc": "2026-10-29T20:05:34.047667+00:00",
+      "response_file": "0001-udws_ustd_ll_ram_codex_uart_20261029a.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:05:34.619280+00:00",
+      "elapsed_seconds": 0.57,
+      "response_bytes": 159,
+      "response_sha256": "a1cbaaf9e43ff26e6481cd3494f1d37a7fa69e2930863e917e54102c889f27a4",
+      "prompt_returned": true
+    },
+    {
+      "command": "udws \"ustd.ls /ram;\"",
+      "purpose": "Determine whether our directory is still linked.",
+      "classification": "reviewed-ram-filesystem-query",
+      "index": 2,
+      "started_utc": "2026-10-29T20:05:34.621104+00:00",
+      "response_file": "0002-udws_ustd_ls_ram.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T20:05:35.126028+00:00",
+      "elapsed_seconds": 0.503,
+      "response_bytes": 621,
+      "response_sha256": "cfc93f4ff8eadf3f84affbe73fa8729d44ca882f2b5e9d1b0ff835011fc732b3",
+      "prompt_returned": true
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "started_utc": "2026-10-29T18:44:51.565721+00:00",
+  "port": "COM16",
+  "baud": 115200,
+  "data_bits": 8,
+  "parity": "N",
+  "stop_bits": 1,
+  "line_ending": "CR",
+  "source": "physical UART",
+  "rts": false,
+  "dtr": false,
+  "tx_character_delay_seconds": 0.003,
+  "initial_prompt_seen": true,
+  "stop_reason": "command-did-not-return-prompt",
+  "ended_utc": "2026-10-29T18:45:00.305267+00:00",
+  "commands": [
+    {
+      "command": "udws \"bio.rev_str;\"",
+      "purpose": "Verify paced UART transmission",
+      "classification": "information-query",
+      "index": 1,
+      "started_utc": "2026-10-29T18:44:52.186480+00:00",
+      "response_file": "0001-udws_bio_rev_str.bin",
+      "status": "timeout-no-prompt",
+      "ended_utc": "2026-10-29T18:45:00.303540+00:00",
+      "elapsed_seconds": 8.117,
+      "response_bytes": 25,
+      "response_sha256": "6f301e8a0932ce7066fe7e802fb50598af721ad99b9a14ccac21b49ce6f039df",
+      "prompt_returned": false
+    }
+  ]
+}

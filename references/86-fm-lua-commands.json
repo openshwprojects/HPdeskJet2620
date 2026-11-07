@@ -1,0 +1,10 @@
+[
+  {
+    "name": "fm.lua",
+    "command": "udws \"fm.lua;\"",
+    "argument_syntax": "",
+    "classification": "Lua interpreter entry, generic fm handler (round 8, user-authorized, hang expected)",
+    "purpose": "Attempt the embedded Lua interpreter. Handler 0xa00e084a posts to the fm task and waits without timeout, the pattern that hung fm.version_query and fm.carriage_home.",
+    "timeout": 30
+  }
+]

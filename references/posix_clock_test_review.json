@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-10-29T20:22:13.297375+00:00",
+  "scope": "Offline review only; no serial access or changes to captures, logger, or root index.",
+  "firmware": {
+    "version": "TJP1FN1809AR",
+    "dram_file": "artifacts/ghs/dram.bin",
+    "dram_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+    "itcm_file": "artifacts/ghs/itcm.bin",
+    "itcm_sha256": "bf99db18d8e211712f76ee69454ff3f7ffafe4dcc8f868c360e8cc62f8f83ac9",
+    "static_inventory_file": "references/static_inventory.json",
+    "static_inventory_sha256": "e26fecbcda7f729bf498101db61d8d0f8eaa574ae4ddef34167aa05c4be30877",
+    "handler": "0xa042f9cf",
+    "descriptor": "0xa061eac8"
+  },
+  "physical_source": {
+    "command": "udws \"posix_timer.clock_gettime_test 1;\"",
+    "response_file": "references/physical-37-bounded-software/0004-udws_posix_timer_clock_gettime_test_1.bin",
+    "response_sha256": "e65b86db4b99909304d42b4fc33000b60815893917764d183fb39b59f94db40c",
+    "response_bytes": 133,
+    "prompt_returned": true,
+    "elapsed_seconds": 0.566,
+    "output": "\r\n\r-> udws \"posix_timer.clock_gettime_test 1;\"\r\nPosix Clock Gettime Test Done! Test Result = FAILED(0)\r\n;udws() returns 0 (0x0)\r\n\r-> "
+  },
+  "conclusion": {
+    "assessment": "unsupported-clock-ID-in-this-firmware",
+    "certainty": "proven for the reviewed image",
+    "explanation": "Input1 is a clock ID, not a delay, repeat count, or enable flag. The test helper recognizes1 and3, but the actual clock-read implementation supports only3. ID1 returns-1 on the very first read, which the test converts to FAILED(0) before its delay call.",
+    "does_not_establish": [
+      "Clock hardware failure",
+      "Clock drift or scheduler jitter",
+      "UART truncation",
+      "A device assertion or reset"
+    ],
+    "previous_review_correction": "The physical37 plan allowed a scheduler-precision explanation. For this exact input and image, failure precedes timing and is deterministic unsupported-ID behavior."
+  },
+  "exact_control_flow": [
+    {
+      "address": "0xa042f9d2..0xa042f9e0",
+      "proof": "Wrapper scans %d into one stack word and passes it toA04303EC. No argument-count check is made; do not invoke without the integer."
+    },
+    {
+      "address": "0xa04303f2..0xa043040a",
+      "proof": "Only IDs1 and3 accepted by the test. ID1 configures timespec{0,200000}; ID3 configures{2,0}. Others return0."
+    },
+    {
+      "address": "0xa0430428..0xa0430432",
+      "proof": "First read callsA042BAAE(clock_id,&before). Adds1 to return and branches directly toFAILED if the result was-1."
+    },
+    {
+      "address": "0xa042bab2..0xa042bad0",
+      "proof": "Initial result is0xffffffff. Only compare clock_id==3 path overwrites return with0 and stores{word[20DEBC58],0}. Other IDs store{0,0} and retain-1."
+    },
+    {
+      "address": "0xa0430434..0xa0430446",
+      "proof": "Only after successful first read does test callA042F34E(&delay,0), then obtain second reading and reject-1."
+    },
+    {
+      "address": "0xa0430448..0xa043044e",
+      "proof": "Rejects a signed decrease of the seconds field."
+    },
+    {
+      "address": "0xa0430458..0xa043046c",
+      "proof": "ID3 computes delta_seconds, quotient2 from2,000,000/1,000,000, and adds r4/2=1,000,000; sample considered too slow only if signed delta_seconds>1,000,002."
+    },
+    {
+      "address": "0xa043049c..0xa04304ba",
+      "proof": "Each of8 outer samples can retry an over-threshold result at most3 times, for at most4 delays per sample and32 delays overall. Four consecutive over-threshold results fail. Successful sample advances outer index;8 samples return1."
+    },
+    {
+      "address": "0xa042f9e4..0xa042f9f4",
+      "proof": "Result0 prints FAILED(0); result1 prints PASSED(1). It is an internal boolean test result, separate from outer udws() return0."
+    }
+  ],
+  "bounded_followup": {
+    "command": "udws \"posix_timer.clock_gettime_test 3;\"",
+    "classification": "reviewed-local-software-timer-exercise",
+    "argument_semantics": "Clock ID3; the only ID implemented by the firmware clock-read helper.",
+    "expected_normal_output": "Posix Clock Gettime Test Done! Test Result = PASSED(1)",
+    "normal_duration_seconds": 16,
+    "delay_calls_maximum": 32,
+    "requested_delay_seconds_each": 2,
+    "maximum_requested_delay_total_seconds": 64,
+    "recommended_capture_timeout_seconds": 80,
+    "duration_caveat": "These bounds count loop iterations and requested sleeps, not a hard wall-clock guarantee if scheduler/timer helpers stop responding.",
+    "side_effects": "Reads software clock and timer MMIO, delays command task, temporarily claims/releases preallocated wait resources, and may program ordinary timer wakeups. No time-setting call, persistent write, scan, print, motor or transport operation.",
+    "result_interpretation": "A complete follow-up proves that the supported clock-ID path and timer waits return. PASSED does not prove clock accuracy or even advancement: there is no positive lower bound on delta, and the ID3 upper threshold mixes a microsecond-derived margin with the seconds delta.",
+    "why_not_id1": "ID1 remains unsupported regardless of repeat count, tick phase, or scheduler precision."
+  },
+  "response_revalidations": [
+    {
+      "response_file": "references/physical-37-bounded-software/0004-udws_posix_timer_clock_gettime_test_1.bin",
+      "response_sha256": "e65b86db4b99909304d42b4fc33000b60815893917764d183fb39b59f94db40c",
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-diagnostic-result-unsupported-clock-ID",
+      "note": "FAILED(0) is the deterministic boolean test result for clock ID1 in this image; handler and outer udws returned to prompt. This is not evidence of clock malfunction or UART loss."
+    }
+  ],
+  "data_quality": [
+    {
+      "response_file": "references/physical-37-bounded-software/0004-udws_posix_timer_clock_gettime_test_1.bin",
+      "response_sha256": "e65b86db4b99909304d42b4fc33000b60815893917764d183fb39b59f94db40c",
+      "complete": true,
+      "assessment": "unsupported-input-path-not-clock-health",
+      "note": "Argument1 is recognized by the test but rejected by its underlying clock-read API before timing begins. Clock ID3 is the reviewed valid path, with weak pass criteria documented separately."
+    }
+  ],
+  "disassembly_proofs": [
+    {
+      "entry": "0xa042f9ce",
+      "purpose": "UDW wrapper parses one signed decimal clock ID and prints the boolean helper result.",
+      "disassembly": "### 2688743886 0xa042f9ce\na042f9ce push    {lr}\na042f9d0 sub     sp, #4\na042f9d2 mov     r2, sp\na042f9d4 adr     r1, #0x1d0\na042f9d6 movs    r3, #0\na042f9d8 mvns    r0, r3\na042f9da bl      #0xa02c3de2\na042f9de ldr     r0, [sp]\na042f9e0 bl      #0xa04303ec\na042f9e4 adds    r2, r0, #0\na042f9e6 beq     #0xa042f9ec\na042f9e8 adr     r1, #0x1c0\na042f9ea b       #0xa042f9f0\na042f9ec adr     r1, #0x1f8\na042f9ee movs    r2, #0\na042f9f0 movs    r3, #0\na042f9f2 mvns    r0, r3\na042f9f4 bl      #0xa02c37be\na042f9f8 add     sp, #4\na042f9fa pop     {pc}"
+    },
+    {
+      "entry": "0xa04303ec",
+      "purpose": "Test selector, clock API error handling, delays, comparisons and finite nested retries.",
+      "disassembly": "### 2688746476 0xa04303ec\na04303ec push    {r4, r5, r6, r7, lr}\na04303ee sub     sp, #0x24\na04303f0 adds    r6, r0, #0\na04303f2 cmp     r6, #1\na04303f4 beq     #0xa0430402\na04303f6 cmp     r6, #3\na04303f8 bne     #0xa04304bc\na04303fa ldr     r4, [pc, #0x25c] =>0x1e8480 ''\na04303fc movs    r3, #2\na04303fe movs    r0, #0\na0430400 b       #0xa0430408\na0430402 movs    r4, #0xc8\na0430404 movs    r3, #0\na0430406 ldr     r0, [pc, #0x254] =>0x30d40 'Location: undefined\\n'\na0430408 str     r3, [sp, #0xc]\na043040a str     r0, [sp, #0x10]\na043040c lsrs    r3, r4, #0x1f\na043040e adds    r0, r3, r4\na0430410 asrs    r1, r0, #1\na0430412 str     r1, [sp, #4]\na0430414 movs    r7, #0\na0430416 movs    r1, #1\na0430418 str     r1, [sp, #8]\na043041a movs    r5, #0\na043041c movs    r2, #0\na043041e adds    r1, r2, #0\na0430420 str     r2, [sp, #0x14]\na0430422 adds    r0, r2, #0\na0430424 add     r3, sp, #0x18\na0430426 stm     r3!, {r0, r1, r2}\na0430428 add     r1, sp, #0x1c\na043042a adds    r0, r6, #0\na043042c bl      #0xa042baae\na0430430 adds    r0, #1\na0430432 beq     #0xa04304bc\na0430434 add     r0, sp, #0xc\na0430436 movs    r1, #0\na0430438 bl      #0xa042f34e\na043043c add     r1, sp, #0x14\na043043e adds    r0, r6, #0\na0430440 bl      #0xa042baae\na0430444 adds    r0, #1\na0430446 beq     #0xa04304bc\na0430448 ldr     r1, [sp, #0x14]\na043044a ldr     r0, [sp, #0x1c]\na043044c cmp     r1, r0\na043044e blt     #0xa04304bc\na0430450 cmp     r6, #1\na0430452 beq     #0xa0430470\na0430454 cmp     r6, #3\na0430456 bne     #0xa04304bc\na0430458 subs    r2, r1, r0\na043045a str     r2, [sp]\na043045c adds    r1, r4, #0\na043045e ldr     r0, [pc, #0x200] =>0xf4240 ''\na0430460 blx     #0xa03dffa4\na0430464 ldr     r2, [sp, #4]\na0430466 adds    r0, r2, r0\na0430468 ldr     r2, [sp]\na043046a cmp     r2, r0\na043046c bgt     #0xa043049c\na043046e b       #0xa04304a8\na0430470 ldr     r2, [sp, #0x18]\na0430472 ldr     r3, [sp, #0x20]\na0430474 cmp     r2, r3\na0430476 bge     #0xa0430494\na0430478 subs    r3, r3, r2\na043047a ldr     r2, [pc, #0x1e8] =>0x3b9aca00 ''\na043047c subs    r2, r2, r3\na043047e adds    r3, r0, #1\na0430480 cmp     r1, r3\na0430482 bne     #0xa04304bc\na0430484 ldr     r1, [sp, #4]\na0430486 adds    r3, r1, r4\na0430488 movs    r0, #0x7d\na043048a lsls    r0, r0, #3\na043048c muls    r0, r3, r0\na043048e cmp     r2, r0\na0430490 bge     #0xa043049c\na0430492 b       #0xa04304a8\na0430494 subs    r2, r2, r3\na0430496 cmp     r1, r0\na0430498 beq     #0xa0430484\na043049a b       #0xa04304bc\na043049c movs    r1, #0\na043049e str     r1, [sp, #8]\na04304a0 adds    r5, #1\na04304a2 cmp     r5, #3\na04304a4 ble     #0xa043041c\na04304a6 b       #0xa04304ae\na04304a8 ldr     r0, [sp, #8]\na04304aa cmp     r0, #0\na04304ac beq     #0xa04304b2\na04304ae cmp     r5, #3\na04304b0 bge     #0xa04304bc\na04304b2 adds    r7, #1\na04304b4 cmp     r7, #8\na04304b6 blt     #0xa0430416\na04304b8 movs    r0, #1\na04304ba b       #0xa04304be\na04304bc movs    r0, #0\na04304be add     sp, #0x24\na04304c0 pop     {r4, r5, r6, r7, pc}"
+    },
+    {
+      "entry": "0xa042baae",
+      "purpose": "Clock-read implementation supports only ID3; unsupported IDs return -1 with a zero timespec.",
+      "disassembly": "### 2688727726 0xa042baae\na042baae push    {r4, lr}\na042bab0 adds    r2, r0, #0\na042bab2 movs    r3, #0\na042bab4 mvns    r0, r3\na042bab6 cmp     r1, #0\na042bab8 beq     #0xa042bad0\na042baba cmp     r2, #3\na042babc bne     #0xa042baca\na042babe ldr     r2, [pc, #0x5c] =>0x20debc58 ''\na042bac0 ldr     r3, [r2]\na042bac2 movs    r0, #0\na042bac4 adds    r4, r0, #0\na042bac6 stm     r1!, {r3, r4}\na042bac8 b       #0xa042bad0\na042baca movs    r3, #0\na042bacc adds    r2, r3, #0\na042bace stm     r1!, {r2, r3}\na042bad0 pop     {r4, pc}"
+    },
+    {
+      "entry": "0xa042bad2",
+      "purpose": "Resolution helper reports ID3 resolution as {1,0}; ID1 resolution support does not imply its clock-read implementation exists.",
+      "disassembly": "### 2688727762 0xa042bad2\na042bad2 push    {r4, lr}\na042bad4 adds    r2, r0, #0\na042bad6 movs    r3, #0\na042bad8 mvns    r0, r3\na042bada cmp     r1, #0\na042badc beq     #0xa042bafe\na042bade movs    r4, #0\na042bae0 cmp     r2, #1\na042bae2 beq     #0xa042baee\na042bae4 str     r4, [r1, #4]\na042bae6 cmp     r2, #3\na042bae8 beq     #0xa042baf8\na042baea str     r4, [r1]\na042baec b       #0xa042bafe\na042baee movs    r3, #0x7d\na042baf0 lsls    r3, r3, #3\na042baf2 adds    r0, r4, #0\na042baf4 stm     r1!, {r0, r3}\na042baf6 b       #0xa042bafc\na042baf8 movs    r3, #1\na042bafa str     r3, [r1]\na042bafc movs    r0, #0\na042bafe pop     {r4, pc}"
+    },
+    {
+      "entry": "0xa042f34e",
+      "purpose": "Timespec delay adapter converts {2,0} to 2,000,000 microseconds.",
+      "disassembly": "### 2688742222 0xa042f34e\na042f34e push    {r4, lr}\na042f350 movs    r2, #0\na042f352 mvns    r4, r2\na042f354 ldr     r1, [r0]\na042f356 cmp     r1, #0\na042f358 ble     #0xa042f360\na042f35a ldr     r3, [r0, #4]\na042f35c cmp     r3, #0\na042f35e bgt     #0xa042f388\na042f360 movs    r4, #0\na042f362 cmp     r1, #0\na042f364 ble     #0xa042f36c\na042f366 ldr     r0, [pc, #0x160] =>0xf4240 ''\na042f368 muls    r0, r1, r0\na042f36a b       #0xa042f37e\na042f36c ldr     r1, [r0, #4]\na042f36e cmp     r1, #0\na042f370 ble     #0xa042f384\na042f372 movs    r0, #0x7d\na042f374 lsls    r0, r0, #3\na042f376 blx     #0xa03dffa4\na042f37a cmp     r0, #0\na042f37c beq     #0xa042f384\na042f37e bl      #0xa042ee2c\na042f382 b       #0xa042f388\na042f384 movs    r0, #0\na042f386 mvns    r4, r0\na042f388 adds    r0, r4, #0\na042f38a pop     {r4, pc}"
+    },
+    {
+      "entry": "0xa042ee2c",
+      "purpose": "Delay implementation: timer reads, busy-wait fallback or temporary semaphore/timer wait.",
+      "disassembly": "### 2688740908 0xa042ee2c\na042ee2c push    {r4, r5, r6, r7, lr}\na042ee2e sub     sp, #4\na042ee30 adds    r4, r0, #0\na042ee32 ldr     r7, [pc, #0xb0] =>0x20ded0f4 ''\na042ee34 ldr     r5, [pc, #0x88] =>0xbd040800 ''\na042ee36 ldr     r6, [r5, #0x18]\na042ee38 ldrh    r3, [r7]\na042ee3a cmp     r4, r3\na042ee3c bhi     #0xa042ee56\na042ee3e ldrh    r0, [r5, #0xe]\na042ee40 muls    r4, r0, r4\na042ee42 ldr     r1, [pc, #0xa4] =>0x20decedc ''\na042ee44 ldr     r0, [r1]\na042ee46 cmp     r0, r4\na042ee48 bhs     #0xa042eea0\na042ee4a subs    r4, r4, r0\na042ee4c ldr     r0, [r5, #0x18]\na042ee4e subs    r0, r0, r6\na042ee50 cmp     r0, r4\na042ee52 blo     #0xa042ee4c\na042ee54 b       #0xa042eea0\na042ee56 ldr     r6, [r5, #0x14]\na042ee58 mov     r0, sp\na042ee5a bl      #0xa042f0dc\na042ee5e ldrh    r3, [r7]\na042ee60 cmp     r4, r3\na042ee62 bls     #0xa042ee68\na042ee64 cmp     r0, #0\na042ee66 bne     #0xa042ee74\na042ee68 adds    r4, #1\na042ee6a ldr     r1, [r5, #0x14]\na042ee6c subs    r1, r1, r6\na042ee6e cmp     r1, r4\na042ee70 blo     #0xa042ee6a\na042ee72 b       #0xa042ee96\na042ee74 ldr     r0, [r5, #0x14]\na042ee76 subs    r0, r0, r6\na042ee78 subs    r0, r4, r0\na042ee7a cmp     r0, r4\na042ee7c bhi     #0xa042ee9a\na042ee7e cmp     r0, #0\na042ee80 beq     #0xa042ee9a\na042ee82 ldr     r2, [sp]\na042ee84 ldr     r1, [pc, #0x64] =>0xa042ed31 ''\na042ee86 bl      #0xa042eef0\na042ee8a movs    r3, #0\na042ee8c mvns    r1, r3\na042ee8e ldr     r0, [sp]\na042ee90 bl      #0xa02f5fa2\na042ee94 b       #0xa042ee9a\na042ee96 cmp     r0, #0\na042ee98 beq     #0xa042eea0\na042ee9a ldr     r0, [sp]\na042ee9c bl      #0xa042f10e\na042eea0 add     sp, #4\na042eea2 pop     {r4, r5, r6, r7, pc}"
+    },
+    {
+      "entry": "0xa042f0dc",
+      "purpose": "Claims one of40 preallocated volatile wait slots.",
+      "disassembly": "### 2688741596 0xa042f0dc\na042f0dc push    {r4, r5, lr}\na042f0de adds    r5, r0, #0\na042f0e0 movs    r4, #0\na042f0e2 blx     #0xa042b9b4\na042f0e6 adds    r1, r4, #0\na042f0e8 ldr     r2, [pc, #0xe0] =>0x20decf94 ''\na042f0ea lsls    r3, r1, #3\na042f0ec ldrb    r3, [r3, r2]\na042f0ee cmp     r3, #0\na042f0f0 bne     #0xa042f100\na042f0f2 lsls    r3, r1, #3\na042f0f4 movs    r4, #1\na042f0f6 strb    r4, [r3, r2]\na042f0f8 adds    r1, r2, r3\na042f0fa ldr     r3, [r1, #4]\na042f0fc str     r3, [r5]\na042f0fe b       #0xa042f106\na042f100 adds    r1, #1\na042f102 cmp     r1, #0x28\na042f104 blo     #0xa042f0e8\na042f106 blx     #0xa042b9bc\na042f10a adds    r0, r4, #0\na042f10c pop     {r4, r5, pc}"
+    },
+    {
+      "entry": "0xa042f10e",
+      "purpose": "Releases the acquired wait slot.",
+      "disassembly": "### 2688741646 0xa042f10e\na042f10e push    {r4, lr}\na042f110 adds    r4, r0, #0\na042f112 blx     #0xa042b9b4\na042f116 movs    r1, #0\na042f118 ldr     r2, [pc, #0xb0] =>0x20decf94 ''\na042f11a lsls    r3, r1, #3\na042f11c adds    r3, r2, r3\na042f11e ldr     r3, [r3, #4]\na042f120 cmp     r3, r4\na042f122 bne     #0xa042f12c\na042f124 lsls    r3, r1, #3\na042f126 movs    r1, #0\na042f128 strb    r1, [r3, r2]\na042f12a b       #0xa042f132\na042f12c adds    r1, #1\na042f12e cmp     r1, #0x28\na042f130 blo     #0xa042f118\na042f132 blx     #0xa042b9bc\na042f136 pop     {r4, pc}"
+    },
+    {
+      "entry": "0xa042eef0",
+      "purpose": "Schedules ordinary timer callback and semaphore wakeup; can program timer hardware.",
+      "disassembly": "### 2688741104 0xa042eef0\na042eef0 push    {r4, r5, r6, r7, lr}\na042eef2 sub     sp, #0x1c\na042eef4 adds    r6, r0, #0\na042eef6 str     r1, [sp, #0x10]\na042eef8 adds    r5, r1, #0\na042eefa adds    r7, r2, #0\na042eefc ldr     r1, [pc, #0x2b0] =>0xbd040814 ''\na042eefe ldr     r1, [r1]\na042ef00 str     r1, [sp, #0xc]\na042ef02 bl      #0xa042e99c\na042ef06 adds    r4, r0, #0\na042ef08 ldr     r3, [pc, #0x2a8] =>0xc350 ''\na042ef0a cmp     r6, r3\na042ef0c bhs     #0xa042ef8a\na042ef0e ldr     r0, [pc, #0x2a8] =>0x20ded0f8 ''\na042ef10 subs    r1, r4, r0\na042ef12 movs    r0, #0x24\na042ef14 blx     #0xa03fa404\na042ef18 adds    r5, r0, #1\na042ef1a lsls    r5, r5, #0x18\na042ef1c lsrs    r5, r5, #0x18\na042ef1e ldr     r0, [r4, #4]\na042ef20 str     r4, [sp, #0x18]\na042ef22 str     r0, [sp, #0x14]\na042ef24 ldr     r0, [sp, #0xc]\na042ef26 adds    r3, r0, r6\na042ef28 str     r3, [r4, #0x10]\na042ef2a ldr     r1, [sp, #0x10]\na042ef2c str     r1, [r4, #0x14]\na042ef2e str     r7, [r4, #0x18]\na042ef30 ldr     r3, [r4, #8]\na042ef32 movs    r0, #3\na042ef34 lsls    r0, r0, #0x1c\na042ef36 bics    r3, r0\na042ef38 str     r3, [r4, #8]\na042ef3a blx     #0xa042b9b4\na042ef3e str     r0, [sp, #0x10]\na042ef40 ldr     r1, [pc, #0x278] =>0x20decef0 ''\na042ef42 adds    r2, r1, #0\na042ef44 b       #0xa042ef48\na042ef46 adds    r2, r7, #0\na042ef48 ldrb    r0, [r2]\na042ef4a cmp     r0, #0\na042ef4c beq     #0xa042ef6a\na042ef4e ldr     r3, [pc, #0x268] =>0x20ded0f8 ''\na042ef50 subs    r3, #0x24\na042ef52 movs    r7, #0x24\na042ef54 muls    r7, r0, r7\na042ef56 adds    r7, r7, r3\na042ef58 ldr     r3, [r7, #0x10]\na042ef5a push    {r0}\na042ef5c ldr     r0, [sp, #0x10]\na042ef5e subs    r3, r3, r0\na042ef60 pop     {r0}\na042ef62 cmp     r6, r3\na042ef64 bhi     #0xa042ef46\na042ef66 cmp     r3, #0\na042ef68 blt     #0xa042ef46\na042ef6a strb    r0, [r4]\na042ef6c strb    r5, [r2]\na042ef6e ldrb    r3, [r1]\na042ef70 cmp     r3, r5\na042ef72 bne     #0xa042ef82\na042ef74 ldr     r1, [pc, #0x248] =>0x20ded0f0 ''\na042ef76 ldr     r3, [r1]\na042ef78 lsls    r3, r3, #2\na042ef7a ldr     r0, [pc, #0x248] =>0xbd04081e ''\na042ef7c adds    r0, r3, r0\na042ef7e movs    r3, #1\na042ef80 strh    r3, [r0]\na042ef82 ldr     r0, [sp, #0x10]\na042ef84 blx     #0xa042b9bc\na042ef88 b       #0xa042efaa\na042ef8a subs    r1, r6, #1\na042ef8c movs    r0, #0x7d\na042ef8e lsls    r0, r0, #4\na042ef90 blx     #0xa03fa404\na042ef94 adds    r3, r0, #2\na042ef96 str     r5, [sp, #4]\na042ef98 str     r7, [sp]\na042ef9a adds    r0, r4, #0\na042ef9c movs    r2, #1\na042ef9e adds    r1, r2, #0\na042efa0 bl      #0xa042ecfa\na042efa4 ldr     r0, [r4, #4]\na042efa6 str     r4, [sp, #0x18]\na042efa8 str     r0, [sp, #0x14]\na042efaa ldr     r0, [sp, #0x14]\na042efac ldr     r1, [sp, #0x18]\na042efae add     sp, #0x1c\na042efb0 pop     {r4, r5, r6, r7, pc}"
+    },
+    {
+      "entry": "0xa042ba2c",
+      "purpose": "One-second callback updates software clock counters.",
+      "disassembly": "### 2688727596 0xa042ba2c\na042ba2c ldr     r0, [pc, #0xe0] =>0x20debc50 ''\na042ba2e ldr     r3, [r0]\na042ba30 cmp     r3, #0\na042ba32 beq     #0xa042ba38\na042ba34 adds    r1, r0, #0\na042ba36 b       #0xa042ba40\na042ba38 ldr     r3, [r0, #8]\na042ba3a adds    r3, #1\na042ba3c str     r3, [r0, #8]\na042ba3e adds    r1, r0, #4\na042ba40 ldr     r3, [r1]\na042ba42 adds    r3, #1\na042ba44 str     r3, [r1]\na042ba46 ldr     r3, [r0, #0xc]\na042ba48 adds    r3, #1\na042ba4a str     r3, [r0, #0xc]\na042ba4c bx      lr"
+    },
+    {
+      "entry": "0xa042ba64",
+      "purpose": "Registers that callback through the periodic timer helper.",
+      "disassembly": "### 2688727652 0xa042ba64\na042ba64 push    {lr}\na042ba66 ldr     r1, [pc, #0xb8] =>0xa042ba2d ''\na042ba68 movs    r2, #0\na042ba6a movs    r0, #1\na042ba6c bl      #0xa042f044\na042ba70 adds    r0, r1, #0\na042ba72 pop     {pc}"
+    },
+    {
+      "entry": "0xa042f044",
+      "purpose": "Multiplies period argument by500 before periodic timer registration.",
+      "disassembly": "### 2688741444 0xa042f044\na042f044 push    {lr}\na042f046 sub     sp, #4\na042f048 movs    r3, #0\na042f04a str     r3, [sp]\na042f04c adds    r3, r2, #0\na042f04e adds    r2, r1, #0\na042f050 movs    r1, #0xff\na042f052 adds    r1, #0xf5\na042f054 muls    r0, r1, r0\na042f056 movs    r1, #1\na042f058 bl      #0xa042efec\na042f05c add     sp, #4\na042f05e pop     {pc}"
+    },
+    {
+      "entry": "0xa03dffa4",
+      "purpose": "ARM veneer to ITCM signed division at0x33c.",
+      "bytes": "e51ff0040000033c",
+      "target": "0x0000033c"
+    },
+    {
+      "entry": "0x0000033c",
+      "image": "artifacts/ghs/itcm.bin",
+      "purpose": "Signed integer division uses r1 as numerator and r0 as denominator, quotient in r0.",
+      "disassembly": "0000033c ands r3, r0, #0x80000000\n00000340 rsbmi r0, r0, #0\n00000344 eors ip, r3, r1, asr #32\n00000348 rsbhs r1, r1, #0\n0000034c movs r2, r0\n00000350 beq #0x428\n00000354 str lr, [sp, #-4]!\n00000358 bl #0x370\n0000035c pop {lr}\n00000360 lsls ip, ip, #1\n00000364 rsbhs r0, r0, #0\n00000368 rsbmi r1, r1, #0\n0000036c bx lr\n00000370 cmp r2, r1, lsr #8\n00000374 lslls r2, r2, #8\n00000378 blo #0x370\n0000037c cmp r2, r1, lsr #1\n00000380 bhi #0x40c\n00000384 cmp r2, r1, lsr #2\n00000388 bhi #0x404\n0000038c cmp r2, r1, lsr #3\n00000390 bhi #0x3f8\n00000394 cmp r2, r1, lsr #4\n00000398 bhi #0x3ec\n0000039c cmp r2, r1, lsr #5\n000003a0 bhi #0x3e0\n000003a4 cmp r2, r1, lsr #6\n000003a8 bhi #0x3d4\n000003ac cmp r2, r1, lsr #7\n000003b0 bhi #0x3c8\n000003b4 lsrhi r2, r2, #8\n000003b8 cmp r1, r2, lsl #7\n000003bc adc r3, r3, r3\n000003c0 subhs r1, r1, r2, lsl #7\n000003c4 cmp r1, r2, lsl #6\n000003c8 adc r3, r3, r3\n000003cc subhs r1, r1, r2, lsl #6\n000003d0 cmp r1, r2, lsl #5\n000003d4 adc r3, r3, r3\n000003d8 subhs r1, r1, r2, lsl #5\n000003dc cmp r1, r2, lsl #4\n000003e0 adc r3, r3, r3\n000003e4 subhs r1, r1, r2, lsl #4\n000003e8 cmp r1, r2, lsl #3\n000003ec adc r3, r3, r3\n000003f0 subhs r1, r1, r2, lsl #3\n000003f4 cmp r1, r2, lsl #2\n000003f8 adc r3, r3, r3\n000003fc subhs r1, r1, r2, lsl #2\n00000400 cmp r1, r2, lsl #1\n00000404 adc r3, r3, r3\n00000408 subhs r1, r1, r2, lsl #1\n0000040c cmp r1, r2\n00000410 adc r3, r3, r3\n00000414 subhs r1, r1, r2\n00000418 cmp r2, r0\n0000041c bne #0x3b4\n00000420 mov r0, r3\n00000424 bx lr\n00000428 mov r0, lr\n0000042c mov r1, fp"
+    }
+  ],
+  "raw_captures_modified": false
+}

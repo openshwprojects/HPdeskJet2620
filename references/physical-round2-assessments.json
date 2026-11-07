@@ -1,0 +1,1233 @@
+{
+  "scope": "Supplemental assessments of exact physical responses; original captures remain unchanged.",
+  "response_revalidations": [
+    {
+      "response_file": "references/physical-34-ram-file-operations/0016-udws_ustd_copy_ram_codex_uart_20261029a_a_ram_codex_uart_20261029.bin",
+      "response_sha256": "6c0edf6b9301c5d9639cbd59f11fdecf09e24ca9dc9acadaaf93738968719acf",
+      "valid": true,
+      "assessment": "copy-return-is-byte-count",
+      "note": "The initial host validator wrongly expected zero. The physical handler returned eight bytes copied. Session 35 independently read back both eight-byte files as 01234567.",
+      "original_expected_value": 0,
+      "corrected_expected_value": 8
+    },
+    {
+      "response_file": "references/physical-35-ram-handles-and-cleanup/0027-udws_ustd_rmdir_ram_codex_uart_20261029a.bin",
+      "response_sha256": "e532a8188967c8af00ebc728c72a22cf3ba4eff48cfd873999b2fe04f99286d3",
+      "valid": false,
+      "assessment": "directory-removal-rejected",
+      "note": "This is an actual operation failure, not a lost response. Session 36 confirmed an empty visible directory; session 38 native diagnostic returned errno 158. The exact owned directory was removed in session 39."
+    },
+    {
+      "response_file": "references/physical-38-ram-upload-cleanup/0001-udws_ram_file_write2_ram_codex_uart_20261029a_x_16_0123456789ABCD.bin",
+      "response_sha256": "5d3e88ab0a4e6e6ac37ecf2ee3f19493a492eeb762525cf51c3e8599bd407c04",
+      "valid": true,
+      "assessment": "inline-upload-return-count",
+      "note": "ram.file_write2 consumed all sixteen inline payload bytes."
+    },
+    {
+      "response_file": "references/physical-38-ram-upload-cleanup/0002-udws_ustd_cat_ram_codex_uart_20261029a_x_0.bin",
+      "response_sha256": "8dd4e74f8448072b7f175d084c22463521a804b5ef651f7b1100e5ec8d471b0d",
+      "valid": true,
+      "assessment": "inline-upload-exact-readback",
+      "note": "The physical file contains the exact sixteen uploaded ASCII bytes."
+    },
+    {
+      "response_file": "references/physical-38-ram-upload-cleanup/0003-udws_ustd_sizeof_ram_codex_uart_20261029a_x.bin",
+      "response_sha256": "2771ff2ca6a0b9aed48f611788d3743dd805f7c11f0783e87c697c0858add7ea",
+      "valid": true,
+      "assessment": "inline-upload-size",
+      "note": "The physical file size is sixteen bytes."
+    },
+    {
+      "response_file": "references/physical-38-ram-upload-cleanup/0005-udws_ram_rmdir_codex_uart_20261029a_0.bin",
+      "response_sha256": "704894f25e0e3e7696f9638668ed34130953625a7b4e9c01d02edddf8187f4e0",
+      "valid": true,
+      "assessment": "guarded-cleanup-error-observed",
+      "note": "The native guarded directory-removal diagnostic returned errno 158. Its firmware format string incorrectly labels the operation ram_drv_mkdir; the dispatched handler is ram.rmdir."
+    },
+    {
+      "response_file": "references/physical-39-ram-cleanup/0001-udws_ram_rmdir_codex_uart_20261029a_1.bin",
+      "response_sha256": "b1b091ea20ff4a3e8ec44a41d72866166b2a26104f11ec24f8e7ab22a6274b60",
+      "valid": true,
+      "assessment": "owned-empty-directory-removed",
+      "note": "Flag 1 bypassed stale counters only for the newly created, verified empty test directory. No recursive removal or removal of pre-existing printer data was performed."
+    },
+    {
+      "response_file": "references/physical-39-ram-cleanup/0002-udws_ustd_ls_ram.bin",
+      "response_sha256": "db6a62fca215b4d192d717ed63dc807c7bcdc71f93e161c25e6632132d859a59",
+      "valid": true,
+      "assessment": "temporary-directory-absence-verified",
+      "note": "The final physical root listing contains the same eight named directories as preflight and no test directory."
+    },
+    {
+      "response_file": "references/physical-41-ram-hex-upload/0001-udws_ram_file_write_ram_codex_hex_test_8_3031323334353637.bin",
+      "response_sha256": "737cd3aefd908059e46c1cf4e5cf993c99b4a72f21457825df4ceb9dfe4570b8",
+      "valid": true,
+      "assessment": "hex-upload-consumed-character-count",
+      "note": "ram.file_write returns sixteen input hexadecimal characters consumed, representing eight output bytes."
+    },
+    {
+      "response_file": "references/physical-41-ram-hex-upload/0002-udws_ustd_cat_ram_codex_hex_test_0.bin",
+      "response_sha256": "b0700c748a138aaae7c74f7e3dd07e838e16d22b856e9d45b5476536041c189b",
+      "valid": true,
+      "assessment": "hex-upload-exact-readback",
+      "note": "The physical file contains the eight decoded ASCII bytes."
+    },
+    {
+      "response_file": "references/physical-41-ram-hex-upload/0003-udws_ustd_sizeof_ram_codex_hex_test.bin",
+      "response_sha256": "0872f87fd5e9cab334662dde9703651814ef32e0276fe74622ba337ef9fd7bc7",
+      "valid": true,
+      "assessment": "hex-upload-size",
+      "note": "The physical file size is eight bytes."
+    },
+    {
+      "response_file": "references/physical-41-ram-hex-upload/0006-udws_ustd_sizeof_ram_file_write_tmp.bin",
+      "response_sha256": "de2b0f1aa060567b5acd6893fe701067ab1b337b76c06a661d929392122e6cd7",
+      "valid": true,
+      "assessment": "hex-upload-scratch-file-removed",
+      "note": "The fixed /ram/file_write.tmp scratch path, absent before the test, is absent after the firmware handler returns."
+    },
+    {
+      "response_file": "references/physical-41-ram-hex-upload/0008-udws_ustd_ls_ram.bin",
+      "response_sha256": "db6a62fca215b4d192d717ed63dc807c7bcdc71f93e161c25e6632132d859a59",
+      "valid": true,
+      "assessment": "hex-upload-cleanup-verified",
+      "note": "The final physical root listing contains only its original eight entries."
+    },
+    {
+      "response_file": "references/physical-37-bounded-software/0016-udws_mem_rom_checksum_0_8256_8271.bin",
+      "response_sha256": "fea79f28fef39607d34aec9a7698f0614a4f4f0312835fa9d2547cf436fa64c3",
+      "valid": true,
+      "assessment": "physical-rom-sum-matches-original-dump",
+      "note": "Sum of the same sixteen base-firmware-version bytes, using big-endian units of the indicated width.",
+      "unit_width": 1,
+      "expected_sum": "0x00000312",
+      "dump_offset": 8256,
+      "byte_count": 16,
+      "dump_sha256": "b791436cf9152785fb5d3f6954aa5949d4ae7c7458af0e2031b9a41f5534c496"
+    },
+    {
+      "response_file": "references/physical-37-bounded-software/0019-udws_udw_rom_checksum_0_8256_8271.bin",
+      "response_sha256": "fc3bf94190fe5f59eac092d963161ec5320772f476c4c14ed1ec0abc9cc734c2",
+      "valid": true,
+      "assessment": "physical-rom-sum-matches-original-dump",
+      "note": "Sum of the same sixteen base-firmware-version bytes, using big-endian units of the indicated width.",
+      "unit_width": 1,
+      "expected_sum": "0x00000312",
+      "dump_offset": 8256,
+      "byte_count": 16,
+      "dump_sha256": "b791436cf9152785fb5d3f6954aa5949d4ae7c7458af0e2031b9a41f5534c496"
+    },
+    {
+      "response_file": "references/physical-37-bounded-software/0017-udws_mem_rom_checksum_1_8256_8270.bin",
+      "response_sha256": "bc873cda0ac3d82f28ffdf8bfe486278d16b29447eefff41495737ca43f6d6d0",
+      "valid": true,
+      "assessment": "physical-rom-sum-matches-original-dump",
+      "note": "Sum of the same sixteen base-firmware-version bytes, using big-endian units of the indicated width.",
+      "unit_width": 2,
+      "expected_sum": "0x00018f84",
+      "dump_offset": 8256,
+      "byte_count": 16,
+      "dump_sha256": "b791436cf9152785fb5d3f6954aa5949d4ae7c7458af0e2031b9a41f5534c496"
+    },
+    {
+      "response_file": "references/physical-37-bounded-software/0020-udws_udw_rom_checksum_1_8256_8270.bin",
+      "response_sha256": "0be9d5cfe5494668ab88f1497ace8f4940c673627803260071479cc937fc350f",
+      "valid": true,
+      "assessment": "physical-rom-sum-matches-original-dump",
+      "note": "Sum of the same sixteen base-firmware-version bytes, using big-endian units of the indicated width.",
+      "unit_width": 2,
+      "expected_sum": "0x00018f84",
+      "dump_offset": 8256,
+      "byte_count": 16,
+      "dump_sha256": "b791436cf9152785fb5d3f6954aa5949d4ae7c7458af0e2031b9a41f5534c496"
+    },
+    {
+      "response_file": "references/physical-37-bounded-software/0018-udws_mem_rom_checksum_2_8256_8268.bin",
+      "response_sha256": "3b7d1ffc95d7a26f5c857ba2e9ce1c2263ae3d88057e7eac48006247aeb3f87b",
+      "valid": true,
+      "assessment": "physical-rom-sum-matches-original-dump",
+      "note": "Sum of the same sixteen base-firmware-version bytes, using big-endian units of the indicated width.",
+      "unit_width": 4,
+      "expected_sum": "0xcacac4ba",
+      "dump_offset": 8256,
+      "byte_count": 16,
+      "dump_sha256": "b791436cf9152785fb5d3f6954aa5949d4ae7c7458af0e2031b9a41f5534c496"
+    },
+    {
+      "response_file": "references/physical-37-bounded-software/0021-udws_udw_rom_checksum_2_8256_8268.bin",
+      "response_sha256": "dd83a6a013f6f553d40d2521487c0c355218f2da6e9aed5b4e0e01b4c1bb22a2",
+      "valid": true,
+      "assessment": "physical-rom-sum-matches-original-dump",
+      "note": "Sum of the same sixteen base-firmware-version bytes, using big-endian units of the indicated width.",
+      "unit_width": 4,
+      "expected_sum": "0xcacac4ba",
+      "dump_offset": 8256,
+      "byte_count": 16,
+      "dump_sha256": "b791436cf9152785fb5d3f6954aa5949d4ae7c7458af0e2031b9a41f5534c496"
+    },
+    {
+      "response_file": "references/physical-37-bounded-software/0004-udws_posix_timer_clock_gettime_test_1.bin",
+      "response_sha256": "e65b86db4b99909304d42b4fc33000b60815893917764d183fb39b59f94db40c",
+      "valid": false,
+      "assessment": "clock-self-test-rejected-unsupported-clock-id",
+      "note": "The wrapper received clock ID 1, which this firmware clock_gettime helper does not support. It rejects the call before the timing test. This response does not establish a broken clock; see posix_clock_test_review.json for the supported ID and subsequent test."
+    },
+    {
+      "response_file": "references/physical-44-supported-clock-test/0001-udws_posix_timer_clock_gettime_test_3.bin",
+      "response_sha256": "a97ba39de113b56ca266a756653acf3e30ceb46d92065acdcf5d30a914a9f2b9",
+      "valid": true,
+      "assessment": "supported-clock-id-passes-built-in-test",
+      "note": "The same built-in test passes with supported clock ID 3. Its weak compiled timing criteria do not independently establish clock accuracy or a positive elapsed-time lower bound."
+    },
+    {
+      "response_file": "references/physical-37-bounded-software/0039-udws_firm_get_simple_2437_0.bin",
+      "response_sha256": "80709e079ba0effa76e2bef7e784d65881c5818b5b9cf260680fb06378cfd7ef",
+      "valid": false,
+      "assessment": "simple-firmware-getter-rejected-identifiers",
+      "note": "These supplied SUID/item arguments were rejected. The diagnostic packs them into a printed identifier, but that formatting alone does not establish the lookup argument encoding. The same groups and items are accepted by get_by_name and query_value_suid. get_simple requires a different simple-table representation at registry entry +4; named numeric registration sets that field to zero. The original SUID/item syntax was correct; repacking the arguments would not fix this representation mismatch."
+    },
+    {
+      "response_file": "references/physical-37-bounded-software/0040-udws_firm_get_simple_2437_4.bin",
+      "response_sha256": "fd9328165d42419c0f1394d0a044e7be99a09414743aff08625db5cea6a25f3d",
+      "valid": false,
+      "assessment": "simple-firmware-getter-rejected-identifiers",
+      "note": "These supplied SUID/item arguments were rejected. The diagnostic packs them into a printed identifier, but that formatting alone does not establish the lookup argument encoding. The same groups and items are accepted by get_by_name and query_value_suid. get_simple requires a different simple-table representation at registry entry +4; named numeric registration sets that field to zero. The original SUID/item syntax was correct; repacking the arguments would not fix this representation mismatch."
+    },
+    {
+      "response_file": "references/physical-37-bounded-software/0041-udws_firm_get_simple_2430_0.bin",
+      "response_sha256": "388654e04d6c6f3998ac87e844583f4b7250825d90bdb5efe1791827d6d49419",
+      "valid": false,
+      "assessment": "simple-firmware-getter-rejected-identifiers",
+      "note": "These supplied SUID/item arguments were rejected. The diagnostic packs them into a printed identifier, but that formatting alone does not establish the lookup argument encoding. The same groups and items are accepted by get_by_name and query_value_suid. get_simple requires a different simple-table representation at registry entry +4; named numeric registration sets that field to zero. The original SUID/item syntax was correct; repacking the arguments would not fix this representation mismatch."
+    },
+    {
+      "response_file": "references/physical-37-bounded-software/0042-udws_firm_get_simple_2408_0.bin",
+      "response_sha256": "2933aa31a9197dca5891af85262875eaa1aa046d58e33339a1eef122d72dbbd5",
+      "valid": false,
+      "assessment": "simple-firmware-getter-rejected-identifiers",
+      "note": "These supplied SUID/item arguments were rejected. The diagnostic packs them into a printed identifier, but that formatting alone does not establish the lookup argument encoding. The same groups and items are accepted by get_by_name and query_value_suid. get_simple requires a different simple-table representation at registry entry +4; named numeric registration sets that field to zero. The original SUID/item syntax was correct; repacking the arguments would not fix this representation mismatch."
+    },
+    {
+      "response_file": "references/physical-31-hardware-status/0033-udws_scan_firms_tables.bin",
+      "response_sha256": "0fdad4a0e8e159cd69b2474fa9a68f978f66f0529ca3a3977741177a85080f67",
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-scanner-firmware-metadata-table",
+      "note": "Exactly197 rows, unique ordered indices0..196. All three integer columns, kind andname match the verified2018 table atA05FCE34, stride20. Prompt returned."
+    },
+    {
+      "response_file": "references/physical-30-software-queries/0001-udws_lib_json_writer_write_test.bin",
+      "response_sha256": "a3190abeba2c6e88051a04b487711df7329d992f6baccf227d8a0dfe5a7d6580",
+      "valid": true,
+      "assessment": "json-parser-validated",
+      "validation_scope": "Complete JSON body, terminal separator and shell framing.",
+      "errors": [],
+      "parsed": {
+        "FirstName": "Jane",
+        "LastName": "Smith",
+        "DOB": "1973/04/29",
+        "favoriteInteger": 42,
+        "favoriteDouble": 0.0,
+        "children": [
+          {
+            "FirstName": "Jill",
+            "LastName": "Smith",
+            "DOB": "1983/05/15",
+            "favoriteInteger": 1
+          },
+          {
+            "FirstName": "Robert'); DROP TABLE Students;",
+            "LastName": "Smith",
+            "DOB": "1985/06/01",
+            "favoriteInteger": 0
+          }
+        ]
+      }
+    },
+    {
+      "response_file": "references/physical-30-software-queries/0002-udws_lib_json_writer_write_escaped.bin",
+      "response_sha256": "910eadd2ffecd40c9400a3f6012273f96833f0be177be6db40a434c470998f89",
+      "valid": true,
+      "assessment": "json-parser-validated",
+      "validation_scope": "Complete JSON body, terminal separator and shell framing.",
+      "errors": [],
+      "parsed": {
+        "\"FirstName\"": "\\Jane",
+        "favorites": {
+          "\binteger": 42,
+          "\funsignedInteger": 42,
+          "\nboolean": true,
+          "\rnull": null,
+          "\tarray": [
+            "\"string\""
+          ]
+        }
+      }
+    },
+    {
+      "response_file": "references/physical-30-software-queries/0003-udws_lib_json_writer_write_base64.bin",
+      "response_sha256": "c175cc6ac667eb41aac5da5e2b63516febb8aee1b992dccac1d9cdea5c0351f1",
+      "valid": true,
+      "assessment": "json-parser-validated",
+      "validation_scope": "Complete JSON body, terminal separator and shell framing.",
+      "errors": [],
+      "parsed": {
+        "firstName": "Jane",
+        "lastName": "Smith",
+        "primaryPhone": "CAYHBQMACQ==",
+        "alternatePhoneNumbers": [
+          "BQUFAQIBAg==",
+          "AQIDBAUGBw=="
+        ]
+      },
+      "decoded_base64_hex": [
+        "08060705030009",
+        "05050501020102",
+        "01020304050607"
+      ]
+    },
+    {
+      "response_file": "references/physical-30-software-queries/0004-udws_lib_json_writer_write_big_numbers.bin",
+      "response_sha256": "4808759e8922eebef30a7250224b4619b94617cddd01d2c5dfb7e60313cea6fb",
+      "valid": true,
+      "assessment": "json-parser-validated",
+      "validation_scope": "Complete JSON body, terminal separator and shell framing.",
+      "errors": [],
+      "parsed": {}
+    },
+    {
+      "response_file": "references/physical-30-software-queries/0005-udws_firm_query_num_ram.bin",
+      "response_sha256": "a7ee4b3f5653ae5d91cfc4fc9a9d9580282405a695cc8eec3b5112b9bdf82191",
+      "valid": true,
+      "assessment": "single-integer-and-frame-validated",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": 22
+    },
+    {
+      "response_file": "references/physical-30-software-queries/0006-udws_firm_str_query_num_ram.bin",
+      "response_sha256": "e7d79d7615cfa85135038f27730b551020acf14da278d53254c5bf8f4e26c2ec",
+      "valid": true,
+      "assessment": "two-integer-and-frame-validated",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": [
+        21,
+        110
+      ]
+    },
+    {
+      "response_file": "references/physical-30-software-queries/0007-udws_firm_prt_ram_table.bin",
+      "response_sha256": "1e3d67586f2afe7f00d06441def57f653e554a5790999637bd8a07ae2b6e8cd9",
+      "valid": true,
+      "assessment": "empty-body-with-successful-return",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": null
+    },
+    {
+      "response_file": "references/physical-30-software-queries/0008-udws_firm_query_name.bin",
+      "response_sha256": "de7e519c5bb424d83f90c26ab339b670fbbb860fc64fe70d41f8d1d07127015b",
+      "valid": true,
+      "assessment": "complete-firmware-name-table",
+      "validation_scope": "All577 unique ordered ID/name rows match independently validated group captures; exact formatter model.",
+      "errors": [],
+      "complete": true,
+      "parsed": {
+        "reported_count": 577,
+        "validated_unique_rows": 577
+      }
+    },
+    {
+      "response_file": "references/physical-30-software-queries/0009-udws_firm_query_name_fmt.bin",
+      "response_sha256": "7a1e567c8050a263260210d527e87c7057ef7025aa552e95c7b5bec4bace26de",
+      "valid": false,
+      "assessment": "firmware-truncated-name-fields",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [
+        "Eight names and their row separators are clipped by the firmware70-byte output buffer."
+      ],
+      "complete": false,
+      "formatter_model_exact": true,
+      "parsed": {
+        "expected_rows": 577,
+        "observed_row_starts": 577,
+        "truncated_name_count": 8
+      }
+    },
+    {
+      "response_file": "references/physical-30-software-queries/0010-udws_firm_query_value_name.bin",
+      "response_sha256": "94b05299d34b714fe08cd022977499feef922028d3835d7a0787c28212866334",
+      "valid": false,
+      "assessment": "incomplete-large-firmware-table-response",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [
+        "Successful return/prompt missing.",
+        "Output diverges from the proven formatter model after byte41260, leaving later rows incomplete."
+      ],
+      "complete": false,
+      "parsed": {
+        "reported_count": 577,
+        "complete_prefix_rows": 522,
+        "expected_modeled_payload_bytes": 45589,
+        "observed_payload_bytes": 41290,
+        "first_unexplained_mismatch_offset": 41260
+      }
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0001-udws_firm_query_value.bin",
+      "response_sha256": "336f4e4713e055f46eb4a0538eec8699439590131bf6f3c380223c9b3a54fd2e",
+      "valid": false,
+      "assessment": "firmware-truncated-numeric-rows",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [
+        "A20-byte buffer clips long rows;11current fields have no terminator and cannot be treated as complete integers."
+      ],
+      "complete": false,
+      "formatter_model_exact": true,
+      "parsed": {
+        "expected_rows": 577,
+        "observed_row_starts": 577,
+        "unambiguously_complete_current_fields": 566,
+        "unterminated_current_fields": 11
+      }
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0002-udws_firm_query_value_fmt.bin",
+      "response_sha256": "fa4d232dbc76a21071fb1b6cff5aa05c5794ce401e07beb0957050ffb5e9c143",
+      "valid": false,
+      "assessment": "firmware-current-column-uses-wrong-lookup-key",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [
+        "Current-value column is populated using registry ordinal rather than SUID; its577zero values are not reliable current values."
+      ],
+      "complete": true,
+      "parsed": {
+        "validated_rows": 577,
+        "compiled_values_match_group_reads": 577,
+        "current_column_zero_count": 577,
+        "later_nonzero_current_count": 383
+      },
+      "structurally_complete": true,
+      "current_value_semantically_valid": false,
+      "current_value_reliability": "unreliable: getter uses registry ordinal instead of SUID; the complete received rows contain incorrect current-value results"
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0003-udws_firm_str_query_value.bin",
+      "response_sha256": "192956155610accfdedbb241dd234697a98472c351ac20e8f360460794495b99",
+      "valid": true,
+      "assessment": "empty-body-with-successful-return",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": null
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0004-udws_patch_get_rev.bin",
+      "response_sha256": "130c7069e8858b480d31776649a333e034ea2adcacc6b8fe5aa1ba80b9243008",
+      "valid": true,
+      "assessment": "single-integer-and-frame-validated",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": 0
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0005-udws_patch_get_v_string.bin",
+      "response_sha256": "36437b317d6db7162205972b574f5fc4dacc22d270256eb3c9306a8d931ad634",
+      "valid": true,
+      "assessment": "echo-and-successful-return-verified",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": []
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0006-udws_patch_get.bin",
+      "response_sha256": "687d2a24bf7932556e132e2907dd7dcbd48d227e7f7b642ed5870a04afbd9c39",
+      "valid": true,
+      "assessment": "echo-and-successful-return-verified",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": []
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0007-udws_timer_conv_int_0.bin",
+      "response_sha256": "9f3adcf6c1b33fbbe00c556749e637f2659e3e8e8957f56b0a1d62725f441ca5",
+      "valid": true,
+      "assessment": "epoch-conversion-result-verified",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": {
+        "input_seconds": 0,
+        "display": "1970/01/01 0:00"
+      }
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0008-udws_timer_conv_int_86400.bin",
+      "response_sha256": "881b40042af828e2b8a3ce090141a53a42cc8100474fff3abea19761f042c8a4",
+      "valid": true,
+      "assessment": "epoch-conversion-result-verified",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": {
+        "input_seconds": 86400,
+        "display": "1970/01/02 0:00"
+      }
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0009-udws_timer_conv_int_2147483647.bin",
+      "response_sha256": "15106965d151a43b2ecfdd41b6e99fef33fb7b9f1470432e75449c6e9583d0af",
+      "valid": true,
+      "assessment": "epoch-conversion-result-verified",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": {
+        "input_seconds": 2147483647,
+        "display": "2038/01/19 3:14"
+      }
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0010-udws_timer_delay_ms_1.bin",
+      "response_sha256": "eef9578e0d5c99b11f8facc868b343d2f4ef860895662d9241f7341cca7dc9b2",
+      "valid": true,
+      "assessment": "empty-body-with-successful-return",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": null
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0011-udws_udw_timer_delay_ms_1.bin",
+      "response_sha256": "e77dc8c33244eb18dc64067e6cc896d2a0335f85fafdb6138603e2e916eb27bb",
+      "valid": true,
+      "assessment": "empty-body-with-successful-return",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": null
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0012-udws_udw_delay_1.bin",
+      "response_sha256": "c8cef7d9d6e671fe768091a272614cd8b1a5d29d7d10ad7120d940cb51437990",
+      "valid": true,
+      "assessment": "empty-body-with-successful-return",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": null
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0013-udws_udw_timer_date_get.bin",
+      "response_sha256": "0250eec8a67ec96236008b7f5af573adb715c53fc789258e2f07e816e0ce609d",
+      "valid": true,
+      "assessment": "seven-integer-and-frame-validated",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "complete": true,
+      "structurally_complete": true,
+      "calendar_semantically_valid": false,
+      "calendar_reliability": "all seven fields were received; zero calendar fields do not encode a usable wall-clock date"
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0014-udws_udw_timer_date_get_int.bin",
+      "response_sha256": "ab2a671ce3c9cc0c32a40226b44cffadbed80038509fb6dfe3ce1440a0d44f17",
+      "valid": true,
+      "assessment": "single-integer-and-frame-validated",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": 5525
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0015-udws_udw_timer_get_factory_time.bin",
+      "response_sha256": "7c521aaaeb9c83d264ad4630295cabd688395cc8401e9fff1e8cfc2f7a3076d9",
+      "valid": true,
+      "assessment": "single-integer-and-frame-validated",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": 5526
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0016-udws_udw_timer_get_reliability.bin",
+      "response_sha256": "0dbf6c38c4ff91b762f3e06c3b61bdb026fa74bca68dfc201472351085ea385b",
+      "valid": true,
+      "assessment": "single-integer-and-frame-validated",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": 2
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0017-udws_udw_get_fw_rev.bin",
+      "response_sha256": "963fa96508701c11db190ba698d88787c73aecc1506ce8cff41245d4fa8c3d00",
+      "valid": true,
+      "assessment": "echo-and-successful-return-verified",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": []
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0018-udws_udw_get_base_fw_rev.bin",
+      "response_sha256": "fde16393ab847e9e499f130c9b86d5cbac74307537860766107df3e686662122",
+      "valid": true,
+      "assessment": "echo-and-successful-return-verified",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": []
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0019-udws_udw_get_verbose_fw_rev.bin",
+      "response_sha256": "2464ab8df838c193392bf2b75fd2874484f247bc6d0ccfd31772c61b79fee0cc",
+      "valid": true,
+      "assessment": "echo-and-successful-return-verified",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": []
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0020-udws_udw_id.bin",
+      "response_sha256": "3f0cf5ca223a7c54a08ce765e4a05d9534bf59953ab33da3d330358c6ee43821",
+      "valid": true,
+      "assessment": "echo-and-successful-return-verified",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": []
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0021-udws_nca_get_preferred_address.bin",
+      "response_sha256": "7cc1f3e445205eeedf18885df7a5fd1dc2e8c51f4eca20e7882bbba521b16ebc",
+      "valid": true,
+      "assessment": "echo-and-successful-return-verified",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": []
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0022-udws_nca_get_preferred_fqdn.bin",
+      "response_sha256": "52daa0f694ab05142fceb1174a15bba00f95bd0664e1401dfb1a428551391d62",
+      "valid": true,
+      "assessment": "echo-and-successful-return-verified",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": []
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0023-udws_icc_get_url.bin",
+      "response_sha256": "dfad06c0daed65727dadff00a8b97cec658bc4a809aa43328e1bfcb1e77c8260",
+      "valid": true,
+      "assessment": "echo-and-successful-return-verified",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": []
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0024-udws_wifi_conman_get_p2p_pin.bin",
+      "response_sha256": "ee525ae0f198c4e563e66aa2a91d8ae1bf6f4018378aad89542d3120e7282f5a",
+      "valid": true,
+      "assessment": "echo-and-successful-return-verified",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": []
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0025-udws_wps_status.bin",
+      "response_sha256": "88fc8cc1ca972422126af4294cb1e72f46183c47351e031041dfd1fae8226f16",
+      "valid": true,
+      "assessment": "echo-and-successful-return-verified",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": []
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0026-udws_rest_fw_update_get_state_2.bin",
+      "response_sha256": "5f2f1bdee39dab54a574e73e548f2d3d27b1aa154559d3e5c356e7e9edea2323",
+      "valid": true,
+      "assessment": "echo-and-successful-return-verified",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": []
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0027-udws_l10n_get_language.bin",
+      "response_sha256": "ef904c33d36bc803edc889fb9863688ef9eaea6e4609708c8877f1bfbfaaedef",
+      "valid": true,
+      "assessment": "single-integer-and-frame-validated",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": 13
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0028-udws_cntrs_get_dsid_3001.bin",
+      "response_sha256": "6c13474d754e23c0df734d617cf94749357e9b6e6fc9715dc1201fd6b8eb9850",
+      "valid": true,
+      "assessment": "single-integer-and-frame-validated",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": 72038
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0029-udws_cntrs_get_dsid_5000.bin",
+      "response_sha256": "6954cae4098c6ca78434b888534c709d02cb5355104dac8a7e0b7e82dcf9c8cd",
+      "valid": true,
+      "assessment": "single-integer-and-frame-validated",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": 65565
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0030-udws_cntrs_get_dsid_5011.bin",
+      "response_sha256": "85c893c0d81609bd0278bc202524f3a1d44324f10a6f3502cbc7122ca0872045",
+      "valid": true,
+      "assessment": "single-integer-and-frame-validated",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": 68315
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0031-udws_cntrs_get_dsid_5082.bin",
+      "response_sha256": "e543adae75e79be02615698cdcf0ede201147271b37fb37b67b5c84a8975b451",
+      "valid": true,
+      "assessment": "single-integer-and-frame-validated",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": 75885
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0032-udws_cntrs_get_dsid_11000.bin",
+      "response_sha256": "269cbe8a60d2ff1c1f253de97567d59ed7d8de825ae18775b193e43f6a02e1c3",
+      "valid": true,
+      "assessment": "single-integer-and-frame-validated",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": 65636
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0033-udws_cntrs_get_dsid_16076.bin",
+      "response_sha256": "7a3146abc0a58cfc645b7b2e0ac6c48d44b1ef63c35995425b202093157e5d5e",
+      "valid": true,
+      "assessment": "single-integer-and-frame-validated",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": 67640
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0034-udws_cntrs_get_dsid_28022.bin",
+      "response_sha256": "9c9ab83f9d80f60fdf8288dfc7905e3e03da7192ebf856c22a6aaa0060030ce1",
+      "valid": true,
+      "assessment": "single-integer-and-frame-validated",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": 68185
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0035-udws_cntrs_get_dsid_28024.bin",
+      "response_sha256": "3dd187634d3d510f794cfa5f8dbe79cab46d179741c3f1e1e995d89ef35d6882",
+      "valid": true,
+      "assessment": "single-integer-and-frame-validated",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": 73536
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0036-udws_cntrs_get_dsid_28031.bin",
+      "response_sha256": "3187fc6f3df9565823b2c2274784953988ae47317386e84e222aea0f77a1f8d7",
+      "valid": true,
+      "assessment": "single-integer-and-frame-validated",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": 73556
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0037-udws_cntrs_get_dsid_64227.bin",
+      "response_sha256": "13ab9f316617cdf34e29a157246c2d0ab3bbd39905ebcab1f223417ecce0dcab",
+      "valid": true,
+      "assessment": "single-integer-and-frame-validated",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": 73030
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0038-udws_cntrs_is_cntr_registered_3001.bin",
+      "response_sha256": "4b1147ea95c5a7c122394fb840ae02d075a51cb7bd5040da851811f6dadbcbe5",
+      "valid": true,
+      "assessment": "single-integer-and-frame-validated",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": 1
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0039-udws_cntrs_is_cntr_registered_5000.bin",
+      "response_sha256": "e115a1d040304d6ff21f484fa243fa18c7e97919bec863dc4cfa5dda468a92ca",
+      "valid": true,
+      "assessment": "single-integer-and-frame-validated",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": 1
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0040-udws_cntrs_is_cntr_registered_5011.bin",
+      "response_sha256": "23ec52ae4a8b224a4feec842eb76e0fb7e3aa761e0a676f15178a3c2fbaeed87",
+      "valid": true,
+      "assessment": "single-integer-and-frame-validated",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": 1
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0041-udws_cntrs_is_cntr_registered_5082.bin",
+      "response_sha256": "ce245127bf2b8421a210c9ba6beb92e99a21422b6958b94b5155a85913d6a36f",
+      "valid": true,
+      "assessment": "single-integer-and-frame-validated",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": 1
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0042-udws_cntrs_is_cntr_registered_11000.bin",
+      "response_sha256": "54d30771847a4d4b904e7eb399dfc614000c388657a8595874b34b6b67c1e271",
+      "valid": true,
+      "assessment": "single-integer-and-frame-validated",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": 1
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0043-udws_cntrs_is_cntr_registered_16076.bin",
+      "response_sha256": "7a6f6c34f5bcb4ce60c54f85ff9ea327613964fbc03e2e27bce5daa832d833c7",
+      "valid": true,
+      "assessment": "single-integer-and-frame-validated",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": 1
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0044-udws_cntrs_is_cntr_registered_28022.bin",
+      "response_sha256": "90f8422fe544d8e51a3de30fcdd9169f0d371542151b4e3c99c01dcc7edafcf2",
+      "valid": true,
+      "assessment": "single-integer-and-frame-validated",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": 1
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0045-udws_cntrs_is_cntr_registered_28024.bin",
+      "response_sha256": "b6c29050f227543c328b0487a56b8ae2b3d648e312d8a283edbb55197278dbbd",
+      "valid": true,
+      "assessment": "single-integer-and-frame-validated",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": 1
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0046-udws_cntrs_is_cntr_registered_28031.bin",
+      "response_sha256": "0264dba6c95112a2ab11153217e1417e46af194478c2f075f386623cde0bc86c",
+      "valid": true,
+      "assessment": "single-integer-and-frame-validated",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": 1
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0047-udws_cntrs_is_cntr_registered_64227.bin",
+      "response_sha256": "f00cd3412f3378d47dd2281c5dc1a1694b577905cd7d2945bbab686ef575f635",
+      "valid": true,
+      "assessment": "single-integer-and-frame-validated",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": 1
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0048-udws_cntrs_get_value_3001.bin",
+      "response_sha256": "f6d425e4d30a645a5bac771425405c154c824cc896928310543e16b241e7df50",
+      "valid": true,
+      "assessment": "single-integer-and-frame-validated",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": 68
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0049-udws_cntrs_get_value_5000.bin",
+      "response_sha256": "a478054a2ee4d1f130f99333369a61f65684d7ca4e95db8e223e1efd50813bbb",
+      "valid": true,
+      "assessment": "single-integer-and-frame-validated",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": 775
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0050-udws_cntrs_get_value_5011.bin",
+      "response_sha256": "6ed7917ac7bd235466ca012e5cc2957a03598a90d78d367e224c83efd8a12e4b",
+      "valid": true,
+      "assessment": "single-integer-and-frame-validated",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": 0
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0051-udws_cntrs_get_value_5082.bin",
+      "response_sha256": "2b0a8fc9701da3e151f3679240ae957b631a8a8fd857cec7e261104629d80f12",
+      "valid": true,
+      "assessment": "single-integer-and-frame-validated",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": 753
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0052-udws_cntrs_get_value_11000.bin",
+      "response_sha256": "d95e937a30106ab545385d103c9316121a5a22096dc8ca06127cc7db17909ddc",
+      "valid": true,
+      "assessment": "single-integer-and-frame-validated",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": 4932015
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0053-udws_cntrs_get_value_16076.bin",
+      "response_sha256": "11ec9e9ca9b9369465258d6fa89a968e26c559241cfbbdf51d904f8659b0deee",
+      "valid": true,
+      "assessment": "single-integer-and-frame-validated",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": 10
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0054-udws_cntrs_get_value_28022.bin",
+      "response_sha256": "6f6b17776c4da04bed22805d0611f15d2d356ea38b866f54d86437ff62f3311d",
+      "valid": true,
+      "assessment": "single-integer-and-frame-validated",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": 0
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0055-udws_cntrs_get_value_28024.bin",
+      "response_sha256": "27040cc5aa07b44017ba630f34b5d3f72220d06e8b4371b5b46bd705c7caeb54",
+      "valid": true,
+      "assessment": "single-integer-and-frame-validated",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": 0
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0056-udws_cntrs_get_value_28031.bin",
+      "response_sha256": "b7a741b148e52afc6061a0fc1bab2d4438bfb54b9f0db643096089add8cf18b2",
+      "valid": true,
+      "assessment": "single-integer-and-frame-validated",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": 30
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0057-udws_cntrs_get_value_64227.bin",
+      "response_sha256": "5b72af60b643b1e888170b461a5b37eec79b47c7d9229f306b5c523d3f9d0d66",
+      "valid": true,
+      "assessment": "single-integer-and-frame-validated",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [],
+      "parsed": 7
+    },
+    {
+      "response_file": "references/physical-42-firmware-table-formatter/0001-udws_firm_query_value_name_fmt.bin",
+      "response_sha256": "26bb02421ad0cd4c25cfac191c1f46c87ad67635fcb8db25e3204960c0b7b78c",
+      "valid": false,
+      "assessment": "incomplete-large-firmware-table-response",
+      "validation_scope": "Exact command echo and shell return framing; diagnostic body preserved, not assumed semantically successful.",
+      "errors": [
+        "Successful return/prompt missing.",
+        "Output diverges from the proven formatter model after byte41260, leaving later rows incomplete."
+      ],
+      "complete": false,
+      "parsed": {
+        "reported_count": 577,
+        "complete_prefix_rows": 522,
+        "expected_modeled_payload_bytes": 45589,
+        "observed_payload_bytes": 41290,
+        "first_unexplained_mismatch_offset": 41260
+      }
+    }
+  ],
+  "data_quality": [
+    {
+      "response_file": "references/physical-33-ram-preflight/0001-udws_ram_ls_ram.bin",
+      "response_sha256": "045323703e8bf5380e9f33d8a40b272418e131cd814a4dd86f5ce12510772869",
+      "assessment": "side-effect-classification-corrected",
+      "complete": null,
+      "corrected_classification": "ram-directory-flush-and-diagnostic",
+      "note": "The original plan called ram.ls a listing query. Handler disassembly shows directory ioctl 24 can reclaim deleted RAM file records. Its actual reply says flush result : OK. This side effect is retained explicitly; it is not a passive listing."
+    },
+    {
+      "response_file": "references/physical-31-hardware-status/0033-udws_scan_firms_tables.bin",
+      "response_sha256": "0fdad4a0e8e159cd69b2474fa9a68f978f66f0529ca3a3977741177a85080f67",
+      "complete": true,
+      "assessment": "compiled-configuration-metadata-not-current-values",
+      "note": "scan firms tables prints197 compiled descriptors. Integer columns appear to be default/min/max; this semantic labeling is inferred. It does not read the current configuration values through the service getters."
+    },
+    {
+      "response_file": "references/physical-30-software-queries/0004-udws_lib_json_writer_write_big_numbers.bin",
+      "response_sha256": "4808759e8922eebef30a7250224b4619b94617cddd01d2c5dfb7e60313cea6fb",
+      "assessment": "empty-big-number-test-object",
+      "note": "The physical command emitted a valid empty object. This does not demonstrate that any large integer was serialized.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-30-software-queries/0007-udws_firm_prt_ram_table.bin",
+      "response_sha256": "1e3d67586f2afe7f00d06441def57f653e554a5790999637bd8a07ae2b6e8cd9",
+      "assessment": "successful-empty-response",
+      "note": "This proves the command returned. Empty output alone does not establish absence of registry entries, state, or data."
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0010-udws_timer_delay_ms_1.bin",
+      "response_sha256": "eef9578e0d5c99b11f8facc868b343d2f4ef860895662d9241f7341cca7dc9b2",
+      "assessment": "successful-empty-response",
+      "note": "This proves the command returned. Empty output alone does not establish absence of registry entries, state, or data."
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0011-udws_udw_timer_delay_ms_1.bin",
+      "response_sha256": "e77dc8c33244eb18dc64067e6cc896d2a0335f85fafdb6138603e2e916eb27bb",
+      "assessment": "successful-empty-response",
+      "note": "This proves the command returned. Empty output alone does not establish absence of registry entries, state, or data."
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0012-udws_udw_delay_1.bin",
+      "response_sha256": "c8cef7d9d6e671fe768091a272614cd8b1a5d29d7d10ad7120d940cb51437990",
+      "assessment": "successful-empty-response",
+      "note": "This proves the command returned. Empty output alone does not establish absence of registry entries, state, or data."
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0013-udws_udw_timer_date_get.bin",
+      "response_sha256": "0250eec8a67ec96236008b7f5af573adb715c53fc789258e2f07e816e0ce609d",
+      "assessment": "calendar-fields-not-a-valid-date",
+      "note": "Observed 0,0,0,0,1,0,0. Retain raw fields; this is not a usable wall-clock calendar date.",
+      "complete": true,
+      "structurally_complete": true,
+      "calendar_semantically_valid": false,
+      "calendar_reliability": "all seven fields were received; zero calendar fields do not encode a usable wall-clock date"
+    },
+    {
+      "response_file": "references/physical-30-software-queries/0008-udws_firm_query_name.bin",
+      "response_sha256": "de7e519c5bb424d83f90c26ab339b670fbbb860fc64fe70d41f8d1d07127015b",
+      "assessment": "complete-physical-name-catalog",
+      "note": "All577 names and displayed IDs are complete, unique, and later matched one-for-one by bounded group reads.",
+      "reported_count": 577,
+      "validated_rows": 577,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-30-software-queries/0009-udws_firm_query_name_fmt.bin",
+      "response_sha256": "7a1e567c8050a263260210d527e87c7057ef7025aa552e95c7b5bec4bace26de",
+      "assessment": "proven-firmware-row-truncation",
+      "note": "All39250 normalized payload bytes exactly match the69-character-per-row firmware model. Eight long names are clipped; the absence of those delimiters is not evidence of UART loss.",
+      "firmware_handler": "0xa00d526a",
+      "output_buffer_bytes": 70,
+      "forced_nul_index": 69,
+      "normalized_payload_bytes": 39250,
+      "formatter_model_exact": true,
+      "clipped_names": [
+        {
+          "ordinal_id": 1325,
+          "name": "PEN_G3_K.PEN_EUREKA_THRESHOLD_DELTA_TEMP_X10_CHAMBER_0_SUBSCRIPTION",
+          "full_name_length": 67
+        },
+        {
+          "ordinal_id": 1326,
+          "name": "PEN_G3_K.PEN_EUREKA_THRESHOLD_DELTA_TEMP_X10_CHAMBER_1_SUBSCRIPTION",
+          "full_name_length": 67
+        },
+        {
+          "ordinal_id": 1327,
+          "name": "PEN_G3_K.PEN_EUREKA_THRESHOLD_DELTA_TEMP_X10_CHAMBER_2_SUBSCRIPTION",
+          "full_name_length": 67
+        },
+        {
+          "ordinal_id": 1328,
+          "name": "PEN_G3_K.PEN_EUREKA_THRESHOLD_DELTA_TEMP_X10_CHAMBER_3_SUBSCRIPTION",
+          "full_name_length": 67
+        },
+        {
+          "ordinal_id": 1581,
+          "name": "PEN_G3_C.PEN_EUREKA_THRESHOLD_DELTA_TEMP_X10_CHAMBER_0_SUBSCRIPTION",
+          "full_name_length": 67
+        },
+        {
+          "ordinal_id": 1582,
+          "name": "PEN_G3_C.PEN_EUREKA_THRESHOLD_DELTA_TEMP_X10_CHAMBER_1_SUBSCRIPTION",
+          "full_name_length": 67
+        },
+        {
+          "ordinal_id": 1583,
+          "name": "PEN_G3_C.PEN_EUREKA_THRESHOLD_DELTA_TEMP_X10_CHAMBER_2_SUBSCRIPTION",
+          "full_name_length": 67
+        },
+        {
+          "ordinal_id": 1584,
+          "name": "PEN_G3_C.PEN_EUREKA_THRESHOLD_DELTA_TEMP_X10_CHAMBER_3_SUBSCRIPTION",
+          "full_name_length": 67
+        }
+      ],
+      "id_semantics": "Registry ordinal shifted8 plus item index, not the group SUID.",
+      "complete": false
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0002-udws_firm_query_value_fmt.bin",
+      "response_sha256": "fa4d232dbc76a21071fb1b6cff5aa05c5794ce401e07beb0957050ffb5e9c143",
+      "assessment": "proven-current-value-lookup-bug",
+      "note": "A00D536A passes registry ordinal0..51 to A00D3556. SUID lookup A00D3330 rejects values without bits0x1F00. Thus zero is returned instead of looking up the real SUID. All577 compiled/default fields and row identities match bounded group captures; retain the third field only.",
+      "firmware_handler": "0xa00d531c",
+      "current_column_authoritative": false,
+      "compiled_column_validated": true,
+      "later_nonzero_current_count": 383,
+      "formatter_model_exact": true,
+      "complete": true,
+      "structurally_complete": true,
+      "current_value_semantically_valid": false,
+      "current_value_reliability": "unreliable: getter uses registry ordinal instead of SUID; the complete received rows contain incorrect current-value results"
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0001-udws_firm_query_value.bin",
+      "response_sha256": "336f4e4713e055f46eb4a0538eec8699439590131bf6f3c380223c9b3a54fd2e",
+      "assessment": "proven-firmware-row-truncation",
+      "note": "All9672 normalized payload bytes exactly match current/default values from the later group reads truncated to19characters per row plus the final shell separator. This completely explains glued rows in this capture; no additional unexplained loss is observed.",
+      "firmware_handler": "0xa00d4ec2",
+      "output_buffer_bytes": 20,
+      "forced_nul_index": 19,
+      "formatter_model_exact": true,
+      "truncated_rows": 98,
+      "partial_current_fields": [
+        {
+          "packed_id": 622352,
+          "name": "PEN_G3_K.PEN_TTOE_MAX_ENERGY",
+          "wire_fragment": "0x97F10 = 346335600",
+          "later_verified_current": 346335600
+        },
+        {
+          "packed_id": 622353,
+          "name": "PEN_G3_K.PEN_TTOE_MIN_ENERGY",
+          "wire_fragment": "0x97F11 = 111893040",
+          "later_verified_current": 111893040
+        },
+        {
+          "packed_id": 622374,
+          "name": "PEN_G3_K.PEN_OTOE_MAX_ENERGY",
+          "wire_fragment": "0x97F26 = 444020000",
+          "later_verified_current": 444020000
+        },
+        {
+          "packed_id": 622375,
+          "name": "PEN_G3_K.PEN_OTOE_MIN_ENERGY",
+          "wire_fragment": "0x97F27 = 222010000",
+          "later_verified_current": 222010000
+        },
+        {
+          "packed_id": 622608,
+          "name": "PEN_G3_C.PEN_TTOE_MAX_ENERGY",
+          "wire_fragment": "0x98010 = 279732600",
+          "later_verified_current": 279732600
+        },
+        {
+          "packed_id": 622630,
+          "name": "PEN_G3_C.PEN_OTOE_MAX_ENERGY",
+          "wire_fragment": "0x98026 = 226272592",
+          "later_verified_current": 226272592
+        },
+        {
+          "packed_id": 618240,
+          "name": "CV_FIRMS.CV_FIRM_CAL_PAGE_MAINT_INTERVAL_1",
+          "wire_fragment": "0x96F00 = 214748364",
+          "later_verified_current": 2147483647
+        },
+        {
+          "packed_id": 618241,
+          "name": "CV_FIRMS.CV_FIRM_CAL_PAGE_RETRY_INTERVAL_1",
+          "wire_fragment": "0x96F01 = 214748364",
+          "later_verified_current": 2147483647
+        },
+        {
+          "packed_id": 618242,
+          "name": "CV_FIRMS.CV_FIRM_CAL_PAGE_RETRY_INTERVAL_2",
+          "wire_fragment": "0x96F02 = 214748364",
+          "later_verified_current": 2147483647
+        },
+        {
+          "packed_id": 618245,
+          "name": "CV_FIRMS.CV_FIRM_CAL_PAGE_MAINT_INTERVAL_2",
+          "wire_fragment": "0x96F05 = 214748364",
+          "later_verified_current": 2147483647
+        },
+        {
+          "packed_id": 618246,
+          "name": "CV_FIRMS.CV_FIRM_MAINT_INTERVAL_ROLLOVER",
+          "wire_fragment": "0x96F06 = 214748364",
+          "later_verified_current": 2147483647
+        }
+      ],
+      "complete": false
+    },
+    {
+      "response_file": "references/physical-30-software-queries/0010-udws_firm_query_value_name.bin",
+      "response_sha256": "94b05299d34b714fe08cd022977499feef922028d3835d7a0787c28212866334",
+      "assessment": "large-output-loss-beyond-known-formatter-truncation",
+      "note": "The first41260 normalized payload bytes match the exact firmware80-byte row-buffer model, including long-name clipping. After522complete modeled rows, the tail loses content and the shell return is damaged. Both name/value variants fail at the same payload offset. Cause beyond the row-format bugs remains unresolved; do not specifically attribute it to UART wiring, host capture, or firmware buffering without further evidence.",
+      "expected_rows": 577,
+      "complete_modeled_prefix_rows": 522,
+      "first_unexplained_mismatch_offset": 41260,
+      "expected_modeled_payload_bytes": 45589,
+      "observed_payload_bytes": 41290,
+      "value_column_semantics": "Compiled descriptor value, not a getter for current RAM overrides.",
+      "known_row_buffer_bytes": 80,
+      "unexplained_loss_cause": "unresolved",
+      "complete": false
+    },
+    {
+      "response_file": "references/physical-42-firmware-table-formatter/0001-udws_firm_query_value_name_fmt.bin",
+      "response_sha256": "26bb02421ad0cd4c25cfac191c1f46c87ad67635fcb8db25e3204960c0b7b78c",
+      "assessment": "large-output-loss-beyond-known-formatter-truncation",
+      "note": "The first41260 normalized payload bytes match the exact firmware80-byte row-buffer model, including long-name clipping. After522complete modeled rows, the tail loses content and the shell return is damaged. Both name/value variants fail at the same payload offset. Cause beyond the row-format bugs remains unresolved; do not specifically attribute it to UART wiring, host capture, or firmware buffering without further evidence.",
+      "expected_rows": 577,
+      "complete_modeled_prefix_rows": 522,
+      "first_unexplained_mismatch_offset": 41260,
+      "expected_modeled_payload_bytes": 45589,
+      "observed_payload_bytes": 41290,
+      "value_column_semantics": "Compiled descriptor value, not a getter for current RAM overrides.",
+      "known_row_buffer_bytes": 80,
+      "unexplained_loss_cause": "unresolved",
+      "complete": false
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0003-udws_firm_str_query_value.bin",
+      "response_sha256": "192956155610accfdedbb241dd234697a98472c351ac20e8f360460794495b99",
+      "assessment": "empty-string-override-list-not-registry-absence",
+      "note": "The command returned successfully with an empty body. Combined with str_query_num_ram21,110, this does not establish that no strings are registered. No valid packed string ID was established by these captures.",
+      "structurally_complete": true
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0019-udws_udw_get_verbose_fw_rev.bin",
+      "response_sha256": "2464ab8df838c193392bf2b75fd2874484f247bc6d0ccfd31772c61b79fee0cc",
+      "assessment": "intentional-version-prefix-limit",
+      "note": "The handler limits the diagnostic to80characters; the cut ASIC suffix is expected formatting and is not evidence of transport loss. udw.id and direct identity commands provide fuller version data.",
+      "maximum_text_characters": 80,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0020-udws_udw_id.bin",
+      "response_sha256": "3f0cf5ca223a7c54a08ce765e4a05d9534bf59953ab33da3d330358c6ee43821",
+      "assessment": "cached-identity-field",
+      "note": "The printed ASIC id0x00000000 comes from this cached version string. It does not override independent live ASIC identity evidence.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0024-udws_wifi_conman_get_p2p_pin.bin",
+      "response_sha256": "ee525ae0f198c4e563e66aa2a91d8ae1bf6f4018378aad89542d3120e7282f5a",
+      "assessment": "blank-cached-pin",
+      "note": "The cached P2P_PIN field contained spaces. This is a local status read, not evidence of a usable PIN.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-30b-software-queries/0021-udws_nca_get_preferred_address.bin",
+      "response_sha256": "7cc1f3e445205eeedf18885df7a5fd1dc2e8c51f4eca20e7882bbba521b16ebc",
+      "assessment": "no-current-preferred-address",
+      "note": "The API explicitly returned No address found. No external network request was performed by this reviewed query.",
+      "complete": true
+    }
+  ],
+  "supporting_reports": [
+    {
+      "file": "hardware_round2_results.json",
+      "sha256": "ca7a901f11b94c65867fb687a1ad81644937dd948c48742e095fb21d9a921b60"
+    },
+    {
+      "file": "software_round2_results.json",
+      "sha256": "ab6a98a17ffd4441c10583370a8f52523c26dcf739eecd694b1f4e175eab1719"
+    }
+  ]
+}

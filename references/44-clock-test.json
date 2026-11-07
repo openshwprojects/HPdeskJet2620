@@ -1,0 +1,10 @@
+[
+  {
+    "command": "udws \"posix_timer.clock_gettime_test 3;\"",
+    "classification": "reviewed-bounded-clock-self-test",
+    "purpose": "Run the built-in timing test with the supported clock ID. ID1 is rejected before the timing loop. A pass establishes only the compiled test criteria, not clock accuracy.",
+    "side_effects": "Uses and releases ordinary timer/semaphore resources; nominal eight two-second waits.",
+    "review_source": "references/posix_clock_test_review.json",
+    "timeout": 80
+  }
+]

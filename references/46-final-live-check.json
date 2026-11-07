@@ -1,0 +1,8 @@
+[
+  {
+    "command": "udws \"bio.rev_str; udw.get_board_id; shm.msecs;\"",
+    "classification": "reviewed-information-query",
+    "purpose": "Record final firmware identity, board ID and live uptime after the extended physical command tests.",
+    "timeout": 20
+  }
+]

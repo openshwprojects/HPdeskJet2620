@@ -1,0 +1,587 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-10-29T20:49:12.980091+00:00",
+  "provenance": {
+    "kind": "offline_review_for_physical_capture",
+    "serial_access": "none",
+    "image": "artifacts/ghs/dram.bin",
+    "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+    "runtime_registry": "references/physical-09-registry/runtime_inventory.json",
+    "coverage": "references/coverage.json"
+  },
+  "summary": {
+    "ready_invocations": 12,
+    "unique_names": 7,
+    "new_unique_names": 6,
+    "claims": "Proposed exact invocations only. No physical outputs are claimed by this offline report."
+  },
+  "queries": [
+    {
+      "name": "scan sensor CCD",
+      "command": "udws \"scan sensor CCD 0;\"",
+      "handler": "0xa03bdc4d",
+      "descriptor_address": "0xa0604360",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "0",
+      "purpose": "Refresh sensor identity before table-dependent queries.",
+      "control_flow_proof": "A03BDC4C ignores parsed byte and reads sensor ID2085841C and supplier2085843C, mapping them to constant strings. Previous physical capture identifies TEMPO_TOS (ID2).",
+      "hardware_access": false,
+      "timeout": 25,
+      "side_effects": "UART output and parser state. The scanner formatter can update its volatile output-throttle counter.",
+      "runtime_registered": true,
+      "prior_invocation_status": "invoked",
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation only; offline binary review, no serial access.",
+      "reviewed_ranges": [
+        {
+          "address": "0xa03bdc4c",
+          "bytes": 38,
+          "disassembly": "0xa03bdc4c: push {r4, lr}\n0xa03bdc4e: ldr r4, [pc, #0x4c] [0xa03bdc9c]=0x2085841c\n0xa03bdc50: bl #0xa03bef76\n0xa03bdc54: ldr r0, [r4]\n0xa03bdc56: bl #0xa03bdbd0\n0xa03bdc5a: adds r1, r0, #0\n0xa03bdc5c: adr r0, #0x15c 'SCANNER SENSOR: (%s),\\n'\n0xa03bdc5e: bl #0xa03bef18\n0xa03bdc62: ldr r0, [r4, #0x20]\n0xa03bdc64: bl #0xa03bdbf2\n0xa03bdc68: adds r1, r0, #0\n0xa03bdc6a: adr r0, #0x168 'SCANNER SUPPLIER: (%s)\\n'\n0xa03bdc6c: bl #0xa03bef18\n0xa03bdc70: pop {r4, pc}"
+        },
+        {
+          "address": "0xa03bdbd0",
+          "bytes": 90,
+          "disassembly": "0xa03bdbd0: cmp r0, #1\n0xa03bdbd2: blo #0xa03bdbde\n0xa03bdbd4: beq #0xa03bdbe2\n0xa03bdbd6: cmp r0, #2\n0xa03bdbd8: beq #0xa03bdbe6\n0xa03bdbda: adr r0, #0xd8 '*** NO SCANNER OR MODULE NAME ***'\n0xa03bdbdc: b #0xa03bdbe8\n0xa03bdbde: adr r0, #0xf8 'CIS_MODULE_SOLO_TOS_D'\n0xa03bdbe0: b #0xa03bdbe8\n0xa03bdbe2: adr r0, #0x10c 'CIS_MODULE_EMMA_TOS'\n0xa03bdbe4: b #0xa03bdbe8\n0xa03bdbe6: adr r0, #0x11c 'CIS_MODULE_TEMPO_TOS'\n0xa03bdbe8: bx lr\n0xa03bdbea: ldr r0, [pc, #0x130] [0xa03bdd1c]=0x20858420\n0xa03bdbec: movs r1, #2\n0xa03bdbee: ldrsh r0, [r0, r1]\n0xa03bdbf0: bx lr\n0xa03bdbf2: cmp r0, #4\n0xa03bdbf4: blo #0xa03bdc22\n0xa03bdbf6: beq #0xa03bdc0a\n0xa03bdbf8: cmp r0, #6\n0xa03bdbfa: blo #0xa03bdc0e\n0xa03bdbfc: beq #0xa03bdc12\n0xa03bdbfe: cmp r0, #8\n0xa03bdc00: blo #0xa03bdc16\n0xa03bdc02: beq #0xa03bdc1a\n0xa03bdc04: cmp r0, #9\n0xa03bdc06: bne #0xa03bdc22\n0xa03bdc08: b #0xa03bdc1e\n0xa03bdc0a: adr r0, #0x114 'CIS_SUPPLIER_CSI'\n0xa03bdc0c: b #0xa03bdc24\n0xa03bdc0e: adr r0, #0x124 'CIS_SUPPLIER_LIT'\n0xa03bdc10: b #0xa03bdc24\n0xa03bdc12: adr r0, #0x134 'CIS_SUPPLIER_ATII'\n0xa03bdc14: b #0xa03bdc24\n0xa03bdc16: adr r0, #0x144 'CIS_SUPPLIER_TOS'\n0xa03bdc18: b #0xa03bdc24\n0xa03bdc1a: adr r0, #0x154 'CIS_SUPPLIER_PIC'\n0xa03bdc1c: b #0xa03bdc24\n0xa03bdc1e: adr r0, #0x164 'CIS_SUPPLIER_CANON'\n0xa03bdc20: b #0xa03bdc24\n0xa03bdc22: adr r0, #0x174 '*** NO SCANNER OR SUPPLIER NAME ***'\n0xa03bdc24: bx lr\n0xa03bdc26: movs r0, #0\n0xa03bdc28: movs r1, #0"
+        }
+      ],
+      "required_observation_for_later_resolution_list": "SCANNER SENSOR: (CIS_MODULE_TEMPO_TOS)"
+    },
+    {
+      "name": "scan led LEDONTIMEGET",
+      "command": "udws \"scan led LEDONTIMEGET;\"",
+      "handler": "0xa03a9cef",
+      "descriptor_address": "0xa05ffcdc",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "",
+      "purpose": "Read cached RGB LED on-times without enabling LEDs.",
+      "control_flow_proof": "A03A9CEE reads three halfwords20D9DF84,86,88 and formats. No other call except scanner output.",
+      "hardware_access": false,
+      "timeout": 25,
+      "side_effects": "UART output and parser state. The scanner formatter can update its volatile output-throttle counter.",
+      "runtime_registered": true,
+      "prior_invocation_status": "not-invoked",
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation only; offline binary review, no serial access.",
+      "reviewed_ranges": [
+        {
+          "address": "0xa03a9cee",
+          "bytes": 18,
+          "disassembly": "0xa03a9cee: push {lr}\n0xa03a9cf0: ldr r0, [pc, #0x160] [0xa03a9e54]=0x20d9df84\n0xa03a9cf2: ldrh r3, [r0, #4]\n0xa03a9cf4: ldrh r2, [r0, #2]\n0xa03a9cf6: ldrh r1, [r0]\n0xa03a9cf8: adr r0, #0x15c 'LED ONTIMEs: (%d, %d, %d)\\n'\n0xa03a9cfa: bl #0xa03bef18\n0xa03a9cfe: pop {pc}"
+        }
+      ]
+    },
+    {
+      "name": "scan bolt yy",
+      "command": "udws \"scan bolt yy;\"",
+      "handler": "0xa03a2ea5",
+      "descriptor_address": "0xa05fc3c4",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "",
+      "purpose": "Read cached scanner ASIC/controller mode and revision.",
+      "control_flow_proof": "A03A2EA4 reads byte20D9CBDC and halfword20D9CBD8; two output calls only.",
+      "hardware_access": false,
+      "timeout": 25,
+      "side_effects": "UART output and parser state. The scanner formatter can update its volatile output-throttle counter.",
+      "runtime_registered": true,
+      "prior_invocation_status": "not-invoked",
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation only; offline binary review, no serial access.",
+      "reviewed_ranges": [
+        {
+          "address": "0xa03a2ea4",
+          "bytes": 22,
+          "disassembly": "0xa03a2ea4: push {r4, lr}\n0xa03a2ea6: ldr r4, [pc, #0x68] [0xa03a2f10]=0x20d9cbd8\n0xa03a2ea8: ldrb r1, [r4, #4]\n0xa03a2eaa: adr r0, #0x68 '_dasher_detected[0][0] = %d\\n'\n0xa03a2eac: bl #0xa03bef18\n0xa03a2eb0: ldrh r1, [r4]\n0xa03a2eb2: adr r0, #0x80 '_sc_dasher_ic_chip_id[0][] = 0x%04x\\n'\n0xa03a2eb4: bl #0xa03bef18\n0xa03a2eb8: pop {r4, pc}"
+        }
+      ]
+    },
+    {
+      "name": "scan keep yy",
+      "command": "udws \"scan keep yy 0;\"",
+      "handler": "0xa03a7e3d",
+      "descriptor_address": "0xa05ffc24",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "0",
+      "purpose": "Print cached scanner KEEP configuration.",
+      "control_flow_proof": "A03A7E3C parses signed byte then helperA03A7CA2 ignores value and reads fixed20D9DE28..38 fields, formatting only. No setter or device access.",
+      "hardware_access": false,
+      "timeout": 25,
+      "side_effects": "UART output and parser state. The scanner formatter can update its volatile output-throttle counter.",
+      "runtime_registered": true,
+      "prior_invocation_status": "not-invoked",
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation only; offline binary review, no serial access.",
+      "reviewed_ranges": [
+        {
+          "address": "0xa03a7e3c",
+          "bytes": 12,
+          "disassembly": "0xa03a7e3c: push {lr}\n0xa03a7e3e: bl #0xa03bef88\n0xa03a7e42: bl #0xa03a7ca2\n0xa03a7e46: pop {pc}"
+        },
+        {
+          "address": "0xa03a7ca2",
+          "bytes": 106,
+          "disassembly": "0xa03a7ca2: push {r4, r5, r6, lr}\n0xa03a7ca4: sub sp, #4\n0xa03a7ca6: ldr r5, [pc, #0x64] [0xa03a7d0c]=0x20d9de28\n0xa03a7ca8: adr r6, #0x9c '============================================\\n'\n0xa03a7caa: adds r0, r6, #0\n0xa03a7cac: bl #0xa03bef18\n0xa03a7cb0: adds r4, r5, #0\n0xa03a7cb2: ldr r3, [r4, #4]\n0xa03a7cb4: ldr r2, [r4]\n0xa03a7cb6: adr r0, #0xc0 'keep_region[%d]:\\n  start_pix    = %d\\n  npixels_keep = %d\\n'\n0xa03a7cb8: movs r1, #0\n0xa03a7cba: bl #0xa03bef18\n0xa03a7cbe: ldrh r1, [r4, #8]\n0xa03a7cc0: adds r0, r1, #0\n0xa03a7cc2: movs r2, #0x2d\n0xa03a7cc4: cmp r0, #0\n0xa03a7cc6: blt #0xa03a7cca\n0xa03a7cc8: movs r2, #0x2b\n0xa03a7cca: asrs r3, r0, #0x1f\n0xa03a7ccc: eors r0, r3\n0xa03a7cce: subs r0, r0, r3\n0xa03a7cd0: movs r3, #0\n0xa03a7cd2: str r3, [sp]\n0xa03a7cd4: adds r3, r0, #0\n0xa03a7cd6: adr r0, #0xdc '  v0           = %d  (%c%d.%04d)\\n'\n0xa03a7cd8: bl #0xa03bef18\n0xa03a7cdc: ldrh r0, [r4, #0xa]\n0xa03a7cde: movs r2, #0x2b\n0xa03a7ce0: asrs r3, r0, #0x1f\n0xa03a7ce2: eors r0, r3\n0xa03a7ce4: subs r0, r0, r3\n0xa03a7ce6: movs r3, #0\n0xa03a7ce8: str r3, [sp]\n0xa03a7cea: adds r3, r0, #0\n0xa03a7cec: ldrh r1, [r4, #8]\n0xa03a7cee: adr r0, #0xe8 '  vn           = %d  (%c%d.%04d)\\n'\n0xa03a7cf0: bl #0xa03bef18\n0xa03a7cf4: adr r0, #0x104 '--------------------------------------------\\n'\n0xa03a7cf6: bl #0xa03bef18\n0xa03a7cfa: ldrb r1, [r5, #0x10]\n0xa03a7cfc: adr r0, #0x12c '_db_udw = %d\\n'\n0xa03a7cfe: bl #0xa03bef18\n0xa03a7d02: adds r0, r6, #0\n0xa03a7d04: bl #0xa03bef18\n0xa03a7d08: add sp, #4\n0xa03a7d0a: pop {r4, r5, r6, pc}"
+        }
+      ]
+    },
+    {
+      "name": "scan ifc yreslist",
+      "command": "udws \"scan ifc yreslist;\"",
+      "handler": "0xa03bfd1b",
+      "descriptor_address": "0xa0605390",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "",
+      "purpose": "Print color and mono Y-resolution lists labelled with and without ADF; listed ADF modes do not prove an ADF is installed.",
+      "control_flow_proof": "HandlerA03BFD1A/A03BFF5C callsA03BD61C four times with(xres300,selector0/1,mode0/1). Helper scans max12entries for sentinel-1, filters at most13halfwords into20DA08E4 and always appends0. A03BD564 reads fixedsensor table, A03BD470 maps300toindex0. TEMPO_TOS(ID2) chooses entries72/84 of20857D38, both statically nonnull with valid-1sentinel. No callbacks, hardware access or persistent writes.",
+      "hardware_access": false,
+      "timeout": 25,
+      "side_effects": "Writes bounded28-byte volatile resolution-list scratch at20DA08E4; UART output and parser state. No persistent setting changes.",
+      "runtime_registered": true,
+      "prior_invocation_status": "not-invoked",
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation only; offline binary review, no serial access.",
+      "reviewed_ranges": [
+        {
+          "address": "0xa03bfd1a",
+          "bytes": 80,
+          "disassembly": "0xa03bfd1a: push {r4, r5, r6, lr}\n0xa03bfd1c: movs r6, #0xff\n0xa03bfd1e: adds r6, #0x2d\n0xa03bfd20: adds r0, r6, #0\n0xa03bfd22: movs r2, #0\n0xa03bfd24: adds r1, r2, #0\n0xa03bfd26: bl #0xa03bd61c\n0xa03bfd2a: adds r4, r0, #0\n0xa03bfd2c: adr r0, #0x1c0 'ADF = No, Color Space =  RGB : yres[0][0] : '\n0xa03bfd2e: bl #0xa03bef18\n0xa03bfd32: b #0xa03bfd3c\n0xa03bfd34: adr r0, #0x1e8 ' %d,'\n0xa03bfd36: bl #0xa03bef18\n0xa03bfd3a: adds r4, #2\n0xa03bfd3c: ldrh r1, [r4]\n0xa03bfd3e: cmp r1, #0\n0xa03bfd40: bne #0xa03bfd34\n0xa03bfd42: adr r5, #0x1e4 ' 0\\n'\n0xa03bfd44: adds r0, r5, #0\n0xa03bfd46: bl #0xa03bef18\n0xa03bfd4a: adds r0, r6, #0\n0xa03bfd4c: movs r2, #1\n0xa03bfd4e: movs r1, #0\n0xa03bfd50: bl #0xa03bd61c\n0xa03bfd54: adds r4, r0, #0\n0xa03bfd56: adr r0, #0x1d4 'ADF = No, Color Space =  K   : yres[0][1] : '\n0xa03bfd58: bl #0xa03bef18\n0xa03bfd5c: b #0xa03bfd66\n0xa03bfd5e: adr r0, #0x1c0 ' %d,'\n0xa03bfd60: bl #0xa03bef18\n0xa03bfd64: adds r4, #2\n0xa03bfd66: ldrh r1, [r4]\n0xa03bfd68: b #0xa03bff5c"
+        },
+        {
+          "address": "0xa03bff5c",
+          "bytes": 94,
+          "disassembly": "0xa03bff5c: cmp r1, #0\n0xa03bff5e: beq #0xa03bff62\n0xa03bff60: b #0xa03bfd5e\n0xa03bff62: adds r0, r5, #0\n0xa03bff64: bl #0xa03bef18\n0xa03bff68: adds r0, r6, #0\n0xa03bff6a: movs r2, #0\n0xa03bff6c: movs r1, #1\n0xa03bff6e: bl #0xa03bd61c\n0xa03bff72: adds r4, r0, #0\n0xa03bff74: adr r0, #0xe8 'ADF = Yes, Color Space = RGB : yres[1][0] : '\n0xa03bff76: bl #0xa03bef18\n0xa03bff7a: b #0xa03bff84\n0xa03bff7c: ldr r0, [pc, #0x110] [0xa03c0090]=0xa03bff20\n0xa03bff7e: bl #0xa03bef18\n0xa03bff82: adds r4, #2\n0xa03bff84: ldrh r1, [r4]\n0xa03bff86: cmp r1, #0\n0xa03bff88: bne #0xa03bff7c\n0xa03bff8a: adds r0, r5, #0\n0xa03bff8c: bl #0xa03bef18\n0xa03bff90: adds r0, r6, #0\n0xa03bff92: movs r2, #1\n0xa03bff94: adds r1, r2, #0\n0xa03bff96: bl #0xa03bd61c\n0xa03bff9a: adds r4, r0, #0\n0xa03bff9c: adr r0, #0xf4 'ADF = Yes, Color Space = K   : yres[1][1] : '\n0xa03bff9e: bl #0xa03bef18\n0xa03bffa2: b #0xa03bffac\n0xa03bffa4: ldr r0, [pc, #0xe8] [0xa03c0090]=0xa03bff20\n0xa03bffa6: bl #0xa03bef18\n0xa03bffaa: adds r4, #2\n0xa03bffac: ldrh r1, [r4]\n0xa03bffae: cmp r1, #0\n0xa03bffb0: bne #0xa03bffa4\n0xa03bffb2: adds r0, r5, #0\n0xa03bffb4: bl #0xa03bef18\n0xa03bffb8: pop {r4, r5, r6, pc}"
+        },
+        {
+          "address": "0xa03bd61c",
+          "bytes": 112,
+          "disassembly": "0xa03bd61c: push {r4, r5, lr}\n0xa03bd61e: adds r5, r1, #0\n0xa03bd620: movs r4, #0\n0xa03bd622: cmp r2, #0\n0xa03bd624: beq #0xa03bd62a\n0xa03bd626: movs r2, #0\n0xa03bd628: b #0xa03bd62c\n0xa03bd62a: movs r2, #1\n0xa03bd62c: adds r1, r0, #0\n0xa03bd62e: adds r0, r4, #0\n0xa03bd630: bl #0xa03bd564\n0xa03bd634: adds r1, r4, #0\n0xa03bd636: adds r2, r0, #0\n0xa03bd638: adds r2, #0x20\n0xa03bd63a: lsls r3, r1, #1\n0xa03bd63c: ldrsh r3, [r3, r2]\n0xa03bd63e: adds r3, #1\n0xa03bd640: bne #0xa03bd658\n0xa03bd642: cmp r5, #0\n0xa03bd644: beq #0xa03bd650\n0xa03bd646: lsls r3, r1, #1\n0xa03bd648: adds r0, r2, r3\n0xa03bd64a: movs r1, #2\n0xa03bd64c: ldrsh r4, [r0, r1]\n0xa03bd64e: b #0xa03bd65e\n0xa03bd650: subs r3, r2, #2\n0xa03bd652: lsls r1, r1, #1\n0xa03bd654: ldrsh r4, [r1, r3]\n0xa03bd656: b #0xa03bd65e\n0xa03bd658: adds r1, #1\n0xa03bd65a: cmp r1, #0xc\n0xa03bd65c: blt #0xa03bd636\n0xa03bd65e: movs r1, #0\n0xa03bd660: lsls r3, r1, #1\n0xa03bd662: ldrsh r5, [r3, r2]\n0xa03bd664: ldr r0, [pc, #0x104] [0xa03bd76c]=0x20da08e4\n0xa03bd666: cmp r5, r4\n0xa03bd668: bgt #0xa03bd684\n0xa03bd66a: adds r3, r5, #1\n0xa03bd66c: bne #0xa03bd67a\n0xa03bd66e: subs r3, r0, #2\n0xa03bd670: lsls r2, r1, #1\n0xa03bd672: adds r2, r2, r3\n0xa03bd674: movs r3, #0\n0xa03bd676: strh r3, [r2]\n0xa03bd678: b #0xa03bd684\n0xa03bd67a: lsls r3, r1, #1\n0xa03bd67c: strh r5, [r3, r0]\n0xa03bd67e: adds r1, #1\n0xa03bd680: cmp r1, #0xd\n0xa03bd682: blt #0xa03bd660\n0xa03bd684: lsls r3, r1, #1\n0xa03bd686: movs r1, #0\n0xa03bd688: strh r1, [r3, r0]\n0xa03bd68a: pop {r4, r5, pc}"
+        },
+        {
+          "address": "0xa03bd564",
+          "bytes": 56,
+          "disassembly": "0xa03bd564: push {r4, r5, lr}\n0xa03bd566: adds r4, r2, #0\n0xa03bd568: ldr r3, [pc, #0x1f8] [0xa03bd764]=0x2085841c\n0xa03bd56a: ldr r5, [r3]\n0xa03bd56c: adds r0, r1, #0\n0xa03bd56e: bl #0xa03bd470\n0xa03bd572: adds r2, r4, #0\n0xa03bd574: beq #0xa03bd580\n0xa03bd576: cmp r2, #6\n0xa03bd578: blo #0xa03bd582\n0xa03bd57a: cmp r2, #7\n0xa03bd57c: bhi #0xa03bd582\n0xa03bd57e: b #0xa03bd586\n0xa03bd580: b #0xa03bd588\n0xa03bd582: movs r4, #1\n0xa03bd584: b #0xa03bd588\n0xa03bd586: movs r4, #2\n0xa03bd588: lsls r1, r5, #2\n0xa03bd58a: subs r2, r1, r5\n0xa03bd58c: adds r1, r4, r2\n0xa03bd58e: movs r2, #0xc\n0xa03bd590: muls r2, r1, r2\n0xa03bd592: adds r0, r0, r2\n0xa03bd594: lsls r3, r0, #2\n0xa03bd596: ldr r0, [pc, #0x1c4] [0xa03bd75c]=0x20857d38\n0xa03bd598: ldr r0, [r3, r0]\n0xa03bd59a: pop {r4, r5, pc}"
+        },
+        {
+          "address": "0xa03bd470",
+          "bytes": 64,
+          "disassembly": "0xa03bd470: movs r1, #0x4b\n0xa03bd472: lsls r1, r1, #3\n0xa03bd474: cmp r0, r1\n0xa03bd476: beq #0xa03bd49c\n0xa03bd478: movs r1, #0x4b\n0xa03bd47a: lsls r1, r1, #4\n0xa03bd47c: cmp r0, r1\n0xa03bd47e: beq #0xa03bd4a0\n0xa03bd480: movs r1, #0x4b\n0xa03bd482: lsls r1, r1, #5\n0xa03bd484: cmp r0, r1\n0xa03bd486: beq #0xa03bd4a4\n0xa03bd488: movs r1, #0x4b\n0xa03bd48a: lsls r1, r1, #6\n0xa03bd48c: cmp r0, r1\n0xa03bd48e: beq #0xa03bd4a8\n0xa03bd490: movs r1, #0x4b\n0xa03bd492: lsls r1, r1, #7\n0xa03bd494: cmp r0, r1\n0xa03bd496: beq #0xa03bd4ac\n0xa03bd498: movs r0, #0\n0xa03bd49a: b #0xa03bd4ae\n0xa03bd49c: movs r0, #1\n0xa03bd49e: b #0xa03bd4ae\n0xa03bd4a0: movs r0, #2\n0xa03bd4a2: b #0xa03bd4ae\n0xa03bd4a4: movs r0, #3\n0xa03bd4a6: b #0xa03bd4ae\n0xa03bd4a8: movs r0, #4\n0xa03bd4aa: b #0xa03bd4ae\n0xa03bd4ac: movs r0, #5\n0xa03bd4ae: bx lr"
+        }
+      ],
+      "prerequisite": "Earlier CCD query in this plan must confirm TEMPO_TOS; otherwise stop before this invocation.",
+      "static_sensor_table_evidence": [
+        {
+          "table_index": 72,
+          "pointer": "0x208575b8",
+          "halfwords_at_offset32": [
+            150,
+            300,
+            450,
+            600,
+            900,
+            1200,
+            2400,
+            4800,
+            -1,
+            600,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "table_index": 84,
+          "pointer": "0x20857678",
+          "halfwords_at_offset32": [
+            75,
+            150,
+            300,
+            450,
+            600,
+            900,
+            1200,
+            2400,
+            4800,
+            -1,
+            600,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "name": "scan led LEDONTIMEINFO",
+      "command": "udws \"scan led LEDONTIMEINFO 300;\"",
+      "handler": "0xa03a9a9d",
+      "descriptor_address": "0xa05ffccc",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "300",
+      "purpose": "Read cached LED calibration/timing information at 300DPI.",
+      "control_flow_proof": "A03A9A9C parsesunsigned16resolution; pureA03A8230 maps chosen arguments toindex0..5. Top-level20D9DF38[index] is null-checked before dereferencing its configuration. All non-output helper calls after nullguard areA03A247E(constant1) and integer division with fixed511denominator. Reads selected configuration and cached current/on-time fields; no hardware/setter/allocation calls. Nullslots print only trailing newline.",
+      "hardware_access": false,
+      "timeout": 25,
+      "side_effects": "UART output and parser state. The scanner formatter can update its volatile output-throttle counter.",
+      "runtime_registered": true,
+      "prior_invocation_status": "not-invoked",
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation only; offline binary review, no serial access.",
+      "reviewed_ranges": [
+        {
+          "address": "0xa03a9a9c",
+          "bytes": 148,
+          "disassembly": "0xa03a9a9c: push {r4, r5, r6, r7, lr}\n0xa03a9a9e: sub sp, #0x18\n0xa03a9aa0: ldr r6, [pc, #0xbc] [0xa03a9b60]=0x20d9df38\n0xa03a9aa2: bl #0xa03bef9a\n0xa03a9aa6: adds r4, r0, #0\n0xa03a9aa8: bl #0xa03a8230\n0xa03a9aac: lsls r5, r0, #0x10\n0xa03a9aae: lsrs r5, r5, #0x10\n0xa03a9ab0: adds r7, r6, #0\n0xa03a9ab2: lsls r3, r5, #2\n0xa03a9ab4: ldr r0, [r3, r7]\n0xa03a9ab6: cmp r0, #0\n0xa03a9ab8: bne #0xa03a9abc\n0xa03a9aba: b #0xa03a9ce4\n0xa03a9abc: adds r1, r4, #0\n0xa03a9abe: adr r0, #0xa4 '%d resolution:\\n'\n0xa03a9ac0: bl #0xa03bef18\n0xa03a9ac4: lsls r3, r5, #2\n0xa03a9ac6: ldr r0, [r3, r7]\n0xa03a9ac8: ldr r3, [r0, #4]\n0xa03a9aca: ldr r0, [r3, #0x74]\n0xa03a9acc: ldrh r3, [r0, #4]\n0xa03a9ace: ldrh r2, [r0, #2]\n0xa03a9ad0: ldrh r1, [r0]\n0xa03a9ad2: adr r0, #0xa0 'led ontimes: (%d, %d, %d)\\n'\n0xa03a9ad4: bl #0xa03bef18\n0xa03a9ad8: lsls r3, r5, #2\n0xa03a9ada: ldr r0, [r3, r7]\n0xa03a9adc: ldr r3, [r0, #4]\n0xa03a9ade: ldr r1, [r3, #0x74]\n0xa03a9ae0: ldrh r0, [r1, #0xe]\n0xa03a9ae2: lsls r3, r0, #0x1d\n0xa03a9ae4: lsrs r3, r3, #0x1f\n0xa03a9ae6: lsls r2, r0, #0x1e\n0xa03a9ae8: lsrs r2, r2, #0x1f\n0xa03a9aea: lsls r1, r0, #0x1f\n0xa03a9aec: lsrs r1, r1, #0x1f\n0xa03a9aee: adr r0, #0xa0 'channels pwmed: (%d, %d, %d)\\n'\n0xa03a9af0: bl #0xa03bef18\n0xa03a9af4: ldr r1, [pc, #0xb8] [0xa03a9bb0]=0x20d9dec8\n0xa03a9af6: movs r0, #0xe\n0xa03a9af8: muls r0, r5, r0\n0xa03a9afa: adds r2, r0, r1\n0xa03a9afc: ldrh r3, [r2, #4]\n0xa03a9afe: ldrh r2, [r2, #2]\n0xa03a9b00: ldrh r1, [r1, r0]\n0xa03a9b02: adr r0, #0xb0 'level achieved: (%d, %d, %d)\\n'\n0xa03a9b04: bl #0xa03bef18\n0xa03a9b08: adds r3, r6, #0\n0xa03a9b0a: adds r3, #0x40\n0xa03a9b0c: ldrb r2, [r3, r5]\n0xa03a9b0e: lsls r0, r5, #2\n0xa03a9b10: ldr r0, [r0, r7]\n0xa03a9b12: ldr r0, [r0, #4]\n0xa03a9b14: ldr r0, [r0, #0x74]\n0xa03a9b16: ldrh r1, [r0, #0x16]\n0xa03a9b18: adr r0, #0xb8 'nominal gain: (%d) currentlevel: (%d)\\n'\n0xa03a9b1a: bl #0xa03bef18\n0xa03a9b1e: adds r6, #0x18\n0xa03a9b20: movs r0, #6\n0xa03a9b22: muls r0, r5, r0\n0xa03a9b24: adds r2, r0, r6\n0xa03a9b26: ldrh r3, [r2, #4]\n0xa03a9b28: ldrh r2, [r2, #2]\n0xa03a9b2a: ldrh r1, [r6, r0]\n0xa03a9b2c: adr r0, #0xcc 'max ontimes: (%d, %d, %d)\\n'\n0xa03a9b2e: b #0xa03a9c18"
+        },
+        {
+          "address": "0xa03a9c18",
+          "bytes": 214,
+          "disassembly": "0xa03a9c18: bl #0xa03bef18\n0xa03a9c1c: lsls r3, r5, #2\n0xa03a9c1e: ldr r0, [r3, r7]\n0xa03a9c20: ldr r3, [r0, #4]\n0xa03a9c22: ldr r0, [r3, #0x74]\n0xa03a9c24: movs r3, #0x14\n0xa03a9c26: ldrsh r2, [r0, r3]\n0xa03a9c28: ldrh r1, [r0, #0x12]\n0xa03a9c2a: adr r0, #0x1e4 'afe gain, offset: (%d, %d)'\n0xa03a9c2c: bl #0xa03bef18\n0xa03a9c30: ldr r6, [pc, #0x1f8] [0xa03a9e2c]=0x1ff\n0xa03a9c32: str r6, [sp, #0xc]\n0xa03a9c34: bl #0xa03a247e\n0xa03a9c38: cmp r0, #0\n0xa03a9c3a: bne #0xa03a9c40\n0xa03a9c3c: movs r1, #0xff\n0xa03a9c3e: str r1, [sp, #0xc]\n0xa03a9c40: str r6, [sp]\n0xa03a9c42: bl #0xa03a247e\n0xa03a9c46: cmp r0, #0\n0xa03a9c48: bne #0xa03a9c4e\n0xa03a9c4a: movs r1, #0xff\n0xa03a9c4c: str r1, [sp]\n0xa03a9c4e: str r6, [sp, #4]\n0xa03a9c50: bl #0xa03a247e\n0xa03a9c54: cmp r0, #0\n0xa03a9c56: bne #0xa03a9c5c\n0xa03a9c58: movs r1, #0xff\n0xa03a9c5a: str r1, [sp, #4]\n0xa03a9c5c: str r6, [sp, #8]\n0xa03a9c5e: bl #0xa03a247e\n0xa03a9c62: cmp r0, #0\n0xa03a9c64: bne #0xa03a9c6a\n0xa03a9c66: movs r1, #0xff\n0xa03a9c68: str r1, [sp, #8]\n0xa03a9c6a: str r6, [sp, #0x10]\n0xa03a9c6c: bl #0xa03a247e\n0xa03a9c70: cmp r0, #0\n0xa03a9c72: bne #0xa03a9c78\n0xa03a9c74: movs r1, #0xff\n0xa03a9c76: str r1, [sp, #0x10]\n0xa03a9c78: str r6, [sp, #0x14]\n0xa03a9c7a: bl #0xa03a247e\n0xa03a9c7e: cmp r0, #0\n0xa03a9c80: bne #0xa03a9c86\n0xa03a9c82: movs r1, #0xff\n0xa03a9c84: str r1, [sp, #0x14]\n0xa03a9c86: lsls r3, r5, #2\n0xa03a9c88: ldr r0, [r3, r7]\n0xa03a9c8a: ldr r3, [r0, #4]\n0xa03a9c8c: ldr r4, [r3, #0x74]\n0xa03a9c8e: adds r0, r6, #0\n0xa03a9c90: adds r0, #0x38\n0xa03a9c92: ldrh r1, [r4, #0x18]\n0xa03a9c94: muls r1, r0, r1\n0xa03a9c96: ldr r0, [sp, #0xc]\n0xa03a9c98: lsrs r2, r0, #0x1f\n0xa03a9c9a: adds r0, r2, r0\n0xa03a9c9c: asrs r0, r0, #1\n0xa03a9c9e: adds r1, r0, r1\n0xa03a9ca0: ldr r0, [sp]\n0xa03a9ca2: blx #0xa001944c\n0xa03a9ca6: adds r5, r0, #0\n0xa03a9ca8: adds r0, r6, #0\n0xa03a9caa: adds r0, #0x38\n0xa03a9cac: ldrh r1, [r4, #0x1a]\n0xa03a9cae: muls r1, r0, r1\n0xa03a9cb0: ldr r0, [sp, #4]\n0xa03a9cb2: lsrs r2, r0, #0x1f\n0xa03a9cb4: adds r0, r2, r0\n0xa03a9cb6: asrs r0, r0, #1\n0xa03a9cb8: adds r1, r0, r1\n0xa03a9cba: ldr r0, [sp, #8]\n0xa03a9cbc: blx #0xa001944c\n0xa03a9cc0: adds r7, r0, #0\n0xa03a9cc2: adds r6, #0x38\n0xa03a9cc4: ldrh r0, [r4, #0x1c]\n0xa03a9cc6: muls r6, r0, r6\n0xa03a9cc8: ldr r0, [sp, #0x10]\n0xa03a9cca: lsrs r2, r0, #0x1f\n0xa03a9ccc: adds r0, r2, r0\n0xa03a9cce: asrs r0, r0, #1\n0xa03a9cd0: adds r1, r0, r6\n0xa03a9cd2: ldr r0, [sp, #0x14]\n0xa03a9cd4: blx #0xa001944c\n0xa03a9cd8: adds r3, r0, #0\n0xa03a9cda: adds r2, r7, #0\n0xa03a9cdc: adds r1, r5, #0\n0xa03a9cde: adr r0, #0x150 '\\nled_currents: (%d, %d, %d)\\n'\n0xa03a9ce0: bl #0xa03bef18\n0xa03a9ce4: adr r0, #0x168 '\\n'\n0xa03a9ce6: bl #0xa03bef18\n0xa03a9cea: add sp, #0x18\n0xa03a9cec: pop {r4, r5, r6, r7, pc}"
+        },
+        {
+          "address": "0xa03a8230",
+          "bytes": 76,
+          "disassembly": "0xa03a8230: adds r1, r0, #0\n0xa03a8232: movs r0, #0\n0xa03a8234: movs r2, #0xff\n0xa03a8236: adds r2, #0x2d\n0xa03a8238: cmp r1, r2\n0xa03a823a: beq #0xa03a8266\n0xa03a823c: movs r2, #0x4b\n0xa03a823e: lsls r2, r2, #3\n0xa03a8240: cmp r1, r2\n0xa03a8242: beq #0xa03a8268\n0xa03a8244: movs r2, #0x4b\n0xa03a8246: lsls r2, r2, #4\n0xa03a8248: cmp r1, r2\n0xa03a824a: beq #0xa03a826c\n0xa03a824c: movs r2, #0x4b\n0xa03a824e: lsls r2, r2, #5\n0xa03a8250: cmp r1, r2\n0xa03a8252: beq #0xa03a8270\n0xa03a8254: movs r2, #0x4b\n0xa03a8256: lsls r2, r2, #6\n0xa03a8258: cmp r1, r2\n0xa03a825a: beq #0xa03a8274\n0xa03a825c: movs r2, #0x4b\n0xa03a825e: lsls r2, r2, #7\n0xa03a8260: cmp r1, r2\n0xa03a8262: bne #0xa03a827a\n0xa03a8264: b #0xa03a8278\n0xa03a8266: b #0xa03a827a\n0xa03a8268: movs r0, #1\n0xa03a826a: b #0xa03a827a\n0xa03a826c: movs r0, #2\n0xa03a826e: b #0xa03a827a\n0xa03a8270: movs r0, #3\n0xa03a8272: b #0xa03a827a\n0xa03a8274: movs r0, #4\n0xa03a8276: b #0xa03a827a\n0xa03a8278: movs r0, #5\n0xa03a827a: bx lr"
+        },
+        {
+          "address": "0xa03a247e",
+          "bytes": 4,
+          "disassembly": "0xa03a247e: movs r0, #1\n0xa03a2480: bx lr"
+        }
+      ],
+      "response_limit_note": "Null resolution slots are expected to have empty payload; that establishes no calibration record at this resolution, not a calibrated zero value."
+    },
+    {
+      "name": "scan led LEDONTIMEINFO",
+      "command": "udws \"scan led LEDONTIMEINFO 600;\"",
+      "handler": "0xa03a9a9d",
+      "descriptor_address": "0xa05ffccc",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "600",
+      "purpose": "Read cached LED calibration/timing information at 600DPI.",
+      "control_flow_proof": "A03A9A9C parsesunsigned16resolution; pureA03A8230 maps chosen arguments toindex0..5. Top-level20D9DF38[index] is null-checked before dereferencing its configuration. All non-output helper calls after nullguard areA03A247E(constant1) and integer division with fixed511denominator. Reads selected configuration and cached current/on-time fields; no hardware/setter/allocation calls. Nullslots print only trailing newline.",
+      "hardware_access": false,
+      "timeout": 25,
+      "side_effects": "UART output and parser state. The scanner formatter can update its volatile output-throttle counter.",
+      "runtime_registered": true,
+      "prior_invocation_status": "not-invoked",
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation only; offline binary review, no serial access.",
+      "reviewed_ranges": [
+        {
+          "address": "0xa03a9a9c",
+          "bytes": 148,
+          "disassembly": "0xa03a9a9c: push {r4, r5, r6, r7, lr}\n0xa03a9a9e: sub sp, #0x18\n0xa03a9aa0: ldr r6, [pc, #0xbc] [0xa03a9b60]=0x20d9df38\n0xa03a9aa2: bl #0xa03bef9a\n0xa03a9aa6: adds r4, r0, #0\n0xa03a9aa8: bl #0xa03a8230\n0xa03a9aac: lsls r5, r0, #0x10\n0xa03a9aae: lsrs r5, r5, #0x10\n0xa03a9ab0: adds r7, r6, #0\n0xa03a9ab2: lsls r3, r5, #2\n0xa03a9ab4: ldr r0, [r3, r7]\n0xa03a9ab6: cmp r0, #0\n0xa03a9ab8: bne #0xa03a9abc\n0xa03a9aba: b #0xa03a9ce4\n0xa03a9abc: adds r1, r4, #0\n0xa03a9abe: adr r0, #0xa4 '%d resolution:\\n'\n0xa03a9ac0: bl #0xa03bef18\n0xa03a9ac4: lsls r3, r5, #2\n0xa03a9ac6: ldr r0, [r3, r7]\n0xa03a9ac8: ldr r3, [r0, #4]\n0xa03a9aca: ldr r0, [r3, #0x74]\n0xa03a9acc: ldrh r3, [r0, #4]\n0xa03a9ace: ldrh r2, [r0, #2]\n0xa03a9ad0: ldrh r1, [r0]\n0xa03a9ad2: adr r0, #0xa0 'led ontimes: (%d, %d, %d)\\n'\n0xa03a9ad4: bl #0xa03bef18\n0xa03a9ad8: lsls r3, r5, #2\n0xa03a9ada: ldr r0, [r3, r7]\n0xa03a9adc: ldr r3, [r0, #4]\n0xa03a9ade: ldr r1, [r3, #0x74]\n0xa03a9ae0: ldrh r0, [r1, #0xe]\n0xa03a9ae2: lsls r3, r0, #0x1d\n0xa03a9ae4: lsrs r3, r3, #0x1f\n0xa03a9ae6: lsls r2, r0, #0x1e\n0xa03a9ae8: lsrs r2, r2, #0x1f\n0xa03a9aea: lsls r1, r0, #0x1f\n0xa03a9aec: lsrs r1, r1, #0x1f\n0xa03a9aee: adr r0, #0xa0 'channels pwmed: (%d, %d, %d)\\n'\n0xa03a9af0: bl #0xa03bef18\n0xa03a9af4: ldr r1, [pc, #0xb8] [0xa03a9bb0]=0x20d9dec8\n0xa03a9af6: movs r0, #0xe\n0xa03a9af8: muls r0, r5, r0\n0xa03a9afa: adds r2, r0, r1\n0xa03a9afc: ldrh r3, [r2, #4]\n0xa03a9afe: ldrh r2, [r2, #2]\n0xa03a9b00: ldrh r1, [r1, r0]\n0xa03a9b02: adr r0, #0xb0 'level achieved: (%d, %d, %d)\\n'\n0xa03a9b04: bl #0xa03bef18\n0xa03a9b08: adds r3, r6, #0\n0xa03a9b0a: adds r3, #0x40\n0xa03a9b0c: ldrb r2, [r3, r5]\n0xa03a9b0e: lsls r0, r5, #2\n0xa03a9b10: ldr r0, [r0, r7]\n0xa03a9b12: ldr r0, [r0, #4]\n0xa03a9b14: ldr r0, [r0, #0x74]\n0xa03a9b16: ldrh r1, [r0, #0x16]\n0xa03a9b18: adr r0, #0xb8 'nominal gain: (%d) currentlevel: (%d)\\n'\n0xa03a9b1a: bl #0xa03bef18\n0xa03a9b1e: adds r6, #0x18\n0xa03a9b20: movs r0, #6\n0xa03a9b22: muls r0, r5, r0\n0xa03a9b24: adds r2, r0, r6\n0xa03a9b26: ldrh r3, [r2, #4]\n0xa03a9b28: ldrh r2, [r2, #2]\n0xa03a9b2a: ldrh r1, [r6, r0]\n0xa03a9b2c: adr r0, #0xcc 'max ontimes: (%d, %d, %d)\\n'\n0xa03a9b2e: b #0xa03a9c18"
+        },
+        {
+          "address": "0xa03a9c18",
+          "bytes": 214,
+          "disassembly": "0xa03a9c18: bl #0xa03bef18\n0xa03a9c1c: lsls r3, r5, #2\n0xa03a9c1e: ldr r0, [r3, r7]\n0xa03a9c20: ldr r3, [r0, #4]\n0xa03a9c22: ldr r0, [r3, #0x74]\n0xa03a9c24: movs r3, #0x14\n0xa03a9c26: ldrsh r2, [r0, r3]\n0xa03a9c28: ldrh r1, [r0, #0x12]\n0xa03a9c2a: adr r0, #0x1e4 'afe gain, offset: (%d, %d)'\n0xa03a9c2c: bl #0xa03bef18\n0xa03a9c30: ldr r6, [pc, #0x1f8] [0xa03a9e2c]=0x1ff\n0xa03a9c32: str r6, [sp, #0xc]\n0xa03a9c34: bl #0xa03a247e\n0xa03a9c38: cmp r0, #0\n0xa03a9c3a: bne #0xa03a9c40\n0xa03a9c3c: movs r1, #0xff\n0xa03a9c3e: str r1, [sp, #0xc]\n0xa03a9c40: str r6, [sp]\n0xa03a9c42: bl #0xa03a247e\n0xa03a9c46: cmp r0, #0\n0xa03a9c48: bne #0xa03a9c4e\n0xa03a9c4a: movs r1, #0xff\n0xa03a9c4c: str r1, [sp]\n0xa03a9c4e: str r6, [sp, #4]\n0xa03a9c50: bl #0xa03a247e\n0xa03a9c54: cmp r0, #0\n0xa03a9c56: bne #0xa03a9c5c\n0xa03a9c58: movs r1, #0xff\n0xa03a9c5a: str r1, [sp, #4]\n0xa03a9c5c: str r6, [sp, #8]\n0xa03a9c5e: bl #0xa03a247e\n0xa03a9c62: cmp r0, #0\n0xa03a9c64: bne #0xa03a9c6a\n0xa03a9c66: movs r1, #0xff\n0xa03a9c68: str r1, [sp, #8]\n0xa03a9c6a: str r6, [sp, #0x10]\n0xa03a9c6c: bl #0xa03a247e\n0xa03a9c70: cmp r0, #0\n0xa03a9c72: bne #0xa03a9c78\n0xa03a9c74: movs r1, #0xff\n0xa03a9c76: str r1, [sp, #0x10]\n0xa03a9c78: str r6, [sp, #0x14]\n0xa03a9c7a: bl #0xa03a247e\n0xa03a9c7e: cmp r0, #0\n0xa03a9c80: bne #0xa03a9c86\n0xa03a9c82: movs r1, #0xff\n0xa03a9c84: str r1, [sp, #0x14]\n0xa03a9c86: lsls r3, r5, #2\n0xa03a9c88: ldr r0, [r3, r7]\n0xa03a9c8a: ldr r3, [r0, #4]\n0xa03a9c8c: ldr r4, [r3, #0x74]\n0xa03a9c8e: adds r0, r6, #0\n0xa03a9c90: adds r0, #0x38\n0xa03a9c92: ldrh r1, [r4, #0x18]\n0xa03a9c94: muls r1, r0, r1\n0xa03a9c96: ldr r0, [sp, #0xc]\n0xa03a9c98: lsrs r2, r0, #0x1f\n0xa03a9c9a: adds r0, r2, r0\n0xa03a9c9c: asrs r0, r0, #1\n0xa03a9c9e: adds r1, r0, r1\n0xa03a9ca0: ldr r0, [sp]\n0xa03a9ca2: blx #0xa001944c\n0xa03a9ca6: adds r5, r0, #0\n0xa03a9ca8: adds r0, r6, #0\n0xa03a9caa: adds r0, #0x38\n0xa03a9cac: ldrh r1, [r4, #0x1a]\n0xa03a9cae: muls r1, r0, r1\n0xa03a9cb0: ldr r0, [sp, #4]\n0xa03a9cb2: lsrs r2, r0, #0x1f\n0xa03a9cb4: adds r0, r2, r0\n0xa03a9cb6: asrs r0, r0, #1\n0xa03a9cb8: adds r1, r0, r1\n0xa03a9cba: ldr r0, [sp, #8]\n0xa03a9cbc: blx #0xa001944c\n0xa03a9cc0: adds r7, r0, #0\n0xa03a9cc2: adds r6, #0x38\n0xa03a9cc4: ldrh r0, [r4, #0x1c]\n0xa03a9cc6: muls r6, r0, r6\n0xa03a9cc8: ldr r0, [sp, #0x10]\n0xa03a9cca: lsrs r2, r0, #0x1f\n0xa03a9ccc: adds r0, r2, r0\n0xa03a9cce: asrs r0, r0, #1\n0xa03a9cd0: adds r1, r0, r6\n0xa03a9cd2: ldr r0, [sp, #0x14]\n0xa03a9cd4: blx #0xa001944c\n0xa03a9cd8: adds r3, r0, #0\n0xa03a9cda: adds r2, r7, #0\n0xa03a9cdc: adds r1, r5, #0\n0xa03a9cde: adr r0, #0x150 '\\nled_currents: (%d, %d, %d)\\n'\n0xa03a9ce0: bl #0xa03bef18\n0xa03a9ce4: adr r0, #0x168 '\\n'\n0xa03a9ce6: bl #0xa03bef18\n0xa03a9cea: add sp, #0x18\n0xa03a9cec: pop {r4, r5, r6, r7, pc}"
+        },
+        {
+          "address": "0xa03a8230",
+          "bytes": 76,
+          "disassembly": "0xa03a8230: adds r1, r0, #0\n0xa03a8232: movs r0, #0\n0xa03a8234: movs r2, #0xff\n0xa03a8236: adds r2, #0x2d\n0xa03a8238: cmp r1, r2\n0xa03a823a: beq #0xa03a8266\n0xa03a823c: movs r2, #0x4b\n0xa03a823e: lsls r2, r2, #3\n0xa03a8240: cmp r1, r2\n0xa03a8242: beq #0xa03a8268\n0xa03a8244: movs r2, #0x4b\n0xa03a8246: lsls r2, r2, #4\n0xa03a8248: cmp r1, r2\n0xa03a824a: beq #0xa03a826c\n0xa03a824c: movs r2, #0x4b\n0xa03a824e: lsls r2, r2, #5\n0xa03a8250: cmp r1, r2\n0xa03a8252: beq #0xa03a8270\n0xa03a8254: movs r2, #0x4b\n0xa03a8256: lsls r2, r2, #6\n0xa03a8258: cmp r1, r2\n0xa03a825a: beq #0xa03a8274\n0xa03a825c: movs r2, #0x4b\n0xa03a825e: lsls r2, r2, #7\n0xa03a8260: cmp r1, r2\n0xa03a8262: bne #0xa03a827a\n0xa03a8264: b #0xa03a8278\n0xa03a8266: b #0xa03a827a\n0xa03a8268: movs r0, #1\n0xa03a826a: b #0xa03a827a\n0xa03a826c: movs r0, #2\n0xa03a826e: b #0xa03a827a\n0xa03a8270: movs r0, #3\n0xa03a8272: b #0xa03a827a\n0xa03a8274: movs r0, #4\n0xa03a8276: b #0xa03a827a\n0xa03a8278: movs r0, #5\n0xa03a827a: bx lr"
+        },
+        {
+          "address": "0xa03a247e",
+          "bytes": 4,
+          "disassembly": "0xa03a247e: movs r0, #1\n0xa03a2480: bx lr"
+        }
+      ],
+      "response_limit_note": "Null resolution slots are expected to have empty payload; that establishes no calibration record at this resolution, not a calibrated zero value."
+    },
+    {
+      "name": "scan led LEDONTIMEINFO",
+      "command": "udws \"scan led LEDONTIMEINFO 1200;\"",
+      "handler": "0xa03a9a9d",
+      "descriptor_address": "0xa05ffccc",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "1200",
+      "purpose": "Read cached LED calibration/timing information at 1200DPI.",
+      "control_flow_proof": "A03A9A9C parsesunsigned16resolution; pureA03A8230 maps chosen arguments toindex0..5. Top-level20D9DF38[index] is null-checked before dereferencing its configuration. All non-output helper calls after nullguard areA03A247E(constant1) and integer division with fixed511denominator. Reads selected configuration and cached current/on-time fields; no hardware/setter/allocation calls. Nullslots print only trailing newline.",
+      "hardware_access": false,
+      "timeout": 25,
+      "side_effects": "UART output and parser state. The scanner formatter can update its volatile output-throttle counter.",
+      "runtime_registered": true,
+      "prior_invocation_status": "not-invoked",
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation only; offline binary review, no serial access.",
+      "reviewed_ranges": [
+        {
+          "address": "0xa03a9a9c",
+          "bytes": 148,
+          "disassembly": "0xa03a9a9c: push {r4, r5, r6, r7, lr}\n0xa03a9a9e: sub sp, #0x18\n0xa03a9aa0: ldr r6, [pc, #0xbc] [0xa03a9b60]=0x20d9df38\n0xa03a9aa2: bl #0xa03bef9a\n0xa03a9aa6: adds r4, r0, #0\n0xa03a9aa8: bl #0xa03a8230\n0xa03a9aac: lsls r5, r0, #0x10\n0xa03a9aae: lsrs r5, r5, #0x10\n0xa03a9ab0: adds r7, r6, #0\n0xa03a9ab2: lsls r3, r5, #2\n0xa03a9ab4: ldr r0, [r3, r7]\n0xa03a9ab6: cmp r0, #0\n0xa03a9ab8: bne #0xa03a9abc\n0xa03a9aba: b #0xa03a9ce4\n0xa03a9abc: adds r1, r4, #0\n0xa03a9abe: adr r0, #0xa4 '%d resolution:\\n'\n0xa03a9ac0: bl #0xa03bef18\n0xa03a9ac4: lsls r3, r5, #2\n0xa03a9ac6: ldr r0, [r3, r7]\n0xa03a9ac8: ldr r3, [r0, #4]\n0xa03a9aca: ldr r0, [r3, #0x74]\n0xa03a9acc: ldrh r3, [r0, #4]\n0xa03a9ace: ldrh r2, [r0, #2]\n0xa03a9ad0: ldrh r1, [r0]\n0xa03a9ad2: adr r0, #0xa0 'led ontimes: (%d, %d, %d)\\n'\n0xa03a9ad4: bl #0xa03bef18\n0xa03a9ad8: lsls r3, r5, #2\n0xa03a9ada: ldr r0, [r3, r7]\n0xa03a9adc: ldr r3, [r0, #4]\n0xa03a9ade: ldr r1, [r3, #0x74]\n0xa03a9ae0: ldrh r0, [r1, #0xe]\n0xa03a9ae2: lsls r3, r0, #0x1d\n0xa03a9ae4: lsrs r3, r3, #0x1f\n0xa03a9ae6: lsls r2, r0, #0x1e\n0xa03a9ae8: lsrs r2, r2, #0x1f\n0xa03a9aea: lsls r1, r0, #0x1f\n0xa03a9aec: lsrs r1, r1, #0x1f\n0xa03a9aee: adr r0, #0xa0 'channels pwmed: (%d, %d, %d)\\n'\n0xa03a9af0: bl #0xa03bef18\n0xa03a9af4: ldr r1, [pc, #0xb8] [0xa03a9bb0]=0x20d9dec8\n0xa03a9af6: movs r0, #0xe\n0xa03a9af8: muls r0, r5, r0\n0xa03a9afa: adds r2, r0, r1\n0xa03a9afc: ldrh r3, [r2, #4]\n0xa03a9afe: ldrh r2, [r2, #2]\n0xa03a9b00: ldrh r1, [r1, r0]\n0xa03a9b02: adr r0, #0xb0 'level achieved: (%d, %d, %d)\\n'\n0xa03a9b04: bl #0xa03bef18\n0xa03a9b08: adds r3, r6, #0\n0xa03a9b0a: adds r3, #0x40\n0xa03a9b0c: ldrb r2, [r3, r5]\n0xa03a9b0e: lsls r0, r5, #2\n0xa03a9b10: ldr r0, [r0, r7]\n0xa03a9b12: ldr r0, [r0, #4]\n0xa03a9b14: ldr r0, [r0, #0x74]\n0xa03a9b16: ldrh r1, [r0, #0x16]\n0xa03a9b18: adr r0, #0xb8 'nominal gain: (%d) currentlevel: (%d)\\n'\n0xa03a9b1a: bl #0xa03bef18\n0xa03a9b1e: adds r6, #0x18\n0xa03a9b20: movs r0, #6\n0xa03a9b22: muls r0, r5, r0\n0xa03a9b24: adds r2, r0, r6\n0xa03a9b26: ldrh r3, [r2, #4]\n0xa03a9b28: ldrh r2, [r2, #2]\n0xa03a9b2a: ldrh r1, [r6, r0]\n0xa03a9b2c: adr r0, #0xcc 'max ontimes: (%d, %d, %d)\\n'\n0xa03a9b2e: b #0xa03a9c18"
+        },
+        {
+          "address": "0xa03a9c18",
+          "bytes": 214,
+          "disassembly": "0xa03a9c18: bl #0xa03bef18\n0xa03a9c1c: lsls r3, r5, #2\n0xa03a9c1e: ldr r0, [r3, r7]\n0xa03a9c20: ldr r3, [r0, #4]\n0xa03a9c22: ldr r0, [r3, #0x74]\n0xa03a9c24: movs r3, #0x14\n0xa03a9c26: ldrsh r2, [r0, r3]\n0xa03a9c28: ldrh r1, [r0, #0x12]\n0xa03a9c2a: adr r0, #0x1e4 'afe gain, offset: (%d, %d)'\n0xa03a9c2c: bl #0xa03bef18\n0xa03a9c30: ldr r6, [pc, #0x1f8] [0xa03a9e2c]=0x1ff\n0xa03a9c32: str r6, [sp, #0xc]\n0xa03a9c34: bl #0xa03a247e\n0xa03a9c38: cmp r0, #0\n0xa03a9c3a: bne #0xa03a9c40\n0xa03a9c3c: movs r1, #0xff\n0xa03a9c3e: str r1, [sp, #0xc]\n0xa03a9c40: str r6, [sp]\n0xa03a9c42: bl #0xa03a247e\n0xa03a9c46: cmp r0, #0\n0xa03a9c48: bne #0xa03a9c4e\n0xa03a9c4a: movs r1, #0xff\n0xa03a9c4c: str r1, [sp]\n0xa03a9c4e: str r6, [sp, #4]\n0xa03a9c50: bl #0xa03a247e\n0xa03a9c54: cmp r0, #0\n0xa03a9c56: bne #0xa03a9c5c\n0xa03a9c58: movs r1, #0xff\n0xa03a9c5a: str r1, [sp, #4]\n0xa03a9c5c: str r6, [sp, #8]\n0xa03a9c5e: bl #0xa03a247e\n0xa03a9c62: cmp r0, #0\n0xa03a9c64: bne #0xa03a9c6a\n0xa03a9c66: movs r1, #0xff\n0xa03a9c68: str r1, [sp, #8]\n0xa03a9c6a: str r6, [sp, #0x10]\n0xa03a9c6c: bl #0xa03a247e\n0xa03a9c70: cmp r0, #0\n0xa03a9c72: bne #0xa03a9c78\n0xa03a9c74: movs r1, #0xff\n0xa03a9c76: str r1, [sp, #0x10]\n0xa03a9c78: str r6, [sp, #0x14]\n0xa03a9c7a: bl #0xa03a247e\n0xa03a9c7e: cmp r0, #0\n0xa03a9c80: bne #0xa03a9c86\n0xa03a9c82: movs r1, #0xff\n0xa03a9c84: str r1, [sp, #0x14]\n0xa03a9c86: lsls r3, r5, #2\n0xa03a9c88: ldr r0, [r3, r7]\n0xa03a9c8a: ldr r3, [r0, #4]\n0xa03a9c8c: ldr r4, [r3, #0x74]\n0xa03a9c8e: adds r0, r6, #0\n0xa03a9c90: adds r0, #0x38\n0xa03a9c92: ldrh r1, [r4, #0x18]\n0xa03a9c94: muls r1, r0, r1\n0xa03a9c96: ldr r0, [sp, #0xc]\n0xa03a9c98: lsrs r2, r0, #0x1f\n0xa03a9c9a: adds r0, r2, r0\n0xa03a9c9c: asrs r0, r0, #1\n0xa03a9c9e: adds r1, r0, r1\n0xa03a9ca0: ldr r0, [sp]\n0xa03a9ca2: blx #0xa001944c\n0xa03a9ca6: adds r5, r0, #0\n0xa03a9ca8: adds r0, r6, #0\n0xa03a9caa: adds r0, #0x38\n0xa03a9cac: ldrh r1, [r4, #0x1a]\n0xa03a9cae: muls r1, r0, r1\n0xa03a9cb0: ldr r0, [sp, #4]\n0xa03a9cb2: lsrs r2, r0, #0x1f\n0xa03a9cb4: adds r0, r2, r0\n0xa03a9cb6: asrs r0, r0, #1\n0xa03a9cb8: adds r1, r0, r1\n0xa03a9cba: ldr r0, [sp, #8]\n0xa03a9cbc: blx #0xa001944c\n0xa03a9cc0: adds r7, r0, #0\n0xa03a9cc2: adds r6, #0x38\n0xa03a9cc4: ldrh r0, [r4, #0x1c]\n0xa03a9cc6: muls r6, r0, r6\n0xa03a9cc8: ldr r0, [sp, #0x10]\n0xa03a9cca: lsrs r2, r0, #0x1f\n0xa03a9ccc: adds r0, r2, r0\n0xa03a9cce: asrs r0, r0, #1\n0xa03a9cd0: adds r1, r0, r6\n0xa03a9cd2: ldr r0, [sp, #0x14]\n0xa03a9cd4: blx #0xa001944c\n0xa03a9cd8: adds r3, r0, #0\n0xa03a9cda: adds r2, r7, #0\n0xa03a9cdc: adds r1, r5, #0\n0xa03a9cde: adr r0, #0x150 '\\nled_currents: (%d, %d, %d)\\n'\n0xa03a9ce0: bl #0xa03bef18\n0xa03a9ce4: adr r0, #0x168 '\\n'\n0xa03a9ce6: bl #0xa03bef18\n0xa03a9cea: add sp, #0x18\n0xa03a9cec: pop {r4, r5, r6, r7, pc}"
+        },
+        {
+          "address": "0xa03a8230",
+          "bytes": 76,
+          "disassembly": "0xa03a8230: adds r1, r0, #0\n0xa03a8232: movs r0, #0\n0xa03a8234: movs r2, #0xff\n0xa03a8236: adds r2, #0x2d\n0xa03a8238: cmp r1, r2\n0xa03a823a: beq #0xa03a8266\n0xa03a823c: movs r2, #0x4b\n0xa03a823e: lsls r2, r2, #3\n0xa03a8240: cmp r1, r2\n0xa03a8242: beq #0xa03a8268\n0xa03a8244: movs r2, #0x4b\n0xa03a8246: lsls r2, r2, #4\n0xa03a8248: cmp r1, r2\n0xa03a824a: beq #0xa03a826c\n0xa03a824c: movs r2, #0x4b\n0xa03a824e: lsls r2, r2, #5\n0xa03a8250: cmp r1, r2\n0xa03a8252: beq #0xa03a8270\n0xa03a8254: movs r2, #0x4b\n0xa03a8256: lsls r2, r2, #6\n0xa03a8258: cmp r1, r2\n0xa03a825a: beq #0xa03a8274\n0xa03a825c: movs r2, #0x4b\n0xa03a825e: lsls r2, r2, #7\n0xa03a8260: cmp r1, r2\n0xa03a8262: bne #0xa03a827a\n0xa03a8264: b #0xa03a8278\n0xa03a8266: b #0xa03a827a\n0xa03a8268: movs r0, #1\n0xa03a826a: b #0xa03a827a\n0xa03a826c: movs r0, #2\n0xa03a826e: b #0xa03a827a\n0xa03a8270: movs r0, #3\n0xa03a8272: b #0xa03a827a\n0xa03a8274: movs r0, #4\n0xa03a8276: b #0xa03a827a\n0xa03a8278: movs r0, #5\n0xa03a827a: bx lr"
+        },
+        {
+          "address": "0xa03a247e",
+          "bytes": 4,
+          "disassembly": "0xa03a247e: movs r0, #1\n0xa03a2480: bx lr"
+        }
+      ],
+      "response_limit_note": "Null resolution slots are expected to have empty payload; that establishes no calibration record at this resolution, not a calibrated zero value."
+    },
+    {
+      "name": "scan led LEDONTIMEINFO",
+      "command": "udws \"scan led LEDONTIMEINFO 2400;\"",
+      "handler": "0xa03a9a9d",
+      "descriptor_address": "0xa05ffccc",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "2400",
+      "purpose": "Read cached LED calibration/timing information at 2400DPI.",
+      "control_flow_proof": "A03A9A9C parsesunsigned16resolution; pureA03A8230 maps chosen arguments toindex0..5. Top-level20D9DF38[index] is null-checked before dereferencing its configuration. All non-output helper calls after nullguard areA03A247E(constant1) and integer division with fixed511denominator. Reads selected configuration and cached current/on-time fields; no hardware/setter/allocation calls. Nullslots print only trailing newline.",
+      "hardware_access": false,
+      "timeout": 25,
+      "side_effects": "UART output and parser state. The scanner formatter can update its volatile output-throttle counter.",
+      "runtime_registered": true,
+      "prior_invocation_status": "not-invoked",
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation only; offline binary review, no serial access.",
+      "reviewed_ranges": [
+        {
+          "address": "0xa03a9a9c",
+          "bytes": 148,
+          "disassembly": "0xa03a9a9c: push {r4, r5, r6, r7, lr}\n0xa03a9a9e: sub sp, #0x18\n0xa03a9aa0: ldr r6, [pc, #0xbc] [0xa03a9b60]=0x20d9df38\n0xa03a9aa2: bl #0xa03bef9a\n0xa03a9aa6: adds r4, r0, #0\n0xa03a9aa8: bl #0xa03a8230\n0xa03a9aac: lsls r5, r0, #0x10\n0xa03a9aae: lsrs r5, r5, #0x10\n0xa03a9ab0: adds r7, r6, #0\n0xa03a9ab2: lsls r3, r5, #2\n0xa03a9ab4: ldr r0, [r3, r7]\n0xa03a9ab6: cmp r0, #0\n0xa03a9ab8: bne #0xa03a9abc\n0xa03a9aba: b #0xa03a9ce4\n0xa03a9abc: adds r1, r4, #0\n0xa03a9abe: adr r0, #0xa4 '%d resolution:\\n'\n0xa03a9ac0: bl #0xa03bef18\n0xa03a9ac4: lsls r3, r5, #2\n0xa03a9ac6: ldr r0, [r3, r7]\n0xa03a9ac8: ldr r3, [r0, #4]\n0xa03a9aca: ldr r0, [r3, #0x74]\n0xa03a9acc: ldrh r3, [r0, #4]\n0xa03a9ace: ldrh r2, [r0, #2]\n0xa03a9ad0: ldrh r1, [r0]\n0xa03a9ad2: adr r0, #0xa0 'led ontimes: (%d, %d, %d)\\n'\n0xa03a9ad4: bl #0xa03bef18\n0xa03a9ad8: lsls r3, r5, #2\n0xa03a9ada: ldr r0, [r3, r7]\n0xa03a9adc: ldr r3, [r0, #4]\n0xa03a9ade: ldr r1, [r3, #0x74]\n0xa03a9ae0: ldrh r0, [r1, #0xe]\n0xa03a9ae2: lsls r3, r0, #0x1d\n0xa03a9ae4: lsrs r3, r3, #0x1f\n0xa03a9ae6: lsls r2, r0, #0x1e\n0xa03a9ae8: lsrs r2, r2, #0x1f\n0xa03a9aea: lsls r1, r0, #0x1f\n0xa03a9aec: lsrs r1, r1, #0x1f\n0xa03a9aee: adr r0, #0xa0 'channels pwmed: (%d, %d, %d)\\n'\n0xa03a9af0: bl #0xa03bef18\n0xa03a9af4: ldr r1, [pc, #0xb8] [0xa03a9bb0]=0x20d9dec8\n0xa03a9af6: movs r0, #0xe\n0xa03a9af8: muls r0, r5, r0\n0xa03a9afa: adds r2, r0, r1\n0xa03a9afc: ldrh r3, [r2, #4]\n0xa03a9afe: ldrh r2, [r2, #2]\n0xa03a9b00: ldrh r1, [r1, r0]\n0xa03a9b02: adr r0, #0xb0 'level achieved: (%d, %d, %d)\\n'\n0xa03a9b04: bl #0xa03bef18\n0xa03a9b08: adds r3, r6, #0\n0xa03a9b0a: adds r3, #0x40\n0xa03a9b0c: ldrb r2, [r3, r5]\n0xa03a9b0e: lsls r0, r5, #2\n0xa03a9b10: ldr r0, [r0, r7]\n0xa03a9b12: ldr r0, [r0, #4]\n0xa03a9b14: ldr r0, [r0, #0x74]\n0xa03a9b16: ldrh r1, [r0, #0x16]\n0xa03a9b18: adr r0, #0xb8 'nominal gain: (%d) currentlevel: (%d)\\n'\n0xa03a9b1a: bl #0xa03bef18\n0xa03a9b1e: adds r6, #0x18\n0xa03a9b20: movs r0, #6\n0xa03a9b22: muls r0, r5, r0\n0xa03a9b24: adds r2, r0, r6\n0xa03a9b26: ldrh r3, [r2, #4]\n0xa03a9b28: ldrh r2, [r2, #2]\n0xa03a9b2a: ldrh r1, [r6, r0]\n0xa03a9b2c: adr r0, #0xcc 'max ontimes: (%d, %d, %d)\\n'\n0xa03a9b2e: b #0xa03a9c18"
+        },
+        {
+          "address": "0xa03a9c18",
+          "bytes": 214,
+          "disassembly": "0xa03a9c18: bl #0xa03bef18\n0xa03a9c1c: lsls r3, r5, #2\n0xa03a9c1e: ldr r0, [r3, r7]\n0xa03a9c20: ldr r3, [r0, #4]\n0xa03a9c22: ldr r0, [r3, #0x74]\n0xa03a9c24: movs r3, #0x14\n0xa03a9c26: ldrsh r2, [r0, r3]\n0xa03a9c28: ldrh r1, [r0, #0x12]\n0xa03a9c2a: adr r0, #0x1e4 'afe gain, offset: (%d, %d)'\n0xa03a9c2c: bl #0xa03bef18\n0xa03a9c30: ldr r6, [pc, #0x1f8] [0xa03a9e2c]=0x1ff\n0xa03a9c32: str r6, [sp, #0xc]\n0xa03a9c34: bl #0xa03a247e\n0xa03a9c38: cmp r0, #0\n0xa03a9c3a: bne #0xa03a9c40\n0xa03a9c3c: movs r1, #0xff\n0xa03a9c3e: str r1, [sp, #0xc]\n0xa03a9c40: str r6, [sp]\n0xa03a9c42: bl #0xa03a247e\n0xa03a9c46: cmp r0, #0\n0xa03a9c48: bne #0xa03a9c4e\n0xa03a9c4a: movs r1, #0xff\n0xa03a9c4c: str r1, [sp]\n0xa03a9c4e: str r6, [sp, #4]\n0xa03a9c50: bl #0xa03a247e\n0xa03a9c54: cmp r0, #0\n0xa03a9c56: bne #0xa03a9c5c\n0xa03a9c58: movs r1, #0xff\n0xa03a9c5a: str r1, [sp, #4]\n0xa03a9c5c: str r6, [sp, #8]\n0xa03a9c5e: bl #0xa03a247e\n0xa03a9c62: cmp r0, #0\n0xa03a9c64: bne #0xa03a9c6a\n0xa03a9c66: movs r1, #0xff\n0xa03a9c68: str r1, [sp, #8]\n0xa03a9c6a: str r6, [sp, #0x10]\n0xa03a9c6c: bl #0xa03a247e\n0xa03a9c70: cmp r0, #0\n0xa03a9c72: bne #0xa03a9c78\n0xa03a9c74: movs r1, #0xff\n0xa03a9c76: str r1, [sp, #0x10]\n0xa03a9c78: str r6, [sp, #0x14]\n0xa03a9c7a: bl #0xa03a247e\n0xa03a9c7e: cmp r0, #0\n0xa03a9c80: bne #0xa03a9c86\n0xa03a9c82: movs r1, #0xff\n0xa03a9c84: str r1, [sp, #0x14]\n0xa03a9c86: lsls r3, r5, #2\n0xa03a9c88: ldr r0, [r3, r7]\n0xa03a9c8a: ldr r3, [r0, #4]\n0xa03a9c8c: ldr r4, [r3, #0x74]\n0xa03a9c8e: adds r0, r6, #0\n0xa03a9c90: adds r0, #0x38\n0xa03a9c92: ldrh r1, [r4, #0x18]\n0xa03a9c94: muls r1, r0, r1\n0xa03a9c96: ldr r0, [sp, #0xc]\n0xa03a9c98: lsrs r2, r0, #0x1f\n0xa03a9c9a: adds r0, r2, r0\n0xa03a9c9c: asrs r0, r0, #1\n0xa03a9c9e: adds r1, r0, r1\n0xa03a9ca0: ldr r0, [sp]\n0xa03a9ca2: blx #0xa001944c\n0xa03a9ca6: adds r5, r0, #0\n0xa03a9ca8: adds r0, r6, #0\n0xa03a9caa: adds r0, #0x38\n0xa03a9cac: ldrh r1, [r4, #0x1a]\n0xa03a9cae: muls r1, r0, r1\n0xa03a9cb0: ldr r0, [sp, #4]\n0xa03a9cb2: lsrs r2, r0, #0x1f\n0xa03a9cb4: adds r0, r2, r0\n0xa03a9cb6: asrs r0, r0, #1\n0xa03a9cb8: adds r1, r0, r1\n0xa03a9cba: ldr r0, [sp, #8]\n0xa03a9cbc: blx #0xa001944c\n0xa03a9cc0: adds r7, r0, #0\n0xa03a9cc2: adds r6, #0x38\n0xa03a9cc4: ldrh r0, [r4, #0x1c]\n0xa03a9cc6: muls r6, r0, r6\n0xa03a9cc8: ldr r0, [sp, #0x10]\n0xa03a9cca: lsrs r2, r0, #0x1f\n0xa03a9ccc: adds r0, r2, r0\n0xa03a9cce: asrs r0, r0, #1\n0xa03a9cd0: adds r1, r0, r6\n0xa03a9cd2: ldr r0, [sp, #0x14]\n0xa03a9cd4: blx #0xa001944c\n0xa03a9cd8: adds r3, r0, #0\n0xa03a9cda: adds r2, r7, #0\n0xa03a9cdc: adds r1, r5, #0\n0xa03a9cde: adr r0, #0x150 '\\nled_currents: (%d, %d, %d)\\n'\n0xa03a9ce0: bl #0xa03bef18\n0xa03a9ce4: adr r0, #0x168 '\\n'\n0xa03a9ce6: bl #0xa03bef18\n0xa03a9cea: add sp, #0x18\n0xa03a9cec: pop {r4, r5, r6, r7, pc}"
+        },
+        {
+          "address": "0xa03a8230",
+          "bytes": 76,
+          "disassembly": "0xa03a8230: adds r1, r0, #0\n0xa03a8232: movs r0, #0\n0xa03a8234: movs r2, #0xff\n0xa03a8236: adds r2, #0x2d\n0xa03a8238: cmp r1, r2\n0xa03a823a: beq #0xa03a8266\n0xa03a823c: movs r2, #0x4b\n0xa03a823e: lsls r2, r2, #3\n0xa03a8240: cmp r1, r2\n0xa03a8242: beq #0xa03a8268\n0xa03a8244: movs r2, #0x4b\n0xa03a8246: lsls r2, r2, #4\n0xa03a8248: cmp r1, r2\n0xa03a824a: beq #0xa03a826c\n0xa03a824c: movs r2, #0x4b\n0xa03a824e: lsls r2, r2, #5\n0xa03a8250: cmp r1, r2\n0xa03a8252: beq #0xa03a8270\n0xa03a8254: movs r2, #0x4b\n0xa03a8256: lsls r2, r2, #6\n0xa03a8258: cmp r1, r2\n0xa03a825a: beq #0xa03a8274\n0xa03a825c: movs r2, #0x4b\n0xa03a825e: lsls r2, r2, #7\n0xa03a8260: cmp r1, r2\n0xa03a8262: bne #0xa03a827a\n0xa03a8264: b #0xa03a8278\n0xa03a8266: b #0xa03a827a\n0xa03a8268: movs r0, #1\n0xa03a826a: b #0xa03a827a\n0xa03a826c: movs r0, #2\n0xa03a826e: b #0xa03a827a\n0xa03a8270: movs r0, #3\n0xa03a8272: b #0xa03a827a\n0xa03a8274: movs r0, #4\n0xa03a8276: b #0xa03a827a\n0xa03a8278: movs r0, #5\n0xa03a827a: bx lr"
+        },
+        {
+          "address": "0xa03a247e",
+          "bytes": 4,
+          "disassembly": "0xa03a247e: movs r0, #1\n0xa03a2480: bx lr"
+        }
+      ],
+      "response_limit_note": "Null resolution slots are expected to have empty payload; that establishes no calibration record at this resolution, not a calibrated zero value."
+    },
+    {
+      "name": "scan led LEDONTIMEINFO",
+      "command": "udws \"scan led LEDONTIMEINFO 4800;\"",
+      "handler": "0xa03a9a9d",
+      "descriptor_address": "0xa05ffccc",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "4800",
+      "purpose": "Read cached LED calibration/timing information at 4800DPI.",
+      "control_flow_proof": "A03A9A9C parsesunsigned16resolution; pureA03A8230 maps chosen arguments toindex0..5. Top-level20D9DF38[index] is null-checked before dereferencing its configuration. All non-output helper calls after nullguard areA03A247E(constant1) and integer division with fixed511denominator. Reads selected configuration and cached current/on-time fields; no hardware/setter/allocation calls. Nullslots print only trailing newline.",
+      "hardware_access": false,
+      "timeout": 25,
+      "side_effects": "UART output and parser state. The scanner formatter can update its volatile output-throttle counter.",
+      "runtime_registered": true,
+      "prior_invocation_status": "not-invoked",
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation only; offline binary review, no serial access.",
+      "reviewed_ranges": [
+        {
+          "address": "0xa03a9a9c",
+          "bytes": 148,
+          "disassembly": "0xa03a9a9c: push {r4, r5, r6, r7, lr}\n0xa03a9a9e: sub sp, #0x18\n0xa03a9aa0: ldr r6, [pc, #0xbc] [0xa03a9b60]=0x20d9df38\n0xa03a9aa2: bl #0xa03bef9a\n0xa03a9aa6: adds r4, r0, #0\n0xa03a9aa8: bl #0xa03a8230\n0xa03a9aac: lsls r5, r0, #0x10\n0xa03a9aae: lsrs r5, r5, #0x10\n0xa03a9ab0: adds r7, r6, #0\n0xa03a9ab2: lsls r3, r5, #2\n0xa03a9ab4: ldr r0, [r3, r7]\n0xa03a9ab6: cmp r0, #0\n0xa03a9ab8: bne #0xa03a9abc\n0xa03a9aba: b #0xa03a9ce4\n0xa03a9abc: adds r1, r4, #0\n0xa03a9abe: adr r0, #0xa4 '%d resolution:\\n'\n0xa03a9ac0: bl #0xa03bef18\n0xa03a9ac4: lsls r3, r5, #2\n0xa03a9ac6: ldr r0, [r3, r7]\n0xa03a9ac8: ldr r3, [r0, #4]\n0xa03a9aca: ldr r0, [r3, #0x74]\n0xa03a9acc: ldrh r3, [r0, #4]\n0xa03a9ace: ldrh r2, [r0, #2]\n0xa03a9ad0: ldrh r1, [r0]\n0xa03a9ad2: adr r0, #0xa0 'led ontimes: (%d, %d, %d)\\n'\n0xa03a9ad4: bl #0xa03bef18\n0xa03a9ad8: lsls r3, r5, #2\n0xa03a9ada: ldr r0, [r3, r7]\n0xa03a9adc: ldr r3, [r0, #4]\n0xa03a9ade: ldr r1, [r3, #0x74]\n0xa03a9ae0: ldrh r0, [r1, #0xe]\n0xa03a9ae2: lsls r3, r0, #0x1d\n0xa03a9ae4: lsrs r3, r3, #0x1f\n0xa03a9ae6: lsls r2, r0, #0x1e\n0xa03a9ae8: lsrs r2, r2, #0x1f\n0xa03a9aea: lsls r1, r0, #0x1f\n0xa03a9aec: lsrs r1, r1, #0x1f\n0xa03a9aee: adr r0, #0xa0 'channels pwmed: (%d, %d, %d)\\n'\n0xa03a9af0: bl #0xa03bef18\n0xa03a9af4: ldr r1, [pc, #0xb8] [0xa03a9bb0]=0x20d9dec8\n0xa03a9af6: movs r0, #0xe\n0xa03a9af8: muls r0, r5, r0\n0xa03a9afa: adds r2, r0, r1\n0xa03a9afc: ldrh r3, [r2, #4]\n0xa03a9afe: ldrh r2, [r2, #2]\n0xa03a9b00: ldrh r1, [r1, r0]\n0xa03a9b02: adr r0, #0xb0 'level achieved: (%d, %d, %d)\\n'\n0xa03a9b04: bl #0xa03bef18\n0xa03a9b08: adds r3, r6, #0\n0xa03a9b0a: adds r3, #0x40\n0xa03a9b0c: ldrb r2, [r3, r5]\n0xa03a9b0e: lsls r0, r5, #2\n0xa03a9b10: ldr r0, [r0, r7]\n0xa03a9b12: ldr r0, [r0, #4]\n0xa03a9b14: ldr r0, [r0, #0x74]\n0xa03a9b16: ldrh r1, [r0, #0x16]\n0xa03a9b18: adr r0, #0xb8 'nominal gain: (%d) currentlevel: (%d)\\n'\n0xa03a9b1a: bl #0xa03bef18\n0xa03a9b1e: adds r6, #0x18\n0xa03a9b20: movs r0, #6\n0xa03a9b22: muls r0, r5, r0\n0xa03a9b24: adds r2, r0, r6\n0xa03a9b26: ldrh r3, [r2, #4]\n0xa03a9b28: ldrh r2, [r2, #2]\n0xa03a9b2a: ldrh r1, [r6, r0]\n0xa03a9b2c: adr r0, #0xcc 'max ontimes: (%d, %d, %d)\\n'\n0xa03a9b2e: b #0xa03a9c18"
+        },
+        {
+          "address": "0xa03a9c18",
+          "bytes": 214,
+          "disassembly": "0xa03a9c18: bl #0xa03bef18\n0xa03a9c1c: lsls r3, r5, #2\n0xa03a9c1e: ldr r0, [r3, r7]\n0xa03a9c20: ldr r3, [r0, #4]\n0xa03a9c22: ldr r0, [r3, #0x74]\n0xa03a9c24: movs r3, #0x14\n0xa03a9c26: ldrsh r2, [r0, r3]\n0xa03a9c28: ldrh r1, [r0, #0x12]\n0xa03a9c2a: adr r0, #0x1e4 'afe gain, offset: (%d, %d)'\n0xa03a9c2c: bl #0xa03bef18\n0xa03a9c30: ldr r6, [pc, #0x1f8] [0xa03a9e2c]=0x1ff\n0xa03a9c32: str r6, [sp, #0xc]\n0xa03a9c34: bl #0xa03a247e\n0xa03a9c38: cmp r0, #0\n0xa03a9c3a: bne #0xa03a9c40\n0xa03a9c3c: movs r1, #0xff\n0xa03a9c3e: str r1, [sp, #0xc]\n0xa03a9c40: str r6, [sp]\n0xa03a9c42: bl #0xa03a247e\n0xa03a9c46: cmp r0, #0\n0xa03a9c48: bne #0xa03a9c4e\n0xa03a9c4a: movs r1, #0xff\n0xa03a9c4c: str r1, [sp]\n0xa03a9c4e: str r6, [sp, #4]\n0xa03a9c50: bl #0xa03a247e\n0xa03a9c54: cmp r0, #0\n0xa03a9c56: bne #0xa03a9c5c\n0xa03a9c58: movs r1, #0xff\n0xa03a9c5a: str r1, [sp, #4]\n0xa03a9c5c: str r6, [sp, #8]\n0xa03a9c5e: bl #0xa03a247e\n0xa03a9c62: cmp r0, #0\n0xa03a9c64: bne #0xa03a9c6a\n0xa03a9c66: movs r1, #0xff\n0xa03a9c68: str r1, [sp, #8]\n0xa03a9c6a: str r6, [sp, #0x10]\n0xa03a9c6c: bl #0xa03a247e\n0xa03a9c70: cmp r0, #0\n0xa03a9c72: bne #0xa03a9c78\n0xa03a9c74: movs r1, #0xff\n0xa03a9c76: str r1, [sp, #0x10]\n0xa03a9c78: str r6, [sp, #0x14]\n0xa03a9c7a: bl #0xa03a247e\n0xa03a9c7e: cmp r0, #0\n0xa03a9c80: bne #0xa03a9c86\n0xa03a9c82: movs r1, #0xff\n0xa03a9c84: str r1, [sp, #0x14]\n0xa03a9c86: lsls r3, r5, #2\n0xa03a9c88: ldr r0, [r3, r7]\n0xa03a9c8a: ldr r3, [r0, #4]\n0xa03a9c8c: ldr r4, [r3, #0x74]\n0xa03a9c8e: adds r0, r6, #0\n0xa03a9c90: adds r0, #0x38\n0xa03a9c92: ldrh r1, [r4, #0x18]\n0xa03a9c94: muls r1, r0, r1\n0xa03a9c96: ldr r0, [sp, #0xc]\n0xa03a9c98: lsrs r2, r0, #0x1f\n0xa03a9c9a: adds r0, r2, r0\n0xa03a9c9c: asrs r0, r0, #1\n0xa03a9c9e: adds r1, r0, r1\n0xa03a9ca0: ldr r0, [sp]\n0xa03a9ca2: blx #0xa001944c\n0xa03a9ca6: adds r5, r0, #0\n0xa03a9ca8: adds r0, r6, #0\n0xa03a9caa: adds r0, #0x38\n0xa03a9cac: ldrh r1, [r4, #0x1a]\n0xa03a9cae: muls r1, r0, r1\n0xa03a9cb0: ldr r0, [sp, #4]\n0xa03a9cb2: lsrs r2, r0, #0x1f\n0xa03a9cb4: adds r0, r2, r0\n0xa03a9cb6: asrs r0, r0, #1\n0xa03a9cb8: adds r1, r0, r1\n0xa03a9cba: ldr r0, [sp, #8]\n0xa03a9cbc: blx #0xa001944c\n0xa03a9cc0: adds r7, r0, #0\n0xa03a9cc2: adds r6, #0x38\n0xa03a9cc4: ldrh r0, [r4, #0x1c]\n0xa03a9cc6: muls r6, r0, r6\n0xa03a9cc8: ldr r0, [sp, #0x10]\n0xa03a9cca: lsrs r2, r0, #0x1f\n0xa03a9ccc: adds r0, r2, r0\n0xa03a9cce: asrs r0, r0, #1\n0xa03a9cd0: adds r1, r0, r6\n0xa03a9cd2: ldr r0, [sp, #0x14]\n0xa03a9cd4: blx #0xa001944c\n0xa03a9cd8: adds r3, r0, #0\n0xa03a9cda: adds r2, r7, #0\n0xa03a9cdc: adds r1, r5, #0\n0xa03a9cde: adr r0, #0x150 '\\nled_currents: (%d, %d, %d)\\n'\n0xa03a9ce0: bl #0xa03bef18\n0xa03a9ce4: adr r0, #0x168 '\\n'\n0xa03a9ce6: bl #0xa03bef18\n0xa03a9cea: add sp, #0x18\n0xa03a9cec: pop {r4, r5, r6, r7, pc}"
+        },
+        {
+          "address": "0xa03a8230",
+          "bytes": 76,
+          "disassembly": "0xa03a8230: adds r1, r0, #0\n0xa03a8232: movs r0, #0\n0xa03a8234: movs r2, #0xff\n0xa03a8236: adds r2, #0x2d\n0xa03a8238: cmp r1, r2\n0xa03a823a: beq #0xa03a8266\n0xa03a823c: movs r2, #0x4b\n0xa03a823e: lsls r2, r2, #3\n0xa03a8240: cmp r1, r2\n0xa03a8242: beq #0xa03a8268\n0xa03a8244: movs r2, #0x4b\n0xa03a8246: lsls r2, r2, #4\n0xa03a8248: cmp r1, r2\n0xa03a824a: beq #0xa03a826c\n0xa03a824c: movs r2, #0x4b\n0xa03a824e: lsls r2, r2, #5\n0xa03a8250: cmp r1, r2\n0xa03a8252: beq #0xa03a8270\n0xa03a8254: movs r2, #0x4b\n0xa03a8256: lsls r2, r2, #6\n0xa03a8258: cmp r1, r2\n0xa03a825a: beq #0xa03a8274\n0xa03a825c: movs r2, #0x4b\n0xa03a825e: lsls r2, r2, #7\n0xa03a8260: cmp r1, r2\n0xa03a8262: bne #0xa03a827a\n0xa03a8264: b #0xa03a8278\n0xa03a8266: b #0xa03a827a\n0xa03a8268: movs r0, #1\n0xa03a826a: b #0xa03a827a\n0xa03a826c: movs r0, #2\n0xa03a826e: b #0xa03a827a\n0xa03a8270: movs r0, #3\n0xa03a8272: b #0xa03a827a\n0xa03a8274: movs r0, #4\n0xa03a8276: b #0xa03a827a\n0xa03a8278: movs r0, #5\n0xa03a827a: bx lr"
+        },
+        {
+          "address": "0xa03a247e",
+          "bytes": 4,
+          "disassembly": "0xa03a247e: movs r0, #1\n0xa03a2480: bx lr"
+        }
+      ],
+      "response_limit_note": "Null resolution slots are expected to have empty payload; that establishes no calibration record at this resolution, not a calibrated zero value."
+    },
+    {
+      "name": "scan led LEDONTIMEINFO",
+      "command": "udws \"scan led LEDONTIMEINFO 9600;\"",
+      "handler": "0xa03a9a9d",
+      "descriptor_address": "0xa05ffccc",
+      "classification": "reviewed-information-query",
+      "argument_syntax": "9600",
+      "purpose": "Read cached LED calibration/timing information at 9600DPI.",
+      "control_flow_proof": "A03A9A9C parsesunsigned16resolution; pureA03A8230 maps chosen arguments toindex0..5. Top-level20D9DF38[index] is null-checked before dereferencing its configuration. All non-output helper calls after nullguard areA03A247E(constant1) and integer division with fixed511denominator. Reads selected configuration and cached current/on-time fields; no hardware/setter/allocation calls. Nullslots print only trailing newline.",
+      "hardware_access": false,
+      "timeout": 25,
+      "side_effects": "UART output and parser state. The scanner formatter can update its volatile output-throttle counter.",
+      "runtime_registered": true,
+      "prior_invocation_status": "not-invoked",
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation only; offline binary review, no serial access.",
+      "reviewed_ranges": [
+        {
+          "address": "0xa03a9a9c",
+          "bytes": 148,
+          "disassembly": "0xa03a9a9c: push {r4, r5, r6, r7, lr}\n0xa03a9a9e: sub sp, #0x18\n0xa03a9aa0: ldr r6, [pc, #0xbc] [0xa03a9b60]=0x20d9df38\n0xa03a9aa2: bl #0xa03bef9a\n0xa03a9aa6: adds r4, r0, #0\n0xa03a9aa8: bl #0xa03a8230\n0xa03a9aac: lsls r5, r0, #0x10\n0xa03a9aae: lsrs r5, r5, #0x10\n0xa03a9ab0: adds r7, r6, #0\n0xa03a9ab2: lsls r3, r5, #2\n0xa03a9ab4: ldr r0, [r3, r7]\n0xa03a9ab6: cmp r0, #0\n0xa03a9ab8: bne #0xa03a9abc\n0xa03a9aba: b #0xa03a9ce4\n0xa03a9abc: adds r1, r4, #0\n0xa03a9abe: adr r0, #0xa4 '%d resolution:\\n'\n0xa03a9ac0: bl #0xa03bef18\n0xa03a9ac4: lsls r3, r5, #2\n0xa03a9ac6: ldr r0, [r3, r7]\n0xa03a9ac8: ldr r3, [r0, #4]\n0xa03a9aca: ldr r0, [r3, #0x74]\n0xa03a9acc: ldrh r3, [r0, #4]\n0xa03a9ace: ldrh r2, [r0, #2]\n0xa03a9ad0: ldrh r1, [r0]\n0xa03a9ad2: adr r0, #0xa0 'led ontimes: (%d, %d, %d)\\n'\n0xa03a9ad4: bl #0xa03bef18\n0xa03a9ad8: lsls r3, r5, #2\n0xa03a9ada: ldr r0, [r3, r7]\n0xa03a9adc: ldr r3, [r0, #4]\n0xa03a9ade: ldr r1, [r3, #0x74]\n0xa03a9ae0: ldrh r0, [r1, #0xe]\n0xa03a9ae2: lsls r3, r0, #0x1d\n0xa03a9ae4: lsrs r3, r3, #0x1f\n0xa03a9ae6: lsls r2, r0, #0x1e\n0xa03a9ae8: lsrs r2, r2, #0x1f\n0xa03a9aea: lsls r1, r0, #0x1f\n0xa03a9aec: lsrs r1, r1, #0x1f\n0xa03a9aee: adr r0, #0xa0 'channels pwmed: (%d, %d, %d)\\n'\n0xa03a9af0: bl #0xa03bef18\n0xa03a9af4: ldr r1, [pc, #0xb8] [0xa03a9bb0]=0x20d9dec8\n0xa03a9af6: movs r0, #0xe\n0xa03a9af8: muls r0, r5, r0\n0xa03a9afa: adds r2, r0, r1\n0xa03a9afc: ldrh r3, [r2, #4]\n0xa03a9afe: ldrh r2, [r2, #2]\n0xa03a9b00: ldrh r1, [r1, r0]\n0xa03a9b02: adr r0, #0xb0 'level achieved: (%d, %d, %d)\\n'\n0xa03a9b04: bl #0xa03bef18\n0xa03a9b08: adds r3, r6, #0\n0xa03a9b0a: adds r3, #0x40\n0xa03a9b0c: ldrb r2, [r3, r5]\n0xa03a9b0e: lsls r0, r5, #2\n0xa03a9b10: ldr r0, [r0, r7]\n0xa03a9b12: ldr r0, [r0, #4]\n0xa03a9b14: ldr r0, [r0, #0x74]\n0xa03a9b16: ldrh r1, [r0, #0x16]\n0xa03a9b18: adr r0, #0xb8 'nominal gain: (%d) currentlevel: (%d)\\n'\n0xa03a9b1a: bl #0xa03bef18\n0xa03a9b1e: adds r6, #0x18\n0xa03a9b20: movs r0, #6\n0xa03a9b22: muls r0, r5, r0\n0xa03a9b24: adds r2, r0, r6\n0xa03a9b26: ldrh r3, [r2, #4]\n0xa03a9b28: ldrh r2, [r2, #2]\n0xa03a9b2a: ldrh r1, [r6, r0]\n0xa03a9b2c: adr r0, #0xcc 'max ontimes: (%d, %d, %d)\\n'\n0xa03a9b2e: b #0xa03a9c18"
+        },
+        {
+          "address": "0xa03a9c18",
+          "bytes": 214,
+          "disassembly": "0xa03a9c18: bl #0xa03bef18\n0xa03a9c1c: lsls r3, r5, #2\n0xa03a9c1e: ldr r0, [r3, r7]\n0xa03a9c20: ldr r3, [r0, #4]\n0xa03a9c22: ldr r0, [r3, #0x74]\n0xa03a9c24: movs r3, #0x14\n0xa03a9c26: ldrsh r2, [r0, r3]\n0xa03a9c28: ldrh r1, [r0, #0x12]\n0xa03a9c2a: adr r0, #0x1e4 'afe gain, offset: (%d, %d)'\n0xa03a9c2c: bl #0xa03bef18\n0xa03a9c30: ldr r6, [pc, #0x1f8] [0xa03a9e2c]=0x1ff\n0xa03a9c32: str r6, [sp, #0xc]\n0xa03a9c34: bl #0xa03a247e\n0xa03a9c38: cmp r0, #0\n0xa03a9c3a: bne #0xa03a9c40\n0xa03a9c3c: movs r1, #0xff\n0xa03a9c3e: str r1, [sp, #0xc]\n0xa03a9c40: str r6, [sp]\n0xa03a9c42: bl #0xa03a247e\n0xa03a9c46: cmp r0, #0\n0xa03a9c48: bne #0xa03a9c4e\n0xa03a9c4a: movs r1, #0xff\n0xa03a9c4c: str r1, [sp]\n0xa03a9c4e: str r6, [sp, #4]\n0xa03a9c50: bl #0xa03a247e\n0xa03a9c54: cmp r0, #0\n0xa03a9c56: bne #0xa03a9c5c\n0xa03a9c58: movs r1, #0xff\n0xa03a9c5a: str r1, [sp, #4]\n0xa03a9c5c: str r6, [sp, #8]\n0xa03a9c5e: bl #0xa03a247e\n0xa03a9c62: cmp r0, #0\n0xa03a9c64: bne #0xa03a9c6a\n0xa03a9c66: movs r1, #0xff\n0xa03a9c68: str r1, [sp, #8]\n0xa03a9c6a: str r6, [sp, #0x10]\n0xa03a9c6c: bl #0xa03a247e\n0xa03a9c70: cmp r0, #0\n0xa03a9c72: bne #0xa03a9c78\n0xa03a9c74: movs r1, #0xff\n0xa03a9c76: str r1, [sp, #0x10]\n0xa03a9c78: str r6, [sp, #0x14]\n0xa03a9c7a: bl #0xa03a247e\n0xa03a9c7e: cmp r0, #0\n0xa03a9c80: bne #0xa03a9c86\n0xa03a9c82: movs r1, #0xff\n0xa03a9c84: str r1, [sp, #0x14]\n0xa03a9c86: lsls r3, r5, #2\n0xa03a9c88: ldr r0, [r3, r7]\n0xa03a9c8a: ldr r3, [r0, #4]\n0xa03a9c8c: ldr r4, [r3, #0x74]\n0xa03a9c8e: adds r0, r6, #0\n0xa03a9c90: adds r0, #0x38\n0xa03a9c92: ldrh r1, [r4, #0x18]\n0xa03a9c94: muls r1, r0, r1\n0xa03a9c96: ldr r0, [sp, #0xc]\n0xa03a9c98: lsrs r2, r0, #0x1f\n0xa03a9c9a: adds r0, r2, r0\n0xa03a9c9c: asrs r0, r0, #1\n0xa03a9c9e: adds r1, r0, r1\n0xa03a9ca0: ldr r0, [sp]\n0xa03a9ca2: blx #0xa001944c\n0xa03a9ca6: adds r5, r0, #0\n0xa03a9ca8: adds r0, r6, #0\n0xa03a9caa: adds r0, #0x38\n0xa03a9cac: ldrh r1, [r4, #0x1a]\n0xa03a9cae: muls r1, r0, r1\n0xa03a9cb0: ldr r0, [sp, #4]\n0xa03a9cb2: lsrs r2, r0, #0x1f\n0xa03a9cb4: adds r0, r2, r0\n0xa03a9cb6: asrs r0, r0, #1\n0xa03a9cb8: adds r1, r0, r1\n0xa03a9cba: ldr r0, [sp, #8]\n0xa03a9cbc: blx #0xa001944c\n0xa03a9cc0: adds r7, r0, #0\n0xa03a9cc2: adds r6, #0x38\n0xa03a9cc4: ldrh r0, [r4, #0x1c]\n0xa03a9cc6: muls r6, r0, r6\n0xa03a9cc8: ldr r0, [sp, #0x10]\n0xa03a9cca: lsrs r2, r0, #0x1f\n0xa03a9ccc: adds r0, r2, r0\n0xa03a9cce: asrs r0, r0, #1\n0xa03a9cd0: adds r1, r0, r6\n0xa03a9cd2: ldr r0, [sp, #0x14]\n0xa03a9cd4: blx #0xa001944c\n0xa03a9cd8: adds r3, r0, #0\n0xa03a9cda: adds r2, r7, #0\n0xa03a9cdc: adds r1, r5, #0\n0xa03a9cde: adr r0, #0x150 '\\nled_currents: (%d, %d, %d)\\n'\n0xa03a9ce0: bl #0xa03bef18\n0xa03a9ce4: adr r0, #0x168 '\\n'\n0xa03a9ce6: bl #0xa03bef18\n0xa03a9cea: add sp, #0x18\n0xa03a9cec: pop {r4, r5, r6, r7, pc}"
+        },
+        {
+          "address": "0xa03a8230",
+          "bytes": 76,
+          "disassembly": "0xa03a8230: adds r1, r0, #0\n0xa03a8232: movs r0, #0\n0xa03a8234: movs r2, #0xff\n0xa03a8236: adds r2, #0x2d\n0xa03a8238: cmp r1, r2\n0xa03a823a: beq #0xa03a8266\n0xa03a823c: movs r2, #0x4b\n0xa03a823e: lsls r2, r2, #3\n0xa03a8240: cmp r1, r2\n0xa03a8242: beq #0xa03a8268\n0xa03a8244: movs r2, #0x4b\n0xa03a8246: lsls r2, r2, #4\n0xa03a8248: cmp r1, r2\n0xa03a824a: beq #0xa03a826c\n0xa03a824c: movs r2, #0x4b\n0xa03a824e: lsls r2, r2, #5\n0xa03a8250: cmp r1, r2\n0xa03a8252: beq #0xa03a8270\n0xa03a8254: movs r2, #0x4b\n0xa03a8256: lsls r2, r2, #6\n0xa03a8258: cmp r1, r2\n0xa03a825a: beq #0xa03a8274\n0xa03a825c: movs r2, #0x4b\n0xa03a825e: lsls r2, r2, #7\n0xa03a8260: cmp r1, r2\n0xa03a8262: bne #0xa03a827a\n0xa03a8264: b #0xa03a8278\n0xa03a8266: b #0xa03a827a\n0xa03a8268: movs r0, #1\n0xa03a826a: b #0xa03a827a\n0xa03a826c: movs r0, #2\n0xa03a826e: b #0xa03a827a\n0xa03a8270: movs r0, #3\n0xa03a8272: b #0xa03a827a\n0xa03a8274: movs r0, #4\n0xa03a8276: b #0xa03a827a\n0xa03a8278: movs r0, #5\n0xa03a827a: bx lr"
+        },
+        {
+          "address": "0xa03a247e",
+          "bytes": 4,
+          "disassembly": "0xa03a247e: movs r0, #1\n0xa03a2480: bx lr"
+        }
+      ],
+      "response_limit_note": "Null resolution slots are expected to have empty payload; that establishes no calibration record at this resolution, not a calibrated zero value."
+    },
+    {
+      "name": "scan sensor timing",
+      "command": "udws \"scan sensor timing 0;\"",
+      "handler": "0xa03bde3b",
+      "descriptor_address": "0xa06043f0",
+      "classification": "reviewed-help",
+      "argument_syntax": "0",
+      "purpose": "Capture built-in timing command usage, exposing future supported selectors and argument syntax.",
+      "control_flow_proof": "Selector 0 at A03BDE3A bypasses selector 1 writes, 10..12/20 table paths, 30 setter and 99 debug setter. Executes six constant format calls, a seventh at A03BE234, then the common A03BEC98 epilogue. This exact help path does not read current selection, alter timing, or touch hardware.",
+      "hardware_access": false,
+      "timeout": 25,
+      "side_effects": "UART output and parser state. The scanner formatter can update its volatile output-throttle counter.",
+      "runtime_registered": true,
+      "prior_invocation_status": "not-invoked",
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Exact invocation only; offline binary review, no serial access.",
+      "reviewed_ranges": [
+        {
+          "address": "0xa03bde3a",
+          "bytes": 100,
+          "disassembly": "0xa03bde3a: push {r4, r5, r6, r7, lr}\n0xa03bde3c: sub sp, #0xdc\n0xa03bde3e: ldr r1, [pc, #0xac] [0xa03bdeec]=0x20da0900\n0xa03bde40: str r1, [sp, #0x10]\n0xa03bde42: bl #0xa03bef9a\n0xa03bde46: str r0, [sp, #0x1c]\n0xa03bde48: cmp r0, #1\n0xa03bde4a: beq #0xa03bde9e\n0xa03bde4c: cmp r0, #2\n0xa03bde4e: bne #0xa03bde54\n0xa03bde50: bl #0xa03bec98\n0xa03bde54: cmp r0, #0xa\n0xa03bde56: blo #0xa03bde76\n0xa03bde58: cmp r0, #0xc\n0xa03bde5a: bhi #0xa03bde5e\n0xa03bde5c: b #0xa03be23c\n0xa03bde5e: cmp r0, #0x14\n0xa03bde60: bne #0xa03bde66\n0xa03bde62: bl #0xa03be9e6\n0xa03bde66: cmp r0, #0x1e\n0xa03bde68: bne #0xa03bde6e\n0xa03bde6a: bl #0xa03bec40\n0xa03bde6e: cmp r0, #0x63\n0xa03bde70: bne #0xa03bde76\n0xa03bde72: bl #0xa03bec90\n0xa03bde76: adr r0, #0x78 'usage:  scan sensor timing <cmd>\\n  0;          usage.\\n  1 <xres> <exp> <cspace>;    timing select.\\n              0 0 0 => current timing.\\n'\n0xa03bde78: bl #0xa03bef18\n0xa03bde7c: adr r0, #0xfc '              <exp>:     0/1 => norm/fast\\n              <cspace>:  0/1/4/6/7 => k/rgb/rgbi/rgboyc/rgboyci\\n              invalid values default to current timing.\\n'\n0xa03bde7e: bl #0xa03bef18\n0xa03bde82: adr r0, #0x19c '  2 <eduplex>;  select frontside eduplex (or glass/simplex) timings.\\n'\n0xa03bde84: bl #0xa03bef18\n0xa03bde88: adr r0, #0x1dc ' 10 <parm>;   read selected timing parm(s).  0 => all parms.\\n 11 <parm>;   like 10, but also prints xres/exp/cspace used.\\n'\n0xa03bde8a: bl #0xa03bef18\n0xa03bde8e: adr r0, #0x254 ' 12 <parm>;   like 11, but also prints field offsets.\\n 20 <parm> <value_list>;    set selected parm to value_list.\\n'\n0xa03bde90: bl #0xa03bef18\n0xa03bde94: adr r0, #0x2c0 ' 30 <value>;   set all gain parms to <value> for current scanner.\\n'\n0xa03bde96: bl #0xa03bef18\n0xa03bde9a: adr r0, #0x300 ' 99 <on>;     sensor timing udw debug.  0/1=off/on.\\n'\n0xa03bde9c: b #0xa03be234"
+        },
+        {
+          "address": "0xa03be234",
+          "bytes": 8,
+          "disassembly": "0xa03be234: bl #0xa03bef18\n0xa03be238: bl #0xa03bec98"
+        },
+        {
+          "address": "0xa03bec98",
+          "bytes": 4,
+          "disassembly": "0xa03bec98: add sp, #0xdc\n0xa03bec9a: pop {r4, r5, r6, r7, pc}"
+        }
+      ]
+    }
+  ],
+  "held_paths": [
+    {
+      "name": "scan ifc maxyres",
+      "reason": "A03BFD0E unconditionallywrites20DA0AB8 resolutionoverride; not a getter.",
+      "decision": "defer-or-skip-this-batch",
+      "not_a_blanket_command_ban": true
+    },
+    {
+      "name": "scan sensor id",
+      "reason": "A03BDE14 with0..2writes sensorID and reconfigures;255would onlyguard and adds no usefulinformation.",
+      "decision": "defer-or-skip-this-batch",
+      "not_a_blanket_command_ban": true
+    },
+    {
+      "name": "scan reg info",
+      "reason": "A03B9D4A parsespairs and callsA03B80F4 configuration-write path fornonzeroargs.",
+      "decision": "defer-or-skip-this-batch",
+      "not_a_blanket_command_ban": true
+    },
+    {
+      "name": "scan sensor timing",
+      "invocation_scope": "selectors other than0",
+      "reason": "Selector1 writes selectionoverride;20maycallA03BD704 setter;30writes multiple timingtablefields;99writesdebugmode. Onlyselector0isapprovedhere.",
+      "decision": "defer-or-skip-this-batch",
+      "not_a_blanket_command_ban": true
+    },
+    {
+      "name": "scan sensor ylist",
+      "reason": "A03BED94 invokes initializedresolutioncallback but then loads samehalfword atmost14times and prints nothing. Skip lowinformation duplicatepath.",
+      "decision": "defer-or-skip-this-batch",
+      "not_a_blanket_command_ban": true
+    },
+    {
+      "name": "scan gain histstatus",
+      "reason": "Generic history constructorA03A1718 bindsstatusslot0toBXLR A03A17A6. Potentiallyonlystuboutput; initializationchainnotfullyreconstructed.",
+      "decision": "defer-or-skip-this-batch",
+      "not_a_blanket_command_ban": true
+    },
+    {
+      "name": "scan timing status",
+      "reason": "A03BEE9C initializes20DA0910 throughA03A1718; slot0bindsBXLR A03A17A6. No usefulhistorypayload.",
+      "decision": "defer-or-skip-this-batch",
+      "not_a_blanket_command_ban": true
+    },
+    {
+      "name": "scan illum hist status",
+      "reason": "Indirecthistoryobjectstatus islikelysame genericstub; no usefuloutput anticipated, initializationchainnotfullyreconstructed.",
+      "decision": "defer-or-skip-this-batch",
+      "not_a_blanket_command_ban": true
+    },
+    {
+      "name": "scan mem show",
+      "reason": "A03AB2EE callsA03AB27A tofill fourlocalstackwords, runs20iterationemptyloop, thenreturnswithoutprinting. Does not expose actualmemoryusage.",
+      "decision": "defer-or-skip-this-batch",
+      "not_a_blanket_command_ban": true
+    },
+    {
+      "name": "scan orig locget",
+      "reason": "OnefallbackentersmotorpositionvirtualcallbackA03AD8A8; callbackimplementationnotresolvedinthisbatch.",
+      "decision": "defer-or-skip-this-batch",
+      "not_a_blanket_command_ban": true
+    },
+    {
+      "name": "scan mtr getpos",
+      "reason": "A03ADF36 alwaysentersmotorpositionvirtualcallbackA03AD8A8; targetnotresolvedinthisbatch.",
+      "decision": "defer-or-skip-this-batch",
+      "not_a_blanket_command_ban": true
+    },
+    {
+      "name": "scan cissm prnutblprt",
+      "reason": "A03A6BE0 writesdebugflag20D9DC79; not tabledump.",
+      "decision": "defer-or-skip-this-batch",
+      "not_a_blanket_command_ban": true
+    },
+    {
+      "name": "scan reg gget",
+      "reason": "A03B6A88 usescachedgain asunboundedindexintoromA06011C4 forconstantASICtype1; gainboundnotestablished.",
+      "decision": "defer-or-skip-this-batch",
+      "not_a_blanket_command_ban": true
+    },
+    {
+      "name": "scan prnu yy / scan sensor gaintarg / scan sensor whitetarg / scan sensor blacktarg / scan sensor SCANRES",
+      "reason": "Read-onlyvariantsidentified, but dependoncurrentselectionindices20858418..28 throughA03BD796. Currentselectioninitializationnotestablishedfromphysicalcapture; deferredratherthanassumingready.",
+      "decision": "defer-or-skip-this-batch",
+      "not_a_blanket_command_ban": true
+    },
+    {
+      "name": "scan isr parms / scan firms print",
+      "reason": "GetterA03A4314 uses scanner firmware-valuevirtualinterface20DA0AFC; futureboundedreviewcanresolveexactvtable. Existing577firmvalueartifactalreadycoversnumerics.",
+      "decision": "defer-or-skip-this-batch",
+      "not_a_blanket_command_ban": true
+    }
+  ],
+  "common_notes": [
+    "No command in this plan starts scanning, moves a motor, enables an LED, writes persistent NVM or writes an ASIC register.",
+    "Root alone executes COM16 captures. Keep prior raw artifacts immutable.",
+    "Pure table/cached-state access does not prove physicalsensororLEDhealth.",
+    "All nonnull LED records use existing firmware-owned configuration pointers. The command checks top-levelpointer but not every nested pointer; output depends on normallyinitializedconfiguration."
+  ]
+}

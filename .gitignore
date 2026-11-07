@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+artifacts/
+analysis/*.log
+analysis/*.json
+analysis/*.uart
+build/
+art_hpdeskjet.txt
+fw/app/wifi_secrets.h

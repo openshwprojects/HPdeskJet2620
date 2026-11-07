@@ -1,0 +1,1 @@
+{"index": 1, "command": "udws \"ram.block_info 1 1 0;\"", "bytes": 150, "prompt": true, "validated": null, "preview": "\r\n-> udws \"ram.block_info 1 1 0;\"\r\nDIR inode 1 : block # = 0, priority = 0, size = 16928, use_count = 0, Non Purgeable\r\n;udws() returns 0 (0x0)\r\n-> "}

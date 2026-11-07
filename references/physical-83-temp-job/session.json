@@ -1,0 +1,38 @@
+{
+  "started_utc": "2026-10-29T23:37:38.280586+00:00",
+  "port": "COM16",
+  "baud": 115200,
+  "data_bits": 8,
+  "parity": "N",
+  "stop_bits": 1,
+  "line_ending": "CRLF",
+  "source": "physical UART",
+  "rts": false,
+  "dtr": false,
+  "tx_character_delay_seconds": 0.003,
+  "capture_program_sha256": "685d8b07cd5afafeba32f37eb5722416458a08dafe09290576957e50b31bdb03",
+  "requested_rx_buffer_bytes": 1048576,
+  "requested_tx_buffer_bytes": 65536,
+  "initial_prompt_seen": true,
+  "stop_reason": "batch-complete",
+  "ended_utc": "2026-10-29T23:37:39.407819+00:00",
+  "commands": [
+    {
+      "name": "temp.job",
+      "command": "udws \"temp.job;\"",
+      "argument_syntax": "",
+      "classification": "built-in hello-world job test (round 8)",
+      "purpose": "Submit/run the firmware's fixed \"hello world\" test job through the job scheduler (TEMP_AGENCY). Handler 0xa042d09e, prints submit_job/run_job : result.",
+      "timeout": 30,
+      "index": 1,
+      "started_utc": "2026-10-29T23:37:38.943082+00:00",
+      "response_file": "0001-udws_temp_job.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T23:37:39.405679+00:00",
+      "elapsed_seconds": 0.461,
+      "response_bytes": 97,
+      "response_sha256": "6fd3c54591e10735a49cd49f25cb8603e0664045c69c7c9a05d6dd7f354ea9ee",
+      "prompt_returned": true
+    }
+  ]
+}

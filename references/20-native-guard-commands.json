@@ -1,0 +1,201 @@
+[
+  {
+    "command": "cp",
+    "handler": "0xa046ccb5",
+    "arguments": "none",
+    "expected": "Usage text, return -1.",
+    "side_effects": "Only normal shell parsing/output bookkeeping; operational path is skipped.",
+    "hardware_read": false,
+    "review": "A046CCBC requires argc=3. argc=1 prints usage via A03CEA16 and branches to A046CCE2. Copy A046B42E at A046CCD2 is unreachable for this invocation.",
+    "coverage": "argument-validation path only",
+    "classification": "reviewed-empty-argument-path"
+  },
+  {
+    "command": "dskcpy",
+    "handler": "0xa046cc89",
+    "arguments": "none",
+    "expected": "Usage text, return -1.",
+    "side_effects": "Only normal shell parsing/output bookkeeping; operational path is skipped.",
+    "hardware_read": false,
+    "review": "A046CC8C requires argc=3. argc=1 prints usage and takes A046CC9C -> A046CCB0. Recursive copy A046B2A0 at A046CCA6 is skipped.",
+    "coverage": "argument-validation path only",
+    "classification": "reviewed-empty-argument-path"
+  },
+  {
+    "command": "tps",
+    "handler": "0xa02f66af",
+    "arguments": "none",
+    "expected": "Usage: tps task_name new_priority; return -1.",
+    "side_effects": "Only normal shell parsing/output bookkeeping; operational path is skipped.",
+    "hardware_read": false,
+    "review": "A02F66B0 requires argc=3. No-args takes A02F66B4..BE -> A02F66F6, before name lookup or priority setter A02F6D90.",
+    "coverage": "argument-validation path only",
+    "classification": "reviewed-empty-argument-path"
+  },
+  {
+    "command": "semShow",
+    "handler": "0xa02f66f9",
+    "arguments": "none",
+    "expected": "Return -1, no object status.",
+    "side_effects": "Only normal shell parsing/output bookkeeping; operational path is skipped.",
+    "hardware_read": false,
+    "review": "A02F66FA requires argc=2; no-args branches A02F6708, never parses or dereferences a handle. This is safe without a live semaphore handle.",
+    "coverage": "argument-validation path only",
+    "classification": "reviewed-empty-argument-path"
+  },
+  {
+    "command": "efShow",
+    "handler": "0xa02f6715",
+    "arguments": "none",
+    "expected": "Return -1, no object status.",
+    "side_effects": "Only normal shell parsing/output bookkeeping; operational path is skipped.",
+    "hardware_read": false,
+    "review": "A02F6716 requires argc=2; no-args branches A02F6724, never parses or dereferences a handle.",
+    "coverage": "argument-validation path only",
+    "classification": "reviewed-empty-argument-path"
+  },
+  {
+    "command": "udws",
+    "handler": "0xa03d02b1",
+    "arguments": "none",
+    "expected": "Did you really intend to call udws with no string(s)?; return -1.",
+    "side_effects": "Only normal shell parsing/output bookkeeping; operational path is skipped.",
+    "hardware_read": false,
+    "review": "A03D02B2 requires argc>=2; no-args prints warning then exits, before A03D0260 UDW context/dispatch.",
+    "coverage": "argument-validation path only",
+    "classification": "reviewed-empty-argument-path"
+  },
+  {
+    "command": "ludw",
+    "handler": "0xa03d02cf",
+    "arguments": "none",
+    "expected": "Did you really intend to call ludw with no string(s)?; return -1.",
+    "side_effects": "Only normal shell parsing/output bookkeeping; operational path is skipped.",
+    "hardware_read": false,
+    "review": "A03D02D0 requires argc>=2; no-args prints warning then exits, before A03D0260 UDW context/dispatch.",
+    "coverage": "argument-validation path only",
+    "classification": "reviewed-empty-argument-path"
+  },
+  {
+    "command": "netstat",
+    "handler": "0xa02ebac1",
+    "arguments": "none",
+    "expected": "Usage text listing soc/tcp/udp/arp/rte/dev; return 0.",
+    "side_effects": "Only normal shell parsing/output bookkeeping; operational path is skipped.",
+    "hardware_read": false,
+    "review": "A02EBAC6 requires argc=2; no-args jumps A02EBCB6 -> A02EB8B4 (seven print calls only), then returns 0 at A02EBCBA. Network enumeration is not entered.",
+    "coverage": "argument-validation path only",
+    "classification": "reviewed-empty-argument-path"
+  },
+  {
+    "command": "udw_tags",
+    "handler": "0xa03ceb19",
+    "arguments": "none",
+    "expected": "Return -1.",
+    "side_effects": "Only normal shell parsing/output bookkeeping; operational path is skipped.",
+    "hardware_read": false,
+    "review": "A03CEB1E finds current shell context; A03CEB26 requires argc=2; no-args goes to A03CEB4C/-1 and never reaches byte store at A03CEB52.",
+    "coverage": "argument-validation path only",
+    "classification": "reviewed-empty-argument-path"
+  },
+  {
+    "command": "jmpp_verbose",
+    "handler": "0xa0215715",
+    "expected": "Return 0 only.",
+    "side_effects": "None beyond ordinary command-return output.",
+    "hardware_read": false,
+    "review": "A0215714 MOVS r0,#0; A0215716 BX LR.",
+    "classification": "reviewed-information-query"
+  },
+  {
+    "command": "jmpp_terse",
+    "handler": "0xa0215719",
+    "expected": "Return 0 only.",
+    "side_effects": "None beyond ordinary command-return output.",
+    "hardware_read": false,
+    "review": "A0215718 MOVS r0,#0; A021571A BX LR.",
+    "classification": "reviewed-information-query"
+  },
+  {
+    "command": "ls",
+    "handler": "0xa046cc59",
+    "expected": "Lists registered driver roots.",
+    "side_effects": "Directory-listing scratch/output buffers; no copy/write operation.",
+    "hardware_read": false,
+    "review": "argc=1 passes null path to A046C910; A046C924 takes root-list branch A046CA58 -> A046CC2C. A046C2EA iterates registered driver names. No child-directory recursion in this branch.",
+    "classification": "reviewed-information-query"
+  },
+  {
+    "command": "ll",
+    "handler": "0xa046cc71",
+    "expected": "Lists registered driver roots.",
+    "side_effects": "Same root-list branch as ls with null path; no copy/write operation.",
+    "hardware_read": false,
+    "review": "argc=1 passes null path and recursive flag=1. The null-path root-list branch A046CA58/A046CC2C does not consult recursion flag or enter recursive child traversal. Use no arguments for bounded native coverage.",
+    "classification": "reviewed-information-query"
+  },
+  {
+    "command": "ludw \"shm.msecs;\"",
+    "purpose": "Test UDW output tags and restore observed off state",
+    "classification": "reversible-output-format-test",
+    "provenance": "native_guard_review.json; existing same-shell UDW replies untagged"
+  },
+  {
+    "command": "udw_tags on",
+    "purpose": "Test UDW output tags and restore observed off state",
+    "classification": "reversible-output-format-test",
+    "provenance": "native_guard_review.json; existing same-shell UDW replies untagged"
+  },
+  {
+    "command": "ludw \"shm.msecs;\"",
+    "purpose": "Test UDW output tags and restore observed off state",
+    "classification": "reversible-output-format-test",
+    "provenance": "native_guard_review.json; existing same-shell UDW replies untagged"
+  },
+  {
+    "command": "udw_tags off",
+    "purpose": "Test UDW output tags and restore observed off state",
+    "classification": "reversible-output-format-test",
+    "provenance": "native_guard_review.json; existing same-shell UDW replies untagged"
+  },
+  {
+    "command": "ludw \"shm.msecs;\"",
+    "purpose": "Test UDW output tags and restore observed off state",
+    "classification": "reversible-output-format-test",
+    "provenance": "native_guard_review.json; existing same-shell UDW replies untagged"
+  },
+  {
+    "command": "ip_lhcfifo_reg",
+    "handler": "0xa01c5bc5",
+    "accepted_by_static_review": true,
+    "hardware_read": true,
+    "review": "Reads 16-bit MMIO BD071C18, BD071C1A, BD066404, BD066408, BD066402, BD073416, BD073412, BD073414. Prints LHCFifo state/control/DMA counters; no MMIO store or start/reset/motion call in handler. A00292A8 temporarily changes interrupt mask and restores it after snapshot.",
+    "expected": "Named register-value lines then return 0.",
+    "limitation": "Peripheral read side effects are not formally proved from register documentation; this is the firmware-provided diagnostic snapshot.",
+    "classification": "reviewed-hardware-diagnostic"
+  },
+  {
+    "command": "uart_reset",
+    "handler": "0xa042bc2d",
+    "run_order": "Final native batch command, followed by one previously successful status query and prompt verification.",
+    "instructions": [
+      "A042BC2C PUSH {lr}",
+      "A042BC2E MOVS r1,#0xFF",
+      "A042BC30 ADR r0 -> \"%c\" at A042BD34",
+      "A042BC32 BL A03CEA16",
+      "A042BC36 MOVS r0,#0",
+      "A042BC38 POP {pc}"
+    ],
+    "exact_side_effect": "Emits character byte 0xFF through the normal shell printf/output route; returns 0. No reset register, baud/divisor setter, COM reopen, OS restart, or NVM write is called by this handler.",
+    "interpretation": "Registered description says Reset the text formatting of the uart. Byte 0xFF is the requested output formatting control; downstream driver/terminal rendering is not inferred to equal board reset.",
+    "capture_requirement": "Preserve raw bytes; a text decoder may display replacement character or nothing for FF.",
+    "recovery": "No power cycle is expected from this handler. Verify receipt of the return/prompt and next ordinary status query. If that fails, stop the active batch and inspect raw/passive UART output before taking any stronger recovery action.",
+    "hardware_read": false,
+    "classification": "output-format-control-test"
+  },
+  {
+    "command": "udws \"bio.rev_str;\"",
+    "purpose": "Verify shell after output-format control byte",
+    "classification": "information-query"
+  }
+]

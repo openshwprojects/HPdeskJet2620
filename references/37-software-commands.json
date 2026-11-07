@@ -1,0 +1,1066 @@
+[
+  {
+    "name": "cloud_reg.get_hw_addr",
+    "command": "udws \"cloud_reg.get_hw_addr;\"",
+    "handler": "0xa0030c45",
+    "descriptor_address": "0xa050ac88",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read stored hardware-address text.",
+    "argument_syntax": "no arguments",
+    "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25
+  },
+  {
+    "name": "gcp_comm.get_reg_info",
+    "command": "udws \"gcp_comm.get_reg_info;\"",
+    "handler": "0xa00ea355",
+    "descriptor_address": "0xa0534048",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read cached Google Cloud Print registration state.",
+    "argument_syntax": "no arguments",
+    "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25,
+    "data_sensitivity": "May include locally stored cloud registration metadata; keep within the local reference capture."
+  },
+  {
+    "name": "udw.get_stack_space",
+    "command": "udws \"udw.get_stack_space;\"",
+    "handler": "0xa03ff64d",
+    "descriptor_address": "0xa0619134",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read task and exception-stack free-space estimates.",
+    "argument_syntax": "no arguments",
+    "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 45,
+    "output_completeness": "Task count is runtime-dependent; preserve raw response and final prompt. Fields are free/total stack bytes and name, not proof of stack corruption."
+  },
+  {
+    "name": "posix_timer.clock_gettime_test",
+    "command": "udws \"posix_timer.clock_gettime_test 1;\"",
+    "handler": "0xa042f9cf",
+    "descriptor_address": "0xa061eac8",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Exercise a bounded local clock-read timing test.",
+    "argument_syntax": "1",
+    "side_effects_assessment": "Brief command-thread delays and local clock reads. Result may fail due scheduler precision; failure is diagnostic, not a persistent setting change.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25
+  },
+  {
+    "name": "pcl.query_performance",
+    "command": "udws \"pcl.query_performance 0 0;\"",
+    "handler": "0xa02fe353",
+    "descriptor_address": "0xa05cb800",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read parser performance counters without clearing them.",
+    "argument_syntax": "0 0",
+    "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25,
+    "selector_semantics": "Storage locations are proven; human-readable units/names for the seven counters are not yet resolved."
+  },
+  {
+    "name": "pcl.query_performance",
+    "command": "udws \"pcl.query_performance 2 0;\"",
+    "handler": "0xa02fe353",
+    "descriptor_address": "0xa05cb800",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read parser performance counters without clearing them.",
+    "argument_syntax": "2 0",
+    "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25,
+    "selector_semantics": "Storage locations are proven; human-readable units/names for the seven counters are not yet resolved."
+  },
+  {
+    "name": "pcl.query_performance",
+    "command": "udws \"pcl.query_performance 4 0;\"",
+    "handler": "0xa02fe353",
+    "descriptor_address": "0xa05cb800",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read parser performance counters without clearing them.",
+    "argument_syntax": "4 0",
+    "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25,
+    "selector_semantics": "Storage locations are proven; human-readable units/names for the seven counters are not yet resolved."
+  },
+  {
+    "name": "pcl.query_performance",
+    "command": "udws \"pcl.query_performance 5 0;\"",
+    "handler": "0xa02fe353",
+    "descriptor_address": "0xa05cb800",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read parser performance counters without clearing them.",
+    "argument_syntax": "5 0",
+    "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25,
+    "selector_semantics": "Storage locations are proven; human-readable units/names for the seven counters are not yet resolved."
+  },
+  {
+    "name": "pcl.query_performance",
+    "command": "udws \"pcl.query_performance 6 0;\"",
+    "handler": "0xa02fe353",
+    "descriptor_address": "0xa05cb800",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read parser performance counters without clearing them.",
+    "argument_syntax": "6 0",
+    "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25,
+    "selector_semantics": "Storage locations are proven; human-readable units/names for the seven counters are not yet resolved."
+  },
+  {
+    "name": "pcl.query_performance",
+    "command": "udws \"pcl.query_performance 7 0;\"",
+    "handler": "0xa02fe353",
+    "descriptor_address": "0xa05cb800",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read parser performance counters without clearing them.",
+    "argument_syntax": "7 0",
+    "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25,
+    "selector_semantics": "Storage locations are proven; human-readable units/names for the seven counters are not yet resolved."
+  },
+  {
+    "name": "pcl.query_performance",
+    "command": "udws \"pcl.query_performance 9 0;\"",
+    "handler": "0xa02fe353",
+    "descriptor_address": "0xa05cb800",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read parser performance counters without clearing them.",
+    "argument_syntax": "9 0",
+    "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25,
+    "selector_semantics": "Storage locations are proven; human-readable units/names for the seven counters are not yet resolved."
+  },
+  {
+    "name": "ipp.check_mem_alloc",
+    "command": "udws \"ipp.check_mem_alloc;\"",
+    "handler": "0xa01d937d",
+    "descriptor_address": "0xa054ce08",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Compare current IPP allocation total with the previous sampled total.",
+    "argument_syntax": "no arguments",
+    "side_effects_assessment": "Updates a volatile diagnostic baseline at 20A1D92C; does not free memory or reconfigure IPP.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25,
+    "repeated_query_reason": "Second sample is intentional; 1 means first baseline or unchanged allocation total, 0 means the sampled total changed."
+  },
+  {
+    "name": "ipp.check_mem_alloc",
+    "command": "udws \"ipp.check_mem_alloc;\"",
+    "handler": "0xa01d937d",
+    "descriptor_address": "0xa054ce08",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Compare current IPP allocation total with the previous sampled total.",
+    "argument_syntax": "no arguments",
+    "side_effects_assessment": "Updates a volatile diagnostic baseline at 20A1D92C; does not free memory or reconfigure IPP.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25,
+    "repeated_query_reason": "Second sample is intentional; 1 means first baseline or unchanged allocation total, 0 means the sampled total changed."
+  },
+  {
+    "name": "udw.cache_query",
+    "command": "udws \"udw.cache_query 536870912;\"",
+    "handler": "0xa0250855",
+    "descriptor_address": "0xa056817c",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Classify two known memory address ranges.",
+    "argument_syntax": "536870912",
+    "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25
+  },
+  {
+    "name": "udw.cache_query",
+    "command": "udws \"udw.cache_query 1610612736;\"",
+    "handler": "0xa0250855",
+    "descriptor_address": "0xa056817c",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Classify two known memory address ranges.",
+    "argument_syntax": "1610612736",
+    "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25
+  },
+  {
+    "name": "mem.rom_checksum",
+    "command": "udws \"mem.rom_checksum 0 8256 8271;\"",
+    "handler": "0xa02613dd",
+    "descriptor_address": "0xa05856e4",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Compute byte, halfword and word sums over the known base-version ROM area.",
+    "argument_syntax": "0 8256 8271",
+    "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25,
+    "read_region": {
+      "start": "0x00002040",
+      "length": 16
+    },
+    "output_completeness": "Each result is a 32-bit additive sum; it is not a cryptographic digest."
+  },
+  {
+    "name": "mem.rom_checksum",
+    "command": "udws \"mem.rom_checksum 1 8256 8270;\"",
+    "handler": "0xa02613dd",
+    "descriptor_address": "0xa05856e4",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Compute byte, halfword and word sums over the known base-version ROM area.",
+    "argument_syntax": "1 8256 8270",
+    "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25,
+    "read_region": {
+      "start": "0x00002040",
+      "length": 16
+    },
+    "output_completeness": "Each result is a 32-bit additive sum; it is not a cryptographic digest."
+  },
+  {
+    "name": "mem.rom_checksum",
+    "command": "udws \"mem.rom_checksum 2 8256 8268;\"",
+    "handler": "0xa02613dd",
+    "descriptor_address": "0xa05856e4",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Compute byte, halfword and word sums over the known base-version ROM area.",
+    "argument_syntax": "2 8256 8268",
+    "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25,
+    "read_region": {
+      "start": "0x00002040",
+      "length": 16
+    },
+    "output_completeness": "Each result is a 32-bit additive sum; it is not a cryptographic digest."
+  },
+  {
+    "name": "udw.rom_checksum",
+    "command": "udws \"udw.rom_checksum 0 8256 8271;\"",
+    "handler": "0xa02613dd",
+    "descriptor_address": "0xa05856fc",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Compute byte, halfword and word sums over the known base-version ROM area.",
+    "argument_syntax": "0 8256 8271",
+    "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25,
+    "read_region": {
+      "start": "0x00002040",
+      "length": 16
+    },
+    "output_completeness": "Each result is a 32-bit additive sum; it is not a cryptographic digest."
+  },
+  {
+    "name": "udw.rom_checksum",
+    "command": "udws \"udw.rom_checksum 1 8256 8270;\"",
+    "handler": "0xa02613dd",
+    "descriptor_address": "0xa05856fc",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Compute byte, halfword and word sums over the known base-version ROM area.",
+    "argument_syntax": "1 8256 8270",
+    "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25,
+    "read_region": {
+      "start": "0x00002040",
+      "length": 16
+    },
+    "output_completeness": "Each result is a 32-bit additive sum; it is not a cryptographic digest."
+  },
+  {
+    "name": "udw.rom_checksum",
+    "command": "udws \"udw.rom_checksum 2 8256 8268;\"",
+    "handler": "0xa02613dd",
+    "descriptor_address": "0xa05856fc",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Compute byte, halfword and word sums over the known base-version ROM area.",
+    "argument_syntax": "2 8256 8268",
+    "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25,
+    "read_region": {
+      "start": "0x00002040",
+      "length": 16
+    },
+    "output_completeness": "Each result is a 32-bit additive sum; it is not a cryptographic digest."
+  },
+  {
+    "name": "udw.dm",
+    "command": "udws \"udw.dm 2040 1 16;\"",
+    "handler": "0xa02c403f",
+    "descriptor_address": "0xa05bc748",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read the same sixteen known base-version bytes through the native memory display handler.",
+    "argument_syntax": "2040 1 16",
+    "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25,
+    "read_region": {
+      "start": "0x00002040",
+      "length": 16
+    },
+    "possible_result": "Empty payload if the firmware debug gate is closed; that does not prove a read occurred."
+  },
+  {
+    "name": "patch.get_config_flex",
+    "command": "udws \"patch.get_config_flex;\"",
+    "handler": "0xa02fba89",
+    "descriptor_address": "0xa05cb594",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read compiled patch-slot count and record size.",
+    "argument_syntax": "no arguments",
+    "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25,
+    "expected_payload_semantics": "Two comma-terminated numbers: 14 and 1900. The compiled handler does not append a semicolon."
+  },
+  {
+    "name": "patch.get_flex",
+    "command": "udws \"patch.get_flex;\"",
+    "handler": "0xa02fb2ed",
+    "descriptor_address": "0xa05cb51c",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read the fourteen patch text prefixes in the alternate formatter.",
+    "argument_syntax": "no arguments",
+    "side_effects_assessment": "Refreshes the existing patch-read RAM buffer; no persistent mutation.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25,
+    "output_completeness": "Fourteen padded textual prefixes, not a binary patch dump. Expected empty-current-data output is about 3.6 KiB."
+  },
+  {
+    "name": "patch.get_bin",
+    "command": "udws \"patch.get_bin 0 0 16;\"",
+    "handler": "0xa02fb64b",
+    "descriptor_address": "0xa05cb564",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read a small real binary patch prefix with its ASCII view.",
+    "argument_syntax": "0 0 16",
+    "side_effects_assessment": "Refreshes the existing patch-read RAM buffer; no persistent mutation.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25
+  },
+  {
+    "name": "job_tracker.get_print_log",
+    "command": "udws \"job_tracker.get_print_log 0;\"",
+    "handler": "0xa0242d65",
+    "descriptor_address": "0xa056363c",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read the 32 completed-print-log slots with full numeric columns.",
+    "argument_syntax": "0",
+    "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 45,
+    "output_completeness": "Exactly 32 slots, some empty; strings can make output larger. Check row cardinality before claiming complete metadata."
+  },
+  {
+    "name": "job_tracker.get_active_job_tracker",
+    "command": "udws \"job_tracker.get_active_job_tracker;\"",
+    "handler": "0xa0242ead",
+    "descriptor_address": "0xa0563648",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read the 50 existing active-job tracker slots.",
+    "argument_syntax": "no arguments",
+    "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 45,
+    "output_completeness": "Exactly 50 slots, including empty slots; preserve row count and any long text fields."
+  },
+  {
+    "name": "job_tracker.get_color_usage_log",
+    "command": "udws \"job_tracker.get_color_usage_log;\"",
+    "handler": "0xa0242c5d",
+    "descriptor_address": "0xa0563654",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read the bounded serialized color-usage log.",
+    "argument_syntax": "no arguments",
+    "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 40,
+    "output_completeness": "The serialization capacity is 1024 bytes. The API may return only the entries that fit, even when transport capture is complete."
+  },
+  {
+    "name": "strings.get_string",
+    "command": "udws \"strings.get_string 80 13;\"",
+    "handler": "0xa03ff9d3",
+    "descriptor_address": "0xa061933c",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read a concrete localized string from library zero.",
+    "argument_syntax": "80 13",
+    "side_effects_assessment": "May lazily allocate the normal string cache/mutex and decompress a ROM language resource into its allocated RAM cache. No persistent setting change.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25,
+    "argument_provenance": {
+      "language_id": 13,
+      "source": {
+        "response_file": "references/physical-19b-storage-values/0006-udws_nvm2_get_contents_30_4_nvm2_get_contents_31_0_nvm2_get_conte.bin",
+        "response_sha256": "386112cc19abf23d5826b00028bd1f70985382368bd9bf35bb62568d3b5301a4",
+        "started_utc": "2026-10-29T19:28:54.234873+00:00",
+        "plan_index": 31
+      },
+      "library_0_string_80": "Present in uint16 table A05B74B4 (222 entries), max ID 1061.",
+      "library_1_string_3110": "Present in uint16 table A05B7670 (2017 entries), max ID 6718.",
+      "status_65536": "ROM entry at A0522D9C maps ordinary type 0 status 65536 to string 3110."
+    }
+  },
+  {
+    "name": "strings.get_library_string",
+    "command": "udws \"strings.get_library_string 80 13 0;\"",
+    "handler": "0xa03ffa15",
+    "descriptor_address": "0xa0619348",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read concrete string IDs from explicit libraries.",
+    "argument_syntax": "80 13 0",
+    "side_effects_assessment": "May load/decompress the normal ROM language cache in RAM. No persistent setting change.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25,
+    "argument_provenance": {
+      "language_id": 13,
+      "source": {
+        "response_file": "references/physical-19b-storage-values/0006-udws_nvm2_get_contents_30_4_nvm2_get_contents_31_0_nvm2_get_conte.bin",
+        "response_sha256": "386112cc19abf23d5826b00028bd1f70985382368bd9bf35bb62568d3b5301a4",
+        "started_utc": "2026-10-29T19:28:54.234873+00:00",
+        "plan_index": 31
+      },
+      "library_0_string_80": "Present in uint16 table A05B74B4 (222 entries), max ID 1061.",
+      "library_1_string_3110": "Present in uint16 table A05B7670 (2017 entries), max ID 6718.",
+      "status_65536": "ROM entry at A0522D9C maps ordinary type 0 status 65536 to string 3110."
+    }
+  },
+  {
+    "name": "strings.get_library_string",
+    "command": "udws \"strings.get_library_string 3110 13 1;\"",
+    "handler": "0xa03ffa15",
+    "descriptor_address": "0xa0619348",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read concrete string IDs from explicit libraries.",
+    "argument_syntax": "3110 13 1",
+    "side_effects_assessment": "May load/decompress the normal ROM language cache in RAM. No persistent setting change.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25,
+    "argument_provenance": {
+      "language_id": 13,
+      "source": {
+        "response_file": "references/physical-19b-storage-values/0006-udws_nvm2_get_contents_30_4_nvm2_get_contents_31_0_nvm2_get_conte.bin",
+        "response_sha256": "386112cc19abf23d5826b00028bd1f70985382368bd9bf35bb62568d3b5301a4",
+        "started_utc": "2026-10-29T19:28:54.234873+00:00",
+        "plan_index": 31
+      },
+      "library_0_string_80": "Present in uint16 table A05B74B4 (222 entries), max ID 1061.",
+      "library_1_string_3110": "Present in uint16 table A05B7670 (2017 entries), max ID 6718.",
+      "status_65536": "ROM entry at A0522D9C maps ordinary type 0 status 65536 to string 3110."
+    }
+  },
+  {
+    "name": "l10n.get_string",
+    "command": "udws \"l10n.get_string 80 13;\"",
+    "handler": "0xa02cc567",
+    "descriptor_address": "0xa05bd608",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read the same valid string through localization service.",
+    "argument_syntax": "80 13",
+    "side_effects_assessment": "Normal RAM localization/string cache activity; no country/language setter.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25,
+    "argument_provenance": {
+      "language_id": 13,
+      "source": {
+        "response_file": "references/physical-19b-storage-values/0006-udws_nvm2_get_contents_30_4_nvm2_get_contents_31_0_nvm2_get_conte.bin",
+        "response_sha256": "386112cc19abf23d5826b00028bd1f70985382368bd9bf35bb62568d3b5301a4",
+        "started_utc": "2026-10-29T19:28:54.234873+00:00",
+        "plan_index": 31
+      },
+      "library_0_string_80": "Present in uint16 table A05B74B4 (222 entries), max ID 1061.",
+      "library_1_string_3110": "Present in uint16 table A05B7670 (2017 entries), max ID 6718.",
+      "status_65536": "ROM entry at A0522D9C maps ordinary type 0 status 65536 to string 3110."
+    }
+  },
+  {
+    "name": "ews_strings.get_ledm_status_id_str",
+    "command": "udws \"ews_strings.get_ledm_status_id_str 65536 13;\"",
+    "handler": "0xa00c43c1",
+    "descriptor_address": "0xa052380c",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Format a known LEDM status in the current language.",
+    "argument_syntax": "65536 13",
+    "side_effects_assessment": "Normal RAM string cache activity and UART output; no device-status change.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25,
+    "argument_provenance": {
+      "language_id": 13,
+      "source": {
+        "response_file": "references/physical-19b-storage-values/0006-udws_nvm2_get_contents_30_4_nvm2_get_contents_31_0_nvm2_get_conte.bin",
+        "response_sha256": "386112cc19abf23d5826b00028bd1f70985382368bd9bf35bb62568d3b5301a4",
+        "started_utc": "2026-10-29T19:28:54.234873+00:00",
+        "plan_index": 31
+      },
+      "library_0_string_80": "Present in uint16 table A05B74B4 (222 entries), max ID 1061.",
+      "library_1_string_3110": "Present in uint16 table A05B7670 (2017 entries), max ID 6718.",
+      "status_65536": "ROM entry at A0522D9C maps ordinary type 0 status 65536 to string 3110."
+    }
+  },
+  {
+    "name": "strings.get_tmp_str",
+    "command": "udws \"strings.get_tmp_str 0;\"",
+    "handler": "0xa03ffb5b",
+    "descriptor_address": "0xa0619384",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Inspect the five existing temporary string override slots.",
+    "argument_syntax": "0",
+    "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25
+  },
+  {
+    "name": "strings.get_tmp_str",
+    "command": "udws \"strings.get_tmp_str 1;\"",
+    "handler": "0xa03ffb5b",
+    "descriptor_address": "0xa0619384",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Inspect the five existing temporary string override slots.",
+    "argument_syntax": "1",
+    "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25
+  },
+  {
+    "name": "strings.get_tmp_str",
+    "command": "udws \"strings.get_tmp_str 2;\"",
+    "handler": "0xa03ffb5b",
+    "descriptor_address": "0xa0619384",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Inspect the five existing temporary string override slots.",
+    "argument_syntax": "2",
+    "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25
+  },
+  {
+    "name": "strings.get_tmp_str",
+    "command": "udws \"strings.get_tmp_str 3;\"",
+    "handler": "0xa03ffb5b",
+    "descriptor_address": "0xa0619384",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Inspect the five existing temporary string override slots.",
+    "argument_syntax": "3",
+    "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25
+  },
+  {
+    "name": "strings.get_tmp_str",
+    "command": "udws \"strings.get_tmp_str 4;\"",
+    "handler": "0xa03ffb5b",
+    "descriptor_address": "0xa0619384",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Inspect the five existing temporary string override slots.",
+    "argument_syntax": "4",
+    "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25
+  },
+  {
+    "name": "firm.get_simple",
+    "command": "udws \"firm.get_simple 2437 0;\"",
+    "handler": "0xa00d4ae3",
+    "descriptor_address": "0xa052b478",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read selected actual firmware values in bounded single-item requests.",
+    "argument_syntax": "2437 0",
+    "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25,
+    "argument_provenance": {
+      "source": "references/physical-30-software-queries/0008-udws_firm_query_name.bin",
+      "sha256": "de7e519c5bb424d83f90c26ab339b670fbbb860fc64fe70d41f8d1d07127015b",
+      "reported_rows": 577,
+      "validated_unique_rows": 577,
+      "selected_rows": [
+        {
+          "packed_id": "0x98500",
+          "name": "FIRM_DEB.FIRM_DEBUG_COMP_PARAM1",
+          "suid": 2437,
+          "index": 0
+        },
+        {
+          "packed_id": "0x98504",
+          "name": "FIRM_DEB.FIRM_DEBUG_COMP_PARAM5",
+          "suid": 2437,
+          "index": 4
+        },
+        {
+          "packed_id": "0x97E00",
+          "name": "L10N.LOCALIZATION_FIRM_0",
+          "suid": 2430,
+          "index": 0
+        },
+        {
+          "packed_id": "0x96800",
+          "name": "DEV_INFO.ENABLE_ECP_REVERSE",
+          "suid": 2408,
+          "index": 0
+        }
+      ]
+    }
+  },
+  {
+    "name": "firm.get_simple",
+    "command": "udws \"firm.get_simple 2437 4;\"",
+    "handler": "0xa00d4ae3",
+    "descriptor_address": "0xa052b478",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read selected actual firmware values in bounded single-item requests.",
+    "argument_syntax": "2437 4",
+    "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25,
+    "argument_provenance": {
+      "source": "references/physical-30-software-queries/0008-udws_firm_query_name.bin",
+      "sha256": "de7e519c5bb424d83f90c26ab339b670fbbb860fc64fe70d41f8d1d07127015b",
+      "reported_rows": 577,
+      "validated_unique_rows": 577,
+      "selected_rows": [
+        {
+          "packed_id": "0x98500",
+          "name": "FIRM_DEB.FIRM_DEBUG_COMP_PARAM1",
+          "suid": 2437,
+          "index": 0
+        },
+        {
+          "packed_id": "0x98504",
+          "name": "FIRM_DEB.FIRM_DEBUG_COMP_PARAM5",
+          "suid": 2437,
+          "index": 4
+        },
+        {
+          "packed_id": "0x97E00",
+          "name": "L10N.LOCALIZATION_FIRM_0",
+          "suid": 2430,
+          "index": 0
+        },
+        {
+          "packed_id": "0x96800",
+          "name": "DEV_INFO.ENABLE_ECP_REVERSE",
+          "suid": 2408,
+          "index": 0
+        }
+      ]
+    }
+  },
+  {
+    "name": "firm.get_simple",
+    "command": "udws \"firm.get_simple 2430 0;\"",
+    "handler": "0xa00d4ae3",
+    "descriptor_address": "0xa052b478",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read selected actual firmware values in bounded single-item requests.",
+    "argument_syntax": "2430 0",
+    "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25,
+    "argument_provenance": {
+      "source": "references/physical-30-software-queries/0008-udws_firm_query_name.bin",
+      "sha256": "de7e519c5bb424d83f90c26ab339b670fbbb860fc64fe70d41f8d1d07127015b",
+      "reported_rows": 577,
+      "validated_unique_rows": 577,
+      "selected_rows": [
+        {
+          "packed_id": "0x98500",
+          "name": "FIRM_DEB.FIRM_DEBUG_COMP_PARAM1",
+          "suid": 2437,
+          "index": 0
+        },
+        {
+          "packed_id": "0x98504",
+          "name": "FIRM_DEB.FIRM_DEBUG_COMP_PARAM5",
+          "suid": 2437,
+          "index": 4
+        },
+        {
+          "packed_id": "0x97E00",
+          "name": "L10N.LOCALIZATION_FIRM_0",
+          "suid": 2430,
+          "index": 0
+        },
+        {
+          "packed_id": "0x96800",
+          "name": "DEV_INFO.ENABLE_ECP_REVERSE",
+          "suid": 2408,
+          "index": 0
+        }
+      ]
+    }
+  },
+  {
+    "name": "firm.get_simple",
+    "command": "udws \"firm.get_simple 2408 0;\"",
+    "handler": "0xa00d4ae3",
+    "descriptor_address": "0xa052b478",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read selected actual firmware values in bounded single-item requests.",
+    "argument_syntax": "2408 0",
+    "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25,
+    "argument_provenance": {
+      "source": "references/physical-30-software-queries/0008-udws_firm_query_name.bin",
+      "sha256": "de7e519c5bb424d83f90c26ab339b670fbbb860fc64fe70d41f8d1d07127015b",
+      "reported_rows": 577,
+      "validated_unique_rows": 577,
+      "selected_rows": [
+        {
+          "packed_id": "0x98500",
+          "name": "FIRM_DEB.FIRM_DEBUG_COMP_PARAM1",
+          "suid": 2437,
+          "index": 0
+        },
+        {
+          "packed_id": "0x98504",
+          "name": "FIRM_DEB.FIRM_DEBUG_COMP_PARAM5",
+          "suid": 2437,
+          "index": 4
+        },
+        {
+          "packed_id": "0x97E00",
+          "name": "L10N.LOCALIZATION_FIRM_0",
+          "suid": 2430,
+          "index": 0
+        },
+        {
+          "packed_id": "0x96800",
+          "name": "DEV_INFO.ENABLE_ECP_REVERSE",
+          "suid": 2408,
+          "index": 0
+        }
+      ]
+    }
+  },
+  {
+    "name": "firm.get_by_name",
+    "command": "udws \"firm.get_by_name 0 FIRM_DEB.FIRM_DEBUG_COMP_PARAM1;\"",
+    "handler": "0xa00d4c2d",
+    "descriptor_address": "0xa052b43c",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read the same actual firmware values by their registered names.",
+    "argument_syntax": "0 FIRM_DEB.FIRM_DEBUG_COMP_PARAM1",
+    "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25,
+    "argument_provenance": {
+      "source": "references/physical-30-software-queries/0008-udws_firm_query_name.bin",
+      "sha256": "de7e519c5bb424d83f90c26ab339b670fbbb860fc64fe70d41f8d1d07127015b",
+      "reported_rows": 577,
+      "validated_unique_rows": 577,
+      "selected_rows": [
+        {
+          "packed_id": "0x98500",
+          "name": "FIRM_DEB.FIRM_DEBUG_COMP_PARAM1",
+          "suid": 2437,
+          "index": 0
+        },
+        {
+          "packed_id": "0x98504",
+          "name": "FIRM_DEB.FIRM_DEBUG_COMP_PARAM5",
+          "suid": 2437,
+          "index": 4
+        },
+        {
+          "packed_id": "0x97E00",
+          "name": "L10N.LOCALIZATION_FIRM_0",
+          "suid": 2430,
+          "index": 0
+        },
+        {
+          "packed_id": "0x96800",
+          "name": "DEV_INFO.ENABLE_ECP_REVERSE",
+          "suid": 2408,
+          "index": 0
+        }
+      ]
+    }
+  },
+  {
+    "name": "firm.get_by_name",
+    "command": "udws \"firm.get_by_name 0 FIRM_DEB.FIRM_DEBUG_COMP_PARAM5;\"",
+    "handler": "0xa00d4c2d",
+    "descriptor_address": "0xa052b43c",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read the same actual firmware values by their registered names.",
+    "argument_syntax": "0 FIRM_DEB.FIRM_DEBUG_COMP_PARAM5",
+    "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25,
+    "argument_provenance": {
+      "source": "references/physical-30-software-queries/0008-udws_firm_query_name.bin",
+      "sha256": "de7e519c5bb424d83f90c26ab339b670fbbb860fc64fe70d41f8d1d07127015b",
+      "reported_rows": 577,
+      "validated_unique_rows": 577,
+      "selected_rows": [
+        {
+          "packed_id": "0x98500",
+          "name": "FIRM_DEB.FIRM_DEBUG_COMP_PARAM1",
+          "suid": 2437,
+          "index": 0
+        },
+        {
+          "packed_id": "0x98504",
+          "name": "FIRM_DEB.FIRM_DEBUG_COMP_PARAM5",
+          "suid": 2437,
+          "index": 4
+        },
+        {
+          "packed_id": "0x97E00",
+          "name": "L10N.LOCALIZATION_FIRM_0",
+          "suid": 2430,
+          "index": 0
+        },
+        {
+          "packed_id": "0x96800",
+          "name": "DEV_INFO.ENABLE_ECP_REVERSE",
+          "suid": 2408,
+          "index": 0
+        }
+      ]
+    }
+  },
+  {
+    "name": "firm.get_by_name",
+    "command": "udws \"firm.get_by_name 0 L10N.LOCALIZATION_FIRM_0;\"",
+    "handler": "0xa00d4c2d",
+    "descriptor_address": "0xa052b43c",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read the same actual firmware values by their registered names.",
+    "argument_syntax": "0 L10N.LOCALIZATION_FIRM_0",
+    "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25,
+    "argument_provenance": {
+      "source": "references/physical-30-software-queries/0008-udws_firm_query_name.bin",
+      "sha256": "de7e519c5bb424d83f90c26ab339b670fbbb860fc64fe70d41f8d1d07127015b",
+      "reported_rows": 577,
+      "validated_unique_rows": 577,
+      "selected_rows": [
+        {
+          "packed_id": "0x98500",
+          "name": "FIRM_DEB.FIRM_DEBUG_COMP_PARAM1",
+          "suid": 2437,
+          "index": 0
+        },
+        {
+          "packed_id": "0x98504",
+          "name": "FIRM_DEB.FIRM_DEBUG_COMP_PARAM5",
+          "suid": 2437,
+          "index": 4
+        },
+        {
+          "packed_id": "0x97E00",
+          "name": "L10N.LOCALIZATION_FIRM_0",
+          "suid": 2430,
+          "index": 0
+        },
+        {
+          "packed_id": "0x96800",
+          "name": "DEV_INFO.ENABLE_ECP_REVERSE",
+          "suid": 2408,
+          "index": 0
+        }
+      ]
+    }
+  },
+  {
+    "name": "firm.get_by_name",
+    "command": "udws \"firm.get_by_name 0 DEV_INFO.ENABLE_ECP_REVERSE;\"",
+    "handler": "0xa00d4c2d",
+    "descriptor_address": "0xa052b43c",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read the same actual firmware values by their registered names.",
+    "argument_syntax": "0 DEV_INFO.ENABLE_ECP_REVERSE",
+    "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25,
+    "argument_provenance": {
+      "source": "references/physical-30-software-queries/0008-udws_firm_query_name.bin",
+      "sha256": "de7e519c5bb424d83f90c26ab339b670fbbb860fc64fe70d41f8d1d07127015b",
+      "reported_rows": 577,
+      "validated_unique_rows": 577,
+      "selected_rows": [
+        {
+          "packed_id": "0x98500",
+          "name": "FIRM_DEB.FIRM_DEBUG_COMP_PARAM1",
+          "suid": 2437,
+          "index": 0
+        },
+        {
+          "packed_id": "0x98504",
+          "name": "FIRM_DEB.FIRM_DEBUG_COMP_PARAM5",
+          "suid": 2437,
+          "index": 4
+        },
+        {
+          "packed_id": "0x97E00",
+          "name": "L10N.LOCALIZATION_FIRM_0",
+          "suid": 2430,
+          "index": 0
+        },
+        {
+          "packed_id": "0x96800",
+          "name": "DEV_INFO.ENABLE_ECP_REVERSE",
+          "suid": 2408,
+          "index": 0
+        }
+      ]
+    }
+  },
+  {
+    "name": "firm.query_value_suid",
+    "command": "udws \"firm.query_value_suid 2437;\"",
+    "handler": "0xa00d4f8b",
+    "descriptor_address": "0xa052b4b4",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read three small firmware groups with identifiers, names and values.",
+    "argument_syntax": "2437",
+    "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25,
+    "argument_provenance": {
+      "source": "references/physical-30-software-queries/0008-udws_firm_query_name.bin",
+      "sha256": "de7e519c5bb424d83f90c26ab339b670fbbb860fc64fe70d41f8d1d07127015b",
+      "reported_rows": 577,
+      "validated_unique_rows": 577,
+      "selected_rows": [
+        {
+          "packed_id": "0x98500",
+          "name": "FIRM_DEB.FIRM_DEBUG_COMP_PARAM1",
+          "suid": 2437,
+          "index": 0
+        },
+        {
+          "packed_id": "0x98504",
+          "name": "FIRM_DEB.FIRM_DEBUG_COMP_PARAM5",
+          "suid": 2437,
+          "index": 4
+        },
+        {
+          "packed_id": "0x97E00",
+          "name": "L10N.LOCALIZATION_FIRM_0",
+          "suid": 2430,
+          "index": 0
+        },
+        {
+          "packed_id": "0x96800",
+          "name": "DEV_INFO.ENABLE_ECP_REVERSE",
+          "suid": 2408,
+          "index": 0
+        }
+      ]
+    }
+  },
+  {
+    "name": "firm.query_value_suid",
+    "command": "udws \"firm.query_value_suid 2430;\"",
+    "handler": "0xa00d4f8b",
+    "descriptor_address": "0xa052b4b4",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read three small firmware groups with identifiers, names and values.",
+    "argument_syntax": "2430",
+    "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25,
+    "argument_provenance": {
+      "source": "references/physical-30-software-queries/0008-udws_firm_query_name.bin",
+      "sha256": "de7e519c5bb424d83f90c26ab339b670fbbb860fc64fe70d41f8d1d07127015b",
+      "reported_rows": 577,
+      "validated_unique_rows": 577,
+      "selected_rows": [
+        {
+          "packed_id": "0x98500",
+          "name": "FIRM_DEB.FIRM_DEBUG_COMP_PARAM1",
+          "suid": 2437,
+          "index": 0
+        },
+        {
+          "packed_id": "0x98504",
+          "name": "FIRM_DEB.FIRM_DEBUG_COMP_PARAM5",
+          "suid": 2437,
+          "index": 4
+        },
+        {
+          "packed_id": "0x97E00",
+          "name": "L10N.LOCALIZATION_FIRM_0",
+          "suid": 2430,
+          "index": 0
+        },
+        {
+          "packed_id": "0x96800",
+          "name": "DEV_INFO.ENABLE_ECP_REVERSE",
+          "suid": 2408,
+          "index": 0
+        }
+      ]
+    }
+  },
+  {
+    "name": "firm.query_value_suid",
+    "command": "udws \"firm.query_value_suid 2408;\"",
+    "handler": "0xa00d4f8b",
+    "descriptor_address": "0xa052b4b4",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read three small firmware groups with identifiers, names and values.",
+    "argument_syntax": "2408",
+    "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25,
+    "argument_provenance": {
+      "source": "references/physical-30-software-queries/0008-udws_firm_query_name.bin",
+      "sha256": "de7e519c5bb424d83f90c26ab339b670fbbb860fc64fe70d41f8d1d07127015b",
+      "reported_rows": 577,
+      "validated_unique_rows": 577,
+      "selected_rows": [
+        {
+          "packed_id": "0x98500",
+          "name": "FIRM_DEB.FIRM_DEBUG_COMP_PARAM1",
+          "suid": 2437,
+          "index": 0
+        },
+        {
+          "packed_id": "0x98504",
+          "name": "FIRM_DEB.FIRM_DEBUG_COMP_PARAM5",
+          "suid": 2437,
+          "index": 4
+        },
+        {
+          "packed_id": "0x97E00",
+          "name": "L10N.LOCALIZATION_FIRM_0",
+          "suid": 2430,
+          "index": 0
+        },
+        {
+          "packed_id": "0x96800",
+          "name": "DEV_INFO.ENABLE_ECP_REVERSE",
+          "suid": 2408,
+          "index": 0
+        }
+      ]
+    }
+  },
+  {
+    "name": "udw.get_nvm_events",
+    "command": "udws \"udw.get_nvm_events;\"",
+    "handler": "0xa00c3ef5",
+    "descriptor_address": "0xa0522b7c",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Capture the existing ten-word NVM event view and document its count bug.",
+    "argument_syntax": "no arguments",
+    "side_effects_assessment": "Local data reads and UART output; only normal locks, stack buffers and formatting bookkeeping.",
+    "review_source": "references/software_round3_review.json",
+    "timeout": 25,
+    "data_quality": "Only the prefix through the first zero can be interpreted as the requested NVM event values; later printed words are indeterminate and must not enter the event catalog."
+  }
+]

@@ -1,0 +1,21 @@
+[
+  {
+    "command": "udws \"ram.rmdir /codex_uart_20261029a 1;\"",
+    "classification": "reviewed-owned-empty-ram-directory-cleanup",
+    "purpose": "Remove only our physically verified empty test directory after guard0 errno158. Nativepath excludes/ram prefix; flag1 clears only thisdirectory stale child counters/protection flags. Not recursive.",
+    "review_source": "references/ram_filesystem_review.json",
+    "preconditions": [
+      "physical35 closed all owned file/map/directoryhandles anddeleted a/c",
+      "physical38 deleted uploadx",
+      "physical38/5 guardednative rmdirreturned158",
+      "physical38/7 lists0entries"
+    ],
+    "timeout": 20
+  },
+  {
+    "command": "udws \"ustd.ls /ram;\"",
+    "classification": "reviewed-ram-filesystem-query",
+    "purpose": "Verify original eightrootentries andabsenceofourtestdirectory.",
+    "timeout": 20
+  }
+]

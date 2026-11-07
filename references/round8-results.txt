@@ -1,0 +1,231 @@
+HP DeskJet 2620 — round eight: fm.version_query hang, reboot capture, carriage commands
+COM16, 115200 8N1, DTR/RTS false, CRLF, 3 ms per character. 2026-10-29.
+Registered names invoked (rebuilt index): 703 -> 726 of 2,235. This round added 18 names:
+fm.version_query, fm.carriage_home and the 16 queries of batch 81. The other five
+(constat.get_system_info, ip.get, jmis.mem_show, scan mtr getpos, scan orig locget) come from
+round-7 sessions 76-79, which were captured before this round but not yet indexed.
+
+Summary:
+- udws "fm.version_query;" echoed, then hung the UDW shell permanently. No reply, no prompt.
+- 30 s passive listen: 0 bytes. One empty CRLF: not even an echo. The shell task was blocked.
+- The user power-cycled the printer. The boot log was captured passively (2,752 bytes, 0 transmitted)
+  and ended with a fresh "->" prompt.
+- The carriage motion the user saw at this point was the printer's own power-on initialization.
+  No motion command had been sent: the reboot capture contains zero TX events.
+
+Session timeline (UTC):
+  22:23:33  physical-80-extra-queries   udws "fm.version_query;"  timeout-no-prompt after 20.1 s, 32 bytes (echo only)
+  22:24:03  physical-80b-listen         passive 30 s, 0 bytes
+  22:25:02  physical-80c-prompt-check   one empty CRLF, 0 bytes back in 10 s (initial-prompt-not-observed)
+  22:26:09  physical-80d-reboot-listen  passive; boot output 22:28:57-22:29:05, ends at "->"
+
+Exact reply to the hanging command (physical-80-extra-queries/0001-udws_fm_version_query.bin):
+  \r\r\n-> udws "fm.version_query;"\r\r\n
+  Nothing followed.
+
+Why it hangs (offline disassembly of artifacts/ghs/dram.bin; never sent to the printer):
+  fm.version_query and fm.limits_query share handler 0xa00e084a -> 0xa00e07f2:
+    0xa00e07fa  bl 0xa00d62ae          allocate a message
+    0xa00e0800  movs r3,#0x49; str     message code 0x49
+    0xa00e0816  bl 0xa00dfcda          post it to the fm task's queue
+    0xa00e081a  movs r2,#0; mvns r1,r2 timeout = -1 (wait forever)
+    0xa00e0820  bl 0xa02f5fa2          take the reply semaphore at [0x2092d2f8]
+  The fm task exists: session 49 lists task 19 "fm", entry 0xa00d6be5, priority 95, stack 10000,
+  tMech. It never released the semaphore for message 0x49. Why it did not reply is unproven.
+  Most other fm.* handlers post a message and wait the same way. Treat any fm.* command as
+  able to hang the shell until the printer is power-cycled.
+
+Carriage and motor commands (registry names; none of these was sent):
+  Print carriage: only through the fm task.
+    fm.carriage_home, fm.carriage_move_abs, fm.carriage_push, fm.carriage_cal,
+    fm.carriage_board, fm.wait_carriage_done, plus fm.cap / fm.uncap and the servicing switches.
+  The firmware contains HP's own carriage sequence as literal UDW strings (0xa00e4058-0xa00e417b,
+  next to the "MAX PWM REPORT" diagnostic):
+    fm.disable_servicing;
+    fm.carriage_board 1;
+    fm.uncap;
+    fm.carriage_move_abs 5, 6000;
+    fm.wait_carriage_done;
+    fm.carriage_move_abs %d, %d;
+    fm.carriage_home;
+    fm.cap;
+    fm.load_paper; fm.wait_paper_done; fm.eject_paper; fm.paper_move_rel %d, %d;
+    udw.quit;
+  The argument meaning (e.g. "5, 6000") is not established. The fm keyword-history help string
+  describes cmd_motor_move_abs(motor,speed,dist), which suggests speed and position.
+  Sending any of these carries the same hang risk as fm.version_query.
+
+  Scanner motors: smtr_dc and scan mtr. The smtr_dc motor names in firmware are SMTR_DC_CAR,
+  SMTR_DC_ADF, SMTR_DC_LIGHTBAR and the SMTR_DC_ADF_* motors. They share their string area with
+  the scan subsystem, so smtr_dc move home/rel/abs/select appear to drive the scanner motors,
+  not the print carriage. This is inferred from names and string placement, not proven.
+  Their argument syntax has not been reviewed.
+  Read-only position reference from session 31: udws "lib_servo.get_pos 1;" -> 768
+  (32-bit encoder MMIO 0xBD300038).
+
+Prepared but not sent: 81-extra-query-commands.json, 16 still-uninvoked names from batch 80
+(read-only-looking status/show queries, no fm.*).
+
+============================================================================================
+Second fm attempt: fm.carriage_home (user-requested)
+
+  22:35:33  physical-82-carriage-home   udws "fm.carriage_home;"  timeout-no-prompt after 30.2 s, 26 bytes (echo only)
+  22:36:13  physical-82b-prompt-check   one empty CRLF, 0 bytes back (initial-prompt-not-observed)
+  22:36:31  physical-82c-reboot-listen  passive 600 s, 0 bytes; the printer was still hung when it ended
+  The user power-cycled the printer by hand afterwards. That boot was not recorded.
+  Restarting through the user's OpenBeken plug (192.168.0.240) was attempted and failed: no ARP
+  reply from this PC (192.168.0.213, "Destination host unreachable"), while the gateway 192.168.0.1
+  answered. Nothing on the plug was read or changed.
+
+Exact reply (physical-82-carriage-home/0001-udws_fm_carriage_home.bin):
+  udws "fm.carriage_home;"\r\n
+  Nothing followed.
+
+Whether the carriage physically moved when the command was sent was not observed.
+
+What this adds to the analysis:
+  fm.carriage_home uses the same generic handler as fm.version_query (0xa00e084a). 57 fm.*
+  descriptors share it. The descriptor's context word is the callback that the fm task should
+  run. version_query: 0xa00e0cb1 only formats three numbers through 0xa00e0826.
+  carriage_home: 0xa00e2455 calls 0xa00dd4d6(0x21) and prints nothing.
+  Both hung, so the earlier guess (fm-task output deadlocking with the waiting shell) does not
+  explain this hang. The likelier explanation is that the fm task is not servicing message 0x49
+  at all in the printer's normal state, but that is unproven. Until it is, treat every
+  generic-handler fm.* command as one that hangs the shell.
+
+============================================================================================
+Batch 81: 16 read-only queries, all returned prompts (physical-81-extra-queries, 23:07 UTC)
+
+  udws "is.info;"                        Could not open image 0,0
+  udws "therm_mdl.list_values;"          (no payload) udws() returns 0
+  udws "ustd.sstat;"                     (no payload) udws() returns 0
+  udws "smjob show;"                     one active job: "3  RUNNING TEMP_AGENCY, SUID 1396, Blob: 20a7ac3c",
+                                         then the 29 registered job types (same list as below)
+  udws "sm_dispatch_job types;"          29 job types: WFWU 2301/40, JM_REPORTS 492/33, URF 2101/1,
+                                         UDW 337/18, PCLM 2175/1, PCL_KHEOPS 330/1, LIDIL 486/18,
+                                         JPEG_PRINT 2172/1, ECHO 338/18, PJL_KHEOPS 329/1,
+                                         PHOTO_PRINT 342/19, COPY 344/3, JM_SCAN 425/2, PRESCAN 843/34,
+                                         CAL_PAGE 1358/1, SHELL 2726/39, SCANLETS_PEN_CAL 346/23,
+                                         PRINT UTIL 2095/1, PCL_JPEG_DEMO_REPORT 339/1, LIDIL_PRINT 487/1,
+                                         THUMBNAIL_FORECAST 1610/30, IMAGE_FILTER 1409/30, FUL 469/40,
+                                         TEMP_AGENCY_AC 2304/18, TEMP_AGENCY 1396/18, UDW_MEM 360/18,
+                                         MEM_TEST 416/18, INTSCAN 1154/2, HTTP 1982/18
+                                         (name, SUID / JS_JOB_TYPE; JM IFC pointers in the raw file)
+  udws "sm_dispatch_job filter show;"    all 29 job types UNFILTERED
+  udws "pixel_gen.show_pxg_color_order;" 0, 1, 2, 3, 12, 13, 14,
+  udws "udw.get_eridani_info;"           0x0011:0x0001
+  udws "db.image.get_num_images;"        5
+  udws "pam.print_status;"               (no payload) udws() returns 0
+  udws "rest_udw status;"                0 of 4 REST UDW sessions in use (120s timeout)
+  udws "heapmgr log show;"               # heap_blocks : 0
+  udws "ip.show;"                        (no payload) udws() returns 0
+  udws "jm_copy.show;"                   (no payload) udws() returns 0
+  udws "scan timing show;"               (no payload) udws() returns 0
+  udws "scan_semiauto_align.mem_show;"   (no payload) udws() returns 0
+
+  Seven replies have no payload. A prompt and udws() returns 0 do not show that these handlers
+  did anything; they may be compiled out or have nothing to report. The 29 job types match the
+  count from round 5. The TEMP_AGENCY job is the one running job at this moment; whether it
+  relates to the fm hangs is not established. "heap_blocks : 0" is this log's own count, not
+  the allocator total (round 5 reconciled eight named blocks).
+
+============================================================================================
+Built-in "hello world" job test: temp.job and temp.async (user-requested)
+
+The firmware contains two "hello world" strings at 0xa061e300 / 0xa061e30c, referenced only by
+temp.job (handler 0xa042d09e) and temp.async (handler 0xa042d11c). Both submit a fixed built-in
+test job to the job scheduler (the TEMP_AGENCY task that "smjob show" lists as RUNNING) and print
+the result. They are ordinary registered UDW commands, not fm.*, and both returned the prompt.
+
+  udws "temp.job;"      submit_job(mem_size = 0, tid = 68988) : OK
+  Source: physical-83-temp-job/0001-udws_temp_job.bin
+
+  udws "temp.async;"    async_call(parm = hello world) : OK
+  Source: physical-84-temp-async/0001-udws_temp_async.bin
+
+  tid 68988 = 0x10d7c is the default job id compiled into temp.job's handler. temp.async passes
+  the literal "hello world" string as the job parameter, which is why the reply echoes it.
+  The job body is fixed in firmware; this is a built-in diagnostic, not a path to run supplied
+  code. It is, however, a non-hanging "schedule a job, get OK" path, unlike the fm.* family.
+  Static call-graph analysis flagged a path from both handlers to the same blocking primitive
+  (0xa02f5fa2) used by the fm hangs, but in practice both completed and returned the prompt:
+  they wait on the TEMP_AGENCY task, which services the job, not on the fm task.
+
+Other code-execution-capable commands enumerated but NOT invoked (all fm.*, hang/motor risk):
+  fm.lua, fm.lua_download, fm.lua_restart, fm.lua_gc  (embedded Lua interpreter; generic hang
+    handler 0xa00e084b)
+  fm.luau                                             (Lua variant; different handler 0xa00e0f64,
+    no blocking wait seen in the entry path, but unverified and still fm.*)
+  fm.execute_keyword, fm.call_keyword, fm.do_not_use_execute_keyword  (motor/flow keyword
+    interpreter; reaches the blocking wait, drives motors)
+
+============================================================================================
+Lua interpreter attempt (user-authorized, restart accepted)
+
+  fm.luau   (handler 0xa00e0f58 -> worker 0xa00e0f24): RETURNED, no hang.
+    udws "fm.luau;"  ->  99999;udws() returns 0 (0x0)
+    Source: physical-85-fm-luau/ (probe sent the command, then would have flushed input if it
+    had blocked; it did not block).
+    This handler does NOT run Lua. It reads characters from input stream handle -1 via the
+    buffered getc at 0xa02c2a3a into a 256-byte stack buffer until EOF(-1) or full, null-
+    terminates, then prints the fixed string "%05d%c" with 99999 (0x1869f) and ';' through the
+    UART writer at 0xa00e0826 (snprintf 0xa0016ed0 + writer 0xa02c2a7a). With no buffered input
+    the first getc returned -1 immediately, so it printed "99999;" and returned. Not an
+    interpreter; the "luau" name is misleading.
+
+  fm.lua   (generic handler 0xa00e084a): HUNG the shell.
+    udws "fm.lua;"  ->  echo only (16 bytes), no prompt; empty CRLF afterward got nothing (86b).
+    Power cycle required. Same post-to-fm-task-and-wait-forever pattern as fm.version_query and
+    fm.carriage_home.
+    fm.lua_download, fm.lua_restart and fm.lua_gc share handler 0xa00e084b, so they hang
+    identically; they were not fired individually.
+
+Conclusion: no usable "run supplied code" path over UART. The real Lua entry (fm.lua) hangs
+because the fm task does not service these messages in this firmware state; fm.luau does not
+execute Lua. The firmware's working "run something and get a result" path is the built-in
+hello-world job test temp.job / temp.async (see the section above).
+
+============================================================================================
+Native ludw re-confirmed after restart (session 88)
+
+ludw is a native shell function (not a UDW registry name) that runs UDW expressions through the
+same interpreter and output callbacks as udws. First exercised in session 20; re-confirmed here.
+
+  ludw "shm.msecs;"                 -> msecs = 67762 ; ludw() returns 0   (uptime ~68s: fresh boot)
+  udw_tags on                       -> udw_tags() returns 0
+  ludw "bio.rev_str; shm.msecs;"    -> <udw>TJP1FN1809AR;</udw><udw>msecs = 68696</udw><udw>;</udw>
+  udw_tags off                      -> udw_tags() returns 0
+  Source: physical-88-ludw/
+
+udw_tags on/off toggles wrapping each UDW expression's output in <udw>...</udw> tags.
+ludw uses the same interpreter as udws, so it is NOT a workaround for the fm.* hang
+(ludw "fm.version_query;" would hang identically) and does not fix the bulk-output truncation.
+
+Note: the fm.luau probe (session 85) logged its reply to physical-85-fm-luau/transcript.txt but
+used manual send/receive rather than the capture executor, so it has no per-command JSON record
+and the index marks fm.luau not-invoked. The raw reply "99999;udws() returns 0" is in that
+transcript and in round8-results.txt above.
+
+============================================================================================
+"Code in RAM" survey (user question) and udw.srec_download probe (session 89)
+
+Writing bytes into RAM (works):
+  /ram filesystem           proven in sessions 33-41 (create/write/read/seek/mmap/copy/upload,
+                            raw and hex, exact round-trip). Data files only; nothing executes them.
+  udw.srec_download         registered S-record command (handler 0xa03da064). Bare invocation:
+                              udws "udw.srec_download;"  ->  udws() returns 0, no output, no hang.
+                            No session started, no records fed. The real S-record loader is in the
+                            boot loader (nos_loader_srec.c, [Boot] AuthUpdate/AuthFinal), gated by
+                            secure boot (is_secure_boot, unicast_challenge). Handler literal pool
+                            holds 'Sirius' and 'Commmand not supported'. Source: physical-89-srec-probe/
+  scan_semiauto_align.mem_set   bounded calibration-buffer write, not general purpose (not invoked).
+
+Executing code (no clean runtime path):
+  hw.set_kernel_exec_wait / hw.get_kernel_exec_wait   NOT an executor. Disassembly (0xa0259af2 /
+                            0xa0259adc) shows get/set of one integer config item (#7, a wait value)
+                            via 0xa000cb8c / 0xa000cc54. The static 'arbitrary_or_scripted_execution'
+                            triage tag is a name heuristic and is wrong here.
+  fm.flow_download, fm.lua_download   load a flow/Lua script but use the generic fm handler
+                            0xa00e084b, so they hang like fm.lua (not invoked).
+  Whether udw.srec_download jumps to a loaded entry address is unproven; the loader is
+  secure-boot-gated. No native code was loaded or executed.

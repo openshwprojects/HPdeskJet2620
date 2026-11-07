@@ -1,0 +1,539 @@
+{
+  "generated_utc": "2026-10-29T20:53:43.106352+00:00",
+  "source_reports": [
+    {
+      "file": "useful_system_round4_results.json",
+      "sha256": "2bda11d6fc2179f0f451712dd602a14af258210265d3ad0fb9007b5989de2a5b"
+    },
+    {
+      "file": "useful_network_round4_results.json",
+      "sha256": "325ad8048f3309b4b330a996fdcdde2b99b1bdadefa0e125b17446d5f79134c6"
+    },
+    {
+      "file": "useful_scanner_round4_results.json",
+      "sha256": "7ecc611e064a929c894c47b3b62856806e7ca12ec0f49c1947aebcd69c157ef5"
+    }
+  ],
+  "response_revalidations": [
+    {
+      "response_file": "physical-49-system-metadata/0001-udws_sm_module_stat.bin",
+      "response_sha256": "ecff537f51b02fe5d6254a820aad5fcdeb41ba4b54e8567c8dd8e6c774c13bf2",
+      "valid": true,
+      "assessment": "validated-cached-system-metadata",
+      "note": "Complete framing and contiguous module/task indices; task static descriptor/priority matches, ordered cross-table364-module consistency and exact arithmetic totals verified where applicable. Interface filters checked as unique reverse-order module subsets; independent runtime-vtable membership remains unverified.",
+      "analysis_report": "useful_system_round4_results.json",
+      "analysis_report_sha256": "2bda11d6fc2179f0f451712dd602a14af258210265d3ad0fb9007b5989de2a5b"
+    },
+    {
+      "response_file": "physical-49-system-metadata/0002-udws_sm_module_task.bin",
+      "response_sha256": "e7bb9c7bcef7413904ba49dba14d0bf3022f0944f8a9c1242d5a77fb32f87092",
+      "valid": true,
+      "assessment": "validated-cached-system-metadata",
+      "note": "Complete framing and contiguous module/task indices; task static descriptor/priority matches, ordered cross-table364-module consistency and exact arithmetic totals verified where applicable. Interface filters checked as unique reverse-order module subsets; independent runtime-vtable membership remains unverified.",
+      "analysis_report": "useful_system_round4_results.json",
+      "analysis_report_sha256": "2bda11d6fc2179f0f451712dd602a14af258210265d3ad0fb9007b5989de2a5b"
+    },
+    {
+      "response_file": "physical-49-system-metadata/0003-udws_sm_module_mem.bin",
+      "response_sha256": "49cfdc322a46c120b372125a1b5f31c543cfe6331c1f51011207c5bd94a02ed5",
+      "valid": true,
+      "assessment": "validated-cached-system-metadata",
+      "note": "Complete framing and contiguous module/task indices; task static descriptor/priority matches, ordered cross-table364-module consistency and exact arithmetic totals verified where applicable. Interface filters checked as unique reverse-order module subsets; independent runtime-vtable membership remains unverified.",
+      "analysis_report": "useful_system_round4_results.json",
+      "analysis_report_sha256": "2bda11d6fc2179f0f451712dd602a14af258210265d3ad0fb9007b5989de2a5b"
+    },
+    {
+      "response_file": "physical-49-system-metadata/0004-udws_sm_module_tim.bin",
+      "response_sha256": "88de2def1ec2e00465d2ee9bd33b9a1fe6c8f2d1413b2dc30a0a2ef0be095fe8",
+      "valid": true,
+      "assessment": "validated-cached-system-metadata",
+      "note": "Complete framing and contiguous module/task indices; task static descriptor/priority matches, ordered cross-table364-module consistency and exact arithmetic totals verified where applicable. Interface filters checked as unique reverse-order module subsets; independent runtime-vtable membership remains unverified.",
+      "analysis_report": "useful_system_round4_results.json",
+      "analysis_report_sha256": "2bda11d6fc2179f0f451712dd602a14af258210265d3ad0fb9007b5989de2a5b"
+    },
+    {
+      "response_file": "physical-49-system-metadata/0005-udws_sm_module_mod.bin",
+      "response_sha256": "b64f2cb8a710070ccce95310f0c886c7815e08ed4874131f47d4ea2d9516ca70",
+      "valid": true,
+      "assessment": "validated-cached-system-metadata",
+      "note": "Complete framing and contiguous module/task indices; task static descriptor/priority matches, ordered cross-table364-module consistency and exact arithmetic totals verified where applicable. Interface filters checked as unique reverse-order module subsets; independent runtime-vtable membership remains unverified.",
+      "analysis_report": "useful_system_round4_results.json",
+      "analysis_report_sha256": "2bda11d6fc2179f0f451712dd602a14af258210265d3ad0fb9007b5989de2a5b"
+    },
+    {
+      "response_file": "physical-49-system-metadata/0006-udws_sm_module_sysifc_init.bin",
+      "response_sha256": "a9abbcb4e4ce4775f92d975c78421442aec5d296042555731e6ef1c7973815d4",
+      "valid": true,
+      "assessment": "validated-cached-system-metadata",
+      "note": "Complete framing and contiguous module/task indices; task static descriptor/priority matches, ordered cross-table364-module consistency and exact arithmetic totals verified where applicable. Interface filters checked as unique reverse-order module subsets; independent runtime-vtable membership remains unverified.",
+      "analysis_report": "useful_system_round4_results.json",
+      "analysis_report_sha256": "2bda11d6fc2179f0f451712dd602a14af258210265d3ad0fb9007b5989de2a5b"
+    },
+    {
+      "response_file": "physical-49-system-metadata/0007-udws_sm_module_sysifc_start.bin",
+      "response_sha256": "9d6bcf9b7547bf30efa1c35f3a6ef93926a7e19a2285fdd21df415e436d53848",
+      "valid": true,
+      "assessment": "validated-cached-system-metadata",
+      "note": "Complete framing and contiguous module/task indices; task static descriptor/priority matches, ordered cross-table364-module consistency and exact arithmetic totals verified where applicable. Interface filters checked as unique reverse-order module subsets; independent runtime-vtable membership remains unverified.",
+      "analysis_report": "useful_system_round4_results.json",
+      "analysis_report_sha256": "2bda11d6fc2179f0f451712dd602a14af258210265d3ad0fb9007b5989de2a5b"
+    },
+    {
+      "response_file": "physical-49-system-metadata/0008-udws_sm_module_sysifc_sdc.bin",
+      "response_sha256": "e2c5b86a70d8361a81c9ca64ed933984affac631dcd3caafe663fcdd629bca46",
+      "valid": true,
+      "assessment": "validated-cached-system-metadata",
+      "note": "Complete framing and contiguous module/task indices; task static descriptor/priority matches, ordered cross-table364-module consistency and exact arithmetic totals verified where applicable. Interface filters checked as unique reverse-order module subsets; independent runtime-vtable membership remains unverified.",
+      "analysis_report": "useful_system_round4_results.json",
+      "analysis_report_sha256": "2bda11d6fc2179f0f451712dd602a14af258210265d3ad0fb9007b5989de2a5b"
+    },
+    {
+      "response_file": "physical-49-system-metadata/0009-udws_sm_module_sysifc_sdi.bin",
+      "response_sha256": "d91df158a0775321e83cf90c239cc82fc5ce38fea675b32f350de1c5c7114bf8",
+      "valid": true,
+      "assessment": "validated-cached-system-metadata",
+      "note": "Complete framing and contiguous module/task indices; task static descriptor/priority matches, ordered cross-table364-module consistency and exact arithmetic totals verified where applicable. Interface filters checked as unique reverse-order module subsets; independent runtime-vtable membership remains unverified.",
+      "analysis_report": "useful_system_round4_results.json",
+      "analysis_report_sha256": "2bda11d6fc2179f0f451712dd602a14af258210265d3ad0fb9007b5989de2a5b"
+    },
+    {
+      "response_file": "physical-49-system-metadata/0010-udws_sm_module_sysifc_query.bin",
+      "response_sha256": "7f89b31fbe3969b5263ddec5641c824e72aeff5718871f08f55c52985cdc84bf",
+      "valid": true,
+      "assessment": "validated-cached-system-metadata",
+      "note": "Complete framing and contiguous module/task indices; task static descriptor/priority matches, ordered cross-table364-module consistency and exact arithmetic totals verified where applicable. Interface filters checked as unique reverse-order module subsets; independent runtime-vtable membership remains unverified.",
+      "analysis_report": "useful_system_round4_results.json",
+      "analysis_report_sha256": "2bda11d6fc2179f0f451712dd602a14af258210265d3ad0fb9007b5989de2a5b"
+    },
+    {
+      "response_file": "physical-49-system-metadata/0011-udws_sm_module_sysifc_svrC.bin",
+      "response_sha256": "db20cfbe085f2834a3618284e5f3ee8033eb7eb72887cd835a19d7fcf0ac6497",
+      "valid": true,
+      "assessment": "validated-cached-system-metadata",
+      "note": "Complete framing and contiguous module/task indices; task static descriptor/priority matches, ordered cross-table364-module consistency and exact arithmetic totals verified where applicable. Interface filters checked as unique reverse-order module subsets; independent runtime-vtable membership remains unverified.",
+      "analysis_report": "useful_system_round4_results.json",
+      "analysis_report_sha256": "2bda11d6fc2179f0f451712dd602a14af258210265d3ad0fb9007b5989de2a5b"
+    },
+    {
+      "response_file": "physical-49-system-metadata/0012-udws_sm_module_sysifc_spl.bin",
+      "response_sha256": "6c2d9c718f0e346cb465a0d442c6cee8092fb244314bb91c9460b0aa327506fb",
+      "valid": true,
+      "assessment": "validated-cached-system-metadata",
+      "note": "Complete framing and contiguous module/task indices; task static descriptor/priority matches, ordered cross-table364-module consistency and exact arithmetic totals verified where applicable. Interface filters checked as unique reverse-order module subsets; independent runtime-vtable membership remains unverified.",
+      "analysis_report": "useful_system_round4_results.json",
+      "analysis_report_sha256": "2bda11d6fc2179f0f451712dd602a14af258210265d3ad0fb9007b5989de2a5b"
+    },
+    {
+      "response_file": "physical-49-system-metadata/0013-udws_sm_module_sysifc_swut.bin",
+      "response_sha256": "c01d1f533c8a0fd759baa3b28ea9fc6c510977a569bdb7bc25f68229520dffec",
+      "valid": true,
+      "assessment": "validated-cached-system-metadata",
+      "note": "Complete framing and contiguous module/task indices; task static descriptor/priority matches, ordered cross-table364-module consistency and exact arithmetic totals verified where applicable. Interface filters checked as unique reverse-order module subsets; independent runtime-vtable membership remains unverified.",
+      "analysis_report": "useful_system_round4_results.json",
+      "analysis_report_sha256": "2bda11d6fc2179f0f451712dd602a14af258210265d3ad0fb9007b5989de2a5b"
+    },
+    {
+      "response_file": "physical-49-system-metadata/0014-udws_sm_module_sysifc_msdt.bin",
+      "response_sha256": "878cc0febad472780bd73b1aabc96eb78a96754590349cf515e50422128e636f",
+      "valid": true,
+      "assessment": "validated-cached-system-metadata",
+      "note": "Complete framing and contiguous module/task indices; task static descriptor/priority matches, ordered cross-table364-module consistency and exact arithmetic totals verified where applicable. Interface filters checked as unique reverse-order module subsets; independent runtime-vtable membership remains unverified.",
+      "analysis_report": "useful_system_round4_results.json",
+      "analysis_report_sha256": "2bda11d6fc2179f0f451712dd602a14af258210265d3ad0fb9007b5989de2a5b"
+    },
+    {
+      "response_file": "physical-49-system-metadata/0015-udws_sm_module_sysifc_scom.bin",
+      "response_sha256": "47318ecbff6b6314ac28b8a56d852eb8a15a58f2ee6e9226c44329d18e984ee2",
+      "valid": true,
+      "assessment": "validated-cached-system-metadata",
+      "note": "Complete framing and contiguous module/task indices; task static descriptor/priority matches, ordered cross-table364-module consistency and exact arithmetic totals verified where applicable. Interface filters checked as unique reverse-order module subsets; independent runtime-vtable membership remains unverified.",
+      "analysis_report": "useful_system_round4_results.json",
+      "analysis_report_sha256": "2bda11d6fc2179f0f451712dd602a14af258210265d3ad0fb9007b5989de2a5b"
+    },
+    {
+      "response_file": "physical-49-system-metadata/0016-udws_sm_module_sysifc_ipcc.bin",
+      "response_sha256": "071302fe5699921d346a7a9ef1bde7ff20250130b819f1f1d479dd9b754e021a",
+      "valid": true,
+      "assessment": "validated-cached-system-metadata",
+      "note": "Complete framing and contiguous module/task indices; task static descriptor/priority matches, ordered cross-table364-module consistency and exact arithmetic totals verified where applicable. Interface filters checked as unique reverse-order module subsets; independent runtime-vtable membership remains unverified.",
+      "analysis_report": "useful_system_round4_results.json",
+      "analysis_report_sha256": "2bda11d6fc2179f0f451712dd602a14af258210265d3ad0fb9007b5989de2a5b"
+    },
+    {
+      "response_file": "references/physical-48-wifi-sdio/0001-udws_ultra_spectra_get_sdio_counters.bin",
+      "response_sha256": "4e2bd8263264508dc691e8f32b08e735f3189c92985eaeee3e49d4db092e406a",
+      "command": "udws \"ultra_spectra.get_sdio_counters;\"",
+      "valid": true,
+      "assessment": "exact-command-echo-and-response-body-validated",
+      "preserves_original_capture_validation": true,
+      "analysis_report": "useful_network_round4_results.json",
+      "analysis_report_sha256": "325ad8048f3309b4b330a996fdcdde2b99b1bdadefa0e125b17446d5f79134c6"
+    },
+    {
+      "response_file": "references/physical-48-wifi-sdio/0002-udws_ultra_spectra_get_sdio_caps.bin",
+      "response_sha256": "93a24099cf19268f85a9c538d1ab745d094bd3ed6db1a3b8d5cb35e5d97f4074",
+      "command": "udws \"ultra_spectra.get_sdio_caps;\"",
+      "valid": true,
+      "assessment": "exact-command-echo-and-response-body-validated",
+      "preserves_original_capture_validation": true,
+      "analysis_report": "useful_network_round4_results.json",
+      "analysis_report_sha256": "325ad8048f3309b4b330a996fdcdde2b99b1bdadefa0e125b17446d5f79134c6"
+    },
+    {
+      "response_file": "references/physical-48-wifi-sdio/0003-udws_ultra_spectra_get_sdio_status.bin",
+      "response_sha256": "b34013848fd899e6ddedd5f4f6586aa3f203e2e44b966fdbe13c19df200ae54c",
+      "command": "udws \"ultra_spectra.get_sdio_status;\"",
+      "valid": true,
+      "assessment": "exact-command-echo-and-response-body-validated",
+      "preserves_original_capture_validation": true,
+      "analysis_report": "useful_network_round4_results.json",
+      "analysis_report_sha256": "325ad8048f3309b4b330a996fdcdde2b99b1bdadefa0e125b17446d5f79134c6"
+    },
+    {
+      "response_file": "references/physical-48-wifi-sdio/0004-udws_ultra_spectra_get_sdio_counters.bin",
+      "response_sha256": "4e2bd8263264508dc691e8f32b08e735f3189c92985eaeee3e49d4db092e406a",
+      "command": "udws \"ultra_spectra.get_sdio_counters;\"",
+      "valid": true,
+      "assessment": "exact-command-echo-and-response-body-validated",
+      "preserves_original_capture_validation": true,
+      "analysis_report": "useful_network_round4_results.json",
+      "analysis_report_sha256": "325ad8048f3309b4b330a996fdcdde2b99b1bdadefa0e125b17446d5f79134c6"
+    },
+    {
+      "response_file": "references/physical-48-wifi-sdio/0005-udws_ultra_spectra_get_iovar_mpc.bin",
+      "response_sha256": "89149dee0459f252f6aa281693510636dd0a854219052e1a317de97c18553c87",
+      "command": "udws \"ultra_spectra.get_iovar mpc;\"",
+      "valid": true,
+      "assessment": "exact-command-echo-and-response-body-validated",
+      "preserves_original_capture_validation": true,
+      "analysis_report": "useful_network_round4_results.json",
+      "analysis_report_sha256": "325ad8048f3309b4b330a996fdcdde2b99b1bdadefa0e125b17446d5f79134c6"
+    },
+    {
+      "response_file": "references/physical-48-wifi-sdio/0006-udws_ultra_spectra_get_iovar_nmode.bin",
+      "response_sha256": "a708f7693416ada749c54fbd184fa7c0ca24b070857debdc4e9fc8857a1c532e",
+      "command": "udws \"ultra_spectra.get_iovar nmode;\"",
+      "valid": true,
+      "assessment": "exact-command-echo-and-response-body-validated",
+      "preserves_original_capture_validation": true,
+      "analysis_report": "useful_network_round4_results.json",
+      "analysis_report_sha256": "325ad8048f3309b4b330a996fdcdde2b99b1bdadefa0e125b17446d5f79134c6"
+    },
+    {
+      "response_file": "references/physical-48-wifi-sdio/0007-udws_ultra_spectra_test_endian.bin",
+      "response_sha256": "ad8c8cd1b2635b332b80a7ae3376cef0444d547eae18b27839c07d36eac8be1c",
+      "command": "udws \"ultra_spectra.test_endian;\"",
+      "valid": true,
+      "assessment": "exact-command-echo-and-response-body-validated",
+      "preserves_original_capture_validation": true,
+      "analysis_report": "useful_network_round4_results.json",
+      "analysis_report_sha256": "325ad8048f3309b4b330a996fdcdde2b99b1bdadefa0e125b17446d5f79134c6"
+    },
+    {
+      "response_file": "references/physical-48-wifi-sdio/0008-udws_webfwupdate_get_base_md.bin",
+      "response_sha256": "d3599978ab958f89e5006613b8e8e79a7557325648b46ca4e1b319513ed0f058",
+      "command": "udws \"webfwupdate.get_base_md;\"",
+      "valid": true,
+      "assessment": "exact-command-echo-and-response-body-validated",
+      "preserves_original_capture_validation": true,
+      "analysis_report": "useful_network_round4_results.json",
+      "analysis_report_sha256": "325ad8048f3309b4b330a996fdcdde2b99b1bdadefa0e125b17446d5f79134c6"
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0001-udws_scan_sensor_CCD_0.bin",
+      "response_sha256": "58cc9b4a498ec650ec86047a09e7a52f5ef0606b51f6e3b506d9fc364908a29a",
+      "assessment": "complete-cached-scanner-identity",
+      "note": "Both sensor and supplier fields are present and match the required TEMPO identity.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "useful_scanner_round4_results.json",
+      "analysis_report_sha256": "7ecc611e064a929c894c47b3b62856806e7ca12ec0f49c1947aebcd69c157ef5"
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0002-udws_scan_led_LEDONTIMEGET.bin",
+      "response_sha256": "36f8f866505723d40ee9089bf28ddbeb533a4c483b8f19416ee2792dc667d666",
+      "assessment": "complete-cached-led-on-times",
+      "note": "Exactly three cached RGB on-time values. All are zero; this does not measure LED electrical behavior.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "useful_scanner_round4_results.json",
+      "analysis_report_sha256": "7ecc611e064a929c894c47b3b62856806e7ca12ec0f49c1947aebcd69c157ef5"
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0003-udws_scan_bolt_yy.bin",
+      "response_sha256": "e4935999775557ec08fbf057fb9f9eef4bee0175ff625fee533607c3d86cd4f2",
+      "assessment": "complete-cached-bolt-detection-state",
+      "note": "Both cached fields are present and zero. These fields do not identify the main AXON SoC or disprove the separately identified COMET scanner AFE.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "useful_scanner_round4_results.json",
+      "analysis_report_sha256": "7ecc611e064a929c894c47b3b62856806e7ca12ec0f49c1947aebcd69c157ef5"
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0004-udws_scan_keep_yy_0.bin",
+      "response_sha256": "59da50e351e30f929012f8d3f9f1bb4c2d4fec0ecb70bf1e8310699b0aa21e63",
+      "assessment": "complete-cached-keep-configuration",
+      "note": "One KEEP region has all five expected fields; numeric and decimal forms agree at zero.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "useful_scanner_round4_results.json",
+      "analysis_report_sha256": "7ecc611e064a929c894c47b3b62856806e7ca12ec0f49c1947aebcd69c157ef5"
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0005-udws_scan_ifc_yreslist.bin",
+      "response_sha256": "73453bcc69f77e0effb087312912b55ec9ca6bfbee38693ef6636d2a02d96675",
+      "assessment": "complete-resolution-lists-matching-binary-model",
+      "note": "All four ordered rows and every integer, including each zero terminator, match A03BD61C applied to the TEMPO tables. The helper clears the value immediately before the -1 marker, so 4800 in the underlying table is omitted. This does not establish optical resolution or installed ADF hardware.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "useful_scanner_round4_results.json",
+      "analysis_report_sha256": "7ecc611e064a929c894c47b3b62856806e7ca12ec0f49c1947aebcd69c157ef5"
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0006-udws_scan_led_LEDONTIMEINFO_300.bin",
+      "response_sha256": "7820066ea211c21debd84bf5c78f748710603b80a0acc22724ad2eb716b52403",
+      "assessment": "complete-empty-led-record-query",
+      "note": "The full wrapper and prompt returned with no payload. A03A9A9C only prints an empty line when the selected cached record pointer is null. Null-pointer interpretation is inferred from the reviewed control flow; no calibration values were returned.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "useful_scanner_round4_results.json",
+      "analysis_report_sha256": "7ecc611e064a929c894c47b3b62856806e7ca12ec0f49c1947aebcd69c157ef5"
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0007-udws_scan_led_LEDONTIMEINFO_600.bin",
+      "response_sha256": "1bfd319cf1c5f7617768030472fe710979f5e2ce6f7ca06dfe040f056c53bc97",
+      "assessment": "complete-empty-led-record-query",
+      "note": "The full wrapper and prompt returned with no payload. A03A9A9C only prints an empty line when the selected cached record pointer is null. Null-pointer interpretation is inferred from the reviewed control flow; no calibration values were returned.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "useful_scanner_round4_results.json",
+      "analysis_report_sha256": "7ecc611e064a929c894c47b3b62856806e7ca12ec0f49c1947aebcd69c157ef5"
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0008-udws_scan_led_LEDONTIMEINFO_1200.bin",
+      "response_sha256": "50483e8770e033778a10e18cfa7bc29b4de7e1bc8ed4e70c6ec87a6d456711dd",
+      "assessment": "complete-empty-led-record-query",
+      "note": "The full wrapper and prompt returned with no payload. A03A9A9C only prints an empty line when the selected cached record pointer is null. Null-pointer interpretation is inferred from the reviewed control flow; no calibration values were returned.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "useful_scanner_round4_results.json",
+      "analysis_report_sha256": "7ecc611e064a929c894c47b3b62856806e7ca12ec0f49c1947aebcd69c157ef5"
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0009-udws_scan_led_LEDONTIMEINFO_2400.bin",
+      "response_sha256": "db893d31b4ecc598697f872e7bb8d8ce5d4a1b417aca93d2935854579d99dfb1",
+      "assessment": "complete-empty-led-record-query",
+      "note": "The full wrapper and prompt returned with no payload. A03A9A9C only prints an empty line when the selected cached record pointer is null. Null-pointer interpretation is inferred from the reviewed control flow; no calibration values were returned.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "useful_scanner_round4_results.json",
+      "analysis_report_sha256": "7ecc611e064a929c894c47b3b62856806e7ca12ec0f49c1947aebcd69c157ef5"
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0010-udws_scan_led_LEDONTIMEINFO_4800.bin",
+      "response_sha256": "213e708245ba81d5ba98a71f77eca13b3ec0f4249f2c50546ea9f5b71a33bbd3",
+      "assessment": "complete-empty-led-record-query",
+      "note": "The full wrapper and prompt returned with no payload. A03A9A9C only prints an empty line when the selected cached record pointer is null. Null-pointer interpretation is inferred from the reviewed control flow; no calibration values were returned.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "useful_scanner_round4_results.json",
+      "analysis_report_sha256": "7ecc611e064a929c894c47b3b62856806e7ca12ec0f49c1947aebcd69c157ef5"
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0011-udws_scan_led_LEDONTIMEINFO_9600.bin",
+      "response_sha256": "d6f04292f9987099513e2d95b3df5d634ea7232e6527a7509d43934571876dcb",
+      "assessment": "complete-empty-led-record-query",
+      "note": "The full wrapper and prompt returned with no payload. A03A9A9C only prints an empty line when the selected cached record pointer is null. Null-pointer interpretation is inferred from the reviewed control flow; no calibration values were returned.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "useful_scanner_round4_results.json",
+      "analysis_report_sha256": "7ecc611e064a929c894c47b3b62856806e7ca12ec0f49c1947aebcd69c157ef5"
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0012-udws_scan_sensor_timing_0.bin",
+      "response_sha256": "6a20368cb4fe179d1dfaef4efca106c68ab03d4f8c7f4bbf3a28a3c321ffdd2b",
+      "assessment": "complete-built-in-help-only",
+      "note": "Help matches all seven firmware literals and lists nine selectors. Only selector 0 ran; no timing parameters were queried or changed. Help advertises selector 2, but binary A03BDE50 immediately enters the common return epilogue for it.",
+      "valid": true,
+      "complete": true,
+      "analysis_report": "useful_scanner_round4_results.json",
+      "analysis_report_sha256": "7ecc611e064a929c894c47b3b62856806e7ca12ec0f49c1947aebcd69c157ef5"
+    }
+  ],
+  "data_quality": [
+    {
+      "response_file": "references/physical-48-wifi-sdio/0001-udws_ultra_spectra_get_sdio_counters.bin",
+      "response_sha256": "4e2bd8263264508dc691e8f32b08e735f3189c92985eaeee3e49d4db092e406a",
+      "complete": true,
+      "payload_kind": "ten-error-counters",
+      "note": "These count errors, not ordinary commands/transfers. Master=2 and Data CRC=2; eight other fields are zero.",
+      "analysis_report": "useful_network_round4_results.json",
+      "analysis_report_sha256": "325ad8048f3309b4b330a996fdcdde2b99b1bdadefa0e125b17446d5f79134c6"
+    },
+    {
+      "response_file": "references/physical-48-wifi-sdio/0004-udws_ultra_spectra_get_sdio_counters.bin",
+      "response_sha256": "4e2bd8263264508dc691e8f32b08e735f3189c92985eaeee3e49d4db092e406a",
+      "complete": true,
+      "payload_kind": "ten-error-counters",
+      "note": "All ten error counters equal the earlier sample. This establishes no newly counted errors; it cannot measure the number of successful SDIO reads.",
+      "analysis_report": "useful_network_round4_results.json",
+      "analysis_report_sha256": "325ad8048f3309b4b330a996fdcdde2b99b1bdadefa0e125b17446d5f79134c6"
+    },
+    {
+      "response_file": "references/physical-48-wifi-sdio/0002-udws_ultra_spectra_get_sdio_caps.bin",
+      "response_sha256": "93a24099cf19268f85a9c538d1ab745d094bd3ed6db1a3b8d5cb35e5d97f4074",
+      "complete": true,
+      "payload_kind": "cached-capabilities",
+      "note": "Complete formatter payload: ten CCCR fields, seven FBR fields for each of two functions, and six maximum-size/count fields. FBR1 CIS=0xff0100 and FBR2 cached block size=8192 are preserved as reported; their current-register meaning is unverified. No formatter endian/offset defect was found.",
+      "analysis_report": "useful_network_round4_results.json",
+      "analysis_report_sha256": "325ad8048f3309b4b330a996fdcdde2b99b1bdadefa0e125b17446d5f79134c6"
+    },
+    {
+      "response_file": "references/physical-48-wifi-sdio/0003-udws_ultra_spectra_get_sdio_status.bin",
+      "response_sha256": "b34013848fd899e6ddedd5f4f6586aa3f203e2e44b966fdbe13c19df200ae54c",
+      "complete": true,
+      "payload_kind": "heading-only",
+      "recovered_cccr_bytes": 0,
+      "note": "A045EE36..A045EEEA formats into stack buffers but contains no UART/output call. Its only three calls are snprintf A04F0B50. This is expected heading-only output, not captured CCCR contents or evidence of transport loss. Static read path exists, but UART success cannot verify its underlying result.",
+      "analysis_report": "useful_network_round4_results.json",
+      "analysis_report_sha256": "325ad8048f3309b4b330a996fdcdde2b99b1bdadefa0e125b17446d5f79134c6"
+    },
+    {
+      "response_file": "references/physical-48-wifi-sdio/0007-udws_ultra_spectra_test_endian.bin",
+      "response_sha256": "ad8c8cd1b2635b332b80a7ae3376cef0444d547eae18b27839c07d36eac8be1c",
+      "complete": true,
+      "payload_kind": "compiled-endian-test-vectors",
+      "note": "All twelve fixed literal vectors match the compiled handler. This is not an exercise of SDIO hardware endian transfers.",
+      "analysis_report": "useful_network_round4_results.json",
+      "analysis_report_sha256": "325ad8048f3309b4b330a996fdcdde2b99b1bdadefa0e125b17446d5f79134c6"
+    },
+    {
+      "response_file": "references/physical-48-wifi-sdio/0008-udws_webfwupdate_get_base_md.bin",
+      "response_sha256": "d3599978ab958f89e5006613b8e8e79a7557325648b46ca4e1b319513ed0f058",
+      "complete": true,
+      "payload_kind": "cached-firmware-digest",
+      "note": "32 hex characters match the base digest in earlier physical opaque-revision output. Optional local secure-configuration base_md entry was not printed. No hash recomputation was performed.",
+      "analysis_report": "useful_network_round4_results.json",
+      "analysis_report_sha256": "325ad8048f3309b4b330a996fdcdde2b99b1bdadefa0e125b17446d5f79134c6"
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0001-udws_scan_sensor_CCD_0.bin",
+      "response_sha256": "58cc9b4a498ec650ec86047a09e7a52f5ef0606b51f6e3b506d9fc364908a29a",
+      "assessment": "complete-cached-scanner-identity",
+      "note": "Both sensor and supplier fields are present and match the required TEMPO identity.",
+      "complete": true,
+      "analysis_report": "useful_scanner_round4_results.json",
+      "analysis_report_sha256": "7ecc611e064a929c894c47b3b62856806e7ca12ec0f49c1947aebcd69c157ef5"
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0002-udws_scan_led_LEDONTIMEGET.bin",
+      "response_sha256": "36f8f866505723d40ee9089bf28ddbeb533a4c483b8f19416ee2792dc667d666",
+      "assessment": "complete-cached-led-on-times",
+      "note": "Exactly three cached RGB on-time values. All are zero; this does not measure LED electrical behavior.",
+      "complete": true,
+      "analysis_report": "useful_scanner_round4_results.json",
+      "analysis_report_sha256": "7ecc611e064a929c894c47b3b62856806e7ca12ec0f49c1947aebcd69c157ef5"
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0003-udws_scan_bolt_yy.bin",
+      "response_sha256": "e4935999775557ec08fbf057fb9f9eef4bee0175ff625fee533607c3d86cd4f2",
+      "assessment": "complete-cached-bolt-detection-state",
+      "note": "Both cached fields are present and zero. These fields do not identify the main AXON SoC or disprove the separately identified COMET scanner AFE.",
+      "complete": true,
+      "analysis_report": "useful_scanner_round4_results.json",
+      "analysis_report_sha256": "7ecc611e064a929c894c47b3b62856806e7ca12ec0f49c1947aebcd69c157ef5"
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0004-udws_scan_keep_yy_0.bin",
+      "response_sha256": "59da50e351e30f929012f8d3f9f1bb4c2d4fec0ecb70bf1e8310699b0aa21e63",
+      "assessment": "complete-cached-keep-configuration",
+      "note": "One KEEP region has all five expected fields; numeric and decimal forms agree at zero.",
+      "complete": true,
+      "analysis_report": "useful_scanner_round4_results.json",
+      "analysis_report_sha256": "7ecc611e064a929c894c47b3b62856806e7ca12ec0f49c1947aebcd69c157ef5"
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0005-udws_scan_ifc_yreslist.bin",
+      "response_sha256": "73453bcc69f77e0effb087312912b55ec9ca6bfbee38693ef6636d2a02d96675",
+      "assessment": "complete-resolution-lists-matching-binary-model",
+      "note": "All four ordered rows and every integer, including each zero terminator, match A03BD61C applied to the TEMPO tables. The helper clears the value immediately before the -1 marker, so 4800 in the underlying table is omitted. This does not establish optical resolution or installed ADF hardware.",
+      "complete": true,
+      "analysis_report": "useful_scanner_round4_results.json",
+      "analysis_report_sha256": "7ecc611e064a929c894c47b3b62856806e7ca12ec0f49c1947aebcd69c157ef5"
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0006-udws_scan_led_LEDONTIMEINFO_300.bin",
+      "response_sha256": "7820066ea211c21debd84bf5c78f748710603b80a0acc22724ad2eb716b52403",
+      "assessment": "complete-empty-led-record-query",
+      "note": "The full wrapper and prompt returned with no payload. A03A9A9C only prints an empty line when the selected cached record pointer is null. Null-pointer interpretation is inferred from the reviewed control flow; no calibration values were returned.",
+      "complete": true,
+      "analysis_report": "useful_scanner_round4_results.json",
+      "analysis_report_sha256": "7ecc611e064a929c894c47b3b62856806e7ca12ec0f49c1947aebcd69c157ef5"
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0007-udws_scan_led_LEDONTIMEINFO_600.bin",
+      "response_sha256": "1bfd319cf1c5f7617768030472fe710979f5e2ce6f7ca06dfe040f056c53bc97",
+      "assessment": "complete-empty-led-record-query",
+      "note": "The full wrapper and prompt returned with no payload. A03A9A9C only prints an empty line when the selected cached record pointer is null. Null-pointer interpretation is inferred from the reviewed control flow; no calibration values were returned.",
+      "complete": true,
+      "analysis_report": "useful_scanner_round4_results.json",
+      "analysis_report_sha256": "7ecc611e064a929c894c47b3b62856806e7ca12ec0f49c1947aebcd69c157ef5"
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0008-udws_scan_led_LEDONTIMEINFO_1200.bin",
+      "response_sha256": "50483e8770e033778a10e18cfa7bc29b4de7e1bc8ed4e70c6ec87a6d456711dd",
+      "assessment": "complete-empty-led-record-query",
+      "note": "The full wrapper and prompt returned with no payload. A03A9A9C only prints an empty line when the selected cached record pointer is null. Null-pointer interpretation is inferred from the reviewed control flow; no calibration values were returned.",
+      "complete": true,
+      "analysis_report": "useful_scanner_round4_results.json",
+      "analysis_report_sha256": "7ecc611e064a929c894c47b3b62856806e7ca12ec0f49c1947aebcd69c157ef5"
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0009-udws_scan_led_LEDONTIMEINFO_2400.bin",
+      "response_sha256": "db893d31b4ecc598697f872e7bb8d8ce5d4a1b417aca93d2935854579d99dfb1",
+      "assessment": "complete-empty-led-record-query",
+      "note": "The full wrapper and prompt returned with no payload. A03A9A9C only prints an empty line when the selected cached record pointer is null. Null-pointer interpretation is inferred from the reviewed control flow; no calibration values were returned.",
+      "complete": true,
+      "analysis_report": "useful_scanner_round4_results.json",
+      "analysis_report_sha256": "7ecc611e064a929c894c47b3b62856806e7ca12ec0f49c1947aebcd69c157ef5"
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0010-udws_scan_led_LEDONTIMEINFO_4800.bin",
+      "response_sha256": "213e708245ba81d5ba98a71f77eca13b3ec0f4249f2c50546ea9f5b71a33bbd3",
+      "assessment": "complete-empty-led-record-query",
+      "note": "The full wrapper and prompt returned with no payload. A03A9A9C only prints an empty line when the selected cached record pointer is null. Null-pointer interpretation is inferred from the reviewed control flow; no calibration values were returned.",
+      "complete": true,
+      "analysis_report": "useful_scanner_round4_results.json",
+      "analysis_report_sha256": "7ecc611e064a929c894c47b3b62856806e7ca12ec0f49c1947aebcd69c157ef5"
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0011-udws_scan_led_LEDONTIMEINFO_9600.bin",
+      "response_sha256": "d6f04292f9987099513e2d95b3df5d634ea7232e6527a7509d43934571876dcb",
+      "assessment": "complete-empty-led-record-query",
+      "note": "The full wrapper and prompt returned with no payload. A03A9A9C only prints an empty line when the selected cached record pointer is null. Null-pointer interpretation is inferred from the reviewed control flow; no calibration values were returned.",
+      "complete": true,
+      "analysis_report": "useful_scanner_round4_results.json",
+      "analysis_report_sha256": "7ecc611e064a929c894c47b3b62856806e7ca12ec0f49c1947aebcd69c157ef5"
+    },
+    {
+      "response_file": "references/physical-50-scanner-capabilities/0012-udws_scan_sensor_timing_0.bin",
+      "response_sha256": "6a20368cb4fe179d1dfaef4efca106c68ab03d4f8c7f4bbf3a28a3c321ffdd2b",
+      "assessment": "complete-built-in-help-only",
+      "note": "Help matches all seven firmware literals and lists nine selectors. Only selector 0 ran; no timing parameters were queried or changed. Help advertises selector 2, but binary A03BDE50 immediately enters the common return epilogue for it.",
+      "complete": true,
+      "analysis_report": "useful_scanner_round4_results.json",
+      "analysis_report_sha256": "7ecc611e064a929c894c47b3b62856806e7ca12ec0f49c1947aebcd69c157ef5"
+    },
+    {
+      "response_file": "physical-51-nvm-mirror/0002-udws_nvm2_dump2file_ram_codex_nvm_20261029b_bin.bin",
+      "response_sha256": "bface3a2c6eed989bbcb816c5149cd42e5f48c5a15e1bfcf00b77bd7a05b9c64",
+      "complete": true,
+      "payload_kind": "bytes-copied-from-nvm-ram-mirror",
+      "assessment": "A full cached image was retrieved and independently replayed.",
+      "note": "Returns65536 copied bytes, not EEPROM content in this reply. The subsequent 128file reads recovered all65536 cached bytes;22direct-byte observations match, but this does not independently verify every physical EEPROM byte. The mirror copy is sequential and the firmware ignores its cache-read helper error return.",
+      "artifact": "physical-51-nvm-mirror/nvm-ram-mirror-65536.bin",
+      "artifact_sha256": "ab47b2322449e33e1acec317cbdf7f5658a9887631a930a3b13be671e2af3641",
+      "validation_report": "physical-51-nvm-mirror/mirror-validation.json"
+    }
+  ]
+}

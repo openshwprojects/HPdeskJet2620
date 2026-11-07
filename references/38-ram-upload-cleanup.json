@@ -1,0 +1,51 @@
+[
+  {
+    "command": "udws \"ram.file_write2 /ram/codex_uart_20261029a/x 16 0123456789ABCDEF;\"",
+    "purpose": "Write exactly16inlineASCIIbytes only toour RAMtestfile; stream proof in filewrite review.",
+    "classification": "reviewed-owned-ram-file-operation",
+    "scope": "/ram/codex_uart_20261029a",
+    "timeout": 20
+  },
+  {
+    "command": "udws \"ustd.cat /ram/codex_uart_20261029a/x 0;\"",
+    "purpose": "Readback uploaded16bytes.",
+    "classification": "reviewed-owned-ram-file-operation",
+    "scope": "/ram/codex_uart_20261029a",
+    "timeout": 20
+  },
+  {
+    "command": "udws \"ustd.sizeof /ram/codex_uart_20261029a/x;\"",
+    "purpose": "Verify uploadedsize16.",
+    "classification": "reviewed-owned-ram-file-operation",
+    "scope": "/ram/codex_uart_20261029a",
+    "timeout": 20
+  },
+  {
+    "command": "udws \"ram.unlink /ram/codex_uart_20261029a/x;\"",
+    "purpose": "Delete onlyuploadedtestfile.",
+    "classification": "reviewed-owned-ram-file-operation",
+    "scope": "/ram/codex_uart_20261029a",
+    "timeout": 20
+  },
+  {
+    "command": "udws \"ram.rmdir /codex_uart_20261029a 0;\"",
+    "purpose": "Use nativeRAMpath andguard0 toobtainerrno for emptydirectorycleanup.",
+    "classification": "reviewed-owned-ram-file-operation",
+    "scope": "/ram/codex_uart_20261029a",
+    "timeout": 20
+  },
+  {
+    "command": "udws \"ram.ls /ram/codex_uart_20261029a;\"",
+    "purpose": "FlushdeletedRAMrecords onlyinsideownedtestdirectory andprintdiagnostics.",
+    "classification": "reviewed-owned-ram-file-operation",
+    "scope": "/ram/codex_uart_20261029a",
+    "timeout": 20
+  },
+  {
+    "command": "udws \"ustd.ll /ram/codex_uart_20261029a;\"",
+    "purpose": "Verifylogicaldirectoryisemptyafterflush.",
+    "classification": "reviewed-owned-ram-file-operation",
+    "scope": "/ram/codex_uart_20261029a",
+    "timeout": 20
+  }
+]

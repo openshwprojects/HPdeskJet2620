@@ -1,0 +1,917 @@
+{
+  "baseline_invoked": 644,
+  "total_invoked": 698,
+  "new_names": 54,
+  "commands": [
+    {
+      "name": "cal_val.get_edge_err",
+      "invocations": [
+        {
+          "command": "udws \"cal_val.get_edge_err 1;\"",
+          "response_file": "physical-56-calibration-pen/0019-udws_cal_val_get_edge_err_1.bin",
+          "response_sha256": "f23246c13e5435bb6955fc408782dd502964dca745126d664d3f5e17664e0ec5",
+          "complete": true,
+          "assessment": "complete-cached-calibration-scalar",
+          "excerpt": "0"
+        }
+      ]
+    },
+    {
+      "name": "cal_val.get_edge_err_status",
+      "invocations": [
+        {
+          "command": "udws \"cal_val.get_edge_err_status 1;\"",
+          "response_file": "physical-56-calibration-pen/0020-udws_cal_val_get_edge_err_status_1.bin",
+          "response_sha256": "082b662a964ff90fcddcc11b78ee55d1d59a31746853a6abca0a514231de875a",
+          "complete": true,
+          "assessment": "complete-cached-calibration-scalar",
+          "excerpt": "-1"
+        }
+      ]
+    },
+    {
+      "name": "cal_val.get_linefeed_err",
+      "invocations": [
+        {
+          "command": "udws \"cal_val.get_linefeed_err 1 1 K;\"",
+          "response_file": "physical-56-calibration-pen/0017-udws_cal_val_get_linefeed_err_1_1_K.bin",
+          "response_sha256": "4400d0a51258d3f08a101ee321efbbf94664efa1ea837a78492870d69f4bd04a",
+          "complete": true,
+          "assessment": "complete-cached-calibration-scalar",
+          "excerpt": "0"
+        }
+      ]
+    },
+    {
+      "name": "cal_val.get_linefeed_err_status",
+      "invocations": [
+        {
+          "command": "udws \"cal_val.get_linefeed_err_status 1 1 K;\"",
+          "response_file": "physical-56-calibration-pen/0018-udws_cal_val_get_linefeed_err_status_1_1_K.bin",
+          "response_sha256": "21e12ef6f3e0904d6d00aace71d809cede08ff7fe8e6bdb65da17fb3ea6758c5",
+          "complete": true,
+          "assessment": "complete-cached-calibration-scalar",
+          "excerpt": "-1"
+        }
+      ]
+    },
+    {
+      "name": "cal_val.get_pa_value",
+      "invocations": [
+        {
+          "command": "udws \"cal_val.get_pa_value P2PX FIRST CMY 0 FWD;\"",
+          "response_file": "physical-56-calibration-pen/0001-udws_cal_val_get_pa_value_P2PX_FIRST_CMY_0_FWD.bin",
+          "response_sha256": "62edc3151badfbe960794cf905964658cec43ceb9c8a9a7416351e9525b7e3c9",
+          "complete": true,
+          "assessment": "complete-cached-calibration-scalar",
+          "excerpt": "0"
+        },
+        {
+          "command": "udws \"cal_val.get_pa_value P2PY FIRST CMY 0 FWD;\"",
+          "response_file": "physical-56-calibration-pen/0002-udws_cal_val_get_pa_value_P2PY_FIRST_CMY_0_FWD.bin",
+          "response_sha256": "cf16614a4481aaf24597f7f4e322ad6c35cdc1f2a4358fc6e8db2c47eae04b0b",
+          "complete": true,
+          "assessment": "complete-cached-calibration-scalar",
+          "excerpt": "0"
+        },
+        {
+          "command": "udws \"cal_val.get_pa_value BIDI FIRST K 0 FWD;\"",
+          "response_file": "physical-56-calibration-pen/0003-udws_cal_val_get_pa_value_BIDI_FIRST_K_0_FWD.bin",
+          "response_sha256": "8cad2e14b606e0d9935627c886568cd9fc846926ace14455fab98616f5939bd2",
+          "complete": true,
+          "assessment": "complete-cached-calibration-scalar",
+          "excerpt": "-5"
+        },
+        {
+          "command": "udws \"cal_val.get_pa_value THETAZ FIRST K 0 FWD;\"",
+          "response_file": "physical-56-calibration-pen/0004-udws_cal_val_get_pa_value_THETAZ_FIRST_K_0_FWD.bin",
+          "response_sha256": "dd20137fa0d7ca4c14ed52bda09e9d782d8cf8df1aa49852cf9fc76d7b3136ba",
+          "complete": true,
+          "assessment": "complete-cached-calibration-scalar",
+          "excerpt": "3"
+        }
+      ]
+    },
+    {
+      "name": "cal_val.get_pa_value_status",
+      "invocations": [
+        {
+          "command": "udws \"cal_val.get_pa_value_status P2PX FIRST CMY 0 FWD;\"",
+          "response_file": "physical-56-calibration-pen/0005-udws_cal_val_get_pa_value_status_P2PX_FIRST_CMY_0_FWD.bin",
+          "response_sha256": "ba6e77b7cb1c94c898e3acd7d7f0f0382e08f16adf0968f47330b43ab23ac617",
+          "complete": true,
+          "assessment": "complete-cached-calibration-scalar",
+          "excerpt": "-1"
+        },
+        {
+          "command": "udws \"cal_val.get_pa_value_status P2PY FIRST CMY 0 FWD;\"",
+          "response_file": "physical-56-calibration-pen/0006-udws_cal_val_get_pa_value_status_P2PY_FIRST_CMY_0_FWD.bin",
+          "response_sha256": "443049a9c95d1771379e2c23adbcbd6de9efe5a2a64c4ed6852f9aed9433db30",
+          "complete": true,
+          "assessment": "complete-cached-calibration-scalar",
+          "excerpt": "-1"
+        },
+        {
+          "command": "udws \"cal_val.get_pa_value_status BIDI FIRST K 0 FWD;\"",
+          "response_file": "physical-56-calibration-pen/0007-udws_cal_val_get_pa_value_status_BIDI_FIRST_K_0_FWD.bin",
+          "response_sha256": "149992400e9fd11c22387adb262f47bb04e5a48f2c46482497287ef554b73e17",
+          "complete": true,
+          "assessment": "complete-cached-calibration-scalar",
+          "excerpt": "-1"
+        },
+        {
+          "command": "udws \"cal_val.get_pa_value_status THETAZ FIRST K 0 FWD;\"",
+          "response_file": "physical-56-calibration-pen/0008-udws_cal_val_get_pa_value_status_THETAZ_FIRST_K_0_FWD.bin",
+          "response_sha256": "cef774388eba1f35dd74fcdce165858e924f78eeaa907cb978b0f3f72ec20502",
+          "complete": true,
+          "assessment": "complete-cached-calibration-scalar",
+          "excerpt": "-1"
+        }
+      ]
+    },
+    {
+      "name": "cal_val.get_unused_pa_status",
+      "invocations": [
+        {
+          "command": "udws \"cal_val.get_unused_pa_status P2PX FIRST CMY 0 FWD;\"",
+          "response_file": "physical-56-calibration-pen/0013-udws_cal_val_get_unused_pa_status_P2PX_FIRST_CMY_0_FWD.bin",
+          "response_sha256": "df35e6e6ca74be2bb423c8927044259cf612680717c2a8dce4c3e062c6dce194",
+          "complete": true,
+          "assessment": "complete-cached-calibration-scalar",
+          "excerpt": "-1"
+        },
+        {
+          "command": "udws \"cal_val.get_unused_pa_status P2PY FIRST CMY 0 FWD;\"",
+          "response_file": "physical-56-calibration-pen/0014-udws_cal_val_get_unused_pa_status_P2PY_FIRST_CMY_0_FWD.bin",
+          "response_sha256": "03c51bf925b2caf3842629bdc8a6ff3a87dca213da56bcfbd42436a58db528a2",
+          "complete": true,
+          "assessment": "complete-cached-calibration-scalar",
+          "excerpt": "-1"
+        },
+        {
+          "command": "udws \"cal_val.get_unused_pa_status BIDI FIRST K 0 FWD;\"",
+          "response_file": "physical-56-calibration-pen/0015-udws_cal_val_get_unused_pa_status_BIDI_FIRST_K_0_FWD.bin",
+          "response_sha256": "a6775dd02526fe5913a1af7ec1534517b2e28ec67b4a799ecbfc60e6c1f6ca8e",
+          "complete": true,
+          "assessment": "complete-cached-calibration-scalar",
+          "excerpt": "-1"
+        },
+        {
+          "command": "udws \"cal_val.get_unused_pa_status THETAZ FIRST K 0 FWD;\"",
+          "response_file": "physical-56-calibration-pen/0016-udws_cal_val_get_unused_pa_status_THETAZ_FIRST_K_0_FWD.bin",
+          "response_sha256": "998e1b197d65444f296c53b274ee2f95d1fc05aac55d267976bd41d8680caf38",
+          "complete": true,
+          "assessment": "complete-cached-calibration-scalar",
+          "excerpt": "-1"
+        }
+      ]
+    },
+    {
+      "name": "cal_val.get_unused_pa_value",
+      "invocations": [
+        {
+          "command": "udws \"cal_val.get_unused_pa_value P2PX FIRST CMY 0 FWD;\"",
+          "response_file": "physical-56-calibration-pen/0009-udws_cal_val_get_unused_pa_value_P2PX_FIRST_CMY_0_FWD.bin",
+          "response_sha256": "0de5d3deecaa3799e7a96e442fc5f1c0a2ade98f93a16f1850df7699756b575d",
+          "complete": true,
+          "assessment": "complete-cached-calibration-scalar",
+          "excerpt": "0"
+        },
+        {
+          "command": "udws \"cal_val.get_unused_pa_value P2PY FIRST CMY 0 FWD;\"",
+          "response_file": "physical-56-calibration-pen/0010-udws_cal_val_get_unused_pa_value_P2PY_FIRST_CMY_0_FWD.bin",
+          "response_sha256": "2741d30156a0ae310ddc72564642cb25e6575815491b1a3b4ae353f9ddd7a36e",
+          "complete": true,
+          "assessment": "complete-cached-calibration-scalar",
+          "excerpt": "0"
+        },
+        {
+          "command": "udws \"cal_val.get_unused_pa_value BIDI FIRST K 0 FWD;\"",
+          "response_file": "physical-56-calibration-pen/0011-udws_cal_val_get_unused_pa_value_BIDI_FIRST_K_0_FWD.bin",
+          "response_sha256": "51119a17a12f95884bcfedbc3b82a9852847977384cf565d77cc346b48302d0e",
+          "complete": true,
+          "assessment": "complete-cached-calibration-scalar",
+          "excerpt": "0"
+        },
+        {
+          "command": "udws \"cal_val.get_unused_pa_value THETAZ FIRST K 0 FWD;\"",
+          "response_file": "physical-56-calibration-pen/0012-udws_cal_val_get_unused_pa_value_THETAZ_FIRST_K_0_FWD.bin",
+          "response_sha256": "d842f20cbe2a3370a0c5733038bbc20fbbc6e72b755b0315defe6edec299c390",
+          "complete": true,
+          "assessment": "complete-cached-calibration-scalar",
+          "excerpt": "0"
+        }
+      ]
+    },
+    {
+      "name": "crypto_svc.get_rand_num",
+      "invocations": [
+        {
+          "command": "udws \"crypto_svc.get_rand_num 16;\"",
+          "response_file": "physical-63-misc-queries/0003-udws_crypto_svc_get_rand_num_16.bin",
+          "response_sha256": "87b6d5b4612b2717600e665558bd3c35a6044b22edf5df3996d32a2f4fd69596",
+          "complete": false,
+          "assessment": "unexpected-empty-filename-file-branch",
+          "excerpt": "--- writing to file [] --- just wrote 16 bytes to"
+        },
+        {
+          "command": "udws \"crypto_svc.get_rand_num 16\"",
+          "response_file": "physical-66-rng-uart/0001-udws_crypto_svc_get_rand_num_16.bin",
+          "response_sha256": "235951f5205008824e2325a5651c5177faaac13980774d7de7c5acf1b4e2f0b0",
+          "complete": true,
+          "assessment": "complete-random-byte-sample-uart-path",
+          "excerpt": "ec53fee074e7725e1d5f9fca175e1cdd"
+        }
+      ]
+    },
+    {
+      "name": "crypto_svc.get_rand_seq",
+      "invocations": [
+        {
+          "command": "udws \"crypto_svc.get_rand_seq 4;\"",
+          "response_file": "physical-63-misc-queries/0004-udws_crypto_svc_get_rand_seq_4.bin",
+          "response_sha256": "6153c700d21e862f824461bf0f9652d4901e49af815119ccc0e40d61b1e1f12f",
+          "complete": true,
+          "assessment": "validated-miscellaneous-query-payload",
+          "excerpt": "2467864732, 3488902879, 3252328757, 3907151461,"
+        }
+      ]
+    },
+    {
+      "name": "crypto_svc.is_secure",
+      "invocations": [
+        {
+          "command": "udws \"crypto_svc.is_secure;\"",
+          "response_file": "physical-63-misc-queries/0002-udws_crypto_svc_is_secure.bin",
+          "response_sha256": "7695918be73341e0afa9468e672d4f143729236d2dcf39eb3693da7c5caf893d",
+          "complete": true,
+          "assessment": "validated-miscellaneous-query-payload",
+          "excerpt": "1"
+        }
+      ]
+    },
+    {
+      "name": "errlog.get_assert_entry",
+      "invocations": [
+        {
+          "command": "udws \"errlog.get_assert_entry 0;\"",
+          "response_file": "physical-63-misc-queries/0009-udws_errlog_get_assert_entry_0.bin",
+          "response_sha256": "6e610fb5bdfa8a98425b155058cd74a3e7cde19ccd8cb04131d9310f37396f19",
+          "complete": true,
+          "assessment": "validated-miscellaneous-query-payload",
+          "excerpt": "1, ASSERT: c4eb99f7 type: ASSERT_TYPE_HW line: 1733 file: hw_micci2.c page count: 775 in component (CID): 4eb comp error info: 99f7"
+        }
+      ]
+    },
+    {
+      "name": "heapmgr client prt",
+      "invocations": [
+        {
+          "command": "udws \"heapmgr client prt;\"",
+          "response_file": "physical-58-heap-diagnostics/0001-udws_heapmgr_client_prt.bin",
+          "response_sha256": "6b9fed0672b080ca7ef1cf5983e97b96bbec99a592f5b3c351b5a8c95c195eba",
+          "complete": true,
+          "assessment": "validated-heap-or-partition-diagnostic",
+          "excerpt": "client_id: 1 major_number: 0 client_id: 2 major_number: 1 client_id: 0 major_number: 0"
+        }
+      ]
+    },
+    {
+      "name": "heapmgr free prt",
+      "invocations": [
+        {
+          "command": "udws \"heapmgr free prt;\"",
+          "response_file": "physical-58-heap-diagnostics/0002-udws_heapmgr_free_prt.bin",
+          "response_sha256": "a0de9bbed643b3541e4518e784248f09cd693bf3d6889bf55f4683d666596001",
+          "complete": true,
+          "assessment": "validated-heap-or-partition-diagnostic",
+          "excerpt": "Nonreloc Mem Start: (0x23fd4460) Free List Start: (0x21376ac0) Free Mem - Start:(0x21390840) Size:(0x2c43c20 46414880) End:(0x23fd4460) Free List End: (0x23fdd060)"
+        }
+      ]
+    },
+    {
+      "name": "heapmgr hash load",
+      "invocations": [
+        {
+          "command": "udws \"heapmgr hash load;\"",
+          "response_file": "physical-58-heap-diagnostics/0003-udws_heapmgr_hash_load.bin",
+          "response_sha256": "673b866130b92090c44ff246c2f591e0df3b32062344d1b3ee7b95fe370dd9d5",
+          "complete": true,
+          "assessment": "validated-heap-or-partition-diagnostic",
+          "excerpt": "Hash table size: 211 Number of entries: 8"
+        }
+      ]
+    },
+    {
+      "name": "heapmgr hash prt",
+      "invocations": [
+        {
+          "command": "udws \"heapmgr hash prt;\"",
+          "response_file": "physical-58-heap-diagnostics/0004-udws_heapmgr_hash_prt.bin",
+          "response_sha256": "0450514d8ca66b2a8b78443d4c264edc9293a075d4f77ee7ca1bbf8f2a6fc6a7",
+          "complete": true,
+          "assessment": "validated-heap-or-partition-diagnostic",
+          "excerpt": "hash_index sys_indexs 6 6 29 4 33 7 37 3 48 5 118 1 152 11 203 2"
+        }
+      ]
+    },
+    {
+      "name": "heapmgr heap ls",
+      "invocations": [
+        {
+          "command": "udws \"heapmgr heap ls;\"",
+          "response_file": "physical-58-heap-diagnostics/0007-udws_heapmgr_heap_ls.bin",
+          "response_sha256": "c6ab93072844ec9a7bd9b0db57516a4c0fe5c3ffe5c6b6b3bd5264688a72f2fd",
+          "complete": true,
+          "assessment": "validated-heap-or-partition-diagnostic",
+          "excerpt": "The heap is empty."
+        }
+      ]
+    },
+    {
+      "name": "heapmgr heap mem",
+      "invocations": [
+        {
+          "command": "udws \"heapmgr heap mem 100;\"",
+          "response_file": "physical-58-heap-diagnostics/0008-udws_heapmgr_heap_mem_100.bin",
+          "response_sha256": "0e2e5f46df9a39616e324c886c10216b2a4052b97c313cdaa6c84aabffb0c67b",
+          "complete": true,
+          "assessment": "validated-heap-or-partition-diagnostic",
+          "excerpt": "sizeof blocks with priority > 100 : 0"
+        }
+      ]
+    },
+    {
+      "name": "heapmgr heap prt",
+      "invocations": [
+        {
+          "command": "udws \"heapmgr heap prt;\"",
+          "response_file": "physical-58-heap-diagnostics/0006-udws_heapmgr_heap_prt.bin",
+          "response_sha256": "32ecaf178bcba941d31b4a2bf23e979c798d0ff9cc6cf7ed65d771dea64b2d59",
+          "complete": true,
+          "assessment": "validated-heap-or-partition-diagnostic",
+          "excerpt": "The heap is empty."
+        }
+      ]
+    },
+    {
+      "name": "heapmgr name prt",
+      "invocations": [
+        {
+          "command": "udws \"heapmgr name prt;\"",
+          "response_file": "physical-58-heap-diagnostics/0005-udws_heapmgr_name_prt.bin",
+          "response_sha256": "134b9c8ace4ea69c28c9a05043978cd9f07a806873762efcee58c13007c25cd4",
+          "complete": true,
+          "assessment": "validated-heap-or-partition-diagnostic",
+          "excerpt": "index count hdr_ptr 1 1 0x21376ac0 2 1 0x2137ad00 3 1 0x2137ef40 4 1 0x21383180 5 1 0x21383540 6 1 0x21384380 7 2 0x2138c600 11 17 0x213885c0"
+        }
+      ]
+    },
+    {
+      "name": "led_color_cal.get_barcode",
+      "invocations": [
+        {
+          "command": "udws \"led_color_cal.get_barcode 0;\"",
+          "response_file": "physical-56b-led-metadata/0005-udws_led_color_cal_get_barcode_0.bin",
+          "response_sha256": "4c4fd3dd2752839f6f15d76f94a395faf09918705353d787b52f77da6b69782b",
+          "complete": true,
+          "assessment": "complete-empty-barcode-result",
+          "excerpt": "Barcode Barcode not valid"
+        }
+      ]
+    },
+    {
+      "name": "led_color_cal.get_default_matrix",
+      "invocations": [
+        {
+          "command": "udws \"led_color_cal.get_default_matrix 0;\"",
+          "response_file": "physical-56b-led-metadata/0001-udws_led_color_cal_get_default_matrix_0.bin",
+          "response_sha256": "ace60dd320e734f333262e5b2be746cafff034308ac59e5de7a92f29548465b4",
+          "complete": true,
+          "assessment": "complete-default-matrix-matching-rom",
+          "excerpt": "Default correction frontside matrix: 3672 4747 -228 1015 8154 -978 -1152 1389 7954"
+        },
+        {
+          "command": "udws \"led_color_cal.get_default_matrix 1;\"",
+          "response_file": "physical-56b-led-metadata/0003-udws_led_color_cal_get_default_matrix_1.bin",
+          "response_sha256": "3f68661e9fd7a64c4528cef2dbcf0ae741e448d58befda72dee99bd45737a8a8",
+          "complete": true,
+          "assessment": "complete-default-matrix-matching-rom",
+          "excerpt": "3672 4747 -228 1015 8154 -978 -1152 1389 7954"
+        }
+      ]
+    },
+    {
+      "name": "led_color_cal.get_golden_peaks_widths",
+      "invocations": [
+        {
+          "command": "udws \"led_color_cal.get_golden_peaks_widths 0;\"",
+          "response_file": "physical-56b-led-metadata/0002-udws_led_color_cal_get_golden_peaks_widths_0.bin",
+          "response_sha256": "c3b62221de71680d248792b3e064e845b43649d9f59fb3f44aaa3e6a2de5138e",
+          "complete": true,
+          "assessment": "complete-golden-reference-matching-rom",
+          "excerpt": "Frontside Golden LED peaks and widths: Red 620 14 Green 521 34 Blue 452 22"
+        },
+        {
+          "command": "udws \"led_color_cal.get_golden_peaks_widths 1;\"",
+          "response_file": "physical-56b-led-metadata/0004-udws_led_color_cal_get_golden_peaks_widths_1.bin",
+          "response_sha256": "c151cdd78f30cbeaa243bafadca73270528a91e267f94be29e2047c88d1a6e88",
+          "complete": true,
+          "assessment": "complete-golden-reference-matching-rom",
+          "excerpt": "Red 0 0 Green 0 0 Blue 0 0"
+        }
+      ]
+    },
+    {
+      "name": "led_color_cal.get_matrix",
+      "invocations": [
+        {
+          "command": "udws \"led_color_cal.get_matrix 0;\"",
+          "response_file": "physical-62-current-matrices/0001-udws_led_color_cal_get_matrix_0.bin",
+          "response_sha256": "d6619eda6a12e4d9cf72ea480f24b091ef7a4380d046102dfd33945f41e9866b",
+          "complete": true,
+          "assessment": "complete-current-matrix-matching-default",
+          "excerpt": "Color correction frontside matrix: 3672 4747 -228 1015 8154 -978 -1152 1389 7954"
+        },
+        {
+          "command": "udws \"led_color_cal.get_matrix 1;\"",
+          "response_file": "physical-62-current-matrices/0002-udws_led_color_cal_get_matrix_1.bin",
+          "response_sha256": "2971824c4fddc9e38a5ec0d95d554374b47f32e86b16c0c2fe8875e94e1c58a8",
+          "complete": true,
+          "assessment": "complete-current-matrix-matching-default",
+          "excerpt": "3672 4747 -228 1015 8154 -978 -1152 1389 7954"
+        }
+      ]
+    },
+    {
+      "name": "mfg_info.calc_mfg_date",
+      "invocations": [
+        {
+          "command": "udws \"mfg_info.calc_mfg_date AA711 2017;\"",
+          "response_file": "physical-63-misc-queries/0005-udws_mfg_info_calc_mfg_date_AA711_2017.bin",
+          "response_sha256": "9cbcb8308f22cb69c111d99fea11859011183334aa77f5b1ed7cb76d801cfd6c",
+          "complete": true,
+          "assessment": "validated-miscellaneous-query-payload",
+          "excerpt": "20170101"
+        },
+        {
+          "command": "udws \"mfg_info.calc_mfg_date AA7CV 2017;\"",
+          "response_file": "physical-63-misc-queries/0006-udws_mfg_info_calc_mfg_date_AA7CV_2017.bin",
+          "response_sha256": "3ece480c427d1582d8f7a1ad499b4d3289d776251fe78cd66ecfdb7005a3dc5e",
+          "complete": true,
+          "assessment": "validated-miscellaneous-query-payload",
+          "excerpt": "20171231"
+        },
+        {
+          "command": "udws \"mfg_info.calc_mfg_date AA811 2018;\"",
+          "response_file": "physical-63-misc-queries/0007-udws_mfg_info_calc_mfg_date_AA811_2018.bin",
+          "response_sha256": "a365744b4267d2053b36bf4d9684717206c2851c4cbfd838c622c10abe7b8230",
+          "complete": true,
+          "assessment": "validated-miscellaneous-query-payload",
+          "excerpt": "20180101"
+        }
+      ]
+    },
+    {
+      "name": "mhdlg.get_mhdlgcap_media_type_size_list",
+      "invocations": [
+        {
+          "command": "udws \"mhdlg.get_mhdlgcap_media_type_size_list 0 1;\"",
+          "response_file": "physical-55-media-capabilities/0003-udws_mhdlg_get_mhdlgcap_media_type_size_list_0_1.bin",
+          "response_sha256": "42804d99165865619912ffaaf81fa7eb15344ca341151e534301cb84195c3e2c",
+          "complete": true,
+          "assessment": "complete-media-size-capability",
+          "excerpt": "200; 32;na_executive_7.25x10.5in(1),na_letter_8.5x11in(2),na_legal_8.5x14in(3),na_govt-letter_8x10in(7),na_invoice_5.5x8.5in(15),iso_a5_148x210mm(25),iso_a4_210x297mm(26),custom(101),jis_b5_182x257mm(45),jpn_hagaki_100x148mm(71),iso_a6_105x [excerpt ends; full response in linked file]"
+        },
+        {
+          "command": "udws \"mhdlg.get_mhdlgcap_media_type_size_list 1 1;\"",
+          "response_file": "physical-55-media-capabilities/0004-udws_mhdlg_get_mhdlgcap_media_type_size_list_1_1.bin",
+          "response_sha256": "eedc5330f2292a7181e6a141559260485fcbdb72dacd6f328138cc63c1655488",
+          "complete": true,
+          "assessment": "complete-media-type-capability",
+          "excerpt": "200; 4;plain(0),photoStandard(2),specialtyGlossy(56),specialtyMatte(57)"
+        }
+      ]
+    },
+    {
+      "name": "mhdlg.get_mhdlgcap_supported_bins",
+      "invocations": [
+        {
+          "command": "udws \"mhdlg.get_mhdlgcap_supported_bins;\"",
+          "response_file": "physical-55-media-capabilities/0002-udws_mhdlg_get_mhdlgcap_supported_bins.bin",
+          "response_sha256": "21b1711b55f58088d928993b93ddd70e24c1aed759cd0b6c2bd0fe33375e312d",
+          "complete": true,
+          "assessment": "complete-output-bin-capability",
+          "excerpt": "200; 1;(0)"
+        }
+      ]
+    },
+    {
+      "name": "mhdlg.get_mhdlgcap_supported_trays",
+      "invocations": [
+        {
+          "command": "udws \"mhdlg.get_mhdlgcap_supported_trays;\"",
+          "response_file": "physical-55-media-capabilities/0001-udws_mhdlg_get_mhdlgcap_supported_trays.bin",
+          "response_sha256": "5ff97b5417659b0c5ed89637eb2b469c3ab5ec9bbedd947a9da2ff5e7f3d8feb",
+          "complete": true,
+          "assessment": "complete-input-tray-capability",
+          "excerpt": "200; 1;Tray1(1)"
+        }
+      ]
+    },
+    {
+      "name": "mhdlg.get_supported_df_groups",
+      "invocations": [
+        {
+          "command": "udws \"mhdlg.get_supported_df_groups;\"",
+          "response_file": "physical-55-media-capabilities/0005-udws_mhdlg_get_supported_df_groups.bin",
+          "response_sha256": "858c7443992fd19cf709e0757f5775364618bdd456382d82e2ae58399588aa77",
+          "complete": true,
+          "assessment": "complete-zero-group-capability",
+          "excerpt": "200; 0"
+        }
+      ]
+    },
+    {
+      "name": "nos_nvm_sirius.get",
+      "invocations": [
+        {
+          "command": "udws \"nos_nvm_sirius.get 18;\"",
+          "response_file": "physical-63-misc-queries/0008-udws_nos_nvm_sirius_get_18.bin",
+          "response_sha256": "87ac50528dd844d7fb80248c65d049dfc392672794e316b5c25b02b052f8b7cd",
+          "complete": true,
+          "assessment": "complete-signed-full-width-nos-nvm-scalar",
+          "excerpt": "-1"
+        }
+      ]
+    },
+    {
+      "name": "pe.cover_open_query",
+      "invocations": [
+        {
+          "command": "udws \"pe.cover_open_query;\"",
+          "response_file": "physical-65-frontpanel-settings/0004-udws_pe_cover_open_query.bin",
+          "response_sha256": "bc954935403188c66f9613e31bbf74ab9638eee4ca1329afcf73b6692eaec736",
+          "complete": true,
+          "assessment": "complete-cached-cover-state",
+          "excerpt": "0"
+        }
+      ]
+    },
+    {
+      "name": "pen.get_dotcount",
+      "invocations": [
+        {
+          "command": "udws \"pen.get_dotcount 0 0 0;\"",
+          "response_file": "physical-56-calibration-pen/0027-udws_pen_get_dotcount_0_0_0.bin",
+          "response_sha256": "be4c9559c4b1444c4d6b981f38634d7965b90697ac302e516de39821903e860c",
+          "complete": true,
+          "assessment": "complete-dot-counter-matching-storage",
+          "excerpt": "94132798"
+        },
+        {
+          "command": "udws \"pen.get_dotcount 1 0 0;\"",
+          "response_file": "physical-56-calibration-pen/0028-udws_pen_get_dotcount_1_0_0.bin",
+          "response_sha256": "b92d3e7fe4bca169cd50052dc6964f8011eb4f970bf64e536a925bcfbda00f80",
+          "complete": true,
+          "assessment": "complete-dot-counter-matching-storage",
+          "excerpt": "18365755"
+        },
+        {
+          "command": "udws \"pen.get_dotcount 0 0 1;\"",
+          "response_file": "physical-56-calibration-pen/0029-udws_pen_get_dotcount_0_0_1.bin",
+          "response_sha256": "8f777ce247405afb6f157e91387265f07596203ee344822f6214a8f8f9e9ca3f",
+          "complete": true,
+          "assessment": "complete-dot-counter-matching-storage",
+          "excerpt": "95415927"
+        },
+        {
+          "command": "udws \"pen.get_dotcount 1 0 1;\"",
+          "response_file": "physical-56-calibration-pen/0030-udws_pen_get_dotcount_1_0_1.bin",
+          "response_sha256": "461c7401fbcec3355236cf270c7ecacf8192d54f0fafc98486a37fcdb268727f",
+          "complete": true,
+          "assessment": "complete-dot-counter-matching-storage",
+          "excerpt": "0"
+        }
+      ]
+    },
+    {
+      "name": "pen.get_drfs",
+      "invocations": [
+        {
+          "command": "udws \"pen.get_drfs;\"",
+          "response_file": "physical-56-calibration-pen/0031-udws_pen_get_drfs.bin",
+          "response_sha256": "43ded4c0dee6e55b639b8405205aa591daccf1a2c975342e2989719ec3133df7",
+          "complete": true,
+          "assessment": "complete-dynamic-refresh-status",
+          "excerpt": "2"
+        }
+      ]
+    },
+    {
+      "name": "pen.get_ttoe_ad_range",
+      "invocations": [
+        {
+          "command": "udws \"pen.get_ttoe_ad_range;\"",
+          "response_file": "physical-56-calibration-pen/0021-udws_pen_get_ttoe_ad_range.bin",
+          "response_sha256": "7b19609c8a505e84033c31b8358ff967cd942486294d57a1e0c9e22d852e10e5",
+          "complete": true,
+          "assessment": "complete-bounded-pen-calibration-table",
+          "excerpt": "63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
+        }
+      ]
+    },
+    {
+      "name": "pen.get_ttoe_test_range",
+      "invocations": [
+        {
+          "command": "udws \"pen.get_ttoe_test_range;\"",
+          "response_file": "physical-56-calibration-pen/0022-udws_pen_get_ttoe_test_range.bin",
+          "response_sha256": "e5ec1b84a986c37a244a21940db2c836f656fc555add36126ea2bbcd68cc390d",
+          "complete": true,
+          "assessment": "complete-bounded-pen-calibration-table",
+          "excerpt": "63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
+        }
+      ]
+    },
+    {
+      "name": "pen.is_ldw_ttoed",
+      "invocations": [
+        {
+          "command": "udws \"pen.is_ldw_ttoed 0;\"",
+          "response_file": "physical-56-calibration-pen/0025-udws_pen_is_ldw_ttoed_0.bin",
+          "response_sha256": "ad7d5412c36a52d18822e99e2bd65e4d93ca87d9f58147ed3e1775e0d30509fd",
+          "complete": true,
+          "assessment": "complete-cached-pen-state",
+          "excerpt": "0"
+        },
+        {
+          "command": "udws \"pen.is_ldw_ttoed 1;\"",
+          "response_file": "physical-56-calibration-pen/0026-udws_pen_is_ldw_ttoed_1.bin",
+          "response_sha256": "a2cf3ddb01b334ba760d98c0efce74f4ff7184dfb6738d596fb97e969f8cc9cd",
+          "complete": true,
+          "assessment": "complete-cached-pen-state",
+          "excerpt": "0"
+        }
+      ]
+    },
+    {
+      "name": "pen.is_ttoed",
+      "invocations": [
+        {
+          "command": "udws \"pen.is_ttoed 0;\"",
+          "response_file": "physical-56-calibration-pen/0023-udws_pen_is_ttoed_0.bin",
+          "response_sha256": "a18d05404659f32d325f92b05a48dbcf4f7269aa2a1f53cbe6ada861c5276e98",
+          "complete": true,
+          "assessment": "complete-cached-pen-state",
+          "excerpt": "0"
+        },
+        {
+          "command": "udws \"pen.is_ttoed 1;\"",
+          "response_file": "physical-56-calibration-pen/0024-udws_pen_is_ttoed_1.bin",
+          "response_sha256": "6dc96bf4237f9343e1fc435787ba525bd51fe448605a81f6042460a09e535fae",
+          "complete": true,
+          "assessment": "complete-cached-pen-state",
+          "excerpt": "1"
+        }
+      ]
+    },
+    {
+      "name": "ram.block_info",
+      "invocations": [
+        {
+          "command": "udws \"ram.block_info 1 1 0;\"",
+          "response_file": "physical-61-block-metadata/0001-udws_ram_block_info_1_1_0.bin",
+          "response_sha256": "7cb799cc9d5be8eab40de3fd48e600a6a2fc8395fbb8fe1bd56a8a2665515a76",
+          "complete": true,
+          "assessment": "validated-live-directory-block-metadata",
+          "excerpt": "DIR inode 1 : block # = 0, priority = 0, size = 16928, use_count = 0, Non Purgeable"
+        }
+      ]
+    },
+    {
+      "name": "ram.part_info",
+      "invocations": [
+        {
+          "command": "udws \"ram.part_info 0;\"",
+          "response_file": "physical-58-heap-diagnostics/0009-udws_ram_part_info_0.bin",
+          "response_sha256": "89c0fea96f8176305fe816d9a7ac1aac6c47d97de03caee5836e95c99352563a",
+          "complete": true,
+          "assessment": "validated-heap-or-partition-diagnostic",
+          "excerpt": "partition # : 0 name : /, type : heap, block_size : 16384 curr_size = 105404, available_mem = 46556576 0"
+        }
+      ]
+    },
+    {
+      "name": "sm_module conn",
+      "invocations": [
+        {
+          "command": "udws \"sm_module conn;\"",
+          "response_file": "physical-54-system-services/0001-udws_sm_module_conn.bin",
+          "response_sha256": "89cc83dc1f48debde7e8e9c3b6dc0b3927c06f66bf212e36ef00723a7df02f5c",
+          "complete": true,
+          "assessment": "validated-module-connection-or-job-state",
+          "excerpt": "--------------- Requested ------------- ---------- Provided ------ # Type Requesting Module IID PCID Enum Providing Module Enum --- ------ -------------------- -------- ---- ---- -------------------- ---- 0 VTABLE DAT_file_mgr 00010d77 0000 [excerpt ends; full response in linked file]"
+        }
+      ]
+    },
+    {
+      "name": "sm_module pevent",
+      "invocations": [
+        {
+          "command": "udws \"sm_module pevent;\"",
+          "response_file": "physical-54-system-services/0005-udws_sm_module_pevent.bin",
+          "response_sha256": "021934888b2407fc47f2579594c331c1164ae5771674d00f10e81067847b9250",
+          "complete": true,
+          "assessment": "validated-module-connection-or-job-state",
+          "excerpt": "96 produces 78982 1905 produces 78944 314 produces 94528 314 produces 94529 314 produces 94530 314 produces 94531 314 produces 94532 314 produces 94533 2630 produces 79551 2630 produces 79488 573 produces 79014 573 produces 79669 1324 produ [excerpt ends; full response in linked file]"
+        }
+      ]
+    },
+    {
+      "name": "sm_module prov",
+      "invocations": [
+        {
+          "command": "udws \"sm_module prov;\"",
+          "response_file": "physical-54-system-services/0002-udws_sm_module_prov.bin",
+          "response_sha256": "0a2c8747aaf92008e522bf8edbb85399df68a3e80346d774ba8cc06910e99589",
+          "complete": true,
+          "assessment": "validated-module-connection-or-job-state",
+          "excerpt": "# Type Providing Module IID Enum --- ------ -------------------- -------- ---- 0 VTABLE DAT_file_mgr 00010f06 17 1 VTABLE dpof 00010dc6 0 2 VTABLE dpof 00010ecc 1 3 VTABLE access_list 00013009 0 4 DIRECT assert 00010fd7 0 5 VTABLE auto_alig [excerpt ends; full response in linked file]"
+        }
+      ]
+    },
+    {
+      "name": "sm_module req",
+      "invocations": [
+        {
+          "command": "udws \"sm_module req;\"",
+          "response_file": "physical-54-system-services/0003-udws_sm_module_req.bin",
+          "response_sha256": "226492817f643ae2121e904e182cbd82e255d0fa9d737469330400c958c102a0",
+          "complete": true,
+          "assessment": "validated-module-connection-or-job-state",
+          "excerpt": "# Type Requiring Module Required Module IID Enum ;--- ------ -------------------- -------------------- -------- ---- 0 VTABLE DAT_file_mgr ANY 00010d77 228 1 VTABLE DAT_file_mgr ANY 00010d47 229 2 VTABLE DAT_file_mgr ANY 00011604 230 3 VTAB [excerpt ends; full response in linked file]"
+        }
+      ]
+    },
+    {
+      "name": "sm_module revent",
+      "invocations": [
+        {
+          "command": "udws \"sm_module revent;\"",
+          "response_file": "physical-54-system-services/0006-udws_sm_module_revent.bin",
+          "response_sha256": "6adae29e91a891e6b7bc970fed7fe8b10502934518df814e383b9f1e35c6106e",
+          "complete": true,
+          "assessment": "validated-module-connection-or-job-state",
+          "excerpt": "0 requires 78975 0 requires 78975 0 requires 78975 0 requires 78975 0 requires 79209 0 requires 79049 0 requires 78975 0 requires 78975 0 requires 79488 0 requires 78975 0 requires 79073 0 requires 79073 0 requires 78975 0 requires 79488 0  [excerpt ends; full response in linked file]"
+        }
+      ]
+    },
+    {
+      "name": "sm_module tabl",
+      "invocations": [
+        {
+          "command": "udws \"sm_module tabl;\"",
+          "response_file": "physical-54-system-services/0004-udws_sm_module_tabl.bin",
+          "response_sha256": "34be1eb79bc1fcd60a7fc811c6f08fe0fd30945a0a5b59ab901d38c639b03621",
+          "complete": true,
+          "assessment": "validated-module-connection-or-job-state",
+          "excerpt": "DAT_file_mgr -> udw DAT_file_mgr -> ds2 DAT_file_mgr -> temp_agency dpof -> udw dpof -> ds2 dpof -> database dpof -> database dpof -> jm_udw_mem access_list -> ds2 access_list -> httpmgr access_list -> dsd_ols_mgr access_list -> http_sec ac [excerpt ends; full response in linked file]"
+        }
+      ]
+    },
+    {
+      "name": "smgr_pe.cover_open_query",
+      "invocations": [
+        {
+          "command": "udws \"smgr_pe.cover_open_query;\"",
+          "response_file": "physical-65-frontpanel-settings/0005-udws_smgr_pe_cover_open_query.bin",
+          "response_sha256": "c4aa628422567d293140a9256a86c4a0bc88a432959fe2202a3ebaaeed57ccfa",
+          "complete": true,
+          "assessment": "complete-cached-cover-state",
+          "excerpt": "0"
+        }
+      ]
+    },
+    {
+      "name": "smgr_pe.get_current_setting",
+      "invocations": [
+        {
+          "command": "udws \"smgr_pe.get_current_setting 1;\"",
+          "response_file": "physical-65-frontpanel-settings/0001-udws_smgr_pe_get_current_setting_1.bin",
+          "response_sha256": "229fdba02f33aad8124bfa1bccbf4bbe46c32c2a35f85f5a4592c3ca80048578",
+          "complete": true,
+          "assessment": "complete-current-setting-matching-storage",
+          "excerpt": "1"
+        },
+        {
+          "command": "udws \"smgr_pe.get_current_setting 3;\"",
+          "response_file": "physical-65-frontpanel-settings/0002-udws_smgr_pe_get_current_setting_3.bin",
+          "response_sha256": "edefe96291bf59d96f9a39ff993d61bdd2aa44a273c2cb01067db2500fd2c404",
+          "complete": true,
+          "assessment": "complete-current-setting-matching-storage",
+          "excerpt": "2"
+        },
+        {
+          "command": "udws \"smgr_pe.get_current_setting 4;\"",
+          "response_file": "physical-65-frontpanel-settings/0003-udws_smgr_pe_get_current_setting_4.bin",
+          "response_sha256": "8d259b4d4f6e611a6446d0c28f86d50f90de233e7eaee9c20ce1e5c9889e83cc",
+          "complete": true,
+          "assessment": "complete-current-setting-matching-storage",
+          "excerpt": "1"
+        }
+      ]
+    },
+    {
+      "name": "smgr_pe.user_power_on_query",
+      "invocations": [
+        {
+          "command": "udws \"smgr_pe.user_power_on_query;\"",
+          "response_file": "physical-65-frontpanel-settings/0006-udws_smgr_pe_user_power_on_query.bin",
+          "response_sha256": "9ab06241e2729963ca4ac0895a9a24947915ec8af1770504336640b3008dc6db",
+          "complete": true,
+          "assessment": "complete-stored-power-state-classification",
+          "excerpt": "1"
+        }
+      ]
+    },
+    {
+      "name": "smjob blk",
+      "invocations": [
+        {
+          "command": "udws \"smjob blk;\"",
+          "response_file": "physical-54-system-services/0009-udws_smjob_blk.bin",
+          "response_sha256": "f0b29a43fd0d1395d013e3e506a2b587243e4ef3eca4cb67ddbe4541150ce0b5",
+          "complete": true,
+          "assessment": "validated-module-connection-or-job-state",
+          "excerpt": ""
+        }
+      ]
+    },
+    {
+      "name": "smjob filter show",
+      "invocations": [
+        {
+          "command": "udws \"smjob filter show 0;\"",
+          "response_file": "physical-54-system-services/0010-udws_smjob_filter_show_0.bin",
+          "response_sha256": "87f73770b7ddcf7e36adfa15b87b4af56ec84c298e9955395762be2c8b0ea46f",
+          "complete": true,
+          "assessment": "validated-module-connection-or-job-state",
+          "excerpt": "JOBTYPE: WFWU, SUID 2301 -> UNFILTERED JOBTYPE: JM_REPORTS, SUID 492 -> UNFILTERED JOBTYPE: URF, SUID 2101 -> UNFILTERED JOBTYPE: UDW, SUID 337 -> UNFILTERED JOBTYPE: PCLM, SUID 2175 -> UNFILTERED JOBTYPE: PCL_KHEOPS, SUID 330 -> UNFILTERED [excerpt ends; full response in linked file]"
+        }
+      ]
+    },
+    {
+      "name": "smjob job",
+      "invocations": [
+        {
+          "command": "udws \"smjob job;\"",
+          "response_file": "physical-54-system-services/0007-udws_smjob_job.bin",
+          "response_sha256": "08d4ebf718f06022d62ac2fce26776ce19742cf11c1afd8543e71ee0ba22a9a0",
+          "complete": true,
+          "assessment": "validated-module-connection-or-job-state",
+          "excerpt": ""
+        }
+      ]
+    },
+    {
+      "name": "smjob types",
+      "invocations": [
+        {
+          "command": "udws \"smjob types;\"",
+          "response_file": "physical-54-system-services/0008-udws_smjob_types.bin",
+          "response_sha256": "1cd8dff328b0a2e66fa34c43675a71ad9477ae9751676af1e6608194578d0c40",
+          "complete": true,
+          "assessment": "validated-module-connection-or-job-state",
+          "excerpt": "JOBTYPE: WFWU, SUID 2301, JS_JOB_TYPE 40, JM IFC: a0631f04 JOBTYPE: JM_REPORTS, SUID 492, JS_JOB_TYPE 33, JM IFC: a055cc4c JOBTYPE: URF, SUID 2101, JS_JOB_TYPE 1, JM IFC: 2083e13c JOBTYPE: UDW, SUID 337, JS_JOB_TYPE 18, JM IFC: a0562750 JOB [excerpt ends; full response in linked file]"
+        }
+      ]
+    },
+    {
+      "name": "ui_lite.display_status",
+      "invocations": [
+        {
+          "command": "udws \"ui_lite.display_status;\"",
+          "response_file": "physical-56c-ui-status/0001-udws_ui_lite_display_status.bin",
+          "response_sha256": "1852b41999ebe393e5e3d46199f851fcd952339544bd664ba5b6bbb7a51bcb81",
+          "complete": true,
+          "assessment": "complete-cached-ui-display-state",
+          "excerpt": "[UI_LITE]: ui ii pop up state: 0, dashboard: 0 [UI_LITE]: Active: 0, pen type: 0 [UI_LITE]: size error: 0, sensor error: 0 [UI_LITE]: Allows: 0, Admin_D: 0, Reged: 0, Auto_E: 1, Pend: 0, e: 0, Server: 0, Main: 0"
+        }
+      ]
+    },
+    {
+      "name": "undercroft.get_rev",
+      "invocations": [
+        {
+          "command": "udws \"undercroft.get_rev;\"",
+          "response_file": "physical-63-misc-queries/0001-udws_undercroft_get_rev.bin",
+          "response_sha256": "09201335bfc1d051b63760e6b28747a1d9fd9d4895df6aa127bd25b5e5810155",
+          "complete": true,
+          "assessment": "validated-miscellaneous-query-payload",
+          "excerpt": "SUCCESS: undercroft chip rev is: 2"
+        }
+      ]
+    }
+  ]
+}

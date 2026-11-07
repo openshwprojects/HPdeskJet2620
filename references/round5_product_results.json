@@ -1,0 +1,288 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-10-29T21:31:10.824142+00:00",
+  "provenance": {
+    "serial_access_by_reviewer": "none",
+    "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+    "source_session": "references/physical-55-media-capabilities/session.json",
+    "source_session_sha256": "db44e224887689b3804576d271e7d04badd50b14e8728a9b06b57969887302ba"
+  },
+  "summary": {
+    "physical_commands": 5,
+    "validated_responses": 5,
+    "unique_names": 4,
+    "input_trays": 1,
+    "output_bins": 1,
+    "media_size_ids": 32,
+    "media_type_ids": 4,
+    "df_groups": 0
+  },
+  "response_revalidations": [
+    {
+      "response_file": "references/physical-55-media-capabilities/0001-udws_mhdlg_get_mhdlgcap_supported_trays.bin",
+      "response_sha256": "5ff97b5417659b0c5ed89637eb2b469c3ab5ec9bbedd947a9da2ff5e7f3d8feb",
+      "assessment": "complete-input-tray-capability",
+      "note": "Physical status200, full declared count and all IDs agree with the reviewed ROM capability implementation.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-55-media-capabilities/0002-udws_mhdlg_get_mhdlgcap_supported_bins.bin",
+      "response_sha256": "21b1711b55f58088d928993b93ddd70e24c1aed759cd0b6c2bd0fe33375e312d",
+      "assessment": "complete-output-bin-capability",
+      "note": "Physical status200, full declared count and all IDs agree with the reviewed ROM capability implementation.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-55-media-capabilities/0003-udws_mhdlg_get_mhdlgcap_media_type_size_list_0_1.bin",
+      "response_sha256": "42804d99165865619912ffaaf81fa7eb15344ca341151e534301cb84195c3e2c",
+      "assessment": "complete-media-size-capability",
+      "note": "Physical status200, full declared count and all IDs agree with the reviewed ROM capability implementation.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-55-media-capabilities/0004-udws_mhdlg_get_mhdlgcap_media_type_size_list_1_1.bin",
+      "response_sha256": "eedc5330f2292a7181e6a141559260485fcbdb72dacd6f328138cc63c1655488",
+      "assessment": "complete-media-type-capability",
+      "note": "Physical status200, full declared count and all IDs agree with the reviewed ROM capability implementation.",
+      "valid": true,
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-55-media-capabilities/0005-udws_mhdlg_get_supported_df_groups.bin",
+      "response_sha256": "858c7443992fd19cf709e0757f5775364618bdd456382d82e2ae58399588aa77",
+      "assessment": "complete-zero-group-capability",
+      "note": "Physical status200, full declared count and all IDs agree with the reviewed ROM capability implementation. This is a successful empty-capability response, not an invalid-group/404 guard.",
+      "valid": true,
+      "complete": true
+    }
+  ],
+  "data_quality": [
+    {
+      "response_file": "references/physical-55-media-capabilities/0001-udws_mhdlg_get_mhdlgcap_supported_trays.bin",
+      "response_sha256": "5ff97b5417659b0c5ed89637eb2b469c3ab5ec9bbedd947a9da2ff5e7f3d8feb",
+      "assessment": "complete-input-tray-capability",
+      "note": "Physical status200, full declared count and all IDs agree with the reviewed ROM capability implementation.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-55-media-capabilities/0002-udws_mhdlg_get_mhdlgcap_supported_bins.bin",
+      "response_sha256": "21b1711b55f58088d928993b93ddd70e24c1aed759cd0b6c2bd0fe33375e312d",
+      "assessment": "complete-output-bin-capability",
+      "note": "Physical status200, full declared count and all IDs agree with the reviewed ROM capability implementation.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-55-media-capabilities/0003-udws_mhdlg_get_mhdlgcap_media_type_size_list_0_1.bin",
+      "response_sha256": "42804d99165865619912ffaaf81fa7eb15344ca341151e534301cb84195c3e2c",
+      "assessment": "complete-media-size-capability",
+      "note": "Physical status200, full declared count and all IDs agree with the reviewed ROM capability implementation.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-55-media-capabilities/0004-udws_mhdlg_get_mhdlgcap_media_type_size_list_1_1.bin",
+      "response_sha256": "eedc5330f2292a7181e6a141559260485fcbdb72dacd6f328138cc63c1655488",
+      "assessment": "complete-media-type-capability",
+      "note": "Physical status200, full declared count and all IDs agree with the reviewed ROM capability implementation.",
+      "complete": true
+    },
+    {
+      "response_file": "references/physical-55-media-capabilities/0005-udws_mhdlg_get_supported_df_groups.bin",
+      "response_sha256": "858c7443992fd19cf709e0757f5775364618bdd456382d82e2ae58399588aa77",
+      "assessment": "complete-zero-group-capability",
+      "note": "Physical status200, full declared count and all IDs agree with the reviewed ROM capability implementation. This is a successful empty-capability response, not an invalid-group/404 guard.",
+      "complete": true
+    }
+  ],
+  "results": [
+    {
+      "name": "mhdlg.get_mhdlgcap_supported_trays",
+      "command": "udws \"mhdlg.get_mhdlgcap_supported_trays;\"",
+      "index": 1,
+      "response_file": "references/physical-55-media-capabilities/0001-udws_mhdlg_get_mhdlgcap_supported_trays.bin",
+      "response_sha256": "5ff97b5417659b0c5ed89637eb2b469c3ab5ec9bbedd947a9da2ff5e7f3d8feb",
+      "response_bytes": 95,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "status_code": 200,
+      "declared_count": 1,
+      "values": [
+        1
+      ],
+      "labels": [
+        "Tray1"
+      ],
+      "rom_source": "ROM tray records A05CFBD0, count A05CFBB0",
+      "matches_reviewed_rom": true,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-input-tray-capability",
+      "note": "Physical status200, full declared count and all IDs agree with the reviewed ROM capability implementation."
+    },
+    {
+      "name": "mhdlg.get_mhdlgcap_supported_bins",
+      "command": "udws \"mhdlg.get_mhdlgcap_supported_bins;\"",
+      "index": 2,
+      "response_file": "references/physical-55-media-capabilities/0002-udws_mhdlg_get_mhdlgcap_supported_bins.bin",
+      "response_sha256": "21b1711b55f58088d928993b93ddd70e24c1aed759cd0b6c2bd0fe33375e312d",
+      "response_bytes": 89,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "status_code": 200,
+      "declared_count": 1,
+      "values": [
+        0
+      ],
+      "labels": [],
+      "rom_source": "A030437A writes bin0 and returns count1",
+      "matches_reviewed_rom": true,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-output-bin-capability",
+      "note": "Physical status200, full declared count and all IDs agree with the reviewed ROM capability implementation."
+    },
+    {
+      "name": "mhdlg.get_mhdlgcap_media_type_size_list",
+      "command": "udws \"mhdlg.get_mhdlgcap_media_type_size_list 0 1;\"",
+      "index": 3,
+      "response_file": "references/physical-55-media-capabilities/0003-udws_mhdlg_get_mhdlgcap_media_type_size_list_0_1.bin",
+      "response_sha256": "42804d99165865619912ffaaf81fa7eb15344ca341151e534301cb84195c3e2c",
+      "response_bytes": 867,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "status_code": 200,
+      "declared_count": 32,
+      "values": [
+        1,
+        2,
+        3,
+        7,
+        15,
+        25,
+        26,
+        101,
+        45,
+        71,
+        24,
+        74,
+        75,
+        78,
+        80,
+        81,
+        90,
+        91,
+        92,
+        109,
+        110,
+        111,
+        121,
+        126,
+        122,
+        30002,
+        30000,
+        83,
+        72,
+        65,
+        118,
+        10
+      ],
+      "labels": [
+        "na_executive_7.25x10.5in",
+        "na_letter_8.5x11in",
+        "na_legal_8.5x14in",
+        "na_govt-letter_8x10in",
+        "na_invoice_5.5x8.5in",
+        "iso_a5_148x210mm",
+        "iso_a4_210x297mm",
+        "custom",
+        "jis_b5_182x257mm",
+        "jpn_hagaki_100x148mm",
+        "iso_a6_105x148mm",
+        "na_index-4x6_4x6in",
+        "na_index-5x8_5x8in",
+        "na_index-3x5_3x5in",
+        "na_monarch_3.875x7.5in",
+        "na_number-10_4.125x9.5in",
+        "iso_dl_110x220mm",
+        "iso_c5_162x229mm",
+        "iso_c6_114x162mm",
+        "na_a2_4.375x5.75in",
+        "jpn_chou3_120x235mm",
+        "jpn_chou4_90x205mm",
+        "om_photo_89x127mm",
+        "custom_photo-2l-size-card_127x178mm",
+        "na_5x7_5x7in",
+        "custom_photo_4x5in",
+        "custom_photo_4x12in",
+        "na_personal_3.625x6.5in",
+        "jpn_oufuku-rot_148x200mm",
+        "iso_b5_176x250mm",
+        "om_small-photo_100x150mm",
+        "na_foolscap_8.5x13in"
+      ],
+      "rom_source": "ROM 0xa05cfc24, 32 table entries",
+      "matches_reviewed_rom": true,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-media-size-capability",
+      "note": "Physical status200, full declared count and all IDs agree with the reviewed ROM capability implementation."
+    },
+    {
+      "name": "mhdlg.get_mhdlgcap_media_type_size_list",
+      "command": "udws \"mhdlg.get_mhdlgcap_media_type_size_list 1 1;\"",
+      "index": 4,
+      "response_file": "references/physical-55-media-capabilities/0004-udws_mhdlg_get_mhdlgcap_media_type_size_list_1_1.bin",
+      "response_sha256": "eedc5330f2292a7181e6a141559260485fcbdb72dacd6f328138cc63c1655488",
+      "response_bytes": 160,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "status_code": 200,
+      "declared_count": 4,
+      "values": [
+        0,
+        2,
+        56,
+        57
+      ],
+      "labels": [
+        "plain",
+        "photoStandard",
+        "specialtyGlossy",
+        "specialtyMatte"
+      ],
+      "rom_source": "ROM 0xa05cfcc4, 4 table entries",
+      "matches_reviewed_rom": true,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-media-type-capability",
+      "note": "Physical status200, full declared count and all IDs agree with the reviewed ROM capability implementation."
+    },
+    {
+      "name": "mhdlg.get_supported_df_groups",
+      "command": "udws \"mhdlg.get_supported_df_groups;\"",
+      "index": 5,
+      "response_file": "references/physical-55-media-capabilities/0005-udws_mhdlg_get_supported_df_groups.bin",
+      "response_sha256": "858c7443992fd19cf709e0757f5775364618bdd456382d82e2ae58399588aa77",
+      "response_bytes": 81,
+      "prompt_returned": true,
+      "wrapper_return": 0,
+      "status_code": 200,
+      "declared_count": 0,
+      "values": [],
+      "labels": [],
+      "rom_source": "ROM A05CFBB8",
+      "matches_reviewed_rom": true,
+      "valid": true,
+      "complete": true,
+      "assessment": "complete-zero-group-capability",
+      "note": "Physical status200, full declared count and all IDs agree with the reviewed ROM capability implementation. This is a successful empty-capability response, not an invalid-group/404 guard."
+    }
+  ],
+  "limitations": [
+    "Capabilities describe configured firmware support, not currently loaded media or a mechanical test.",
+    "Two media-list selectors are one registered command name.",
+    "Original raw capture bytes and session records remain unchanged."
+  ]
+}

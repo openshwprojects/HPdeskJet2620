@@ -1,0 +1,255 @@
+{
+  "schema_version": 1,
+  "kind": "validated-physical-capture-with-offline-interpretation",
+  "session": "references/physical-48-wifi-sdio",
+  "validated_responses": 8,
+  "response_revalidations": [
+    {
+      "response_file": "references/physical-48-wifi-sdio/0001-udws_ultra_spectra_get_sdio_counters.bin",
+      "response_sha256": "4e2bd8263264508dc691e8f32b08e735f3189c92985eaeee3e49d4db092e406a",
+      "command": "udws \"ultra_spectra.get_sdio_counters;\"",
+      "valid": true,
+      "assessment": "exact-command-echo-and-response-body-validated",
+      "preserves_original_capture_validation": true
+    },
+    {
+      "response_file": "references/physical-48-wifi-sdio/0002-udws_ultra_spectra_get_sdio_caps.bin",
+      "response_sha256": "93a24099cf19268f85a9c538d1ab745d094bd3ed6db1a3b8d5cb35e5d97f4074",
+      "command": "udws \"ultra_spectra.get_sdio_caps;\"",
+      "valid": true,
+      "assessment": "exact-command-echo-and-response-body-validated",
+      "preserves_original_capture_validation": true
+    },
+    {
+      "response_file": "references/physical-48-wifi-sdio/0003-udws_ultra_spectra_get_sdio_status.bin",
+      "response_sha256": "b34013848fd899e6ddedd5f4f6586aa3f203e2e44b966fdbe13c19df200ae54c",
+      "command": "udws \"ultra_spectra.get_sdio_status;\"",
+      "valid": true,
+      "assessment": "exact-command-echo-and-response-body-validated",
+      "preserves_original_capture_validation": true
+    },
+    {
+      "response_file": "references/physical-48-wifi-sdio/0004-udws_ultra_spectra_get_sdio_counters.bin",
+      "response_sha256": "4e2bd8263264508dc691e8f32b08e735f3189c92985eaeee3e49d4db092e406a",
+      "command": "udws \"ultra_spectra.get_sdio_counters;\"",
+      "valid": true,
+      "assessment": "exact-command-echo-and-response-body-validated",
+      "preserves_original_capture_validation": true
+    },
+    {
+      "response_file": "references/physical-48-wifi-sdio/0005-udws_ultra_spectra_get_iovar_mpc.bin",
+      "response_sha256": "89149dee0459f252f6aa281693510636dd0a854219052e1a317de97c18553c87",
+      "command": "udws \"ultra_spectra.get_iovar mpc;\"",
+      "valid": true,
+      "assessment": "exact-command-echo-and-response-body-validated",
+      "preserves_original_capture_validation": true
+    },
+    {
+      "response_file": "references/physical-48-wifi-sdio/0006-udws_ultra_spectra_get_iovar_nmode.bin",
+      "response_sha256": "a708f7693416ada749c54fbd184fa7c0ca24b070857debdc4e9fc8857a1c532e",
+      "command": "udws \"ultra_spectra.get_iovar nmode;\"",
+      "valid": true,
+      "assessment": "exact-command-echo-and-response-body-validated",
+      "preserves_original_capture_validation": true
+    },
+    {
+      "response_file": "references/physical-48-wifi-sdio/0007-udws_ultra_spectra_test_endian.bin",
+      "response_sha256": "ad8c8cd1b2635b332b80a7ae3376cef0444d547eae18b27839c07d36eac8be1c",
+      "command": "udws \"ultra_spectra.test_endian;\"",
+      "valid": true,
+      "assessment": "exact-command-echo-and-response-body-validated",
+      "preserves_original_capture_validation": true
+    },
+    {
+      "response_file": "references/physical-48-wifi-sdio/0008-udws_webfwupdate_get_base_md.bin",
+      "response_sha256": "d3599978ab958f89e5006613b8e8e79a7557325648b46ca4e1b319513ed0f058",
+      "command": "udws \"webfwupdate.get_base_md;\"",
+      "valid": true,
+      "assessment": "exact-command-echo-and-response-body-validated",
+      "preserves_original_capture_validation": true
+    }
+  ],
+  "data_quality": [
+    {
+      "response_file": "references/physical-48-wifi-sdio/0001-udws_ultra_spectra_get_sdio_counters.bin",
+      "response_sha256": "4e2bd8263264508dc691e8f32b08e735f3189c92985eaeee3e49d4db092e406a",
+      "complete": true,
+      "payload_kind": "ten-error-counters",
+      "note": "These count errors, not ordinary commands/transfers. Master=2 and Data CRC=2; eight other fields are zero."
+    },
+    {
+      "response_file": "references/physical-48-wifi-sdio/0004-udws_ultra_spectra_get_sdio_counters.bin",
+      "response_sha256": "4e2bd8263264508dc691e8f32b08e735f3189c92985eaeee3e49d4db092e406a",
+      "complete": true,
+      "payload_kind": "ten-error-counters",
+      "note": "All ten error counters equal the earlier sample. This establishes no newly counted errors; it cannot measure the number of successful SDIO reads."
+    },
+    {
+      "response_file": "references/physical-48-wifi-sdio/0002-udws_ultra_spectra_get_sdio_caps.bin",
+      "response_sha256": "93a24099cf19268f85a9c538d1ab745d094bd3ed6db1a3b8d5cb35e5d97f4074",
+      "complete": true,
+      "payload_kind": "cached-capabilities",
+      "note": "Complete formatter payload: ten CCCR fields, seven FBR fields for each of two functions, and six maximum-size/count fields. FBR1 CIS=0xff0100 and FBR2 cached block size=8192 are preserved as reported; their current-register meaning is unverified. No formatter endian/offset defect was found."
+    },
+    {
+      "response_file": "references/physical-48-wifi-sdio/0003-udws_ultra_spectra_get_sdio_status.bin",
+      "response_sha256": "b34013848fd899e6ddedd5f4f6586aa3f203e2e44b966fdbe13c19df200ae54c",
+      "complete": true,
+      "payload_kind": "heading-only",
+      "recovered_cccr_bytes": 0,
+      "note": "A045EE36..A045EEEA formats into stack buffers but contains no UART/output call. Its only three calls are snprintf A04F0B50. This is expected heading-only output, not captured CCCR contents or evidence of transport loss. Static read path exists, but UART success cannot verify its underlying result."
+    },
+    {
+      "response_file": "references/physical-48-wifi-sdio/0007-udws_ultra_spectra_test_endian.bin",
+      "response_sha256": "ad8c8cd1b2635b332b80a7ae3376cef0444d547eae18b27839c07d36eac8be1c",
+      "complete": true,
+      "payload_kind": "compiled-endian-test-vectors",
+      "note": "All twelve fixed literal vectors match the compiled handler. This is not an exercise of SDIO hardware endian transfers."
+    },
+    {
+      "response_file": "references/physical-48-wifi-sdio/0008-udws_webfwupdate_get_base_md.bin",
+      "response_sha256": "d3599978ab958f89e5006613b8e8e79a7557325648b46ca4e1b319513ed0f058",
+      "complete": true,
+      "payload_kind": "cached-firmware-digest",
+      "note": "32 hex characters match the base digest in earlier physical opaque-revision output. Optional local secure-configuration base_md entry was not printed. No hash recomputation was performed."
+    }
+  ],
+  "findings": {
+    "sdio_identity": {
+      "vendor_id": "0x02D0",
+      "product_id": "0xA887",
+      "interpretation": "Matches the emulator model BCM43143 (0x02d0:0xa887). This identity is observed; the commercial chip-name mapping is already in sdio.py, not freshly verified from an external source."
+    },
+    "cached_cccr": {
+      "ioEnable": 2,
+      "ioReady": 2,
+      "intEnable": 3,
+      "capability": 2,
+      "pCis": 4208,
+      "funcSelect": 0,
+      "execFlag": 0,
+      "readyFlag": 0,
+      "f0BlkSize": 0,
+      "pwrCtrl": 1
+    },
+    "cached_fbr": {
+      "1": {
+        "funcStd": 0,
+        "extIfcCode": 0,
+        "pwrSelect": 1,
+        "pCis": 16711936,
+        "pCsa": 0,
+        "dAwCsa": 0,
+        "blkSize": 64
+      },
+      "2": {
+        "funcStd": 0,
+        "extIfcCode": 0,
+        "pwrSelect": 0,
+        "pCis": 4152,
+        "pCsa": 0,
+        "dAwCsa": 0,
+        "blkSize": 8192
+      }
+    },
+    "number_functions_excluding_f0": 2,
+    "block_mode_supported": true,
+    "block_size_max": {
+      "0": 32,
+      "1": 64,
+      "2": 512
+    },
+    "block_count_max": {
+      "0": 511,
+      "1": 511,
+      "2": 511
+    },
+    "error_counters_before": {
+      "master": 2,
+      "overcurrent": 0,
+      "autocmd12": 0,
+      "command_index": 0,
+      "command_endbit": 0,
+      "command_crc": 0,
+      "command_timeout": 0,
+      "data_endbit": 0,
+      "data_crc": 2,
+      "data_timeout": 0
+    },
+    "error_counters_after": {
+      "master": 2,
+      "overcurrent": 0,
+      "autocmd12": 0,
+      "command_index": 0,
+      "command_endbit": 0,
+      "command_crc": 0,
+      "command_timeout": 0,
+      "data_endbit": 0,
+      "data_crc": 2,
+      "data_timeout": 0
+    },
+    "error_counter_delta": {
+      "master": 0,
+      "overcurrent": 0,
+      "autocmd12": 0,
+      "command_index": 0,
+      "command_endbit": 0,
+      "command_crc": 0,
+      "command_timeout": 0,
+      "data_endbit": 0,
+      "data_crc": 0,
+      "data_timeout": 0
+    },
+    "integer_iovar_values": {
+      "mpc": 0,
+      "nmode": 1
+    },
+    "base_firmware_digest": "3a34069c33f93e4ca18a1c7149a22f52",
+    "base_digest_cross_check": {
+      "response_file": "references/physical-11-software-network/0020-udws_webfwupdate_get_opaque_rev.bin",
+      "response_sha256": "08a57bb56a7b43c139fb767e608707151e2cdd6cf62678c1d78a2452211278bd"
+    },
+    "cccr_bytes_recovered_from_status": 0
+  },
+  "corrections_to_initial_review": [
+    {
+      "source_review": "references/useful_network_round4_review.json",
+      "source_review_sha256": "858b9cb3fea813ca2eece839b9771fdc2620736afeefbe934a3ec04e573d16df",
+      "names": [
+        "ultra_spectra.get_sdio_status",
+        "ultra_spectra.get_sdio_counters"
+      ],
+      "correction": "Initial review incorrectly predicted that A045EE36 prints bytes and that status reads increment the displayed counters. A045EE36 only formats local buffers; counters are errors only. Preserve original capture/plan metadata and use this source-bound correction."
+    }
+  ],
+  "additional_code_evidence": {
+    "silent_format_helper": {
+      "start": "0xa045ee36",
+      "end_exclusive": "0xa045eeec",
+      "sha256": "3e2426377a002364a88a8b4551274e8cf92445d2edced87f6f4122ff39116c58",
+      "all_calls": [
+        {
+          "address": "0xa045ee54",
+          "mnemonic": "bl",
+          "target": "#0xa04f0b50"
+        },
+        {
+          "address": "0xa045ee62",
+          "mnemonic": "bl",
+          "target": "#0xa04f0b50"
+        },
+        {
+          "address": "0xa045eeae",
+          "mnemonic": "bl",
+          "target": "#0xa04f0b50"
+        }
+      ]
+    },
+    "fbr_layout": {
+      "getter_copy": "A03C1322 copies 18 cached bytes from driver +0xbc+18*function. A03C6DD6..A03C6E3E copies them into returned output at +0x13+18*function.",
+      "formatter": "A045471C..A0454784 reads identical offsets. CIS pointer is byte[9] | byte[10]<<8 | byte[11]<<16; block size is byte[16] | byte[17]<<8. Both are little-endian as expected.",
+      "conclusion": "No proven formatting bug. Cached FBR values and separately cached maximum block-size capabilities differ. No live-register payload is available to decide whether the cache is stale, corrupted, or represents an unusual earlier state; do not silently repair 8192 to 512."
+    }
+  },
+  "emulator_use": "Observed IDs, function count, maximum block sizes and integer GET_VAR replies are useful comparison points. Preserve cached-FBR anomalies separately rather than treating them as direct live CCCR/FBR register reads."
+}

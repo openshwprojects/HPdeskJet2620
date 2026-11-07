@@ -1,0 +1,30 @@
+[
+  {
+    "command": "udws \"ram.ls /ram;\"",
+    "classification": "reviewed-ram-filesystem-query",
+    "purpose": "List live RAM root before temporary-file testing.",
+    "review_source": "references/review_disasm.py; ram.ls A0356A04; ustd.ls A046C8EE/A046C910; ustd.sizeof A046D28C",
+    "timeout": 20
+  },
+  {
+    "command": "udws \"ustd.ls /ram;\"",
+    "classification": "reviewed-ram-filesystem-query",
+    "purpose": "List RAM root through ustd wrapper.",
+    "review_source": "references/review_disasm.py; ram.ls A0356A04; ustd.ls A046C8EE/A046C910; ustd.sizeof A046D28C",
+    "timeout": 20
+  },
+  {
+    "command": "udws \"ustd.ll /ram;\"",
+    "classification": "reviewed-ram-filesystem-query",
+    "purpose": "Detailed RAM listing.",
+    "review_source": "references/review_disasm.py; ram.ls A0356A04; ustd.ls A046C8EE/A046C910; ustd.sizeof A046D28C",
+    "timeout": 20
+  },
+  {
+    "command": "udws \"ustd.sizeof /ram/codex_uart_20261029a;\"",
+    "classification": "reviewed-ram-filesystem-query",
+    "purpose": "Prove the unique test path is absent before creating anything.",
+    "review_source": "references/review_disasm.py; ram.ls A0356A04; ustd.ls A046C8EE/A046C910; ustd.sizeof A046D28C",
+    "timeout": 20
+  }
+]

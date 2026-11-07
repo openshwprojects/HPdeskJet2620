@@ -1,0 +1,39 @@
+{
+  "queries": [
+    {
+      "name": "event_log.get_event",
+      "command": "udws \"event_log.get_event 1266;\"",
+      "handler": "0xa00c3d71",
+      "descriptor_address": "0xa0522b40",
+      "classification": "reviewed-information-query",
+      "timeout": 20,
+      "purpose": "Read an existing event by its observed sequence number.",
+      "control_flow_proof": "A00C3D70 zeros240 bytes of caller stack and reads one integer. Physical68 proves CLI providerA061F594 and scalar-storage providerA0517544, both resolved in earlier captures. A00C3946 initializes output and callsA00C39A8. Ring count7, end7, oldest0 are valid for15 slots. Query1266 lies in the observed slot0 interval[1266,1271), so the first iteration selects slot0. A0025294 is a veneer to ITCM304 integer remainder; divisor15 is nonzero. The scalar callback only reads DSID10C7D current sequence. A00C3946 copies at most228 bytes; this selected record has9 bytes including a verified NUL, so the subsequent %s print is bounded. No event add, clear, purge or NVM-write helper is called.",
+      "side_effects": "UART output, local output struct and shared300-byte formatting scratch only.",
+      "hardware_access": false,
+      "persistent_writes": false,
+      "interpretation": "Stored event sequence number, not a timestamp. Occurrences field is the getter presence flag1. The initial diagnostic prints0 from the zeroed output field before lookup; it does not echo the requested sequence.",
+      "expected": {
+        "sequence": 1266,
+        "event_id": 72234,
+        "payload": "FROM_NVM",
+        "presence_flag": 1
+      },
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "itcm_sha256": "bf99db18d8e211712f76ee69454ff3f7ffafe4dcc8f868c360e8cc62f8f83ac9",
+      "prior_invocation_status": "not-invoked",
+      "runtime_registered": true,
+      "review_source": "references/round6_event_review.json"
+    }
+  ],
+  "physical_evidence": [
+    {
+      "path": "references/physical-68-query-prerequisites/provider-pointers.json",
+      "sha256": "03cd2446acd7cfab5bc4db4dbf0369b55bfd7df30d041571917ef6320a05935c"
+    },
+    {
+      "path": "references/physical-74-event-prerequisite/provider-pointers.json",
+      "sha256": "1cde8e413cf4d4c25f414ec11530fef5434f917b8db4726e88a505cd1ce81ab4"
+    }
+  ]
+}

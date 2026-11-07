@@ -1,0 +1,2458 @@
+[
+  {
+    "name": "firm.query_value",
+    "command": "udws \"firm.query_value;\"",
+    "handler": "0xa00d4ec3",
+    "descriptor_address": "0xa052b3ac",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "List numeric firmware original/current values.",
+    "argument_syntax": "no arguments",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "output_completeness": "Full table listing may exceed the earlier reliable bulk UART size. Preserve raw bytes and verify reported counts before treating the listing as complete; one command per line.",
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "firm.query_value_fmt",
+    "command": "udws \"firm.query_value_fmt;\"",
+    "handler": "0xa00d531d",
+    "descriptor_address": "0xa052b4a8",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "List numeric firmware original/current values.",
+    "argument_syntax": "no arguments",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "output_completeness": "Full table listing may exceed the earlier reliable bulk UART size. Preserve raw bytes and verify reported counts before treating the listing as complete; one command per line.",
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "firm.str_query_value",
+    "command": "udws \"firm.str_query_value;\"",
+    "handler": "0xa00d5485",
+    "descriptor_address": "0xa052b4cc",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "List original/current firmware string values.",
+    "argument_syntax": "no arguments",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "output_completeness": "Full table listing may exceed the earlier reliable bulk UART size. Preserve raw bytes and verify reported counts before treating the listing as complete; one command per line.",
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "patch.get_rev",
+    "command": "udws \"patch.get_rev;\"",
+    "handler": "0xa02fb365",
+    "descriptor_address": "0xa05cb534",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read stored patch revision.",
+    "argument_syntax": "no arguments",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "patch.get_v_string",
+    "command": "udws \"patch.get_v_string;\"",
+    "handler": "0xa02fbaeb",
+    "descriptor_address": "0xa05cb5ac",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read patch firmware version string.",
+    "argument_syntax": "no arguments",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "patch.get",
+    "command": "udws \"patch.get;\"",
+    "handler": "0xa02fb295",
+    "descriptor_address": "0xa05cb510",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read the built-in patch slot text listing.",
+    "argument_syntax": "no arguments",
+    "side_effects_assessment": "Refreshes the existing firmware patch-read buffer in RAM and emits textual prefixes; no patch apply or DS write.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "output_completeness": "Fourteen textual prefixes, not the raw 1900-byte contents of all records.",
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "timer.conv_int",
+    "command": "udws \"timer.conv_int 0;\"",
+    "handler": "0xa0430a5f",
+    "descriptor_address": "0xa061ed94",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Convert a supplied integer epoch to formatted date/time.",
+    "argument_syntax": "0",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "timer.conv_int",
+    "command": "udws \"timer.conv_int 86400;\"",
+    "handler": "0xa0430a5f",
+    "descriptor_address": "0xa061ed94",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Convert a supplied integer epoch to formatted date/time.",
+    "argument_syntax": "86400",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "timer.conv_int",
+    "command": "udws \"timer.conv_int 2147483647;\"",
+    "handler": "0xa0430a5f",
+    "descriptor_address": "0xa061ed94",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Convert a supplied integer epoch to formatted date/time.",
+    "argument_syntax": "2147483647",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "timer.delay_ms",
+    "command": "udws \"timer.delay_ms 1;\"",
+    "handler": "0xa042f599",
+    "descriptor_address": "0xa061ea5c",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Exercise the one-millisecond delay operation.",
+    "argument_syntax": "1",
+    "side_effects_assessment": "Briefly blocks the command thread for the requested delay; normal timer/scheduler bookkeeping only.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "udw.timer_delay_ms",
+    "command": "udws \"udw.timer_delay_ms 1;\"",
+    "handler": "0xa042f599",
+    "descriptor_address": "0xa061ea68",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Exercise the one-millisecond delay operation.",
+    "argument_syntax": "1",
+    "side_effects_assessment": "Briefly blocks the command thread for the requested delay; normal timer/scheduler bookkeeping only.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "udw.delay",
+    "command": "udws \"udw.delay 1;\"",
+    "handler": "0xa02c3fc5",
+    "descriptor_address": "0xa05bc718",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Exercise the one-second delay operation.",
+    "argument_syntax": "1",
+    "side_effects_assessment": "Briefly sleeps the command thread; normal scheduler bookkeeping only.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "udw.timer_date_get",
+    "command": "udws \"udw.timer_date_get;\"",
+    "handler": "0xa04309d9",
+    "descriptor_address": "0xa061edc4",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read current or factory clock metadata through the UDW alias.",
+    "argument_syntax": "no arguments",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "udw.timer_date_get_int",
+    "command": "udws \"udw.timer_date_get_int;\"",
+    "handler": "0xa0430a0f",
+    "descriptor_address": "0xa061edd0",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read current or factory clock metadata through the UDW alias.",
+    "argument_syntax": "no arguments",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "udw.timer_get_factory_time",
+    "command": "udws \"udw.timer_get_factory_time;\"",
+    "handler": "0xa0430a23",
+    "descriptor_address": "0xa061eddc",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read current or factory clock metadata through the UDW alias.",
+    "argument_syntax": "no arguments",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "udw.timer_get_reliability",
+    "command": "udws \"udw.timer_get_reliability;\"",
+    "handler": "0xa0430a37",
+    "descriptor_address": "0xa061ede8",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read timer reliability through the UDW alias.",
+    "argument_syntax": "no arguments",
+    "side_effects_assessment": "May latch the existing RAM reliability flag to 2 when the local clock is unavailable; no persistent clock configuration.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "udw.get_fw_rev",
+    "command": "udws \"udw.get_fw_rev;\"",
+    "handler": "0xa046e379",
+    "descriptor_address": "0xa06319f4",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read firmware identity using registered UDW aliases.",
+    "argument_syntax": "no arguments",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "udw.get_base_fw_rev",
+    "command": "udws \"udw.get_base_fw_rev;\"",
+    "handler": "0xa046e387",
+    "descriptor_address": "0xa0631a00",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read firmware identity using registered UDW aliases.",
+    "argument_syntax": "no arguments",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "udw.get_verbose_fw_rev",
+    "command": "udws \"udw.get_verbose_fw_rev;\"",
+    "handler": "0xa046e36b",
+    "descriptor_address": "0xa0631a0c",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read firmware identity using registered UDW aliases.",
+    "argument_syntax": "no arguments",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "udw.id",
+    "command": "udws \"udw.id;\"",
+    "handler": "0xa046e35d",
+    "descriptor_address": "0xa0631a18",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read firmware identity using registered UDW aliases.",
+    "argument_syntax": "no arguments",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "nca.get_preferred_address",
+    "command": "udws \"nca.get_preferred_address;\"",
+    "handler": "0xa02e1889",
+    "descriptor_address": "0xa05c735c",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read the cached preferred network address.",
+    "argument_syntax": "no arguments",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "nca.get_preferred_fqdn",
+    "command": "udws \"nca.get_preferred_fqdn;\"",
+    "handler": "0xa02e1a75",
+    "descriptor_address": "0xa05c7368",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read the locally configured or cached preferred fully qualified name.",
+    "argument_syntax": "no arguments",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "icc.get_url",
+    "command": "udws \"icc.get_url;\"",
+    "handler": "0xa0179c81",
+    "descriptor_address": "0xa053f2c8",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read the configured ICC endpoint host.",
+    "argument_syntax": "no arguments",
+    "side_effects_assessment": "Refreshes local URL cache buffers at 2097175C/20971C74 from existing configuration; no network transmission or persistent change.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "wifi_conman.get_p2p_pin",
+    "command": "udws \"wifi_conman.get_p2p_pin;\"",
+    "handler": "0xa047d355",
+    "descriptor_address": "0xa0635814",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read the existing cached P2P PIN.",
+    "argument_syntax": "no arguments",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "data_sensitivity": "May contain the user-owned device pairing PIN; retain as local reference evidence.",
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "wps.status",
+    "command": "udws \"wps.status;\"",
+    "handler": "0xa04c88bb",
+    "descriptor_address": "0xa063d7ac",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read cached WPS progress and last error.",
+    "argument_syntax": "no arguments",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "rest_fw_update.get_state",
+    "command": "udws \"rest_fw_update.get_state 2;\"",
+    "handler": "0xa03805e9",
+    "descriptor_address": "0xa05effdc",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read the supported WebFWUpdate class state.",
+    "argument_syntax": "2",
+    "side_effects_assessment": "Reads current service data and may refresh the RAM state latch at 20D9278C to 1 or 4. No persistent write, update activation, or network request.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "l10n.get_language",
+    "command": "udws \"l10n.get_language;\"",
+    "handler": "0xa02cc5e7",
+    "descriptor_address": "0xa05bd638",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read the current localization language identifier.",
+    "argument_syntax": "no arguments",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "cntrs.get_dsid",
+    "command": "udws \"cntrs.get_dsid 3001;\"",
+    "handler": "0xa0037ebf",
+    "descriptor_address": "0xa050c060",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read a known active counter mapping, registration state, or current value.",
+    "argument_syntax": "3001",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "argument_provenance": {
+      "path": "references/physical-10-reviewed-queries/0017-udws_cntrs_display_list.bin",
+      "sha256": "1676ce77cbc67188d215b0c74547fca17212915cfd313a19fe871ce5c121363f",
+      "reported_counter_count": 127,
+      "selected_rows": [
+        {
+          "counter_id": 3001,
+          "type": 3,
+          "prior_value": 68
+        },
+        {
+          "counter_id": 5000,
+          "type": 3,
+          "prior_value": 775
+        },
+        {
+          "counter_id": 5011,
+          "type": 2,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 5082,
+          "type": 4,
+          "prior_value": 753
+        },
+        {
+          "counter_id": 11000,
+          "type": 4,
+          "prior_value": 4932015
+        },
+        {
+          "counter_id": 16076,
+          "type": 2,
+          "prior_value": 10
+        },
+        {
+          "counter_id": 28022,
+          "type": 0,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28024,
+          "type": 1,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28031,
+          "type": 4,
+          "prior_value": 30
+        },
+        {
+          "counter_id": 64227,
+          "type": 0,
+          "prior_value": 7
+        }
+      ]
+    },
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "cntrs.get_dsid",
+    "command": "udws \"cntrs.get_dsid 5000;\"",
+    "handler": "0xa0037ebf",
+    "descriptor_address": "0xa050c060",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read a known active counter mapping, registration state, or current value.",
+    "argument_syntax": "5000",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "argument_provenance": {
+      "path": "references/physical-10-reviewed-queries/0017-udws_cntrs_display_list.bin",
+      "sha256": "1676ce77cbc67188d215b0c74547fca17212915cfd313a19fe871ce5c121363f",
+      "reported_counter_count": 127,
+      "selected_rows": [
+        {
+          "counter_id": 3001,
+          "type": 3,
+          "prior_value": 68
+        },
+        {
+          "counter_id": 5000,
+          "type": 3,
+          "prior_value": 775
+        },
+        {
+          "counter_id": 5011,
+          "type": 2,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 5082,
+          "type": 4,
+          "prior_value": 753
+        },
+        {
+          "counter_id": 11000,
+          "type": 4,
+          "prior_value": 4932015
+        },
+        {
+          "counter_id": 16076,
+          "type": 2,
+          "prior_value": 10
+        },
+        {
+          "counter_id": 28022,
+          "type": 0,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28024,
+          "type": 1,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28031,
+          "type": 4,
+          "prior_value": 30
+        },
+        {
+          "counter_id": 64227,
+          "type": 0,
+          "prior_value": 7
+        }
+      ]
+    },
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "cntrs.get_dsid",
+    "command": "udws \"cntrs.get_dsid 5011;\"",
+    "handler": "0xa0037ebf",
+    "descriptor_address": "0xa050c060",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read a known active counter mapping, registration state, or current value.",
+    "argument_syntax": "5011",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "argument_provenance": {
+      "path": "references/physical-10-reviewed-queries/0017-udws_cntrs_display_list.bin",
+      "sha256": "1676ce77cbc67188d215b0c74547fca17212915cfd313a19fe871ce5c121363f",
+      "reported_counter_count": 127,
+      "selected_rows": [
+        {
+          "counter_id": 3001,
+          "type": 3,
+          "prior_value": 68
+        },
+        {
+          "counter_id": 5000,
+          "type": 3,
+          "prior_value": 775
+        },
+        {
+          "counter_id": 5011,
+          "type": 2,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 5082,
+          "type": 4,
+          "prior_value": 753
+        },
+        {
+          "counter_id": 11000,
+          "type": 4,
+          "prior_value": 4932015
+        },
+        {
+          "counter_id": 16076,
+          "type": 2,
+          "prior_value": 10
+        },
+        {
+          "counter_id": 28022,
+          "type": 0,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28024,
+          "type": 1,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28031,
+          "type": 4,
+          "prior_value": 30
+        },
+        {
+          "counter_id": 64227,
+          "type": 0,
+          "prior_value": 7
+        }
+      ]
+    },
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "cntrs.get_dsid",
+    "command": "udws \"cntrs.get_dsid 5082;\"",
+    "handler": "0xa0037ebf",
+    "descriptor_address": "0xa050c060",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read a known active counter mapping, registration state, or current value.",
+    "argument_syntax": "5082",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "argument_provenance": {
+      "path": "references/physical-10-reviewed-queries/0017-udws_cntrs_display_list.bin",
+      "sha256": "1676ce77cbc67188d215b0c74547fca17212915cfd313a19fe871ce5c121363f",
+      "reported_counter_count": 127,
+      "selected_rows": [
+        {
+          "counter_id": 3001,
+          "type": 3,
+          "prior_value": 68
+        },
+        {
+          "counter_id": 5000,
+          "type": 3,
+          "prior_value": 775
+        },
+        {
+          "counter_id": 5011,
+          "type": 2,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 5082,
+          "type": 4,
+          "prior_value": 753
+        },
+        {
+          "counter_id": 11000,
+          "type": 4,
+          "prior_value": 4932015
+        },
+        {
+          "counter_id": 16076,
+          "type": 2,
+          "prior_value": 10
+        },
+        {
+          "counter_id": 28022,
+          "type": 0,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28024,
+          "type": 1,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28031,
+          "type": 4,
+          "prior_value": 30
+        },
+        {
+          "counter_id": 64227,
+          "type": 0,
+          "prior_value": 7
+        }
+      ]
+    },
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "cntrs.get_dsid",
+    "command": "udws \"cntrs.get_dsid 11000;\"",
+    "handler": "0xa0037ebf",
+    "descriptor_address": "0xa050c060",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read a known active counter mapping, registration state, or current value.",
+    "argument_syntax": "11000",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "argument_provenance": {
+      "path": "references/physical-10-reviewed-queries/0017-udws_cntrs_display_list.bin",
+      "sha256": "1676ce77cbc67188d215b0c74547fca17212915cfd313a19fe871ce5c121363f",
+      "reported_counter_count": 127,
+      "selected_rows": [
+        {
+          "counter_id": 3001,
+          "type": 3,
+          "prior_value": 68
+        },
+        {
+          "counter_id": 5000,
+          "type": 3,
+          "prior_value": 775
+        },
+        {
+          "counter_id": 5011,
+          "type": 2,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 5082,
+          "type": 4,
+          "prior_value": 753
+        },
+        {
+          "counter_id": 11000,
+          "type": 4,
+          "prior_value": 4932015
+        },
+        {
+          "counter_id": 16076,
+          "type": 2,
+          "prior_value": 10
+        },
+        {
+          "counter_id": 28022,
+          "type": 0,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28024,
+          "type": 1,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28031,
+          "type": 4,
+          "prior_value": 30
+        },
+        {
+          "counter_id": 64227,
+          "type": 0,
+          "prior_value": 7
+        }
+      ]
+    },
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "cntrs.get_dsid",
+    "command": "udws \"cntrs.get_dsid 16076;\"",
+    "handler": "0xa0037ebf",
+    "descriptor_address": "0xa050c060",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read a known active counter mapping, registration state, or current value.",
+    "argument_syntax": "16076",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "argument_provenance": {
+      "path": "references/physical-10-reviewed-queries/0017-udws_cntrs_display_list.bin",
+      "sha256": "1676ce77cbc67188d215b0c74547fca17212915cfd313a19fe871ce5c121363f",
+      "reported_counter_count": 127,
+      "selected_rows": [
+        {
+          "counter_id": 3001,
+          "type": 3,
+          "prior_value": 68
+        },
+        {
+          "counter_id": 5000,
+          "type": 3,
+          "prior_value": 775
+        },
+        {
+          "counter_id": 5011,
+          "type": 2,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 5082,
+          "type": 4,
+          "prior_value": 753
+        },
+        {
+          "counter_id": 11000,
+          "type": 4,
+          "prior_value": 4932015
+        },
+        {
+          "counter_id": 16076,
+          "type": 2,
+          "prior_value": 10
+        },
+        {
+          "counter_id": 28022,
+          "type": 0,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28024,
+          "type": 1,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28031,
+          "type": 4,
+          "prior_value": 30
+        },
+        {
+          "counter_id": 64227,
+          "type": 0,
+          "prior_value": 7
+        }
+      ]
+    },
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "cntrs.get_dsid",
+    "command": "udws \"cntrs.get_dsid 28022;\"",
+    "handler": "0xa0037ebf",
+    "descriptor_address": "0xa050c060",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read a known active counter mapping, registration state, or current value.",
+    "argument_syntax": "28022",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "argument_provenance": {
+      "path": "references/physical-10-reviewed-queries/0017-udws_cntrs_display_list.bin",
+      "sha256": "1676ce77cbc67188d215b0c74547fca17212915cfd313a19fe871ce5c121363f",
+      "reported_counter_count": 127,
+      "selected_rows": [
+        {
+          "counter_id": 3001,
+          "type": 3,
+          "prior_value": 68
+        },
+        {
+          "counter_id": 5000,
+          "type": 3,
+          "prior_value": 775
+        },
+        {
+          "counter_id": 5011,
+          "type": 2,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 5082,
+          "type": 4,
+          "prior_value": 753
+        },
+        {
+          "counter_id": 11000,
+          "type": 4,
+          "prior_value": 4932015
+        },
+        {
+          "counter_id": 16076,
+          "type": 2,
+          "prior_value": 10
+        },
+        {
+          "counter_id": 28022,
+          "type": 0,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28024,
+          "type": 1,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28031,
+          "type": 4,
+          "prior_value": 30
+        },
+        {
+          "counter_id": 64227,
+          "type": 0,
+          "prior_value": 7
+        }
+      ]
+    },
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "cntrs.get_dsid",
+    "command": "udws \"cntrs.get_dsid 28024;\"",
+    "handler": "0xa0037ebf",
+    "descriptor_address": "0xa050c060",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read a known active counter mapping, registration state, or current value.",
+    "argument_syntax": "28024",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "argument_provenance": {
+      "path": "references/physical-10-reviewed-queries/0017-udws_cntrs_display_list.bin",
+      "sha256": "1676ce77cbc67188d215b0c74547fca17212915cfd313a19fe871ce5c121363f",
+      "reported_counter_count": 127,
+      "selected_rows": [
+        {
+          "counter_id": 3001,
+          "type": 3,
+          "prior_value": 68
+        },
+        {
+          "counter_id": 5000,
+          "type": 3,
+          "prior_value": 775
+        },
+        {
+          "counter_id": 5011,
+          "type": 2,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 5082,
+          "type": 4,
+          "prior_value": 753
+        },
+        {
+          "counter_id": 11000,
+          "type": 4,
+          "prior_value": 4932015
+        },
+        {
+          "counter_id": 16076,
+          "type": 2,
+          "prior_value": 10
+        },
+        {
+          "counter_id": 28022,
+          "type": 0,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28024,
+          "type": 1,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28031,
+          "type": 4,
+          "prior_value": 30
+        },
+        {
+          "counter_id": 64227,
+          "type": 0,
+          "prior_value": 7
+        }
+      ]
+    },
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "cntrs.get_dsid",
+    "command": "udws \"cntrs.get_dsid 28031;\"",
+    "handler": "0xa0037ebf",
+    "descriptor_address": "0xa050c060",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read a known active counter mapping, registration state, or current value.",
+    "argument_syntax": "28031",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "argument_provenance": {
+      "path": "references/physical-10-reviewed-queries/0017-udws_cntrs_display_list.bin",
+      "sha256": "1676ce77cbc67188d215b0c74547fca17212915cfd313a19fe871ce5c121363f",
+      "reported_counter_count": 127,
+      "selected_rows": [
+        {
+          "counter_id": 3001,
+          "type": 3,
+          "prior_value": 68
+        },
+        {
+          "counter_id": 5000,
+          "type": 3,
+          "prior_value": 775
+        },
+        {
+          "counter_id": 5011,
+          "type": 2,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 5082,
+          "type": 4,
+          "prior_value": 753
+        },
+        {
+          "counter_id": 11000,
+          "type": 4,
+          "prior_value": 4932015
+        },
+        {
+          "counter_id": 16076,
+          "type": 2,
+          "prior_value": 10
+        },
+        {
+          "counter_id": 28022,
+          "type": 0,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28024,
+          "type": 1,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28031,
+          "type": 4,
+          "prior_value": 30
+        },
+        {
+          "counter_id": 64227,
+          "type": 0,
+          "prior_value": 7
+        }
+      ]
+    },
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "cntrs.get_dsid",
+    "command": "udws \"cntrs.get_dsid 64227;\"",
+    "handler": "0xa0037ebf",
+    "descriptor_address": "0xa050c060",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read a known active counter mapping, registration state, or current value.",
+    "argument_syntax": "64227",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "argument_provenance": {
+      "path": "references/physical-10-reviewed-queries/0017-udws_cntrs_display_list.bin",
+      "sha256": "1676ce77cbc67188d215b0c74547fca17212915cfd313a19fe871ce5c121363f",
+      "reported_counter_count": 127,
+      "selected_rows": [
+        {
+          "counter_id": 3001,
+          "type": 3,
+          "prior_value": 68
+        },
+        {
+          "counter_id": 5000,
+          "type": 3,
+          "prior_value": 775
+        },
+        {
+          "counter_id": 5011,
+          "type": 2,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 5082,
+          "type": 4,
+          "prior_value": 753
+        },
+        {
+          "counter_id": 11000,
+          "type": 4,
+          "prior_value": 4932015
+        },
+        {
+          "counter_id": 16076,
+          "type": 2,
+          "prior_value": 10
+        },
+        {
+          "counter_id": 28022,
+          "type": 0,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28024,
+          "type": 1,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28031,
+          "type": 4,
+          "prior_value": 30
+        },
+        {
+          "counter_id": 64227,
+          "type": 0,
+          "prior_value": 7
+        }
+      ]
+    },
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "cntrs.is_cntr_registered",
+    "command": "udws \"cntrs.is_cntr_registered 3001;\"",
+    "handler": "0xa0037ef1",
+    "descriptor_address": "0xa050c06c",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read a known active counter mapping, registration state, or current value.",
+    "argument_syntax": "3001",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "argument_provenance": {
+      "path": "references/physical-10-reviewed-queries/0017-udws_cntrs_display_list.bin",
+      "sha256": "1676ce77cbc67188d215b0c74547fca17212915cfd313a19fe871ce5c121363f",
+      "reported_counter_count": 127,
+      "selected_rows": [
+        {
+          "counter_id": 3001,
+          "type": 3,
+          "prior_value": 68
+        },
+        {
+          "counter_id": 5000,
+          "type": 3,
+          "prior_value": 775
+        },
+        {
+          "counter_id": 5011,
+          "type": 2,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 5082,
+          "type": 4,
+          "prior_value": 753
+        },
+        {
+          "counter_id": 11000,
+          "type": 4,
+          "prior_value": 4932015
+        },
+        {
+          "counter_id": 16076,
+          "type": 2,
+          "prior_value": 10
+        },
+        {
+          "counter_id": 28022,
+          "type": 0,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28024,
+          "type": 1,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28031,
+          "type": 4,
+          "prior_value": 30
+        },
+        {
+          "counter_id": 64227,
+          "type": 0,
+          "prior_value": 7
+        }
+      ]
+    },
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "cntrs.is_cntr_registered",
+    "command": "udws \"cntrs.is_cntr_registered 5000;\"",
+    "handler": "0xa0037ef1",
+    "descriptor_address": "0xa050c06c",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read a known active counter mapping, registration state, or current value.",
+    "argument_syntax": "5000",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "argument_provenance": {
+      "path": "references/physical-10-reviewed-queries/0017-udws_cntrs_display_list.bin",
+      "sha256": "1676ce77cbc67188d215b0c74547fca17212915cfd313a19fe871ce5c121363f",
+      "reported_counter_count": 127,
+      "selected_rows": [
+        {
+          "counter_id": 3001,
+          "type": 3,
+          "prior_value": 68
+        },
+        {
+          "counter_id": 5000,
+          "type": 3,
+          "prior_value": 775
+        },
+        {
+          "counter_id": 5011,
+          "type": 2,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 5082,
+          "type": 4,
+          "prior_value": 753
+        },
+        {
+          "counter_id": 11000,
+          "type": 4,
+          "prior_value": 4932015
+        },
+        {
+          "counter_id": 16076,
+          "type": 2,
+          "prior_value": 10
+        },
+        {
+          "counter_id": 28022,
+          "type": 0,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28024,
+          "type": 1,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28031,
+          "type": 4,
+          "prior_value": 30
+        },
+        {
+          "counter_id": 64227,
+          "type": 0,
+          "prior_value": 7
+        }
+      ]
+    },
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "cntrs.is_cntr_registered",
+    "command": "udws \"cntrs.is_cntr_registered 5011;\"",
+    "handler": "0xa0037ef1",
+    "descriptor_address": "0xa050c06c",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read a known active counter mapping, registration state, or current value.",
+    "argument_syntax": "5011",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "argument_provenance": {
+      "path": "references/physical-10-reviewed-queries/0017-udws_cntrs_display_list.bin",
+      "sha256": "1676ce77cbc67188d215b0c74547fca17212915cfd313a19fe871ce5c121363f",
+      "reported_counter_count": 127,
+      "selected_rows": [
+        {
+          "counter_id": 3001,
+          "type": 3,
+          "prior_value": 68
+        },
+        {
+          "counter_id": 5000,
+          "type": 3,
+          "prior_value": 775
+        },
+        {
+          "counter_id": 5011,
+          "type": 2,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 5082,
+          "type": 4,
+          "prior_value": 753
+        },
+        {
+          "counter_id": 11000,
+          "type": 4,
+          "prior_value": 4932015
+        },
+        {
+          "counter_id": 16076,
+          "type": 2,
+          "prior_value": 10
+        },
+        {
+          "counter_id": 28022,
+          "type": 0,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28024,
+          "type": 1,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28031,
+          "type": 4,
+          "prior_value": 30
+        },
+        {
+          "counter_id": 64227,
+          "type": 0,
+          "prior_value": 7
+        }
+      ]
+    },
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "cntrs.is_cntr_registered",
+    "command": "udws \"cntrs.is_cntr_registered 5082;\"",
+    "handler": "0xa0037ef1",
+    "descriptor_address": "0xa050c06c",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read a known active counter mapping, registration state, or current value.",
+    "argument_syntax": "5082",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "argument_provenance": {
+      "path": "references/physical-10-reviewed-queries/0017-udws_cntrs_display_list.bin",
+      "sha256": "1676ce77cbc67188d215b0c74547fca17212915cfd313a19fe871ce5c121363f",
+      "reported_counter_count": 127,
+      "selected_rows": [
+        {
+          "counter_id": 3001,
+          "type": 3,
+          "prior_value": 68
+        },
+        {
+          "counter_id": 5000,
+          "type": 3,
+          "prior_value": 775
+        },
+        {
+          "counter_id": 5011,
+          "type": 2,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 5082,
+          "type": 4,
+          "prior_value": 753
+        },
+        {
+          "counter_id": 11000,
+          "type": 4,
+          "prior_value": 4932015
+        },
+        {
+          "counter_id": 16076,
+          "type": 2,
+          "prior_value": 10
+        },
+        {
+          "counter_id": 28022,
+          "type": 0,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28024,
+          "type": 1,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28031,
+          "type": 4,
+          "prior_value": 30
+        },
+        {
+          "counter_id": 64227,
+          "type": 0,
+          "prior_value": 7
+        }
+      ]
+    },
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "cntrs.is_cntr_registered",
+    "command": "udws \"cntrs.is_cntr_registered 11000;\"",
+    "handler": "0xa0037ef1",
+    "descriptor_address": "0xa050c06c",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read a known active counter mapping, registration state, or current value.",
+    "argument_syntax": "11000",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "argument_provenance": {
+      "path": "references/physical-10-reviewed-queries/0017-udws_cntrs_display_list.bin",
+      "sha256": "1676ce77cbc67188d215b0c74547fca17212915cfd313a19fe871ce5c121363f",
+      "reported_counter_count": 127,
+      "selected_rows": [
+        {
+          "counter_id": 3001,
+          "type": 3,
+          "prior_value": 68
+        },
+        {
+          "counter_id": 5000,
+          "type": 3,
+          "prior_value": 775
+        },
+        {
+          "counter_id": 5011,
+          "type": 2,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 5082,
+          "type": 4,
+          "prior_value": 753
+        },
+        {
+          "counter_id": 11000,
+          "type": 4,
+          "prior_value": 4932015
+        },
+        {
+          "counter_id": 16076,
+          "type": 2,
+          "prior_value": 10
+        },
+        {
+          "counter_id": 28022,
+          "type": 0,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28024,
+          "type": 1,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28031,
+          "type": 4,
+          "prior_value": 30
+        },
+        {
+          "counter_id": 64227,
+          "type": 0,
+          "prior_value": 7
+        }
+      ]
+    },
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "cntrs.is_cntr_registered",
+    "command": "udws \"cntrs.is_cntr_registered 16076;\"",
+    "handler": "0xa0037ef1",
+    "descriptor_address": "0xa050c06c",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read a known active counter mapping, registration state, or current value.",
+    "argument_syntax": "16076",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "argument_provenance": {
+      "path": "references/physical-10-reviewed-queries/0017-udws_cntrs_display_list.bin",
+      "sha256": "1676ce77cbc67188d215b0c74547fca17212915cfd313a19fe871ce5c121363f",
+      "reported_counter_count": 127,
+      "selected_rows": [
+        {
+          "counter_id": 3001,
+          "type": 3,
+          "prior_value": 68
+        },
+        {
+          "counter_id": 5000,
+          "type": 3,
+          "prior_value": 775
+        },
+        {
+          "counter_id": 5011,
+          "type": 2,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 5082,
+          "type": 4,
+          "prior_value": 753
+        },
+        {
+          "counter_id": 11000,
+          "type": 4,
+          "prior_value": 4932015
+        },
+        {
+          "counter_id": 16076,
+          "type": 2,
+          "prior_value": 10
+        },
+        {
+          "counter_id": 28022,
+          "type": 0,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28024,
+          "type": 1,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28031,
+          "type": 4,
+          "prior_value": 30
+        },
+        {
+          "counter_id": 64227,
+          "type": 0,
+          "prior_value": 7
+        }
+      ]
+    },
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "cntrs.is_cntr_registered",
+    "command": "udws \"cntrs.is_cntr_registered 28022;\"",
+    "handler": "0xa0037ef1",
+    "descriptor_address": "0xa050c06c",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read a known active counter mapping, registration state, or current value.",
+    "argument_syntax": "28022",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "argument_provenance": {
+      "path": "references/physical-10-reviewed-queries/0017-udws_cntrs_display_list.bin",
+      "sha256": "1676ce77cbc67188d215b0c74547fca17212915cfd313a19fe871ce5c121363f",
+      "reported_counter_count": 127,
+      "selected_rows": [
+        {
+          "counter_id": 3001,
+          "type": 3,
+          "prior_value": 68
+        },
+        {
+          "counter_id": 5000,
+          "type": 3,
+          "prior_value": 775
+        },
+        {
+          "counter_id": 5011,
+          "type": 2,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 5082,
+          "type": 4,
+          "prior_value": 753
+        },
+        {
+          "counter_id": 11000,
+          "type": 4,
+          "prior_value": 4932015
+        },
+        {
+          "counter_id": 16076,
+          "type": 2,
+          "prior_value": 10
+        },
+        {
+          "counter_id": 28022,
+          "type": 0,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28024,
+          "type": 1,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28031,
+          "type": 4,
+          "prior_value": 30
+        },
+        {
+          "counter_id": 64227,
+          "type": 0,
+          "prior_value": 7
+        }
+      ]
+    },
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "cntrs.is_cntr_registered",
+    "command": "udws \"cntrs.is_cntr_registered 28024;\"",
+    "handler": "0xa0037ef1",
+    "descriptor_address": "0xa050c06c",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read a known active counter mapping, registration state, or current value.",
+    "argument_syntax": "28024",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "argument_provenance": {
+      "path": "references/physical-10-reviewed-queries/0017-udws_cntrs_display_list.bin",
+      "sha256": "1676ce77cbc67188d215b0c74547fca17212915cfd313a19fe871ce5c121363f",
+      "reported_counter_count": 127,
+      "selected_rows": [
+        {
+          "counter_id": 3001,
+          "type": 3,
+          "prior_value": 68
+        },
+        {
+          "counter_id": 5000,
+          "type": 3,
+          "prior_value": 775
+        },
+        {
+          "counter_id": 5011,
+          "type": 2,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 5082,
+          "type": 4,
+          "prior_value": 753
+        },
+        {
+          "counter_id": 11000,
+          "type": 4,
+          "prior_value": 4932015
+        },
+        {
+          "counter_id": 16076,
+          "type": 2,
+          "prior_value": 10
+        },
+        {
+          "counter_id": 28022,
+          "type": 0,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28024,
+          "type": 1,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28031,
+          "type": 4,
+          "prior_value": 30
+        },
+        {
+          "counter_id": 64227,
+          "type": 0,
+          "prior_value": 7
+        }
+      ]
+    },
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "cntrs.is_cntr_registered",
+    "command": "udws \"cntrs.is_cntr_registered 28031;\"",
+    "handler": "0xa0037ef1",
+    "descriptor_address": "0xa050c06c",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read a known active counter mapping, registration state, or current value.",
+    "argument_syntax": "28031",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "argument_provenance": {
+      "path": "references/physical-10-reviewed-queries/0017-udws_cntrs_display_list.bin",
+      "sha256": "1676ce77cbc67188d215b0c74547fca17212915cfd313a19fe871ce5c121363f",
+      "reported_counter_count": 127,
+      "selected_rows": [
+        {
+          "counter_id": 3001,
+          "type": 3,
+          "prior_value": 68
+        },
+        {
+          "counter_id": 5000,
+          "type": 3,
+          "prior_value": 775
+        },
+        {
+          "counter_id": 5011,
+          "type": 2,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 5082,
+          "type": 4,
+          "prior_value": 753
+        },
+        {
+          "counter_id": 11000,
+          "type": 4,
+          "prior_value": 4932015
+        },
+        {
+          "counter_id": 16076,
+          "type": 2,
+          "prior_value": 10
+        },
+        {
+          "counter_id": 28022,
+          "type": 0,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28024,
+          "type": 1,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28031,
+          "type": 4,
+          "prior_value": 30
+        },
+        {
+          "counter_id": 64227,
+          "type": 0,
+          "prior_value": 7
+        }
+      ]
+    },
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "cntrs.is_cntr_registered",
+    "command": "udws \"cntrs.is_cntr_registered 64227;\"",
+    "handler": "0xa0037ef1",
+    "descriptor_address": "0xa050c06c",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read a known active counter mapping, registration state, or current value.",
+    "argument_syntax": "64227",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "argument_provenance": {
+      "path": "references/physical-10-reviewed-queries/0017-udws_cntrs_display_list.bin",
+      "sha256": "1676ce77cbc67188d215b0c74547fca17212915cfd313a19fe871ce5c121363f",
+      "reported_counter_count": 127,
+      "selected_rows": [
+        {
+          "counter_id": 3001,
+          "type": 3,
+          "prior_value": 68
+        },
+        {
+          "counter_id": 5000,
+          "type": 3,
+          "prior_value": 775
+        },
+        {
+          "counter_id": 5011,
+          "type": 2,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 5082,
+          "type": 4,
+          "prior_value": 753
+        },
+        {
+          "counter_id": 11000,
+          "type": 4,
+          "prior_value": 4932015
+        },
+        {
+          "counter_id": 16076,
+          "type": 2,
+          "prior_value": 10
+        },
+        {
+          "counter_id": 28022,
+          "type": 0,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28024,
+          "type": 1,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28031,
+          "type": 4,
+          "prior_value": 30
+        },
+        {
+          "counter_id": 64227,
+          "type": 0,
+          "prior_value": 7
+        }
+      ]
+    },
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "cntrs.get_value",
+    "command": "udws \"cntrs.get_value 3001;\"",
+    "handler": "0xa0037f23",
+    "descriptor_address": "0xa050c078",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read a known active counter mapping, registration state, or current value.",
+    "argument_syntax": "3001",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "argument_provenance": {
+      "path": "references/physical-10-reviewed-queries/0017-udws_cntrs_display_list.bin",
+      "sha256": "1676ce77cbc67188d215b0c74547fca17212915cfd313a19fe871ce5c121363f",
+      "reported_counter_count": 127,
+      "selected_rows": [
+        {
+          "counter_id": 3001,
+          "type": 3,
+          "prior_value": 68
+        },
+        {
+          "counter_id": 5000,
+          "type": 3,
+          "prior_value": 775
+        },
+        {
+          "counter_id": 5011,
+          "type": 2,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 5082,
+          "type": 4,
+          "prior_value": 753
+        },
+        {
+          "counter_id": 11000,
+          "type": 4,
+          "prior_value": 4932015
+        },
+        {
+          "counter_id": 16076,
+          "type": 2,
+          "prior_value": 10
+        },
+        {
+          "counter_id": 28022,
+          "type": 0,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28024,
+          "type": 1,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28031,
+          "type": 4,
+          "prior_value": 30
+        },
+        {
+          "counter_id": 64227,
+          "type": 0,
+          "prior_value": 7
+        }
+      ]
+    },
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "cntrs.get_value",
+    "command": "udws \"cntrs.get_value 5000;\"",
+    "handler": "0xa0037f23",
+    "descriptor_address": "0xa050c078",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read a known active counter mapping, registration state, or current value.",
+    "argument_syntax": "5000",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "argument_provenance": {
+      "path": "references/physical-10-reviewed-queries/0017-udws_cntrs_display_list.bin",
+      "sha256": "1676ce77cbc67188d215b0c74547fca17212915cfd313a19fe871ce5c121363f",
+      "reported_counter_count": 127,
+      "selected_rows": [
+        {
+          "counter_id": 3001,
+          "type": 3,
+          "prior_value": 68
+        },
+        {
+          "counter_id": 5000,
+          "type": 3,
+          "prior_value": 775
+        },
+        {
+          "counter_id": 5011,
+          "type": 2,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 5082,
+          "type": 4,
+          "prior_value": 753
+        },
+        {
+          "counter_id": 11000,
+          "type": 4,
+          "prior_value": 4932015
+        },
+        {
+          "counter_id": 16076,
+          "type": 2,
+          "prior_value": 10
+        },
+        {
+          "counter_id": 28022,
+          "type": 0,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28024,
+          "type": 1,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28031,
+          "type": 4,
+          "prior_value": 30
+        },
+        {
+          "counter_id": 64227,
+          "type": 0,
+          "prior_value": 7
+        }
+      ]
+    },
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "cntrs.get_value",
+    "command": "udws \"cntrs.get_value 5011;\"",
+    "handler": "0xa0037f23",
+    "descriptor_address": "0xa050c078",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read a known active counter mapping, registration state, or current value.",
+    "argument_syntax": "5011",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "argument_provenance": {
+      "path": "references/physical-10-reviewed-queries/0017-udws_cntrs_display_list.bin",
+      "sha256": "1676ce77cbc67188d215b0c74547fca17212915cfd313a19fe871ce5c121363f",
+      "reported_counter_count": 127,
+      "selected_rows": [
+        {
+          "counter_id": 3001,
+          "type": 3,
+          "prior_value": 68
+        },
+        {
+          "counter_id": 5000,
+          "type": 3,
+          "prior_value": 775
+        },
+        {
+          "counter_id": 5011,
+          "type": 2,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 5082,
+          "type": 4,
+          "prior_value": 753
+        },
+        {
+          "counter_id": 11000,
+          "type": 4,
+          "prior_value": 4932015
+        },
+        {
+          "counter_id": 16076,
+          "type": 2,
+          "prior_value": 10
+        },
+        {
+          "counter_id": 28022,
+          "type": 0,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28024,
+          "type": 1,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28031,
+          "type": 4,
+          "prior_value": 30
+        },
+        {
+          "counter_id": 64227,
+          "type": 0,
+          "prior_value": 7
+        }
+      ]
+    },
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "cntrs.get_value",
+    "command": "udws \"cntrs.get_value 5082;\"",
+    "handler": "0xa0037f23",
+    "descriptor_address": "0xa050c078",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read a known active counter mapping, registration state, or current value.",
+    "argument_syntax": "5082",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "argument_provenance": {
+      "path": "references/physical-10-reviewed-queries/0017-udws_cntrs_display_list.bin",
+      "sha256": "1676ce77cbc67188d215b0c74547fca17212915cfd313a19fe871ce5c121363f",
+      "reported_counter_count": 127,
+      "selected_rows": [
+        {
+          "counter_id": 3001,
+          "type": 3,
+          "prior_value": 68
+        },
+        {
+          "counter_id": 5000,
+          "type": 3,
+          "prior_value": 775
+        },
+        {
+          "counter_id": 5011,
+          "type": 2,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 5082,
+          "type": 4,
+          "prior_value": 753
+        },
+        {
+          "counter_id": 11000,
+          "type": 4,
+          "prior_value": 4932015
+        },
+        {
+          "counter_id": 16076,
+          "type": 2,
+          "prior_value": 10
+        },
+        {
+          "counter_id": 28022,
+          "type": 0,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28024,
+          "type": 1,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28031,
+          "type": 4,
+          "prior_value": 30
+        },
+        {
+          "counter_id": 64227,
+          "type": 0,
+          "prior_value": 7
+        }
+      ]
+    },
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "cntrs.get_value",
+    "command": "udws \"cntrs.get_value 11000;\"",
+    "handler": "0xa0037f23",
+    "descriptor_address": "0xa050c078",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read a known active counter mapping, registration state, or current value.",
+    "argument_syntax": "11000",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "argument_provenance": {
+      "path": "references/physical-10-reviewed-queries/0017-udws_cntrs_display_list.bin",
+      "sha256": "1676ce77cbc67188d215b0c74547fca17212915cfd313a19fe871ce5c121363f",
+      "reported_counter_count": 127,
+      "selected_rows": [
+        {
+          "counter_id": 3001,
+          "type": 3,
+          "prior_value": 68
+        },
+        {
+          "counter_id": 5000,
+          "type": 3,
+          "prior_value": 775
+        },
+        {
+          "counter_id": 5011,
+          "type": 2,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 5082,
+          "type": 4,
+          "prior_value": 753
+        },
+        {
+          "counter_id": 11000,
+          "type": 4,
+          "prior_value": 4932015
+        },
+        {
+          "counter_id": 16076,
+          "type": 2,
+          "prior_value": 10
+        },
+        {
+          "counter_id": 28022,
+          "type": 0,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28024,
+          "type": 1,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28031,
+          "type": 4,
+          "prior_value": 30
+        },
+        {
+          "counter_id": 64227,
+          "type": 0,
+          "prior_value": 7
+        }
+      ]
+    },
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "cntrs.get_value",
+    "command": "udws \"cntrs.get_value 16076;\"",
+    "handler": "0xa0037f23",
+    "descriptor_address": "0xa050c078",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read a known active counter mapping, registration state, or current value.",
+    "argument_syntax": "16076",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "argument_provenance": {
+      "path": "references/physical-10-reviewed-queries/0017-udws_cntrs_display_list.bin",
+      "sha256": "1676ce77cbc67188d215b0c74547fca17212915cfd313a19fe871ce5c121363f",
+      "reported_counter_count": 127,
+      "selected_rows": [
+        {
+          "counter_id": 3001,
+          "type": 3,
+          "prior_value": 68
+        },
+        {
+          "counter_id": 5000,
+          "type": 3,
+          "prior_value": 775
+        },
+        {
+          "counter_id": 5011,
+          "type": 2,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 5082,
+          "type": 4,
+          "prior_value": 753
+        },
+        {
+          "counter_id": 11000,
+          "type": 4,
+          "prior_value": 4932015
+        },
+        {
+          "counter_id": 16076,
+          "type": 2,
+          "prior_value": 10
+        },
+        {
+          "counter_id": 28022,
+          "type": 0,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28024,
+          "type": 1,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28031,
+          "type": 4,
+          "prior_value": 30
+        },
+        {
+          "counter_id": 64227,
+          "type": 0,
+          "prior_value": 7
+        }
+      ]
+    },
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "cntrs.get_value",
+    "command": "udws \"cntrs.get_value 28022;\"",
+    "handler": "0xa0037f23",
+    "descriptor_address": "0xa050c078",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read a known active counter mapping, registration state, or current value.",
+    "argument_syntax": "28022",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "argument_provenance": {
+      "path": "references/physical-10-reviewed-queries/0017-udws_cntrs_display_list.bin",
+      "sha256": "1676ce77cbc67188d215b0c74547fca17212915cfd313a19fe871ce5c121363f",
+      "reported_counter_count": 127,
+      "selected_rows": [
+        {
+          "counter_id": 3001,
+          "type": 3,
+          "prior_value": 68
+        },
+        {
+          "counter_id": 5000,
+          "type": 3,
+          "prior_value": 775
+        },
+        {
+          "counter_id": 5011,
+          "type": 2,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 5082,
+          "type": 4,
+          "prior_value": 753
+        },
+        {
+          "counter_id": 11000,
+          "type": 4,
+          "prior_value": 4932015
+        },
+        {
+          "counter_id": 16076,
+          "type": 2,
+          "prior_value": 10
+        },
+        {
+          "counter_id": 28022,
+          "type": 0,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28024,
+          "type": 1,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28031,
+          "type": 4,
+          "prior_value": 30
+        },
+        {
+          "counter_id": 64227,
+          "type": 0,
+          "prior_value": 7
+        }
+      ]
+    },
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "cntrs.get_value",
+    "command": "udws \"cntrs.get_value 28024;\"",
+    "handler": "0xa0037f23",
+    "descriptor_address": "0xa050c078",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read a known active counter mapping, registration state, or current value.",
+    "argument_syntax": "28024",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "argument_provenance": {
+      "path": "references/physical-10-reviewed-queries/0017-udws_cntrs_display_list.bin",
+      "sha256": "1676ce77cbc67188d215b0c74547fca17212915cfd313a19fe871ce5c121363f",
+      "reported_counter_count": 127,
+      "selected_rows": [
+        {
+          "counter_id": 3001,
+          "type": 3,
+          "prior_value": 68
+        },
+        {
+          "counter_id": 5000,
+          "type": 3,
+          "prior_value": 775
+        },
+        {
+          "counter_id": 5011,
+          "type": 2,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 5082,
+          "type": 4,
+          "prior_value": 753
+        },
+        {
+          "counter_id": 11000,
+          "type": 4,
+          "prior_value": 4932015
+        },
+        {
+          "counter_id": 16076,
+          "type": 2,
+          "prior_value": 10
+        },
+        {
+          "counter_id": 28022,
+          "type": 0,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28024,
+          "type": 1,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28031,
+          "type": 4,
+          "prior_value": 30
+        },
+        {
+          "counter_id": 64227,
+          "type": 0,
+          "prior_value": 7
+        }
+      ]
+    },
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "cntrs.get_value",
+    "command": "udws \"cntrs.get_value 28031;\"",
+    "handler": "0xa0037f23",
+    "descriptor_address": "0xa050c078",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read a known active counter mapping, registration state, or current value.",
+    "argument_syntax": "28031",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "argument_provenance": {
+      "path": "references/physical-10-reviewed-queries/0017-udws_cntrs_display_list.bin",
+      "sha256": "1676ce77cbc67188d215b0c74547fca17212915cfd313a19fe871ce5c121363f",
+      "reported_counter_count": 127,
+      "selected_rows": [
+        {
+          "counter_id": 3001,
+          "type": 3,
+          "prior_value": 68
+        },
+        {
+          "counter_id": 5000,
+          "type": 3,
+          "prior_value": 775
+        },
+        {
+          "counter_id": 5011,
+          "type": 2,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 5082,
+          "type": 4,
+          "prior_value": 753
+        },
+        {
+          "counter_id": 11000,
+          "type": 4,
+          "prior_value": 4932015
+        },
+        {
+          "counter_id": 16076,
+          "type": 2,
+          "prior_value": 10
+        },
+        {
+          "counter_id": 28022,
+          "type": 0,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28024,
+          "type": 1,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28031,
+          "type": 4,
+          "prior_value": 30
+        },
+        {
+          "counter_id": 64227,
+          "type": 0,
+          "prior_value": 7
+        }
+      ]
+    },
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  },
+  {
+    "name": "cntrs.get_value",
+    "command": "udws \"cntrs.get_value 64227;\"",
+    "handler": "0xa0037f23",
+    "descriptor_address": "0xa050c078",
+    "classification": "reviewed-valid-software-operation",
+    "purpose": "Read a known active counter mapping, registration state, or current value.",
+    "argument_syntax": "64227",
+    "side_effects_assessment": "Only reads local firmware/RAM data and formats UART output; no persistent update or external transmission.",
+    "timeout": 20,
+    "review_source": "references/software_round2_review.json",
+    "argument_provenance": {
+      "path": "references/physical-10-reviewed-queries/0017-udws_cntrs_display_list.bin",
+      "sha256": "1676ce77cbc67188d215b0c74547fca17212915cfd313a19fe871ce5c121363f",
+      "reported_counter_count": 127,
+      "selected_rows": [
+        {
+          "counter_id": 3001,
+          "type": 3,
+          "prior_value": 68
+        },
+        {
+          "counter_id": 5000,
+          "type": 3,
+          "prior_value": 775
+        },
+        {
+          "counter_id": 5011,
+          "type": 2,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 5082,
+          "type": 4,
+          "prior_value": 753
+        },
+        {
+          "counter_id": 11000,
+          "type": 4,
+          "prior_value": 4932015
+        },
+        {
+          "counter_id": 16076,
+          "type": 2,
+          "prior_value": 10
+        },
+        {
+          "counter_id": 28022,
+          "type": 0,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28024,
+          "type": 1,
+          "prior_value": 0
+        },
+        {
+          "counter_id": 28031,
+          "type": 4,
+          "prior_value": 30
+        },
+        {
+          "counter_id": 64227,
+          "type": 0,
+          "prior_value": 7
+        }
+      ]
+    },
+    "continuation_note": "Continues after physical-30 item10 output loss. Value-name-format whole-table item11 deferred for bounded capture; no source result fabricated."
+  }
+]

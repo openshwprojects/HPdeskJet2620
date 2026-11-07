@@ -1,0 +1,516 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-10-29T21:39:03.262989+00:00",
+  "scope": "Independent offline audit of physical53..67; no serial access, no index mutation.",
+  "baseline_sha256": "e6cfe330d3dab91aad08713bb7b172fd1d532313d85e047911a74c4216170f37",
+  "summary": {
+    "sessions": 17,
+    "transmissions": 540,
+    "baseline_transmissions": 2588,
+    "total_transmissions_after_round5": 3128,
+    "baseline_registered_names_invoked": 644,
+    "new_registered_names": 54,
+    "registered_names_invoked_after_round5": 698,
+    "registered_names_invoked_non_enumeration_after_round5": 696,
+    "all_sessions_closed": true,
+    "all_prompt_hash_length_and_wire_checks_passed": true,
+    "responses_with_inline_validation": 459,
+    "responses_with_supplemental_revalidation": 131,
+    "responses_without_either_validation": 1
+  },
+  "sessions": [
+    {
+      "directory": "physical-53-resume",
+      "session_sha256": "13c5f1a0c6ddef8ec790332af87efdf918398bf1bfa13c9db8516e4efac92ca2",
+      "commands": 1,
+      "closed": true,
+      "stop_reason": "batch-complete",
+      "all_prompts_returned": true,
+      "response_hashes_and_lengths_valid": true,
+      "wire_rx_exact": true,
+      "wire_tx_exact": true,
+      "responses_in_wire_order": true
+    },
+    {
+      "directory": "physical-54-system-services",
+      "session_sha256": "38bf6d88c18f2148511949ec3e729329740a4feddb8790d102c44e4e2cfcacca",
+      "commands": 10,
+      "closed": true,
+      "stop_reason": "batch-complete",
+      "all_prompts_returned": true,
+      "response_hashes_and_lengths_valid": true,
+      "wire_rx_exact": true,
+      "wire_tx_exact": true,
+      "responses_in_wire_order": true
+    },
+    {
+      "directory": "physical-55-media-capabilities",
+      "session_sha256": "db44e224887689b3804576d271e7d04badd50b14e8728a9b06b57969887302ba",
+      "commands": 5,
+      "closed": true,
+      "stop_reason": "batch-complete",
+      "all_prompts_returned": true,
+      "response_hashes_and_lengths_valid": true,
+      "wire_rx_exact": true,
+      "wire_tx_exact": true,
+      "responses_in_wire_order": true
+    },
+    {
+      "directory": "physical-56-calibration-pen",
+      "session_sha256": "69e15e8090106b21ca8990cdad0192d893d06d7136ff33452f681ea1c58cd7f6",
+      "commands": 31,
+      "closed": true,
+      "stop_reason": "batch-complete",
+      "all_prompts_returned": true,
+      "response_hashes_and_lengths_valid": true,
+      "wire_rx_exact": true,
+      "wire_tx_exact": true,
+      "responses_in_wire_order": true
+    },
+    {
+      "directory": "physical-56b-led-metadata",
+      "session_sha256": "ea60e0ad4d6ec52d52ad8f1237cdb0c4d5be5086b15f93e86eb2ab35aa3896c8",
+      "commands": 5,
+      "closed": true,
+      "stop_reason": "batch-complete",
+      "all_prompts_returned": true,
+      "response_hashes_and_lengths_valid": true,
+      "wire_rx_exact": true,
+      "wire_tx_exact": true,
+      "responses_in_wire_order": true
+    },
+    {
+      "directory": "physical-56c-ui-status",
+      "session_sha256": "83dc60ffac0e965848f6ecd5c41df8fcff4aaeca31cd689d07a3cbe2a0794ca6",
+      "commands": 1,
+      "closed": true,
+      "stop_reason": "batch-complete",
+      "all_prompts_returned": true,
+      "response_hashes_and_lengths_valid": true,
+      "wire_rx_exact": true,
+      "wire_tx_exact": true,
+      "responses_in_wire_order": true
+    },
+    {
+      "directory": "physical-57-provider-pointers",
+      "session_sha256": "128a074feef4eabaca69f5ea6ddc4038e7570ed789425c5c36e26b28f26ed055",
+      "commands": 54,
+      "closed": true,
+      "stop_reason": "batch-complete",
+      "all_prompts_returned": true,
+      "response_hashes_and_lengths_valid": true,
+      "wire_rx_exact": true,
+      "wire_tx_exact": true,
+      "responses_in_wire_order": true
+    },
+    {
+      "directory": "physical-58-heap-diagnostics",
+      "session_sha256": "0f0b9107797fc48b5460e720d2e4f1f792c8b68994845f5a70ab506788e6b484",
+      "commands": 9,
+      "closed": true,
+      "stop_reason": "batch-complete",
+      "all_prompts_returned": true,
+      "response_hashes_and_lengths_valid": true,
+      "wire_rx_exact": true,
+      "wire_tx_exact": true,
+      "responses_in_wire_order": true
+    },
+    {
+      "directory": "physical-59-metadata-pointers",
+      "session_sha256": "454a097153064d1f3db447632a5562faad966984bd3ef65dfe503542765b67c6",
+      "commands": 189,
+      "closed": true,
+      "stop_reason": "batch-complete",
+      "all_prompts_returned": true,
+      "response_hashes_and_lengths_valid": true,
+      "wire_rx_exact": true,
+      "wire_tx_exact": true,
+      "responses_in_wire_order": true
+    },
+    {
+      "directory": "physical-60-ui-metadata",
+      "session_sha256": "f819fc2fa37df109c15a82fdd2b7f2fa51ebd5cfb663c23180827601f63eedb5",
+      "commands": 171,
+      "closed": true,
+      "stop_reason": "batch-complete",
+      "all_prompts_returned": true,
+      "response_hashes_and_lengths_valid": true,
+      "wire_rx_exact": true,
+      "wire_tx_exact": true,
+      "responses_in_wire_order": true
+    },
+    {
+      "directory": "physical-61-block-metadata",
+      "session_sha256": "4278f41dc347ba018ae73bd3ad3f4ba94cc86a5fe7f937e4a43d11e43ec31889",
+      "commands": 1,
+      "closed": true,
+      "stop_reason": "batch-complete",
+      "all_prompts_returned": true,
+      "response_hashes_and_lengths_valid": true,
+      "wire_rx_exact": true,
+      "wire_tx_exact": true,
+      "responses_in_wire_order": true
+    },
+    {
+      "directory": "physical-62-current-matrices",
+      "session_sha256": "549b6bb088bd2e73720b3c8e0c92620c82a45c2534f3ccef34fb68fc8cd4d4fc",
+      "commands": 2,
+      "closed": true,
+      "stop_reason": "batch-complete",
+      "all_prompts_returned": true,
+      "response_hashes_and_lengths_valid": true,
+      "wire_rx_exact": true,
+      "wire_tx_exact": true,
+      "responses_in_wire_order": true
+    },
+    {
+      "directory": "physical-63-misc-queries",
+      "session_sha256": "4b7151ca760067c3bc3527d51f8ca3e5368ce73f1c6abed9a4420e84041fb2d6",
+      "commands": 9,
+      "closed": true,
+      "stop_reason": "batch-complete",
+      "all_prompts_returned": true,
+      "response_hashes_and_lengths_valid": true,
+      "wire_rx_exact": true,
+      "wire_tx_exact": true,
+      "responses_in_wire_order": true
+    },
+    {
+      "directory": "physical-64-ui-fields",
+      "session_sha256": "ff48c86b16b736cdc88f312ba9ed94ed346bea7506af8da2afd1967148e2a9ef",
+      "commands": 27,
+      "closed": true,
+      "stop_reason": "batch-complete",
+      "all_prompts_returned": true,
+      "response_hashes_and_lengths_valid": true,
+      "wire_rx_exact": true,
+      "wire_tx_exact": true,
+      "responses_in_wire_order": true
+    },
+    {
+      "directory": "physical-65-frontpanel-settings",
+      "session_sha256": "04e1ae396277e3b8dfa8990beb827740664394988b3ed945f37017774e2c8e90",
+      "commands": 6,
+      "closed": true,
+      "stop_reason": "batch-complete",
+      "all_prompts_returned": true,
+      "response_hashes_and_lengths_valid": true,
+      "wire_rx_exact": true,
+      "wire_tx_exact": true,
+      "responses_in_wire_order": true
+    },
+    {
+      "directory": "physical-66-rng-uart",
+      "session_sha256": "21b8f7d6b1f41ab7e3b889e7be07216de08156bf24e25a58773e4648693b3dcb",
+      "commands": 1,
+      "closed": true,
+      "stop_reason": "batch-complete",
+      "all_prompts_returned": true,
+      "response_hashes_and_lengths_valid": true,
+      "wire_rx_exact": true,
+      "wire_tx_exact": true,
+      "responses_in_wire_order": true
+    },
+    {
+      "directory": "physical-67-mount-metadata",
+      "session_sha256": "e0303a778593de7ad6813599c874cc26096adaee48bfdc6201542b04d83917ba",
+      "commands": 18,
+      "closed": true,
+      "stop_reason": "batch-complete",
+      "all_prompts_returned": true,
+      "response_hashes_and_lengths_valid": true,
+      "wire_rx_exact": true,
+      "wire_tx_exact": true,
+      "responses_in_wire_order": true
+    }
+  ],
+  "new_names": {
+    "cal_val.get_edge_err": [
+      "physical-56-calibration-pen/0019-udws_cal_val_get_edge_err_1.bin"
+    ],
+    "cal_val.get_edge_err_status": [
+      "physical-56-calibration-pen/0020-udws_cal_val_get_edge_err_status_1.bin"
+    ],
+    "cal_val.get_linefeed_err": [
+      "physical-56-calibration-pen/0017-udws_cal_val_get_linefeed_err_1_1_K.bin"
+    ],
+    "cal_val.get_linefeed_err_status": [
+      "physical-56-calibration-pen/0018-udws_cal_val_get_linefeed_err_status_1_1_K.bin"
+    ],
+    "cal_val.get_pa_value": [
+      "physical-56-calibration-pen/0001-udws_cal_val_get_pa_value_P2PX_FIRST_CMY_0_FWD.bin",
+      "physical-56-calibration-pen/0002-udws_cal_val_get_pa_value_P2PY_FIRST_CMY_0_FWD.bin",
+      "physical-56-calibration-pen/0003-udws_cal_val_get_pa_value_BIDI_FIRST_K_0_FWD.bin",
+      "physical-56-calibration-pen/0004-udws_cal_val_get_pa_value_THETAZ_FIRST_K_0_FWD.bin"
+    ],
+    "cal_val.get_pa_value_status": [
+      "physical-56-calibration-pen/0005-udws_cal_val_get_pa_value_status_P2PX_FIRST_CMY_0_FWD.bin",
+      "physical-56-calibration-pen/0006-udws_cal_val_get_pa_value_status_P2PY_FIRST_CMY_0_FWD.bin",
+      "physical-56-calibration-pen/0007-udws_cal_val_get_pa_value_status_BIDI_FIRST_K_0_FWD.bin",
+      "physical-56-calibration-pen/0008-udws_cal_val_get_pa_value_status_THETAZ_FIRST_K_0_FWD.bin"
+    ],
+    "cal_val.get_unused_pa_status": [
+      "physical-56-calibration-pen/0013-udws_cal_val_get_unused_pa_status_P2PX_FIRST_CMY_0_FWD.bin",
+      "physical-56-calibration-pen/0014-udws_cal_val_get_unused_pa_status_P2PY_FIRST_CMY_0_FWD.bin",
+      "physical-56-calibration-pen/0015-udws_cal_val_get_unused_pa_status_BIDI_FIRST_K_0_FWD.bin",
+      "physical-56-calibration-pen/0016-udws_cal_val_get_unused_pa_status_THETAZ_FIRST_K_0_FWD.bin"
+    ],
+    "cal_val.get_unused_pa_value": [
+      "physical-56-calibration-pen/0009-udws_cal_val_get_unused_pa_value_P2PX_FIRST_CMY_0_FWD.bin",
+      "physical-56-calibration-pen/0010-udws_cal_val_get_unused_pa_value_P2PY_FIRST_CMY_0_FWD.bin",
+      "physical-56-calibration-pen/0011-udws_cal_val_get_unused_pa_value_BIDI_FIRST_K_0_FWD.bin",
+      "physical-56-calibration-pen/0012-udws_cal_val_get_unused_pa_value_THETAZ_FIRST_K_0_FWD.bin"
+    ],
+    "crypto_svc.get_rand_num": [
+      "physical-63-misc-queries/0003-udws_crypto_svc_get_rand_num_16.bin",
+      "physical-66-rng-uart/0001-udws_crypto_svc_get_rand_num_16.bin"
+    ],
+    "crypto_svc.get_rand_seq": [
+      "physical-63-misc-queries/0004-udws_crypto_svc_get_rand_seq_4.bin"
+    ],
+    "crypto_svc.is_secure": [
+      "physical-63-misc-queries/0002-udws_crypto_svc_is_secure.bin"
+    ],
+    "errlog.get_assert_entry": [
+      "physical-63-misc-queries/0009-udws_errlog_get_assert_entry_0.bin"
+    ],
+    "heapmgr client prt": [
+      "physical-58-heap-diagnostics/0001-udws_heapmgr_client_prt.bin"
+    ],
+    "heapmgr free prt": [
+      "physical-58-heap-diagnostics/0002-udws_heapmgr_free_prt.bin"
+    ],
+    "heapmgr hash load": [
+      "physical-58-heap-diagnostics/0003-udws_heapmgr_hash_load.bin"
+    ],
+    "heapmgr hash prt": [
+      "physical-58-heap-diagnostics/0004-udws_heapmgr_hash_prt.bin"
+    ],
+    "heapmgr heap ls": [
+      "physical-58-heap-diagnostics/0007-udws_heapmgr_heap_ls.bin"
+    ],
+    "heapmgr heap mem": [
+      "physical-58-heap-diagnostics/0008-udws_heapmgr_heap_mem_100.bin"
+    ],
+    "heapmgr heap prt": [
+      "physical-58-heap-diagnostics/0006-udws_heapmgr_heap_prt.bin"
+    ],
+    "heapmgr name prt": [
+      "physical-58-heap-diagnostics/0005-udws_heapmgr_name_prt.bin"
+    ],
+    "led_color_cal.get_barcode": [
+      "physical-56b-led-metadata/0005-udws_led_color_cal_get_barcode_0.bin"
+    ],
+    "led_color_cal.get_default_matrix": [
+      "physical-56b-led-metadata/0001-udws_led_color_cal_get_default_matrix_0.bin",
+      "physical-56b-led-metadata/0003-udws_led_color_cal_get_default_matrix_1.bin"
+    ],
+    "led_color_cal.get_golden_peaks_widths": [
+      "physical-56b-led-metadata/0002-udws_led_color_cal_get_golden_peaks_widths_0.bin",
+      "physical-56b-led-metadata/0004-udws_led_color_cal_get_golden_peaks_widths_1.bin"
+    ],
+    "led_color_cal.get_matrix": [
+      "physical-62-current-matrices/0001-udws_led_color_cal_get_matrix_0.bin",
+      "physical-62-current-matrices/0002-udws_led_color_cal_get_matrix_1.bin"
+    ],
+    "mfg_info.calc_mfg_date": [
+      "physical-63-misc-queries/0005-udws_mfg_info_calc_mfg_date_AA711_2017.bin",
+      "physical-63-misc-queries/0006-udws_mfg_info_calc_mfg_date_AA7CV_2017.bin",
+      "physical-63-misc-queries/0007-udws_mfg_info_calc_mfg_date_AA811_2018.bin"
+    ],
+    "mhdlg.get_mhdlgcap_media_type_size_list": [
+      "physical-55-media-capabilities/0003-udws_mhdlg_get_mhdlgcap_media_type_size_list_0_1.bin",
+      "physical-55-media-capabilities/0004-udws_mhdlg_get_mhdlgcap_media_type_size_list_1_1.bin"
+    ],
+    "mhdlg.get_mhdlgcap_supported_bins": [
+      "physical-55-media-capabilities/0002-udws_mhdlg_get_mhdlgcap_supported_bins.bin"
+    ],
+    "mhdlg.get_mhdlgcap_supported_trays": [
+      "physical-55-media-capabilities/0001-udws_mhdlg_get_mhdlgcap_supported_trays.bin"
+    ],
+    "mhdlg.get_supported_df_groups": [
+      "physical-55-media-capabilities/0005-udws_mhdlg_get_supported_df_groups.bin"
+    ],
+    "nos_nvm_sirius.get": [
+      "physical-63-misc-queries/0008-udws_nos_nvm_sirius_get_18.bin"
+    ],
+    "pe.cover_open_query": [
+      "physical-65-frontpanel-settings/0004-udws_pe_cover_open_query.bin"
+    ],
+    "pen.get_dotcount": [
+      "physical-56-calibration-pen/0027-udws_pen_get_dotcount_0_0_0.bin",
+      "physical-56-calibration-pen/0028-udws_pen_get_dotcount_1_0_0.bin",
+      "physical-56-calibration-pen/0029-udws_pen_get_dotcount_0_0_1.bin",
+      "physical-56-calibration-pen/0030-udws_pen_get_dotcount_1_0_1.bin"
+    ],
+    "pen.get_drfs": [
+      "physical-56-calibration-pen/0031-udws_pen_get_drfs.bin"
+    ],
+    "pen.get_ttoe_ad_range": [
+      "physical-56-calibration-pen/0021-udws_pen_get_ttoe_ad_range.bin"
+    ],
+    "pen.get_ttoe_test_range": [
+      "physical-56-calibration-pen/0022-udws_pen_get_ttoe_test_range.bin"
+    ],
+    "pen.is_ldw_ttoed": [
+      "physical-56-calibration-pen/0025-udws_pen_is_ldw_ttoed_0.bin",
+      "physical-56-calibration-pen/0026-udws_pen_is_ldw_ttoed_1.bin"
+    ],
+    "pen.is_ttoed": [
+      "physical-56-calibration-pen/0023-udws_pen_is_ttoed_0.bin",
+      "physical-56-calibration-pen/0024-udws_pen_is_ttoed_1.bin"
+    ],
+    "ram.block_info": [
+      "physical-61-block-metadata/0001-udws_ram_block_info_1_1_0.bin"
+    ],
+    "ram.part_info": [
+      "physical-58-heap-diagnostics/0009-udws_ram_part_info_0.bin"
+    ],
+    "sm_module conn": [
+      "physical-54-system-services/0001-udws_sm_module_conn.bin"
+    ],
+    "sm_module pevent": [
+      "physical-54-system-services/0005-udws_sm_module_pevent.bin"
+    ],
+    "sm_module prov": [
+      "physical-54-system-services/0002-udws_sm_module_prov.bin"
+    ],
+    "sm_module req": [
+      "physical-54-system-services/0003-udws_sm_module_req.bin"
+    ],
+    "sm_module revent": [
+      "physical-54-system-services/0006-udws_sm_module_revent.bin"
+    ],
+    "sm_module tabl": [
+      "physical-54-system-services/0004-udws_sm_module_tabl.bin"
+    ],
+    "smgr_pe.cover_open_query": [
+      "physical-65-frontpanel-settings/0005-udws_smgr_pe_cover_open_query.bin"
+    ],
+    "smgr_pe.get_current_setting": [
+      "physical-65-frontpanel-settings/0001-udws_smgr_pe_get_current_setting_1.bin",
+      "physical-65-frontpanel-settings/0002-udws_smgr_pe_get_current_setting_3.bin",
+      "physical-65-frontpanel-settings/0003-udws_smgr_pe_get_current_setting_4.bin"
+    ],
+    "smgr_pe.user_power_on_query": [
+      "physical-65-frontpanel-settings/0006-udws_smgr_pe_user_power_on_query.bin"
+    ],
+    "smjob blk": [
+      "physical-54-system-services/0009-udws_smjob_blk.bin"
+    ],
+    "smjob filter show": [
+      "physical-54-system-services/0010-udws_smjob_filter_show_0.bin"
+    ],
+    "smjob job": [
+      "physical-54-system-services/0007-udws_smjob_job.bin"
+    ],
+    "smjob types": [
+      "physical-54-system-services/0008-udws_smjob_types.bin"
+    ],
+    "ui_lite.display_status": [
+      "physical-56c-ui-status/0001-udws_ui_lite_display_status.bin"
+    ],
+    "undercroft.get_rev": [
+      "physical-63-misc-queries/0001-udws_undercroft_get_rev.bin"
+    ]
+  },
+  "missing_annotations": [
+    {
+      "response_file": "physical-53-resume/0001-udws_bio_rev_str_udw_get_board_id_shm_msecs.bin",
+      "response_sha256": "26f085fda9ecc883f7af34610a6c8d696ddfb7e3dd51e61f8fe1d1403bfbfa6c",
+      "registered_names": [
+        "bio.rev_str",
+        "udw.get_board_id",
+        "shm.msecs"
+      ],
+      "inline_validation": false,
+      "supplemental_revalidation": false,
+      "annotations": []
+    }
+  ],
+  "suspicious_result_lines": [
+    {
+      "response_file": "physical-54-system-services/0001-udws_sm_module_conn.bin",
+      "lines": [
+        "41 VTABLE cal_pg_seq           0001295b 0000   12  <unknown>             1515868698",
+        "65 DIRECT lib_ch_reg           00010fd7 0000    0  assert                   0",
+        "131 VTABLE constat              00012fb3 0000    4  <unknown>             1515870810",
+        "150 DIRECT defer                00010fd7 0000    0  assert                   0",
+        "152 DIRECT defer_ipc_sc         00010fd7 0000    0  assert                   0",
+        "173 DIRECT dpc                  00010fd7 0000    0  assert                   0",
+        "314 DIRECT io_treck             00010fd7 0000    0  assert                   0",
+        "457 DIRECT hw_clock_sys         00010fd7 0000    0  assert                   0"
+      ],
+      "covered_by_inline_or_report": true
+    },
+    {
+      "response_file": "physical-54-system-services/0002-udws_sm_module_prov.bin",
+      "lines": [
+        "4 DIRECT assert               00010fd7    0"
+      ],
+      "covered_by_inline_or_report": true
+    },
+    {
+      "response_file": "physical-54-system-services/0003-udws_sm_module_req.bin",
+      "lines": [
+        "666 VTABLE jm_jpeg_print        <unknown>            00010d72   51",
+        "667 VTABLE jm_jpeg_print        <unknown>            00010eaa   52",
+        "805 VTABLE jm_scan              <unknown>            00010f50    9",
+        "806 VTABLE jm_scan              <unknown>            00010eaa   10",
+        "1089 VTABLE pe                   <unknown>            00011723   11",
+        "1090 VTABLE pe                   <unknown>            00011723   13",
+        "1091 VTABLE pe                   <unknown>            00012526   12",
+        "1348 VTABLE rest_eCCL            <unknown>            00010fcc   11"
+      ],
+      "covered_by_inline_or_report": true
+    },
+    {
+      "response_file": "physical-54-system-services/0004-udws_sm_module_tabl.bin",
+      "lines": [
+        "DAT_file_mgr         -> udw                 DAT_file_mgr         -> ds2                 DAT_file_mgr         -> temp_agency         dpof                 -> udw                 dpof                 -> ds2                 dpof                 -> database            dpof                 -> database            dpof                 -> jm_udw_mem          access_list          -> ds2                 access_list          -> httpmgr             access_list          -> dsd_ols_mgr         access_list          -> http_sec            access_list          -> def_not             access_list          -> udw                 access_list          -> cnc_common_util     access_list          -> mfg_info            access_list          -> lib_fsutils         assert               -> requires nothing",
+        "bio_udw              -> lib_udw             cal_pg_jm            -> ds2                 cal_pg_jm            -> udw                 cal_pg_jm            -> cal_pg_seq          cal_pg_jm            -> sm_dispatch         cal_pg_jm            -> firm                cal_pg_jm            -> reports_manager     cal_pg_jm            -> cal_pg_status       cal_pg_jm            -> cal_pg_status       cal_pg_jm            -> jm_scanlets         cal_pg_seq           -> udw                 cal_pg_seq           -> fm                  cal_pg_seq           -> pixel_gen           cal_pg_seq           -> pixel_gen           cal_pg_seq           -> ds2                 cal_pg_seq           -> firm                cal_pg_seq           -> fm                  cal_pg_seq           -> reports_manager     cal_pg_seq           -> cal_pg_status       cal_pg_seq           -> cal_pg_status       cal_pg_seq           -> cal_val             cal_pg_seq           -> cal_val             cal_pg_seq           -> <unknown>           cal_pg_seq           -> pe                  cal_pg_seq           -> fm                  cal_pg_seq           -> disp_list           cal_pg_seq           -> strings             cal_pg_seq           -> sm_settings         cal_pg_seq           -> constat             cal_pg_seq           -> constat             cal_pg_seq           -> sense_deriv_proxy   cal_pg_seq           -> mfg_info            cal_pg_status        -> ds2                 cal_pg_status        -> udw                 cal_pg_status        -> pe_events           cal_pg_status        -> event_log           cal_val              -> ds2                 cal_val              -> udw                 cal_val              -> cal_pg_status       carriage             -> udw                 carriage             -> therm_mdl           carriage             -> power_mdl           carriage             -> power_supply        carriage             -> ds2                 cert_svc             -> ds2                 cert_svc             -> lib_fsutils         lib_ch_reg           -> assert              cloud_data           -> ds2                 cloud_data           -> udw                 cloud_data           -> def_not             cloud_data           -> rest_fw_update      cloud_data           -> nca                 cloud_data           -> lib_openssl         cloud_data           -> mfg_info            cloud_ink_subscription -> httpclient          cloud_ink_subscription -> ds2                 cloud_ink_subscription -> xmpp                cloud_ink_subscription -> udw                 cloud_ink_subscription -> web_fw_update       cloud_ink_subscription -> crypto_svc          cloud_ink_subscription -> lib_openssl         cloud_ink_subscription -> cloud_data          cloud_ink_subscription -> sub_clock           cloud_reg            -> ds2                 cloud_reg            -> httpmgr             cloud_reg            -> httpclient          cloud_reg            -> udw                 cloud_reg            -> xmpp                cloud_reg            -> dsd_ols_mgr         cloud_reg            -> cp2                 cloud_reg            -> localization        cloud_reg            -> http_sec            cloud_reg            -> secutils            cloud_reg            -> cloud_data          cloud_reg            -> def_not             cloud_reg            -> udn                 cloud_reg            -> rest_fw_update      cloud_reg            -> nksu                cloud_reg            -> mfg_info            cnc_common_util      -> ds2                 cnc_common_util      -> udw                 cnc_common_util      -> nca                 cnc_common_util      -> mfg_info            cnc_jobsub           -> ds2                 cnc_jobsub           -> xml                 cnc_jobsub           -> cnc_jobsub          cnc_jobsub           -> sm_dispatch         cnc_jobsub           -> pe                  cntrs                -> ds2                 cntrs                -> nvm3                cntrs                -> udw                 cntrs                -> reports_manager     cntrs                -> mfg_info            cntrs                -> sense_deriv_proxy   conn_mgr             -> COMP_IO_SOCKET_MGR  conn_mgr             -> ds2                 conn_mgr             -> cntrs               conn_mgr             -> nca                 conn_mgr             -> def_not             conn_mgr             -> pjls                connect_now          -> ds2                 connect_now          -> udw                 connect_now          -> icc                 connect_now          -> nksu                connect_now          -> cloud_data          connect_now          -> cloud_reg           connect_now          -> xmpp                constat              -> pe_iev              constat              -> mfg_info            constat              -> udw                 constat              -> ds2                 constat              -> pen                 constat              -> <unknown>           constat_helper       -> constat             copy_layout          -> udw                 copy_layout          -> scan                copy_layout          -> pe                  cp2                  -> udw                 crypto               -> lib_udw             crypto               -> hw_mcasic           crypto_svc           -> lib_udw             crypto_svc           -> crypto              data_exchange        -> udw                 database             -> udw                 database             -> cntrs               database             -> ram_drv             database             -> ds2                 dcf                  -> udw                 dcf                  -> ds2                 dcf                  -> database            debug                -> requires nothing",
+        "def_not              -> udw                 defer                -> assert              defer                -> timer               defer_ipc_sc         -> assert              defer_ipc_sc         -> lib_udw             densitometer         -> udw                 densitometer         -> temp_agency         device_info          -> ds2                 device_info          -> firm                device_info          -> udw                 device_info          -> pe                  device_info          -> dsd_ols_pen         device_info          -> dsd_ols_prdsts      device_info          -> mfg_info            device_info          -> sense_deriv_proxy   device_info          -> sm_settings         dhcp_server          -> udw                 dhcp_server          -> nca_wm              dhcp_server          -> timer               dhcp_server          -> nca                 disp_list            -> font_engine         disp_list            -> strings             dot1x                -> udw                 dot1x                -> secutils            dpc                  -> assert              dpc                  -> timer               ds2                  -> udw                 ds2                  -> nvm3                ds2                  -> mfg_info            dsd_ols_internal_print -> httpmgr             dsd_ols_internal_print -> ds2                 dsd_ols_internal_print -> dsd_ols_mgr         dsd_ols_internal_print -> cp2                 dsd_ols_internal_print -> pe                  dsd_ols_internal_print -> sm_dispatch         dsd_ols_internal_print -> rest_jobs           dsd_ols_internal_print -> jm_reports          dsd_ols_internal_print -> reports_manager     dsd_ols_internal_print -> udw                 dsd_ols_internal_print -> job_tracker         dsd_ols_media        -> dsd_ols_mgr         dsd_ols_media        -> pe_trays            dsd_ols_media        -> pe                  dsd_ols_media        -> ds2                 dsd_ols_media        -> cp2                 dsd_ols_media        -> pe                  dsd_ols_media        -> pjls                dsd_ols_media_hdlg   -> httpmgr             dsd_ols_media_hdlg   -> dsd_ols_mgr         dsd_ols_media_hdlg   -> cp2                 dsd_ols_media_hdlg   -> pe_trays            dsd_ols_media_hdlg   -> pe                  dsd_ols_media_hdlg   -> ds2                 dsd_ols_media_hdlg   -> pe                  dsd_ols_media_hdlg   -> udw                 dsd_ols_media_hdlg   -> localization        dsd_ols_media_hdlg   -> pe_tray_info        dsd_ols_media_hdlg   -> pe                  dsd_ols_media_hdlg   -> dsd_ols_prdsts      dsd_ols_mgr          -> httpmgr             dsd_ols_mgr          -> http_sec            dsd_ols_mgr          -> ds2                 dsd_ols_mgr          -> cp2                 dsd_ols_mgr          -> lib_protobufc_renderdsd_ols_netapps      -> ds2                 dsd_ols_netapps      -> dsd_ols_mgr         dsd_ols_netapps      -> cp2                 dsd_ols_netapps      -> snmp                dsd_ols_netapps      -> eSCL                dsd_ols_netapps      -> nca                 dsd_ols_netapps      -> nca_wm              dsd_ols_netapps      -> httpmgr             dsd_ols_netapps      -> http_sec            dsd_ols_netapps      -> wpad                dsd_ols_netapps      -> udw                 dsd_ols_netapps      -> pjls                dsd_ols_pen          -> dsd_ols_mgr         dsd_ols_pen          -> httpmgr             dsd_ols_pen          -> pe                  dsd_ols_pen          -> ds2                 dsd_ols_pen          -> constat             dsd_ols_pen          -> constat_helper      dsd_ols_pen          -> dsd_ols_prdsts      dsd_ols_pen          -> cp2                 dsd_ols_pen          -> udw                 dsd_ols_pen          -> pe                  dsd_ols_pen          -> http_sec            dsd_ols_pen          -> sm_settings         dsd_ols_prdcfg       -> dsd_ols_mgr         dsd_ols_prdcfg       -> pe                  dsd_ols_prdcfg       -> pe_events           dsd_ols_prdcfg       -> ds2                 dsd_ols_prdcfg       -> constat             dsd_ols_prdcfg       -> constat             dsd_ols_prdcfg       -> cp2                 dsd_ols_prdcfg       -> sm_settings         dsd_ols_prdcfg       -> localization        dsd_ols_prdcfg       -> udn                 dsd_ols_prdcfg       -> cnc_common_util     dsd_ols_prdcfg       -> smpw                dsd_ols_prdcfg       -> http_sec            dsd_ols_prdcfg       -> product_prop        dsd_ols_prdcfg       -> ipp                 dsd_ols_prdcfg       -> udw                 dsd_ols_prdcfg       -> quiet_mode_cntrl    dsd_ols_prdcfg       -> def_not             dsd_ols_prdcfg       -> pe                  dsd_ols_prdcfg       -> web_fw_update       dsd_ols_prdcfg       -> mfg_info            dsd_ols_prdcfg       -> sense_deriv_proxy   dsd_ols_prdlog       -> dsd_ols_mgr         dsd_ols_prdlog       -> ds2                 dsd_ols_prdlog       -> cp2                 dsd_ols_prdlog       -> event_log           dsd_ols_prdsts       -> dsd_ols_mgr         dsd_ols_prdsts       -> pe                  dsd_ols_prdsts       -> pe_trays            dsd_ols_prdsts       -> pe_events           dsd_ols_prdsts       -> ds2                 dsd_ols_prdsts       -> cp2                 dsd_ols_prdsts       -> localization        dsd_ols_prdsts       -> rest_event          dsd_ols_prdsts       -> fp_hwdefs           dsd_ols_prdsts       -> smgr_init           dsd_ols_prdsts       -> constat             dsd_ols_prdsts       -> constat_helper      dsd_ols_prdsts       -> udw                 dsd_ols_prdsts       -> lib_prdsts_logger   dsd_ols_prdsts       -> pe                  dsd_ols_prdsts       -> cloud_data          dsd_ols_prdsts       -> cal_pg_status       dsd_ols_prdsts       -> scan                dsd_ols_prdsts       -> sm_settings         dsd_ols_prdusage     -> dsd_ols_mgr         dsd_ols_prdusage     -> ds2                 dsd_ols_prdusage     -> pe_trays            dsd_ols_prdusage     -> pe                  dsd_ols_prdusage     -> cp2                 dsd_ols_prdusage     -> cntrs               dsd_ols_prdusage     -> nksu                dsd_ols_prdusage     -> constat             dsd_ols_prdusage     -> constat_helper      dsd_ols_prdusage     -> scan                dsd_ols_prdusage     -> jm_scan             dsd_ols_prdusage     -> udw                 dsd_ols_prncfg       -> dsd_ols_mgr         dsd_ols_prncfg       -> pe                  dsd_ols_prncfg       -> pe_settings         dsd_ols_prncfg       -> pjls                dsd_ols_prncfg       -> ds2                 dsd_ols_prncfg       -> cp2                 dsd_ols_prncfg       -> udw                 dsd_ols_shpsup       -> dsd_ols_mgr         dsd_ols_shpsup       -> pe                  dsd_ols_shpsup       -> ds2                 dsd_ols_shpsup       -> constat             dsd_ols_shpsup       -> constat_helper      dsd_ols_shpsup       -> cp2                 dsd_ols_shpsup       -> localization        dsd_ols_shpsup       -> rest_ink_sub        dsd_ols_shpsup       -> cntrs               dsd_ols_shpsup       -> mfg_info            dsd_ols_shpsup       -> sense_deriv_proxy   echo                 -> conn_mgr            echo                 -> ds2                 io_treck             -> assert              io_treck             -> mem                 errlog               -> lib_udw             eula                 -> ds2                 eula                 -> debug               event_log            -> udw                 event_log            -> ds2                 ews_settings         -> ds2                 ews_settings         -> sm_settings         ews_strings          -> ds2                 ews_strings          -> strings             ews_strings          -> udw                 xml                  -> requires nothing",
+        "firm                 -> udw                 firm                 -> ds2                 fm                   -> pe_events           fm                   -> pe_tray_info        fm                   -> ds2                 fm                   -> pen                 fm                   -> pixel_gen           fm                   -> firm                fm                   -> pixel_gen           fm                   -> reports_manager     fm                   -> event_log           fm                   -> cntrs               fm                   -> ds2                 fm                   -> temp_agency         fm                   -> paper               fm                   -> paper               fm                   -> carriage            fm                   -> carriage            fm                   -> work task           fm                   -> cal_val             fm                   -> cal_pg_status       fm                   -> smpw                fm                   -> pe_settings         fm                   -> def_not             fm                   -> constat             fm                   -> constat             fm                   -> constat_helper      fm                   -> sense_deriv_proxy   fm                   -> mfg_info            fm                   -> sm_settings         font_engine          -> udw                 fp_hwdefs            -> udw                 fp_hwdefs            -> ds2                 fp_mcu_simp          -> udw                 fp_mcu_simp          -> ds2                 fp_mcu_simp          -> fp_hwdefs           fp_mcu_simp          -> reports_manager     gcp_comm             -> udw                 gcp_comm             -> ds2                 gcp_comm             -> httpclient          gcp_comm             -> gcp_utils           gcp_comm             -> gcp_xmpp            gcp_comm             -> udn                 gcp_comm             -> nca                 gcp_comm             -> temp_agency         gcp_comm             -> dsd_ols_prdsts      gcp_comm             -> def_not             gcp_comm             -> lib_json            gcp_comm             -> nca                 gcp_comm             -> sense_deriv_proxy   gcp_comm             -> lib_plr             gcp_privet           -> ds2                 gcp_privet           -> udw                 gcp_privet           -> httpmgr             gcp_privet           -> dsd_ols_mgr         gcp_privet           -> cp2                 gcp_privet           -> gcp_utils           gcp_privet           -> gcp_comm            gcp_privet           -> cnc_common_util     gcp_privet           -> udn                 gcp_privet           -> gcp_xmpp            gcp_privet           -> http_sec            gcp_privet           -> lib_json            gcp_privet           -> sense_deriv_proxy   gcp_utils            -> ds2                 gcp_utils            -> udw                 gcp_utils            -> httpmgr             gcp_utils            -> dsd_ols_pen         gcp_utils            -> dsd_ols_prdsts      gcp_utils            -> dsd_ols_media_hdlg  gcp_utils            -> pe                  gcp_utils            -> dsd_ols_media       gcp_utils            -> sm_dispatch         gcp_utils            -> jm_pjl              gcp_utils            -> conn_mgr            gcp_utils            -> rest_jobs           gcp_utils            -> cntrs               gcp_utils            -> pjls                gcp_utils            -> job_tracker         gcp_utils            -> lib_json            gcp_xmpp             -> io_sand_hp2BSDSocketgcp_xmpp             -> ds2                 gcp_xmpp             -> nca                 gcp_xmpp             -> secutils            gcp_xmpp             -> crypto_svc          gcp_xmpp             -> icc                 gcp_xmpp             -> udw                 gcp_xmpp             -> mfg_info            ggw                  -> ds2                 ggw                  -> conn_mgr            ggw                  -> nca                 ggw                  -> COMP_IO_SOCKET_MGR  gsoap                -> ds2                 gsoap                -> udw                 health_check         -> httpmgr             health_check         -> xmpp                health_check         -> cloud_reg           health_check         -> httpclient          health_check         -> ds2                 health_check         -> cloud_data          health_check         -> udn                 health_check         -> ipp                 health_check         -> netdiag             health_check         -> nca                 health_check         -> http_sec            health_check         -> dsd_ols_mgr         health_check         -> web_fw_update       heap_mgr             -> udw                 http_auth            -> crypto_svc          http_sec             -> nca                 http_sec             -> httpmgr             http_sec             -> ds2                 http_sec             -> secutils            http_sec             -> def_not             httpclient           -> io_sand_hp2BSDSockethttpclient           -> ds2                 httpclient           -> nca                 httpclient           -> secutils            httpclient           -> udw                 httpclient           -> crypto_svc          httpmgr              -> io_sand_hp2BSDSockethttpmgr              -> ds2                 httpmgr              -> udw                 httpmgr              -> crypto_svc          httpmgr              -> mfg_info            httpmgr              -> sense_deriv_proxy   hw_bus_mon           -> lib_udw             hw_clock_sys         -> debug               hw_clock_sys         -> assert              hw_clock_sys         -> mem                 hw_clock_sys         -> lib_udw             hw_i2c               -> debug               hw_i2c               -> assert              hw_i2c               -> hw_padmux           hw_i2c               -> lib_coordination    hw_i2c               -> lib_udw             hw_mcasic            -> debug               hw_mcasic            -> assert              hw_mcasic            -> hw_micci2           hw_mcasic            -> timer               hw_micci2            -> debug               hw_micci2            -> assert              hw_micci2            -> timer               hw_micci2            -> hw_padmux           hw_neo               -> debug               hw_neo               -> assert              hw_neo               -> timer               hw_neo               -> hw_micci2           hw_neo               -> lib_power           hw_neo               -> lib_servo_remap     hw_neo               -> lib_gpio            hw_padmux            -> assert              hw_pll               -> debug               hw_pll               -> assert              hw_reset             -> debug               hw_reset             -> assert              hw_timer_counters    -> debug               hw_timer_counters    -> assert              hw_uart              -> assert              icc                  -> nca                 icc                  -> ds2                 icc                  -> udw                 icc                  -> httpclient          idle                 -> requires nothing",
+        "io_proto_treck       -> ds2                 eventfifo            -> assert              eventfifo            -> unistd              io_sand_hp2BSDSocket -> udw                 io_sand_hp2BSDSocket -> IO RedOS            io_sand_hp2BSDSocket -> unistd              io_sand_hp2BSDSocket -> lib_ris             io_sand_hp2BSDSocket -> defer               io_sand_hp2BSDSocket -> io_treck            io_sand_hp2Event     -> ds2                 io_sand_hp2Event     -> io_sand_hpaggr      io_sand_hp2Event     -> IO RedOS            io_sand_hp2Timer     -> IO RedOS            io_sand_hpNgData     -> ds2                 io_sand_hpNgData     -> io_sand_hpaggr      io_sand_hpNgOS       -> assert              io_sand_hpNgOS       -> mem                 io_sand_hpaggr       -> ds2                 io_sand_hplog        -> requires nothing",
+        "io_sand_mdns         -> ds2                 io_sand_mdns         -> udw                 io_sand_mdns         -> io_sand_hp2BSDSocketio_sand_mdns         -> nca                 io_sand_mdns         -> udn                 io_sand_mdns         -> nca                 io_sand_mdns         -> jm_scan             io_sand_mdns         -> eSCL                io_sand_mdns         -> def_not             io_sand_mdns         -> pe                  io_sand_mdns         -> access_list         io_sand_mdns         -> smpw                io_sand_mdns         -> gcp_comm            io_sand_mdns         -> gcp_xmpp            io_sand_mdns         -> pjls                io_sand_mdns         -> sense_deriv_proxy   COMP_IO_SOCKET_MGR   -> ds2                 COMP_IO_SOCKET_MGR   -> work task           ip                   -> udw                 ip                   -> ds2                 ip                   -> data_exchange       ip                   -> mergeout            ip                   -> udw_data_dump       ip                   -> imaging_mgr         ip                   -> maps                ip                   -> led_color_cal       ip                   -> disp_list           ip                   -> jm_udw_mem          ip                   -> ip2sp               ip                   -> faded_colorysis     ip                   -> constat             ip                   -> constat_helper      ip                   -> scan                ip2sp                -> pe                  ip2sp                -> data_exchange       ip2sp                -> udw_data_dump       ip_lmb               -> udw                 ip_lmb               -> udw_data_dump       ip_lmb               -> ds2                 ipp                  -> ds2                 ipp                  -> udw                 ipp                  -> httpmgr             ipp                  -> sm_dispatch         ipp                  -> jm_pjl              ipp                  -> constat             ipp                  -> localization        ipp                  -> pe                  ipp                  -> httpclient          ipp                  -> temp_agency         ipp                  -> conn_mgr            ipp                  -> dsd_ols_prdsts      ipp                  -> udn                 ipp                  -> def_not             ipp                  -> def_not             ipp                  -> cnc_common_util     ipp                  -> pjls                ipp                  -> pe_events           ipp                  -> dsd_ols_mgr         ipp                  -> <unknown>           ipp                  -> access_list         ipp                  -> http_sec            ipp                  -> cntrs               ipp                  -> nca                 ipp                  -> <unknown>           ipp                  -> reports_manager     ipp                  -> job_tracker         ipp                  -> sense_deriv_proxy   ipp                  -> pe                  is                   -> shm                 is                   -> udw                 is                   -> jpeg                is                   -> ds2                 is                   -> cntrs               is                   -> database            is                   -> database            is                   -> database            jm_copy              -> udw                 jm_copy              -> scan                jm_copy              -> data_exchange       jm_copy              -> ds2                 jm_copy              -> maps                jm_copy              -> ip                  jm_copy              -> ip                  jm_copy              -> prescan             jm_copy              -> jpeg                jm_copy              -> jpeg                jm_copy              -> ip2sp               jm_copy              -> copy_layout         jm_copy              -> pe                  jm_copy              -> pe                  jm_copy              -> pe                  jm_copy              -> ram_drv             jm_copy              -> scan                jm_copy              -> sm_dispatch         jm_copy              -> cntrs               jm_copy              -> constat             jm_echo              -> echo                jm_echo              -> jm_pjl              jm_echo              -> sm_dispatch         jm_ful               -> patch               jm_ful               -> ds2                 jm_ful               -> sm_dispatch         jm_ful               -> udw                 jm_http              -> sm_dispatch         jm_internal_scan     -> udw                 jm_internal_scan     -> ds2                 jm_internal_scan     -> sm_dispatch         jm_jpeg_demo         -> ds2                 jm_jpeg_demo         -> udw                 jm_jpeg_demo         -> is                  jm_jpeg_demo         -> database            jm_jpeg_demo         -> database            jm_jpeg_demo         -> pe                  jm_jpeg_demo         -> pe                  jm_jpeg_demo         -> pe                  jm_jpeg_demo         -> sm_dispatch         jm_jpeg_demo         -> temp_agency         jm_jpeg_print        -> udw                 jm_jpeg_print        -> jm_pjl              jm_jpeg_print        -> sm_dispatch         jm_jpeg_print        -> lib_plr             jm_jpeg_print        -> jm_photo_print      jm_jpeg_print        -> jm_photo_print      jm_jpeg_print        -> <unknown>           jm_jpeg_print        -> <unknown>           jm_jpeg_print        -> database            jm_jpeg_print        -> database            jm_jpeg_print        -> image_filter        jm_jpeg_print        -> pe                  jm_jpeg_print        -> pjls                jm_jpeg_print        -> job_tracker         jm_lidil             -> spc                 jm_lidil             -> ds2                 jm_lidil             -> jm_pjl              jm_lidil             -> sm_dispatch         jm_lidil_print       -> spc                 jm_lidil_print       -> ds2                 jm_lidil_print       -> sm_dispatch         jm_mem_test          -> sm_dispatch         jm_pcl               -> udw                 jm_pcl               -> pcl                 jm_pcl               -> data_exchange       jm_pcl               -> pcl                 jm_pcl               -> reports_manager     jm_pcl               -> pe                  jm_pcl               -> jm_pjl              jm_pcl               -> sm_dispatch         jm_pcl               -> pjls                jm_pclm              -> data_exchange       jm_pclm              -> pe                  jm_pclm              -> pe                  jm_pclm              -> pe                  jm_pclm              -> jm_pjl              jm_pclm              -> sm_dispatch         jm_pclm              -> jpeg                jm_pclm              -> pjls                jm_pclm              -> job_tracker         jm_pclm              -> lib_plr             jm_photo_print       -> udw                 jm_photo_print       -> ds2                 jm_photo_print       -> database            jm_photo_print       -> database            jm_photo_print       -> is                  jm_photo_print       -> is                  jm_photo_print       -> photo_access_mgr    jm_photo_print       -> cntrs               jm_photo_print       -> photo_ip            jm_photo_print       -> data_exchange       jm_photo_print       -> dpof                jm_photo_print       -> dpof                jm_photo_print       -> pe                  jm_photo_print       -> pe                  jm_photo_print       -> pe                  jm_photo_print       -> img_compact         jm_photo_print       -> photo_layout        jm_photo_print       -> constat             jm_photo_print       -> photo_prerun        jm_photo_print       -> sm_dispatch         jm_photo_print       -> photo_job_estimator jm_photo_print       -> database            jm_photo_print       -> auto_align          jm_photo_print       -> job_tracker         jm_photo_print       -> sense_deriv_proxy   jm_pjl               -> pcl                 jm_pjl               -> conn_mgr            jm_pjl               -> jm_ful              jm_pjl               -> sm_dispatch         jm_pjl               -> jm_http             jm_pjl               -> cntrs               jm_pjl               -> temp_agency         jm_pjl               -> pcl                 jm_pjl               -> <unknown>           jm_pjl               -> job_tracker         jm_pjl               -> pjls                jm_pjl               -> jobsched            jm_prescan           -> udw                 jm_prescan           -> prescan             jm_prescan           -> data_exchange       jm_prescan           -> sm_dispatch         jm_prescan           -> ds2                 jm_prescan           -> scan                jm_prescan           -> ip                  jm_print_util        -> ds2                 jm_print_util        -> pe                  jm_print_util        -> sm_dispatch         jm_print_util        -> <unknown>           jm_reports           -> jm_copy             jm_reports           -> nca                 jm_reports           -> nca_wm              jm_reports           -> wifi_conman         jm_reports           -> icc                 jm_reports           -> udw                 jm_reports           -> disp_list           jm_reports           -> ds2                 jm_reports           -> cntrs               jm_reports           -> strings             jm_reports           -> sm_dispatch         jm_reports           -> pe                  jm_reports           -> pe                  jm_reports           -> pe                  jm_reports           -> event_log           jm_reports           -> netdiag             jm_reports           -> pen                 jm_reports           -> cal_val             jm_reports           -> cal_pg_status       jm_reports           -> wps                 jm_reports           -> cloud_reg           jm_reports           -> cloud_data          jm_reports           -> httpclient          jm_reports           -> dsd_ols_pen         jm_reports           -> dsd_ols_prdusage    jm_reports           -> rest_ink_sub        jm_reports           -> dsd_ols_prdsts      jm_reports           -> nksu                jm_reports           -> constat             jm_reports           -> constat_helper      jm_reports           -> constat             jm_reports           -> rest_fw_update      jm_reports           -> web_fw_update       jm_reports           -> quiet_mode_cntrl    jm_reports           -> connect_now         jm_reports           -> conn_mgr            jm_reports           -> jm_pjl              jm_reports           -> job_tracker         jm_reports           -> ipp                 jm_reports           -> pe                  jm_reports           -> gcp_comm            jm_reports           -> gcp_xmpp            jm_reports           -> gcp_privet          jm_reports           -> mfg_info            jm_reports           -> sense_deriv_proxy   jm_reports           -> sm_settings         jm_reports           -> reports_manager     jm_scan              -> udw                 jm_scan              -> scan                jm_scan              -> data_exchange       jm_scan              -> ds2                 jm_scan              -> jpeg                jm_scan              -> scan                jm_scan              -> ip                  jm_scan              -> maps                jm_scan              -> prescan             jm_scan              -> <unknown>           jm_scan              -> <unknown>           jm_scan              -> cntrs               jm_scan              -> sm_dispatch         jm_scan              -> sense_deriv_proxy   jm_scanlets          -> udw                 jm_scanlets          -> ds2                 jm_scanlets          -> data_exchange       jm_scanlets          -> scan                jm_scanlets          -> ip                  jm_scanlets          -> scan                jm_scanlets          -> scan_semiauto_align jm_scanlets          -> scan_semiauto_align jm_scanlets          -> sm_dispatch         jm_shell             -> conn_mgr            jm_shell             -> sm_dispatch         jm_udw               -> conn_mgr            jm_udw               -> sm_dispatch         jm_udw               -> jm_pjl              jm_udw_mem           -> sm_dispatch         jm_urf               -> udw                 jm_urf               -> data_exchange       jm_urf               -> pe                  jm_urf               -> pe                  jm_urf               -> pe                  jm_urf               -> jm_pjl              jm_urf               -> sm_dispatch         jm_urf               -> pjls                jm_urf               -> <unknown>           jm_urf               -> <unknown>           jm_urf               -> <unknown>           jm_urf               -> <unknown>           jm_urf               -> job_tracker         jm_urf               -> lib_plr             job_tracker          -> udw                 job_tracker          -> ds2                 job_tracker          -> sm_dispatch         job_tracker          -> dsd_ols_prdsts      job_tracker          -> scan                job_tracker          -> def_not             job_tracker          -> mfg_info            jobsched             -> udw                 jobsched             -> ds2                 jobsched             -> heap_mgr            jobsched             -> heap_mgr            jpeg                 -> udw                 jpeg                 -> data_exchange       led_color_cal        -> udw                 led_color_cal        -> ds2                 led_color_cal        -> temp_agency         led_color_cal        -> maps                led_color_cal        -> scan                led_color_cal        -> debug               lib_a2d              -> debug               lib_a2d              -> assert              lib_a2d              -> lib_udw             lib_a2d              -> hw_mcasic           lib_buffer_drv       -> unistd              lib_buffer_drv       -> lib_drive_names     lib_cache            -> lib_udw             lib_cal_config       -> requires nothing",
+        "lib_coordination     -> debug               lib_coordination     -> assert              lib_coordination     -> lib_udw             lib_csc              -> debug               lib_csc              -> assert              lib_df_mapping       -> assert              lib_digital_sensor   -> debug               lib_digital_sensor   -> assert              lib_digital_sensor   -> defer               lib_digital_sensor   -> lib_power           lib_digital_sensor   -> timer               lib_digital_sensor   -> mem                 lib_digital_sensor   -> lib_udw             lib_dma              -> debug               lib_dma              -> assert              lib_dma              -> lib_coordination    lib_draw_text        -> debug               lib_draw_text        -> assert              lib_drive_names      -> lib_udw             lib_dsd_ols_util     -> debug               lib_dsd_ols_util     -> assert              lib_dsd_ols_util     -> lib_gzip2file       lib_edge_detect      -> lib_udw             lib_eeprom           -> debug               lib_eeprom           -> assert              lib_eeprom           -> hw_i2c              lib_eeprom           -> lib_gpio            lib_eeprom           -> timer               lib_fsutils          -> requires nothing",
+        "lib_gpio             -> debug               lib_gpio             -> assert              lib_gpio             -> hw_padmux           lib_gpio             -> lib_coordination    lib_gpio             -> hw_mcasic           lib_gpio             -> lib_udw             lib_gzip2file        -> assert              lib_gzip2file        -> system              lib_gzip2file        -> unistd              lib_handle           -> assert              lib_hda              -> debug               lib_hda              -> assert              lib_hfre             -> debug               lib_hfre             -> assert              lib_histogram        -> requires nothing"
+      ],
+      "covered_by_inline_or_report": true
+    },
+    {
+      "response_file": "physical-56c-ui-status/0001-udws_ui_lite_display_status.bin",
+      "lines": [
+        "[UI_LITE]: size error: 0, sensor error: 0"
+      ],
+      "covered_by_inline_or_report": true
+    },
+    {
+      "response_file": "physical-58-heap-diagnostics/0006-udws_heapmgr_heap_prt.bin",
+      "lines": [
+        "The heap is empty."
+      ],
+      "covered_by_inline_or_report": true
+    },
+    {
+      "response_file": "physical-58-heap-diagnostics/0007-udws_heapmgr_heap_ls.bin",
+      "lines": [
+        "The heap is empty."
+      ],
+      "covered_by_inline_or_report": true
+    },
+    {
+      "response_file": "physical-63-misc-queries/0009-udws_errlog_get_assert_entry_0.bin",
+      "lines": [
+        "1, ASSERT: c4eb99f7 type: ASSERT_TYPE_HW line: 1733 file: hw_micci2.c page count: 775 in component (CID): 4eb comp error info: 99f7 ;udws() returns 0 (0x0)"
+      ],
+      "covered_by_inline_or_report": true
+    }
+  ],
+  "known_semantic_limitations": [
+    "Prompt/hash integrity does not establish functional success. Supplemental reports remain authoritative for known guard/empty/error cases.",
+    "System connection table includes20unknown-provider enums; flagged and covered by system report.",
+    "Original crypto random-output empty-filename invocation and corrected66 invocation are analyzed separately by product reviewer.",
+    "Snapshot-copy commands have inline validation; root audits extracted metadata separately."
+  ]
+}

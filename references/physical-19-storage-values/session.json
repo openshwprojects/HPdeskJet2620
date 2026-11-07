@@ -1,0 +1,3744 @@
+{
+  "started_utc": "2026-10-29T19:26:55.132912+00:00",
+  "port": "COM16",
+  "baud": 115200,
+  "data_bits": 8,
+  "parity": "N",
+  "stop_bits": 1,
+  "line_ending": "CRLF",
+  "source": "physical UART",
+  "rts": false,
+  "dtr": false,
+  "tx_character_delay_seconds": 0.003,
+  "requested_rx_buffer_bytes": 1048576,
+  "requested_tx_buffer_bytes": 65536,
+  "initial_prompt_seen": true,
+  "stop_reason": "response-validation-failed",
+  "ended_utc": "2026-10-29T19:27:16.174264+00:00",
+  "commands": [
+    {
+      "command": "udws \"nvm2.get_contents 0 0; nvm2.get_contents 0 1; nvm2.get_contents 0 2; nvm2.get_contents 0 3;\"",
+      "classification": "reviewed-information-query",
+      "phase": "nvm_contents",
+      "purpose": "Read bounded NVM scalar values or array counts.",
+      "timeout": 60,
+      "uart_line_bytes": 98,
+      "udw_count": 4,
+      "expected": [
+        {
+          "udw_command": "nvm2.get_contents 0 0",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 67996,
+          "known_name": "DSID_RESET_ON_POWERUP",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 1155,
+          "file_table_index": 0,
+          "object_index": 0,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0002-udws_nvm2_get_table_size_0.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0103-udws_nvm2_list_objects_in_file_1155.bin",
+            "object_ordinal": 0
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 0 1",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 70257,
+          "known_name": "DSID_MFG_MECHS_INIT_MODE",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 1155,
+          "file_table_index": 0,
+          "object_index": 1,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0002-udws_nvm2_get_table_size_0.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0103-udws_nvm2_list_objects_in_file_1155.bin",
+            "object_ordinal": 1
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 0 2",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 70879,
+          "known_name": "DSID_NO_MECH_MODE",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 1155,
+          "file_table_index": 0,
+          "object_index": 2,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0002-udws_nvm2_get_table_size_0.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0103-udws_nvm2_list_objects_in_file_1155.bin",
+            "object_ordinal": 2
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 0 3",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 72089,
+          "known_name": "DSID_POWER_CYCLE_COUNT",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 1155,
+          "file_table_index": 0,
+          "object_index": 3,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0002-udws_nvm2_get_table_size_0.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0103-udws_nvm2_list_objects_in_file_1155.bin",
+            "object_ordinal": 3
+          }
+        }
+      ],
+      "review_source": "references/storage_query_review.json",
+      "plan_index": 1,
+      "index": 1,
+      "started_utc": "2026-10-29T19:26:55.833338+00:00",
+      "response_file": "0001-udws_nvm2_get_contents_0_0_nvm2_get_contents_0_1_nvm2_get_content.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:26:56.611081+00:00",
+      "elapsed_seconds": 0.777,
+      "response_bytes": 212,
+      "response_sha256": "c0eaee8db2491b60709b221bb7132578b9afbade0869720267890cf5b3f14543",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "parsed": [
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 67996,
+            "file_id": 1155,
+            "kind": 2,
+            "table_index": 0,
+            "object_index": 0,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 70257,
+            "file_id": 1155,
+            "kind": 2,
+            "table_index": 0,
+            "object_index": 1,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 70879,
+            "file_id": 1155,
+            "kind": 2,
+            "table_index": 0,
+            "object_index": 2,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 72089,
+            "file_id": 1155,
+            "kind": 2,
+            "table_index": 0,
+            "object_index": 3,
+            "wire_value": 520,
+            "value": 520,
+            "value_interpretation": "scalar"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "command": "udws \"nvm2.get_contents 1 0; nvm2.get_contents 2 0; nvm2.get_contents 2 1; nvm2.get_contents 3 0;\"",
+      "classification": "reviewed-information-query",
+      "phase": "nvm_contents",
+      "purpose": "Read bounded NVM scalar values or array counts.",
+      "timeout": 60,
+      "uart_line_bytes": 98,
+      "udw_count": 4,
+      "expected": [
+        {
+          "udw_command": "nvm2.get_contents 1 0",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 78575,
+          "known_name": "DSID_PROXY_STATE",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 2722,
+          "file_table_index": 1,
+          "object_index": 0,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0003-udws_nvm2_get_table_size_1.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0104-udws_nvm2_list_objects_in_file_2722.bin",
+            "object_ordinal": 0
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 2 0",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 72080,
+          "known_name": "DSID_CNTR_FRONT_PANEL_CANCEL",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 1537,
+          "file_table_index": 2,
+          "object_index": 0,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0004-udws_nvm2_get_table_size_2.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0105-udws_nvm2_list_objects_in_file_1537.bin",
+            "object_ordinal": 0
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 2 1",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 74583,
+          "known_name": "DSID_CNTR_FRONT_PANEL_START_SCAN",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 1537,
+          "file_table_index": 2,
+          "object_index": 1,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0004-udws_nvm2_get_table_size_2.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0105-udws_nvm2_list_objects_in_file_1537.bin",
+            "object_ordinal": 1
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 3 0",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 75980,
+          "known_name": "DSID_UI_AUTO_INSTALL_STATE",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 306,
+          "file_table_index": 3,
+          "object_index": 0,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0005-udws_nvm2_get_table_size_3.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0106-udws_nvm2_list_objects_in_file_306.bin",
+            "object_ordinal": 0
+          }
+        }
+      ],
+      "review_source": "references/storage_query_review.json",
+      "plan_index": 2,
+      "index": 2,
+      "started_utc": "2026-10-29T19:26:56.613341+00:00",
+      "response_file": "0002-udws_nvm2_get_contents_1_0_nvm2_get_contents_2_0_nvm2_get_content.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:26:57.400828+00:00",
+      "elapsed_seconds": 0.787,
+      "response_bytes": 210,
+      "response_sha256": "011e8adbee3f1866f89872d348e0905eaa87592ce73446904fcb9d434858ef23",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "parsed": [
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 78575,
+            "file_id": 2722,
+            "kind": 2,
+            "table_index": 1,
+            "object_index": 0,
+            "wire_value": 1,
+            "value": 1,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 72080,
+            "file_id": 1537,
+            "kind": 2,
+            "table_index": 2,
+            "object_index": 0,
+            "wire_value": 49,
+            "value": 49,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 74583,
+            "file_id": 1537,
+            "kind": 2,
+            "table_index": 2,
+            "object_index": 1,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 75980,
+            "file_id": 306,
+            "kind": 2,
+            "table_index": 3,
+            "object_index": 0,
+            "wire_value": 1,
+            "value": 1,
+            "value_interpretation": "scalar"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "command": "udws \"nvm2.get_contents 3 1; nvm2.get_contents 3 2; nvm2.get_contents 3 3; nvm2.get_contents 3 4;\"",
+      "classification": "reviewed-information-query",
+      "phase": "nvm_contents",
+      "purpose": "Read bounded NVM scalar values or array counts.",
+      "timeout": 60,
+      "uart_line_bytes": 98,
+      "udw_count": 4,
+      "expected": [
+        {
+          "udw_command": "nvm2.get_contents 3 1",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 67092,
+          "known_name": "DSID_UI_DEFAULT_SCAN_OPTION_INDEX",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 306,
+          "file_table_index": 3,
+          "object_index": 1,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0005-udws_nvm2_get_table_size_3.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0106-udws_nvm2_list_objects_in_file_306.bin",
+            "object_ordinal": 1
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 3 2",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 68947,
+          "known_name": "DSID_UI_NETWORK_CONNECTION_SINCE_RESET",
+          "nvm_type": "NVM_SIM_SIGNED",
+          "expected_file_id": 306,
+          "file_table_index": 3,
+          "object_index": 2,
+          "expected_kind": 1,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0005-udws_nvm2_get_table_size_3.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0106-udws_nvm2_list_objects_in_file_306.bin",
+            "object_ordinal": 2
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 3 3",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 72232,
+          "known_name": "DSID_OOBE_STATE",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 306,
+          "file_table_index": 3,
+          "object_index": 3,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0005-udws_nvm2_get_table_size_3.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0106-udws_nvm2_list_objects_in_file_306.bin",
+            "object_ordinal": 3
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 3 4",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 66812,
+          "known_name": "DSID_PHOTO_PRINT_DEFAULT_PAPER_TYPE",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 306,
+          "file_table_index": 3,
+          "object_index": 4,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0005-udws_nvm2_get_table_size_3.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0106-udws_nvm2_list_objects_in_file_306.bin",
+            "object_ordinal": 4
+          }
+        }
+      ],
+      "review_source": "references/storage_query_review.json",
+      "plan_index": 3,
+      "index": 3,
+      "started_utc": "2026-10-29T19:26:57.402620+00:00",
+      "response_file": "0003-udws_nvm2_get_contents_3_1_nvm2_get_contents_3_2_nvm2_get_content.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:26:58.117114+00:00",
+      "elapsed_seconds": 0.714,
+      "response_bytes": 208,
+      "response_sha256": "2443e30952957719b0900f29095101816f05122058d94ecf9e289da04761b08b",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "parsed": [
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 67092,
+            "file_id": 306,
+            "kind": 2,
+            "table_index": 3,
+            "object_index": 1,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 68947,
+            "file_id": 306,
+            "kind": 1,
+            "table_index": 3,
+            "object_index": 2,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 72232,
+            "file_id": 306,
+            "kind": 2,
+            "table_index": 3,
+            "object_index": 3,
+            "wire_value": 255,
+            "value": 255,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 66812,
+            "file_id": 306,
+            "kind": 2,
+            "table_index": 3,
+            "object_index": 4,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "command": "udws \"nvm2.get_contents 3 5; nvm2.get_contents 3 6; nvm2.get_contents 3 7; nvm2.get_contents 3 8;\"",
+      "classification": "reviewed-information-query",
+      "phase": "nvm_contents",
+      "purpose": "Read bounded NVM scalar values or array counts.",
+      "timeout": 60,
+      "uart_line_bytes": 98,
+      "udw_count": 4,
+      "expected": [
+        {
+          "udw_command": "nvm2.get_contents 3 5",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 70967,
+          "known_name": "DSID_DEFAULT_PHOTO_PRINT_QUALITY",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 306,
+          "file_table_index": 3,
+          "object_index": 5,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0005-udws_nvm2_get_table_size_3.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0106-udws_nvm2_list_objects_in_file_306.bin",
+            "object_ordinal": 5
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 3 6",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 69925,
+          "known_name": "DSID_DEFAULT_PHOTO_DATE_STAMP",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 306,
+          "file_table_index": 3,
+          "object_index": 6,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0005-udws_nvm2_get_table_size_3.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0106-udws_nvm2_list_objects_in_file_306.bin",
+            "object_ordinal": 6
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 3 7",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 70971,
+          "known_name": "DSID_DEFAULT_PHOTO_COLORSPACE",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 306,
+          "file_table_index": 3,
+          "object_index": 7,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0005-udws_nvm2_get_table_size_3.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0106-udws_nvm2_list_objects_in_file_306.bin",
+            "object_ordinal": 7
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 3 8",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 72637,
+          "known_name": "DSID_PHOTO_PRINT_DEFAULT_BORDERLESS",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 306,
+          "file_table_index": 3,
+          "object_index": 8,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0005-udws_nvm2_get_table_size_3.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0106-udws_nvm2_list_objects_in_file_306.bin",
+            "object_ordinal": 8
+          }
+        }
+      ],
+      "review_source": "references/storage_query_review.json",
+      "plan_index": 4,
+      "index": 4,
+      "started_utc": "2026-10-29T19:26:58.119123+00:00",
+      "response_file": "0004-udws_nvm2_get_contents_3_5_nvm2_get_contents_3_6_nvm2_get_content.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:26:58.848334+00:00",
+      "elapsed_seconds": 0.728,
+      "response_bytes": 206,
+      "response_sha256": "56d6cd8f7bd965013c642d58ed98928899bc9ee0edfb18d41418391e861b319a",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "parsed": [
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 70967,
+            "file_id": 306,
+            "kind": 2,
+            "table_index": 3,
+            "object_index": 5,
+            "wire_value": 1,
+            "value": 1,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 69925,
+            "file_id": 306,
+            "kind": 2,
+            "table_index": 3,
+            "object_index": 6,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 70971,
+            "file_id": 306,
+            "kind": 2,
+            "table_index": 3,
+            "object_index": 7,
+            "wire_value": 2,
+            "value": 2,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 72637,
+            "file_id": 306,
+            "kind": 2,
+            "table_index": 3,
+            "object_index": 8,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "command": "udws \"nvm2.get_contents 3 9; nvm2.get_contents 4 0; nvm2.get_contents 4 1; nvm2.get_contents 4 2;\"",
+      "classification": "reviewed-information-query",
+      "phase": "nvm_contents",
+      "purpose": "Read bounded NVM scalar values or array counts.",
+      "timeout": 60,
+      "uart_line_bytes": 98,
+      "udw_count": 4,
+      "expected": [
+        {
+          "udw_command": "nvm2.get_contents 3 9",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 77346,
+          "known_name": "DSID_UI_LITE_HAS_PRESS_WD_BUTTON",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 306,
+          "file_table_index": 3,
+          "object_index": 9,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0005-udws_nvm2_get_table_size_3.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0106-udws_nvm2_list_objects_in_file_306.bin",
+            "object_ordinal": 9
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 4 0",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 71514,
+          "known_name": "DSID_SNMP_SET_COMMUNITY_NAME",
+          "nvm_type": "NVM_REC_ARRAY",
+          "expected_file_id": 1482,
+          "file_table_index": 4,
+          "object_index": 0,
+          "expected_kind": 5,
+          "value_interpretation": "array element count, not array contents",
+          "bound_source": "references/physical-18-storage-details/0006-udws_nvm2_get_table_size_4.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0107-udws_nvm2_list_objects_in_file_1482.bin",
+            "object_ordinal": 0
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 4 1",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 71515,
+          "known_name": "DSID_SNMP_GET_COMMUNITY_NAME",
+          "nvm_type": "NVM_REC_ARRAY",
+          "expected_file_id": 1482,
+          "file_table_index": 4,
+          "object_index": 1,
+          "expected_kind": 5,
+          "value_interpretation": "array element count, not array contents",
+          "bound_source": "references/physical-18-storage-details/0006-udws_nvm2_get_table_size_4.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0107-udws_nvm2_list_objects_in_file_1482.bin",
+            "object_ordinal": 1
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 4 2",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 71557,
+          "known_name": "DSID_SNMP_VERSION_ACCESS",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 1482,
+          "file_table_index": 4,
+          "object_index": 2,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0006-udws_nvm2_get_table_size_4.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0107-udws_nvm2_list_objects_in_file_1482.bin",
+            "object_ordinal": 2
+          }
+        }
+      ],
+      "review_source": "references/storage_query_review.json",
+      "plan_index": 5,
+      "index": 5,
+      "started_utc": "2026-10-29T19:26:58.850656+00:00",
+      "response_file": "0005-udws_nvm2_get_contents_3_9_nvm2_get_contents_4_0_nvm2_get_content.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:26:59.581674+00:00",
+      "elapsed_seconds": 0.73,
+      "response_bytes": 209,
+      "response_sha256": "ca639efdcdd3b2a9a259a06ef1948a7546ba9b70d452239434c03e46cf5c8110",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "parsed": [
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 77346,
+            "file_id": 306,
+            "kind": 2,
+            "table_index": 3,
+            "object_index": 9,
+            "wire_value": 1,
+            "value": 1,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 71514,
+            "file_id": 1482,
+            "kind": 5,
+            "table_index": 4,
+            "object_index": 0,
+            "wire_value": 1,
+            "value": 1,
+            "value_interpretation": "array_count"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 71515,
+            "file_id": 1482,
+            "kind": 5,
+            "table_index": 4,
+            "object_index": 1,
+            "wire_value": 1,
+            "value": 1,
+            "value_interpretation": "array_count"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 71557,
+            "file_id": 1482,
+            "kind": 2,
+            "table_index": 4,
+            "object_index": 2,
+            "wire_value": 4,
+            "value": 4,
+            "value_interpretation": "scalar"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "command": "udws \"nvm2.get_contents 4 3; nvm2.get_contents 4 4; nvm2.get_contents 4 5; nvm2.get_contents 4 6;\"",
+      "classification": "reviewed-information-query",
+      "phase": "nvm_contents",
+      "purpose": "Read bounded NVM scalar values or array counts.",
+      "timeout": 60,
+      "uart_line_bytes": 98,
+      "udw_count": 4,
+      "expected": [
+        {
+          "udw_command": "nvm2.get_contents 4 3",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 71598,
+          "known_name": "DSID_SNMP_GET_COMMUNITY_NAME_ENABLE_DISABLE",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 1482,
+          "file_table_index": 4,
+          "object_index": 3,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0006-udws_nvm2_get_table_size_4.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0107-udws_nvm2_list_objects_in_file_1482.bin",
+            "object_ordinal": 3
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 4 4",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 71617,
+          "known_name": "DSID_SNMP_STACK_ENABLE_DISABLE",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 1482,
+          "file_table_index": 4,
+          "object_index": 4,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0006-udws_nvm2_get_table_size_4.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0107-udws_nvm2_list_objects_in_file_1482.bin",
+            "object_ordinal": 4
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 4 5",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 77591,
+          "known_name": "DSID_SNMP_SYS_LOCATION",
+          "nvm_type": "NVM_REC_ARRAY",
+          "expected_file_id": 1482,
+          "file_table_index": 4,
+          "object_index": 5,
+          "expected_kind": 5,
+          "value_interpretation": "array element count, not array contents",
+          "bound_source": "references/physical-18-storage-details/0006-udws_nvm2_get_table_size_4.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0107-udws_nvm2_list_objects_in_file_1482.bin",
+            "object_ordinal": 5
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 4 6",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 77601,
+          "known_name": "DSID_SNMP_ENABLE_ENGINE_EARLY_WARMUP",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 1482,
+          "file_table_index": 4,
+          "object_index": 6,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0006-udws_nvm2_get_table_size_4.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0107-udws_nvm2_list_objects_in_file_1482.bin",
+            "object_ordinal": 6
+          }
+        }
+      ],
+      "review_source": "references/storage_query_review.json",
+      "plan_index": 6,
+      "index": 6,
+      "started_utc": "2026-10-29T19:26:59.583763+00:00",
+      "response_file": "0006-udws_nvm2_get_contents_4_3_nvm2_get_contents_4_4_nvm2_get_content.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:27:00.375256+00:00",
+      "elapsed_seconds": 0.79,
+      "response_bytes": 210,
+      "response_sha256": "0a37f8cf3dda78ac496f31c239fccdd3637c797b2d88f8fab58428a87ad89ebc",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "parsed": [
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 71598,
+            "file_id": 1482,
+            "kind": 2,
+            "table_index": 4,
+            "object_index": 3,
+            "wire_value": 1,
+            "value": 1,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 71617,
+            "file_id": 1482,
+            "kind": 2,
+            "table_index": 4,
+            "object_index": 4,
+            "wire_value": 1,
+            "value": 1,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 77591,
+            "file_id": 1482,
+            "kind": 5,
+            "table_index": 4,
+            "object_index": 5,
+            "wire_value": 1,
+            "value": 1,
+            "value_interpretation": "array_count"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 77601,
+            "file_id": 1482,
+            "kind": 2,
+            "table_index": 4,
+            "object_index": 6,
+            "wire_value": 2,
+            "value": 2,
+            "value_interpretation": "scalar"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "command": "udws \"nvm2.get_contents 5 0; nvm2.get_contents 6 0; nvm2.get_contents 6 1; nvm2.get_contents 7 0;\"",
+      "classification": "reviewed-information-query",
+      "phase": "nvm_contents",
+      "purpose": "Read bounded NVM scalar values or array counts.",
+      "timeout": 60,
+      "uart_line_bytes": 98,
+      "udw_count": 4,
+      "expected": [
+        {
+          "udw_command": "nvm2.get_contents 5 0",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 77191,
+          "known_name": "DSID_DPU_OVERRIDE",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 418,
+          "file_table_index": 5,
+          "object_index": 0,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0007-udws_nvm2_get_table_size_5.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0108-udws_nvm2_list_objects_in_file_418.bin",
+            "object_ordinal": 0
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 6 0",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 65625,
+          "known_name": "DSID_FEATURE_DUPLEX",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 262,
+          "file_table_index": 6,
+          "object_index": 0,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0008-udws_nvm2_get_table_size_6.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0109-udws_nvm2_list_objects_in_file_262.bin",
+            "object_ordinal": 0
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 6 1",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 66326,
+          "known_name": "DSID_FEATURE_MDS_OVERRIDE",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 262,
+          "file_table_index": 6,
+          "object_index": 1,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0008-udws_nvm2_get_table_size_6.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0109-udws_nvm2_list_objects_in_file_262.bin",
+            "object_ordinal": 1
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 7 0",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 65647,
+          "known_name": "DSID_TOTAL_CAL_PAGE_COUNT",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 263,
+          "file_table_index": 7,
+          "object_index": 0,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0009-udws_nvm2_get_table_size_7.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0110-udws_nvm2_list_objects_in_file_263.bin",
+            "object_ordinal": 0
+          }
+        }
+      ],
+      "review_source": "references/storage_query_review.json",
+      "plan_index": 7,
+      "index": 7,
+      "started_utc": "2026-10-29T19:27:00.377264+00:00",
+      "response_file": "0007-udws_nvm2_get_contents_5_0_nvm2_get_contents_6_0_nvm2_get_content.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:27:01.108893+00:00",
+      "elapsed_seconds": 0.73,
+      "response_bytes": 206,
+      "response_sha256": "56f3679b704b905a085d46b0e01186448e50d4676fbf82ee6da948a0b19b15d5",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "parsed": [
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 77191,
+            "file_id": 418,
+            "kind": 2,
+            "table_index": 5,
+            "object_index": 0,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 65625,
+            "file_id": 262,
+            "kind": 2,
+            "table_index": 6,
+            "object_index": 0,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 66326,
+            "file_id": 262,
+            "kind": 2,
+            "table_index": 6,
+            "object_index": 1,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 65647,
+            "file_id": 263,
+            "kind": 2,
+            "table_index": 7,
+            "object_index": 0,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "command": "udws \"nvm2.get_contents 7 1; nvm2.get_contents 7 2; nvm2.get_contents 7 3; nvm2.get_contents 7 4;\"",
+      "classification": "reviewed-information-query",
+      "phase": "nvm_contents",
+      "purpose": "Read bounded NVM scalar values or array counts.",
+      "timeout": 60,
+      "uart_line_bytes": 98,
+      "udw_count": 4,
+      "expected": [
+        {
+          "udw_command": "nvm2.get_contents 7 1",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 70985,
+          "known_name": "DSID_TOTAL_CD_PRINT_COUNT",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 263,
+          "file_table_index": 7,
+          "object_index": 1,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0009-udws_nvm2_get_table_size_7.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0110-udws_nvm2_list_objects_in_file_263.bin",
+            "object_ordinal": 1
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 7 2",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 65708,
+          "known_name": "DSID_MDS_COUNT_PLAIN",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 263,
+          "file_table_index": 7,
+          "object_index": 2,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0009-udws_nvm2_get_table_size_7.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0110-udws_nvm2_list_objects_in_file_263.bin",
+            "object_ordinal": 2
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 7 3",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 65709,
+          "known_name": "DSID_MDS_COUNT_SPECIAL",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 263,
+          "file_table_index": 7,
+          "object_index": 3,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0009-udws_nvm2_get_table_size_7.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0110-udws_nvm2_list_objects_in_file_263.bin",
+            "object_ordinal": 3
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 7 4",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 65710,
+          "known_name": "DSID_MDS_COUNT_PHOTO",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 263,
+          "file_table_index": 7,
+          "object_index": 4,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0009-udws_nvm2_get_table_size_7.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0110-udws_nvm2_list_objects_in_file_263.bin",
+            "object_ordinal": 4
+          }
+        }
+      ],
+      "review_source": "references/storage_query_review.json",
+      "plan_index": 8,
+      "index": 8,
+      "started_utc": "2026-10-29T19:27:01.111288+00:00",
+      "response_file": "0008-udws_nvm2_get_contents_7_1_nvm2_get_contents_7_2_nvm2_get_content.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:27:01.893552+00:00",
+      "elapsed_seconds": 0.781,
+      "response_bytes": 206,
+      "response_sha256": "0e0667dbda2a3d979d1b835784ff7ebc6c83d56ed8558c1d8be721d8e9a86a06",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "parsed": [
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 70985,
+            "file_id": 263,
+            "kind": 2,
+            "table_index": 7,
+            "object_index": 1,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 65708,
+            "file_id": 263,
+            "kind": 2,
+            "table_index": 7,
+            "object_index": 2,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 65709,
+            "file_id": 263,
+            "kind": 2,
+            "table_index": 7,
+            "object_index": 3,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 65710,
+            "file_id": 263,
+            "kind": 2,
+            "table_index": 7,
+            "object_index": 4,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "command": "udws \"nvm2.get_contents 7 5; nvm2.get_contents 8 0; nvm2.get_contents 9 0; nvm2.get_contents 9 1;\"",
+      "classification": "reviewed-information-query",
+      "phase": "nvm_contents",
+      "purpose": "Read bounded NVM scalar values or array counts.",
+      "timeout": 60,
+      "uart_line_bytes": 98,
+      "udw_count": 4,
+      "expected": [
+        {
+          "udw_command": "nvm2.get_contents 7 5",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 65711,
+          "known_name": "DSID_MDS_COUNT_TRANSPARENCY",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 263,
+          "file_table_index": 7,
+          "object_index": 5,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0009-udws_nvm2_get_table_size_7.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0110-udws_nvm2_list_objects_in_file_263.bin",
+            "object_ordinal": 5
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 8 0",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 71013,
+          "known_name": "DSID_REPORTS_FAX_IMAGE_ENABLED",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 1185,
+          "file_table_index": 8,
+          "object_index": 0,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0010-udws_nvm2_get_table_size_8.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0111-udws_nvm2_list_objects_in_file_1185.bin",
+            "object_ordinal": 0
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 9 0",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 72060,
+          "known_name": "DSID_SAND_MDNS_HIGHEST_PRIO_SERVICE_PRIVATE",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 482,
+          "file_table_index": 9,
+          "object_index": 0,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0011-udws_nvm2_get_table_size_9.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0112-udws_nvm2_list_objects_in_file_482.bin",
+            "object_ordinal": 0
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 9 1",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 68412,
+          "known_name": "DSID_SAND_MDNS_DOMAIN_NAME",
+          "nvm_type": "NVM_REC_ARRAY",
+          "expected_file_id": 482,
+          "file_table_index": 9,
+          "object_index": 1,
+          "expected_kind": 5,
+          "value_interpretation": "array element count, not array contents",
+          "bound_source": "references/physical-18-storage-details/0011-udws_nvm2_get_table_size_9.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0112-udws_nvm2_list_objects_in_file_482.bin",
+            "object_ordinal": 1
+          }
+        }
+      ],
+      "review_source": "references/storage_query_review.json",
+      "plan_index": 9,
+      "index": 9,
+      "started_utc": "2026-10-29T19:27:01.896094+00:00",
+      "response_file": "0009-udws_nvm2_get_contents_7_5_nvm2_get_contents_8_0_nvm2_get_content.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:27:02.665092+00:00",
+      "elapsed_seconds": 0.768,
+      "response_bytes": 207,
+      "response_sha256": "4a916b0112910c86ea1fdcb8d5c846791a8557b586d3c186f3e8f49997f8f40b",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "parsed": [
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 65711,
+            "file_id": 263,
+            "kind": 2,
+            "table_index": 7,
+            "object_index": 5,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 71013,
+            "file_id": 1185,
+            "kind": 2,
+            "table_index": 8,
+            "object_index": 0,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 72060,
+            "file_id": 482,
+            "kind": 2,
+            "table_index": 9,
+            "object_index": 0,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 68412,
+            "file_id": 482,
+            "kind": 5,
+            "table_index": 9,
+            "object_index": 1,
+            "wire_value": 1,
+            "value": 1,
+            "value_interpretation": "array_count"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "command": "udws \"nvm2.get_contents 9 2; nvm2.get_contents 9 3; nvm2.get_contents 9 4; nvm2.get_contents 10 0;\"",
+      "classification": "reviewed-information-query",
+      "phase": "nvm_contents",
+      "purpose": "Read bounded NVM scalar values or array counts.",
+      "timeout": 60,
+      "uart_line_bytes": 99,
+      "udw_count": 4,
+      "expected": [
+        {
+          "udw_command": "nvm2.get_contents 9 2",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 68414,
+          "known_name": "DSID_SAND_MDNS_SERVICE_NAME_PRIVATE",
+          "nvm_type": "NVM_REC_ARRAY",
+          "expected_file_id": 482,
+          "file_table_index": 9,
+          "object_index": 2,
+          "expected_kind": 5,
+          "value_interpretation": "array element count, not array contents",
+          "bound_source": "references/physical-18-storage-details/0011-udws_nvm2_get_table_size_9.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0112-udws_nvm2_list_objects_in_file_482.bin",
+            "object_ordinal": 2
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 9 3",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 68744,
+          "known_name": "DSID_SAND_MDNS_CTRL",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 482,
+          "file_table_index": 9,
+          "object_index": 3,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0011-udws_nvm2_get_table_size_9.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0112-udws_nvm2_list_objects_in_file_482.bin",
+            "object_ordinal": 3
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 9 4",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 78436,
+          "known_name": "DSID_AIRPRINT_CTRL",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 482,
+          "file_table_index": 9,
+          "object_index": 4,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0011-udws_nvm2_get_table_size_9.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0112-udws_nvm2_list_objects_in_file_482.bin",
+            "object_ordinal": 4
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 10 0",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 77599,
+          "known_name": "DSID_CHLK_EPOCH_TIME",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 2458,
+          "file_table_index": 10,
+          "object_index": 0,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0012-udws_nvm2_get_table_size_10.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0113-udws_nvm2_list_objects_in_file_2458.bin",
+            "object_ordinal": 0
+          }
+        }
+      ],
+      "review_source": "references/storage_query_review.json",
+      "plan_index": 10,
+      "index": 10,
+      "started_utc": "2026-10-29T19:27:02.667553+00:00",
+      "response_file": "0010-udws_nvm2_get_contents_9_2_nvm2_get_contents_9_3_nvm2_get_content.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:27:03.468495+00:00",
+      "elapsed_seconds": 0.8,
+      "response_bytes": 208,
+      "response_sha256": "1365d4f05ce0ac03461931ee0426250b4d6a6ba90b1fab73ffa4f904dd58ed65",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "parsed": [
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 68414,
+            "file_id": 482,
+            "kind": 5,
+            "table_index": 9,
+            "object_index": 2,
+            "wire_value": 1,
+            "value": 1,
+            "value_interpretation": "array_count"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 68744,
+            "file_id": 482,
+            "kind": 2,
+            "table_index": 9,
+            "object_index": 3,
+            "wire_value": 1,
+            "value": 1,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 78436,
+            "file_id": 482,
+            "kind": 2,
+            "table_index": 9,
+            "object_index": 4,
+            "wire_value": 1,
+            "value": 1,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 77599,
+            "file_id": 2458,
+            "kind": 2,
+            "table_index": 10,
+            "object_index": 0,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "command": "udws \"nvm2.get_contents 10 1; nvm2.get_contents 10 2; nvm2.get_contents 10 3; nvm2.get_contents 10 4;\"",
+      "classification": "reviewed-information-query",
+      "phase": "nvm_contents",
+      "purpose": "Read bounded NVM scalar values or array counts.",
+      "timeout": 60,
+      "uart_line_bytes": 102,
+      "udw_count": 4,
+      "expected": [
+        {
+          "udw_command": "nvm2.get_contents 10 1",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 77600,
+          "known_name": "DSID_CHLK_UPTIME",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 2458,
+          "file_table_index": 10,
+          "object_index": 1,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0012-udws_nvm2_get_table_size_10.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0113-udws_nvm2_list_objects_in_file_2458.bin",
+            "object_ordinal": 1
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 10 2",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 77602,
+          "known_name": "DSID_CHLK_REPORT_PERIOD",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 2458,
+          "file_table_index": 10,
+          "object_index": 2,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0012-udws_nvm2_get_table_size_10.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0113-udws_nvm2_list_objects_in_file_2458.bin",
+            "object_ordinal": 2
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 10 3",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 77603,
+          "known_name": "DSID_CHLK_REPORT_TRIGGERS",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 2458,
+          "file_table_index": 10,
+          "object_index": 3,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0012-udws_nvm2_get_table_size_10.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0113-udws_nvm2_list_objects_in_file_2458.bin",
+            "object_ordinal": 3
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 10 4",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 77883,
+          "known_name": "DSID_CHLK_STATES",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 2458,
+          "file_table_index": 10,
+          "object_index": 4,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0012-udws_nvm2_get_table_size_10.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0113-udws_nvm2_list_objects_in_file_2458.bin",
+            "object_ordinal": 4
+          }
+        }
+      ],
+      "review_source": "references/storage_query_review.json",
+      "plan_index": 11,
+      "index": 11,
+      "started_utc": "2026-10-29T19:27:03.471027+00:00",
+      "response_file": "0011-udws_nvm2_get_contents_10_1_nvm2_get_contents_10_2_nvm2_get_conte.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:27:04.277801+00:00",
+      "elapsed_seconds": 0.805,
+      "response_bytes": 219,
+      "response_sha256": "156a08f5addd3066010ac8be70efba4e12c31350d4e659f340ac9d10939236b3",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "parsed": [
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 77600,
+            "file_id": 2458,
+            "kind": 2,
+            "table_index": 10,
+            "object_index": 1,
+            "wire_value": 2894,
+            "value": 2894,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 77602,
+            "file_id": 2458,
+            "kind": 2,
+            "table_index": 10,
+            "object_index": 2,
+            "wire_value": 720,
+            "value": 720,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 77603,
+            "file_id": 2458,
+            "kind": 2,
+            "table_index": 10,
+            "object_index": 3,
+            "wire_value": 1,
+            "value": 1,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 77883,
+            "file_id": 2458,
+            "kind": 2,
+            "table_index": 10,
+            "object_index": 4,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "command": "udws \"nvm2.get_contents 11 0; nvm2.get_contents 11 1; nvm2.get_contents 12 0; nvm2.get_contents 12 1;\"",
+      "classification": "reviewed-information-query",
+      "phase": "nvm_contents",
+      "purpose": "Read bounded NVM scalar values or array counts.",
+      "timeout": 60,
+      "uart_line_bytes": 102,
+      "udw_count": 4,
+      "expected": [
+        {
+          "udw_command": "nvm2.get_contents 11 0",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 78938,
+          "known_name": "DSID_CNTR_PAGES_PRINT_GCP_CLOUD",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 2778,
+          "file_table_index": 11,
+          "object_index": 0,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0013-udws_nvm2_get_table_size_11.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0114-udws_nvm2_list_objects_in_file_2778.bin",
+            "object_ordinal": 0
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 11 1",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 78939,
+          "known_name": "DSID_CNTR_PAGES_PRINT_GCP_LOCAL",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 2778,
+          "file_table_index": 11,
+          "object_index": 1,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0013-udws_nvm2_get_table_size_11.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0114-udws_nvm2_list_objects_in_file_2778.bin",
+            "object_ordinal": 1
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 12 0",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 78589,
+          "known_name": "DSID_GCP_LOCAL_DISCOVERY_ENABLED",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 2723,
+          "file_table_index": 12,
+          "object_index": 0,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0014-udws_nvm2_get_table_size_12.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0115-udws_nvm2_list_objects_in_file_2723.bin",
+            "object_ordinal": 0
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 12 1",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 78590,
+          "known_name": "DSID_GCP_ACCESS_TOKEN_ENABLED",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 2723,
+          "file_table_index": 12,
+          "object_index": 1,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0014-udws_nvm2_get_table_size_12.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0115-udws_nvm2_list_objects_in_file_2723.bin",
+            "object_ordinal": 1
+          }
+        }
+      ],
+      "review_source": "references/storage_query_review.json",
+      "plan_index": 12,
+      "index": 12,
+      "started_utc": "2026-10-29T19:27:04.280451+00:00",
+      "response_file": "0012-udws_nvm2_get_contents_11_0_nvm2_get_contents_11_1_nvm2_get_conte.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:27:05.067044+00:00",
+      "elapsed_seconds": 0.785,
+      "response_bytes": 214,
+      "response_sha256": "070e524750822046254c0e35761cfa1f37c12415f0139984531ee58f39ec1acd",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "parsed": [
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 78938,
+            "file_id": 2778,
+            "kind": 2,
+            "table_index": 11,
+            "object_index": 0,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 78939,
+            "file_id": 2778,
+            "kind": 2,
+            "table_index": 11,
+            "object_index": 1,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 78589,
+            "file_id": 2723,
+            "kind": 2,
+            "table_index": 12,
+            "object_index": 0,
+            "wire_value": 1,
+            "value": 1,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 78590,
+            "file_id": 2723,
+            "kind": 2,
+            "table_index": 12,
+            "object_index": 1,
+            "wire_value": 1,
+            "value": 1,
+            "value_interpretation": "scalar"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "command": "udws \"nvm2.get_contents 12 2; nvm2.get_contents 12 3; nvm2.get_contents 12 4; nvm2.get_contents 12 5;\"",
+      "classification": "reviewed-information-query",
+      "phase": "nvm_contents",
+      "purpose": "Read bounded NVM scalar values or array counts.",
+      "timeout": 60,
+      "uart_line_bytes": 102,
+      "udw_count": 4,
+      "expected": [
+        {
+          "udw_command": "nvm2.get_contents 12 2",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 78591,
+          "known_name": "DSID_GCP_LOCAL_PRINT_ENABLED",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 2723,
+          "file_table_index": 12,
+          "object_index": 2,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0014-udws_nvm2_get_table_size_12.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0115-udws_nvm2_list_objects_in_file_2723.bin",
+            "object_ordinal": 2
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 12 3",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 78592,
+          "known_name": "DSID_GCP_CONVERSION_PRINT_ENABLED",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 2723,
+          "file_table_index": 12,
+          "object_index": 3,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0014-udws_nvm2_get_table_size_12.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0115-udws_nvm2_list_objects_in_file_2723.bin",
+            "object_ordinal": 3
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 12 4",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 78594,
+          "known_name": "DSID_GCP_REGISTRATION_STATE",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 2723,
+          "file_table_index": 12,
+          "object_index": 4,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0014-udws_nvm2_get_table_size_12.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0115-udws_nvm2_list_objects_in_file_2723.bin",
+            "object_ordinal": 4
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 12 5",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 78593,
+          "known_name": "DSID_GCP_XMPP_TIMEOUT",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 2723,
+          "file_table_index": 12,
+          "object_index": 5,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0014-udws_nvm2_get_table_size_12.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0115-udws_nvm2_list_objects_in_file_2723.bin",
+            "object_ordinal": 5
+          }
+        }
+      ],
+      "review_source": "references/storage_query_review.json",
+      "plan_index": 13,
+      "index": 13,
+      "started_utc": "2026-10-29T19:27:05.069833+00:00",
+      "response_file": "0013-udws_nvm2_get_contents_12_2_nvm2_get_contents_12_3_nvm2_get_conte.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:27:05.874639+00:00",
+      "elapsed_seconds": 0.803,
+      "response_bytes": 216,
+      "response_sha256": "1ad1d54028efbcdfda2e4b971bfa7a225e033bee4aa4ce6e75cc34ed090b7e34",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "parsed": [
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 78591,
+            "file_id": 2723,
+            "kind": 2,
+            "table_index": 12,
+            "object_index": 2,
+            "wire_value": 1,
+            "value": 1,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 78592,
+            "file_id": 2723,
+            "kind": 2,
+            "table_index": 12,
+            "object_index": 3,
+            "wire_value": 1,
+            "value": 1,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 78594,
+            "file_id": 2723,
+            "kind": 2,
+            "table_index": 12,
+            "object_index": 4,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 78593,
+            "file_id": 2723,
+            "kind": 2,
+            "table_index": 12,
+            "object_index": 5,
+            "wire_value": 300,
+            "value": 300,
+            "value_interpretation": "scalar"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "command": "udws \"nvm2.get_contents 12 6; nvm2.get_contents 12 7; nvm2.get_contents 12 8; nvm2.get_contents 12 9;\"",
+      "classification": "reviewed-information-query",
+      "phase": "nvm_contents",
+      "purpose": "Read bounded NVM scalar values or array counts.",
+      "timeout": 60,
+      "uart_line_bytes": 102,
+      "udw_count": 4,
+      "expected": [
+        {
+          "udw_command": "nvm2.get_contents 12 6",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 78859,
+          "known_name": "DSID_GCP_ADMIN_ENABLED",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 2723,
+          "file_table_index": 12,
+          "object_index": 6,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0014-udws_nvm2_get_table_size_12.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0115-udws_nvm2_list_objects_in_file_2723.bin",
+            "object_ordinal": 6
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 12 7",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 78585,
+          "known_name": "DSID_GCP_PRINTER_ID",
+          "nvm_type": "NVM_REC_ARRAY",
+          "expected_file_id": 2723,
+          "file_table_index": 12,
+          "object_index": 7,
+          "expected_kind": 5,
+          "value_interpretation": "array element count, not array contents",
+          "bound_source": "references/physical-18-storage-details/0014-udws_nvm2_get_table_size_12.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0115-udws_nvm2_list_objects_in_file_2723.bin",
+            "object_ordinal": 7
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 12 8",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 78586,
+          "known_name": "DSID_GCP_XMPP_JID",
+          "nvm_type": "NVM_REC_ARRAY",
+          "expected_file_id": 2723,
+          "file_table_index": 12,
+          "object_index": 8,
+          "expected_kind": 5,
+          "value_interpretation": "array element count, not array contents",
+          "bound_source": "references/physical-18-storage-details/0014-udws_nvm2_get_table_size_12.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0115-udws_nvm2_list_objects_in_file_2723.bin",
+            "object_ordinal": 8
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 12 9",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 78587,
+          "known_name": "DSID_GCP_REFRESH_TOKEN",
+          "nvm_type": "NVM_REC_ARRAY",
+          "expected_file_id": 2723,
+          "file_table_index": 12,
+          "object_index": 9,
+          "expected_kind": 5,
+          "value_interpretation": "array element count, not array contents",
+          "bound_source": "references/physical-18-storage-details/0014-udws_nvm2_get_table_size_12.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0115-udws_nvm2_list_objects_in_file_2723.bin",
+            "object_ordinal": 9
+          }
+        }
+      ],
+      "review_source": "references/storage_query_review.json",
+      "plan_index": 14,
+      "index": 14,
+      "started_utc": "2026-10-29T19:27:05.876869+00:00",
+      "response_file": "0014-udws_nvm2_get_contents_12_6_nvm2_get_contents_12_7_nvm2_get_conte.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:27:06.609324+00:00",
+      "elapsed_seconds": 0.731,
+      "response_bytes": 214,
+      "response_sha256": "289c4de9d5c2155df7d925f93ba9fff9e108edd363dc8b5919f9db05a3e06091",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "parsed": [
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 78859,
+            "file_id": 2723,
+            "kind": 2,
+            "table_index": 12,
+            "object_index": 6,
+            "wire_value": 1,
+            "value": 1,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 78585,
+            "file_id": 2723,
+            "kind": 5,
+            "table_index": 12,
+            "object_index": 7,
+            "wire_value": 1,
+            "value": 1,
+            "value_interpretation": "array_count"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 78586,
+            "file_id": 2723,
+            "kind": 5,
+            "table_index": 12,
+            "object_index": 8,
+            "wire_value": 1,
+            "value": 1,
+            "value_interpretation": "array_count"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 78587,
+            "file_id": 2723,
+            "kind": 5,
+            "table_index": 12,
+            "object_index": 9,
+            "wire_value": 1,
+            "value": 1,
+            "value_interpretation": "array_count"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "command": "udws \"nvm2.get_contents 12 10; nvm2.get_contents 12 11; nvm2.get_contents 13 0; nvm2.get_contents 13 1;\"",
+      "classification": "reviewed-information-query",
+      "phase": "nvm_contents",
+      "purpose": "Read bounded NVM scalar values or array counts.",
+      "timeout": 60,
+      "uart_line_bytes": 104,
+      "udw_count": 4,
+      "expected": [
+        {
+          "udw_command": "nvm2.get_contents 12 10",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 78588,
+          "known_name": "DSID_GCP_USER_EMAIL",
+          "nvm_type": "NVM_REC_ARRAY",
+          "expected_file_id": 2723,
+          "file_table_index": 12,
+          "object_index": 10,
+          "expected_kind": 5,
+          "value_interpretation": "array element count, not array contents",
+          "bound_source": "references/physical-18-storage-details/0014-udws_nvm2_get_table_size_12.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0115-udws_nvm2_list_objects_in_file_2723.bin",
+            "object_ordinal": 10
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 12 11",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 78917,
+          "known_name": "DSID_GCP_DISPLAY_NAME",
+          "nvm_type": "NVM_REC_ARRAY",
+          "expected_file_id": 2723,
+          "file_table_index": 12,
+          "object_index": 11,
+          "expected_kind": 5,
+          "value_interpretation": "array element count, not array contents",
+          "bound_source": "references/physical-18-storage-details/0014-udws_nvm2_get_table_size_12.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0115-udws_nvm2_list_objects_in_file_2723.bin",
+            "object_ordinal": 11
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 13 0",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 78615,
+          "known_name": "DSID_EWS_LANGUAGE_SOURCE",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 1819,
+          "file_table_index": 13,
+          "object_index": 0,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0015-udws_nvm2_get_table_size_13.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0116-udws_nvm2_list_objects_in_file_1819.bin",
+            "object_ordinal": 0
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 13 1",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 78616,
+          "known_name": "DSID_EWS_LANGUAGE",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 1819,
+          "file_table_index": 13,
+          "object_index": 1,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0015-udws_nvm2_get_table_size_13.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0116-udws_nvm2_list_objects_in_file_1819.bin",
+            "object_ordinal": 1
+          }
+        }
+      ],
+      "review_source": "references/storage_query_review.json",
+      "plan_index": 15,
+      "index": 15,
+      "started_utc": "2026-10-29T19:27:06.612625+00:00",
+      "response_file": "0015-udws_nvm2_get_contents_12_10_nvm2_get_contents_12_11_nvm2_get_con.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:27:07.427755+00:00",
+      "elapsed_seconds": 0.814,
+      "response_bytes": 216,
+      "response_sha256": "f3ede604bf443b4b65daab43f3f68e36f478bc7551437ab03efec29be083c2e4",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "parsed": [
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 78588,
+            "file_id": 2723,
+            "kind": 5,
+            "table_index": 12,
+            "object_index": 10,
+            "wire_value": 1,
+            "value": 1,
+            "value_interpretation": "array_count"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 78917,
+            "file_id": 2723,
+            "kind": 5,
+            "table_index": 12,
+            "object_index": 11,
+            "wire_value": 1,
+            "value": 1,
+            "value_interpretation": "array_count"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 78615,
+            "file_id": 1819,
+            "kind": 2,
+            "table_index": 13,
+            "object_index": 0,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 78616,
+            "file_id": 1819,
+            "kind": 2,
+            "table_index": 13,
+            "object_index": 1,
+            "wire_value": 1,
+            "value": 1,
+            "value_interpretation": "scalar"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "command": "udws \"nvm2.get_contents 14 0; nvm2.get_contents 14 1; nvm2.get_contents 15 0; nvm2.get_contents 16 0;\"",
+      "classification": "reviewed-information-query",
+      "phase": "nvm_contents",
+      "purpose": "Read bounded NVM scalar values or array counts.",
+      "timeout": 60,
+      "uart_line_bytes": 102,
+      "udw_count": 4,
+      "expected": [
+        {
+          "udw_command": "nvm2.get_contents 14 0",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 80925,
+          "known_name": "DSID_CNTR_OOBE_SETUPBY_OS",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 3146,
+          "file_table_index": 14,
+          "object_index": 0,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0016-udws_nvm2_get_table_size_14.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0117-udws_nvm2_list_objects_in_file_3146.bin",
+            "object_ordinal": 0
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 14 1",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 80926,
+          "known_name": "DSID_CNTR_OOBE_SETUPBY_APP",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 3146,
+          "file_table_index": 14,
+          "object_index": 1,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0016-udws_nvm2_get_table_size_14.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0117-udws_nvm2_list_objects_in_file_3146.bin",
+            "object_ordinal": 1
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 15 0",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 75340,
+          "known_name": "DSID_CNTR_PAGES_PRINT_CP",
+          "nvm_type": "NVM_SIM_SIGNED",
+          "expected_file_id": 2111,
+          "file_table_index": 15,
+          "object_index": 0,
+          "expected_kind": 1,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0017-udws_nvm2_get_table_size_15.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0118-udws_nvm2_list_objects_in_file_2111.bin",
+            "object_ordinal": 0
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 16 0",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 75422,
+          "known_name": "DSID_IPP_PRINTER_INFO",
+          "nvm_type": "NVM_REC_ARRAY",
+          "expected_file_id": 2134,
+          "file_table_index": 16,
+          "object_index": 0,
+          "expected_kind": 5,
+          "value_interpretation": "array element count, not array contents",
+          "bound_source": "references/physical-18-storage-details/0018-udws_nvm2_get_table_size_16.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0119-udws_nvm2_list_objects_in_file_2134.bin",
+            "object_ordinal": 0
+          }
+        }
+      ],
+      "review_source": "references/storage_query_review.json",
+      "plan_index": 16,
+      "index": 16,
+      "started_utc": "2026-10-29T19:27:07.431012+00:00",
+      "response_file": "0016-udws_nvm2_get_contents_14_0_nvm2_get_contents_14_1_nvm2_get_conte.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:27:08.242497+00:00",
+      "elapsed_seconds": 0.809,
+      "response_bytes": 214,
+      "response_sha256": "af08376e7323a53c2d165627f475d3b44f2799e9e3ecea36f36d999a0ce57a7d",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "parsed": [
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 80925,
+            "file_id": 3146,
+            "kind": 2,
+            "table_index": 14,
+            "object_index": 0,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 80926,
+            "file_id": 3146,
+            "kind": 2,
+            "table_index": 14,
+            "object_index": 1,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 75340,
+            "file_id": 2111,
+            "kind": 1,
+            "table_index": 15,
+            "object_index": 0,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 75422,
+            "file_id": 2134,
+            "kind": 5,
+            "table_index": 16,
+            "object_index": 0,
+            "wire_value": 1,
+            "value": 1,
+            "value_interpretation": "array_count"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "command": "udws \"nvm2.get_contents 16 1; nvm2.get_contents 16 2; nvm2.get_contents 16 3; nvm2.get_contents 16 4;\"",
+      "classification": "reviewed-information-query",
+      "phase": "nvm_contents",
+      "purpose": "Read bounded NVM scalar values or array counts.",
+      "timeout": 60,
+      "uart_line_bytes": 102,
+      "udw_count": 4,
+      "expected": [
+        {
+          "udw_command": "nvm2.get_contents 16 1",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 75420,
+          "known_name": "DSID_IPP_PRINTER_MORE_INFO",
+          "nvm_type": "NVM_REC_ARRAY",
+          "expected_file_id": 2134,
+          "file_table_index": 16,
+          "object_index": 1,
+          "expected_kind": 5,
+          "value_interpretation": "array element count, not array contents",
+          "bound_source": "references/physical-18-storage-details/0018-udws_nvm2_get_table_size_16.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0119-udws_nvm2_list_objects_in_file_2134.bin",
+            "object_ordinal": 1
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 16 2",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 77618,
+          "known_name": "DSID_CNTR_PAGES_AP_MACOS_DOC",
+          "nvm_type": "NVM_SIM_SIGNED",
+          "expected_file_id": 2134,
+          "file_table_index": 16,
+          "object_index": 2,
+          "expected_kind": 1,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0018-udws_nvm2_get_table_size_16.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0119-udws_nvm2_list_objects_in_file_2134.bin",
+            "object_ordinal": 2
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 16 3",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 77619,
+          "known_name": "DSID_CNTR_PAGES_AP_IOS_DOC",
+          "nvm_type": "NVM_SIM_SIGNED",
+          "expected_file_id": 2134,
+          "file_table_index": 16,
+          "object_index": 3,
+          "expected_kind": 1,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0018-udws_nvm2_get_table_size_16.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0119-udws_nvm2_list_objects_in_file_2134.bin",
+            "object_ordinal": 3
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 16 4",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 77620,
+          "known_name": "DSID_CNTR_PAGES_AP_MACOS_PHOTO",
+          "nvm_type": "NVM_SIM_SIGNED",
+          "expected_file_id": 2134,
+          "file_table_index": 16,
+          "object_index": 4,
+          "expected_kind": 1,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0018-udws_nvm2_get_table_size_16.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0119-udws_nvm2_list_objects_in_file_2134.bin",
+            "object_ordinal": 4
+          }
+        }
+      ],
+      "review_source": "references/storage_query_review.json",
+      "plan_index": 17,
+      "index": 17,
+      "started_utc": "2026-10-29T19:27:08.245712+00:00",
+      "response_file": "0017-udws_nvm2_get_contents_16_1_nvm2_get_contents_16_2_nvm2_get_conte.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:27:09.025850+00:00",
+      "elapsed_seconds": 0.778,
+      "response_bytes": 214,
+      "response_sha256": "738c3f9941faea16394a0d66605275e5f55ba8157507d3211fb8088df14ee44e",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "parsed": [
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 75420,
+            "file_id": 2134,
+            "kind": 5,
+            "table_index": 16,
+            "object_index": 1,
+            "wire_value": 1,
+            "value": 1,
+            "value_interpretation": "array_count"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 77618,
+            "file_id": 2134,
+            "kind": 1,
+            "table_index": 16,
+            "object_index": 2,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 77619,
+            "file_id": 2134,
+            "kind": 1,
+            "table_index": 16,
+            "object_index": 3,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 77620,
+            "file_id": 2134,
+            "kind": 1,
+            "table_index": 16,
+            "object_index": 4,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "command": "udws \"nvm2.get_contents 16 5; nvm2.get_contents 16 6; nvm2.get_contents 16 7; nvm2.get_contents 16 8;\"",
+      "classification": "reviewed-information-query",
+      "phase": "nvm_contents",
+      "purpose": "Read bounded NVM scalar values or array counts.",
+      "timeout": 60,
+      "uart_line_bytes": 102,
+      "udw_count": 4,
+      "expected": [
+        {
+          "udw_command": "nvm2.get_contents 16 5",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 77621,
+          "known_name": "DSID_CNTR_PAGES_AP_IOS_PHOTO",
+          "nvm_type": "NVM_SIM_SIGNED",
+          "expected_file_id": 2134,
+          "file_table_index": 16,
+          "object_index": 5,
+          "expected_kind": 1,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0018-udws_nvm2_get_table_size_16.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0119-udws_nvm2_list_objects_in_file_2134.bin",
+            "object_ordinal": 5
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 16 6",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 77622,
+          "known_name": "DSID_CNTR_PAGES_DROID_DOC",
+          "nvm_type": "NVM_SIM_SIGNED",
+          "expected_file_id": 2134,
+          "file_table_index": 16,
+          "object_index": 6,
+          "expected_kind": 1,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0018-udws_nvm2_get_table_size_16.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0119-udws_nvm2_list_objects_in_file_2134.bin",
+            "object_ordinal": 6
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 16 7",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 77623,
+          "known_name": "DSID_CNTR_PAGES_DROID_PHOTO",
+          "nvm_type": "NVM_SIM_SIGNED",
+          "expected_file_id": 2134,
+          "file_table_index": 16,
+          "object_index": 7,
+          "expected_kind": 1,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0018-udws_nvm2_get_table_size_16.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0119-udws_nvm2_list_objects_in_file_2134.bin",
+            "object_ordinal": 7
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 16 8",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 77624,
+          "known_name": "DSID_CNTR_PAGES_SAMSUNG_ALL",
+          "nvm_type": "NVM_SIM_SIGNED",
+          "expected_file_id": 2134,
+          "file_table_index": 16,
+          "object_index": 8,
+          "expected_kind": 1,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0018-udws_nvm2_get_table_size_16.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0119-udws_nvm2_list_objects_in_file_2134.bin",
+            "object_ordinal": 8
+          }
+        }
+      ],
+      "review_source": "references/storage_query_review.json",
+      "plan_index": 18,
+      "index": 18,
+      "started_utc": "2026-10-29T19:27:09.029512+00:00",
+      "response_file": "0018-udws_nvm2_get_contents_16_5_nvm2_get_contents_16_6_nvm2_get_conte.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:27:09.834073+00:00",
+      "elapsed_seconds": 0.803,
+      "response_bytes": 214,
+      "response_sha256": "f494d5ad61620f8beb0a44f0213d0892a4d2760b99ffa6dedd4e592bba8f3e45",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "parsed": [
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 77621,
+            "file_id": 2134,
+            "kind": 1,
+            "table_index": 16,
+            "object_index": 5,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 77622,
+            "file_id": 2134,
+            "kind": 1,
+            "table_index": 16,
+            "object_index": 6,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 77623,
+            "file_id": 2134,
+            "kind": 1,
+            "table_index": 16,
+            "object_index": 7,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 77624,
+            "file_id": 2134,
+            "kind": 1,
+            "table_index": 16,
+            "object_index": 8,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "command": "udws \"nvm2.get_contents 16 9; nvm2.get_contents 16 10; nvm2.get_contents 17 0; nvm2.get_contents 17 1;\"",
+      "classification": "reviewed-information-query",
+      "phase": "nvm_contents",
+      "purpose": "Read bounded NVM scalar values or array counts.",
+      "timeout": 60,
+      "uart_line_bytes": 103,
+      "udw_count": 4,
+      "expected": [
+        {
+          "udw_command": "nvm2.get_contents 16 9",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 68750,
+          "known_name": "DSID_SAND_TCP_APPIPP_CTRL",
+          "nvm_type": "NVM_SIM_SIGNED",
+          "expected_file_id": 2134,
+          "file_table_index": 16,
+          "object_index": 9,
+          "expected_kind": 1,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0018-udws_nvm2_get_table_size_16.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0119-udws_nvm2_list_objects_in_file_2134.bin",
+            "object_ordinal": 9
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 16 10",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 78535,
+          "known_name": "DSID_IPP_FAX_APP_CTRL",
+          "nvm_type": "NVM_SIM_SIGNED",
+          "expected_file_id": 2134,
+          "file_table_index": 16,
+          "object_index": 10,
+          "expected_kind": 1,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0018-udws_nvm2_get_table_size_16.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0119-udws_nvm2_list_objects_in_file_2134.bin",
+            "object_ordinal": 10
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 17 0",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 75988,
+          "known_name": "DSID_WEBSCAN_ENABLED",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 2717,
+          "file_table_index": 17,
+          "object_index": 0,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0019-udws_nvm2_get_table_size_17.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0120-udws_nvm2_list_objects_in_file_2717.bin",
+            "object_ordinal": 0
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 17 1",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 78832,
+          "known_name": "DSID_ESCL_STATE",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 2717,
+          "file_table_index": 17,
+          "object_index": 1,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0019-udws_nvm2_get_table_size_17.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0120-udws_nvm2_list_objects_in_file_2717.bin",
+            "object_ordinal": 1
+          }
+        }
+      ],
+      "review_source": "references/storage_query_review.json",
+      "plan_index": 19,
+      "index": 19,
+      "started_utc": "2026-10-29T19:27:09.837507+00:00",
+      "response_file": "0019-udws_nvm2_get_contents_16_9_nvm2_get_contents_16_10_nvm2_get_cont.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:27:10.633005+00:00",
+      "elapsed_seconds": 0.792,
+      "response_bytes": 215,
+      "response_sha256": "43d89a0c0767ec00abf04fd8f6d21bca8cc89bc6a1b741a9c65d3b57bd2d9464",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "parsed": [
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 68750,
+            "file_id": 2134,
+            "kind": 1,
+            "table_index": 16,
+            "object_index": 9,
+            "wire_value": 1,
+            "value": 1,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 78535,
+            "file_id": 2134,
+            "kind": 1,
+            "table_index": 16,
+            "object_index": 10,
+            "wire_value": 1,
+            "value": 1,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 75988,
+            "file_id": 2717,
+            "kind": 2,
+            "table_index": 17,
+            "object_index": 0,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 78832,
+            "file_id": 2717,
+            "kind": 2,
+            "table_index": 17,
+            "object_index": 1,
+            "wire_value": 1,
+            "value": 1,
+            "value_interpretation": "scalar"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "command": "udws \"nvm2.get_contents 17 2; nvm2.get_contents 18 0; nvm2.get_contents 18 1; nvm2.get_contents 18 2;\"",
+      "classification": "reviewed-information-query",
+      "phase": "nvm_contents",
+      "purpose": "Read bounded NVM scalar values or array counts.",
+      "timeout": 60,
+      "uart_line_bytes": 102,
+      "udw_count": 4,
+      "expected": [
+        {
+          "udw_command": "nvm2.get_contents 17 2",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 78788,
+          "known_name": "DSID_REMOTELY_INITIATED_SCAN",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 2717,
+          "file_table_index": 17,
+          "object_index": 2,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0019-udws_nvm2_get_table_size_17.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0120-udws_nvm2_list_objects_in_file_2717.bin",
+            "object_ordinal": 2
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 18 0",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 76404,
+          "known_name": "DSID_COPY_STATE",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 2268,
+          "file_table_index": 18,
+          "object_index": 0,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0020-udws_nvm2_get_table_size_18.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0121-udws_nvm2_list_objects_in_file_2268.bin",
+            "object_ordinal": 0
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 18 1",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 76513,
+          "known_name": "DSID_DEFAULT_COPY_OUTPUT_TYPE",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 2268,
+          "file_table_index": 18,
+          "object_index": 1,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0020-udws_nvm2_get_table_size_18.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0121-udws_nvm2_list_objects_in_file_2268.bin",
+            "object_ordinal": 1
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 18 2",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 76912,
+          "known_name": "DSID_DEFAULT_COPY_INPUT_SOURCE",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 2268,
+          "file_table_index": 18,
+          "object_index": 2,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0020-udws_nvm2_get_table_size_18.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0121-udws_nvm2_list_objects_in_file_2268.bin",
+            "object_ordinal": 2
+          }
+        }
+      ],
+      "review_source": "references/storage_query_review.json",
+      "plan_index": 20,
+      "index": 20,
+      "started_utc": "2026-10-29T19:27:10.637518+00:00",
+      "response_file": "0020-udws_nvm2_get_contents_17_2_nvm2_get_contents_18_0_nvm2_get_conte.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:27:11.440261+00:00",
+      "elapsed_seconds": 0.8,
+      "response_bytes": 214,
+      "response_sha256": "db5bc9fdbad01055a5ae116946ac64dec713ed9fc1f0e2a48e5fded8304fe74f",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "parsed": [
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 78788,
+            "file_id": 2717,
+            "kind": 2,
+            "table_index": 17,
+            "object_index": 2,
+            "wire_value": 1,
+            "value": 1,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 76404,
+            "file_id": 2268,
+            "kind": 2,
+            "table_index": 18,
+            "object_index": 0,
+            "wire_value": 1,
+            "value": 1,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 76513,
+            "file_id": 2268,
+            "kind": 2,
+            "table_index": 18,
+            "object_index": 1,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 76912,
+            "file_id": 2268,
+            "kind": 2,
+            "table_index": 18,
+            "object_index": 2,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "command": "udws \"nvm2.get_contents 18 3; nvm2.get_contents 18 4; nvm2.get_contents 18 5; nvm2.get_contents 19 0;\"",
+      "classification": "reviewed-information-query",
+      "phase": "nvm_contents",
+      "purpose": "Read bounded NVM scalar values or array counts.",
+      "timeout": 60,
+      "uart_line_bytes": 102,
+      "udw_count": 4,
+      "expected": [
+        {
+          "udw_command": "nvm2.get_contents 18 3",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 78828,
+          "known_name": "DSID_DEFAULT_DUPLEX_BINDING_OPTION",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 2268,
+          "file_table_index": 18,
+          "object_index": 3,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0020-udws_nvm2_get_table_size_18.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0121-udws_nvm2_list_objects_in_file_2268.bin",
+            "object_ordinal": 3
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 18 4",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 78865,
+          "known_name": "DSID_REMOTE_COPY_STATE",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 2268,
+          "file_table_index": 18,
+          "object_index": 4,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0020-udws_nvm2_get_table_size_18.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0121-udws_nvm2_list_objects_in_file_2268.bin",
+            "object_ordinal": 4
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 18 5",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 66949,
+          "known_name": "DSID_DEFAULT_COPY_PAPER_SOURCE",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 2268,
+          "file_table_index": 18,
+          "object_index": 5,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0020-udws_nvm2_get_table_size_18.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0121-udws_nvm2_list_objects_in_file_2268.bin",
+            "object_ordinal": 5
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 19 0",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 72890,
+          "known_name": "DSID_CNTR_PAGES_PRINT_MECH_COLOR",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 1943,
+          "file_table_index": 19,
+          "object_index": 0,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0021-udws_nvm2_get_table_size_19.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0122-udws_nvm2_list_objects_in_file_1943.bin",
+            "object_ordinal": 0
+          }
+        }
+      ],
+      "review_source": "references/storage_query_review.json",
+      "plan_index": 21,
+      "index": 21,
+      "started_utc": "2026-10-29T19:27:11.444441+00:00",
+      "response_file": "0021-udws_nvm2_get_contents_18_3_nvm2_get_contents_18_4_nvm2_get_conte.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:27:12.242000+00:00",
+      "elapsed_seconds": 0.795,
+      "response_bytes": 215,
+      "response_sha256": "2fcce7c8a80d028c9b38abfefff33a6dfa6588c94c1f7b6baaf0f57386d674ed",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "parsed": [
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 78828,
+            "file_id": 2268,
+            "kind": 2,
+            "table_index": 18,
+            "object_index": 3,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 78865,
+            "file_id": 2268,
+            "kind": 2,
+            "table_index": 18,
+            "object_index": 4,
+            "wire_value": 1,
+            "value": 1,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 66949,
+            "file_id": 2268,
+            "kind": 2,
+            "table_index": 18,
+            "object_index": 5,
+            "wire_value": 1,
+            "value": 1,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 72890,
+            "file_id": 1943,
+            "kind": 2,
+            "table_index": 19,
+            "object_index": 0,
+            "wire_value": 16,
+            "value": 16,
+            "value_interpretation": "scalar"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "command": "udws \"nvm2.get_contents 19 1; nvm2.get_contents 20 0; nvm2.get_contents 20 1; nvm2.get_contents 21 0;\"",
+      "classification": "reviewed-information-query",
+      "phase": "nvm_contents",
+      "purpose": "Read bounded NVM scalar values or array counts.",
+      "timeout": 60,
+      "uart_line_bytes": 102,
+      "udw_count": 4,
+      "expected": [
+        {
+          "udw_command": "nvm2.get_contents 19 1",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 77177,
+          "known_name": "DSID_REWARDS_REGISTRATION_STATUS",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 1943,
+          "file_table_index": 19,
+          "object_index": 1,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0021-udws_nvm2_get_table_size_19.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0122-udws_nvm2_list_objects_in_file_1943.bin",
+            "object_ordinal": 1
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 20 0",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 73570,
+          "known_name": "DSID_WS_PRINT_EVENT_RATE",
+          "nvm_type": "NVM_SIM_SIGNED",
+          "expected_file_id": 1753,
+          "file_table_index": 20,
+          "object_index": 0,
+          "expected_kind": 1,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0022-udws_nvm2_get_table_size_20.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0123-udws_nvm2_list_objects_in_file_1753.bin",
+            "object_ordinal": 0
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 20 1",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 73560,
+          "known_name": "DSID_WS_PRINT_ENABLED",
+          "nvm_type": "NVM_SIM_SIGNED",
+          "expected_file_id": 1753,
+          "file_table_index": 20,
+          "object_index": 1,
+          "expected_kind": 1,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0022-udws_nvm2_get_table_size_20.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0123-udws_nvm2_list_objects_in_file_1753.bin",
+            "object_ordinal": 1
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 21 0",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 77981,
+          "known_name": "DSID_INK_SUBSCRIPTION_ADVERTISEMENT_STATE",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 2565,
+          "file_table_index": 21,
+          "object_index": 0,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0023-udws_nvm2_get_table_size_21.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0124-udws_nvm2_list_objects_in_file_2565.bin",
+            "object_ordinal": 0
+          }
+        }
+      ],
+      "review_source": "references/storage_query_review.json",
+      "plan_index": 22,
+      "index": 22,
+      "started_utc": "2026-10-29T19:27:12.245851+00:00",
+      "response_file": "0022-udws_nvm2_get_contents_19_1_nvm2_get_contents_20_0_nvm2_get_conte.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:27:13.029696+00:00",
+      "elapsed_seconds": 0.781,
+      "response_bytes": 214,
+      "response_sha256": "975694aaa35b284ed631c39452fad66bbbca4d299008f8504d580c5ad5a23e33",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "parsed": [
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 77177,
+            "file_id": 1943,
+            "kind": 2,
+            "table_index": 19,
+            "object_index": 1,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 73570,
+            "file_id": 1753,
+            "kind": 1,
+            "table_index": 20,
+            "object_index": 0,
+            "wire_value": 1,
+            "value": 1,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 73560,
+            "file_id": 1753,
+            "kind": 1,
+            "table_index": 20,
+            "object_index": 1,
+            "wire_value": 1,
+            "value": 1,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 77981,
+            "file_id": 2565,
+            "kind": 2,
+            "table_index": 21,
+            "object_index": 0,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "command": "udws \"nvm2.get_contents 22 0; nvm2.get_contents 22 1; nvm2.get_contents 22 2; nvm2.get_contents 22 3;\"",
+      "classification": "reviewed-information-query",
+      "phase": "nvm_contents",
+      "purpose": "Read bounded NVM scalar values or array counts.",
+      "timeout": 60,
+      "uart_line_bytes": 102,
+      "udw_count": 4,
+      "expected": [
+        {
+          "udw_command": "nvm2.get_contents 22 0",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 77821,
+          "known_name": "DSID_CNTR_PAGES_WIN_EPRINT",
+          "nvm_type": "NVM_SIM_SIGNED",
+          "expected_file_id": 1492,
+          "file_table_index": 22,
+          "object_index": 0,
+          "expected_kind": 1,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0024-udws_nvm2_get_table_size_22.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0125-udws_nvm2_list_objects_in_file_1492.bin",
+            "object_ordinal": 0
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 22 1",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 77822,
+          "known_name": "DSID_CNTR_PAGES_WIN_IN_OS_DRIVER",
+          "nvm_type": "NVM_SIM_SIGNED",
+          "expected_file_id": 1492,
+          "file_table_index": 22,
+          "object_index": 1,
+          "expected_kind": 1,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0024-udws_nvm2_get_table_size_22.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0125-udws_nvm2_list_objects_in_file_1492.bin",
+            "object_ordinal": 1
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 22 2",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 77823,
+          "known_name": "DSID_CNTR_PAGES_WIN_DISCRETE",
+          "nvm_type": "NVM_SIM_SIGNED",
+          "expected_file_id": 1492,
+          "file_table_index": 22,
+          "object_index": 2,
+          "expected_kind": 1,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0024-udws_nvm2_get_table_size_22.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0125-udws_nvm2_list_objects_in_file_1492.bin",
+            "object_ordinal": 2
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 22 3",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 77824,
+          "known_name": "DSID_CNTR_PAGES_MACOS_DRIVER",
+          "nvm_type": "NVM_SIM_SIGNED",
+          "expected_file_id": 1492,
+          "file_table_index": 22,
+          "object_index": 3,
+          "expected_kind": 1,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0024-udws_nvm2_get_table_size_22.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0125-udws_nvm2_list_objects_in_file_1492.bin",
+            "object_ordinal": 3
+          }
+        }
+      ],
+      "review_source": "references/storage_query_review.json",
+      "plan_index": 23,
+      "index": 23,
+      "started_utc": "2026-10-29T19:27:13.034424+00:00",
+      "response_file": "0023-udws_nvm2_get_contents_22_0_nvm2_get_contents_22_1_nvm2_get_conte.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:27:13.777535+00:00",
+      "elapsed_seconds": 0.74,
+      "response_bytes": 216,
+      "response_sha256": "f82a58fab098b73f57a2def66c96c5a680b42f06a7a6f49eeef36b407ebae33f",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "parsed": [
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 77821,
+            "file_id": 1492,
+            "kind": 1,
+            "table_index": 22,
+            "object_index": 0,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 77822,
+            "file_id": 1492,
+            "kind": 1,
+            "table_index": 22,
+            "object_index": 1,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 77823,
+            "file_id": 1492,
+            "kind": 1,
+            "table_index": 22,
+            "object_index": 2,
+            "wire_value": 648,
+            "value": 648,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 77824,
+            "file_id": 1492,
+            "kind": 1,
+            "table_index": 22,
+            "object_index": 3,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "command": "udws \"nvm2.get_contents 22 4; nvm2.get_contents 23 0; nvm2.get_contents 24 0; nvm2.get_contents 24 1;\"",
+      "classification": "reviewed-information-query",
+      "phase": "nvm_contents",
+      "purpose": "Read bounded NVM scalar values or array counts.",
+      "timeout": 60,
+      "uart_line_bytes": 102,
+      "udw_count": 4,
+      "expected": [
+        {
+          "udw_command": "nvm2.get_contents 22 4",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 77825,
+          "known_name": "DSID_CNTR_PAGES_WIN_UPD",
+          "nvm_type": "NVM_SIM_SIGNED",
+          "expected_file_id": 1492,
+          "file_table_index": 22,
+          "object_index": 4,
+          "expected_kind": 1,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0024-udws_nvm2_get_table_size_22.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0125-udws_nvm2_list_objects_in_file_1492.bin",
+            "object_ordinal": 4
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 23 0",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 66817,
+          "known_name": "DSID_PHOTO_PRINT_UNITS",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 295,
+          "file_table_index": 23,
+          "object_index": 0,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0025-udws_nvm2_get_table_size_23.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0126-udws_nvm2_list_objects_in_file_295.bin",
+            "object_ordinal": 0
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 24 0",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 71053,
+          "known_name": "DSID_EMWEB_HTTPS_SUPPORT",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 1364,
+          "file_table_index": 24,
+          "object_index": 0,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0026-udws_nvm2_get_table_size_24.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0127-udws_nvm2_list_objects_in_file_1364.bin",
+            "object_ordinal": 0
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 24 1",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 79555,
+          "known_name": "DSID_EWS_ENABLE_FLAG",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 1364,
+          "file_table_index": 24,
+          "object_index": 1,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0026-udws_nvm2_get_table_size_24.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0127-udws_nvm2_list_objects_in_file_1364.bin",
+            "object_ordinal": 1
+          }
+        }
+      ],
+      "review_source": "references/storage_query_review.json",
+      "plan_index": 24,
+      "index": 24,
+      "started_utc": "2026-10-29T19:27:13.780720+00:00",
+      "response_file": "0024-udws_nvm2_get_contents_22_4_nvm2_get_contents_23_0_nvm2_get_conte.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:27:14.561997+00:00",
+      "elapsed_seconds": 0.779,
+      "response_bytes": 213,
+      "response_sha256": "981bddce3f3ef235dd9895b9c463359b562112bb76122c68a219be2c719fa053",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "parsed": [
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 77825,
+            "file_id": 1492,
+            "kind": 1,
+            "table_index": 22,
+            "object_index": 4,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 66817,
+            "file_id": 295,
+            "kind": 2,
+            "table_index": 23,
+            "object_index": 0,
+            "wire_value": 1,
+            "value": 1,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 71053,
+            "file_id": 1364,
+            "kind": 2,
+            "table_index": 24,
+            "object_index": 0,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 79555,
+            "file_id": 1364,
+            "kind": 2,
+            "table_index": 24,
+            "object_index": 1,
+            "wire_value": 1,
+            "value": 1,
+            "value_interpretation": "scalar"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "command": "udws \"nvm2.get_contents 24 2; nvm2.get_contents 24 3; nvm2.get_contents 25 0; nvm2.get_contents 25 1;\"",
+      "classification": "reviewed-information-query",
+      "phase": "nvm_contents",
+      "purpose": "Read bounded NVM scalar values or array counts.",
+      "timeout": 60,
+      "uart_line_bytes": 102,
+      "udw_count": 4,
+      "expected": [
+        {
+          "udw_command": "nvm2.get_contents 24 2",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 80076,
+          "known_name": "DSID_EWS_PRINTER_IMAGE_VARIANT",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 1364,
+          "file_table_index": 24,
+          "object_index": 2,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0026-udws_nvm2_get_table_size_24.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0127-udws_nvm2_list_objects_in_file_1364.bin",
+            "object_ordinal": 2
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 24 3",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 74382,
+          "known_name": "DSID_CNTR_EWS_ACCESS",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 1364,
+          "file_table_index": 24,
+          "object_index": 3,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0026-udws_nvm2_get_table_size_24.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0127-udws_nvm2_list_objects_in_file_1364.bin",
+            "object_ordinal": 3
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 25 0",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 78003,
+          "known_name": "DSID_JOB_TRACKER_CURRENT_USER_JOB_ID",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 2631,
+          "file_table_index": 25,
+          "object_index": 0,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0027-udws_nvm2_get_table_size_25.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0128-udws_nvm2_list_objects_in_file_2631.bin",
+            "object_ordinal": 0
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 25 1",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 78810,
+          "known_name": "DSID_JOB_LOG_ENABLED",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 2631,
+          "file_table_index": 25,
+          "object_index": 1,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0027-udws_nvm2_get_table_size_25.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0128-udws_nvm2_list_objects_in_file_2631.bin",
+            "object_ordinal": 1
+          }
+        }
+      ],
+      "review_source": "references/storage_query_review.json",
+      "plan_index": 25,
+      "index": 25,
+      "started_utc": "2026-10-29T19:27:14.566074+00:00",
+      "response_file": "0025-udws_nvm2_get_contents_24_2_nvm2_get_contents_24_3_nvm2_get_conte.bin",
+      "status": "prompt-returned",
+      "ended_utc": "2026-10-29T19:27:15.367143+00:00",
+      "elapsed_seconds": 0.798,
+      "response_bytes": 214,
+      "response_sha256": "09735d785d6298c7e4a7ebb1605fff3421c105cf42df9ad616e1cbd2225c2d76",
+      "prompt_returned": true,
+      "validation": {
+        "valid": true,
+        "parsed": [
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 80076,
+            "file_id": 1364,
+            "kind": 2,
+            "table_index": 24,
+            "object_index": 2,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 74382,
+            "file_id": 1364,
+            "kind": 2,
+            "table_index": 24,
+            "object_index": 3,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 78003,
+            "file_id": 2631,
+            "kind": 2,
+            "table_index": 25,
+            "object_index": 0,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 78810,
+            "file_id": 2631,
+            "kind": 2,
+            "table_index": 25,
+            "object_index": 1,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          }
+        ],
+        "errors": []
+      }
+    },
+    {
+      "command": "udws \"nvm2.get_contents 26 0; nvm2.get_contents 27 0; nvm2.get_contents 27 1; nvm2.get_contents 27 2;\"",
+      "classification": "reviewed-information-query",
+      "phase": "nvm_contents",
+      "purpose": "Read bounded NVM scalar values or array counts.",
+      "timeout": 60,
+      "uart_line_bytes": 102,
+      "udw_count": 4,
+      "expected": [
+        {
+          "udw_command": "nvm2.get_contents 26 0",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 79348,
+          "known_name": "DSID_HP_ONLY_SUPPLY_CONFIG",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 1816,
+          "file_table_index": 26,
+          "object_index": 0,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0028-udws_nvm2_get_table_size_26.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0129-udws_nvm2_list_objects_in_file_1816.bin",
+            "object_ordinal": 0
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 27 0",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 78807,
+          "known_name": "DSID_REWARDS_REGISTRATION_STATE",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 1905,
+          "file_table_index": 27,
+          "object_index": 0,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0029-udws_nvm2_get_table_size_27.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0130-udws_nvm2_list_objects_in_file_1905.bin",
+            "object_ordinal": 0
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 27 1",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 78954,
+          "known_name": "DSID_INPUT_AUTO_CONTINUE_TIMEOUT",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 1905,
+          "file_table_index": 27,
+          "object_index": 1,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0029-udws_nvm2_get_table_size_27.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0130-udws_nvm2_list_objects_in_file_1905.bin",
+            "object_ordinal": 1
+          }
+        },
+        {
+          "udw_command": "nvm2.get_contents 27 2",
+          "name": "nvm2.get_contents",
+          "handler": "0xa02f46cd",
+          "dsid": 78955,
+          "known_name": "DSID_INPUT_AUTO_CONTINUE_ACTION",
+          "nvm_type": "NVM_SIM_UNSIGNED",
+          "expected_file_id": 1905,
+          "file_table_index": 27,
+          "object_index": 2,
+          "expected_kind": 2,
+          "value_interpretation": "scalar value",
+          "bound_source": "references/physical-18-storage-details/0029-udws_nvm2_get_table_size_27.bin",
+          "identity_source": {
+            "response": "references/physical-18-storage-details/0130-udws_nvm2_list_objects_in_file_1905.bin",
+            "object_ordinal": 2
+          }
+        }
+      ],
+      "review_source": "references/storage_query_review.json",
+      "plan_index": 26,
+      "index": 26,
+      "started_utc": "2026-10-29T19:27:15.371221+00:00",
+      "response_file": "0026-udws_nvm2_get_contents_26_0_nvm2_get_contents_27_0_nvm2_get_conte.bin",
+      "status": "response-validation-failed",
+      "ended_utc": "2026-10-29T19:27:16.169465+00:00",
+      "elapsed_seconds": 0.795,
+      "response_bytes": 223,
+      "response_sha256": "068bc22fa25c0e8378407435d1c9ef425799f7f2f594feaebdc98a8e01c516ce",
+      "prompt_returned": true,
+      "validation": {
+        "valid": false,
+        "parsed": [
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 79348,
+            "file_id": 1816,
+            "kind": 2,
+            "table_index": 26,
+            "object_index": 0,
+            "wire_value": 0,
+            "value": 0,
+            "value_interpretation": "scalar"
+          },
+          {
+            "name": "nvm2.get_contents",
+            "dsid": 78807,
+            "file_id": 1905,
+            "kind": 2,
+            "table_index": 27,
+            "object_index": 0,
+            "wire_value": 1,
+            "value": 1,
+            "value_interpretation": "scalar"
+          }
+        ],
+        "errors": [
+          "result 3 (nvm2.get_contents 27 1) signed32 wire value: 4294967295 outside [-2147483648, 2147483647]"
+        ]
+      }
+    }
+  ]
+}

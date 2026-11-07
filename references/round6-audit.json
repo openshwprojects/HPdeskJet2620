@@ -1,0 +1,66 @@
+{
+  "sessions": 7,
+  "transmissions": 98,
+  "all_prompts_returned": true,
+  "all_hashes_lengths_and_wire_streams_match": true,
+  "new_registered_names": [
+    "constat.get_consumable_info",
+    "event_log.get_event",
+    "heapmgr log block",
+    "pen.get_printer_build_date",
+    "smgr_pe.get_default_setting"
+  ],
+  "baseline_invoked": 698,
+  "total_invoked": 703,
+  "focused_invocations": [
+    {
+      "name": "constat.get_consumable_info",
+      "command": "udws \"constat.get_consumable_info BLACK;\"",
+      "response_file": "physical-72-consumable-status/0001-udws_constat_get_consumable_info_BLACK.bin",
+      "response_sha256": "26692374436584caf515b745be67fa0e502ffba0dbc332b545500b3133e7bb8a"
+    },
+    {
+      "name": "constat.get_consumable_info",
+      "command": "udws \"constat.get_consumable_info CMY;\"",
+      "response_file": "physical-72-consumable-status/0002-udws_constat_get_consumable_info_CMY.bin",
+      "response_sha256": "d1cde653c0318cab796a315eb1634501e37d964c0464796c1543079e5f665578"
+    },
+    {
+      "name": "event_log.get_event",
+      "command": "udws \"event_log.get_event 1266;\"",
+      "response_file": "physical-73-event-query/0001-udws_event_log_get_event_1266.bin",
+      "response_sha256": "2fead85a5bc025f927bac360e37d883dfc6aaa2de3305c568bfdb67a925c3f73"
+    },
+    {
+      "name": "heapmgr log block",
+      "command": "udws \"heapmgr log block 0 16777216 1;\"",
+      "response_file": "physical-70-heap-block-flags/0001-udws_heapmgr_log_block_0_16777216_1.bin",
+      "response_sha256": "c83a0675a5db9c34be93aca90047d7bb5d1051295dc5e8261e6e438522846069"
+    },
+    {
+      "name": "pen.get_printer_build_date",
+      "command": "udws \"pen.get_printer_build_date;\"",
+      "response_file": "physical-71-settings-build-date/0004-udws_pen_get_printer_build_date.bin",
+      "response_sha256": "4edb0bf6b286bd7f38caf043984ac2f9724d4e85397e4a2296f3aa68916866d2"
+    },
+    {
+      "name": "smgr_pe.get_default_setting",
+      "command": "udws \"smgr_pe.get_default_setting 1;\"",
+      "response_file": "physical-71-settings-build-date/0001-udws_smgr_pe_get_default_setting_1.bin",
+      "response_sha256": "fdb4b1bc185480b70ed0af58203c3c40bc56b35c8f3b7739bfe50e4fc2f34f4f"
+    },
+    {
+      "name": "smgr_pe.get_default_setting",
+      "command": "udws \"smgr_pe.get_default_setting 3;\"",
+      "response_file": "physical-71-settings-build-date/0002-udws_smgr_pe_get_default_setting_3.bin",
+      "response_sha256": "6c4500429c4bfd5ccb58dfdb68faf6258fda41522af0343ce5dfdd12b15bbe56"
+    },
+    {
+      "name": "smgr_pe.get_default_setting",
+      "command": "udws \"smgr_pe.get_default_setting 4;\"",
+      "response_file": "physical-71-settings-build-date/0003-udws_smgr_pe_get_default_setting_4.bin",
+      "response_sha256": "271382fd6532a51a7a491821be9212bf0119db32b415fc50b5b195f3d3e542bb"
+    }
+  ],
+  "source_assessment_sha256": "801f04fbd902096e67dbdfe7c4e89885f77ee0219896e737932baba4d1a53000"
+}

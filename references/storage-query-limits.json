@@ -1,0 +1,546 @@
+{
+  "schema_version": 1,
+  "source_review": "references/storage_query_review.json",
+  "counts": {
+    "tables": 101,
+    "nvm_objects": 1003,
+    "named_objects": 980,
+    "unnamed_objects": 23,
+    "scalar_objects": 887,
+    "simple_array_objects": 50,
+    "record_array_objects": 66,
+    "get_contents_queries": 950,
+    "get_contents_excluded_objects": 53,
+    "ds2_get_list_queries": 74,
+    "array_metadata_queries": 182,
+    "uart_lines": 358,
+    "uart_lines_by_phase": {
+      "nvm_contents": 238,
+      "ds2_scalars": 74,
+      "array_metadata": 46
+    },
+    "udw_invocations": 1206,
+    "max_uart_line_bytes": 110
+  },
+  "limits": {
+    "max_uart_line_ascii_bytes_excluding_CRLF": 120,
+    "max_udw_invocations_per_uart_line": 4,
+    "ds2_get_list_max_ids": 12,
+    "nvm_get_contents_max_table_index": 255,
+    "nvm_get_contents_max_object_index": 255,
+    "ds2_array_max_index": 65535,
+    "ds2_record_max_returned_bytes": 1024
+  },
+  "excluded_get_contents": [
+    {
+      "dsid": 77475,
+      "name": "DSID_PEN_HISTORY_DS_K_1_PEN_ID_BITS_8",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 256,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 77476,
+      "name": "DSID_PEN_HISTORY_DS_K_1_PEN_ID_BITS_9",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 257,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 77483,
+      "name": "DSID_PEN_HISTORY_DS_CMY_0_PEN_ID_BITS_8",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 258,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 77484,
+      "name": "DSID_PEN_HISTORY_DS_CMY_0_PEN_ID_BITS_9",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 259,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 77491,
+      "name": "DSID_PEN_HISTORY_DS_CMY_1_PEN_ID_BITS_8",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 260,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 77492,
+      "name": "DSID_PEN_HISTORY_DS_CMY_1_PEN_ID_BITS_9",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 261,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 76270,
+      "name": "DSID_PEN_ANTI_THEFT_ENABLE",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 262,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 76271,
+      "name": "DSID_PEN_ID_LIST",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 263,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Fresh typed array metadata included; no array read planned yet."
+    },
+    {
+      "dsid": 76383,
+      "name": "DSID_PEN_BTM_PENDING_K",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 264,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 76384,
+      "name": "DSID_PEN_BTM_ACK_K",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 265,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 76385,
+      "name": "DSID_PEN_BTM_PENDING_CMY",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 266,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 76386,
+      "name": "DSID_PEN_BTM_ACK_CMY",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 267,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 76937,
+      "name": "DSID_PEN_FAKE_SECURE_BEHAVIOR",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 268,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 76974,
+      "name": "DSID_PEN_OVERRIDDEN_FIRM_LOG",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 269,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Fresh typed array metadata included; no array read planned yet."
+    },
+    {
+      "dsid": 76938,
+      "name": "DSID_PEN_ASSERT_MISSING_UDW",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 270,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 77178,
+      "name": "DSID_PEN_TOTAL_K_INK_USAGE_ML",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 271,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 77179,
+      "name": "DSID_PEN_TOTAL_CMYZ_INK_USAGE_ML",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 272,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 77180,
+      "name": "DSID_PEN_TOTAL_K_HP_INK_USAGE_ML",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 273,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 77181,
+      "name": "DSID_PEN_TOTAL_CMYZ_HP_INK_USAGE_ML",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 274,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 77616,
+      "name": "DSID_PEN_T_SCORE",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 275,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 77962,
+      "name": "DSID_PEN_IGNORE_ERROR_BITS_1",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 276,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 77963,
+      "name": "DSID_PEN_IGNORE_ERROR_BITS_2",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 277,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 77964,
+      "name": "DSID_PEN_IGNORE_ERROR_BITS_3",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 278,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 78540,
+      "name": "DSID_PEN_TOTAL_HP_INK_USAGE_UL",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 279,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 78541,
+      "name": "DSID_PEN_TOTAL_K_INK_USAGE_UL",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 280,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 78542,
+      "name": "DSID_PEN_TOTAL_K_HP_INK_USAGE_UL",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 281,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 78543,
+      "name": "DSID_PEN_TOTAL_CMYZ_INK_USAGE_UL",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 282,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 78544,
+      "name": "DSID_PEN_TOTAL_CMYZ_HP_INK_USAGE_UL",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 283,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 78815,
+      "name": "DSID_PEN_CHUTE_DS_LEFT_PEN_ID_BITS_ADDR_MODE_LAST_GOOD",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 284,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 78816,
+      "name": "DSID_PEN_CHUTE_DS_RIGHT_PEN_ID_BITS_ADDR_MODE_LAST_GOOD",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 285,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 79308,
+      "name": "DSID_PEN_HISTORY_DS_K_0_PAGE_COUNT",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 286,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 79309,
+      "name": "DSID_PEN_HISTORY_DS_K_1_PAGE_COUNT",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 287,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 79310,
+      "name": "DSID_PEN_HISTORY_DS_CMY_0_PAGE_COUNT",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 288,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 79311,
+      "name": "DSID_PEN_HISTORY_DS_CMY_1_PAGE_COUNT",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 289,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 80087,
+      "name": null,
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 290,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Fresh typed array metadata included; no array read planned yet."
+    },
+    {
+      "dsid": 80086,
+      "name": null,
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 291,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Fresh typed array metadata included; no array read planned yet."
+    },
+    {
+      "dsid": 80085,
+      "name": "DSID_PEN_INTYWPH",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 292,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 80084,
+      "name": null,
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 293,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Fresh typed array metadata included; no array read planned yet."
+    },
+    {
+      "dsid": 81446,
+      "name": null,
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 294,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Fresh typed array metadata included; no array read planned yet."
+    },
+    {
+      "dsid": 80605,
+      "name": null,
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 295,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Fresh typed array metadata included; no array read planned yet."
+    },
+    {
+      "dsid": 78069,
+      "name": "DSID_PRINTHEAD_CAL_STATE",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 296,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 80827,
+      "name": "DSID_PEN_HOST_PENS_USED",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 297,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 80828,
+      "name": "DSID_PEN_HOST_TRADE_OVERRIDE",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 298,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 80868,
+      "name": "DSID_PEN_ALLOW_PROTO",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 299,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 81084,
+      "name": "DSID_PEN_HISTORY_DS_K_0_SECOND_TOE_TEST_COMPLETE",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 300,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 81085,
+      "name": "DSID_PEN_HISTORY_DS_K_1_SECOND_TOE_TEST_COMPLETE",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 301,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 81086,
+      "name": "DSID_PEN_HISTORY_DS_CMY_0_SECOND_TOE_TEST_COMPLETE",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 302,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 81087,
+      "name": "DSID_PEN_HISTORY_DS_CMY_1_SECOND_TOE_TEST_COMPLETE",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 303,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 81859,
+      "name": "DSID_PEN_FAKE_PRINTER_BUILD_DATE",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 304,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 81864,
+      "name": "DSID_PEN_HISTORY_DS_K_0_USED_BUT_FULL_AT_INSTALL",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 305,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 81865,
+      "name": "DSID_PEN_HISTORY_DS_K_1_USED_BUT_FULL_AT_INSTALL",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 306,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 81866,
+      "name": "DSID_PEN_HISTORY_DS_CMY_0_USED_BUT_FULL_AT_INSTALL",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 307,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    },
+    {
+      "dsid": 81867,
+      "name": "DSID_PEN_HISTORY_DS_CMY_1_USED_BUT_FULL_AT_INSTALL",
+      "table_index": 61,
+      "file_id": 128,
+      "object_index": 308,
+      "reason": "Index exceeds uint8; sending it would wrap to a different object.",
+      "alternative": "Typed scalar get_list included"
+    }
+  ],
+  "future_array_requirements": [
+    "Use fresh successful get_num_elem result for each known array ID.",
+    "For record arrays also require fresh get_elem_size result.",
+    "Read only 0 <= index < fresh count and index <= 65535.",
+    "Record byte lengths above 1024 are truncated by the supplied reader; preserve that limitation.",
+    "No unsupported-type, unknown-ID, out-of-bounds, reset, erase, write, or gate-change probes."
+  ],
+  "capture_anomalies": [
+    {
+      "source": {
+        "response": "references/physical-16-storage-metadata/0002-udws_nvm2_list_reset_group.bin",
+        "payload_line": 970
+      },
+      "raw_line": "2295  USER_RESET       PAR 493  USER_RESET       PARTIAL  68749  DSID_SAND_LPD_CTRL",
+      "discarded_incomplete_prefix": "2295  USER_RESET       PAR",
+      "action": "Retain valid trailing 493 row; recover missing 2295 objects from smaller filtered captures."
+    },
+    {
+      "source": {
+        "response": "references/physical-18-storage-details/0377-udws_nvm2_list_reset_group_ROM.bin",
+        "payload_line": 970
+      },
+      "raw_line": "2295  USER_RESET       PAR 493  USER_RESET       PARTIAL  68749  DSID_SAND_LPD_CTRL",
+      "discarded_incomplete_prefix": "2295  USER_RESET       PAR",
+      "action": "Retain valid trailing 493 row; recover missing 2295 objects from smaller filtered captures."
+    }
+  ],
+  "notes": [
+    "Same observed 101-table firmware/file mapping is a precondition for execution.",
+    "Get_contents returns values only for scalars; array results are counts.",
+    "Typed DS2 scalar reads can cover scalar IDs excluded by the NVM helper's uint8 object index.",
+    "UART output/source hashes remain available in the physical catalog."
+  ]
+}

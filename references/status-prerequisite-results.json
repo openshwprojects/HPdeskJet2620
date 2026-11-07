@@ -1,0 +1,235 @@
+{
+  "source": "physical UART prerequisites, independently hash-checked",
+  "review_source": "references/status_prerequisite_review.json",
+  "review_sha256": "8f3a9a33c393c2959868e100024515f8dae72e8f4fb373a53aefe404e5ae7d68",
+  "sources": {
+    "references/physical-27-status-prerequisites/session.json": {
+      "sha256": "7695efc9bb339cfb003c133712b965b5beb78c31f8f7684b38ccc3ce9ef4ef3e",
+      "kind": "session_manifest"
+    },
+    "references/physical-27-status-prerequisites/0001-udws_ds2_get_num_elem_76898.bin": {
+      "sha256": "f54c6d5999acbbf8a3485121ac90c061a8dff06ea4d893fefef1a6a71aede42c",
+      "bytes": 79,
+      "command": "udws \"ds2.get_num_elem 76898;\"",
+      "command_index": 1,
+      "started_utc": "2026-10-29T19:41:38.099633+00:00",
+      "kind": "physical_uart_response"
+    },
+    "references/physical-27-status-prerequisites/0002-udws_ds2_get_elem_size_76898.bin": {
+      "sha256": "4e620ba3f99d3698e5b9b5f802d6882128e9f601045d2e1f72e9e778c08f020f",
+      "bytes": 80,
+      "command": "udws \"ds2.get_elem_size 76898;\"",
+      "command_index": 2,
+      "started_utc": "2026-10-29T19:41:38.603980+00:00",
+      "kind": "physical_uart_response"
+    },
+    "references/physical-27-status-prerequisites/0003-udws_ds2_get_num_elem_77531.bin": {
+      "sha256": "ee67e8bf2db97ba8a54155fd7a2f6fa57961e5a64d03451529e14fd02e717ab4",
+      "bytes": 79,
+      "command": "udws \"ds2.get_num_elem 77531;\"",
+      "command_index": 3,
+      "started_utc": "2026-10-29T19:41:39.109815+00:00",
+      "kind": "physical_uart_response"
+    },
+    "references/physical-27-status-prerequisites/0004-udws_ds2_get_elem_size_77531.bin": {
+      "sha256": "e51a866e52b4475c485300bdcd5d546db258263f4f7aa0a2cda0737356c8eeca",
+      "bytes": 80,
+      "command": "udws \"ds2.get_elem_size 77531;\"",
+      "command_index": 4,
+      "started_utc": "2026-10-29T19:41:39.600520+00:00",
+      "kind": "physical_uart_response"
+    },
+    "references/physical-27-status-prerequisites/0005-udws_ds2_get_num_elem_77552.bin": {
+      "sha256": "028b8b84565cf8bd082af1e3d71b1426de57b1705c255f0238177ad074ec1a78",
+      "bytes": 79,
+      "command": "udws \"ds2.get_num_elem 77552;\"",
+      "command_index": 5,
+      "started_utc": "2026-10-29T19:41:40.114655+00:00",
+      "kind": "physical_uart_response"
+    },
+    "references/physical-27-status-prerequisites/0006-udws_ds2_get_elem_size_77552.bin": {
+      "sha256": "ceaf82c583abd2ff3b931ecffb06f7baba0860315aaecf5957c9acd1e9794580",
+      "bytes": 80,
+      "command": "udws \"ds2.get_elem_size 77552;\"",
+      "command_index": 6,
+      "started_utc": "2026-10-29T19:41:40.611000+00:00",
+      "kind": "physical_uart_response"
+    },
+    "references/physical-27-status-prerequisites/0007-udws_ds2_get_num_elem_77553.bin": {
+      "sha256": "a0d875333503aa734db86b2415b9bfb77858993345ca85a9a769a646cb21c658",
+      "bytes": 79,
+      "command": "udws \"ds2.get_num_elem 77553;\"",
+      "command_index": 7,
+      "started_utc": "2026-10-29T19:41:41.149436+00:00",
+      "kind": "physical_uart_response"
+    },
+    "references/physical-27-status-prerequisites/0008-udws_ds2_get_elem_size_77553.bin": {
+      "sha256": "866676658de79bf71c9fb8b069c5ed30f81901f10c8f7c2a8153e1ac84bc6c45",
+      "bytes": 80,
+      "command": "udws \"ds2.get_elem_size 77553;\"",
+      "command_index": 8,
+      "started_utc": "2026-10-29T19:41:41.669885+00:00",
+      "kind": "physical_uart_response"
+    },
+    "references/physical-27-status-prerequisites/0009-udws_ds2_get_num_elem_77555.bin": {
+      "sha256": "6e2a016a29e1f405410983b88059f52976807d87c43232ab83552f4cac45575c",
+      "bytes": 79,
+      "command": "udws \"ds2.get_num_elem 77555;\"",
+      "command_index": 9,
+      "started_utc": "2026-10-29T19:41:42.177603+00:00",
+      "kind": "physical_uart_response"
+    },
+    "references/physical-27-status-prerequisites/0010-udws_ds2_get_elem_size_77555.bin": {
+      "sha256": "bbd4ddb3d3383e09c37bd6f9c8352be6aaafe4a5728cab456b190077b4553adf",
+      "bytes": 80,
+      "command": "udws \"ds2.get_elem_size 77555;\"",
+      "command_index": 10,
+      "started_utc": "2026-10-29T19:41:42.668837+00:00",
+      "kind": "physical_uart_response"
+    },
+    "references/physical-27-status-prerequisites/0011-udws_ds2_get_num_elem_77556.bin": {
+      "sha256": "662369fa250964f8ce41d403f2dfb12fea47937e9300a076d6c6fd188fcd6e8e",
+      "bytes": 79,
+      "command": "udws \"ds2.get_num_elem 77556;\"",
+      "command_index": 11,
+      "started_utc": "2026-10-29T19:41:43.170559+00:00",
+      "kind": "physical_uart_response"
+    },
+    "references/physical-27-status-prerequisites/0012-udws_ds2_get_elem_size_77556.bin": {
+      "sha256": "6a97b2f44361478aef0365a326b8daa00666db5f259ed9eac8f2288e02f790c2",
+      "bytes": 80,
+      "command": "udws \"ds2.get_elem_size 77556;\"",
+      "command_index": 12,
+      "started_utc": "2026-10-29T19:41:43.676719+00:00",
+      "kind": "physical_uart_response"
+    },
+    "references/physical-27-status-prerequisites/0013-udws_ds2_get_num_elem_77445.bin": {
+      "sha256": "ecedca5fd79d9f76ae417c1a56552d8ad3e515e815936c0f54eca7c71fdcc2b6",
+      "bytes": 79,
+      "command": "udws \"ds2.get_num_elem 77445;\"",
+      "command_index": 13,
+      "started_utc": "2026-10-29T19:41:44.185544+00:00",
+      "kind": "physical_uart_response"
+    },
+    "references/physical-27-status-prerequisites/0014-udws_ds2_get_elem_size_77445.bin": {
+      "sha256": "b0b529bd52c4729abe73f928f7caa02f4f41371e06d20fecca6bf14404752110",
+      "bytes": 80,
+      "command": "udws \"ds2.get_elem_size 77445;\"",
+      "command_index": 14,
+      "started_utc": "2026-10-29T19:41:44.711013+00:00",
+      "kind": "physical_uart_response"
+    },
+    "references/physical-27-status-prerequisites/0015-udws_ds2_get_name_78788.bin": {
+      "sha256": "e51604ec39839351637c313eec1420cebf58b8ce776231b679c965b30a44dff2",
+      "bytes": 91,
+      "command": "udws \"ds2.get_name 78788;\"",
+      "command_index": 15,
+      "started_utc": "2026-10-29T19:41:45.193034+00:00",
+      "kind": "physical_uart_response"
+    },
+    "references/physical-27-status-prerequisites/0016-udws_ds2_get_num_elem_78788.bin": {
+      "sha256": "7d7e4103cd7f83df7ceb4206fb392147df5f9e2f95b25ef551a44c13183d067f",
+      "bytes": 79,
+      "command": "udws \"ds2.get_num_elem 78788;\"",
+      "command_index": 16,
+      "started_utc": "2026-10-29T19:41:45.668863+00:00",
+      "kind": "physical_uart_response"
+    },
+    "references/physical-27-status-prerequisites/0017-udws_ds2_get_elem_size_78788.bin": {
+      "sha256": "c7c94ad688188cd2679588905db3843b0cfea564a781807036d6a357506af6e5",
+      "bytes": 80,
+      "command": "udws \"ds2.get_elem_size 78788;\"",
+      "command_index": 17,
+      "started_utc": "2026-10-29T19:41:46.180679+00:00",
+      "kind": "physical_uart_response"
+    },
+    "references/physical-27-status-prerequisites/0018-udws_ds2_get_78788.bin": {
+      "sha256": "c423f20a6bb4d98a51137f36c8f549b8f631a01d1e2431c5d218a6c4b6dcd875",
+      "bytes": 70,
+      "command": "udws \"ds2.get 78788;\"",
+      "command_index": 18,
+      "started_utc": "2026-10-29T19:41:46.718378+00:00",
+      "kind": "physical_uart_response"
+    }
+  },
+  "decisions": [
+    {
+      "name": "scan scansm getSerial",
+      "eligible": true,
+      "record_count": 1,
+      "record_bytes": 15,
+      "count_source": "references/physical-27-status-prerequisites/0001-udws_ds2_get_num_elem_76898.bin",
+      "size_source": "references/physical-27-status-prerequisites/0002-udws_ds2_get_elem_size_76898.bin",
+      "reason": "All live bounds passed."
+    },
+    {
+      "name": "scan scansm getLongSerial",
+      "eligible": false,
+      "record_count": 0,
+      "record_bytes": 0,
+      "count_source": "references/physical-27-status-prerequisites/0003-udws_ds2_get_num_elem_77531.bin",
+      "size_source": "references/physical-27-status-prerequisites/0004-udws_ds2_get_elem_size_77531.bin",
+      "reason": "Live record count or size does not satisfy the reviewed bounds."
+    },
+    {
+      "name": "scan scansm getTimestamp",
+      "eligible": false,
+      "record_count": 0,
+      "record_bytes": 0,
+      "count_source": "references/physical-27-status-prerequisites/0005-udws_ds2_get_num_elem_77552.bin",
+      "size_source": "references/physical-27-status-prerequisites/0006-udws_ds2_get_elem_size_77552.bin",
+      "reason": "Live record count or size does not satisfy the reviewed bounds."
+    },
+    {
+      "name": "scan scansm getBacksideTimestamp",
+      "eligible": false,
+      "record_count": 0,
+      "record_bytes": 0,
+      "count_source": "references/physical-27-status-prerequisites/0007-udws_ds2_get_num_elem_77553.bin",
+      "size_source": "references/physical-27-status-prerequisites/0008-udws_ds2_get_elem_size_77553.bin",
+      "reason": "Live record count or size does not satisfy the reviewed bounds."
+    },
+    {
+      "name": "scan scansm getName",
+      "eligible": false,
+      "record_count": 0,
+      "record_bytes": 0,
+      "count_source": "references/physical-27-status-prerequisites/0009-udws_ds2_get_num_elem_77555.bin",
+      "size_source": "references/physical-27-status-prerequisites/0010-udws_ds2_get_elem_size_77555.bin",
+      "reason": "Live record count or size does not satisfy the reviewed bounds."
+    },
+    {
+      "name": "scan scansm getBacksideName",
+      "eligible": false,
+      "record_count": 0,
+      "record_bytes": 0,
+      "count_source": "references/physical-27-status-prerequisites/0011-udws_ds2_get_num_elem_77556.bin",
+      "size_source": "references/physical-27-status-prerequisites/0012-udws_ds2_get_elem_size_77556.bin",
+      "reason": "Live record count or size does not satisfy the reviewed bounds."
+    },
+    {
+      "name": "scan scansm getCorrectionMatrixBarcode",
+      "eligible": true,
+      "record_count": 1,
+      "record_bytes": 10,
+      "count_source": "references/physical-27-status-prerequisites/0013-udws_ds2_get_num_elem_77445.bin",
+      "size_source": "references/physical-27-status-prerequisites/0014-udws_ds2_get_elem_size_77445.bin",
+      "reason": "All live bounds passed."
+    },
+    {
+      "name": "escl.get_remote_scan_state",
+      "eligible": true,
+      "observed_name": "DSID_REMOTELY_INITIATED_SCAN",
+      "element_count": 0,
+      "record_bytes": 0,
+      "value": 1,
+      "name_source": "references/physical-27-status-prerequisites/0015-udws_ds2_get_name_78788.bin",
+      "count_source": "references/physical-27-status-prerequisites/0016-udws_ds2_get_num_elem_78788.bin",
+      "size_source": "references/physical-27-status-prerequisites/0017-udws_ds2_get_elem_size_78788.bin",
+      "value_source": "references/physical-27-status-prerequisites/0018-udws_ds2_get_78788.bin",
+      "reason": "All live identity and state checks passed."
+    }
+  ],
+  "eligible_count": 3,
+  "held_count": 5
+}

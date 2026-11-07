@@ -1,0 +1,10 @@
+[
+  {
+    "name": "temp.job",
+    "command": "udws \"temp.job;\"",
+    "argument_syntax": "",
+    "classification": "built-in hello-world job test (round 8)",
+    "purpose": "Submit/run the firmware's fixed \"hello world\" test job through the job scheduler (TEMP_AGENCY). Handler 0xa042d09e, prints submit_job/run_job : result.",
+    "timeout": 30
+  }
+]

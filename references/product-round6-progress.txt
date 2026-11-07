@@ -1,0 +1,2 @@
+{"index": 1, "command": "udws \"constat.get_consumable_info BLACK;\"", "bytes": 111, "prompt": true, "validated": null, "preview": "\r\n-> udws \"constat.get_consumable_info BLACK;\"\r\nOK,BLACK IPH, 1, 1, 1, 1, 1,BLACK;udws() returns 0 (0x0)\r\n-> "}
+{"index": 2, "command": "udws \"constat.get_consumable_info CMY;\"", "bytes": 121, "prompt": true, "validated": null, "preview": "\r\n-> udws \"constat.get_consumable_info CMY;\"\r\nOK,CMY IPH, 0, 1, 1, 0, 3,CYAN,MAGENTA,YELLOW;udws() returns 0 (0x0)\r\n-> "}

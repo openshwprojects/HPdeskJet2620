@@ -1,0 +1,3965 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-10-29T19:36:23.191931+00:00",
+  "provenance": {
+    "kind": "offline_review_for_physical_capture",
+    "serial_access": "none",
+    "image": "artifacts/ghs/dram.bin",
+    "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+    "runtime_registry": "references/physical-09-registry/runtime_inventory.json",
+    "runtime_registry_complete": true,
+    "existing_plans_consulted": [
+      "references/01-identification-commands.json",
+      "references/02-information-commands.json",
+      "references/10-reviewed-query-commands.json",
+      "references/11-software-network-commands.json",
+      "references/12-storage-catalog-commands.json",
+      "references/14-help-validation-commands.json",
+      "references/15-nvm-header-commands.json",
+      "references/16-storage-metadata-commands.json",
+      "references/17-shell-commands.json",
+      "references/18-storage-details-commands.json",
+      "references/19-storage-values-commands.json",
+      "references/20-native-guard-commands.json",
+      "references/21-stub-commands.json",
+      "references/23-storage-array-commands.json",
+      "references/24-storage-family-commands.json",
+      "references/25-final-status-commands.json"
+    ]
+  },
+  "summary": {
+    "reviewed_commands": 75,
+    "ready_commands": 75,
+    "ready_unique_names": 24,
+    "ready_unique_handlers": 24,
+    "excluded_by_deduplication": 0
+  },
+  "queries": [
+    {
+      "command": "udws \"udw.check_command bio.rev_str;\"",
+      "name": "udw.check_command",
+      "handler": "0xa02c3ec5",
+      "descriptor_address": "0xa05bc6e8",
+      "classification": "reviewed-information-query",
+      "purpose": "Check a registered dotted command without invoking it.",
+      "argument_syntax": "bio.rev_str",
+      "control_flow_proof": "A02C3EC4 parses 1..4 strings with %127s %31s %31s %31s, joins supplied tokens, walks registry names through A02C310A and strcmp A04EFD10, then prints match/no-match; it never dispatches the named command.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa02c310a",
+        "0xa02c37be",
+        "0xa02c3de2",
+        "0xa04efd10",
+        "0xa04f0b50"
+      ]
+    },
+    {
+      "command": "udws \"udw.check_command scan isr info;\"",
+      "name": "udw.check_command",
+      "handler": "0xa02c3ec5",
+      "descriptor_address": "0xa05bc6e8",
+      "classification": "reviewed-information-query",
+      "purpose": "Check a registered hierarchical command without invoking it.",
+      "argument_syntax": "scan isr info",
+      "control_flow_proof": "Same bounded registry comparison as dotted-name query; three supplied name tokens select the three-token format.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa02c310a",
+        "0xa02c37be",
+        "0xa02c3de2",
+        "0xa04efd10",
+        "0xa04f0b50"
+      ]
+    },
+    {
+      "command": "udws \"udw.get_int 1 -2 3;\"",
+      "name": "udw.get_int",
+      "handler": "0xa02c3fe5",
+      "descriptor_address": "0xa05bc724",
+      "classification": "reviewed-information-query",
+      "purpose": "Exercise the three-integer parser and print decimal/hex interpretations.",
+      "argument_syntax": "1 -2 3",
+      "control_flow_proof": "A02C3FE4 initializes three local integers to zero, parses %d %d %d, then calls UDW formatting A02C37BE. All three explicit values fit int32; no storage or device access.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [
+        {
+          "kind": "planned",
+          "file": "references/14-help-validation-commands.json",
+          "command": "udws \"udw.get_int;\""
+        },
+        {
+          "kind": "physical_prompt_returned",
+          "file": "references/physical-14-help-validation/session.json",
+          "command": "udws \"udw.get_int;\"",
+          "response_file": "0043-udws_udw_get_int.bin"
+        }
+      ],
+      "allow_previously_invoked_handler": true,
+      "reason": "Earlier no-argument guard path was tested; root specifically requested a valid numeric-parser invocation.",
+      "static_direct_call_targets": [
+        "0xa02c37be",
+        "0xa02c3de2"
+      ]
+    },
+    {
+      "command": "udws \"udw.echo ReferenceProbe;\"",
+      "name": "udw.echo",
+      "handler": "0xa02c3f9f",
+      "descriptor_address": "0xa05bc70c",
+      "classification": "reviewed-information-query",
+      "purpose": "Echo a bounded reference marker.",
+      "argument_syntax": "ReferenceProbe",
+      "control_flow_proof": "A02C3F9E parses %127S into 128-byte stack buffer, obtains strlen and writes only that buffer via A02C2A7A.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa02c2a7a",
+        "0xa02c3de2"
+      ]
+    },
+    {
+      "command": "udws \"udw.echo_ex ReferenceProbe;\"",
+      "name": "udw.echo_ex",
+      "handler": "0xa00e1789",
+      "descriptor_address": "0xa0531b60",
+      "classification": "reviewed-information-query",
+      "purpose": "Echo a bounded reference marker and explicit separator.",
+      "argument_syntax": "ReferenceProbe",
+      "control_flow_proof": "A00E1788 reads at most128 bytes into local128-byte buffer through A02C3DAE, writes its strlen via A02C2A7A, then writes semicolon A02C2A6A.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa02c2a6a",
+        "0xa02c2a7a",
+        "0xa02c3dae"
+      ]
+    },
+    {
+      "command": "udws \"lib_servo.get_min_usec 4;\"",
+      "name": "lib_servo.get_min_usec",
+      "handler": "0xa02be1f5",
+      "descriptor_address": "0xa05b6910",
+      "classification": "reviewed-information-query",
+      "purpose": "Read software servo timing statistics for a supported selector.",
+      "argument_syntax": "4",
+      "control_flow_proof": "lib_servo.get_min_usec parses one integer and accepts selectors4/5/6, mapping to2/1/0. Min helper A02BCE34 reads RAM0x20B2ADE0 or DTCM0x60000C74; max A02BCE64 reads RAM0x20B2ADE4 or DTCM0x60000C78; avg A02BCE94 reads DTCM0x60000C70 and shifts8. Helpers contain loads/comparisons only, no motors or resets.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        4,
+        5,
+        6
+      ],
+      "static_direct_call_targets": [
+        "0xa02bce34",
+        "0xa02c37be",
+        "0xa02c3de2"
+      ]
+    },
+    {
+      "command": "udws \"lib_servo.get_min_usec 5;\"",
+      "name": "lib_servo.get_min_usec",
+      "handler": "0xa02be1f5",
+      "descriptor_address": "0xa05b6910",
+      "classification": "reviewed-information-query",
+      "purpose": "Read software servo timing statistics for a supported selector.",
+      "argument_syntax": "5",
+      "control_flow_proof": "lib_servo.get_min_usec parses one integer and accepts selectors4/5/6, mapping to2/1/0. Min helper A02BCE34 reads RAM0x20B2ADE0 or DTCM0x60000C74; max A02BCE64 reads RAM0x20B2ADE4 or DTCM0x60000C78; avg A02BCE94 reads DTCM0x60000C70 and shifts8. Helpers contain loads/comparisons only, no motors or resets.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        4,
+        5,
+        6
+      ],
+      "static_direct_call_targets": [
+        "0xa02bce34",
+        "0xa02c37be",
+        "0xa02c3de2"
+      ]
+    },
+    {
+      "command": "udws \"lib_servo.get_min_usec 6;\"",
+      "name": "lib_servo.get_min_usec",
+      "handler": "0xa02be1f5",
+      "descriptor_address": "0xa05b6910",
+      "classification": "reviewed-information-query",
+      "purpose": "Read software servo timing statistics for a supported selector.",
+      "argument_syntax": "6",
+      "control_flow_proof": "lib_servo.get_min_usec parses one integer and accepts selectors4/5/6, mapping to2/1/0. Min helper A02BCE34 reads RAM0x20B2ADE0 or DTCM0x60000C74; max A02BCE64 reads RAM0x20B2ADE4 or DTCM0x60000C78; avg A02BCE94 reads DTCM0x60000C70 and shifts8. Helpers contain loads/comparisons only, no motors or resets.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        4,
+        5,
+        6
+      ],
+      "static_direct_call_targets": [
+        "0xa02bce34",
+        "0xa02c37be",
+        "0xa02c3de2"
+      ]
+    },
+    {
+      "command": "udws \"lib_servo.get_max_usec 4;\"",
+      "name": "lib_servo.get_max_usec",
+      "handler": "0xa02be235",
+      "descriptor_address": "0xa05b691c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read software servo timing statistics for a supported selector.",
+      "argument_syntax": "4",
+      "control_flow_proof": "lib_servo.get_max_usec parses one integer and accepts selectors4/5/6, mapping to2/1/0. Min helper A02BCE34 reads RAM0x20B2ADE0 or DTCM0x60000C74; max A02BCE64 reads RAM0x20B2ADE4 or DTCM0x60000C78; avg A02BCE94 reads DTCM0x60000C70 and shifts8. Helpers contain loads/comparisons only, no motors or resets.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        4,
+        5,
+        6
+      ],
+      "static_direct_call_targets": [
+        "0xa02bce64",
+        "0xa02c37be",
+        "0xa02c3de2"
+      ]
+    },
+    {
+      "command": "udws \"lib_servo.get_max_usec 5;\"",
+      "name": "lib_servo.get_max_usec",
+      "handler": "0xa02be235",
+      "descriptor_address": "0xa05b691c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read software servo timing statistics for a supported selector.",
+      "argument_syntax": "5",
+      "control_flow_proof": "lib_servo.get_max_usec parses one integer and accepts selectors4/5/6, mapping to2/1/0. Min helper A02BCE34 reads RAM0x20B2ADE0 or DTCM0x60000C74; max A02BCE64 reads RAM0x20B2ADE4 or DTCM0x60000C78; avg A02BCE94 reads DTCM0x60000C70 and shifts8. Helpers contain loads/comparisons only, no motors or resets.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        4,
+        5,
+        6
+      ],
+      "static_direct_call_targets": [
+        "0xa02bce64",
+        "0xa02c37be",
+        "0xa02c3de2"
+      ]
+    },
+    {
+      "command": "udws \"lib_servo.get_max_usec 6;\"",
+      "name": "lib_servo.get_max_usec",
+      "handler": "0xa02be235",
+      "descriptor_address": "0xa05b691c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read software servo timing statistics for a supported selector.",
+      "argument_syntax": "6",
+      "control_flow_proof": "lib_servo.get_max_usec parses one integer and accepts selectors4/5/6, mapping to2/1/0. Min helper A02BCE34 reads RAM0x20B2ADE0 or DTCM0x60000C74; max A02BCE64 reads RAM0x20B2ADE4 or DTCM0x60000C78; avg A02BCE94 reads DTCM0x60000C70 and shifts8. Helpers contain loads/comparisons only, no motors or resets.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        4,
+        5,
+        6
+      ],
+      "static_direct_call_targets": [
+        "0xa02bce64",
+        "0xa02c37be",
+        "0xa02c3de2"
+      ]
+    },
+    {
+      "command": "udws \"lib_servo.get_avg_usec 4;\"",
+      "name": "lib_servo.get_avg_usec",
+      "handler": "0xa02be275",
+      "descriptor_address": "0xa05b6928",
+      "classification": "reviewed-information-query",
+      "purpose": "Read software servo timing statistics for a supported selector.",
+      "argument_syntax": "4",
+      "control_flow_proof": "lib_servo.get_avg_usec parses one integer and accepts selectors4/5/6, mapping to2/1/0. Min helper A02BCE34 reads RAM0x20B2ADE0 or DTCM0x60000C74; max A02BCE64 reads RAM0x20B2ADE4 or DTCM0x60000C78; avg A02BCE94 reads DTCM0x60000C70 and shifts8. Helpers contain loads/comparisons only, no motors or resets.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        4,
+        5,
+        6
+      ],
+      "static_direct_call_targets": [
+        "0xa02bce94",
+        "0xa02c37be",
+        "0xa02c3de2"
+      ]
+    },
+    {
+      "command": "udws \"lib_servo.get_avg_usec 5;\"",
+      "name": "lib_servo.get_avg_usec",
+      "handler": "0xa02be275",
+      "descriptor_address": "0xa05b6928",
+      "classification": "reviewed-information-query",
+      "purpose": "Read software servo timing statistics for a supported selector.",
+      "argument_syntax": "5",
+      "control_flow_proof": "lib_servo.get_avg_usec parses one integer and accepts selectors4/5/6, mapping to2/1/0. Min helper A02BCE34 reads RAM0x20B2ADE0 or DTCM0x60000C74; max A02BCE64 reads RAM0x20B2ADE4 or DTCM0x60000C78; avg A02BCE94 reads DTCM0x60000C70 and shifts8. Helpers contain loads/comparisons only, no motors or resets.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        4,
+        5,
+        6
+      ],
+      "static_direct_call_targets": [
+        "0xa02bce94",
+        "0xa02c37be",
+        "0xa02c3de2"
+      ]
+    },
+    {
+      "command": "udws \"lib_servo.get_avg_usec 6;\"",
+      "name": "lib_servo.get_avg_usec",
+      "handler": "0xa02be275",
+      "descriptor_address": "0xa05b6928",
+      "classification": "reviewed-information-query",
+      "purpose": "Read software servo timing statistics for a supported selector.",
+      "argument_syntax": "6",
+      "control_flow_proof": "lib_servo.get_avg_usec parses one integer and accepts selectors4/5/6, mapping to2/1/0. Min helper A02BCE34 reads RAM0x20B2ADE0 or DTCM0x60000C74; max A02BCE64 reads RAM0x20B2ADE4 or DTCM0x60000C78; avg A02BCE94 reads DTCM0x60000C70 and shifts8. Helpers contain loads/comparisons only, no motors or resets.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        4,
+        5,
+        6
+      ],
+      "static_direct_call_targets": [
+        "0xa02bce94",
+        "0xa02c37be",
+        "0xa02c3de2"
+      ]
+    },
+    {
+      "command": "udws \"l10n.get 0;\"",
+      "name": "l10n.get",
+      "handler": "0xa02cc46b",
+      "descriptor_address": "0xa05bd5e4",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a supported localization setting or its default.",
+      "argument_syntax": "0",
+      "control_flow_proof": "A02CC46A parses one signed integer and admits0..7 or51..52. A02CB0B8 maps selector via A02CB03C static DSID tables then reads data-store vtable+8 and returns low16bits. Handler only formats result.",
+      "hardware_access": "Data-store/NVM reads; no actuator access.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        51,
+        52
+      ],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0019444",
+        "0xa02cb0b8"
+      ]
+    },
+    {
+      "command": "udws \"l10n.get 1;\"",
+      "name": "l10n.get",
+      "handler": "0xa02cc46b",
+      "descriptor_address": "0xa05bd5e4",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a supported localization setting or its default.",
+      "argument_syntax": "1",
+      "control_flow_proof": "A02CC46A parses one signed integer and admits0..7 or51..52. A02CB0B8 maps selector via A02CB03C static DSID tables then reads data-store vtable+8 and returns low16bits. Handler only formats result.",
+      "hardware_access": "Data-store/NVM reads; no actuator access.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        51,
+        52
+      ],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0019444",
+        "0xa02cb0b8"
+      ]
+    },
+    {
+      "command": "udws \"l10n.get 2;\"",
+      "name": "l10n.get",
+      "handler": "0xa02cc46b",
+      "descriptor_address": "0xa05bd5e4",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a supported localization setting or its default.",
+      "argument_syntax": "2",
+      "control_flow_proof": "A02CC46A parses one signed integer and admits0..7 or51..52. A02CB0B8 maps selector via A02CB03C static DSID tables then reads data-store vtable+8 and returns low16bits. Handler only formats result.",
+      "hardware_access": "Data-store/NVM reads; no actuator access.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        51,
+        52
+      ],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0019444",
+        "0xa02cb0b8"
+      ]
+    },
+    {
+      "command": "udws \"l10n.get 3;\"",
+      "name": "l10n.get",
+      "handler": "0xa02cc46b",
+      "descriptor_address": "0xa05bd5e4",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a supported localization setting or its default.",
+      "argument_syntax": "3",
+      "control_flow_proof": "A02CC46A parses one signed integer and admits0..7 or51..52. A02CB0B8 maps selector via A02CB03C static DSID tables then reads data-store vtable+8 and returns low16bits. Handler only formats result.",
+      "hardware_access": "Data-store/NVM reads; no actuator access.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        51,
+        52
+      ],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0019444",
+        "0xa02cb0b8"
+      ]
+    },
+    {
+      "command": "udws \"l10n.get 4;\"",
+      "name": "l10n.get",
+      "handler": "0xa02cc46b",
+      "descriptor_address": "0xa05bd5e4",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a supported localization setting or its default.",
+      "argument_syntax": "4",
+      "control_flow_proof": "A02CC46A parses one signed integer and admits0..7 or51..52. A02CB0B8 maps selector via A02CB03C static DSID tables then reads data-store vtable+8 and returns low16bits. Handler only formats result.",
+      "hardware_access": "Data-store/NVM reads; no actuator access.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        51,
+        52
+      ],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0019444",
+        "0xa02cb0b8"
+      ]
+    },
+    {
+      "command": "udws \"l10n.get 5;\"",
+      "name": "l10n.get",
+      "handler": "0xa02cc46b",
+      "descriptor_address": "0xa05bd5e4",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a supported localization setting or its default.",
+      "argument_syntax": "5",
+      "control_flow_proof": "A02CC46A parses one signed integer and admits0..7 or51..52. A02CB0B8 maps selector via A02CB03C static DSID tables then reads data-store vtable+8 and returns low16bits. Handler only formats result.",
+      "hardware_access": "Data-store/NVM reads; no actuator access.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        51,
+        52
+      ],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0019444",
+        "0xa02cb0b8"
+      ]
+    },
+    {
+      "command": "udws \"l10n.get 6;\"",
+      "name": "l10n.get",
+      "handler": "0xa02cc46b",
+      "descriptor_address": "0xa05bd5e4",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a supported localization setting or its default.",
+      "argument_syntax": "6",
+      "control_flow_proof": "A02CC46A parses one signed integer and admits0..7 or51..52. A02CB0B8 maps selector via A02CB03C static DSID tables then reads data-store vtable+8 and returns low16bits. Handler only formats result.",
+      "hardware_access": "Data-store/NVM reads; no actuator access.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        51,
+        52
+      ],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0019444",
+        "0xa02cb0b8"
+      ]
+    },
+    {
+      "command": "udws \"l10n.get 7;\"",
+      "name": "l10n.get",
+      "handler": "0xa02cc46b",
+      "descriptor_address": "0xa05bd5e4",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a supported localization setting or its default.",
+      "argument_syntax": "7",
+      "control_flow_proof": "A02CC46A parses one signed integer and admits0..7 or51..52. A02CB0B8 maps selector via A02CB03C static DSID tables then reads data-store vtable+8 and returns low16bits. Handler only formats result.",
+      "hardware_access": "Data-store/NVM reads; no actuator access.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        51,
+        52
+      ],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0019444",
+        "0xa02cb0b8"
+      ]
+    },
+    {
+      "command": "udws \"l10n.get 51;\"",
+      "name": "l10n.get",
+      "handler": "0xa02cc46b",
+      "descriptor_address": "0xa05bd5e4",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a supported localization setting or its default.",
+      "argument_syntax": "51",
+      "control_flow_proof": "A02CC46A parses one signed integer and admits0..7 or51..52. A02CB0B8 maps selector via A02CB03C static DSID tables then reads data-store vtable+8 and returns low16bits. Handler only formats result.",
+      "hardware_access": "Data-store/NVM reads; no actuator access.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        51,
+        52
+      ],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0019444",
+        "0xa02cb0b8"
+      ]
+    },
+    {
+      "command": "udws \"l10n.get 52;\"",
+      "name": "l10n.get",
+      "handler": "0xa02cc46b",
+      "descriptor_address": "0xa05bd5e4",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a supported localization setting or its default.",
+      "argument_syntax": "52",
+      "control_flow_proof": "A02CC46A parses one signed integer and admits0..7 or51..52. A02CB0B8 maps selector via A02CB03C static DSID tables then reads data-store vtable+8 and returns low16bits. Handler only formats result.",
+      "hardware_access": "Data-store/NVM reads; no actuator access.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        51,
+        52
+      ],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0019444",
+        "0xa02cb0b8"
+      ]
+    },
+    {
+      "command": "udws \"l10n.get_default 0;\"",
+      "name": "l10n.get_default",
+      "handler": "0xa02cc41f",
+      "descriptor_address": "0xa05bd5d8",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a supported localization setting or its default.",
+      "argument_syntax": "0",
+      "control_flow_proof": "A02CC41E admits0..7 or51..52. A02CB07E reads override metadata through A02CC682 (bounded up to6 read-only entries), otherwise reads current default table for0..7 or fixed ROM defaults for51..52. No setter is called.",
+      "hardware_access": "Data-store/NVM reads; no actuator access.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        51,
+        52
+      ],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0019444",
+        "0xa02cb07e"
+      ]
+    },
+    {
+      "command": "udws \"l10n.get_default 1;\"",
+      "name": "l10n.get_default",
+      "handler": "0xa02cc41f",
+      "descriptor_address": "0xa05bd5d8",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a supported localization setting or its default.",
+      "argument_syntax": "1",
+      "control_flow_proof": "A02CC41E admits0..7 or51..52. A02CB07E reads override metadata through A02CC682 (bounded up to6 read-only entries), otherwise reads current default table for0..7 or fixed ROM defaults for51..52. No setter is called.",
+      "hardware_access": "Data-store/NVM reads; no actuator access.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        51,
+        52
+      ],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0019444",
+        "0xa02cb07e"
+      ]
+    },
+    {
+      "command": "udws \"l10n.get_default 2;\"",
+      "name": "l10n.get_default",
+      "handler": "0xa02cc41f",
+      "descriptor_address": "0xa05bd5d8",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a supported localization setting or its default.",
+      "argument_syntax": "2",
+      "control_flow_proof": "A02CC41E admits0..7 or51..52. A02CB07E reads override metadata through A02CC682 (bounded up to6 read-only entries), otherwise reads current default table for0..7 or fixed ROM defaults for51..52. No setter is called.",
+      "hardware_access": "Data-store/NVM reads; no actuator access.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        51,
+        52
+      ],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0019444",
+        "0xa02cb07e"
+      ]
+    },
+    {
+      "command": "udws \"l10n.get_default 3;\"",
+      "name": "l10n.get_default",
+      "handler": "0xa02cc41f",
+      "descriptor_address": "0xa05bd5d8",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a supported localization setting or its default.",
+      "argument_syntax": "3",
+      "control_flow_proof": "A02CC41E admits0..7 or51..52. A02CB07E reads override metadata through A02CC682 (bounded up to6 read-only entries), otherwise reads current default table for0..7 or fixed ROM defaults for51..52. No setter is called.",
+      "hardware_access": "Data-store/NVM reads; no actuator access.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        51,
+        52
+      ],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0019444",
+        "0xa02cb07e"
+      ]
+    },
+    {
+      "command": "udws \"l10n.get_default 4;\"",
+      "name": "l10n.get_default",
+      "handler": "0xa02cc41f",
+      "descriptor_address": "0xa05bd5d8",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a supported localization setting or its default.",
+      "argument_syntax": "4",
+      "control_flow_proof": "A02CC41E admits0..7 or51..52. A02CB07E reads override metadata through A02CC682 (bounded up to6 read-only entries), otherwise reads current default table for0..7 or fixed ROM defaults for51..52. No setter is called.",
+      "hardware_access": "Data-store/NVM reads; no actuator access.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        51,
+        52
+      ],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0019444",
+        "0xa02cb07e"
+      ]
+    },
+    {
+      "command": "udws \"l10n.get_default 5;\"",
+      "name": "l10n.get_default",
+      "handler": "0xa02cc41f",
+      "descriptor_address": "0xa05bd5d8",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a supported localization setting or its default.",
+      "argument_syntax": "5",
+      "control_flow_proof": "A02CC41E admits0..7 or51..52. A02CB07E reads override metadata through A02CC682 (bounded up to6 read-only entries), otherwise reads current default table for0..7 or fixed ROM defaults for51..52. No setter is called.",
+      "hardware_access": "Data-store/NVM reads; no actuator access.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        51,
+        52
+      ],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0019444",
+        "0xa02cb07e"
+      ]
+    },
+    {
+      "command": "udws \"l10n.get_default 6;\"",
+      "name": "l10n.get_default",
+      "handler": "0xa02cc41f",
+      "descriptor_address": "0xa05bd5d8",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a supported localization setting or its default.",
+      "argument_syntax": "6",
+      "control_flow_proof": "A02CC41E admits0..7 or51..52. A02CB07E reads override metadata through A02CC682 (bounded up to6 read-only entries), otherwise reads current default table for0..7 or fixed ROM defaults for51..52. No setter is called.",
+      "hardware_access": "Data-store/NVM reads; no actuator access.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        51,
+        52
+      ],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0019444",
+        "0xa02cb07e"
+      ]
+    },
+    {
+      "command": "udws \"l10n.get_default 7;\"",
+      "name": "l10n.get_default",
+      "handler": "0xa02cc41f",
+      "descriptor_address": "0xa05bd5d8",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a supported localization setting or its default.",
+      "argument_syntax": "7",
+      "control_flow_proof": "A02CC41E admits0..7 or51..52. A02CB07E reads override metadata through A02CC682 (bounded up to6 read-only entries), otherwise reads current default table for0..7 or fixed ROM defaults for51..52. No setter is called.",
+      "hardware_access": "Data-store/NVM reads; no actuator access.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        51,
+        52
+      ],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0019444",
+        "0xa02cb07e"
+      ]
+    },
+    {
+      "command": "udws \"l10n.get_default 51;\"",
+      "name": "l10n.get_default",
+      "handler": "0xa02cc41f",
+      "descriptor_address": "0xa05bd5d8",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a supported localization setting or its default.",
+      "argument_syntax": "51",
+      "control_flow_proof": "A02CC41E admits0..7 or51..52. A02CB07E reads override metadata through A02CC682 (bounded up to6 read-only entries), otherwise reads current default table for0..7 or fixed ROM defaults for51..52. No setter is called.",
+      "hardware_access": "Data-store/NVM reads; no actuator access.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        51,
+        52
+      ],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0019444",
+        "0xa02cb07e"
+      ]
+    },
+    {
+      "command": "udws \"l10n.get_default 52;\"",
+      "name": "l10n.get_default",
+      "handler": "0xa02cc41f",
+      "descriptor_address": "0xa05bd5d8",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a supported localization setting or its default.",
+      "argument_syntax": "52",
+      "control_flow_proof": "A02CC41E admits0..7 or51..52. A02CB07E reads override metadata through A02CC682 (bounded up to6 read-only entries), otherwise reads current default table for0..7 or fixed ROM defaults for51..52. No setter is called.",
+      "hardware_access": "Data-store/NVM reads; no actuator access.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        51,
+        52
+      ],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0019444",
+        "0xa02cb07e"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_page_id;\"",
+      "name": "cal_pg.manual_cal_get_page_id",
+      "handler": "0xa0024a73",
+      "descriptor_address": "0xa04fca84",
+      "classification": "reviewed-information-query",
+      "purpose": "Read the current manual-alignment page group.",
+      "argument_syntax": "No arguments",
+      "control_flow_proof": "A0024A72 calls A0022764\u00e2\u2020\u2019A0025258. It loops count from RAM0x20971D78 (A0179FCC), reads each RAM descriptor at0x20972068+44*index (A017A050), combines field+0x14, returns page group or-1, then prints. No calibration starts.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022764"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_patterns 0;\"",
+      "name": "cal_pg.manual_cal_get_num_patterns",
+      "handler": "0xa0024aa1",
+      "descriptor_address": "0xa04fca90",
+      "classification": "reviewed-information-query",
+      "purpose": "Read the number of patterns in a valid manual-calibration group.",
+      "argument_syntax": "0",
+      "control_flow_proof": "A0024AA0 parses group; A002276C checks0<=group<ROM count3 atA0502AAC, then reads count atA0502AB4+8*group. Static counts are4,4,14. Only formatting follows.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "expected_static_value": 4,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa002276c"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_fields 0 0;\"",
+      "name": "cal_pg.manual_cal_get_num_fields",
+      "handler": "0xa0024ad9",
+      "descriptor_address": "0xa04fca9c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read field count for an actual manual-calibration pattern.",
+      "argument_syntax": "0 0",
+      "control_flow_proof": "A0024AD8 parses group and pattern; A0022786 checks both lower/upper bounds, reads group table then pattern record+0x0c and returns2*field+1. Exact group/pattern bounds come from static descriptor counts3 and4/4/14; no calibration/printing path invoked.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "group": 0,
+      "pattern": 0,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022786"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_fields 0 1;\"",
+      "name": "cal_pg.manual_cal_get_num_fields",
+      "handler": "0xa0024ad9",
+      "descriptor_address": "0xa04fca9c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read field count for an actual manual-calibration pattern.",
+      "argument_syntax": "0 1",
+      "control_flow_proof": "A0024AD8 parses group and pattern; A0022786 checks both lower/upper bounds, reads group table then pattern record+0x0c and returns2*field+1. Exact group/pattern bounds come from static descriptor counts3 and4/4/14; no calibration/printing path invoked.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "group": 0,
+      "pattern": 1,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022786"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_fields 0 2;\"",
+      "name": "cal_pg.manual_cal_get_num_fields",
+      "handler": "0xa0024ad9",
+      "descriptor_address": "0xa04fca9c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read field count for an actual manual-calibration pattern.",
+      "argument_syntax": "0 2",
+      "control_flow_proof": "A0024AD8 parses group and pattern; A0022786 checks both lower/upper bounds, reads group table then pattern record+0x0c and returns2*field+1. Exact group/pattern bounds come from static descriptor counts3 and4/4/14; no calibration/printing path invoked.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "group": 0,
+      "pattern": 2,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022786"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_fields 0 3;\"",
+      "name": "cal_pg.manual_cal_get_num_fields",
+      "handler": "0xa0024ad9",
+      "descriptor_address": "0xa04fca9c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read field count for an actual manual-calibration pattern.",
+      "argument_syntax": "0 3",
+      "control_flow_proof": "A0024AD8 parses group and pattern; A0022786 checks both lower/upper bounds, reads group table then pattern record+0x0c and returns2*field+1. Exact group/pattern bounds come from static descriptor counts3 and4/4/14; no calibration/printing path invoked.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "group": 0,
+      "pattern": 3,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022786"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_patterns 1;\"",
+      "name": "cal_pg.manual_cal_get_num_patterns",
+      "handler": "0xa0024aa1",
+      "descriptor_address": "0xa04fca90",
+      "classification": "reviewed-information-query",
+      "purpose": "Read the number of patterns in a valid manual-calibration group.",
+      "argument_syntax": "1",
+      "control_flow_proof": "A0024AA0 parses group; A002276C checks0<=group<ROM count3 atA0502AAC, then reads count atA0502AB4+8*group. Static counts are4,4,14. Only formatting follows.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "expected_static_value": 4,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa002276c"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_fields 1 0;\"",
+      "name": "cal_pg.manual_cal_get_num_fields",
+      "handler": "0xa0024ad9",
+      "descriptor_address": "0xa04fca9c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read field count for an actual manual-calibration pattern.",
+      "argument_syntax": "1 0",
+      "control_flow_proof": "A0024AD8 parses group and pattern; A0022786 checks both lower/upper bounds, reads group table then pattern record+0x0c and returns2*field+1. Exact group/pattern bounds come from static descriptor counts3 and4/4/14; no calibration/printing path invoked.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "group": 1,
+      "pattern": 0,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022786"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_fields 1 1;\"",
+      "name": "cal_pg.manual_cal_get_num_fields",
+      "handler": "0xa0024ad9",
+      "descriptor_address": "0xa04fca9c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read field count for an actual manual-calibration pattern.",
+      "argument_syntax": "1 1",
+      "control_flow_proof": "A0024AD8 parses group and pattern; A0022786 checks both lower/upper bounds, reads group table then pattern record+0x0c and returns2*field+1. Exact group/pattern bounds come from static descriptor counts3 and4/4/14; no calibration/printing path invoked.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "group": 1,
+      "pattern": 1,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022786"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_fields 1 2;\"",
+      "name": "cal_pg.manual_cal_get_num_fields",
+      "handler": "0xa0024ad9",
+      "descriptor_address": "0xa04fca9c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read field count for an actual manual-calibration pattern.",
+      "argument_syntax": "1 2",
+      "control_flow_proof": "A0024AD8 parses group and pattern; A0022786 checks both lower/upper bounds, reads group table then pattern record+0x0c and returns2*field+1. Exact group/pattern bounds come from static descriptor counts3 and4/4/14; no calibration/printing path invoked.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "group": 1,
+      "pattern": 2,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022786"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_fields 1 3;\"",
+      "name": "cal_pg.manual_cal_get_num_fields",
+      "handler": "0xa0024ad9",
+      "descriptor_address": "0xa04fca9c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read field count for an actual manual-calibration pattern.",
+      "argument_syntax": "1 3",
+      "control_flow_proof": "A0024AD8 parses group and pattern; A0022786 checks both lower/upper bounds, reads group table then pattern record+0x0c and returns2*field+1. Exact group/pattern bounds come from static descriptor counts3 and4/4/14; no calibration/printing path invoked.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "group": 1,
+      "pattern": 3,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022786"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_patterns 2;\"",
+      "name": "cal_pg.manual_cal_get_num_patterns",
+      "handler": "0xa0024aa1",
+      "descriptor_address": "0xa04fca90",
+      "classification": "reviewed-information-query",
+      "purpose": "Read the number of patterns in a valid manual-calibration group.",
+      "argument_syntax": "2",
+      "control_flow_proof": "A0024AA0 parses group; A002276C checks0<=group<ROM count3 atA0502AAC, then reads count atA0502AB4+8*group. Static counts are4,4,14. Only formatting follows.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "expected_static_value": 14,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa002276c"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_fields 2 0;\"",
+      "name": "cal_pg.manual_cal_get_num_fields",
+      "handler": "0xa0024ad9",
+      "descriptor_address": "0xa04fca9c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read field count for an actual manual-calibration pattern.",
+      "argument_syntax": "2 0",
+      "control_flow_proof": "A0024AD8 parses group and pattern; A0022786 checks both lower/upper bounds, reads group table then pattern record+0x0c and returns2*field+1. Exact group/pattern bounds come from static descriptor counts3 and4/4/14; no calibration/printing path invoked.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "group": 2,
+      "pattern": 0,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022786"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_fields 2 1;\"",
+      "name": "cal_pg.manual_cal_get_num_fields",
+      "handler": "0xa0024ad9",
+      "descriptor_address": "0xa04fca9c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read field count for an actual manual-calibration pattern.",
+      "argument_syntax": "2 1",
+      "control_flow_proof": "A0024AD8 parses group and pattern; A0022786 checks both lower/upper bounds, reads group table then pattern record+0x0c and returns2*field+1. Exact group/pattern bounds come from static descriptor counts3 and4/4/14; no calibration/printing path invoked.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "group": 2,
+      "pattern": 1,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022786"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_fields 2 2;\"",
+      "name": "cal_pg.manual_cal_get_num_fields",
+      "handler": "0xa0024ad9",
+      "descriptor_address": "0xa04fca9c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read field count for an actual manual-calibration pattern.",
+      "argument_syntax": "2 2",
+      "control_flow_proof": "A0024AD8 parses group and pattern; A0022786 checks both lower/upper bounds, reads group table then pattern record+0x0c and returns2*field+1. Exact group/pattern bounds come from static descriptor counts3 and4/4/14; no calibration/printing path invoked.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "group": 2,
+      "pattern": 2,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022786"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_fields 2 3;\"",
+      "name": "cal_pg.manual_cal_get_num_fields",
+      "handler": "0xa0024ad9",
+      "descriptor_address": "0xa04fca9c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read field count for an actual manual-calibration pattern.",
+      "argument_syntax": "2 3",
+      "control_flow_proof": "A0024AD8 parses group and pattern; A0022786 checks both lower/upper bounds, reads group table then pattern record+0x0c and returns2*field+1. Exact group/pattern bounds come from static descriptor counts3 and4/4/14; no calibration/printing path invoked.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "group": 2,
+      "pattern": 3,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022786"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_fields 2 4;\"",
+      "name": "cal_pg.manual_cal_get_num_fields",
+      "handler": "0xa0024ad9",
+      "descriptor_address": "0xa04fca9c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read field count for an actual manual-calibration pattern.",
+      "argument_syntax": "2 4",
+      "control_flow_proof": "A0024AD8 parses group and pattern; A0022786 checks both lower/upper bounds, reads group table then pattern record+0x0c and returns2*field+1. Exact group/pattern bounds come from static descriptor counts3 and4/4/14; no calibration/printing path invoked.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "group": 2,
+      "pattern": 4,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022786"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_fields 2 5;\"",
+      "name": "cal_pg.manual_cal_get_num_fields",
+      "handler": "0xa0024ad9",
+      "descriptor_address": "0xa04fca9c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read field count for an actual manual-calibration pattern.",
+      "argument_syntax": "2 5",
+      "control_flow_proof": "A0024AD8 parses group and pattern; A0022786 checks both lower/upper bounds, reads group table then pattern record+0x0c and returns2*field+1. Exact group/pattern bounds come from static descriptor counts3 and4/4/14; no calibration/printing path invoked.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "group": 2,
+      "pattern": 5,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022786"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_fields 2 6;\"",
+      "name": "cal_pg.manual_cal_get_num_fields",
+      "handler": "0xa0024ad9",
+      "descriptor_address": "0xa04fca9c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read field count for an actual manual-calibration pattern.",
+      "argument_syntax": "2 6",
+      "control_flow_proof": "A0024AD8 parses group and pattern; A0022786 checks both lower/upper bounds, reads group table then pattern record+0x0c and returns2*field+1. Exact group/pattern bounds come from static descriptor counts3 and4/4/14; no calibration/printing path invoked.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "group": 2,
+      "pattern": 6,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022786"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_fields 2 7;\"",
+      "name": "cal_pg.manual_cal_get_num_fields",
+      "handler": "0xa0024ad9",
+      "descriptor_address": "0xa04fca9c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read field count for an actual manual-calibration pattern.",
+      "argument_syntax": "2 7",
+      "control_flow_proof": "A0024AD8 parses group and pattern; A0022786 checks both lower/upper bounds, reads group table then pattern record+0x0c and returns2*field+1. Exact group/pattern bounds come from static descriptor counts3 and4/4/14; no calibration/printing path invoked.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "group": 2,
+      "pattern": 7,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022786"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_fields 2 8;\"",
+      "name": "cal_pg.manual_cal_get_num_fields",
+      "handler": "0xa0024ad9",
+      "descriptor_address": "0xa04fca9c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read field count for an actual manual-calibration pattern.",
+      "argument_syntax": "2 8",
+      "control_flow_proof": "A0024AD8 parses group and pattern; A0022786 checks both lower/upper bounds, reads group table then pattern record+0x0c and returns2*field+1. Exact group/pattern bounds come from static descriptor counts3 and4/4/14; no calibration/printing path invoked.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "group": 2,
+      "pattern": 8,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022786"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_fields 2 9;\"",
+      "name": "cal_pg.manual_cal_get_num_fields",
+      "handler": "0xa0024ad9",
+      "descriptor_address": "0xa04fca9c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read field count for an actual manual-calibration pattern.",
+      "argument_syntax": "2 9",
+      "control_flow_proof": "A0024AD8 parses group and pattern; A0022786 checks both lower/upper bounds, reads group table then pattern record+0x0c and returns2*field+1. Exact group/pattern bounds come from static descriptor counts3 and4/4/14; no calibration/printing path invoked.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "group": 2,
+      "pattern": 9,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022786"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_fields 2 10;\"",
+      "name": "cal_pg.manual_cal_get_num_fields",
+      "handler": "0xa0024ad9",
+      "descriptor_address": "0xa04fca9c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read field count for an actual manual-calibration pattern.",
+      "argument_syntax": "2 10",
+      "control_flow_proof": "A0024AD8 parses group and pattern; A0022786 checks both lower/upper bounds, reads group table then pattern record+0x0c and returns2*field+1. Exact group/pattern bounds come from static descriptor counts3 and4/4/14; no calibration/printing path invoked.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "group": 2,
+      "pattern": 10,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022786"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_fields 2 11;\"",
+      "name": "cal_pg.manual_cal_get_num_fields",
+      "handler": "0xa0024ad9",
+      "descriptor_address": "0xa04fca9c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read field count for an actual manual-calibration pattern.",
+      "argument_syntax": "2 11",
+      "control_flow_proof": "A0024AD8 parses group and pattern; A0022786 checks both lower/upper bounds, reads group table then pattern record+0x0c and returns2*field+1. Exact group/pattern bounds come from static descriptor counts3 and4/4/14; no calibration/printing path invoked.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "group": 2,
+      "pattern": 11,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022786"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_fields 2 12;\"",
+      "name": "cal_pg.manual_cal_get_num_fields",
+      "handler": "0xa0024ad9",
+      "descriptor_address": "0xa04fca9c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read field count for an actual manual-calibration pattern.",
+      "argument_syntax": "2 12",
+      "control_flow_proof": "A0024AD8 parses group and pattern; A0022786 checks both lower/upper bounds, reads group table then pattern record+0x0c and returns2*field+1. Exact group/pattern bounds come from static descriptor counts3 and4/4/14; no calibration/printing path invoked.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "group": 2,
+      "pattern": 12,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022786"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_fields 2 13;\"",
+      "name": "cal_pg.manual_cal_get_num_fields",
+      "handler": "0xa0024ad9",
+      "descriptor_address": "0xa04fca9c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read field count for an actual manual-calibration pattern.",
+      "argument_syntax": "2 13",
+      "control_flow_proof": "A0024AD8 parses group and pattern; A0022786 checks both lower/upper bounds, reads group table then pattern record+0x0c and returns2*field+1. Exact group/pattern bounds come from static descriptor counts3 and4/4/14; no calibration/printing path invoked.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "group": 2,
+      "pattern": 13,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022786"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg_status.get_history 0;\"",
+      "name": "cal_pg_status.get_history",
+      "handler": "0xa002539b",
+      "descriptor_address": "0xa0507558",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a stored calibration-history counter.",
+      "argument_syntax": "0",
+      "control_flow_proof": "A002539A parses selector; A002563E reads DSID0x1001d and for selectors0..3 reads respectively0x12486/0x12810/0x12487/0x12811 through data-store vtable+8. No writes or calibration calls.",
+      "hardware_access": "Data-store read; physical backing depends on registered read callback.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "selected_dsid": 74886,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa002563e"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg_status.get_history 1;\"",
+      "name": "cal_pg_status.get_history",
+      "handler": "0xa002539b",
+      "descriptor_address": "0xa0507558",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a stored calibration-history counter.",
+      "argument_syntax": "1",
+      "control_flow_proof": "A002539A parses selector; A002563E reads DSID0x1001d and for selectors0..3 reads respectively0x12486/0x12810/0x12487/0x12811 through data-store vtable+8. No writes or calibration calls.",
+      "hardware_access": "Data-store read; physical backing depends on registered read callback.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "selected_dsid": 75792,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa002563e"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg_status.get_history 2;\"",
+      "name": "cal_pg_status.get_history",
+      "handler": "0xa002539b",
+      "descriptor_address": "0xa0507558",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a stored calibration-history counter.",
+      "argument_syntax": "2",
+      "control_flow_proof": "A002539A parses selector; A002563E reads DSID0x1001d and for selectors0..3 reads respectively0x12486/0x12810/0x12487/0x12811 through data-store vtable+8. No writes or calibration calls.",
+      "hardware_access": "Data-store read; physical backing depends on registered read callback.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "selected_dsid": 74887,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa002563e"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg_status.get_history 3;\"",
+      "name": "cal_pg_status.get_history",
+      "handler": "0xa002539b",
+      "descriptor_address": "0xa0507558",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a stored calibration-history counter.",
+      "argument_syntax": "3",
+      "control_flow_proof": "A002539A parses selector; A002563E reads DSID0x1001d and for selectors0..3 reads respectively0x12486/0x12810/0x12487/0x12811 through data-store vtable+8. No writes or calibration calls.",
+      "hardware_access": "Data-store read; physical backing depends on registered read callback.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "selected_dsid": 75793,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa002563e"
+      ]
+    },
+    {
+      "command": "udws \"scan isr curline;\"",
+      "name": "scan isr curline",
+      "handler": "0xa03acc77",
+      "descriptor_address": "0xa0600164",
+      "classification": "reviewed-information-query",
+      "purpose": "Read scanner current-line counter from RAM.",
+      "argument_syntax": "No arguments",
+      "control_flow_proof": "A03ACC76 loads RAM0x20D9E470+0x10 and calls shared print routine A03BEF18. No scan start or MMIO.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18"
+      ]
+    },
+    {
+      "command": "udws \"scan isr info;\"",
+      "name": "scan isr info",
+      "handler": "0xa03acd25",
+      "descriptor_address": "0xa0600184",
+      "classification": "reviewed-information-query",
+      "purpose": "Print scanner ISR configuration and counters from RAM.",
+      "argument_syntax": "No arguments",
+      "control_flow_proof": "A03ACD24..A03ACF48 loads fields+4,+0xc,+0x10,+0x1e,+0x14,+0x1c,+0x18 from RAM0x20D9E470 and calls A03BEF18 for each. No external read or mechanism action.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18"
+      ]
+    },
+    {
+      "command": "udws \"scan isr pixstop;\"",
+      "name": "scan isr pixstop",
+      "handler": "0xa03acc85",
+      "descriptor_address": "0xa06001a4",
+      "classification": "reviewed-information-query",
+      "purpose": "Print existing scanner pixel-stop records.",
+      "argument_syntax": "No arguments",
+      "control_flow_proof": "A03ACC84..A03ACD22 scans at most255 byte tags at RAM0x20D9EDC0+0x202 and corresponding uint16 values+4+2*index, stopping at first0tag. Only print calls A03BEF18 follow.",
+      "hardware_access": false,
+      "timeout": 60,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18"
+      ]
+    },
+    {
+      "command": "udws \"scan line info;\"",
+      "name": "scan line info",
+      "handler": "0xa03aa8a5",
+      "descriptor_address": "0xa05fff64",
+      "classification": "reviewed-information-query",
+      "purpose": "Print current scanner line-buffer configuration.",
+      "argument_syntax": "No arguments",
+      "control_flow_proof": "A03AA8A4..A03AAAC0 reads fixed RAM0x20D9DFDC fields, computes dimensions/byte counts locally, and formats via A03BEF18. No writes except stack and output bookkeeping.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18"
+      ]
+    },
+    {
+      "command": "udws \"cloud_reg.get_printer_config;\"",
+      "name": "cloud_reg.get_printer_config",
+      "handler": "0xa003087f",
+      "descriptor_address": "0xa050ac28",
+      "classification": "reviewed-information-query",
+      "purpose": "Print cached cloud/XMPP configuration.",
+      "argument_syntax": "No arguments",
+      "control_flow_proof": "A003087E..A0030978 reads RAM0x20877284 string/number/flag fields and uses local1024-byte formatting buffer plus output vtable+0x24. No worker queue, request, registration or network operation in this handler.",
+      "hardware_access": false,
+      "timeout": 30,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "content_note": "May contain existing printer/cloud identifiers and keys; retain as local device reference.",
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0010578",
+        "0xa0016ed0"
+      ]
+    },
+    {
+      "command": "udws \"icc.get_internet_connection_status;\"",
+      "name": "icc.get_internet_connection_status",
+      "handler": "0xa0179895",
+      "descriptor_address": "0xa053f274",
+      "classification": "reviewed-information-query",
+      "purpose": "Read cached internet-connectivity status.",
+      "argument_syntax": "No arguments",
+      "control_flow_proof": "A0179894 calls A01786E8, which locks RAM status via A017869E, reads fields at0x209718FC, unlocks A01786AE, returns enum0..14, then A0179968 prints corresponding text. Lock/unlock helpers use semaphore take/release only; no connectivity test begins.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa01786e8",
+        "0xa0179968"
+      ]
+    },
+    {
+      "command": "udws \"icc.get_status;\"",
+      "name": "icc.get_status",
+      "handler": "0xa01798c1",
+      "descriptor_address": "0xa053f28c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read cached connectivity-check state and outcome.",
+      "argument_syntax": "No arguments",
+      "control_flow_proof": "A01798C0 calls A0178B08 with local16-byte destination. Helper takes status lock, reads RAM0x20971974, status RAM/timestamps, optionally calls cached reader A01786E8, fills local fields, unlocks. A0179912/A0179968 print enums; no test/event/network start.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa0178b08",
+        "0xa0179912",
+        "0xa0179968"
+      ]
+    },
+    {
+      "command": "udws \"pcl.get_fonts_present;\"",
+      "name": "pcl.get_fonts_present",
+      "handler": "0xa02fe2e1",
+      "descriptor_address": "0xa05cb7c4",
+      "classification": "reviewed-information-query",
+      "purpose": "Report the compiled PCL font-presence result.",
+      "argument_syntax": "No arguments",
+      "control_flow_proof": "A02FE2E0 loads UDW output object and calls numeric-output vtable+0x14 with constant r1=0,r2=1. No input or font loading.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": []
+    },
+    {
+      "command": "udws \"lib_json_writer.is_linux;\"",
+      "name": "lib_json_writer.is_linux",
+      "handler": "0xa025bb5d",
+      "descriptor_address": "0xa0581ea0",
+      "classification": "reviewed-information-query",
+      "purpose": "Report this build platform flag.",
+      "argument_syntax": "No arguments",
+      "control_flow_proof": "A025BB5C calls UDW printf A02C37BE with format \" %u;\" and constant0. No input or mutable state.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa02c37be"
+      ]
+    },
+    {
+      "command": "udws \"ldn.long_name /RAM;\"",
+      "name": "ldn.long_name",
+      "handler": "0xa0253885",
+      "descriptor_address": "0xa0570de4",
+      "classification": "reviewed-information-query",
+      "purpose": "Convert the RAM root to its long logical name.",
+      "argument_syntax": "/RAM",
+      "control_flow_proof": "A0253884 reads bounded string then A0253720. RAM root literals come from A0352D2A\u00e2\u2020\u2019/ram and A0352D2E\u00e2\u2020\u2019/RAM; converter remaps logical IDs27\u00e2\u2020\u201926. Root-only input terminates after prefix, before any A046B74A open/A046BBEA ioctl loop. Prefix registry operations only take/release RAM mutex.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [
+        {
+          "kind": "planned",
+          "file": "references/02-information-commands.json",
+          "command": "udws \"ldn.long_name;\""
+        },
+        {
+          "kind": "physical_prompt_returned",
+          "file": "references/physical-02-information/session.json",
+          "command": "udws \"ldn.long_name;\"",
+          "response_file": "0004-udws_ldn_long_name.bin"
+        }
+      ],
+      "allow_previously_invoked_handler": true,
+      "reason": "Earlier no-argument invocation only reported name conversion failed.",
+      "static_direct_call_targets": [
+        "0xa0253720",
+        "0xa02c37be",
+        "0xa02c3dae"
+      ]
+    },
+    {
+      "command": "udws \"ldn.short_name /ram;\"",
+      "name": "ldn.short_name",
+      "handler": "0xa02538c1",
+      "descriptor_address": "0xa0570df0",
+      "classification": "reviewed-information-query",
+      "purpose": "Convert the RAM root to its short logical name.",
+      "argument_syntax": "/ram",
+      "control_flow_proof": "A02538C0 reads bounded string then A0253632; RAM logical ID26 remaps to27. Root literals supplied by A0352D2A/A0352D2E. Root-only path reaches terminator before any child-file open/ioctl loop.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [
+        {
+          "kind": "planned",
+          "file": "references/02-information-commands.json",
+          "command": "udws \"ldn.short_name;\""
+        },
+        {
+          "kind": "physical_prompt_returned",
+          "file": "references/physical-02-information/session.json",
+          "command": "udws \"ldn.short_name;\"",
+          "response_file": "0005-udws_ldn_short_name.bin"
+        }
+      ],
+      "allow_previously_invoked_handler": true,
+      "reason": "Earlier no-argument invocation only reported name conversion failed.",
+      "static_direct_call_targets": [
+        "0xa0253632",
+        "0xa02c37be",
+        "0xa02c3dae"
+      ]
+    }
+  ],
+  "ready_to_capture": [
+    {
+      "command": "udws \"udw.check_command bio.rev_str;\"",
+      "name": "udw.check_command",
+      "handler": "0xa02c3ec5",
+      "descriptor_address": "0xa05bc6e8",
+      "classification": "reviewed-information-query",
+      "purpose": "Check a registered dotted command without invoking it.",
+      "argument_syntax": "bio.rev_str",
+      "control_flow_proof": "A02C3EC4 parses 1..4 strings with %127s %31s %31s %31s, joins supplied tokens, walks registry names through A02C310A and strcmp A04EFD10, then prints match/no-match; it never dispatches the named command.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa02c310a",
+        "0xa02c37be",
+        "0xa02c3de2",
+        "0xa04efd10",
+        "0xa04f0b50"
+      ]
+    },
+    {
+      "command": "udws \"udw.check_command scan isr info;\"",
+      "name": "udw.check_command",
+      "handler": "0xa02c3ec5",
+      "descriptor_address": "0xa05bc6e8",
+      "classification": "reviewed-information-query",
+      "purpose": "Check a registered hierarchical command without invoking it.",
+      "argument_syntax": "scan isr info",
+      "control_flow_proof": "Same bounded registry comparison as dotted-name query; three supplied name tokens select the three-token format.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa02c310a",
+        "0xa02c37be",
+        "0xa02c3de2",
+        "0xa04efd10",
+        "0xa04f0b50"
+      ]
+    },
+    {
+      "command": "udws \"udw.get_int 1 -2 3;\"",
+      "name": "udw.get_int",
+      "handler": "0xa02c3fe5",
+      "descriptor_address": "0xa05bc724",
+      "classification": "reviewed-information-query",
+      "purpose": "Exercise the three-integer parser and print decimal/hex interpretations.",
+      "argument_syntax": "1 -2 3",
+      "control_flow_proof": "A02C3FE4 initializes three local integers to zero, parses %d %d %d, then calls UDW formatting A02C37BE. All three explicit values fit int32; no storage or device access.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [
+        {
+          "kind": "planned",
+          "file": "references/14-help-validation-commands.json",
+          "command": "udws \"udw.get_int;\""
+        },
+        {
+          "kind": "physical_prompt_returned",
+          "file": "references/physical-14-help-validation/session.json",
+          "command": "udws \"udw.get_int;\"",
+          "response_file": "0043-udws_udw_get_int.bin"
+        }
+      ],
+      "allow_previously_invoked_handler": true,
+      "reason": "Earlier no-argument guard path was tested; root specifically requested a valid numeric-parser invocation.",
+      "static_direct_call_targets": [
+        "0xa02c37be",
+        "0xa02c3de2"
+      ]
+    },
+    {
+      "command": "udws \"udw.echo ReferenceProbe;\"",
+      "name": "udw.echo",
+      "handler": "0xa02c3f9f",
+      "descriptor_address": "0xa05bc70c",
+      "classification": "reviewed-information-query",
+      "purpose": "Echo a bounded reference marker.",
+      "argument_syntax": "ReferenceProbe",
+      "control_flow_proof": "A02C3F9E parses %127S into 128-byte stack buffer, obtains strlen and writes only that buffer via A02C2A7A.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa02c2a7a",
+        "0xa02c3de2"
+      ]
+    },
+    {
+      "command": "udws \"udw.echo_ex ReferenceProbe;\"",
+      "name": "udw.echo_ex",
+      "handler": "0xa00e1789",
+      "descriptor_address": "0xa0531b60",
+      "classification": "reviewed-information-query",
+      "purpose": "Echo a bounded reference marker and explicit separator.",
+      "argument_syntax": "ReferenceProbe",
+      "control_flow_proof": "A00E1788 reads at most128 bytes into local128-byte buffer through A02C3DAE, writes its strlen via A02C2A7A, then writes semicolon A02C2A6A.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa02c2a6a",
+        "0xa02c2a7a",
+        "0xa02c3dae"
+      ]
+    },
+    {
+      "command": "udws \"lib_servo.get_min_usec 4;\"",
+      "name": "lib_servo.get_min_usec",
+      "handler": "0xa02be1f5",
+      "descriptor_address": "0xa05b6910",
+      "classification": "reviewed-information-query",
+      "purpose": "Read software servo timing statistics for a supported selector.",
+      "argument_syntax": "4",
+      "control_flow_proof": "lib_servo.get_min_usec parses one integer and accepts selectors4/5/6, mapping to2/1/0. Min helper A02BCE34 reads RAM0x20B2ADE0 or DTCM0x60000C74; max A02BCE64 reads RAM0x20B2ADE4 or DTCM0x60000C78; avg A02BCE94 reads DTCM0x60000C70 and shifts8. Helpers contain loads/comparisons only, no motors or resets.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        4,
+        5,
+        6
+      ],
+      "static_direct_call_targets": [
+        "0xa02bce34",
+        "0xa02c37be",
+        "0xa02c3de2"
+      ]
+    },
+    {
+      "command": "udws \"lib_servo.get_min_usec 5;\"",
+      "name": "lib_servo.get_min_usec",
+      "handler": "0xa02be1f5",
+      "descriptor_address": "0xa05b6910",
+      "classification": "reviewed-information-query",
+      "purpose": "Read software servo timing statistics for a supported selector.",
+      "argument_syntax": "5",
+      "control_flow_proof": "lib_servo.get_min_usec parses one integer and accepts selectors4/5/6, mapping to2/1/0. Min helper A02BCE34 reads RAM0x20B2ADE0 or DTCM0x60000C74; max A02BCE64 reads RAM0x20B2ADE4 or DTCM0x60000C78; avg A02BCE94 reads DTCM0x60000C70 and shifts8. Helpers contain loads/comparisons only, no motors or resets.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        4,
+        5,
+        6
+      ],
+      "static_direct_call_targets": [
+        "0xa02bce34",
+        "0xa02c37be",
+        "0xa02c3de2"
+      ]
+    },
+    {
+      "command": "udws \"lib_servo.get_min_usec 6;\"",
+      "name": "lib_servo.get_min_usec",
+      "handler": "0xa02be1f5",
+      "descriptor_address": "0xa05b6910",
+      "classification": "reviewed-information-query",
+      "purpose": "Read software servo timing statistics for a supported selector.",
+      "argument_syntax": "6",
+      "control_flow_proof": "lib_servo.get_min_usec parses one integer and accepts selectors4/5/6, mapping to2/1/0. Min helper A02BCE34 reads RAM0x20B2ADE0 or DTCM0x60000C74; max A02BCE64 reads RAM0x20B2ADE4 or DTCM0x60000C78; avg A02BCE94 reads DTCM0x60000C70 and shifts8. Helpers contain loads/comparisons only, no motors or resets.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        4,
+        5,
+        6
+      ],
+      "static_direct_call_targets": [
+        "0xa02bce34",
+        "0xa02c37be",
+        "0xa02c3de2"
+      ]
+    },
+    {
+      "command": "udws \"lib_servo.get_max_usec 4;\"",
+      "name": "lib_servo.get_max_usec",
+      "handler": "0xa02be235",
+      "descriptor_address": "0xa05b691c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read software servo timing statistics for a supported selector.",
+      "argument_syntax": "4",
+      "control_flow_proof": "lib_servo.get_max_usec parses one integer and accepts selectors4/5/6, mapping to2/1/0. Min helper A02BCE34 reads RAM0x20B2ADE0 or DTCM0x60000C74; max A02BCE64 reads RAM0x20B2ADE4 or DTCM0x60000C78; avg A02BCE94 reads DTCM0x60000C70 and shifts8. Helpers contain loads/comparisons only, no motors or resets.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        4,
+        5,
+        6
+      ],
+      "static_direct_call_targets": [
+        "0xa02bce64",
+        "0xa02c37be",
+        "0xa02c3de2"
+      ]
+    },
+    {
+      "command": "udws \"lib_servo.get_max_usec 5;\"",
+      "name": "lib_servo.get_max_usec",
+      "handler": "0xa02be235",
+      "descriptor_address": "0xa05b691c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read software servo timing statistics for a supported selector.",
+      "argument_syntax": "5",
+      "control_flow_proof": "lib_servo.get_max_usec parses one integer and accepts selectors4/5/6, mapping to2/1/0. Min helper A02BCE34 reads RAM0x20B2ADE0 or DTCM0x60000C74; max A02BCE64 reads RAM0x20B2ADE4 or DTCM0x60000C78; avg A02BCE94 reads DTCM0x60000C70 and shifts8. Helpers contain loads/comparisons only, no motors or resets.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        4,
+        5,
+        6
+      ],
+      "static_direct_call_targets": [
+        "0xa02bce64",
+        "0xa02c37be",
+        "0xa02c3de2"
+      ]
+    },
+    {
+      "command": "udws \"lib_servo.get_max_usec 6;\"",
+      "name": "lib_servo.get_max_usec",
+      "handler": "0xa02be235",
+      "descriptor_address": "0xa05b691c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read software servo timing statistics for a supported selector.",
+      "argument_syntax": "6",
+      "control_flow_proof": "lib_servo.get_max_usec parses one integer and accepts selectors4/5/6, mapping to2/1/0. Min helper A02BCE34 reads RAM0x20B2ADE0 or DTCM0x60000C74; max A02BCE64 reads RAM0x20B2ADE4 or DTCM0x60000C78; avg A02BCE94 reads DTCM0x60000C70 and shifts8. Helpers contain loads/comparisons only, no motors or resets.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        4,
+        5,
+        6
+      ],
+      "static_direct_call_targets": [
+        "0xa02bce64",
+        "0xa02c37be",
+        "0xa02c3de2"
+      ]
+    },
+    {
+      "command": "udws \"lib_servo.get_avg_usec 4;\"",
+      "name": "lib_servo.get_avg_usec",
+      "handler": "0xa02be275",
+      "descriptor_address": "0xa05b6928",
+      "classification": "reviewed-information-query",
+      "purpose": "Read software servo timing statistics for a supported selector.",
+      "argument_syntax": "4",
+      "control_flow_proof": "lib_servo.get_avg_usec parses one integer and accepts selectors4/5/6, mapping to2/1/0. Min helper A02BCE34 reads RAM0x20B2ADE0 or DTCM0x60000C74; max A02BCE64 reads RAM0x20B2ADE4 or DTCM0x60000C78; avg A02BCE94 reads DTCM0x60000C70 and shifts8. Helpers contain loads/comparisons only, no motors or resets.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        4,
+        5,
+        6
+      ],
+      "static_direct_call_targets": [
+        "0xa02bce94",
+        "0xa02c37be",
+        "0xa02c3de2"
+      ]
+    },
+    {
+      "command": "udws \"lib_servo.get_avg_usec 5;\"",
+      "name": "lib_servo.get_avg_usec",
+      "handler": "0xa02be275",
+      "descriptor_address": "0xa05b6928",
+      "classification": "reviewed-information-query",
+      "purpose": "Read software servo timing statistics for a supported selector.",
+      "argument_syntax": "5",
+      "control_flow_proof": "lib_servo.get_avg_usec parses one integer and accepts selectors4/5/6, mapping to2/1/0. Min helper A02BCE34 reads RAM0x20B2ADE0 or DTCM0x60000C74; max A02BCE64 reads RAM0x20B2ADE4 or DTCM0x60000C78; avg A02BCE94 reads DTCM0x60000C70 and shifts8. Helpers contain loads/comparisons only, no motors or resets.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        4,
+        5,
+        6
+      ],
+      "static_direct_call_targets": [
+        "0xa02bce94",
+        "0xa02c37be",
+        "0xa02c3de2"
+      ]
+    },
+    {
+      "command": "udws \"lib_servo.get_avg_usec 6;\"",
+      "name": "lib_servo.get_avg_usec",
+      "handler": "0xa02be275",
+      "descriptor_address": "0xa05b6928",
+      "classification": "reviewed-information-query",
+      "purpose": "Read software servo timing statistics for a supported selector.",
+      "argument_syntax": "6",
+      "control_flow_proof": "lib_servo.get_avg_usec parses one integer and accepts selectors4/5/6, mapping to2/1/0. Min helper A02BCE34 reads RAM0x20B2ADE0 or DTCM0x60000C74; max A02BCE64 reads RAM0x20B2ADE4 or DTCM0x60000C78; avg A02BCE94 reads DTCM0x60000C70 and shifts8. Helpers contain loads/comparisons only, no motors or resets.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        4,
+        5,
+        6
+      ],
+      "static_direct_call_targets": [
+        "0xa02bce94",
+        "0xa02c37be",
+        "0xa02c3de2"
+      ]
+    },
+    {
+      "command": "udws \"l10n.get 0;\"",
+      "name": "l10n.get",
+      "handler": "0xa02cc46b",
+      "descriptor_address": "0xa05bd5e4",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a supported localization setting or its default.",
+      "argument_syntax": "0",
+      "control_flow_proof": "A02CC46A parses one signed integer and admits0..7 or51..52. A02CB0B8 maps selector via A02CB03C static DSID tables then reads data-store vtable+8 and returns low16bits. Handler only formats result.",
+      "hardware_access": "Data-store/NVM reads; no actuator access.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        51,
+        52
+      ],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0019444",
+        "0xa02cb0b8"
+      ]
+    },
+    {
+      "command": "udws \"l10n.get 1;\"",
+      "name": "l10n.get",
+      "handler": "0xa02cc46b",
+      "descriptor_address": "0xa05bd5e4",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a supported localization setting or its default.",
+      "argument_syntax": "1",
+      "control_flow_proof": "A02CC46A parses one signed integer and admits0..7 or51..52. A02CB0B8 maps selector via A02CB03C static DSID tables then reads data-store vtable+8 and returns low16bits. Handler only formats result.",
+      "hardware_access": "Data-store/NVM reads; no actuator access.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        51,
+        52
+      ],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0019444",
+        "0xa02cb0b8"
+      ]
+    },
+    {
+      "command": "udws \"l10n.get 2;\"",
+      "name": "l10n.get",
+      "handler": "0xa02cc46b",
+      "descriptor_address": "0xa05bd5e4",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a supported localization setting or its default.",
+      "argument_syntax": "2",
+      "control_flow_proof": "A02CC46A parses one signed integer and admits0..7 or51..52. A02CB0B8 maps selector via A02CB03C static DSID tables then reads data-store vtable+8 and returns low16bits. Handler only formats result.",
+      "hardware_access": "Data-store/NVM reads; no actuator access.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        51,
+        52
+      ],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0019444",
+        "0xa02cb0b8"
+      ]
+    },
+    {
+      "command": "udws \"l10n.get 3;\"",
+      "name": "l10n.get",
+      "handler": "0xa02cc46b",
+      "descriptor_address": "0xa05bd5e4",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a supported localization setting or its default.",
+      "argument_syntax": "3",
+      "control_flow_proof": "A02CC46A parses one signed integer and admits0..7 or51..52. A02CB0B8 maps selector via A02CB03C static DSID tables then reads data-store vtable+8 and returns low16bits. Handler only formats result.",
+      "hardware_access": "Data-store/NVM reads; no actuator access.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        51,
+        52
+      ],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0019444",
+        "0xa02cb0b8"
+      ]
+    },
+    {
+      "command": "udws \"l10n.get 4;\"",
+      "name": "l10n.get",
+      "handler": "0xa02cc46b",
+      "descriptor_address": "0xa05bd5e4",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a supported localization setting or its default.",
+      "argument_syntax": "4",
+      "control_flow_proof": "A02CC46A parses one signed integer and admits0..7 or51..52. A02CB0B8 maps selector via A02CB03C static DSID tables then reads data-store vtable+8 and returns low16bits. Handler only formats result.",
+      "hardware_access": "Data-store/NVM reads; no actuator access.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        51,
+        52
+      ],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0019444",
+        "0xa02cb0b8"
+      ]
+    },
+    {
+      "command": "udws \"l10n.get 5;\"",
+      "name": "l10n.get",
+      "handler": "0xa02cc46b",
+      "descriptor_address": "0xa05bd5e4",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a supported localization setting or its default.",
+      "argument_syntax": "5",
+      "control_flow_proof": "A02CC46A parses one signed integer and admits0..7 or51..52. A02CB0B8 maps selector via A02CB03C static DSID tables then reads data-store vtable+8 and returns low16bits. Handler only formats result.",
+      "hardware_access": "Data-store/NVM reads; no actuator access.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        51,
+        52
+      ],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0019444",
+        "0xa02cb0b8"
+      ]
+    },
+    {
+      "command": "udws \"l10n.get 6;\"",
+      "name": "l10n.get",
+      "handler": "0xa02cc46b",
+      "descriptor_address": "0xa05bd5e4",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a supported localization setting or its default.",
+      "argument_syntax": "6",
+      "control_flow_proof": "A02CC46A parses one signed integer and admits0..7 or51..52. A02CB0B8 maps selector via A02CB03C static DSID tables then reads data-store vtable+8 and returns low16bits. Handler only formats result.",
+      "hardware_access": "Data-store/NVM reads; no actuator access.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        51,
+        52
+      ],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0019444",
+        "0xa02cb0b8"
+      ]
+    },
+    {
+      "command": "udws \"l10n.get 7;\"",
+      "name": "l10n.get",
+      "handler": "0xa02cc46b",
+      "descriptor_address": "0xa05bd5e4",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a supported localization setting or its default.",
+      "argument_syntax": "7",
+      "control_flow_proof": "A02CC46A parses one signed integer and admits0..7 or51..52. A02CB0B8 maps selector via A02CB03C static DSID tables then reads data-store vtable+8 and returns low16bits. Handler only formats result.",
+      "hardware_access": "Data-store/NVM reads; no actuator access.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        51,
+        52
+      ],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0019444",
+        "0xa02cb0b8"
+      ]
+    },
+    {
+      "command": "udws \"l10n.get 51;\"",
+      "name": "l10n.get",
+      "handler": "0xa02cc46b",
+      "descriptor_address": "0xa05bd5e4",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a supported localization setting or its default.",
+      "argument_syntax": "51",
+      "control_flow_proof": "A02CC46A parses one signed integer and admits0..7 or51..52. A02CB0B8 maps selector via A02CB03C static DSID tables then reads data-store vtable+8 and returns low16bits. Handler only formats result.",
+      "hardware_access": "Data-store/NVM reads; no actuator access.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        51,
+        52
+      ],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0019444",
+        "0xa02cb0b8"
+      ]
+    },
+    {
+      "command": "udws \"l10n.get 52;\"",
+      "name": "l10n.get",
+      "handler": "0xa02cc46b",
+      "descriptor_address": "0xa05bd5e4",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a supported localization setting or its default.",
+      "argument_syntax": "52",
+      "control_flow_proof": "A02CC46A parses one signed integer and admits0..7 or51..52. A02CB0B8 maps selector via A02CB03C static DSID tables then reads data-store vtable+8 and returns low16bits. Handler only formats result.",
+      "hardware_access": "Data-store/NVM reads; no actuator access.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        51,
+        52
+      ],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0019444",
+        "0xa02cb0b8"
+      ]
+    },
+    {
+      "command": "udws \"l10n.get_default 0;\"",
+      "name": "l10n.get_default",
+      "handler": "0xa02cc41f",
+      "descriptor_address": "0xa05bd5d8",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a supported localization setting or its default.",
+      "argument_syntax": "0",
+      "control_flow_proof": "A02CC41E admits0..7 or51..52. A02CB07E reads override metadata through A02CC682 (bounded up to6 read-only entries), otherwise reads current default table for0..7 or fixed ROM defaults for51..52. No setter is called.",
+      "hardware_access": "Data-store/NVM reads; no actuator access.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        51,
+        52
+      ],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0019444",
+        "0xa02cb07e"
+      ]
+    },
+    {
+      "command": "udws \"l10n.get_default 1;\"",
+      "name": "l10n.get_default",
+      "handler": "0xa02cc41f",
+      "descriptor_address": "0xa05bd5d8",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a supported localization setting or its default.",
+      "argument_syntax": "1",
+      "control_flow_proof": "A02CC41E admits0..7 or51..52. A02CB07E reads override metadata through A02CC682 (bounded up to6 read-only entries), otherwise reads current default table for0..7 or fixed ROM defaults for51..52. No setter is called.",
+      "hardware_access": "Data-store/NVM reads; no actuator access.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        51,
+        52
+      ],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0019444",
+        "0xa02cb07e"
+      ]
+    },
+    {
+      "command": "udws \"l10n.get_default 2;\"",
+      "name": "l10n.get_default",
+      "handler": "0xa02cc41f",
+      "descriptor_address": "0xa05bd5d8",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a supported localization setting or its default.",
+      "argument_syntax": "2",
+      "control_flow_proof": "A02CC41E admits0..7 or51..52. A02CB07E reads override metadata through A02CC682 (bounded up to6 read-only entries), otherwise reads current default table for0..7 or fixed ROM defaults for51..52. No setter is called.",
+      "hardware_access": "Data-store/NVM reads; no actuator access.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        51,
+        52
+      ],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0019444",
+        "0xa02cb07e"
+      ]
+    },
+    {
+      "command": "udws \"l10n.get_default 3;\"",
+      "name": "l10n.get_default",
+      "handler": "0xa02cc41f",
+      "descriptor_address": "0xa05bd5d8",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a supported localization setting or its default.",
+      "argument_syntax": "3",
+      "control_flow_proof": "A02CC41E admits0..7 or51..52. A02CB07E reads override metadata through A02CC682 (bounded up to6 read-only entries), otherwise reads current default table for0..7 or fixed ROM defaults for51..52. No setter is called.",
+      "hardware_access": "Data-store/NVM reads; no actuator access.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        51,
+        52
+      ],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0019444",
+        "0xa02cb07e"
+      ]
+    },
+    {
+      "command": "udws \"l10n.get_default 4;\"",
+      "name": "l10n.get_default",
+      "handler": "0xa02cc41f",
+      "descriptor_address": "0xa05bd5d8",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a supported localization setting or its default.",
+      "argument_syntax": "4",
+      "control_flow_proof": "A02CC41E admits0..7 or51..52. A02CB07E reads override metadata through A02CC682 (bounded up to6 read-only entries), otherwise reads current default table for0..7 or fixed ROM defaults for51..52. No setter is called.",
+      "hardware_access": "Data-store/NVM reads; no actuator access.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        51,
+        52
+      ],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0019444",
+        "0xa02cb07e"
+      ]
+    },
+    {
+      "command": "udws \"l10n.get_default 5;\"",
+      "name": "l10n.get_default",
+      "handler": "0xa02cc41f",
+      "descriptor_address": "0xa05bd5d8",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a supported localization setting or its default.",
+      "argument_syntax": "5",
+      "control_flow_proof": "A02CC41E admits0..7 or51..52. A02CB07E reads override metadata through A02CC682 (bounded up to6 read-only entries), otherwise reads current default table for0..7 or fixed ROM defaults for51..52. No setter is called.",
+      "hardware_access": "Data-store/NVM reads; no actuator access.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        51,
+        52
+      ],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0019444",
+        "0xa02cb07e"
+      ]
+    },
+    {
+      "command": "udws \"l10n.get_default 6;\"",
+      "name": "l10n.get_default",
+      "handler": "0xa02cc41f",
+      "descriptor_address": "0xa05bd5d8",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a supported localization setting or its default.",
+      "argument_syntax": "6",
+      "control_flow_proof": "A02CC41E admits0..7 or51..52. A02CB07E reads override metadata through A02CC682 (bounded up to6 read-only entries), otherwise reads current default table for0..7 or fixed ROM defaults for51..52. No setter is called.",
+      "hardware_access": "Data-store/NVM reads; no actuator access.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        51,
+        52
+      ],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0019444",
+        "0xa02cb07e"
+      ]
+    },
+    {
+      "command": "udws \"l10n.get_default 7;\"",
+      "name": "l10n.get_default",
+      "handler": "0xa02cc41f",
+      "descriptor_address": "0xa05bd5d8",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a supported localization setting or its default.",
+      "argument_syntax": "7",
+      "control_flow_proof": "A02CC41E admits0..7 or51..52. A02CB07E reads override metadata through A02CC682 (bounded up to6 read-only entries), otherwise reads current default table for0..7 or fixed ROM defaults for51..52. No setter is called.",
+      "hardware_access": "Data-store/NVM reads; no actuator access.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        51,
+        52
+      ],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0019444",
+        "0xa02cb07e"
+      ]
+    },
+    {
+      "command": "udws \"l10n.get_default 51;\"",
+      "name": "l10n.get_default",
+      "handler": "0xa02cc41f",
+      "descriptor_address": "0xa05bd5d8",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a supported localization setting or its default.",
+      "argument_syntax": "51",
+      "control_flow_proof": "A02CC41E admits0..7 or51..52. A02CB07E reads override metadata through A02CC682 (bounded up to6 read-only entries), otherwise reads current default table for0..7 or fixed ROM defaults for51..52. No setter is called.",
+      "hardware_access": "Data-store/NVM reads; no actuator access.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        51,
+        52
+      ],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0019444",
+        "0xa02cb07e"
+      ]
+    },
+    {
+      "command": "udws \"l10n.get_default 52;\"",
+      "name": "l10n.get_default",
+      "handler": "0xa02cc41f",
+      "descriptor_address": "0xa05bd5d8",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a supported localization setting or its default.",
+      "argument_syntax": "52",
+      "control_flow_proof": "A02CC41E admits0..7 or51..52. A02CB07E reads override metadata through A02CC682 (bounded up to6 read-only entries), otherwise reads current default table for0..7 or fixed ROM defaults for51..52. No setter is called.",
+      "hardware_access": "Data-store/NVM reads; no actuator access.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "argument_domain": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        51,
+        52
+      ],
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0019444",
+        "0xa02cb07e"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_page_id;\"",
+      "name": "cal_pg.manual_cal_get_page_id",
+      "handler": "0xa0024a73",
+      "descriptor_address": "0xa04fca84",
+      "classification": "reviewed-information-query",
+      "purpose": "Read the current manual-alignment page group.",
+      "argument_syntax": "No arguments",
+      "control_flow_proof": "A0024A72 calls A0022764\u00e2\u2020\u2019A0025258. It loops count from RAM0x20971D78 (A0179FCC), reads each RAM descriptor at0x20972068+44*index (A017A050), combines field+0x14, returns page group or-1, then prints. No calibration starts.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022764"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_patterns 0;\"",
+      "name": "cal_pg.manual_cal_get_num_patterns",
+      "handler": "0xa0024aa1",
+      "descriptor_address": "0xa04fca90",
+      "classification": "reviewed-information-query",
+      "purpose": "Read the number of patterns in a valid manual-calibration group.",
+      "argument_syntax": "0",
+      "control_flow_proof": "A0024AA0 parses group; A002276C checks0<=group<ROM count3 atA0502AAC, then reads count atA0502AB4+8*group. Static counts are4,4,14. Only formatting follows.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "expected_static_value": 4,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa002276c"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_fields 0 0;\"",
+      "name": "cal_pg.manual_cal_get_num_fields",
+      "handler": "0xa0024ad9",
+      "descriptor_address": "0xa04fca9c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read field count for an actual manual-calibration pattern.",
+      "argument_syntax": "0 0",
+      "control_flow_proof": "A0024AD8 parses group and pattern; A0022786 checks both lower/upper bounds, reads group table then pattern record+0x0c and returns2*field+1. Exact group/pattern bounds come from static descriptor counts3 and4/4/14; no calibration/printing path invoked.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "group": 0,
+      "pattern": 0,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022786"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_fields 0 1;\"",
+      "name": "cal_pg.manual_cal_get_num_fields",
+      "handler": "0xa0024ad9",
+      "descriptor_address": "0xa04fca9c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read field count for an actual manual-calibration pattern.",
+      "argument_syntax": "0 1",
+      "control_flow_proof": "A0024AD8 parses group and pattern; A0022786 checks both lower/upper bounds, reads group table then pattern record+0x0c and returns2*field+1. Exact group/pattern bounds come from static descriptor counts3 and4/4/14; no calibration/printing path invoked.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "group": 0,
+      "pattern": 1,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022786"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_fields 0 2;\"",
+      "name": "cal_pg.manual_cal_get_num_fields",
+      "handler": "0xa0024ad9",
+      "descriptor_address": "0xa04fca9c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read field count for an actual manual-calibration pattern.",
+      "argument_syntax": "0 2",
+      "control_flow_proof": "A0024AD8 parses group and pattern; A0022786 checks both lower/upper bounds, reads group table then pattern record+0x0c and returns2*field+1. Exact group/pattern bounds come from static descriptor counts3 and4/4/14; no calibration/printing path invoked.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "group": 0,
+      "pattern": 2,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022786"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_fields 0 3;\"",
+      "name": "cal_pg.manual_cal_get_num_fields",
+      "handler": "0xa0024ad9",
+      "descriptor_address": "0xa04fca9c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read field count for an actual manual-calibration pattern.",
+      "argument_syntax": "0 3",
+      "control_flow_proof": "A0024AD8 parses group and pattern; A0022786 checks both lower/upper bounds, reads group table then pattern record+0x0c and returns2*field+1. Exact group/pattern bounds come from static descriptor counts3 and4/4/14; no calibration/printing path invoked.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "group": 0,
+      "pattern": 3,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022786"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_patterns 1;\"",
+      "name": "cal_pg.manual_cal_get_num_patterns",
+      "handler": "0xa0024aa1",
+      "descriptor_address": "0xa04fca90",
+      "classification": "reviewed-information-query",
+      "purpose": "Read the number of patterns in a valid manual-calibration group.",
+      "argument_syntax": "1",
+      "control_flow_proof": "A0024AA0 parses group; A002276C checks0<=group<ROM count3 atA0502AAC, then reads count atA0502AB4+8*group. Static counts are4,4,14. Only formatting follows.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "expected_static_value": 4,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa002276c"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_fields 1 0;\"",
+      "name": "cal_pg.manual_cal_get_num_fields",
+      "handler": "0xa0024ad9",
+      "descriptor_address": "0xa04fca9c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read field count for an actual manual-calibration pattern.",
+      "argument_syntax": "1 0",
+      "control_flow_proof": "A0024AD8 parses group and pattern; A0022786 checks both lower/upper bounds, reads group table then pattern record+0x0c and returns2*field+1. Exact group/pattern bounds come from static descriptor counts3 and4/4/14; no calibration/printing path invoked.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "group": 1,
+      "pattern": 0,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022786"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_fields 1 1;\"",
+      "name": "cal_pg.manual_cal_get_num_fields",
+      "handler": "0xa0024ad9",
+      "descriptor_address": "0xa04fca9c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read field count for an actual manual-calibration pattern.",
+      "argument_syntax": "1 1",
+      "control_flow_proof": "A0024AD8 parses group and pattern; A0022786 checks both lower/upper bounds, reads group table then pattern record+0x0c and returns2*field+1. Exact group/pattern bounds come from static descriptor counts3 and4/4/14; no calibration/printing path invoked.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "group": 1,
+      "pattern": 1,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022786"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_fields 1 2;\"",
+      "name": "cal_pg.manual_cal_get_num_fields",
+      "handler": "0xa0024ad9",
+      "descriptor_address": "0xa04fca9c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read field count for an actual manual-calibration pattern.",
+      "argument_syntax": "1 2",
+      "control_flow_proof": "A0024AD8 parses group and pattern; A0022786 checks both lower/upper bounds, reads group table then pattern record+0x0c and returns2*field+1. Exact group/pattern bounds come from static descriptor counts3 and4/4/14; no calibration/printing path invoked.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "group": 1,
+      "pattern": 2,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022786"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_fields 1 3;\"",
+      "name": "cal_pg.manual_cal_get_num_fields",
+      "handler": "0xa0024ad9",
+      "descriptor_address": "0xa04fca9c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read field count for an actual manual-calibration pattern.",
+      "argument_syntax": "1 3",
+      "control_flow_proof": "A0024AD8 parses group and pattern; A0022786 checks both lower/upper bounds, reads group table then pattern record+0x0c and returns2*field+1. Exact group/pattern bounds come from static descriptor counts3 and4/4/14; no calibration/printing path invoked.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "group": 1,
+      "pattern": 3,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022786"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_patterns 2;\"",
+      "name": "cal_pg.manual_cal_get_num_patterns",
+      "handler": "0xa0024aa1",
+      "descriptor_address": "0xa04fca90",
+      "classification": "reviewed-information-query",
+      "purpose": "Read the number of patterns in a valid manual-calibration group.",
+      "argument_syntax": "2",
+      "control_flow_proof": "A0024AA0 parses group; A002276C checks0<=group<ROM count3 atA0502AAC, then reads count atA0502AB4+8*group. Static counts are4,4,14. Only formatting follows.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "expected_static_value": 14,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa002276c"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_fields 2 0;\"",
+      "name": "cal_pg.manual_cal_get_num_fields",
+      "handler": "0xa0024ad9",
+      "descriptor_address": "0xa04fca9c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read field count for an actual manual-calibration pattern.",
+      "argument_syntax": "2 0",
+      "control_flow_proof": "A0024AD8 parses group and pattern; A0022786 checks both lower/upper bounds, reads group table then pattern record+0x0c and returns2*field+1. Exact group/pattern bounds come from static descriptor counts3 and4/4/14; no calibration/printing path invoked.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "group": 2,
+      "pattern": 0,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022786"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_fields 2 1;\"",
+      "name": "cal_pg.manual_cal_get_num_fields",
+      "handler": "0xa0024ad9",
+      "descriptor_address": "0xa04fca9c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read field count for an actual manual-calibration pattern.",
+      "argument_syntax": "2 1",
+      "control_flow_proof": "A0024AD8 parses group and pattern; A0022786 checks both lower/upper bounds, reads group table then pattern record+0x0c and returns2*field+1. Exact group/pattern bounds come from static descriptor counts3 and4/4/14; no calibration/printing path invoked.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "group": 2,
+      "pattern": 1,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022786"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_fields 2 2;\"",
+      "name": "cal_pg.manual_cal_get_num_fields",
+      "handler": "0xa0024ad9",
+      "descriptor_address": "0xa04fca9c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read field count for an actual manual-calibration pattern.",
+      "argument_syntax": "2 2",
+      "control_flow_proof": "A0024AD8 parses group and pattern; A0022786 checks both lower/upper bounds, reads group table then pattern record+0x0c and returns2*field+1. Exact group/pattern bounds come from static descriptor counts3 and4/4/14; no calibration/printing path invoked.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "group": 2,
+      "pattern": 2,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022786"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_fields 2 3;\"",
+      "name": "cal_pg.manual_cal_get_num_fields",
+      "handler": "0xa0024ad9",
+      "descriptor_address": "0xa04fca9c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read field count for an actual manual-calibration pattern.",
+      "argument_syntax": "2 3",
+      "control_flow_proof": "A0024AD8 parses group and pattern; A0022786 checks both lower/upper bounds, reads group table then pattern record+0x0c and returns2*field+1. Exact group/pattern bounds come from static descriptor counts3 and4/4/14; no calibration/printing path invoked.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "group": 2,
+      "pattern": 3,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022786"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_fields 2 4;\"",
+      "name": "cal_pg.manual_cal_get_num_fields",
+      "handler": "0xa0024ad9",
+      "descriptor_address": "0xa04fca9c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read field count for an actual manual-calibration pattern.",
+      "argument_syntax": "2 4",
+      "control_flow_proof": "A0024AD8 parses group and pattern; A0022786 checks both lower/upper bounds, reads group table then pattern record+0x0c and returns2*field+1. Exact group/pattern bounds come from static descriptor counts3 and4/4/14; no calibration/printing path invoked.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "group": 2,
+      "pattern": 4,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022786"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_fields 2 5;\"",
+      "name": "cal_pg.manual_cal_get_num_fields",
+      "handler": "0xa0024ad9",
+      "descriptor_address": "0xa04fca9c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read field count for an actual manual-calibration pattern.",
+      "argument_syntax": "2 5",
+      "control_flow_proof": "A0024AD8 parses group and pattern; A0022786 checks both lower/upper bounds, reads group table then pattern record+0x0c and returns2*field+1. Exact group/pattern bounds come from static descriptor counts3 and4/4/14; no calibration/printing path invoked.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "group": 2,
+      "pattern": 5,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022786"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_fields 2 6;\"",
+      "name": "cal_pg.manual_cal_get_num_fields",
+      "handler": "0xa0024ad9",
+      "descriptor_address": "0xa04fca9c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read field count for an actual manual-calibration pattern.",
+      "argument_syntax": "2 6",
+      "control_flow_proof": "A0024AD8 parses group and pattern; A0022786 checks both lower/upper bounds, reads group table then pattern record+0x0c and returns2*field+1. Exact group/pattern bounds come from static descriptor counts3 and4/4/14; no calibration/printing path invoked.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "group": 2,
+      "pattern": 6,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022786"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_fields 2 7;\"",
+      "name": "cal_pg.manual_cal_get_num_fields",
+      "handler": "0xa0024ad9",
+      "descriptor_address": "0xa04fca9c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read field count for an actual manual-calibration pattern.",
+      "argument_syntax": "2 7",
+      "control_flow_proof": "A0024AD8 parses group and pattern; A0022786 checks both lower/upper bounds, reads group table then pattern record+0x0c and returns2*field+1. Exact group/pattern bounds come from static descriptor counts3 and4/4/14; no calibration/printing path invoked.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "group": 2,
+      "pattern": 7,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022786"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_fields 2 8;\"",
+      "name": "cal_pg.manual_cal_get_num_fields",
+      "handler": "0xa0024ad9",
+      "descriptor_address": "0xa04fca9c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read field count for an actual manual-calibration pattern.",
+      "argument_syntax": "2 8",
+      "control_flow_proof": "A0024AD8 parses group and pattern; A0022786 checks both lower/upper bounds, reads group table then pattern record+0x0c and returns2*field+1. Exact group/pattern bounds come from static descriptor counts3 and4/4/14; no calibration/printing path invoked.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "group": 2,
+      "pattern": 8,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022786"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_fields 2 9;\"",
+      "name": "cal_pg.manual_cal_get_num_fields",
+      "handler": "0xa0024ad9",
+      "descriptor_address": "0xa04fca9c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read field count for an actual manual-calibration pattern.",
+      "argument_syntax": "2 9",
+      "control_flow_proof": "A0024AD8 parses group and pattern; A0022786 checks both lower/upper bounds, reads group table then pattern record+0x0c and returns2*field+1. Exact group/pattern bounds come from static descriptor counts3 and4/4/14; no calibration/printing path invoked.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "group": 2,
+      "pattern": 9,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022786"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_fields 2 10;\"",
+      "name": "cal_pg.manual_cal_get_num_fields",
+      "handler": "0xa0024ad9",
+      "descriptor_address": "0xa04fca9c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read field count for an actual manual-calibration pattern.",
+      "argument_syntax": "2 10",
+      "control_flow_proof": "A0024AD8 parses group and pattern; A0022786 checks both lower/upper bounds, reads group table then pattern record+0x0c and returns2*field+1. Exact group/pattern bounds come from static descriptor counts3 and4/4/14; no calibration/printing path invoked.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "group": 2,
+      "pattern": 10,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022786"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_fields 2 11;\"",
+      "name": "cal_pg.manual_cal_get_num_fields",
+      "handler": "0xa0024ad9",
+      "descriptor_address": "0xa04fca9c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read field count for an actual manual-calibration pattern.",
+      "argument_syntax": "2 11",
+      "control_flow_proof": "A0024AD8 parses group and pattern; A0022786 checks both lower/upper bounds, reads group table then pattern record+0x0c and returns2*field+1. Exact group/pattern bounds come from static descriptor counts3 and4/4/14; no calibration/printing path invoked.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "group": 2,
+      "pattern": 11,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022786"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_fields 2 12;\"",
+      "name": "cal_pg.manual_cal_get_num_fields",
+      "handler": "0xa0024ad9",
+      "descriptor_address": "0xa04fca9c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read field count for an actual manual-calibration pattern.",
+      "argument_syntax": "2 12",
+      "control_flow_proof": "A0024AD8 parses group and pattern; A0022786 checks both lower/upper bounds, reads group table then pattern record+0x0c and returns2*field+1. Exact group/pattern bounds come from static descriptor counts3 and4/4/14; no calibration/printing path invoked.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "group": 2,
+      "pattern": 12,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022786"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg.manual_cal_get_num_fields 2 13;\"",
+      "name": "cal_pg.manual_cal_get_num_fields",
+      "handler": "0xa0024ad9",
+      "descriptor_address": "0xa04fca9c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read field count for an actual manual-calibration pattern.",
+      "argument_syntax": "2 13",
+      "control_flow_proof": "A0024AD8 parses group and pattern; A0022786 checks both lower/upper bounds, reads group table then pattern record+0x0c and returns2*field+1. Exact group/pattern bounds come from static descriptor counts3 and4/4/14; no calibration/printing path invoked.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "group": 2,
+      "pattern": 13,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa0022786"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg_status.get_history 0;\"",
+      "name": "cal_pg_status.get_history",
+      "handler": "0xa002539b",
+      "descriptor_address": "0xa0507558",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a stored calibration-history counter.",
+      "argument_syntax": "0",
+      "control_flow_proof": "A002539A parses selector; A002563E reads DSID0x1001d and for selectors0..3 reads respectively0x12486/0x12810/0x12487/0x12811 through data-store vtable+8. No writes or calibration calls.",
+      "hardware_access": "Data-store read; physical backing depends on registered read callback.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "selected_dsid": 74886,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa002563e"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg_status.get_history 1;\"",
+      "name": "cal_pg_status.get_history",
+      "handler": "0xa002539b",
+      "descriptor_address": "0xa0507558",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a stored calibration-history counter.",
+      "argument_syntax": "1",
+      "control_flow_proof": "A002539A parses selector; A002563E reads DSID0x1001d and for selectors0..3 reads respectively0x12486/0x12810/0x12487/0x12811 through data-store vtable+8. No writes or calibration calls.",
+      "hardware_access": "Data-store read; physical backing depends on registered read callback.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "selected_dsid": 75792,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa002563e"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg_status.get_history 2;\"",
+      "name": "cal_pg_status.get_history",
+      "handler": "0xa002539b",
+      "descriptor_address": "0xa0507558",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a stored calibration-history counter.",
+      "argument_syntax": "2",
+      "control_flow_proof": "A002539A parses selector; A002563E reads DSID0x1001d and for selectors0..3 reads respectively0x12486/0x12810/0x12487/0x12811 through data-store vtable+8. No writes or calibration calls.",
+      "hardware_access": "Data-store read; physical backing depends on registered read callback.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "selected_dsid": 74887,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa002563e"
+      ]
+    },
+    {
+      "command": "udws \"cal_pg_status.get_history 3;\"",
+      "name": "cal_pg_status.get_history",
+      "handler": "0xa002539b",
+      "descriptor_address": "0xa0507558",
+      "classification": "reviewed-information-query",
+      "purpose": "Read a stored calibration-history counter.",
+      "argument_syntax": "3",
+      "control_flow_proof": "A002539A parses selector; A002563E reads DSID0x1001d and for selectors0..3 reads respectively0x12486/0x12810/0x12487/0x12811 through data-store vtable+8. No writes or calibration calls.",
+      "hardware_access": "Data-store read; physical backing depends on registered read callback.",
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "selected_dsid": 75793,
+      "static_direct_call_targets": [
+        "0xa0016ed0",
+        "0xa002563e"
+      ]
+    },
+    {
+      "command": "udws \"scan isr curline;\"",
+      "name": "scan isr curline",
+      "handler": "0xa03acc77",
+      "descriptor_address": "0xa0600164",
+      "classification": "reviewed-information-query",
+      "purpose": "Read scanner current-line counter from RAM.",
+      "argument_syntax": "No arguments",
+      "control_flow_proof": "A03ACC76 loads RAM0x20D9E470+0x10 and calls shared print routine A03BEF18. No scan start or MMIO.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18"
+      ]
+    },
+    {
+      "command": "udws \"scan isr info;\"",
+      "name": "scan isr info",
+      "handler": "0xa03acd25",
+      "descriptor_address": "0xa0600184",
+      "classification": "reviewed-information-query",
+      "purpose": "Print scanner ISR configuration and counters from RAM.",
+      "argument_syntax": "No arguments",
+      "control_flow_proof": "A03ACD24..A03ACF48 loads fields+4,+0xc,+0x10,+0x1e,+0x14,+0x1c,+0x18 from RAM0x20D9E470 and calls A03BEF18 for each. No external read or mechanism action.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18"
+      ]
+    },
+    {
+      "command": "udws \"scan isr pixstop;\"",
+      "name": "scan isr pixstop",
+      "handler": "0xa03acc85",
+      "descriptor_address": "0xa06001a4",
+      "classification": "reviewed-information-query",
+      "purpose": "Print existing scanner pixel-stop records.",
+      "argument_syntax": "No arguments",
+      "control_flow_proof": "A03ACC84..A03ACD22 scans at most255 byte tags at RAM0x20D9EDC0+0x202 and corresponding uint16 values+4+2*index, stopping at first0tag. Only print calls A03BEF18 follow.",
+      "hardware_access": false,
+      "timeout": 60,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18"
+      ]
+    },
+    {
+      "command": "udws \"scan line info;\"",
+      "name": "scan line info",
+      "handler": "0xa03aa8a5",
+      "descriptor_address": "0xa05fff64",
+      "classification": "reviewed-information-query",
+      "purpose": "Print current scanner line-buffer configuration.",
+      "argument_syntax": "No arguments",
+      "control_flow_proof": "A03AA8A4..A03AAAC0 reads fixed RAM0x20D9DFDC fields, computes dimensions/byte counts locally, and formats via A03BEF18. No writes except stack and output bookkeeping.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa03bef18"
+      ]
+    },
+    {
+      "command": "udws \"cloud_reg.get_printer_config;\"",
+      "name": "cloud_reg.get_printer_config",
+      "handler": "0xa003087f",
+      "descriptor_address": "0xa050ac28",
+      "classification": "reviewed-information-query",
+      "purpose": "Print cached cloud/XMPP configuration.",
+      "argument_syntax": "No arguments",
+      "control_flow_proof": "A003087E..A0030978 reads RAM0x20877284 string/number/flag fields and uses local1024-byte formatting buffer plus output vtable+0x24. No worker queue, request, registration or network operation in this handler.",
+      "hardware_access": false,
+      "timeout": 30,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "content_note": "May contain existing printer/cloud identifiers and keys; retain as local device reference.",
+      "static_direct_call_targets": [
+        "0xa0010538",
+        "0xa0010578",
+        "0xa0016ed0"
+      ]
+    },
+    {
+      "command": "udws \"icc.get_internet_connection_status;\"",
+      "name": "icc.get_internet_connection_status",
+      "handler": "0xa0179895",
+      "descriptor_address": "0xa053f274",
+      "classification": "reviewed-information-query",
+      "purpose": "Read cached internet-connectivity status.",
+      "argument_syntax": "No arguments",
+      "control_flow_proof": "A0179894 calls A01786E8, which locks RAM status via A017869E, reads fields at0x209718FC, unlocks A01786AE, returns enum0..14, then A0179968 prints corresponding text. Lock/unlock helpers use semaphore take/release only; no connectivity test begins.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa01786e8",
+        "0xa0179968"
+      ]
+    },
+    {
+      "command": "udws \"icc.get_status;\"",
+      "name": "icc.get_status",
+      "handler": "0xa01798c1",
+      "descriptor_address": "0xa053f28c",
+      "classification": "reviewed-information-query",
+      "purpose": "Read cached connectivity-check state and outcome.",
+      "argument_syntax": "No arguments",
+      "control_flow_proof": "A01798C0 calls A0178B08 with local16-byte destination. Helper takes status lock, reads RAM0x20971974, status RAM/timestamps, optionally calls cached reader A01786E8, fills local fields, unlocks. A0179912/A0179968 print enums; no test/event/network start.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa0178b08",
+        "0xa0179912",
+        "0xa0179968"
+      ]
+    },
+    {
+      "command": "udws \"pcl.get_fonts_present;\"",
+      "name": "pcl.get_fonts_present",
+      "handler": "0xa02fe2e1",
+      "descriptor_address": "0xa05cb7c4",
+      "classification": "reviewed-information-query",
+      "purpose": "Report the compiled PCL font-presence result.",
+      "argument_syntax": "No arguments",
+      "control_flow_proof": "A02FE2E0 loads UDW output object and calls numeric-output vtable+0x14 with constant r1=0,r2=1. No input or font loading.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": []
+    },
+    {
+      "command": "udws \"lib_json_writer.is_linux;\"",
+      "name": "lib_json_writer.is_linux",
+      "handler": "0xa025bb5d",
+      "descriptor_address": "0xa0581ea0",
+      "classification": "reviewed-information-query",
+      "purpose": "Report this build platform flag.",
+      "argument_syntax": "No arguments",
+      "control_flow_proof": "A025BB5C calls UDW printf A02C37BE with format \" %u;\" and constant0. No input or mutable state.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [],
+      "static_direct_call_targets": [
+        "0xa02c37be"
+      ]
+    },
+    {
+      "command": "udws \"ldn.long_name /RAM;\"",
+      "name": "ldn.long_name",
+      "handler": "0xa0253885",
+      "descriptor_address": "0xa0570de4",
+      "classification": "reviewed-information-query",
+      "purpose": "Convert the RAM root to its long logical name.",
+      "argument_syntax": "/RAM",
+      "control_flow_proof": "A0253884 reads bounded string then A0253720. RAM root literals come from A0352D2A\u00e2\u2020\u2019/ram and A0352D2E\u00e2\u2020\u2019/RAM; converter remaps logical IDs27\u00e2\u2020\u201926. Root-only input terminates after prefix, before any A046B74A open/A046BBEA ioctl loop. Prefix registry operations only take/release RAM mutex.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [
+        {
+          "kind": "planned",
+          "file": "references/02-information-commands.json",
+          "command": "udws \"ldn.long_name;\""
+        },
+        {
+          "kind": "physical_prompt_returned",
+          "file": "references/physical-02-information/session.json",
+          "command": "udws \"ldn.long_name;\"",
+          "response_file": "0004-udws_ldn_long_name.bin"
+        }
+      ],
+      "allow_previously_invoked_handler": true,
+      "reason": "Earlier no-argument invocation only reported name conversion failed.",
+      "static_direct_call_targets": [
+        "0xa0253720",
+        "0xa02c37be",
+        "0xa02c3dae"
+      ]
+    },
+    {
+      "command": "udws \"ldn.short_name /ram;\"",
+      "name": "ldn.short_name",
+      "handler": "0xa02538c1",
+      "descriptor_address": "0xa0570df0",
+      "classification": "reviewed-information-query",
+      "purpose": "Convert the RAM root to its short logical name.",
+      "argument_syntax": "/ram",
+      "control_flow_proof": "A02538C0 reads bounded string then A0253632; RAM logical ID26 remaps to27. Root literals supplied by A0352D2A/A0352D2E. Root-only path reaches terminator before any child-file open/ioctl loop.",
+      "hardware_access": false,
+      "timeout": 25,
+      "runtime_registered": true,
+      "image_sha256": "b3fd8b004f6bbe9bc78885efe2484b56812a8f92bf91c788b5ecd590b2cd7330",
+      "review_scope": "Manual handler/control-flow review and named helpers; no serial access by this reviewer.",
+      "prior_tests_or_plans": [
+        {
+          "kind": "planned",
+          "file": "references/02-information-commands.json",
+          "command": "udws \"ldn.short_name;\""
+        },
+        {
+          "kind": "physical_prompt_returned",
+          "file": "references/physical-02-information/session.json",
+          "command": "udws \"ldn.short_name;\"",
+          "response_file": "0005-udws_ldn_short_name.bin"
+        }
+      ],
+      "allow_previously_invoked_handler": true,
+      "reason": "Earlier no-argument invocation only reported name conversion failed.",
+      "static_direct_call_targets": [
+        "0xa0253632",
+        "0xa02c37be",
+        "0xa02c3dae"
+      ]
+    }
+  ],
+  "excluded_by_deduplication": [],
+  "held": [
+    {
+      "names": [
+        "udw.output"
+      ],
+      "category": "known_transport_mutation",
+      "evidence": "A02C401A parses int; A02C28FA writes channel+0x10 byte. Can change output behavior."
+    },
+    {
+      "names": [
+        "udw.end_token",
+        "udw.error_token"
+      ],
+      "category": "known_transport_mutation",
+      "evidence": "A02C425A/A02C4282 parse %8s; A02C2916/A02C292E copy to channel+0x14/+0x1d. Changes framing tokens."
+    },
+    {
+      "names": [
+        "jm_urf.get_perf_timers"
+      ],
+      "category": "known_read_and_clear",
+      "evidence": "A024051A prints four RAM counters0x20A44774; A024054E..5556 then stores four zeros."
+    },
+    {
+      "names": [
+        "cloud_reg.get_email",
+        "cloud_reg.get_claim_status",
+        "cloud_reg.get_claim_info",
+        "gcp_comm.get_prox_token"
+      ],
+      "category": "request_or_unknown_transitive_activity",
+      "evidence": "Email/claim-status helpers enqueue worker messages through A02F5B2C and wake A002DB20; no-network semantics not proved. Other asynchronous getters need worker review."
+    },
+    {
+      "names": [
+        "dsd_ols_prdcfg.get_time_stamp"
+      ],
+      "category": "time_mutation_path",
+      "evidence": "Parses a supplied timestamp then A0072AD0 validates and can call A04306EE to set time."
+    },
+    {
+      "names": [
+        "escl.get_remote_scan_state"
+      ],
+      "category": "output_length_edge_case",
+      "evidence": "A0373F30 initializes length-1; only DSID0x133c4 values0/1 replace it before buffer output. Verify live state/domain first."
+    },
+    {
+      "names": [
+        "scan scansm getSerial",
+        "scan scansm getLongSerial",
+        "scan scansm getTimestamp",
+        "scan scansm getBacksideTimestamp",
+        "scan scansm getName",
+        "scan scansm getBacksideName",
+        "scan scansm getCorrectionMatrixBarcode"
+      ],
+      "category": "needs_record_bounds",
+      "evidence": "Record0 reads of DSIDs0x12c62/0x12edb/0x12ef0/0x12ef1/0x12ef3/0x12ef4/0x12e85 with lengths15/20/20/20/6/6/10. Absent from physical NVM catalog; check DS2 record metadata before typed direct reads."
+    },
+    {
+      "names": [
+        "dsd_ols_prdcfg.get_dyn",
+        "dsd_ols_prdusage.get_dyn",
+        "prncfg.get_prncfgdyn",
+        "rest_fw_update.get_state"
+      ],
+      "category": "argument_and_transitive_review_incomplete",
+      "evidence": "Consume selectors. Broader service getters not fully reviewed; distinct from known actuator/persistent writes."
+    },
+    {
+      "names": [
+        "crypto_svc.is_secure"
+      ],
+      "category": "transitive_security_helper_review_incomplete",
+      "evidence": "A00449D4 calls A00089DE/A00089A0/A0008924/A0008938; passive behavior not established."
+    },
+    {
+      "names": [
+        "nvm2.list_file_rev"
+      ],
+      "category": "already_covered",
+      "evidence": "No-argument file count/ID/revision listing captured physical10; no selected-file-ID argument."
+    }
+  ],
+  "shared_helpers": {
+    "scanner_formatter": "A03BEF18 formats local256-byte buffer, writes UART, optionally updates RAM output-throttle counter/sleeps. No movement requested.",
+    "output": "Parsers/formatters update ordinary shell bookkeeping, not persistent printer configuration.",
+    "calibration_bounds": "A0502AAC count3; A0502AB4 group counts4/4/14, tables0x2081ee80/0x2081ef00/0x2081ef80. Only valid indices included.",
+    "ldn_roots": "A0352D2A returns/ram atA0352E20; A0352D2E returns/RAM atA0352E28. Root-only conversion stops before child-file open/ioctl."
+  },
+  "capture_note": "Review is not physical output. Reapply prompt-returned dedupe if concurrent sessions advance.",
+  "storage_formatter_corrections": {
+    "nvm2.get_contents": "Wire fields are comma-separated with final semicolon. Signed and unsigned scalar helper paths use the same numeric-output virtual method; physical unsigned sample4294967295 disproves earlier signed-wire assumption. Preserve uint32 wire value and interpret according to metadata separately.",
+    "ds2.get_rec_array": "Format atA005D0DC is %5d%c for header and each byte. Positive lengthN produces exactly6*(N+1) payload bytes;1024-byte record needs6150 bytes before shell wrapper. Zero-length header ends comma and no byte-loop semicolon follows.",
+    "ds2.get_list": "FormatA005CDA8 is %12u%c. Missing/non-scalar registry entry prints initialized zero, indistinguishable from actual zero without independent type/registry evidence."
+  }
+}
